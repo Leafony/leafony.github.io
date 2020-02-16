@@ -22,30 +22,35 @@
       <description>
         
         
-        
-
-&lt;div class=&#34;pageinfo pageinfo-primary&#34;&gt;
-&lt;p&gt;This is a placeholder page that shows you how to use this template site.&lt;/p&gt;
-
-&lt;/div&gt;
-
-&lt;p&gt;Information in this section helps your user try your project themselves.&lt;/p&gt;
+        &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/XC8G1dTXSR4&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;What do your users need to do to start using your project? This could include downloading/installation instructions, including any prerequisites or system requirements.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Introductory “Hello World” example, if appropriate. More complex tutorials should live in the Tutorials section.&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;Basic Kit A1.0は、スマートフォンやパソコンに、Bluetoothを使って温度、湿度、照度、傾きセンサの値を送信し、簡単に表示できます。&lt;/li&gt;
+&lt;li&gt;スマートフォンやパソコンにセンサの値を表示させるには、ソフトウェア（Web Bluetooth）が必要です。&lt;/li&gt;
+&lt;li&gt;Web Bluetooth は、Android、Mac、WindowsのGoogle Chrome に対応しており、OSによって対応バージョンが異なります。詳細は、&lt;a href=&#34;https://github.com/WebBluetoothCG/web-bluetooth/blob/gh-pages/implementation-status.md&#34;&gt;Implementation Status&lt;/a&gt;を参照願います。&lt;/li&gt;
+&lt;li&gt;iPhoneの場合は、アプリ（有償）をダウンロードすれば、使えます。まずは、iPhoneの例の動画をご覧ください。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Consider using the headings below for your getting started page. You can delete any that are not applicable to your project.&lt;/p&gt;
-&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
-&lt;p&gt;Are there any system requirements for using your project? What languages are supported (if any)? Do users need to already have any software or tools installed?&lt;/p&gt;
-&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
-&lt;p&gt;Where can your user find your project code? How can they install it (binaries, installable package, build from source)? Are there multiple options/versions they can install and how should they choose the right one for them?&lt;/p&gt;
-&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
-&lt;p&gt;Is there any initial setup users need to do after installation to try your project?&lt;/p&gt;
-&lt;h2 id=&#34;try-it-out&#34;&gt;Try it out!&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;Ble2-300x281.png&#34; alt=&#34;Ble2-300x281.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;androidmac-oswindowsの場合&#34;&gt;Android/Mac OS/Windowsの場合&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Android 6.0 Marshmallow 以降、OS X Yosemite 以降、Windows 10 version 1703以降 でなければ、動作しません。端末のバージョンを確認してください。&lt;/li&gt;
+&lt;li&gt;Google Chromeウェブブラウザを立ち上げます。MacやWindowsの端末で、Chromeが無い場合は、インストールしてください。&lt;/li&gt;
+&lt;li&gt;Windowsの場合、Chromeのアドレスバーにchrome://flags/#enable-experimental-web-platform-features を入力し、enterを押し、Experimental Web Platform featuresでEnableを選択します。Android、Macの端末の場合は不要です。&lt;/li&gt;
+&lt;li&gt;次に、下記のリンクにアクセスするとアプリが立ち上がります。
+&lt;a href=&#34;https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html&#34;&gt;https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Basic Kitの電池リーフに付属のコイン電池を入れて、電池リーフのスイッチをオンにします。
+「Connect」 ボタンを押して「Leaf_A_xxxxx..」を選択後、「ペア設定」ボタンを押します。画面にセンサの値が表示されます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;CR2032_switch.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;iphoneipadの場合&#34;&gt;iPhone/iPadの場合&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;App Storeから&lt;a href=&#34;https://apps.apple.com/us/app/webble/id1193531073&#34;&gt;WebBLE&lt;/a&gt; (有償)をダウンロードします。&lt;/li&gt;
+&lt;li&gt;WebBLEを立ち上げ、一番上にあるアドレスバーに以下のURLを貼り付けてください。
+&lt;a href=&#34;https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html&#34;&gt;https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;WebBLEの「Connect」 ボタンを押して「Leaf_A_xxxxx..」を選択後、「Done」ボタンを押します。画面にセンサの値が表示されます。&lt;/li&gt;
+&lt;li&gt;画面上に「Download CSV 」のボタンはありますが、iPhoneでは使用できません。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;重要：クイックスタートのプログラム等を詳しく知りたい方へは、Web Bluetoothを使ってセンサの値を表示　を参照してください。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;CR2032_switch.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 
       </description>
     </item>

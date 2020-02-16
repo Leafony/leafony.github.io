@@ -118,9 +118,7 @@
 			
 		</ul>
 	</div>
-	<div class="navbar-nav d-none d-lg-block">
-<input type="search" class="form-control td-search-input" placeholder="&#xf002 サイトを検索..." aria-label="サイトを検索..." autocomplete="off">
-</div>
+	<div class="navbar-nav d-none d-lg-block"></div>
 </nav>
 
     </header>
@@ -134,14 +132,6 @@
 
 
 <div id="td-sidebar-menu" class="td-sidebar__inner">
-  
-  <form class="td-sidebar__search d-flex align-items-center">
-    
-<input type="search" class="form-control td-search-input" placeholder="&#xf002 サイトを検索..." aria-label="サイトを検索..." autocomplete="off">
-
-    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    </button>
-  </form>
   
   <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
     
@@ -582,10 +572,8 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#prerequisites">Prerequisites</a></li>
-    <li><a href="#installation">Installation</a></li>
-    <li><a href="#setup">Setup</a></li>
-    <li><a href="#try-it-out">Try it out!</a></li>
+    <li><a href="#androidmac-oswindowsの場合">Android/Mac OS/Windowsの場合</a></li>
+    <li><a href="#iphoneipadの場合">iPhone/iPadの場合</a></li>
   </ul>
 </nav>
 
@@ -631,30 +619,35 @@
 <div class="td-content">
 	<h1>Basic Kit A1.0</h1>
 	<div class="lead">Leafonyとスマホでセンシングをしてみよう</div>
-	
-
-<div class="pageinfo pageinfo-primary">
-<p>This is a placeholder page that shows you how to use this template site.</p>
-
-</div>
-
-<p>Information in this section helps your user try your project themselves.</p>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/XC8G1dTXSR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <ul>
-<li>
-<p>What do your users need to do to start using your project? This could include downloading/installation instructions, including any prerequisites or system requirements.</p>
-</li>
-<li>
-<p>Introductory “Hello World” example, if appropriate. More complex tutorials should live in the Tutorials section.</p>
-</li>
+<li>Basic Kit A1.0は、スマートフォンやパソコンに、Bluetoothを使って温度、湿度、照度、傾きセンサの値を送信し、簡単に表示できます。</li>
+<li>スマートフォンやパソコンにセンサの値を表示させるには、ソフトウェア（Web Bluetooth）が必要です。</li>
+<li>Web Bluetooth は、Android、Mac、WindowsのGoogle Chrome に対応しており、OSによって対応バージョンが異なります。詳細は、<a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/gh-pages/implementation-status.md">Implementation Status</a>を参照願います。</li>
+<li>iPhoneの場合は、アプリ（有償）をダウンロードすれば、使えます。まずは、iPhoneの例の動画をご覧ください。</li>
 </ul>
-<p>Consider using the headings below for your getting started page. You can delete any that are not applicable to your project.</p>
-<h2 id="prerequisites">Prerequisites</h2>
-<p>Are there any system requirements for using your project? What languages are supported (if any)? Do users need to already have any software or tools installed?</p>
-<h2 id="installation">Installation</h2>
-<p>Where can your user find your project code? How can they install it (binaries, installable package, build from source)? Are there multiple options/versions they can install and how should they choose the right one for them?</p>
-<h2 id="setup">Setup</h2>
-<p>Is there any initial setup users need to do after installation to try your project?</p>
-<h2 id="try-it-out">Try it out!</h2>
+<p><img src="Ble2-300x281.png" alt="Ble2-300x281.png"></p>
+<h2 id="androidmac-oswindowsの場合">Android/Mac OS/Windowsの場合</h2>
+<ul>
+<li>Android 6.0 Marshmallow 以降、OS X Yosemite 以降、Windows 10 version 1703以降 でなければ、動作しません。端末のバージョンを確認してください。</li>
+<li>Google Chromeウェブブラウザを立ち上げます。MacやWindowsの端末で、Chromeが無い場合は、インストールしてください。</li>
+<li>Windowsの場合、Chromeのアドレスバーにchrome://flags/#enable-experimental-web-platform-features を入力し、enterを押し、Experimental Web Platform featuresでEnableを選択します。Android、Macの端末の場合は不要です。</li>
+<li>次に、下記のリンクにアクセスするとアプリが立ち上がります。
+<a href="https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html">https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html</a></li>
+<li>Basic Kitの電池リーフに付属のコイン電池を入れて、電池リーフのスイッチをオンにします。
+「Connect」 ボタンを押して「Leaf_A_xxxxx..」を選択後、「ペア設定」ボタンを押します。画面にセンサの値が表示されます。</li>
+</ul>
+<p><img src="CR2032_switch.png" alt=""></p>
+<h2 id="iphoneipadの場合">iPhone/iPadの場合</h2>
+<ul>
+<li>App Storeから<a href="https://apps.apple.com/us/app/webble/id1193531073">WebBLE</a> (有償)をダウンロードします。</li>
+<li>WebBLEを立ち上げ、一番上にあるアドレスバーに以下のURLを貼り付けてください。
+<a href="https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html">https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html</a></li>
+<li>WebBLEの「Connect」 ボタンを押して「Leaf_A_xxxxx..」を選択後、「Done」ボタンを押します。画面にセンサの値が表示されます。</li>
+<li>画面上に「Download CSV 」のボタンはありますが、iPhoneでは使用できません。</li>
+</ul>
+<p><strong>重要：クイックスタートのプログラム等を詳しく知りたい方へは、Web Bluetoothを使ってセンサの値を表示　を参照してください。</strong></p>
+<p><img src="CR2032_switch.png" alt=""></p>
 
         <div class="section-index">
     
