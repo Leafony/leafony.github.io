@@ -1,0 +1,120 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leafony – AI03A MIC&amp;VR&amp;LED</title>
+    <link>/en/docs/leaf/ai03a/</link>
+    <description>Recent content in AI03A MIC&amp;VR&amp;LED on Leafony</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/en/docs/leaf/ai03a/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: AI03A MIC&amp;VR&amp;LED</title>
+      <link>/en/docs/leaf/ai03a/_index_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/docs/leaf/ai03a/_index_2/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./AI03A MIC&amp;VR&amp;LED_f_large.jpg&#34;&gt;&lt;img src=&#34;./AI03A MIC&amp;VR&amp;LED_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AI03A MIC&amp;VR&amp;LED_b_large.jpg&#34;&gt;&lt;img src=&#34;./AI03A MIC&amp;VR&amp;LED_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AI03A MIC&amp;VR&amp;LED_p_large.jpg&#34;&gt;&lt;img src=&#34;./AI03A MIC&amp;VR&amp;LED_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;img src=&#34;./AI03A_block.png&#34; width=&#34;200&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;MEMSマイク、ボリューム、LEDを搭載したリーフです。MEMSマイクとボリュームはアナログ入力ピン、LEDはデジタル出力ピンでMCUリーフと接続されます。低消費電力を実現するのためI2C Expander を制御することにより電源をロードスイッチによりオフすることが可能です。&lt;/p&gt;
+&lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;項目&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;マイク&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Type&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;MEMS&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Direction&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Omnidirectional&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Frequency Range&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;100Hz ～ 10kHz&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Gain&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0dB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Interfaces&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Interfaces&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;ボリューム&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Nominal resistance&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;10kΩ&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Resistance law&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Linear law (B)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Effective electrical angle&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;210° (1 turn)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;LED&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Package Type&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Side-view&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Emitting color&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Yellow&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;仕様書 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_SpecSheet_JA.pdf&#34;&gt;&lt;i class=&#34;fas fa-globe-americas ml-2 &#34;&gt;&lt;/i&gt; 日本語&lt;/a&gt; / &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_SpecSheet_EN.pdf&#34;&gt;&lt;i class=&#34;fas fa-globe-americas ml-2 &#34;&gt;&lt;/i&gt; English&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;回路図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_Schematic.pdf&#34;&gt;&lt;i class=&#34;fas fa-file-pdf ml-2 &#34;&gt;&lt;/i&gt; Rev.A&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;部品配置図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_ComponentMarking.pdf&#34;&gt;&lt;i class=&#34;fas fa-file-pdf ml-2 &#34;&gt;&lt;/i&gt; Rev.A&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;レイアウト図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_PCBLayout.zip&#34;&gt;&lt;i class=&#34;fas fa-file-archive ml-2&#34;&gt;&lt;/i&gt; Zuken&lt;/a&gt; / &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_PCBLayout_dxf.zip&#34;&gt;&lt;i class=&#34;fas fa-file-archive ml-2&#34;&gt;&lt;/i&gt; dxf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;img src=&#34;./AI03A_pinassign.png&#34; width=&#34;600&#34;&gt;
+&lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/examples/blink&#34;&gt;LED点滅&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

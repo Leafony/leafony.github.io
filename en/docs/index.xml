@@ -101,15 +101,15 @@
 &lt;/ol&gt;
 &lt;p&gt;And an unordered task list:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Create a Hugo theme&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Add task lists to it&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Take a vacation&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Create a Hugo theme&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add task lists to it&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Take a vacation&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And a &amp;ldquo;mixed&amp;rdquo; task list:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Pack bags&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Pack bags&lt;/li&gt;
 &lt;li&gt;?&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Travel!&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Travel!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And a nested list:&lt;/p&gt;
 &lt;ul&gt;
@@ -216,18 +216,18 @@
 &lt;pre&gt;&lt;code&gt;foo := &amp;quot;bar&amp;quot;;
 bar := &amp;quot;foo&amp;quot;;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Code can also use syntax highlighting.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;var foo = &amp;#34;bar&amp;#34;;&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;`&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;`var foo = &amp;#34;bar&amp;#34;;`&lt;/span&gt;
 
   &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;javascript&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Tokenise&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;nil&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;styles&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;New&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WithLineNumbers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;New&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WithLineNumbers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
 
   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Buffer&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Format&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
 
-  &lt;span style=&#34;color:#000&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Inline code inside table cells should still be distinguishable.&lt;/p&gt;
@@ -402,15 +402,15 @@ This is a warning with a title.
 &lt;/ol&gt;
 &lt;p&gt;And an unordered task list:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Create a Hugo theme&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Add task lists to it&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Take a vacation&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Create a Hugo theme&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add task lists to it&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Take a vacation&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And a &amp;ldquo;mixed&amp;rdquo; task list:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Pack bags&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Pack bags&lt;/li&gt;
 &lt;li&gt;?&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Travel!&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Travel!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And a nested list:&lt;/p&gt;
 &lt;ul&gt;
@@ -517,18 +517,18 @@ This is a warning with a title.
 &lt;pre&gt;&lt;code&gt;foo := &amp;quot;bar&amp;quot;;
 bar := &amp;quot;foo&amp;quot;;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Code can also use syntax highlighting.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;var foo = &amp;#34;bar&amp;#34;;&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;`&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;`var foo = &amp;#34;bar&amp;#34;;`&lt;/span&gt;
 
   &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;javascript&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Tokenise&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;nil&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;styles&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;New&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WithLineNumbers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;New&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WithLineNumbers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
 
   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Buffer&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Format&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
 
-  &lt;span style=&#34;color:#000&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Inline code inside table cells should still be distinguishable.&lt;/p&gt;
@@ -703,15 +703,15 @@ This is a warning with a title.
 &lt;/ol&gt;
 &lt;p&gt;And an unordered task list:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Create a Hugo theme&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Add task lists to it&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Take a vacation&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Create a Hugo theme&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add task lists to it&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Take a vacation&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And a &amp;ldquo;mixed&amp;rdquo; task list:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Pack bags&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Pack bags&lt;/li&gt;
 &lt;li&gt;?&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Travel!&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Travel!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And a nested list:&lt;/p&gt;
 &lt;ul&gt;
@@ -818,18 +818,18 @@ This is a warning with a title.
 &lt;pre&gt;&lt;code&gt;foo := &amp;quot;bar&amp;quot;;
 bar := &amp;quot;foo&amp;quot;;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Code can also use syntax highlighting.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;var foo = &amp;#34;bar&amp;#34;;&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;`&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;`var foo = &amp;#34;bar&amp;#34;;`&lt;/span&gt;
 
   &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;javascript&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Tokenise&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;nil&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;styles&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;New&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WithLineNumbers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;New&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WithLineNumbers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
 
   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Buffer&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Format&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
 
-  &lt;span style=&#34;color:#000&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Inline code inside table cells should still be distinguishable.&lt;/p&gt;
@@ -1004,15 +1004,15 @@ This is a warning with a title.
 &lt;/ol&gt;
 &lt;p&gt;And an unordered task list:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Create a Hugo theme&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Add task lists to it&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Take a vacation&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Create a Hugo theme&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add task lists to it&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Take a vacation&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And a &amp;ldquo;mixed&amp;rdquo; task list:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Pack bags&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Pack bags&lt;/li&gt;
 &lt;li&gt;?&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Travel!&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Travel!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And a nested list:&lt;/p&gt;
 &lt;ul&gt;
@@ -1119,18 +1119,18 @@ This is a warning with a title.
 &lt;pre&gt;&lt;code&gt;foo := &amp;quot;bar&amp;quot;;
 bar := &amp;quot;foo&amp;quot;;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Code can also use syntax highlighting.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;var foo = &amp;#34;bar&amp;#34;;&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;`&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;`var foo = &amp;#34;bar&amp;#34;;`&lt;/span&gt;
 
   &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;javascript&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Tokenise&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;nil&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;styles&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;New&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WithLineNumbers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;New&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WithLineNumbers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
 
   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Buffer&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Format&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
 
-  &lt;span style=&#34;color:#000&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Inline code inside table cells should still be distinguishable.&lt;/p&gt;
@@ -1305,15 +1305,15 @@ This is a warning with a title.
 &lt;/ol&gt;
 &lt;p&gt;And an unordered task list:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Create a Hugo theme&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Add task lists to it&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Take a vacation&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Create a Hugo theme&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add task lists to it&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Take a vacation&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And a &amp;ldquo;mixed&amp;rdquo; task list:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Pack bags&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Pack bags&lt;/li&gt;
 &lt;li&gt;?&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Travel!&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Travel!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And a nested list:&lt;/p&gt;
 &lt;ul&gt;
@@ -1420,18 +1420,18 @@ This is a warning with a title.
 &lt;pre&gt;&lt;code&gt;foo := &amp;quot;bar&amp;quot;;
 bar := &amp;quot;foo&amp;quot;;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Code can also use syntax highlighting.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;var foo = &amp;#34;bar&amp;#34;;&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;`&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;`var foo = &amp;#34;bar&amp;#34;;`&lt;/span&gt;
 
   &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;javascript&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Tokenise&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;nil&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;styles&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;New&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WithLineNumbers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;New&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WithLineNumbers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
 
   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Buffer&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Format&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
 
-  &lt;span style=&#34;color:#000&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Inline code inside table cells should still be distinguishable.&lt;/p&gt;
@@ -1606,15 +1606,15 @@ This is a warning with a title.
 &lt;/ol&gt;
 &lt;p&gt;And an unordered task list:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Create a Hugo theme&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Add task lists to it&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Take a vacation&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Create a Hugo theme&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add task lists to it&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Take a vacation&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And a &amp;ldquo;mixed&amp;rdquo; task list:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Pack bags&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Pack bags&lt;/li&gt;
 &lt;li&gt;?&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Travel!&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Travel!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And a nested list:&lt;/p&gt;
 &lt;ul&gt;
@@ -1721,18 +1721,18 @@ This is a warning with a title.
 &lt;pre&gt;&lt;code&gt;foo := &amp;quot;bar&amp;quot;;
 bar := &amp;quot;foo&amp;quot;;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Code can also use syntax highlighting.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;var foo = &amp;#34;bar&amp;#34;;&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;`&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;`var foo = &amp;#34;bar&amp;#34;;`&lt;/span&gt;
 
   &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;javascript&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Tokenise&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;nil&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;styles&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;New&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WithLineNumbers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;New&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WithLineNumbers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
 
   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Buffer&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Format&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
 
-  &lt;span style=&#34;color:#000&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Inline code inside table cells should still be distinguishable.&lt;/p&gt;
@@ -1907,15 +1907,15 @@ This is a warning with a title.
 &lt;/ol&gt;
 &lt;p&gt;And an unordered task list:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Create a Hugo theme&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Add task lists to it&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Take a vacation&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Create a Hugo theme&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add task lists to it&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Take a vacation&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And a &amp;ldquo;mixed&amp;rdquo; task list:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Pack bags&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Pack bags&lt;/li&gt;
 &lt;li&gt;?&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Travel!&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Travel!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And a nested list:&lt;/p&gt;
 &lt;ul&gt;
@@ -2022,18 +2022,18 @@ This is a warning with a title.
 &lt;pre&gt;&lt;code&gt;foo := &amp;quot;bar&amp;quot;;
 bar := &amp;quot;foo&amp;quot;;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Code can also use syntax highlighting.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;var foo = &amp;#34;bar&amp;#34;;&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;`&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;`var foo = &amp;#34;bar&amp;#34;;`&lt;/span&gt;
 
   &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;javascript&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Tokenise&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;nil&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;styles&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;New&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WithLineNumbers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;New&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WithLineNumbers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
 
   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Buffer&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Format&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
 
-  &lt;span style=&#34;color:#000&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Inline code inside table cells should still be distinguishable.&lt;/p&gt;
@@ -2117,6 +2117,418 @@ This is a warning with a title.
 &lt;p&gt;Stumptown PBR&amp;amp;B keytar plaid street art, forage XOXO pitchfork selvage affogato green juice listicle pickled everyday carry hashtag. Organic sustainable letterpress sartorial scenester intelligentsia swag bushwick. Put a bird on it stumptown neutra locavore. IPhone typewriter messenger bag narwhal. Ennui cold-pressed seitan flannel keytar, single-origin coffee adaptogen occupy yuccie williamsburg chillwave shoreditch forage waistcoat.&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;This is the final element on the page and there should be no margin below this.
 &lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: AI01A 4-Sensors</title>
+      <link>/en/docs/leaf/ai01a/_index-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/docs/leaf/ai01a/_index-2/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./AI01A 4-Sensors_f_large.jpg&#34;&gt;&lt;img src=&#34;./AI01A 4-Sensors_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AI01A 4-Sensors_b_large.jpg&#34;&gt;&lt;img src=&#34;./AI01A 4-Sensors_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AI01A 4-Sensors_p_large.jpg&#34;&gt;&lt;img src=&#34;./AI01A 4-Sensors_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;img src=&#34;./AI01A_block.png&#34; width=&#34;200&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;温湿度センサ、照度センサ、加速度センサを搭載したリーフです。MCUリーフとはI2Cで接続されます。&lt;/p&gt;
+&lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;項目&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;温湿度センサ&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;温度計測範囲&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;-40～120℃&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Temperature accuracy&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;±0.5°C (15 to +40°C)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Relative humidity range&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0 to 100%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Humidity accuracy&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;3.5% rH (20 to +80% rH)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Interfaces&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;I2C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;照度センサ&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Measurement range&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.01 lux to 83 k lux&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;IR Rejects&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&amp;gt; 99% (typ)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Interfaces&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;I2C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;加速度センサ&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Measurement range&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;±2g/±4g/±8g/±16g (selectable)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Function&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;6D/4D orientation detection&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Freefall detection&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Motion detection&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Interfaces&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;I2C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;仕様書 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensor_SpecSheet_JA.pdf&#34;&gt;&lt;i class=&#34;fas fa-globe-americas ml-2 &#34;&gt;&lt;/i&gt; 日本語&lt;/a&gt; / &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensor_SpecSheet_EN.pdf&#34;&gt;&lt;i class=&#34;fas fa-globe-americas ml-2 &#34;&gt;&lt;/i&gt; English&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;回路図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensors_Schematic.pdf&#34;&gt;&lt;i class=&#34;fas fa-file-pdf ml-2 &#34;&gt;&lt;/i&gt; Rev.A&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;部品配置図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensors_ComponentMarking.pdf&#34;&gt;&lt;i class=&#34;fas fa-file-pdf ml-2 &#34;&gt;&lt;/i&gt; Rev.A&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;レイアウト図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensors_PCBLayout.zip&#34;&gt;&lt;i class=&#34;fas fa-file-archive ml-2&#34;&gt;&lt;/i&gt; Zuken&lt;/a&gt; / &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensors_PCBLayout_dxf.zip&#34;&gt;&lt;i class=&#34;fas fa-file-archive ml-2&#34;&gt;&lt;/i&gt; dxf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;img src=&#34;./AI01A_pinassign.png&#34; width=&#34;600&#34;&gt;
+&lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/examples/blink&#34;&gt;LED点滅&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: AI02A SP&amp;PIR</title>
+      <link>/en/docs/leaf/ai02a/_index_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/docs/leaf/ai02a/_index_2/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./AI02A SP&amp;PIR_f_large.jpg&#34;&gt;&lt;img src=&#34;./AI02A SP&amp;PIR_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AI02A SP&amp;PIR_b_large.jpg&#34;&gt;&lt;img src=&#34;./AI02A SP&amp;PIR_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AI02A SP&amp;PIR_p_large.jpg&#34;&gt;&lt;img src=&#34;./AI02A SP&amp;PIR_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;img src=&#34;./AI02A_block.png&#34; width=&#34;200&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;圧電スピーカと人感センサを搭載したリーフです。圧電スピーカはPWM、人感センサはI2CでMCUリーフと接続されます。人感センサは接近検知アルゴリズムを内蔵しており、簡単な設定で接近を検知することが出来、接近検知時に割り込み信号を出力することが可能です。&lt;/p&gt;
+&lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;項目&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;圧電スピーカ&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;dimensions&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;12 x 12 x 3mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;rated frequency&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;4kHz(typ)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;sound pressure level&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;81dB(min) at 10 cm, 5 Vp-p, 4,000 Hz square wave&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Current consumption&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;5mA(max) at 5 Vp-p, 4,000 Hz square wave&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;人感センサ&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Sensor&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Quantum-type IR Sensor&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Integrated Digital Filters&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Cut-off Frequency 0.9Hz,0.445Hz *Only with 10Hz of Data Output Rate(ODR)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Interfaces&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;I2C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;仕様書 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_SpecSheet_JA.pdf&#34;&gt;&lt;i class=&#34;fas fa-globe-americas ml-2 &#34;&gt;&lt;/i&gt; 日本語&lt;/a&gt; / &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A SP&amp;PIR/AI02A SP&amp;PIR_AVR_MCU_SpecSheet_EN.pdf&#34;&gt;&lt;i class=&#34;fas fa-globe-americas ml-2 &#34;&gt;&lt;/i&gt; English&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;回路図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_Schematic.pdf&#34;&gt;&lt;i class=&#34;fas fa-file-pdf ml-2 &#34;&gt;&lt;/i&gt; Rev.A&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;部品配置図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_ComponentMarking.pdf&#34;&gt;&lt;i class=&#34;fas fa-file-pdf ml-2 &#34;&gt;&lt;/i&gt; Rev.A&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;レイアウト図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_PCBLayout.zip&#34;&gt;&lt;i class=&#34;fas fa-file-archive ml-2&#34;&gt;&lt;/i&gt; Zuken&lt;/a&gt; / &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_PCBLayout_dxf.zip&#34;&gt;&lt;i class=&#34;fas fa-file-archive ml-2&#34;&gt;&lt;/i&gt; dxf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ブートローダ &lt;a href=&#34;https://github.com/arduino/ArduinoCore-avr/blob/master/bootloaders/atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex&#34;&gt;&lt;i class=&#34;fas fa-file ml-2&#34;&gt;&lt;/i&gt; Rev.A&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;img src=&#34;./AI02A_pinassign.png&#34; width=&#34;600&#34;&gt;
+&lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/examples/blink&#34;&gt;LED点滅&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: AC03A LoRa Easy</title>
+      <link>/en/docs/leaf/ac03a/_index-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/docs/leaf/ac03a/_index-2/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;h2 id=&#34;ファイル&#34;&gt;ファイル&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;仕様書&lt;/li&gt;
+&lt;li&gt;回路図&lt;/li&gt;
+&lt;li&gt;レイアウト図&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
+&lt;h2 id=&#34;ソフトウェア仕様&#34;&gt;ソフトウェア仕様&lt;/h2&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: AI03A MIC&amp;VR&amp;LED</title>
+      <link>/en/docs/leaf/ai03a/_index_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/docs/leaf/ai03a/_index_2/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./AI03A MIC&amp;VR&amp;LED_f_large.jpg&#34;&gt;&lt;img src=&#34;./AI03A MIC&amp;VR&amp;LED_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AI03A MIC&amp;VR&amp;LED_b_large.jpg&#34;&gt;&lt;img src=&#34;./AI03A MIC&amp;VR&amp;LED_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AI03A MIC&amp;VR&amp;LED_p_large.jpg&#34;&gt;&lt;img src=&#34;./AI03A MIC&amp;VR&amp;LED_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;img src=&#34;./AI03A_block.png&#34; width=&#34;200&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;MEMSマイク、ボリューム、LEDを搭載したリーフです。MEMSマイクとボリュームはアナログ入力ピン、LEDはデジタル出力ピンでMCUリーフと接続されます。低消費電力を実現するのためI2C Expander を制御することにより電源をロードスイッチによりオフすることが可能です。&lt;/p&gt;
+&lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;項目&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;マイク&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Type&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;MEMS&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Direction&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Omnidirectional&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Frequency Range&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;100Hz ～ 10kHz&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Gain&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0dB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Interfaces&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Interfaces&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;ボリューム&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Nominal resistance&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;10kΩ&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Resistance law&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Linear law (B)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Effective electrical angle&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;210° (1 turn)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;LED&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Package Type&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Side-view&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Emitting color&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Yellow&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;仕様書 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_SpecSheet_JA.pdf&#34;&gt;&lt;i class=&#34;fas fa-globe-americas ml-2 &#34;&gt;&lt;/i&gt; 日本語&lt;/a&gt; / &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_SpecSheet_EN.pdf&#34;&gt;&lt;i class=&#34;fas fa-globe-americas ml-2 &#34;&gt;&lt;/i&gt; English&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;回路図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_Schematic.pdf&#34;&gt;&lt;i class=&#34;fas fa-file-pdf ml-2 &#34;&gt;&lt;/i&gt; Rev.A&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;部品配置図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_ComponentMarking.pdf&#34;&gt;&lt;i class=&#34;fas fa-file-pdf ml-2 &#34;&gt;&lt;/i&gt; Rev.A&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;レイアウト図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_PCBLayout.zip&#34;&gt;&lt;i class=&#34;fas fa-file-archive ml-2&#34;&gt;&lt;/i&gt; Zuken&lt;/a&gt; / &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_PCBLayout_dxf.zip&#34;&gt;&lt;i class=&#34;fas fa-file-archive ml-2&#34;&gt;&lt;/i&gt; dxf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;img src=&#34;./AI03A_pinassign.png&#34; width=&#34;600&#34;&gt;
+&lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/examples/blink&#34;&gt;LED点滅&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: AI04A LCD</title>
+      <link>/en/docs/leaf/ai04a/_index_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/docs/leaf/ai04a/_index_2/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./AI04A LCD_f_large.jpg&#34;&gt;&lt;img src=&#34;./AI04A LCD_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AI04A LCD_b_large.jpg&#34;&gt;&lt;img src=&#34;./AI04A LCD_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AI04A LCD_p_large.jpg&#34;&gt;&lt;img src=&#34;./AI04A LCD_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;img src=&#34;./AI04A_block.png&#34; width=&#34;200&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;キャラクタLCDユニットとスイッチ2個を搭載したリーフです。LCDユニットはI2CでMCUリーフと接続されます。スイッチはMCUのデジタル入力ピンとI2C ExpanderのP1ピンに接続されています。 低消費電力化を実現するためI2C Expander を制御することにより電源をロードスイッチによりオフすることが可能です。&lt;/p&gt;
+&lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;項目&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Display Format&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;8x2 Character&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Viewing Area (WxH)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;27x10.5mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Dot Size (WxH)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.45x0.5mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Dot Pitch (WxH)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.5x0.55mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Character Size (WxH)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2.45x4.35mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Character Pitch (WxH)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2.95x4.9mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Viewing Direction&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;6:00 O&amp;rsquo;Clock&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Driving Method&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1/16Duty,1/5Bias&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Controller IC&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;ST7032I-0D(Sitronix) or compatible&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Display Mode&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;STN (Gray)/Positive/Reflective&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Interfaces&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;I2C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;仕様書 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_%20LCD_SpecSheet_JA.pdf&#34;&gt;&lt;i class=&#34;fas fa-globe-americas ml-2 &#34;&gt;&lt;/i&gt; 日本語&lt;/a&gt; / &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_%20LCD_SpecSheet_EN.pdf&#34;&gt;&lt;i class=&#34;fas fa-globe-americas ml-2 &#34;&gt;&lt;/i&gt; English&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;回路図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_LCD_Schematic.pdf&#34;&gt;&lt;i class=&#34;fas fa-file-pdf ml-2 &#34;&gt;&lt;/i&gt; Rev.A&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;部品配置図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_LCD_ComponentMarking.pdf&#34;&gt;&lt;i class=&#34;fas fa-file-pdf ml-2 &#34;&gt;&lt;/i&gt; Rev.A&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;レイアウト図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP01A_AVR_MCU/AP01A_AVR_MCU_PCBLayout.zip&#34;&gt;&lt;i class=&#34;fas fa-file-archive ml-2&#34;&gt;&lt;/i&gt; Zuken&lt;/a&gt; / &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_LCD_PCBLayout_dxf.zip&#34;&gt;&lt;i class=&#34;fas fa-file-archive ml-2&#34;&gt;&lt;/i&gt; dxf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;img src=&#34;./AI04A_pinassign.png&#34; width=&#34;600&#34;&gt;
+&lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/examples/blink&#34;&gt;LED点滅&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
       </description>
     </item>
     
@@ -2208,15 +2620,15 @@ This is a warning with a title.
 &lt;/ol&gt;
 &lt;p&gt;And an unordered task list:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Create a Hugo theme&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Add task lists to it&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Take a vacation&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Create a Hugo theme&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add task lists to it&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Take a vacation&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And a &amp;ldquo;mixed&amp;rdquo; task list:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Pack bags&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Pack bags&lt;/li&gt;
 &lt;li&gt;?&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Travel!&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Travel!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And a nested list:&lt;/p&gt;
 &lt;ul&gt;
@@ -2323,18 +2735,18 @@ This is a warning with a title.
 &lt;pre&gt;&lt;code&gt;foo := &amp;quot;bar&amp;quot;;
 bar := &amp;quot;foo&amp;quot;;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Code can also use syntax highlighting.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;var foo = &amp;#34;bar&amp;#34;;&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;`&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;`var foo = &amp;#34;bar&amp;#34;;`&lt;/span&gt;
 
   &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;javascript&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Tokenise&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;nil&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;styles&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;New&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WithLineNumbers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;New&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WithLineNumbers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
 
   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Buffer&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Format&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
 
-  &lt;span style=&#34;color:#000&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Inline code inside table cells should still be distinguishable.&lt;/p&gt;
@@ -2509,15 +2921,15 @@ This is a warning with a title.
 &lt;/ol&gt;
 &lt;p&gt;And an unordered task list:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Create a Hugo theme&lt;/li&gt;
-&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Add task lists to it&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Take a vacation&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Create a Hugo theme&lt;/li&gt;
+&lt;li&gt;&lt;input checked=&#34;&#34; disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Add task lists to it&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Take a vacation&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And a &amp;ldquo;mixed&amp;rdquo; task list:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Pack bags&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Pack bags&lt;/li&gt;
 &lt;li&gt;?&lt;/li&gt;
-&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt;Travel!&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Travel!&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;And a nested list:&lt;/p&gt;
 &lt;ul&gt;
@@ -2624,18 +3036,18 @@ This is a warning with a title.
 &lt;pre&gt;&lt;code&gt;foo := &amp;quot;bar&amp;quot;;
 bar := &amp;quot;foo&amp;quot;;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Code can also use syntax highlighting.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;`&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;var foo = &amp;#34;bar&amp;#34;;&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;`&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;main&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;`var foo = &amp;#34;bar&amp;#34;;`&lt;/span&gt;
 
   &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;javascript&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;_&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lexer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Tokenise&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;nil&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;input&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;styles&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Get&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;github&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;New&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WithLineNumbers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;New&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WithLineNumbers&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
 
   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;bytes&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Buffer&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;formatter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Format&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;style&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;iterator&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
 
-  &lt;span style=&#34;color:#000&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;fmt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;pre&gt;&lt;code&gt;Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Inline code inside table cells should still be distinguishable.&lt;/p&gt;

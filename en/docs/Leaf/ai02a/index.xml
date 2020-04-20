@@ -1,0 +1,101 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leafony – AI02A SP&amp;PIR</title>
+    <link>/en/docs/leaf/ai02a/</link>
+    <description>Recent content in AI02A SP&amp;PIR on Leafony</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/en/docs/leaf/ai02a/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: AI02A SP&amp;PIR</title>
+      <link>/en/docs/leaf/ai02a/_index_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/docs/leaf/ai02a/_index_2/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./AI02A SP&amp;PIR_f_large.jpg&#34;&gt;&lt;img src=&#34;./AI02A SP&amp;PIR_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AI02A SP&amp;PIR_b_large.jpg&#34;&gt;&lt;img src=&#34;./AI02A SP&amp;PIR_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AI02A SP&amp;PIR_p_large.jpg&#34;&gt;&lt;img src=&#34;./AI02A SP&amp;PIR_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;img src=&#34;./AI02A_block.png&#34; width=&#34;200&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;圧電スピーカと人感センサを搭載したリーフです。圧電スピーカはPWM、人感センサはI2CでMCUリーフと接続されます。人感センサは接近検知アルゴリズムを内蔵しており、簡単な設定で接近を検知することが出来、接近検知時に割り込み信号を出力することが可能です。&lt;/p&gt;
+&lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;項目&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;圧電スピーカ&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;dimensions&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;12 x 12 x 3mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;rated frequency&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;4kHz(typ)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;sound pressure level&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;81dB(min) at 10 cm, 5 Vp-p, 4,000 Hz square wave&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Current consumption&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;5mA(max) at 5 Vp-p, 4,000 Hz square wave&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;人感センサ&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Sensor&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Quantum-type IR Sensor&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Integrated Digital Filters&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;Cut-off Frequency 0.9Hz,0.445Hz *Only with 10Hz of Data Output Rate(ODR)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Interfaces&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;I2C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;仕様書 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_SpecSheet_JA.pdf&#34;&gt;&lt;i class=&#34;fas fa-globe-americas ml-2 &#34;&gt;&lt;/i&gt; 日本語&lt;/a&gt; / &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A SP&amp;PIR/AI02A SP&amp;PIR_AVR_MCU_SpecSheet_EN.pdf&#34;&gt;&lt;i class=&#34;fas fa-globe-americas ml-2 &#34;&gt;&lt;/i&gt; English&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;回路図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_Schematic.pdf&#34;&gt;&lt;i class=&#34;fas fa-file-pdf ml-2 &#34;&gt;&lt;/i&gt; Rev.A&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;部品配置図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_ComponentMarking.pdf&#34;&gt;&lt;i class=&#34;fas fa-file-pdf ml-2 &#34;&gt;&lt;/i&gt; Rev.A&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;レイアウト図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_PCBLayout.zip&#34;&gt;&lt;i class=&#34;fas fa-file-archive ml-2&#34;&gt;&lt;/i&gt; Zuken&lt;/a&gt; / &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_PCBLayout_dxf.zip&#34;&gt;&lt;i class=&#34;fas fa-file-archive ml-2&#34;&gt;&lt;/i&gt; dxf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ブートローダ &lt;a href=&#34;https://github.com/arduino/ArduinoCore-avr/blob/master/bootloaders/atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex&#34;&gt;&lt;i class=&#34;fas fa-file ml-2&#34;&gt;&lt;/i&gt; Rev.A&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;img src=&#34;./AI02A_pinassign.png&#34; width=&#34;600&#34;&gt;
+&lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/examples/blink&#34;&gt;LED点滅&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

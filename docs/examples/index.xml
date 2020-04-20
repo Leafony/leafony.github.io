@@ -14,5 +14,778 @@
       
     
     
+    <item>
+      <title>Docs: LED点滅</title>
+      <link>/docs/examples/blink/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/examples/blink/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;AVR MCUリーフに搭載されたLEDを1秒ごとに点灯、消灯を繰り返します。&lt;/p&gt;
+&lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
+&lt;p&gt;以下のリーフを使用します&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Name&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AP01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;AVR MCU&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AZ01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;USB&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AV01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CR2032&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AZ62A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;コネクタカバー&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CR2032 コイン電池&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;M2ネジ&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
+&lt;p&gt;下図のようにリーフを組み立てましょう。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./blink_assemble.png&#34; alt=&#34;assemble1&#34;&gt;
+&lt;img src=&#34;./blink_assemble2.png&#34; alt=&#34;assemble2&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
+&lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// LEDピンを出力ピンに設定
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;pinMode&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LED_BUILTIN&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;OUTPUT&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;loop&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;digitalWrite&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LED_BUILTIN&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;HIGH&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;   &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// LEDを点灯
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;                       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 1秒待つ
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;digitalWrite&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LED_BUILTIN&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;LOW&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;    &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// LEDを消灯
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;                       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 1秒待つ
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: バッテリ残量</title>
+      <link>/docs/examples/read_battery/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/examples/read_battery/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;CR2032コイン電池リーフに搭載されたADコンバータを使って電池の電圧を読み取りましょう。
+このサンプルはAV03A AA BATリーフや、AV04A 2V～4.5Vリーフなどの電池リーフでも動作します。&lt;/p&gt;
+&lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
+&lt;p&gt;以下のリーフを使用します&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Name&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AP01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;AVR MCU&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AZ01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;USB&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AV01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CR2032&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AZ62A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;コネクタカバー&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CR2032 コイン電池&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;M2ネジ&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;./read_battery_1.png&#34; alt=&#34;CR2032&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
+&lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;Wire.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;SoftwareSerial.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define SDA       18
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define SCL       19
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define BATT_ADC_ADDR 0x50
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;float&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;dataBatt&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;Serial&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;begin&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;115200&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;Wire&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;begin&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// I2C 100kHz
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;loop&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(){&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;double&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;temp_mv&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;adcVal1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;adcVal2&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+
+  &lt;span style=&#34;color:#000&#34;&gt;Wire&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;beginTransmission&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;BATT_ADC_ADDR&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;Wire&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;write&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0x00&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;Wire&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;endTransmission&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;Wire&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;requestFrom&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;BATT_ADC_ADDR&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;adcVal1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Wire&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;read&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;adcVal2&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Wire&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;read&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;adcVal1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0xff&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;adcVal2&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0xff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//測定値がFFならバッテリリーフはつながっていない
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000&#34;&gt;adcVal1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;adcVal2&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//電圧計算　ADC　* （(リファレンス電圧(3.3V)/ ADCの分解能(256)) * 分圧比（２倍））
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;temp_mv&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;((&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;double&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)((&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;adcVal1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;adcVal2&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;))&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;3300&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;256&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;dataBatt&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;float&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;temp_mv&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;/&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+
+  &lt;span style=&#34;color:#000&#34;&gt;Serial&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;Serial&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;  Batt[V]  = &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;dataBatt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;));&lt;/span&gt;
+
+  &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;                       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// wait for a second
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//-----------------------------------------------
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//I2C スレーブデバイスに1バイト書き込む
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//-----------------------------------------------
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;i2c_write_byte&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;device_address&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;reg_address&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;write_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;){&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;Wire&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;beginTransmission&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;device_address&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;Wire&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;write&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;reg_address&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;Wire&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;write&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;write_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;Wire&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;endTransmission&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//-----------------------------------------------
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//I2C スレーブデバイスから1バイト読み込む
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//-----------------------------------------------
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;unsigned&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;i2c_read_byte&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;device_address&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;reg_address&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;){&lt;/span&gt;
+
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;read_data&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+
+  &lt;span style=&#34;color:#000&#34;&gt;Wire&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;beginTransmission&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;device_address&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;Wire&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;write&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;reg_address&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;Wire&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;endTransmission&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;false&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+
+  &lt;span style=&#34;color:#000&#34;&gt;Wire&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;requestFrom&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;device_address&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;read_data&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Wire&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;read&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;read_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//---------------------------------------
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// trim
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 文字列配列からSPを削除する
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//---------------------------------------
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;trim&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;j&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;\0&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;){&lt;/span&gt;
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;){&lt;/span&gt;
+      &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+      &lt;span style=&#34;color:#000&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;++&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+    &lt;span style=&#34;color:#000&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;++&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;\0&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;動作&#34;&gt;動作&lt;/h2&gt;
+&lt;p&gt;Arduino IDEのシリアルモニタを開き、ボーレートを115200bpsすると、電池の電圧が表示されます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./read_battery_2.png&#34; alt=&#34;result&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 温湿度センサ読み取り</title>
+      <link>/docs/examples/temp_humid_sensors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/examples/temp_humid_sensors/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;/docs/leaf/ai01a/&#34;&gt;4-Sensorsリーフ&lt;/a&gt;に搭載された&lt;strong&gt;温湿度センサ&lt;/strong&gt;、の値を読み取って、シリアルモニタに表示するサンプルです。&lt;/p&gt;
+&lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
+&lt;p&gt;以下のリーフを使用します&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Name&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AI01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;4-Sensors&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AP01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;AVR MCU&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AZ01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;USB&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AV01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CR2032&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AZ62A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;コネクタカバー&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CR2032 コイン電池&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;M2ネジ&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
+&lt;p&gt;下図を参考にリーフを組み立ててみましょう。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./environment_assemble.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
+&lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ソースコードのビルド&#34;&gt;ソースコードのビルド&lt;/h3&gt;
+&lt;p&gt;4-Sensors リーフを使うためにはライブラリのインストールが必要です。
+まだインストールしていない場合は&lt;a href=&#34;/docs/environment/basic/&#34;&gt;こちら&lt;/a&gt;のページを参考にライブラリをインストールしてください。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 照度センサ読み取り</title>
+      <link>/docs/examples/illum_sensor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/examples/illum_sensor/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;/docs/leaf/ai01a/&#34;&gt;4-Sensorsリーフ&lt;/a&gt;に搭載された&lt;strong&gt;照度センサ&lt;/strong&gt;、の値を読み取って、シリアルモニタに表示するサンプルです。&lt;/p&gt;
+&lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
+&lt;p&gt;以下のリーフを使用します&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Name&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AI01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;4-Sensors&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AP01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;AVR MCU&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AZ01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;USB&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AV01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CR2032&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AZ62A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;コネクタカバー&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CR2032 コイン電池&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;M2ネジ&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
+&lt;p&gt;下図を参考にリーフを組み立ててみましょう。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./environment_assemble.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
+&lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++:illum.ino&#34; data-lang=&#34;c++:illum.ino&#34;&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;Wire.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;ClosedCube_OPT3001.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define OPT3001_ADDRESS 0x45      &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// ADDR pin = VCC
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;ClosedCube_OPT3001&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;illum&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;float&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;dataIllum&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;Serial&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;begin&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;115200&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// UART 115200bps
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;Wire&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;begin&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;               &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// I2C 100KHz
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+
+  &lt;span style=&#34;color:#000&#34;&gt;OPT3001_Config&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;illumConfig&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;OPT3001_ErrorCode&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;illumErrorConfig&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+
+  &lt;span style=&#34;color:#000&#34;&gt;illum&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;begin&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;OPT3001_ADDRESS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+
+  &lt;span style=&#34;color:#000&#34;&gt;illumConfig&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;RangeNumber&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;B1100&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;               &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// automatic full scale
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;illumConfig&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ConvertionTime&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;B1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;               &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// convertion time = 800ms
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;illumConfig&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ModeOfConversionOperation&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;B11&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;   &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// continous conversion
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;illumConfig&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Latch&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;B0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;                        &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// hysteresis-style
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;illumErrorConfig&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;illum&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;writeConfig&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;illumConfig&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;illumErrorConfig&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;!=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;NO_ERROR&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;){&lt;/span&gt;
+    &lt;span style=&#34;color:#000&#34;&gt;illumErrorConfig&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;illum&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;writeConfig&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;illumConfig&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;   &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//retry
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;loop&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#000&#34;&gt;OPT3001&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;illum&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;readResult&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+
+    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;if&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;result&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;error&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;NO_ERROR&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;){&lt;/span&gt;
+      &lt;span style=&#34;color:#000&#34;&gt;dataIllum&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;result&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;lux&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+    &lt;span style=&#34;color:#000&#34;&gt;Serial&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Lum[lx] = &amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;String&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;dataIllum&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;));&lt;/span&gt;
+
+    &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ソースコードのビルド&#34;&gt;ソースコードのビルド&lt;/h3&gt;
+&lt;p&gt;4-Sensors リーフを使うためにはライブラリのインストールが必要です。
+まだインストールしていない場合は&lt;a href=&#34;/docs/environment/basic/&#34;&gt;こちら&lt;/a&gt;のページを参考にライブラリをインストールしてください。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 加速度センサ読み取り</title>
+      <link>/docs/examples/accelerometer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/examples/accelerometer/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;/docs/leaf/ai01a/&#34;&gt;4-Sensorsリーフ&lt;/a&gt;に搭載された&lt;strong&gt;加速度センサ&lt;/strong&gt;、の値を読み取って、シリアルモニタに表示するサンプルです。&lt;/p&gt;
+&lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
+&lt;p&gt;以下のリーフを使用します&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Name&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AI01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;4-Sensors&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AP01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;AVR MCU&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AZ01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;USB&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AV01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CR2032&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AZ62A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;コネクタカバー&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CR2032 コイン電池&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;M2ネジ&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
+&lt;p&gt;下図を参考にリーフを組み立ててみましょう。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./environment_assemble.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
+&lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;ソースコードのビルド&#34;&gt;ソースコードのビルド&lt;/h3&gt;
+&lt;p&gt;4-Sensors リーフを使うためにはライブラリのインストールが必要です。
+まだインストールしていない場合は&lt;a href=&#34;/docs/environment/basic/&#34;&gt;こちら&lt;/a&gt;のページを参考にライブラリをインストールしてください。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Web BluetoothをつかったIoTアプリ入門</title>
+      <link>/docs/examples/webbluetooth_iot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/examples/webbluetooth_iot/</guid>
+      <description>
+        
+        
+        &lt;p&gt;AVR MCUリーフに搭載されたLEDを1秒ごとに点灯、消灯を繰り返します。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ここに動作のイメージ図を載せる&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
+&lt;p&gt;以下のリーフを使用します&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Name&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AP01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;AVR MCU&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AZ01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;USB&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AV01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CR2032&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AZ62A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;コネクタカバー&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CR2032 コイン電池&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;M2ネジ&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
+&lt;p&gt;下図のようにリーフを組み立てましょう。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./brink_assemble.png&#34; alt=&#34;assemble1&#34;&gt;
+&lt;img src=&#34;./brink_assemble2.png&#34; alt=&#34;assemble2&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
+&lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// LEDピンを出力ピンに設定
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;pinMode&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LED_BUILTIN&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;OUTPUT&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;loop&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;digitalWrite&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LED_BUILTIN&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;HIGH&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;   &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// LEDを点灯
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;                       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 1秒待つ
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;digitalWrite&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LED_BUILTIN&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;LOW&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;    &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// LEDを消灯
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;                       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 1秒待つ
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Google SheetsをつかったIoTサービス入門</title>
+      <link>/docs/examples/google_sheets_iot/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/examples/google_sheets_iot/</guid>
+      <description>
+        
+        
+        &lt;p&gt;AVR MCUリーフに搭載されたLEDを1秒ごとに点灯、消灯を繰り返します。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;ここに動作のイメージ図を載せる&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
+&lt;p&gt;以下のリーフを使用します&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Name&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AP01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;AVR MCU&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AZ01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;USB&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AV01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CR2032&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AZ62A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;コネクタカバー&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CR2032 コイン電池&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;M2ネジ&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
+&lt;p&gt;下図のようにリーフを組み立てましょう。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./brink_assemble.png&#34; alt=&#34;assemble1&#34;&gt;
+&lt;img src=&#34;./brink_assemble2.png&#34; alt=&#34;assemble2&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
+&lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// LEDピンを出力ピンに設定
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;pinMode&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LED_BUILTIN&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;OUTPUT&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;loop&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;digitalWrite&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LED_BUILTIN&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;HIGH&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;   &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// LEDを点灯
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;                       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 1秒待つ
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;digitalWrite&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LED_BUILTIN&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;LOW&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;    &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// LEDを消灯
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;                       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 1秒待つ
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: スピーカ</title>
+      <link>/docs/examples/speaker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/examples/speaker/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: サウンドレベルメータ</title>
+      <link>/docs/examples/sound_level/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/examples/sound_level/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 人感センサ</title>
+      <link>/docs/examples/ir_sensor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/examples/ir_sensor/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;SP&amp;amp;PIR(圧電スピーカと人感センサ）に接近すると、人感センサが検知し、圧電スピーカからビープ音（メロディ）が鳴ります。
+&lt;img src=&#34;./ir_about.png&#34; alt=&#34;ir_about&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
+&lt;p&gt;以下のリーフを使用します&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Name&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AI02A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;SP&amp;amp;PIR&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AP01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;AVR MCU&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AZ01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;USB&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AV01A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CR2032&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;AZ62A&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;コネクタカバー&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;CR2032 コイン電池&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;M2ネジ&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
+&lt;p&gt;下図のようにリーフを組み立てましょう。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./ir_assemble.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/blob/master/PIR_Beep_test/PIR_Beep_test.ino&#34;&gt;Github&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: LCD</title>
+      <link>/docs/examples/lcd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/examples/lcd/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: リアルタイムクロック</title>
+      <link>/docs/examples/rtc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/examples/rtc/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Micro SD</title>
+      <link>/docs/examples/microsd/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/examples/microsd/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
   </channel>
 </rss>

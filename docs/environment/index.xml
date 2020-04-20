@@ -1,0 +1,117 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leafony – 開発環境設定</title>
+    <link>/docs/environment/</link>
+    <description>Recent content in 開発環境設定 on Leafony</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/environment/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Basic Kit</title>
+      <link>/docs/environment/basic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/environment/basic/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;arduino-ideのインストール&#34;&gt;Arduino IDEのインストール&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.arduino.cc/&#34;&gt;Arduino ホームページ&lt;/a&gt;から「SOFTWARE」→「DOWNLOADS」をクリックし、Arduino IDE インストーラをダウンロードする。下記赤枠はWindowsの例。&lt;/p&gt;
+&lt;img src=&#34;./IDE_DL.jpg&#34;&gt;
+&lt;p&gt;寄付しない場合はJUST DOWNLOADをクリックする。&lt;/p&gt;
+&lt;img src=&#34;./IDE_Contri.jpg&#34;&gt;
+&lt;h2 id=&#34;ボード設定&#34;&gt;ボード設定&lt;/h2&gt;
+&lt;p&gt;「ツール」 →「 ボード」から、”Arduino Pro or Pro Mini”と”ATmega328P(3.3V,8MHz)”を選択。&lt;/p&gt;
+&lt;img src=&#34;./IDE_ATmega.jpg&#34;&gt;
+&lt;p&gt;シリアルポートの選択
+「ツール」→「 シリアルポート」から、COM番号を選択&lt;/p&gt;
+&lt;img src=&#34;./IDE_COM.jpg&#34;&gt;
+&lt;h2 id=&#34;leafonyにプログラムを書き込む&#34;&gt;Leafonyにプログラムを書き込む&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Basic Kitを組み立てる&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;./blink_assemble.png&#34;&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;「ファイル」→「スケッチ例」→「01.Basics」→「Blink」&lt;/li&gt;
+&lt;li&gt;「マイコンボードに書き込む」ボタンを押す&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;ライブラリのインストール&#34;&gt;ライブラリのインストール&lt;/h2&gt;
+&lt;p&gt;Arduinoのライブラリは、通常以下の2カ所に保存されている。
+1）&lt;code&gt;C:\Program Files (x86)\Arduino\libraries&lt;/code&gt;
+2）&lt;code&gt;C:\Users\ユーザ名\Documents\Arduino\libraries&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Arduino IDE をインストールした時、1）にライブラリが保存される。（Arduino IDE Standard Libraries） また、GitHubなどからダウンロードしたライブラリ（ZIPファイル）は、「スケッチ」→「ライブラリをインクルード」→「.ZIP形式のライブラリをインストール」を選択することで、 2)に保存される。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. Githubからライブラリをダウンロード&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;「Clone or download」→「Download ZIP」をクリックする。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./github_1.png&#34; alt=&#34;github&#34;&gt;
+&lt;img src=&#34;./github_2.png&#34; alt=&#34;github&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. ライブラリのインクルード&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Arduinoを立ち上げ、スケッチ→ライブラリをインクルード→ZIP形式のライブラリうをインストールの順に選択して保存する。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./IDE_libinclude.png&#34; alt=&#34;include&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;トラブルシューティング&#34;&gt;トラブルシューティング&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;USBシリアル変換ボードのデバイスドライバが見つからない場合&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;USBシリアル変換ドライバーをインストールすることで、AVR MCUへの書き込みが可能。Aruduino UNOと異なるため、要注意。
+&lt;a href=&#34;http://www.ftdichip.com/Drivers/VCP.htm&#34;&gt;FTDI VCP Driverサイト&lt;/a&gt;からsetup executableをクリックしてインストールファイルをダウンロードし実行する。&lt;/p&gt;
+&lt;img src=&#34;./FTDI_DL.jpg&#34;&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ESP32 Wi-Fi Kit</title>
+      <link>/docs/environment/esp32/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/environment/esp32/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;arduino-ideのインストール&#34;&gt;Arduino IDEのインストール&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.arduino.cc/&#34;&gt;Arduino ホームページ&lt;/a&gt;から「SOFTWARE」→「DOWNLOADS」をクリックし、Arduino IDE インストーラをダウンロードする。下記赤枠はWindowsの例。&lt;/p&gt;
+&lt;img src=&#34;./IDE_DL.jpg&#34;&gt;
+&lt;p&gt;寄付しない場合はJUST DOWNLOADをクリックする。&lt;/p&gt;
+&lt;img src=&#34;./IDE_Contri.jpg&#34;&gt;
+&lt;h2 id=&#34;ボード設定&#34;&gt;ボード設定&lt;/h2&gt;
+&lt;p&gt;ESP32 MCUをArduino IDEで使用するには、Arduino core for the ESP32 のインストールが必要です。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Arduino IDEのファイル→環境設定を開き、”追加のボードマネージャのURL:”に、下記URLを入力してください。
+&lt;code&gt;https://dl.espressif.com/dl/package_esp32_index.json&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;./ArduinoIDE_URL.png&#34;&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt;を選択し、”全て”の右側に”esp32″と入力し、esp32 by Espressifl Systemsが表示されるので”インストール”のボタンを押します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;./BoardManager_esp32.png&#34;&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;ツール→ボード→ESP32 Dev Moduleを選択すれば、ESP32 MCUが使えるようになります。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;サンプルデザインで動作確認&#34;&gt;サンプルデザインで動作確認&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;「ファイル」→「スケッチ例」→「01.Basics」→「Blink」&lt;/li&gt;
+&lt;li&gt;「マイコンボードに書き込む」ボタンを押す&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;ライブラリのインストール&#34;&gt;ライブラリのインストール&lt;/h2&gt;
+&lt;p&gt;Arduinoのライブラリは、通常以下の2カ所に保存されている。
+1）&lt;code&gt;C:\Program Files (x86)\Arduino\libraries&lt;/code&gt;
+2）&lt;code&gt;C:\Users\ユーザ名\Documents\Arduino\libraries&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Arduino IDE をインストールした時、1）にライブラリが保存される。（Arduino IDE Standard Libraries） また、GitHubなどからダウンロードしたライブラリ（ZIPファイル）は、「スケッチ」→「ライブラリをインクルード」→「.ZIP形式のライブラリをインストール」を選択することで、 2)に保存される。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. Githubからライブラリをダウンロード&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;「Clone or download」→「Download ZIP」をクリックする。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./github_1.png&#34; alt=&#34;github&#34;&gt;
+&lt;img src=&#34;./github_2.png&#34; alt=&#34;github&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2. ライブラリのインクルード&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Arduinoを立ち上げ、スケッチ→ライブラリをインクルード→ZIP形式のライブラリうをインストールの順に選択して保存する。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./IDE_libinclude.png&#34; alt=&#34;include&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

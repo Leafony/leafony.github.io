@@ -1,0 +1,1989 @@
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.69.0" />
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/en/docs/leaf/index.xml">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>リーフ資料 | Leafony</title><meta property="og:title" content="リーフ資料" />
+<meta property="og:description" content="各リーフの技術資料(test)
+" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/en/docs/leaf/" />
+<meta property="og:site_name" content="Leafony" />
+<meta itemprop="name" content="リーフ資料">
+<meta itemprop="description" content="各リーフの技術資料(test)
+"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="リーフ資料"/>
+<meta name="twitter:description" content="各リーフの技術資料(test)
+"/>
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.df56c929024b3d9666383e2051ce5b2c40bbcc1771c8ca30622b22efe754ec4e.css" as="style">
+<link href="/scss/main.min.df56c929024b3d9666383e2051ce5b2c40bbcc1771c8ca30622b22efe754ec4e.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+    <title>リーフ資料 | Leafony</title>
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/en/">
+		<span class="navbar-logo"></span><span class="text-uppercase font-weight-bold">Leafony</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/en/about/" ><span>About</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/en/docs/" ><span class="active">Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="https://github.com/leafony" target="_blank" ><span>Github</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/docs/leaf/">Japanese</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	English
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/docs/leaf/">Japanese</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentation</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="endocs">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/overview/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Overview</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsoverview">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/getting-started/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Getting Started</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsgetting-started">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsgetting-startedexample-page" href="/en/docs/getting-started/example-page/">Example Page</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/examples/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Examples</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsexamples">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/concepts/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Concepts</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsconcepts">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/tasks/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Core Tasks</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocstasks">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-endocstasksbeds" href="/en/docs/tasks/beds/">Bed and Chair Metrics</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-endocstasksporridge" href="/en/docs/tasks/porridge/">Porridge Assessment</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-endocstaskstask" href="/en/docs/tasks/task/">Another Task</a>
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/tasks/ponycopters/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Working with Ponycopters</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocstasksponycopters">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-endocstasksponycoptersconfiguring-ponycopters" href="/en/docs/tasks/ponycopters/configuring-ponycopters/">Configuring Ponycopters</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-endocstasksponycopterslaunching-ponycopters" href="/en/docs/tasks/ponycopters/launching-ponycopters/">Launching Ponycopters</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/tutorials/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Tutorials</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocstutorials">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-endocstutorialsmulti-bear" href="/en/docs/tutorials/multi-bear/">Multi-Bear Domicile Setup</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-endocstutorialstutorial2" href="/en/docs/tutorials/tutorial2/">Another Tutorial</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/reference/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Reference</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsreference">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsreferenceparameter-reference" href="/en/docs/reference/parameter-reference/">Parameter Reference</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/contribution-guidelines/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Contribution Guidelines</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocscontribution-guidelines">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/" class="align-left pl-0 pr-2 collapsed active td-sidebar-link td-sidebar-link__section">リーフ資料</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleaf">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/leafonybus/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Leafony bus</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafleafonybus">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/ai01a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">4-Sensors</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafai01a">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsleafai01a_index-2" href="/en/docs/leaf/ai01a/_index-2/">4-Sensors</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/ap01a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">AVR MCU</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafap01a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/ac03a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LoRa Easy</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafac03a">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsleafac03a_index-2" href="/en/docs/leaf/ac03a/_index-2/">LoRa Easy</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/ai02a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">SP&amp;PIR</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafai02a">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsleafai02a_index_2" href="/en/docs/leaf/ai02a/_index_2/">SP&amp;PIR</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/ap02a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 MCU</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafap02a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/pcb_template/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">基板設計テンプレート</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafpcb_template">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/ac02a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">BLE Sugar</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafac02a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/ai03a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">MIC&amp;VR&amp;LED</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafai03a">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsleafai03a_index_2" href="/en/docs/leaf/ai03a/_index_2/">MIC&amp;VR&amp;LED</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/ai04a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LCD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafai04a">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsleafai04a_index_2" href="/en/docs/leaf/ai04a/_index_2/">LCD</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/av01a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">CR2032</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafav01a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/av02a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">CR2450</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafav02a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/av03a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">AA BAT</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafav03a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/av04a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">2V～4.5V</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafav04a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/ax01a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Shield</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafax01a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/ax02a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">29 pin</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafax02a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/ax03a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Leaf x2</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafax03a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/ax04a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Spacer</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafax04a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/ax05a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">I Meas</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafax05a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/ax06a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Grove&amp;5V</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafax06a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/ax07a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Back to back</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafax07a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/ax08a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">29pin header</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafax08a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/az61a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Connector</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafaz61a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/az01a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">USB</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafaz01a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/az62a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Connector Cover</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafaz62a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/az02a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">RTC&amp;MicroSD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafaz02a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/az63a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Nut Plate</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafaz63a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/az65a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Lowercase</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafaz65a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/az64a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Uppercase</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafaz64a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#leafony規格開発データ">Leafony規格・開発データ</a></li>
+    <li><a href="#プロセッサ">プロセッサ</a></li>
+    <li><a href="#通信">通信</a></li>
+    <li><a href="#io">IO</a></li>
+    <li><a href="#電源">電源</a></li>
+    <li><a href="#拡張">拡張</a></li>
+    <li><a href="#その他">その他</a></li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="/en/docs/">Documentation</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="/en/docs/leaf/">リーフ資料</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>リーフ資料</h1>
+	<div class="lead">各リーフの技術資料(test)</div>
+	<h2 id="leafony規格開発データ">Leafony規格・開発データ</h2>
+<div class="row">
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="leafonybus"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="leafonybus/leafony_bus_pin_assign.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="leafonybus">Leafony bus</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted"> </h6>
+      <p class="card-text text-truncate">Leafonyで使用される基板間インターフェイスです。</p></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="pcb_template"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="pcb_template/brd.png" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="pcb_template">基板設計テンプレート</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted"> </h6>
+      <p class="card-text text-truncate">PCB CAD向けテンプレートファイル</p></div>
+  </div>
+</div>
+<h2 id="プロセッサ">プロセッサ</h2>
+<div class="row">
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="ap01a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="ap01a/AP01A%20AVR%20MCU_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="ap01a">AVR MCU</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AP01A</h6>
+      <p class="card-text text-truncate">ATmega328Pを使用したリーフ。14個のデジタル入出力ピン（6個はPWM出力として使用可能）、6個のアナログ入力ピン、8MHz振動子、およびリセットボタンを備えています。 USB接続する場合はUSB を接続、ICSPを使用する場合はShield を接続します。 Arduino IDE使用時は、ボードをArduino Pro or Pro　Mini、プロセッサをATmega328P(3.3V,8MHz)選択。</p><a href="https://leafony.com/basic-kit-a-1-0/" target="_brank" class="badge badge-primary">Basic Kit</a></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="ap02a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="ap02a/AP02A%20ESP32%20MCU_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="ap02a">ESP32 MCU</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AP02A</h6>
+      <p class="card-text text-truncate">Espressif SystemsのXtensa Dual-Core 32-bit LX6 マイクロプロセッサ、技的認証済みWi-FiとBLEを内蔵したESP32-WROOM-32を搭載した32bit MCUリーフである。 無線の認証は、 FCC、CE-RED、IC、TELEC、KCC、SRRC、NCCを取得（Espressif Systems Data Sheet V2.9）。USB電源を供給して、VBUS(5V)電源として使用可能。</p><a href="https://leafony.com/esp32-wi-fi-kit-a1-0/" target="_brank" class="badge badge-warning">ESP32 Wi-Fi Kit</a></div>
+  </div>
+</div>
+<h2 id="通信">通信</h2>
+<div class="row">
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="ac02a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="ac02a/AC02A%20BLE%20Sugar_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="ac02a">BLE Sugar</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AC02A</h6>
+      <p class="card-text text-truncate">Silicon Labsの技的認証済みBLEモジュールBGM11S22F256GA-V2を搭載したリーフです。MCUリーフとはUARTで接続されます。無線の認証は、CE、FCC、ISED Canada、TELEC、KC South-Korea、NCC Taiwanを取得（SLICON LABS Module Data Sheet　Revision 1.2)。</p><a href="https://leafony.com/basic-kit-a-1-0/" target="_brank" class="badge badge-primary">Basic Kit</a></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="ac03a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="ac03a/AC03A%20LoRa%20Easy_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="ac03a">LoRa Easy</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AC03A</h6>
+      <p class="card-text text-truncate">EASELの技的認証済みLoRaモジュールES920LRA1を搭載したリーフです。MCUリーフとはUARTで接続されます。</p></div>
+  </div>
+</div>
+<h2 id="io">IO</h2>
+<div class="row">
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="ai01a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="ai01a/AI01A%204-Sensors_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="ai01a">4-Sensors</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AI01A</h6>
+      <p class="card-text text-truncate">温湿度センサ、照度センサ、加速度センサを搭載したリーフです。MCUリーフとはI2Cで接続されます。</p><a href="https://leafony.com/basic-kit-a-1-0/" target="_brank" class="badge badge-primary">Basic Kit</a></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="ai02a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="ai02a/AI02A%20SP&amp;PIR_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="ai02a">SP&amp;PIR</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AI02A</h6>
+      <p class="card-text text-truncate">圧電スピーカと人感センサを搭載したリーフです。圧電スピーカはPWM、人感センサはI2CでMCUリーフと接続されます。人感センサは接近検知アルゴリズムを内蔵しており、簡単な設定で接近を検知することが出来、接近検知時に割り込み信号を出力することが可能です。</p><a href="https://leafony.com/extension-kit-a1-0/" target="_brank" class="badge badge-secondary">Extension Kit</a></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="ai03a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="ai03a/AI03A%20MIC&amp;VR&amp;LED_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="ai03a">MIC&amp;VR&amp;LED</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AI03A</h6>
+      <p class="card-text text-truncate">MEMSマイク、ボリューム、LEDを搭載したリーフです。MEMSマイクとボリュームはアナログ入力ピン、LEDはデジタル出力ピンでMCUリーフと接続されます。低消費電力を実現するためI2C Expander を制御することにより電源をロードスイッチによりオフすることが可能です。</p><a href="https://leafony.com/extension-kit-a1-0/" target="_brank" class="badge badge-secondary">Extension Kit</a></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="ai04a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="ai04a/AI04A%20LCD_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="ai04a">LCD</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AI04A</h6>
+      <p class="card-text text-truncate">キャラクタLCDユニットとスイッチ2個を搭載したリーフです。LCDユニットはI2CでMCUリーフと接続される。スイッチはMCUのデジタル入力ピンとI2C ExpanderのP1ピンに接続されています。 低消費電力を実現するためI2C Expander を制御することにより電源をロードスイッチによりオフすることが可能です。</p><a href="https://leafony.com/extension-kit-a1-0/" target="_brank" class="badge badge-secondary">Extension Kit</a></div>
+  </div>
+</div>
+<h2 id="電源">電源</h2>
+<div class="row">
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="av01a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="av01a/AV01A%20CR2032_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="av01a">CR2032</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AV01A</h6>
+      <p class="card-text text-truncate">CR2032コイン電池ホルダを実装し、3Vの電池電圧を昇圧電源回路により3.3Vに変換し、3.3Vを各リーフに供給するリーフです。3.3Vをオン/オフするためのスイッチを実装しています。また、電池電圧をモニタするためのADコンバータを実装しています。</p><a href="https://leafony.com/basic-kit-a-1-0/" target="_brank" class="badge badge-primary">Basic Kit</a></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="av02a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="av02a/AV02A%20CR2450_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="av02a">CR2450</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AV02A</h6>
+      <p class="card-text text-truncate">CR2450コイン電池ホルダを実装し、3Vの電池電圧を昇圧電源回路により3.3Vに変換し、3.3Vを各リーフに供給するリーフです。3.3Vをオン/オフするためのスイッチを実装しています。また、電池電圧をモニタするためのADコンバータを実装しています。</p></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="av03a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="av03a/AV03A%20AA%20BAT_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="av03a">AA BAT</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AV03A</h6>
+      <p class="card-text text-truncate">単3電池ホルダを実装し、1.5Vの電池電圧を昇圧電源回路により3.3Vに変換し、3.3Vを各リーフに供給するリーフです。3.3Vをオン/オフするためのスイッチを実装しています。また、電池電圧をモニタするためのADコンバータを実装しています。</p><a href="https://leafony.com/extension-kit-a1-0/" target="_brank" class="badge badge-secondary">Extension Kit</a></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="av04a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="av04a/AV04A%202V%ef%bd%9e4.5V_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="av04a">2V～4.5V</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AV04A</h6>
+      <p class="card-text text-truncate">SHコネクタを実装し、2～4.5Vの電池電圧を昇降圧電源回路により3.3Vに変換し、3.3Vを各リーフに供給するリーフです。3.3Vをオン/オフするためのスイッチを実装しています。また、電池電圧をモニタするためのADコンバータを実装しています。 SHコネクタに接続可能な電池は乾電池2～3本またはLi-Po、Li-ION電池を想定しています。</p><a href="https://leafony.com/extension-kit-a1-0/" target="_brank" class="badge badge-secondary">Extension Kit</a></div>
+  </div>
+</div>
+<h2 id="拡張">拡張</h2>
+<div class="row">
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="ax01a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="ax01a/AX01A%20Shield_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="ax01a">Shield</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AX01A</h6>
+      <p class="card-text text-truncate">Arduino Shield接続用コネクタ、SWDコネクタ、ICSPコネクタ、リーフI/F3個を実装した拡張基板です。(Connectorは1つのみ）</p><a href="https://leafony.com/extension-kit-a1-0/" target="_brank" class="badge badge-secondary">Extension Kit</a></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="ax02a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="ax02a/AX02A%2029pin_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="ax02a">29pin</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AX02A</h6>
+      <p class="card-text text-truncate">リーフI/Fの29ピン全てをスルーホールに接続したリーフです。</p><a href="https://leafony.com/basic-kit-a-1-0/" target="_brank" class="badge badge-primary">Basic Kit</a></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="ax03a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="ax03a/AX03A%20Leaf%20%c3%972_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="ax03a">Leaf x2</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AX03A</h6>
+      <p class="card-text text-truncate">全てのリーフI/F端子を接続したリーフを横に接続するためのリーフです。</p><a href="https://leafony.com/extension-kit-a1-0/" target="_brank" class="badge badge-secondary">Extension Kit</a></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="ax04a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="ax04a/AX04A%20Spacer_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="ax04a">Spacer</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AX04A</h6>
+      <p class="card-text text-truncate">全てのリーフI/F端子を接続した高さが2mm以上ある部品を使用しているリーフの上に別のリーフを接続するためのリーフです。</p><a href="https://leafony.com/extension-kit-a1-0/" target="_brank" class="badge badge-secondary">Extension Kit</a></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="ax05a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="ax05a/AX05A%20I%20Meas._p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="ax05a">I Meas.</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AX05A</h6>
+      <p class="card-text text-truncate">3.3VおよびVBUSの消費電流を測定することが出来るリーフです。 電流測定リーフでは3.3VとVBUSは表面と裏面のパッドが電気的に切り離されているので、下記の各々スルーホールに電流計を接続することで、電池リーフから遠い部分にある単体リーフあるいは複数リーフ群の全電源電流を測定できます。下の例では、センサリーフとBLEリーフが電流測定リーフを介して、電池リーフの遠い側に配置されているので、両リーフの合計電流が測定できます。</p><a href="https://leafony.com/extension-kit-a1-0/" target="_brank" class="badge badge-secondary">Extension Kit</a></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="ax06a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="ax06a/AX06A%20Grove&amp;5V_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="ax06a">Grove&amp;5V</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AX06A</h6>
+      <p class="card-text text-truncate">Seeed Studio製 Groveシリーズに準拠する5Vで動作するUART、I2C、アナログ入力、デジタル入力が可能なリーフです。3.3Vから昇圧電源回路により5Vに変換しGroveに供給します。Grove対応ピンの仕様は以下の通り。 低消費電力を実現するためI2C Expander を制御することにより5Vの電源をオフすることが可能です。</p><a href="https://leafony.com/extension-kit-a1-0/" target="_brank" class="badge badge-secondary">Extension Kit</a></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="ax07a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="ax07a/AX07A%20Back%20to%20back_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="ax07a">Back to back</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AX07A</h6>
+      <p class="card-text text-truncate">全てのリーフI/F端子を接続したリーフを反転させて接続するためのリーフです。</p><a href="https://leafony.com/esp32-wi-fi-kit-a1-0/" target="_brank" class="badge badge-warning">ESP32 Wi-Fi Kit</a></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="ax08a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="ax08a/AX08A%2029pin%20header_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="ax08a">29pin header</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AX08A</h6>
+      <p class="card-text text-truncate">リーフI/Fの29ピン全てをピンヘッダに接続したリーフです。</p><a href="https://leafony.com/esp32-wi-fi-kit-a1-0/" target="_brank" class="badge badge-warning">ESP32 Wi-Fi Kit</a></div>
+  </div>
+</div>
+<h2 id="その他">その他</h2>
+<div class="row">
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="az01a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="az01a/AZ01A%20USB_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="az01a">USB</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AZ01A</h6>
+      <p class="card-text text-truncate">AVR MCU へのスケッチ書き込みやシリアルモニタを使用する場合に接続するリーフです。USB-UART変換ICとしてFTDI製FT232RQを搭載しています。USBのVBUS(5V)から降圧電源回路により3.3Vに変換し、各リーフにVBUSと3.3Vを供給します。</p><a href="https://leafony.com/basic-kit-a-1-0/" target="_brank" class="badge badge-primary">Basic Kit</a></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="az02a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="az02a/AZ02A%20RTC&amp;MicroSD_p_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="az02a">RTC&amp;microSD</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AZ02A</h6>
+      <p class="card-text text-truncate">NXPのReal-Time Clock PCF8523TKおよびMicro SDカードスロットを搭載したリーフです。RTCはアラームやタイマによりMCUに割り込み信号を出力することが可能です。micro SDカードはSPIでアクセスします。</p><a href="https://leafony.com/esp32-wi-fi-kit-a1-0/" target="_brank" class="badge badge-warning">ESP32 Wi-Fi Kit</a></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="az61a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="az61a/AZ61A%20Connector_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="az61a">Connector</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AZ61A</h6>
+      <p class="card-text text-truncate">Leafony Platformは、ACR (Anisotropic Conductive Rubber)を採用しています。ACRは、絶縁性シリコーンゴムに、金属又は導電性エラストマの導電部材が、狭ピッチで配列されており、圧縮されることで電気的接続が実現できます。</p></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="az62a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="az62a/AZ62A%20Connector%20Cover_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="az62a">Connector Cover</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AZ62A</h6>
+      <p class="card-text text-truncate">Connector Coverは、ACR (Anisotropic Conductive Rubber)に付着するゴミを防御することが出来ます。</p></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="az63a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="az63a/AZ63A%20Nut%20Plate_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="az63a">Nut Plate</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AZ63A</h6>
+      <p class="card-text text-truncate">Nut Plateは、リーフをネジで固定する時に使用します。市販の六角ナットを用いると基板の電極に触れて、ショートをおこすことがあるので要注意</p></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="az64a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="az64a/AZ64A%20Uppercase_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="az64a">Uppercase</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AZ64A</h6>
+      <p class="card-text text-truncate">ケース（上）</p><a href="https://leafony.com/basic-kit-a-1-0/" target="_brank" class="badge badge-primary">Basic Kit</a></div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <a href="az65a"><img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="az65a/AZ65A%20Lowercase_small.jpg" alt="Card image cap"></a>
+    <div class="card-body">
+      <h5 class="card-title"><a href="az65a">Lowercase</a></h5>
+      <h6 class="card-subtitle mb-2 text-muted">AZ65A</h6>
+      <p class="card-text text-truncate">ケース（下）</p><a href="https://leafony.com/basic-kit-a-1-0/" target="_brank" class="badge badge-primary">Basic Kit</a></div>
+  </div>
+</div>
+        <div class="section-index">
+    
+    
+    
+    
+    <hr class="panel-line">
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/leafonybus/">Leafony bus</a>
+                    </h5>
+                    <p>Leafony bus</p>
+                </div>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/ai01a/">AI01A 4-Sensors</a>
+                    </h5>
+                    <p>4-Sensors</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/ap01a/">AP01A AVR MCU</a>
+                    </h5>
+                    <p>AVR MCU Leaf</p>
+                </div>
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/ac03a/">AC03A LoRa Easy</a>
+                    </h5>
+                    <p>LoRa Easy Leaf</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/ai02a/">AI02A SP&amp;PIR</a>
+                    </h5>
+                    <p>SP&amp;PIR</p>
+                </div>
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/ap02a/">AP02A ESP32 MCU</a>
+                    </h5>
+                    <p>ESP32 MCU Leaf</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/pcb_template/">基板設計テンプレート</a>
+                    </h5>
+                    <p>基板設計テンプレートファイル</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/ac02a/">AC02A BLE Sugar</a>
+                    </h5>
+                    <p>BLE Sugar Leaf</p>
+                </div>
+            
+        
+            
+        
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/ai03a/">AI03A MIC&amp;VR&amp;LED</a>
+                    </h5>
+                    <p>MIC&amp;VR&amp;LED</p>
+                </div>
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/ai04a/">AI04A LCD</a>
+                    </h5>
+                    <p>LCD</p>
+                </div>
+            
+        
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/av01a/">AV01A CR2032</a>
+                    </h5>
+                    <p>CR2032 Leaf</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/av02a/">AV02A CR2450</a>
+                    </h5>
+                    <p>CR2450 Leaf</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/av03a/">AV03A AA BAT</a>
+                    </h5>
+                    <p>AA BAT Leaf</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/av04a/">AV04A 2V～4.5V</a>
+                    </h5>
+                    <p>2V～4.5V Leaf</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/ax01a/">AX01A Shield</a>
+                    </h5>
+                    <p>Arduino Shield接続用コネクタ</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/ax02a/">AX02A 29 pin</a>
+                    </h5>
+                    <p>29 pin</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/ax03a/">AX03A Leaf x2</a>
+                    </h5>
+                    <p>Leaf x2リーフ</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/ax04a/">AX04A Spacer</a>
+                    </h5>
+                    <p>スペーサリーフ</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/ax05a/">AX05A I Meas</a>
+                    </h5>
+                    <p>電流測定用リーフ</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/ax06a/">AX06A Grove&amp;5V</a>
+                    </h5>
+                    <p>Grove接続リーフ</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/ax07a/">AX07A Back to back</a>
+                    </h5>
+                    <p>Back to back Leaf</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/ax08a/">AX08A 29pin header</a>
+                    </h5>
+                    <p>29pin header Leaf</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/az61a/">AZ61A Connector</a>
+                    </h5>
+                    <p>Connector</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/az01a/">AZ01A USB</a>
+                    </h5>
+                    <p>USB Leaf</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/az62a/">AZ62A Connector Cover</a>
+                    </h5>
+                    <p>Connector Cover</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/az02a/">AZ02A RTC&amp;MicroSD</a>
+                    </h5>
+                    <p>RTC&amp;MicroSD Leaf</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/az63a/">AZ63A Nut Plate</a>
+                    </h5>
+                    <p>Nut Plate</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/az65a/">AZ65A Lowercase</a>
+                    </h5>
+                    <p>Lowercase</p>
+                </div>
+            
+        
+            
+                <div class="entry">
+                    <h5>
+                        <a href="/en/docs/leaf/az64a/">AZ64A Uppercase</a>
+                    </h5>
+                    <p>Uppercase</p>
+                </div>
+            
+        
+            
+        
+            
+        
+            
+        
+    
+</div>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 20.04.2020: <a  href="/commit/fe3d48d0049a923cf20bd24f5364c82ea4fc659e">4/20追加U (fe3d48d)</a>
+</div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/Leafony">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Developer mailing list" aria-label="Developer mailing list">
+    <a class="text-white" target="_blank" href="https://example.org/mail">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2020 Trillion-Node Study Group All Rights Reserved</small>
+        
+	
+		<p class="mt-2"><a href="/en/about/">About Leafony</a></p>
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+<script src="/js/main.min.29b0315468c00226fa6f4556a9cebc0ac4fe1ce1457a01b22c0a06b329877383.js" integrity="sha256-KbAxVGjAAib6b0VWqc68CsT&#43;HOFFegGyLAoGsymHc4M=" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>

@@ -3,18 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/docs/leaf/ac02a/</loc>
-    <lastmod>2020-02-14T00:22:34+09:00</lastmod>
+    <loc>/docs/environment/basic/</loc>
+    <lastmod>2020-04-09T00:08:19+09:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/getting-started/basic/</loc>
-    <lastmod>2020-02-14T00:22:34+09:00</lastmod>
+    <lastmod>2020-02-16T22:15:12+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/leafonybus/</loc>
+    <lastmod>2020-03-18T02:37:02+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/leafonybus/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/leafonybus/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/examples/blink/</loc>
+    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/overview/</loc>
-    <lastmod>2020-02-12T15:25:48+09:00</lastmod>
+    <lastmod>2020-04-01T04:09:08+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -28,48 +48,18 @@
   </url>
   
   <url>
-    <loc>/docs/tasks/beds/</loc>
-    <lastmod>2020-02-12T03:37:21+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tasks/beds/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="/docs/tasks/beds/"
-                />
-  </url>
-  
-  <url>
-    <loc>/docs/tasks/ponycopters/configuring-ponycopters/</loc>
-    <lastmod>2020-02-12T03:37:21+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tasks/ponycopters/configuring-ponycopters/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="/docs/tasks/ponycopters/configuring-ponycopters/"
-                />
-  </url>
-  
-  <url>
-    <loc>/docs/leaf/ai01a/</loc>
-    <lastmod>2020-02-14T00:22:34+09:00</lastmod>
+    <loc>/docs/environment/esp32/</loc>
+    <lastmod>2020-04-09T00:08:19+09:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/getting-started/esp32/</loc>
-    <lastmod>2020-02-14T00:22:34+09:00</lastmod>
+    <lastmod>2020-04-09T00:20:16+09:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/getting-started/</loc>
-    <lastmod>2020-02-14T00:22:34+09:00</lastmod>
+    <lastmod>2020-03-14T00:50:37+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -83,23 +73,18 @@
   </url>
   
   <url>
-    <loc>/docs/tasks/ponycopters/launching-ponycopters/</loc>
-    <lastmod>2020-02-12T03:37:21+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tasks/ponycopters/launching-ponycopters/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="/docs/tasks/ponycopters/launching-ponycopters/"
-                />
+    <loc>/docs/overview/terms/</loc>
+    <lastmod>2020-03-11T08:01:38+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/environment/</loc>
+    <lastmod>2020-04-01T09:36:25+09:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/examples/</loc>
-    <lastmod>2020-02-14T00:22:34+09:00</lastmod>
+    <lastmod>2020-04-20T15:51:22+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -113,168 +98,133 @@
   </url>
   
   <url>
-    <loc>/docs/tutorials/multi-bear/</loc>
-    <lastmod>2020-02-12T03:37:21+09:00</lastmod>
+    <loc>/docs/leaf/ai01a/</loc>
+    <lastmod>2020-04-17T05:56:07+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/docs/tutorials/multi-bear/"
+                href="/en/docs/leaf/ai01a/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
-                href="/docs/tutorials/multi-bear/"
+                href="/docs/leaf/ai01a/"
                 />
   </url>
   
   <url>
-    <loc>/docs/tasks/porridge/</loc>
-    <lastmod>2020-02-12T03:37:21+09:00</lastmod>
+    <loc>/docs/leaf/ap01a/</loc>
+    <lastmod>2020-04-17T05:56:07+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/docs/tasks/porridge/"
+                href="/en/docs/leaf/ap01a/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
-                href="/docs/tasks/porridge/"
+                href="/docs/leaf/ap01a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/ac03a/</loc>
+    <lastmod>2020-04-17T05:56:07+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/ac03a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/ac03a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/ai02a/</loc>
+    <lastmod>2020-04-17T05:56:07+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/ai02a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/ai02a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/examples/read_battery/</loc>
+    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/ap02a/</loc>
+    <lastmod>2020-04-17T05:56:07+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/ap02a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/ap02a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/pcb_template/</loc>
+    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/pcb_template/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/pcb_template/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/ac02a/</loc>
+    <lastmod>2020-04-20T11:16:48+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/ac02a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/ac02a/"
                 />
   </url>
   
   <url>
     <loc>/docs/leaf/</loc>
-    <lastmod>2020-02-14T00:22:34+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/tasks/task/</loc>
-    <lastmod>2020-02-12T03:37:21+09:00</lastmod>
+    <lastmod>2020-04-17T17:37:27+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/docs/tasks/task/"
+                href="/en/docs/leaf/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
-                href="/docs/tasks/task/"
-                />
-  </url>
-  
-  <url>
-    <loc>/docs/tutorials/tutorial2/</loc>
-    <lastmod>2020-02-12T03:37:21+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tutorials/tutorial2/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="/docs/tutorials/tutorial2/"
-                />
-  </url>
-  
-  <url>
-    <loc>/docs/tutorials/</loc>
-    <lastmod>2020-02-12T15:25:48+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tutorials/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="/docs/tutorials/"
-                />
-  </url>
-  
-  <url>
-    <loc>/docs/license/</loc>
-    <lastmod>2020-02-14T00:45:01+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/reference/</loc>
-    <lastmod>2020-02-14T00:45:01+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/reference/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="/docs/reference/"
-                />
-  </url>
-  
-  <url>
-    <loc>/docs/contribution-guidelines/</loc>
-    <lastmod>2020-02-14T00:45:01+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/contribution-guidelines/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="/docs/contribution-guidelines/"
-                />
-  </url>
-  
-  <url>
-    <loc>/docs/tasks/</loc>
-    <lastmod>2020-02-14T00:45:01+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/docs/tasks/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="/docs/tasks/"
-                />
-  </url>
-  
-  <url>
-    <loc>/blog/news/</loc>
-    <lastmod>2020-02-12T03:37:21+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/blog/news/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="/blog/news/"
-                />
-  </url>
-  
-  <url>
-    <loc>/blog/releases/</loc>
-    <lastmod>2020-02-12T03:37:21+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/blog/releases/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="/blog/releases/"
+                href="/docs/leaf/"
                 />
   </url>
   
   <url>
     <loc>/docs/</loc>
-    <lastmod>2020-02-12T15:25:48+09:00</lastmod>
+    <lastmod>2020-03-14T20:58:45+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -288,77 +238,392 @@
   </url>
   
   <url>
-    <loc>/blog/2018/10/06/easy-documentation-with-docsy/</loc>
-    <lastmod>2020-02-12T03:37:21+09:00</lastmod>
+    <loc>/docs/examples/temp_humid_sensors/</loc>
+    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/ac03a/_index-2/</loc>
+    <lastmod>2020-04-15T10:09:26+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/blog/2018/10/06/easy-documentation-with-docsy/"
+                href="/en/docs/leaf/ac03a/_index-2/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
-                href="/blog/2018/10/06/easy-documentation-with-docsy/"
+                href="/docs/leaf/ac03a/_index-2/"
                 />
   </url>
   
   <url>
-    <loc>/blog/2018/10/06/the-second-blog-post/</loc>
-    <lastmod>2020-02-12T03:37:21+09:00</lastmod>
+    <loc>/docs/examples/illum_sensor/</loc>
+    <lastmod>2020-04-17T05:40:11+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/examples/accelerometer/</loc>
+    <lastmod>2020-04-17T05:40:11+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/examples/webbluetooth_iot/</loc>
+    <lastmod>2020-03-18T02:37:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/ai03a/</loc>
+    <lastmod>2020-04-17T05:56:07+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/blog/2018/10/06/the-second-blog-post/"
+                href="/en/docs/leaf/ai03a/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
-                href="/blog/2018/10/06/the-second-blog-post/"
+                href="/docs/leaf/ai03a/"
                 />
   </url>
   
   <url>
-    <loc>/blog/2018/01/04/another-great-release/</loc>
-    <lastmod>2020-02-12T03:37:21+09:00</lastmod>
+    <loc>/docs/leaf/ai04a/</loc>
+    <lastmod>2020-04-17T05:56:07+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/blog/2018/01/04/another-great-release/"
+                href="/en/docs/leaf/ai04a/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
-                href="/blog/2018/01/04/another-great-release/"
+                href="/docs/leaf/ai04a/"
                 />
   </url>
   
   <url>
-    <loc>/docs/reference/parameter-reference/</loc>
-    <lastmod>2020-02-12T03:37:21+09:00</lastmod>
+    <loc>/docs/leaf/av01a/</loc>
+    <lastmod>2020-04-17T05:56:07+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/docs/reference/parameter-reference/"
+                href="/en/docs/leaf/av01a/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
-                href="/docs/reference/parameter-reference/"
+                href="/docs/leaf/av01a/"
                 />
   </url>
   
   <url>
-    <loc>/docs/tasks/ponycopters/</loc>
-    <lastmod>2020-02-12T03:37:21+09:00</lastmod>
+    <loc>/docs/examples/google_sheets_iot/</loc>
+    <lastmod>2020-03-18T02:37:02+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/license/</loc>
+    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/av02a/</loc>
+    <lastmod>2020-04-17T11:32:56+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/docs/tasks/ponycopters/"
+                href="/en/docs/leaf/av02a/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
-                href="/docs/tasks/ponycopters/"
+                href="/docs/leaf/av02a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/av03a/</loc>
+    <lastmod>2020-04-17T11:32:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/av03a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/av03a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/av04a/</loc>
+    <lastmod>2020-04-17T11:32:56+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/av04a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/av04a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/ax01a/</loc>
+    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/ax01a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/ax01a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/ax02a/</loc>
+    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/ax02a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/ax02a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/examples/speaker/</loc>
+    <lastmod>2020-04-21T04:21:54+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/ax03a/</loc>
+    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/ax03a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/ax03a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/examples/sound_level/</loc>
+    <lastmod>2020-04-21T04:21:54+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/ax04a/</loc>
+    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/ax04a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/ax04a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/examples/ir_sensor/</loc>
+    <lastmod>2020-04-21T04:21:54+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/ax05a/</loc>
+    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/ax05a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/ax05a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/examples/lcd/</loc>
+    <lastmod>2020-04-21T04:21:54+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/ax06a/</loc>
+    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/ax06a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/ax06a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/examples/rtc/</loc>
+    <lastmod>2020-04-21T04:21:54+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/ax07a/</loc>
+    <lastmod>2020-04-17T11:02:28+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/ax07a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/ax07a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/examples/microsd/</loc>
+    <lastmod>2020-04-21T04:21:54+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/ax08a/</loc>
+    <lastmod>2020-04-17T11:02:28+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/ax08a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/ax08a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/az61a/</loc>
+    <lastmod>2020-04-17T12:27:20+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/az61a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/az61a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/az01a/</loc>
+    <lastmod>2020-04-17T11:48:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/az01a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/az01a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/az62a/</loc>
+    <lastmod>2020-04-17T12:27:20+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/az62a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/az62a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/az02a/</loc>
+    <lastmod>2020-04-17T11:48:00+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/az02a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/az02a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/az63a/</loc>
+    <lastmod>2020-04-17T12:27:20+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/az63a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/az63a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/az65a/</loc>
+    <lastmod>2020-04-17T12:27:20+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/az65a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/az65a/"
+                />
+  </url>
+  
+  <url>
+    <loc>/docs/leaf/az64a/</loc>
+    <lastmod>2020-04-17T12:27:20+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/leaf/az64a/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/leaf/az64a/"
                 />
   </url>
   
@@ -378,38 +643,8 @@
   </url>
   
   <url>
-    <loc>/about/</loc>
-    <lastmod>2020-02-14T02:18:42+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/about/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="/about/"
-                />
-  </url>
-  
-  <url>
-    <loc>/community/</loc>
-    <lastmod>2020-02-12T15:43:43+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/community/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="/community/"
-                />
-  </url>
-  
-  <url>
     <loc>/</loc>
-    <lastmod>2020-02-12T15:25:48+09:00</lastmod>
+    <lastmod>2020-04-09T00:10:13+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -419,21 +654,6 @@
                 rel="alternate"
                 hreflang="jp"
                 href="/"
-                />
-  </url>
-  
-  <url>
-    <loc>/blog/</loc>
-    <lastmod>2020-02-12T15:25:48+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="/en/blog/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="/blog/"
                 />
   </url>
   

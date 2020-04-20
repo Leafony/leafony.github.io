@@ -1,0 +1,1627 @@
+<!doctype html>
+<html lang="jp" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.69.0" />
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/leaf/pcb_template/index.xml">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>基板設計テンプレート | Leafony</title><meta property="og:title" content="基板設計テンプレート" />
+<meta property="og:description" content="基板設計テンプレートファイル
+" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/docs/leaf/pcb_template/" />
+<meta property="og:site_name" content="Leafony" />
+<meta itemprop="name" content="基板設計テンプレート">
+<meta itemprop="description" content="基板設計テンプレートファイル
+"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="基板設計テンプレート"/>
+<meta name="twitter:description" content="基板設計テンプレートファイル
+"/>
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.df56c929024b3d9666383e2051ce5b2c40bbcc1771c8ca30622b22efe754ec4e.css" as="style">
+<link href="/scss/main.min.df56c929024b3d9666383e2051ce5b2c40bbcc1771c8ca30622b22efe754ec4e.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+    <title>基板設計テンプレート | Leafony</title>
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo"></span><span class="text-uppercase font-weight-bold">Leafony</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/docs/" ><span class="active">技術資料</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="https://github.com/leafony" target="_blank" ><span>Github</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Japanese
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/en/docs/leaf/pcb_template/">English</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Japanese
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/en/docs/leaf/pcb_template/">English</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">技術資料</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docs">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/overview/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">はじめに</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsoverview">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/overview/terms/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">用語の説明</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsoverviewterms">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/getting-started/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">クイックスタート</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsgetting-started">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/getting-started/basic/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic Kit A1.0</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsgetting-startedbasic">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/getting-started/esp32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 Wi-Fi Kit A1.0</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsgetting-startedesp32">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">開発環境設定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironment">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/basic/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironmentbasic">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/esp32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 Wi-Fi Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironmentesp32">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">サンプルデザイン</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamples">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/blink/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LED点滅</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesblink">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesread_battery">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/temp_humid_sensors/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">温湿度センサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplestemp_humid_sensors">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/illum_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">照度センサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesillum_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/accelerometer/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">加速度センサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesaccelerometer">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/webbluetooth_iot/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Web Bluetooth</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleswebbluetooth_iot">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/google_sheets_iot/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Google Sheets</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesgoogle_sheets_iot">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/speaker/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">スピーカ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesspeaker">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/sound_level/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">サウンドレベルメータ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplessound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/ir_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">人感センサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesir_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/lcd/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LCD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleslcd">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/rtc/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">リアルタイムクロック</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesrtc">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/microsd/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Micro SD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesmicrosd">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">リーフ資料</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsleaf">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/leafonybus/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Leafony bus</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafleafonybus">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ai01a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">4-Sensors</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafai01a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ap01a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">AVR MCU</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafap01a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ac03a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LoRa Easy</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafac03a">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsleafac03a_index-2" href="/docs/leaf/ac03a/_index-2/">LoRa Easy</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ai02a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">SP&amp;PIR</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafai02a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ap02a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 MCU</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafap02a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/pcb_template/" class="align-left pl-0 pr-2 collapsed active td-sidebar-link td-sidebar-link__section">基板設計テンプレート</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafpcb_template">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ac02a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">BLE Sugar</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafac02a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ai03a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">MIC&amp;VR&amp;LED</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafai03a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ai04a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LCD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafai04a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/av01a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">CR2032</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafav01a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/av02a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">CR2450</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafav02a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/av03a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">AA BAT</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafav03a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/av04a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">2V～4.5V</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafav04a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ax01a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Shield</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafax01a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ax02a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">29 pin</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafax02a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ax03a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Leaf x2</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafax03a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ax04a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Spacer</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafax04a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ax05a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">I Meas</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafax05a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ax06a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Grove&amp;5V</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafax06a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ax07a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Back to back</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafax07a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ax08a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">29pin header</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafax08a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/az61a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Connector</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafaz61a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/az01a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">USB</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafaz01a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/az62a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Connector Cover</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafaz62a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/az02a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">RTC&amp;MicroSD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafaz02a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/az63a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Nut Plate</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafaz63a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/az65a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Lowercase</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafaz65a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/az64a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Uppercase</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafaz64a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/license/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ライセンス・規約</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docslicense">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="/docs/">技術資料</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="/docs/leaf/">リーフ資料</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="/docs/leaf/pcb_template/">基板設計テンプレート</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>基板設計テンプレート</h1>
+	<div class="lead">基板設計テンプレートファイル</div>
+	<p>Leafonyの基板設計にはCADテンプレートを用いると便利です。
+各CADごとの利用方法は下記をご覧ください。</p>
+<h2 id="kicad">KiCad</h2>
+<p><a href="https://github.com/Leafony/cad-template">https://github.com/Leafony/cad-template</a></p>
+
+        <div class="section-index">
+    
+    
+    
+    
+    <hr class="panel-line">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    
+</div>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 16, 2020: <a  href="/commit/5064687c52dcab59d00f39cf93245f67720f78f6">merge (5064687)</a>
+</div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/Leafony">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Developer mailing list" aria-label="Developer mailing list">
+    <a class="text-white" target="_blank" href="https://example.org/mail">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2020 Trillion-Node Study Group All Rights Reserved</small>
+        
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+<script src="/js/main.min.29b0315468c00226fa6f4556a9cebc0ac4fe1ce1457a01b22c0a06b329877383.js" integrity="sha256-KbAxVGjAAib6b0VWqc68CsT&#43;HOFFegGyLAoGsymHc4M=" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>

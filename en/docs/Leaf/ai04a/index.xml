@@ -1,0 +1,104 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leafony – AI04A LCD</title>
+    <link>/en/docs/leaf/ai04a/</link>
+    <description>Recent content in AI04A LCD on Leafony</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/en/docs/leaf/ai04a/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: AI04A LCD</title>
+      <link>/en/docs/leaf/ai04a/_index_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/docs/leaf/ai04a/_index_2/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./AI04A LCD_f_large.jpg&#34;&gt;&lt;img src=&#34;./AI04A LCD_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AI04A LCD_b_large.jpg&#34;&gt;&lt;img src=&#34;./AI04A LCD_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AI04A LCD_p_large.jpg&#34;&gt;&lt;img src=&#34;./AI04A LCD_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;img src=&#34;./AI04A_block.png&#34; width=&#34;200&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;キャラクタLCDユニットとスイッチ2個を搭載したリーフです。LCDユニットはI2CでMCUリーフと接続されます。スイッチはMCUのデジタル入力ピンとI2C ExpanderのP1ピンに接続されています。 低消費電力化を実現するためI2C Expander を制御することにより電源をロードスイッチによりオフすることが可能です。&lt;/p&gt;
+&lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;center&#34;&gt;項目&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Display Format&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;8x2 Character&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Viewing Area (WxH)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;27x10.5mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Dot Size (WxH)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.45x0.5mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Dot Pitch (WxH)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;0.5x0.55mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Character Size (WxH)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2.45x4.35mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Character Pitch (WxH)&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;2.95x4.9mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Viewing Direction&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;6:00 O&amp;rsquo;Clock&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Driving Method&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;1/16Duty,1/5Bias&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Controller IC&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;ST7032I-0D(Sitronix) or compatible&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Display Mode&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;STN (Gray)/Positive/Reflective&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;center&#34;&gt;Interfaces&lt;/td&gt;
+&lt;td align=&#34;center&#34;&gt;I2C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;仕様書 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_%20LCD_SpecSheet_JA.pdf&#34;&gt;&lt;i class=&#34;fas fa-globe-americas ml-2 &#34;&gt;&lt;/i&gt; 日本語&lt;/a&gt; / &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_%20LCD_SpecSheet_EN.pdf&#34;&gt;&lt;i class=&#34;fas fa-globe-americas ml-2 &#34;&gt;&lt;/i&gt; English&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;回路図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_LCD_Schematic.pdf&#34;&gt;&lt;i class=&#34;fas fa-file-pdf ml-2 &#34;&gt;&lt;/i&gt; Rev.A&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;部品配置図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_LCD_ComponentMarking.pdf&#34;&gt;&lt;i class=&#34;fas fa-file-pdf ml-2 &#34;&gt;&lt;/i&gt; Rev.A&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;レイアウト図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP01A_AVR_MCU/AP01A_AVR_MCU_PCBLayout.zip&#34;&gt;&lt;i class=&#34;fas fa-file-archive ml-2&#34;&gt;&lt;/i&gt; Zuken&lt;/a&gt; / &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_LCD_PCBLayout_dxf.zip&#34;&gt;&lt;i class=&#34;fas fa-file-archive ml-2&#34;&gt;&lt;/i&gt; dxf&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;img src=&#34;./AI04A_pinassign.png&#34; width=&#34;600&#34;&gt;
+&lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/examples/blink&#34;&gt;LED点滅&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
