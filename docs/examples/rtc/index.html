@@ -376,6 +376,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplescamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesdistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
   </li>
   <ul>
@@ -541,6 +587,29 @@
   </li>
   <ul>
     <li class="collapse " id="docsexamplessound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Wi-Fi タッチセンサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleswifi_touchsensor">
       
       
       
@@ -1389,6 +1458,18 @@
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#概要">概要</a></li>
+    <li><a href="#必要なハードウェアの準備">必要なハードウェアの準備</a></li>
+    <li><a href="#リーフの組立">リーフの組立</a></li>
+    <li><a href="#スケッチの書き込み">スケッチの書き込み</a></li>
+    <li><a href="#スケッチの変更">スケッチの変更</a></li>
+    <li><a href="#時刻の設定">時刻の設定</a></li>
+    <li><a href="#シリアルモニタの表示">シリアルモニタの表示</a></li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -1431,7 +1512,97 @@
 <div class="td-content">
 	<h1>リアルタイムクロック</h1>
 	<div class="lead">RTCを使って時計をつくろう</div>
-	
+	<h2 id="概要">概要</h2>
+<p>時刻がパソコンのシリアルモニタに表示されます。
+<img src="./RTC_overview.png" alt="overview"></p>
+<h2 id="必要なハードウェアの準備">必要なハードウェアの準備</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">AZ02A</td>
+<td align="left">RTC&amp;microSD</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AP01A</td>
+<td align="left">AVR MCU</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AV01A</td>
+<td align="left">CR2032</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AZ01A</td>
+<td align="left">USB</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AZ62A</td>
+<td align="left">Connector Cover</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">CR2032 3V Lithium coin cell battery</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Screw M2×25mm</td>
+<td align="left">2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="リーフの組立">リーフの組立</h2>
+<p><img src="./RTC_assembly.png" alt="assemble1"></p>
+<h2 id="スケッチの書き込み">スケッチの書き込み</h2>
+<ul>
+<li>書き込みには、RTC＆MicroSDライブラリが必要です。予め、ライブラリをインクルードしておいてください。詳しくは、[こちら]。</li>
+<li>Arduino IDEで、「ファイル」→「スケッチ例」→「RTClib」→「pcf8523」で、マイコンボードに書き込んでください。</li>
+<li>ここまででRTC自体は作動しますが、時刻の設定がされていません。</li>
+</ul>
+<h2 id="スケッチの変更">スケッチの変更</h2>
+<ul>
+<li>現在の時刻の自動設定と、低消費電力設定のため、以下のように青字の部分のスケッチを変更してください。</a>
+void setup () {</li>
+</ul>
+<p>　while (!Serial) {
+　　delay(1); // for Leonardo/Micro/Zero
+　}</p>
+<p>　Serial.begin(57600);　　　　　　　　　　　　　　
+　　if (! rtc.begin()) {
+　　Serial.println(“Couldn’t find RTC”);
+　　while (1);
+　}</p>
+<p>　if (! rtc.initialized()) {
+　　Serial.println(“RTC is NOT running!”);
+　　// following line sets the RTC to the date &amp; time this sketch was compiled
+　　rtc.adjust(DateTime(F(<strong>DATE</strong>), F(<strong>TIME</strong>)));　　　　//自動時刻合わせ
+　　// This line sets the RTC with an explicit date &amp; time, for example to set
+　　// January 21, 2014 at 3am you would call:
+　　//rtc.adjust(DateTime(2019, 8, 9, 13, 0, 0));　
+　}
+　rtc.writeSqwPinMode(PCF8523_OFF);　　　　　　　　　　 　//低消費電力化
+}</p>
+<h2 id="時刻の設定">時刻の設定</h2>
+<p>RTCの停止と起動を行って、時刻を設定してください。</p>
+<ul>
+<li>USBケーブルを抜き、CR2032リーフのPower switchをOFFにして、RTCを停止します。</li>
+<li>USBケーブルを入れ、RTCを起動させます。</li>
+<li>CR2032リーフのPower switchをONにします。</li>
+</ul>
+<h2 id="シリアルモニタの表示">シリアルモニタの表示</h2>
+<p>シリアルモニターを起動させて、時刻が表示されていることを確認してください。</p>
+
         <div class="section-index">
     
     
@@ -1549,12 +1720,18 @@
         
             
         
+            
+        
+            
+        
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 21, 2020: <a  href="/commit/7545edf23239d39a6dca9f13c81353caed93c3ba">サンプルページを追記 (7545edf)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 23, 2020: <a  href="/commit/50053903dd90ba4cb74e75ad6c43450ec4dd8f6b">4/23変更H (5005390)</a>
 </div>
 </div>
 

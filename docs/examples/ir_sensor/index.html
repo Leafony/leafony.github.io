@@ -376,6 +376,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplescamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesdistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
   </li>
   <ul>
@@ -541,6 +587,29 @@
   </li>
   <ul>
     <li class="collapse " id="docsexamplessound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Wi-Fi タッチセンサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleswifi_touchsensor">
       
       
       
@@ -1448,46 +1517,46 @@
 <table>
 <thead>
 <tr>
-<th align="center">Type</th>
-<th align="center">Name</th>
-<th align="center">Q&rsquo;ty</th>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">AI02A</td>
-<td align="center">SP&amp;PIR</td>
-<td align="center">1</td>
+<td align="left">AI02A</td>
+<td align="left">SP&amp;PIR</td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td align="center">AP01A</td>
-<td align="center">AVR MCU</td>
-<td align="center">1</td>
+<td align="left">AP01A</td>
+<td align="left">AVR MCU</td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td align="center">AZ01A</td>
-<td align="center">USB</td>
-<td align="center">1</td>
+<td align="left">AZ01A</td>
+<td align="left">USB</td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td align="center">AV01A</td>
-<td align="center">CR2032</td>
-<td align="center">1</td>
+<td align="left">AV01A</td>
+<td align="left">CR2032</td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td align="center">AZ62A</td>
-<td align="center">コネクタカバー</td>
-<td align="center">1</td>
+<td align="left">AZ62A</td>
+<td align="left">コネクタカバー</td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center">CR2032 コイン電池</td>
-<td align="center">1</td>
+<td align="left"></td>
+<td align="left">CR2032 コイン電池</td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center">M2ネジ</td>
-<td align="center">2</td>
+<td align="left"></td>
+<td align="left">M2ネジ</td>
+<td align="left">2</td>
 </tr>
 </tbody>
 </table>
@@ -1495,8 +1564,419 @@
 <p>下図のようにリーフを組み立てましょう。</p>
 <p><img src="./ir_assemble.png" alt="assemble1"></p>
 <h2 id="ソースコード">ソースコード</h2>
-<p><a href="https://github.com/Leafony/Sample-Sketches/blob/master/PIR_Beep_test/PIR_Beep_test.ino">Github</a></p>
+<p>Arduino IDEで下記のプログラムを書きましょう。</p>
+<ul>
+<li>ビープ音の場合</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// Leafony Platform sample sketch
+</span><span style="color:#8f5902;font-style:italic">//     Platform     : PIR&amp;SP
+</span><span style="color:#8f5902;font-style:italic">//     Processor    : ATmega328P (3.3V /8MHz)
+</span><span style="color:#8f5902;font-style:italic">//     Application  : PIR with SP Beep
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//     Leaf configuration
+</span><span style="color:#8f5902;font-style:italic">//       (1) AI02 SP&amp;PIR
+</span><span style="color:#8f5902;font-style:italic">//       (2) AP01 AVR MCU
+</span><span style="color:#8f5902;font-style:italic">//       (3) AZ01 USB
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//		(c) 2019  Trillion-Node Study Group
+</span><span style="color:#8f5902;font-style:italic">//		Released under the MIT license
+</span><span style="color:#8f5902;font-style:italic">//		https://opensource.org/licenses/MIT
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2019/08/01  First release
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// difinition
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;stdio.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">#define I2C_PIR_ADDR   0x65
+</span><span style="color:#8f5902;font-style:italic">#define I2C_SEND_BUF_LENGTH 10
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">i2c_sendBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">I2C_SEND_BUF_LENGTH</span><span style="color:#000;font-weight:bold">];</span>
 
+<span style="color:#8f5902;font-style:italic">#define I2C_RECEIVE_BUF_LENGTH 10
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">I2C_RECEIVE_BUF_LENGTH</span><span style="color:#000;font-weight:bold">];</span>
+<span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">i2c_receiveLenght</span><span style="color:#000;font-weight:bold">;</span>
+
+<span style="color:#000">byte</span> <span style="color:#000">readReg</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">irData</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">tempData</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">buf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">120</span><span style="color:#000;font-weight:bold">];</span>
+
+<span style="color:#204a87;font-weight:bold">volatile</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">state</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> 
+
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// setup
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#8f5902;font-style:italic">//pinMode(2, INPUT);
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">attachInterrupt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">catchHuman</span> <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">FALLING</span> <span style="color:#000;font-weight:bold">);</span>           <span style="color:#8f5902;font-style:italic">//人接近検知割り込み
+</span><span style="color:#8f5902;font-style:italic"></span>  
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#0000cf;font-weight:bold">115200</span> <span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#8f5902;font-style:italic">//人感センサ設定
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x20</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0xFF</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL1  Resrt 
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x2A</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0xF2</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL11 人感アルゴリズム有効/割り込み出力有効
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x25</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x0F</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL6  センサゲイン205%(最大)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x2B</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0xFF</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL12 Mode=1 start Meas(連続測定モード)
+</span><span style="color:#8f5902;font-style:italic"></span>   <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// Main loop
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#000">clearI2CReadbuf</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000">i2c_read</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x04</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">6</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">sprintf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buf</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;REG = %02X , %02X , %02X , %02X , %02X , %02X&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">]);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buf</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">sprintf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buf</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Human detection = %d&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0x10</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span> <span style="color:#0000cf;font-weight:bold">4</span>  <span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buf</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#8f5902;font-style:italic">//IRセンサ測定データ
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">irData</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">clacIR</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;IR   = &#34;</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">irData</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34; pA&#34;</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#8f5902;font-style:italic">//センサ温度
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">tempData</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">clacTemp</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;TSENS = &#34;</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">tempData</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34; deg&#34;</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;===================================&#34;</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">state</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">tone</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">262</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">300</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">state</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>  
+  
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">catchHuman</span><span style="color:#000;font-weight:bold">()</span>
+<span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#000">state</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;!! Interrupt !!&#34;</span><span style="color:#000;font-weight:bold">);</span>      <span style="color:#8f5902;font-style:italic">//人の接近を検知
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">clacTemp</span><span style="color:#000;font-weight:bold">()</span>
+<span style="color:#000;font-weight:bold">{</span>  
+  <span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">ret</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">short</span> <span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">short</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">|</span>  <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">]);</span>
+  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0x8000</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0x8000</span><span style="color:#000;font-weight:bold">)</span>
+  <span style="color:#000;font-weight:bold">{</span>
+     <span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">~</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>     
+     <span style="color:#000">ret</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#000">val</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">*</span>   <span style="color:#0000cf;font-weight:bold">0.0019837</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#204a87;font-weight:bold">else</span>
+  <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000">ret</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">0.0019837</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">ret</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">25</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">clacIR</span><span style="color:#000;font-weight:bold">()</span>
+<span style="color:#000;font-weight:bold">{</span>  
+  <span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">ret</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">short</span> <span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">short</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">|</span>  <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">]);</span>
+  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0x8000</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0x8000</span><span style="color:#000;font-weight:bold">)</span>
+  <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">~</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">ret</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)(</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">*</span>   <span style="color:#0000cf;font-weight:bold">0.4578</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#204a87;font-weight:bold">else</span>
+  <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000">ret</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)(</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">*</span>  <span style="color:#0000cf;font-weight:bold">0.4578</span> <span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000;font-weight:bold">}</span> 
+  <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">ret</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">/**********************************************
+</span><span style="color:#8f5902;font-style:italic">* I2C スレーブデバイスに1バイト書き込む
+</span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">write_data</span><span style="color:#000;font-weight:bold">){</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">write_data</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">endTransmission</span><span style="color:#000;font-weight:bold">();</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">/**********************************************
+</span><span style="color:#8f5902;font-style:italic">* I2C スレーブデバイスから1バイト読み込む
+</span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
+<span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">i2c_read_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">){</span>
+
+  <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">read_data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">endTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">requestFrom</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">read_data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
+
+  <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">read_data</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">/**********************************************
+</span><span style="color:#8f5902;font-style:italic">* I2C スレーブデバイスに複数バイト書き込む
+</span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">lengrh</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">write_byte</span><span style="color:#000;font-weight:bold">){</span>
+
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#000">lengrh</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">write_byte</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]);</span>
+  <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">endTransmission</span><span style="color:#000;font-weight:bold">();</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">/**********************************************
+</span><span style="color:#8f5902;font-style:italic">* I2C スレーブデバイスから複数バイト読み込む
+</span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_read</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">lengrh</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">read_byte</span><span style="color:#000;font-weight:bold">){</span>
+
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">endTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">requestFrom</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">lengrh</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#000">lengrh</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">read_byte</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">/**********************************************
+</span><span style="color:#8f5902;font-style:italic">* I2C 受信バッファクリア
+</span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">clearI2CReadbuf</span><span style="color:#000;font-weight:bold">(){</span>
+  <span style="color:#000">memcpy</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x00</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">I2C_RECEIVE_BUF_LENGTH</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><ul>
+<li>メロディの場合</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// Leafony Platform sample sketch
+</span><span style="color:#8f5902;font-style:italic">//     Platform     : PIR&amp;SP
+</span><span style="color:#8f5902;font-style:italic">//     Processor    : ATmega328P (3.3V /8MHz)
+</span><span style="color:#8f5902;font-style:italic">//     Application  : PIR with SP Beep
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//     Leaf configuration
+</span><span style="color:#8f5902;font-style:italic">//       (1) AI02 SP&amp;PIR
+</span><span style="color:#8f5902;font-style:italic">//       (2) AP01 AVR MCU
+</span><span style="color:#8f5902;font-style:italic">//       (3) AZ01 USB
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//		(c) 2019  Trillion-Node Study Group
+</span><span style="color:#8f5902;font-style:italic">//		Released under the MIT license
+</span><span style="color:#8f5902;font-style:italic">//		https://opensource.org/licenses/MIT
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2019/08/01  First release
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// difinition
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;stdio.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&#34;pitches.h&#34;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">#define I2C_PIR_ADDR   0x65
+</span><span style="color:#8f5902;font-style:italic">#define I2C_SEND_BUF_LENGTH 10
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">i2c_sendBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">I2C_SEND_BUF_LENGTH</span><span style="color:#000;font-weight:bold">];</span>
+
+<span style="color:#8f5902;font-style:italic">#define I2C_RECEIVE_BUF_LENGTH 10
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">I2C_RECEIVE_BUF_LENGTH</span><span style="color:#000;font-weight:bold">];</span>
+<span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">i2c_receiveLenght</span><span style="color:#000;font-weight:bold">;</span>
+
+<span style="color:#8f5902;font-style:italic">//------------------------------
+</span><span style="color:#8f5902;font-style:italic">// buzzer output = 5pin
+</span><span style="color:#8f5902;font-style:italic">//------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define BUZZER_OUT 5
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#000">byte</span> <span style="color:#000">readReg</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">irData</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">tempData</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">buf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">120</span><span style="color:#000;font-weight:bold">];</span>
+
+<span style="color:#204a87;font-weight:bold">volatile</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">state</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> 
+
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// setup
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#8f5902;font-style:italic">//pinMode(2, INPUT);
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">attachInterrupt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">catchHuman</span> <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">FALLING</span> <span style="color:#000;font-weight:bold">);</span>           <span style="color:#8f5902;font-style:italic">//人接近検知割り込み
+</span><span style="color:#8f5902;font-style:italic"></span>  
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#0000cf;font-weight:bold">115200</span> <span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#8f5902;font-style:italic">//人感センサ設定
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x20</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0xFF</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL1  Resrt 
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x2A</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0xF2</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL11 人感アルゴリズム有効/割り込み出力有効
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x25</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x0F</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL6  センサゲイン205%(最大)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x2B</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0xFF</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL12 Mode=1 start Meas(連続測定モード)
+</span><span style="color:#8f5902;font-style:italic"></span>   <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// Main loop
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#000">clearI2CReadbuf</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000">i2c_read</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x04</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">6</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">sprintf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buf</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;REG = %02X , %02X , %02X , %02X , %02X , %02X&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">]);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buf</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">sprintf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buf</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Human detection = %d&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0x10</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span> <span style="color:#0000cf;font-weight:bold">4</span>  <span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buf</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#8f5902;font-style:italic">//IRセンサ測定データ
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">irData</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">clacIR</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;IR   = &#34;</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">irData</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34; pA&#34;</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#8f5902;font-style:italic">//センサ温度
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">tempData</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">clacTemp</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;TSENS = &#34;</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">tempData</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34; deg&#34;</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;===================================&#34;</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">state</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#8f5902;font-style:italic">//------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// notes in the melody:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">melody</span><span style="color:#000;font-weight:bold">[]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+      <span style="color:#000">NOTE_C5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_C5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_G5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_G5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_A5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_A5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_G5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_F5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_F5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_E5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_E5</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">NOTE_D5</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">NOTE_D5</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">NOTE_C5</span>
+    <span style="color:#000;font-weight:bold">};</span>
+
+    <span style="color:#8f5902;font-style:italic">//------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// note durations: 4 = quarter note, 8 = eighth note, etc.:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">noteDurations</span><span style="color:#000;font-weight:bold">[]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+      <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span>
+    <span style="color:#000;font-weight:bold">};</span>
+    <span style="color:#8f5902;font-style:italic">//----------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// iterate over the notes of the melody:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//----------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">thisNote</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">thisNote</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">14</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">thisNote</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+      <span style="color:#8f5902;font-style:italic">//----------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#8f5902;font-style:italic">// to calculate the note duration, take one second
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#8f5902;font-style:italic">// divided by the note type.
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#8f5902;font-style:italic">//e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#8f5902;font-style:italic">//----------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">noteDuration</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1000</span> <span style="color:#ce5c00;font-weight:bold">/</span> <span style="color:#000">noteDurations</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">thisNote</span><span style="color:#000;font-weight:bold">];</span>
+      <span style="color:#000">tone</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">BUZZER_OUT</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">melody</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">thisNote</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">noteDuration</span><span style="color:#000;font-weight:bold">);</span>
+
+      <span style="color:#8f5902;font-style:italic">//----------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#8f5902;font-style:italic">// to distinguish the notes, set a minimum time between them.
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#8f5902;font-style:italic">// the note&#39;s duration + 30% seems to work well:
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#8f5902;font-style:italic">//----------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">pauseBetweenNotes</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">noteDuration</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">1.30</span><span style="color:#000;font-weight:bold">;</span>
+      <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pauseBetweenNotes</span><span style="color:#000;font-weight:bold">);</span>
+
+      <span style="color:#8f5902;font-style:italic">//-----------------------
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#8f5902;font-style:italic">// stop the tone playing:
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#8f5902;font-style:italic">//-----------------------
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">noTone</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">BUZZER_OUT</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#000">state</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>  
+  
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">catchHuman</span><span style="color:#000;font-weight:bold">(){</span>
+  <span style="color:#000">state</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;!! Interrupt !!&#34;</span><span style="color:#000;font-weight:bold">);</span>      <span style="color:#8f5902;font-style:italic">//人の接近を検知
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">clacTemp</span><span style="color:#000;font-weight:bold">(){</span>
+  <span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">ret</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">short</span> <span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">short</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">|</span>  <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">]);</span>
+  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0x8000</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0x8000</span><span style="color:#000;font-weight:bold">)</span>  <span style="color:#000;font-weight:bold">{</span>
+     <span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">~</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>     
+     <span style="color:#000">ret</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#000">val</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">*</span>   <span style="color:#0000cf;font-weight:bold">0.0019837</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#204a87;font-weight:bold">else</span>  <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000">ret</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">0.0019837</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">ret</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">25</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">clacIR</span><span style="color:#000;font-weight:bold">(){</span>
+  <span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">ret</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">short</span> <span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">short</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">|</span>  <span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">]);</span>
+  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0x8000</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0x8000</span><span style="color:#000;font-weight:bold">)</span>  <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">~</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">ret</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)(</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">*</span>   <span style="color:#0000cf;font-weight:bold">0.4578</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#204a87;font-weight:bold">else</span>  <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000">ret</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)(</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">*</span>  <span style="color:#0000cf;font-weight:bold">0.4578</span> <span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000;font-weight:bold">}</span> 
+  <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">ret</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">/**********************************************
+</span><span style="color:#8f5902;font-style:italic">* I2C スレーブデバイスに1バイト書き込む
+</span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">write_data</span><span style="color:#000;font-weight:bold">){</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">write_data</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">endTransmission</span><span style="color:#000;font-weight:bold">();</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">/**********************************************
+</span><span style="color:#8f5902;font-style:italic">* I2C スレーブデバイスから1バイト読み込む
+</span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
+<span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">i2c_read_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">){</span>
+
+  <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">read_data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">endTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">requestFrom</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">read_data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
+
+  <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">read_data</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">/**********************************************
+</span><span style="color:#8f5902;font-style:italic">* I2C スレーブデバイスに複数バイト書き込む
+</span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">lengrh</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">write_byte</span><span style="color:#000;font-weight:bold">){</span>
+
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#000">lengrh</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">write_byte</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]);</span>
+  <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">endTransmission</span><span style="color:#000;font-weight:bold">();</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">/**********************************************
+</span><span style="color:#8f5902;font-style:italic">* I2C スレーブデバイスから複数バイト読み込む
+</span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_read</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">lengrh</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">read_byte</span><span style="color:#000;font-weight:bold">){</span>
+
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">endTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">requestFrom</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">lengrh</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#000">lengrh</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">read_byte</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">/**********************************************
+</span><span style="color:#8f5902;font-style:italic">* I2C 受信バッファクリア
+</span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">clearI2CReadbuf</span><span style="color:#000;font-weight:bold">(){</span>
+  <span style="color:#000">memcpy</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i2c_receiveBuf</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x00</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">I2C_RECEIVE_BUF_LENGTH</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div>
         <div class="section-index">
     
     
@@ -1614,12 +2094,18 @@
         
             
         
+            
+        
+            
+        
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 21, 2020: <a  href="/commit/7545edf23239d39a6dca9f13c81353caed93c3ba">サンプルページを追記 (7545edf)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 27, 2020: <a  href="/commit/bfbbbf1976d3f72708ab7ed151b10aa7889231ce">4/27変更K (bfbbbf1)</a>
 </div>
 </div>
 

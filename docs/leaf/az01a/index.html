@@ -22,17 +22,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>AZ01A USB | Leafony</title><meta property="og:title" content="AZ01A USB" />
-<meta property="og:description" content="USB リーフ
-" />
+<meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/docs/leaf/az01a/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="AZ01A USB">
-<meta itemprop="description" content="USB リーフ
-"><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AZ01A USB"/>
-<meta name="twitter:description" content="USB リーフ
-"/>
+<meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
 
@@ -376,6 +373,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplescamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesdistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
   </li>
   <ul>
@@ -541,6 +584,29 @@
   </li>
   <ul>
     <li class="collapse " id="docsexamplessound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Wi-Fi タッチセンサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleswifi_touchsensor">
       
       
       
@@ -1393,8 +1459,9 @@
   <ul>
     <li><a href="#特徴">特徴</a></li>
     <li><a href="#性能">性能</a></li>
-    <li><a href="#ドキュメント">ドキュメント</a></li>
+    <li><a href="#ブロック図">ブロック図</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
+    <li><a href="#ドキュメント">ドキュメント</a></li>
   </ul>
 </nav>
 
@@ -1439,61 +1506,63 @@
             
 <div class="td-content">
 	<h1>AZ01A USB</h1>
-	<div class="lead">USB リーフ</div>
+	
 	<p><a href="./AZ01A USB_f_large.jpg"><img src="./AZ01A USB_f_small.jpg" width="200"></a>
 <a href="./AZ01A USB_b_large.jpg"><img src="./AZ01A USB_b_small.jpg" width="200"></a>
-<a href="./AZ01A USB_p_large.jpg"><img src="./AZ01A USB_p_small.jpg" width="200"></a>
-<img src="./AZ01A_block.png" width="200"></p>
+<a href="./AZ01A USB_p_large.jpg"><img src="./AZ01A USB_p_small.jpg" width="200"></a></p>
 <h2 id="特徴">特徴</h2>
 <p>AVR MCU へのスケッチ書き込みやシリアルモニタを使用する場合に接続するリーフです。USB-UART変換ICとしてFTDI製FT232RQを搭載しています。USBのVBUS(5V)から降圧電源回路により3.3Vに変換し、各リーフにVBUSと3.3Vを供給します。</p>
 <h2 id="性能">性能</h2>
 <table>
 <thead>
 <tr>
-<th align="center">項目</th>
-<th align="center">内容</th>
+<th align="left">項目</th>
+<th align="left">内容</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">USB</td>
-<td align="center">　USB 2.0 Full Speed 　</td>
+<td align="left">USB</td>
+<td align="left">USB 2.0 Full Speed 　</td>
 </tr>
 <tr>
-<td align="center">Data transfer rates</td>
-<td align="center">300 baud to 3 Mbaud</td>
+<td align="left">Data transfer rates</td>
+<td align="left">300 baud to 3 Mbaud</td>
 </tr>
 <tr>
-<td align="center">電源</td>
+<td align="left">電源</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">出力電圧</td>
-<td align="center">3.3V±2%</td>
+<td align="left">出力電圧</td>
+<td align="left">3.3V±2%</td>
 </tr>
 <tr>
-<td align="center">　制御方式　</td>
-<td align="center">PWM/PFM 自動切替制御</td>
+<td align="left">制御方式　</td>
+<td align="left">PWM/PFM 自動切替制御</td>
 </tr>
 <tr>
-<td align="center">最大出力電流</td>
-<td align="center">500mA</td>
+<td align="left">最大出力電流</td>
+<td align="left">500mA</td>
 </tr>
 <tr>
-<td align="center">Protection circuit</td>
-<td align="center">過電流制限/サーマルシャットダウン/短絡保護</td>
+<td align="left">Protection circuit</td>
+<td align="left">過電流制限/サーマルシャットダウン/短絡保護</td>
 </tr>
 </tbody>
 </table>
+<h2 id="ブロック図">ブロック図</h2>
+<p><a href="./AZ01A_block.png"><img src="./AZ01A_block.png" width="200"></a></p>
+<h2 id="ピン配置">ピン配置</h2>
+<p><a href="./AZ01A_pinassign.png"><img src="./AZ01A_pinassign.png"></a></p>
 <h2 id="ドキュメント">ドキュメント</h2>
 <ul>
-<li>仕様書 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ01A_USB/AZ01A_USB_SpecSheet_JA.pdf"><i class="fas fa-globe-americas ml-2 "></i> 日本語</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ01A_USB/AZ01A_USB_SpecSheet_EN.pdf"><i class="fas fa-globe-americas ml-2 "></i> English</a></li>
-<li>回路図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ01A_USB/AZ01A_USB_Schematic.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>部品配置図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ01A_USB/AZ01A_USB_ComponentMarking.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>レイアウト図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ01A_USB/AZ01A_USB_PCBLayout.zip"><i class="fas fa-file-archive ml-2"></i> Zuken</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ01A_USB/AZ01A_USB_PCBLayout_dxf.zip"><i class="fas fa-file-archive ml-2"></i> dxf</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ01A_USB/AZ01A_USB_SpecSheet_JA.pdf">仕様書</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ01A_USB/AZ01A_USB_Schematic.pdf">回路図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ01A_USB/AZ01A_USB_ComponentMarking.pdf">部品配置図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ01A_USB/AZ01A_USB_PCBLayout.zip">レイアウト図(Zuken)</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ01A_USB/AZ01A_USB_PCBLayout_dxf.zip">レイアウト図(dxf)</a></li>
 </ul>
-<h2 id="ピン配置">ピン配置</h2>
-<img src="./AZ01A_pinassign.png" width="600">
 
         <div class="section-index">
     
@@ -1612,12 +1681,18 @@
         
             
         
+            
+        
+            
+        
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 17, 2020: <a  href="/commit/a44493709949f056ab8df16f2c3844454ccadbc4">4/17変更K (a444937)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 22, 2020: <a  href="/commit/d0fdb9f7eac50766e128353fa8bb2b1f5345adea">4/22変更K (d0fdb9f)</a>
 </div>
 </div>
 

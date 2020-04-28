@@ -22,17 +22,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>AI02A SP&amp;PIR | Leafony</title><meta property="og:title" content="AI02A SP&amp;PIR" />
-<meta property="og:description" content="SP&amp;PIR
-" />
+<meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/docs/leaf/ai02a/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="AI02A SP&amp;PIR">
-<meta itemprop="description" content="SP&amp;PIR
-"><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AI02A SP&amp;PIR"/>
-<meta name="twitter:description" content="SP&amp;PIR
-"/>
+<meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
 
@@ -376,6 +373,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplescamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesdistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
   </li>
   <ul>
@@ -541,6 +584,29 @@
   </li>
   <ul>
     <li class="collapse " id="docsexamplessound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Wi-Fi タッチセンサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleswifi_touchsensor">
       
       
       
@@ -1393,9 +1459,10 @@
   <ul>
     <li><a href="#特徴">特徴</a></li>
     <li><a href="#性能">性能</a></li>
-    <li><a href="#ドキュメント">ドキュメント</a></li>
+    <li><a href="#ブロック図">ブロック図</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
     <li><a href="#サンプルプロジェクト">サンプルプロジェクト</a></li>
+    <li><a href="#ドキュメント">ドキュメント</a></li>
   </ul>
 </nav>
 
@@ -1440,77 +1507,81 @@
             
 <div class="td-content">
 	<h1>AI02A SP&amp;PIR</h1>
-	<div class="lead">SP&amp;PIR</div>
+	
 	<p><a href="./AI02A SP&PIR_f_large.jpg"><img src="./AI02A SP&PIR_f_small.jpg" width="200"></a>
 <a href="./AI02A SP&PIR_b_large.jpg"><img src="./AI02A SP&PIR_b_small.jpg" width="200"></a>
-<a href="./AI02A SP&PIR_p_large.jpg"><img src="./AI02A SP&PIR_p_small.jpg" width="200"></a>
-<img src="./AI02A_block.png" width="200"></p>
+<a href="./AI02A SP&PIR_p_large.jpg"><img src="./AI02A SP&PIR_p_small.jpg" width="200"></a></p>
 <h2 id="特徴">特徴</h2>
 <p>圧電スピーカと人感センサを搭載したリーフです。圧電スピーカはPWM、人感センサはI2CでMCUリーフと接続されます。人感センサは接近検知アルゴリズムを内蔵しており、簡単な設定で接近を検知することが出来、接近検知時に割り込み信号を出力することが可能です。</p>
 <h2 id="性能">性能</h2>
 <table>
 <thead>
 <tr>
-<th align="center">項目</th>
-<th align="center">内容</th>
+<th align="left">項目</th>
+<th align="left">内容</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">圧電スピーカ</td>
-<td align="center"></td>
+<td align="left"><strong>圧電スピーカ</strong></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td align="center">dimensions</td>
-<td align="center">12 x 12 x 3mm</td>
+<td align="left">dimensions</td>
+<td align="left">12 x 12 x 3mm</td>
 </tr>
 <tr>
-<td align="center">rated frequency</td>
-<td align="center">4kHz(typ)</td>
+<td align="left">rated frequency</td>
+<td align="left">4kHz(typ)</td>
 </tr>
 <tr>
-<td align="center">sound pressure level</td>
-<td align="center">81dB(min) at 10 cm, 5 Vp-p, 4,000 Hz square wave</td>
+<td align="left">sound pressure level</td>
+<td align="left">81dB(min) at 10 cm, 5 Vp-p, 4,000 Hz square wave</td>
 </tr>
 <tr>
-<td align="center">Current consumption</td>
-<td align="center">5mA(max) at 5 Vp-p, 4,000 Hz square wave</td>
+<td align="left">Current consumption</td>
+<td align="left">5mA(max) at 5 Vp-p, 4,000 Hz square wave</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"></td>
+<td align="left"></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td align="center">人感センサ</td>
-<td align="center"></td>
+<td align="left"><strong>人感センサ</strong></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td align="center">Sensor</td>
-<td align="center">Quantum-type IR Sensor</td>
+<td align="left">Sensor</td>
+<td align="left">Quantum-type IR Sensor</td>
 </tr>
 <tr>
-<td align="center">Integrated Digital Filters</td>
-<td align="center">Cut-off Frequency 0.9Hz,0.445Hz *Only with 10Hz of Data Output Rate(ODR)</td>
+<td align="left">Integrated digital filters</td>
+<td align="left">Cut-off Frequency 0.9Hz,0.445Hz *Only with 10Hz of Data Output Rate(ODR)</td>
 </tr>
 <tr>
-<td align="center">Interfaces</td>
-<td align="center">I2C</td>
+<td align="left">Interfaces</td>
+<td align="left">I2C</td>
 </tr>
 </tbody>
 </table>
-<h2 id="ドキュメント">ドキュメント</h2>
-<ul>
-<li>仕様書 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_SpecSheet_JA.pdf"><i class="fas fa-globe-americas ml-2 "></i> 日本語</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI02A SP&PIR/AI02A SP&PIR_AVR_MCU_SpecSheet_EN.pdf"><i class="fas fa-globe-americas ml-2 "></i> English</a></li>
-<li>回路図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_Schematic.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>部品配置図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_ComponentMarking.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>レイアウト図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_PCBLayout.zip"><i class="fas fa-file-archive ml-2"></i> Zuken</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_PCBLayout_dxf.zip"><i class="fas fa-file-archive ml-2"></i> dxf</a></li>
-<li>ブートローダ <a href="https://github.com/arduino/ArduinoCore-avr/blob/master/bootloaders/atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex"><i class="fas fa-file ml-2"></i> Rev.A</a></li>
-</ul>
+<h2 id="ブロック図">ブロック図</h2>
+<img src="./AI02A_block.png" width="200">
 <h2 id="ピン配置">ピン配置</h2>
 <img src="./AI02A_pinassign.png" width="600">
 <h2 id="サンプルプロジェクト">サンプルプロジェクト</h2>
 <ul>
 <li><a href="/docs/examples/blink">LED点滅</a></li>
+</ul>
+<h2 id="ドキュメント">ドキュメント</h2>
+<ul>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_SpecSheet_JA.pdf">仕様書</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_Schematic.pdf">回路図 SP&amp;PIR</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_PIR_Schematic.pdf">回路図 PIR</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_ComponentMarking.pdf">部品配置図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_PCBLayout.zip">レイアウト図 SP＆PIR (Zuken)</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_PIR_PCBLayout.zip">レイアウト図 PIR (Zuken)</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_PCBLayout_dxf.zip">レイアウト図 SP＆PIR (dxf)</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_PIR_PCBLayout_dxf.zip">レイアウト図 PIR (dxf)</a></li>
 </ul>
 
         <div class="section-index">
@@ -1630,12 +1701,18 @@
         
             
         
+            
+        
+            
+        
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 17, 2020: <a  href="/commit/0978343f2617ec8d371681384e4f99ce6085f51d">update tables (0978343)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 23, 2020: <a  href="/commit/fa6cc452c75851aff8f76a481bc19c0980739f4b">4/23変更U (fa6cc45)</a>
 </div>
 </div>
 

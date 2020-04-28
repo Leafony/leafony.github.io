@@ -376,6 +376,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplescamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesdistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
   </li>
   <ul>
@@ -541,6 +587,29 @@
   </li>
   <ul>
     <li class="collapse " id="docsexamplessound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Wi-Fi タッチセンサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleswifi_touchsensor">
       
       
       
@@ -1389,6 +1458,16 @@
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#概要">概要</a></li>
+    <li><a href="#必要なハードウェアの準備">必要なハードウェアの準備</a></li>
+    <li><a href="#リーフの組立">リーフの組立</a></li>
+    <li><a href="#スケッチの書き込み">スケッチの書き込み</a></li>
+    <li><a href="#スケッチの変更">スケッチの変更</a></li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -1431,7 +1510,79 @@
 <div class="td-content">
 	<h1>Micro SD</h1>
 	<div class="lead">Micro SDカードを読み書きしよう</div>
-	
+	<h2 id="概要">概要</h2>
+<p>microSD カードの情報が、パソコンのシリアルモニタに表示されます。
+<img src="./microSD_overview.png" alt="overview"></p>
+<h2 id="必要なハードウェアの準備">必要なハードウェアの準備</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">AP01A</td>
+<td align="left">AVR MCU</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AV01A</td>
+<td align="left">CR2032</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AZ01A</td>
+<td align="left">USB</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AZ02A</td>
+<td align="left">RTC&amp;microSD</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AZ62A</td>
+<td align="left">Connector Cover</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">CR2032 3V Lithium coin cell battery</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">microSD card</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Screw M2×25mm</td>
+<td align="left">2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="リーフの組立">リーフの組立</h2>
+<p><img src="./microSD_assemble.png" alt="assemble1"></p>
+<h2 id="スケッチの書き込み">スケッチの書き込み</h2>
+<ul>
+<li>Arduino IDEで、「ファイル」→「スケッチ例」→「SD」→「CardInfo」で、マイコンボードに書き込んでください。</li>
+</ul>
+<h2 id="スケッチの変更">スケッチの変更</h2>
+<ul>
+<li>安定してデータを取得するため、HALF→QUARTERにスピードを遅くしてください。</a></li>
+</ul>
+<p>　if (!card.init(SPI_HALF_SPEED, chipSelect)) {　　→if (!card.init(SPI_QUARTER_SPEED, chipSelect)) {</p>
+<ul>
+<li>
+<p>chipselectのデジタルピンを４→10に変更してください。</a></p>
+<p>const int chipSelect = 4;→const int chipSelect = 10;　</p>
+</li>
+</ul>
+
         <div class="section-index">
     
     
@@ -1549,12 +1700,18 @@
         
             
         
+            
+        
+            
+        
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 21, 2020: <a  href="/commit/7545edf23239d39a6dca9f13c81353caed93c3ba">サンプルページを追記 (7545edf)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 27, 2020: <a  href="/commit/02e642c7a1a12351365ef55566c3b42963d66b59">4/27変更H (02e642c)</a>
 </div>
 </div>
 

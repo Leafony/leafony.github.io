@@ -22,17 +22,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>AI03A MIC&amp;VR&amp;LED | Leafony</title><meta property="og:title" content="AI03A MIC&amp;VR&amp;LED" />
-<meta property="og:description" content="マイク &amp; VR &amp; LED リーフ
-" />
+<meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/docs/leaf/ai03a/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="AI03A MIC&amp;VR&amp;LED">
-<meta itemprop="description" content="マイク &amp; VR &amp; LED リーフ
-"><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AI03A MIC&amp;VR&amp;LED"/>
-<meta name="twitter:description" content="マイク &amp; VR &amp; LED リーフ
-"/>
+<meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
 
@@ -376,6 +373,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplescamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesdistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
   </li>
   <ul>
@@ -541,6 +584,29 @@
   </li>
   <ul>
     <li class="collapse " id="docsexamplessound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Wi-Fi タッチセンサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleswifi_touchsensor">
       
       
       
@@ -1393,9 +1459,10 @@
   <ul>
     <li><a href="#特徴">特徴</a></li>
     <li><a href="#性能">性能</a></li>
-    <li><a href="#ドキュメント">ドキュメント</a></li>
+    <li><a href="#ブロック図">ブロック図</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
     <li><a href="#サンプルプロジェクト">サンプルプロジェクト</a></li>
+    <li><a href="#ドキュメント">ドキュメント</a></li>
   </ul>
 </nav>
 
@@ -1440,96 +1507,99 @@
             
 <div class="td-content">
 	<h1>AI03A MIC&amp;VR&amp;LED</h1>
-	<div class="lead">マイク &amp; VR &amp; LED リーフ</div>
+	
 	<p><a href="./AI03A MIC&VR&LED_f_large.jpg"><img src="./AI03A MIC&VR&LED_f_small.jpg" width="200"></a>
 <a href="./AI03A MIC&VR&LED_b_large.jpg"><img src="./AI03A MIC&VR&LED_b_small.jpg" width="200"></a>
 <a href="./AI03A MIC&VR&LED_p_large.jpg"><img src="./AI03A MIC&VR&LED_p_small.jpg" width="200"></a>
-<img src="./AI03A_block.png" width="200"></p>
+&lt;</p>
 <h2 id="特徴">特徴</h2>
 <p>MEMSマイク、ボリューム、LEDを搭載したリーフです。MEMSマイクとボリュームはアナログ入力ピン、LEDはデジタル出力ピンでMCUリーフと接続されます。低消費電力を実現するのためI2C Expander を制御することにより電源をロードスイッチによりオフすることが可能です。</p>
 <h2 id="性能">性能</h2>
 <table>
 <thead>
 <tr>
-<th align="center">項目</th>
-<th align="center">内容</th>
+<th align="left">項目</th>
+<th align="left">内容</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">マイク</td>
-<td align="center"></td>
+<td align="left"><strong>マイク</strong></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td align="center">Type</td>
-<td align="center">MEMS</td>
+<td align="left">Type</td>
+<td align="left">MEMS</td>
 </tr>
 <tr>
-<td align="center">Direction</td>
-<td align="center">Omnidirectional</td>
+<td align="left">Direction</td>
+<td align="left">Omnidirectional</td>
 </tr>
 <tr>
-<td align="center">Frequency Range</td>
-<td align="center">100Hz ～ 10kHz</td>
+<td align="left">Frequency range</td>
+<td align="left">100Hz ～ 10kHz</td>
 </tr>
 <tr>
-<td align="center">Gain</td>
-<td align="center">0dB</td>
+<td align="left">Gain</td>
+<td align="left">0dB</td>
 </tr>
 <tr>
-<td align="center">Interfaces</td>
-<td align="center">Interfaces</td>
+<td align="left">Interfaces</td>
+<td align="left">Interfaces</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"></td>
+<td align="left"></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td align="center">ボリューム</td>
-<td align="center"></td>
+<td align="left"><strong>ボリューム</strong></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td align="center">Nominal resistance</td>
-<td align="center">10kΩ</td>
+<td align="left">Nominal resistance</td>
+<td align="left">10kΩ</td>
 </tr>
 <tr>
-<td align="center">Resistance law</td>
-<td align="center">Linear law (B)</td>
+<td align="left">Resistance law</td>
+<td align="left">Linear law (B)</td>
 </tr>
 <tr>
-<td align="center">Effective electrical angle</td>
-<td align="center">210° (1 turn)</td>
+<td align="left">Effective electrical angle</td>
+<td align="left">210° (1 turn)</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"></td>
+<td align="left"></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td align="center">LED</td>
-<td align="center"></td>
+<td align="left"><strong>LED</strong></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td align="center">Package Type</td>
-<td align="center">Side-view</td>
+<td align="left">Package type</td>
+<td align="left">Side-view</td>
 </tr>
 <tr>
-<td align="center">Emitting color</td>
-<td align="center">Yellow</td>
+<td align="left">Emitting color</td>
+<td align="left">Yellow</td>
 </tr>
 </tbody>
 </table>
-<h2 id="ドキュメント">ドキュメント</h2>
-<ul>
-<li>仕様書 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_SpecSheet_JA.pdf"><i class="fas fa-globe-americas ml-2 "></i> 日本語</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_SpecSheet_EN.pdf"><i class="fas fa-globe-americas ml-2 "></i> English</a></li>
-<li>回路図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_Schematic.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>部品配置図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_ComponentMarking.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>レイアウト図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_PCBLayout.zip"><i class="fas fa-file-archive ml-2"></i> Zuken</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_PCBLayout_dxf.zip"><i class="fas fa-file-archive ml-2"></i> dxf</a></li>
-</ul>
+<h2 id="ブロック図">ブロック図</h2>
+<p><a href="./AI03A_block.png"><img src="./AI03A_block.png" width="200"></a></p>
 <h2 id="ピン配置">ピン配置</h2>
 <img src="./AI03A_pinassign.png" width="600">
 <h2 id="サンプルプロジェクト">サンプルプロジェクト</h2>
 <ul>
 <li><a href="/docs/examples/blink">LED点滅</a></li>
+</ul>
+<h2 id="ドキュメント">ドキュメント</h2>
+<ul>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_SpecSheet_JA.pdf">仕様書</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_Schematic.pdf">回路図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_ComponentMarking.pdf">部品配置図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_PCBLayout.zip">レイアウト図(Zuken)</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_PCBLayout_dxf.zip">レイアウト図(dxf)</a></li>
 </ul>
 
         <div class="section-index">
@@ -1649,12 +1719,18 @@
         
             
         
+            
+        
+            
+        
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 17, 2020: <a  href="/commit/0978343f2617ec8d371681384e4f99ce6085f51d">update tables (0978343)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 23, 2020: <a  href="/commit/6b5cc641b27d918e02bcf2ee938294d8dc3783ef">4/23変更H (6b5cc64)</a>
 </div>
 </div>
 

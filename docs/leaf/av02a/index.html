@@ -22,17 +22,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>AV02A CR2450 | Leafony</title><meta property="og:title" content="AV02A CR2450" />
-<meta property="og:description" content="CR2450 リーフ
-" />
+<meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/docs/leaf/av02a/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="AV02A CR2450">
-<meta itemprop="description" content="CR2450 リーフ
-"><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AV02A CR2450"/>
-<meta name="twitter:description" content="CR2450 リーフ
-"/>
+<meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
 
@@ -376,6 +373,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplescamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesdistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
   </li>
   <ul>
@@ -541,6 +584,29 @@
   </li>
   <ul>
     <li class="collapse " id="docsexamplessound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Wi-Fi タッチセンサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleswifi_touchsensor">
       
       
       
@@ -1393,9 +1459,10 @@
   <ul>
     <li><a href="#特徴">特徴</a></li>
     <li><a href="#性能">性能　</a></li>
-    <li><a href="#ドキュメント">ドキュメント</a></li>
+    <li><a href="#ブロック図">ブロック図</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
     <li><a href="#サンプルプロジェクト">サンプルプロジェクト</a></li>
+    <li><a href="#ドキュメント">ドキュメント</a></li>
   </ul>
 </nav>
 
@@ -1440,72 +1507,74 @@
             
 <div class="td-content">
 	<h1>AV02A CR2450</h1>
-	<div class="lead">CR2450 リーフ</div>
+	
 	<p><a href="./AV02A CR2450_f_large.jpg"><img src="./AV02A CR2450_f_small.jpg" width="200"></a>
 <a href="./AV02A CR2450_b_large.jpg"><img src="./AV02A CR2450_b_small.jpg" width="200"></a>
-<a href="./AV02A CR2450_p_large.jpg"><img src="./AV02A CR2450_p_small.jpg" width="200"></a>
-<img src="./AV02A_block.png" width="200"></p>
+<a href="./AV02A CR2450_p_large.jpg"><img src="./AV02A CR2450_p_small.jpg" width="200"></a></p>
 <h2 id="特徴">特徴</h2>
 <p>CR2450コイン電池ホルダを実装し、3Vの電池電圧を昇圧電源回路により3.3Vに変換し、3.3Vを各リーフに供給するリーフです。3.3Vをオン/オフするためのスイッチを実装しています。また、電池電圧をモニタするためのADコンバータを実装しています。</p>
 <h2 id="性能">性能　</h2>
 <table>
 <thead>
 <tr>
-<th align="center">項目</th>
-<th align="center">内容</th>
+<th align="left">項目</th>
+<th align="left">内容</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">電池電圧</td>
-<td align="center">0.7～3.8V</td>
+<td align="left">電池電圧</td>
+<td align="left">0.7～3.8V</td>
 </tr>
 <tr>
-<td align="center">出力電圧</td>
-<td align="center">3.3V±2%</td>
+<td align="left">出力電圧</td>
+<td align="left">3.3V±2%</td>
 </tr>
 <tr>
-<td align="center">制御方式</td>
-<td align="center">PWM/PFM 自動切替制御</td>
+<td align="left">制御方式</td>
+<td align="left">PWM/PFM 自動切替制御</td>
 </tr>
 <tr>
-<td align="center">最大出力電流</td>
-<td align="center">300mA @3.3V to 5V</td>
+<td align="left">最大出力電流</td>
+<td align="left">300mA @3.3V to 5V</td>
 </tr>
 <tr>
-<td align="center">Protection circuit</td>
-<td align="center">過電流制限/サーマルシャットダウン</td>
+<td align="left">Protection circuit</td>
+<td align="left">過電流制限/サーマルシャットダウン</td>
 </tr>
 <tr>
-<td align="center">Resolution</td>
-<td align="center">8bit</td>
+<td align="left">Resolution</td>
+<td align="left">8bit</td>
 </tr>
 <tr>
-<td align="center">Reference voltage</td>
-<td align="center">Vdd(3.3V)</td>
+<td align="left">Reference voltage</td>
+<td align="left">Vdd(3.3V)</td>
 </tr>
 <tr>
-<td align="center">Sample Rate</td>
-<td align="center">188.9kSPS(max)</td>
+<td align="left">Sample rate</td>
+<td align="left">188.9kSPS(max)</td>
 </tr>
 <tr>
-<td align="center">Interfaces</td>
-<td align="center">I2C</td>
+<td align="left">Interfaces</td>
+<td align="left">I2C</td>
 </tr>
 </tbody>
 </table>
-<h2 id="ドキュメント">ドキュメント</h2>
-<ul>
-<li>仕様書 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV02A_CR2450/AV02A_CR2450_SpecSheet_JA.pdf"><i class="fas fa-globe-americas ml-2 "></i> 日本語</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV02A_CR2450/AV02A_CR2450_SpecSheet_EN.pdf"><i class="fas fa-globe-americas ml-2 "></i> English</a></li>
-<li>回路図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV02A_CR2450/AV02A_CR2450_Schematic.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>部品配置図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV02A_CR2450/AV02A_CR2450_ComponentMarking.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>レイアウト図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV02A_CR2450/AV02A_CR2450_PCBLayout.zip"><i class="fas fa-file-archive ml-2"></i> Zuken</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV02A_CR2450/AV02A_CR2450_PCBLayout_dxf.zip"><i class="fas fa-file-archive ml-2"></i> dxf</a></li>
-</ul>
+<h2 id="ブロック図">ブロック図</h2>
+<p><a href="./AV02A_block.png"><img src="./AV02A_block.png" width="200"></a></p>
 <h2 id="ピン配置">ピン配置</h2>
-<img src="./AV02A_pinassign.png" width="600">
+<p><a href="./AV02A_pinassign.png"><img src="./AV02A_pinassign.png"></a></p>
 <h2 id="サンプルプロジェクト">サンプルプロジェクト</h2>
 <ul>
-<li><a href="/docs/examples/blink">電池の電圧をパソコンに表示</a>※リンク先 要変更</li>
+<li><a href="/docs/examples/blink">電池の電圧をパソコンに表示</a> ※リンク先要変更</li>
+</ul>
+<h2 id="ドキュメント">ドキュメント</h2>
+<ul>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV02A_CR2450/AV02A_CR2450_SpecSheet_JA.pdf">仕様書</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV02A_CR2450/AV02A_CR2450_Schematic.pdf">回路図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV02A_CR2450/AV02A_CR2450_ComponentMarking.pdf">部品配置図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV02A_CR2450/AV02A_CR2450_PCBLayout.zip">レイアウト図(Zuken)</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV02A_CR2450/AV02A_CR2450_PCBLayout_dxf.zip">レイアウト図(dxf)</a></li>
 </ul>
 
         <div class="section-index">
@@ -1625,12 +1694,18 @@
         
             
         
+            
+        
+            
+        
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 17, 2020: <a  href="/commit/d812f0404473f977b79a8f298d961dba133db01e">4/17変更K (d812f04)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 22, 2020: <a  href="/commit/d0fdb9f7eac50766e128353fa8bb2b1f5345adea">4/22変更K (d0fdb9f)</a>
 </div>
 </div>
 

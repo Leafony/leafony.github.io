@@ -5,6 +5,16 @@
   <url>
     <loc>/docs/environment/basic/</loc>
     <lastmod>2020-04-09T00:08:19+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/environment/basic/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/environment/basic/"
+                />
   </url>
   
   <url>
@@ -29,7 +39,7 @@
   
   <url>
     <loc>/docs/examples/blink/</loc>
-    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
+    <lastmod>2020-04-23T16:59:52+09:00</lastmod>
   </url>
   
   <url>
@@ -48,8 +58,28 @@
   </url>
   
   <url>
+    <loc>/docs/examples/camera/</loc>
+    <lastmod>2020-04-24T17:36:33+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/docs/examples/distance_sensor/</loc>
+    <lastmod>2020-04-24T17:36:33+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/environment/esp32/</loc>
     <lastmod>2020-04-09T00:08:19+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="/en/docs/environment/esp32/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="/docs/environment/esp32/"
+                />
   </url>
   
   <url>
@@ -80,26 +110,26 @@
   <url>
     <loc>/docs/environment/</loc>
     <lastmod>2020-04-01T09:36:25+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/docs/examples/</loc>
-    <lastmod>2020-04-20T15:51:22+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="/en/docs/examples/"
+                href="/en/docs/environment/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
-                href="/docs/examples/"
+                href="/docs/environment/"
                 />
   </url>
   
   <url>
+    <loc>/docs/examples/</loc>
+    <lastmod>2020-04-24T16:57:23+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/leaf/ai01a/</loc>
-    <lastmod>2020-04-17T05:56:07+09:00</lastmod>
+    <lastmod>2020-04-23T15:05:08+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -114,7 +144,7 @@
   
   <url>
     <loc>/docs/leaf/ap01a/</loc>
-    <lastmod>2020-04-17T05:56:07+09:00</lastmod>
+    <lastmod>2020-04-21T15:18:58+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -129,7 +159,7 @@
   
   <url>
     <loc>/docs/leaf/ac03a/</loc>
-    <lastmod>2020-04-17T05:56:07+09:00</lastmod>
+    <lastmod>2020-04-23T15:05:08+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -144,7 +174,7 @@
   
   <url>
     <loc>/docs/leaf/ai02a/</loc>
-    <lastmod>2020-04-17T05:56:07+09:00</lastmod>
+    <lastmod>2020-04-23T14:20:57+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -159,12 +189,12 @@
   
   <url>
     <loc>/docs/examples/read_battery/</loc>
-    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
+    <lastmod>2020-04-23T16:59:52+09:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/leaf/ap02a/</loc>
-    <lastmod>2020-04-17T05:56:07+09:00</lastmod>
+    <lastmod>2020-04-23T12:48:44+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -194,7 +224,7 @@
   
   <url>
     <loc>/docs/leaf/ac02a/</loc>
-    <lastmod>2020-04-20T11:16:48+09:00</lastmod>
+    <lastmod>2020-04-23T12:48:44+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -239,7 +269,7 @@
   
   <url>
     <loc>/docs/examples/temp_humid_sensors/</loc>
-    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
+    <lastmod>2020-04-23T16:59:52+09:00</lastmod>
   </url>
   
   <url>
@@ -259,22 +289,22 @@
   
   <url>
     <loc>/docs/examples/illum_sensor/</loc>
-    <lastmod>2020-04-17T05:40:11+09:00</lastmod>
+    <lastmod>2020-04-23T16:59:52+09:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/examples/accelerometer/</loc>
-    <lastmod>2020-04-17T05:40:11+09:00</lastmod>
+    <lastmod>2020-04-23T16:59:52+09:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/examples/webbluetooth_iot/</loc>
-    <lastmod>2020-03-18T02:37:02+09:00</lastmod>
+    <lastmod>2020-04-23T16:59:52+09:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/leaf/ai03a/</loc>
-    <lastmod>2020-04-17T05:56:07+09:00</lastmod>
+    <lastmod>2020-04-23T15:05:08+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -289,7 +319,7 @@
   
   <url>
     <loc>/docs/leaf/ai04a/</loc>
-    <lastmod>2020-04-17T05:56:07+09:00</lastmod>
+    <lastmod>2020-04-23T15:05:08+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -304,7 +334,7 @@
   
   <url>
     <loc>/docs/leaf/av01a/</loc>
-    <lastmod>2020-04-17T05:56:07+09:00</lastmod>
+    <lastmod>2020-04-22T16:18:32+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -319,7 +349,7 @@
   
   <url>
     <loc>/docs/examples/google_sheets_iot/</loc>
-    <lastmod>2020-03-18T02:37:02+09:00</lastmod>
+    <lastmod>2020-04-23T16:59:52+09:00</lastmod>
   </url>
   
   <url>
@@ -329,7 +359,7 @@
   
   <url>
     <loc>/docs/leaf/av02a/</loc>
-    <lastmod>2020-04-17T11:32:56+09:00</lastmod>
+    <lastmod>2020-04-22T16:18:32+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -344,7 +374,7 @@
   
   <url>
     <loc>/docs/leaf/av03a/</loc>
-    <lastmod>2020-04-17T11:32:56+09:00</lastmod>
+    <lastmod>2020-04-22T16:18:32+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -359,7 +389,7 @@
   
   <url>
     <loc>/docs/leaf/av04a/</loc>
-    <lastmod>2020-04-17T11:32:56+09:00</lastmod>
+    <lastmod>2020-04-22T16:18:32+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -374,7 +404,7 @@
   
   <url>
     <loc>/docs/leaf/ax01a/</loc>
-    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
+    <lastmod>2020-04-22T16:18:32+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -389,7 +419,7 @@
   
   <url>
     <loc>/docs/leaf/ax02a/</loc>
-    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
+    <lastmod>2020-04-22T16:18:32+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -404,12 +434,12 @@
   
   <url>
     <loc>/docs/examples/speaker/</loc>
-    <lastmod>2020-04-21T04:21:54+09:00</lastmod>
+    <lastmod>2020-04-27T15:42:19+09:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/leaf/ax03a/</loc>
-    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
+    <lastmod>2020-04-22T16:18:32+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -424,12 +454,12 @@
   
   <url>
     <loc>/docs/examples/sound_level/</loc>
-    <lastmod>2020-04-21T04:21:54+09:00</lastmod>
+    <lastmod>2020-04-24T16:57:23+09:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/leaf/ax04a/</loc>
-    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
+    <lastmod>2020-04-23T12:10:07+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -443,13 +473,18 @@
   </url>
   
   <url>
+    <loc>/docs/examples/wifi_touchsensor/</loc>
+    <lastmod>2020-04-27T15:42:19+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/docs/examples/ir_sensor/</loc>
-    <lastmod>2020-04-21T04:21:54+09:00</lastmod>
+    <lastmod>2020-04-27T14:47:11+09:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/leaf/ax05a/</loc>
-    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
+    <lastmod>2020-04-22T16:18:32+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -464,12 +499,12 @@
   
   <url>
     <loc>/docs/examples/lcd/</loc>
-    <lastmod>2020-04-21T04:21:54+09:00</lastmod>
+    <lastmod>2020-04-27T15:15:44+09:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/leaf/ax06a/</loc>
-    <lastmod>2020-04-16T18:21:39+09:00</lastmod>
+    <lastmod>2020-04-23T12:10:07+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -484,12 +519,12 @@
   
   <url>
     <loc>/docs/examples/rtc/</loc>
-    <lastmod>2020-04-21T04:21:54+09:00</lastmod>
+    <lastmod>2020-04-23T15:57:21+09:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/leaf/ax07a/</loc>
-    <lastmod>2020-04-17T11:02:28+09:00</lastmod>
+    <lastmod>2020-04-22T16:18:32+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -504,12 +539,12 @@
   
   <url>
     <loc>/docs/examples/microsd/</loc>
-    <lastmod>2020-04-21T04:21:54+09:00</lastmod>
+    <lastmod>2020-04-27T15:42:19+09:00</lastmod>
   </url>
   
   <url>
     <loc>/docs/leaf/ax08a/</loc>
-    <lastmod>2020-04-17T11:02:28+09:00</lastmod>
+    <lastmod>2020-04-22T16:18:32+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -524,7 +559,7 @@
   
   <url>
     <loc>/docs/leaf/az61a/</loc>
-    <lastmod>2020-04-17T12:27:20+09:00</lastmod>
+    <lastmod>2020-04-22T16:18:32+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -539,7 +574,7 @@
   
   <url>
     <loc>/docs/leaf/az01a/</loc>
-    <lastmod>2020-04-17T11:48:00+09:00</lastmod>
+    <lastmod>2020-04-22T16:18:32+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -554,7 +589,7 @@
   
   <url>
     <loc>/docs/leaf/az62a/</loc>
-    <lastmod>2020-04-17T12:27:20+09:00</lastmod>
+    <lastmod>2020-04-23T15:56:18+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -569,7 +604,7 @@
   
   <url>
     <loc>/docs/leaf/az02a/</loc>
-    <lastmod>2020-04-17T11:48:00+09:00</lastmod>
+    <lastmod>2020-04-23T12:19:33+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -584,7 +619,7 @@
   
   <url>
     <loc>/docs/leaf/az63a/</loc>
-    <lastmod>2020-04-17T12:27:20+09:00</lastmod>
+    <lastmod>2020-04-23T15:55:29+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -599,7 +634,7 @@
   
   <url>
     <loc>/docs/leaf/az65a/</loc>
-    <lastmod>2020-04-17T12:27:20+09:00</lastmod>
+    <lastmod>2020-04-23T15:55:29+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -614,7 +649,7 @@
   
   <url>
     <loc>/docs/leaf/az64a/</loc>
-    <lastmod>2020-04-17T12:27:20+09:00</lastmod>
+    <lastmod>2020-04-23T15:55:29+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"

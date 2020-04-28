@@ -22,17 +22,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>AX06A Grove&amp;5V | Leafony</title><meta property="og:title" content="AX06A Grove&amp;5V" />
-<meta property="og:description" content="Grove接続リーフ
-" />
+<meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/docs/leaf/ax06a/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="AX06A Grove&amp;5V">
-<meta itemprop="description" content="Grove接続リーフ
-"><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AX06A Grove&amp;5V"/>
-<meta name="twitter:description" content="Grove接続リーフ
-"/>
+<meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
 
@@ -376,6 +373,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplescamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesdistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
   </li>
   <ul>
@@ -541,6 +584,29 @@
   </li>
   <ul>
     <li class="collapse " id="docsexamplessound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Wi-Fi タッチセンサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleswifi_touchsensor">
       
       
       
@@ -1392,9 +1458,9 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#特徴">特徴</a></li>
-    <li><a href="#ドキュメント">ドキュメント</a></li>
-    <li><a href="#ピン配置">ピン配置</a></li>
+    <li><a href="#ブロック図">ブロック図</a></li>
     <li><a href="#サンプルプロジェクト">サンプルプロジェクト</a></li>
+    <li><a href="#ドキュメント">ドキュメント</a></li>
   </ul>
 </nav>
 
@@ -1439,25 +1505,25 @@
             
 <div class="td-content">
 	<h1>AX06A Grove&amp;5V</h1>
-	<div class="lead">Grove接続リーフ</div>
+	
 	<p><a href="./AX06A Grove&5V_f_large.jpg"><img src="./AX06A Grove&5V_f_small.jpg" width="200"></a>
 <a href="./AX06A Grove&5V_b_large.jpg"><img src="./AX06A Grove&5V_b_small.jpg" width="200"></a>
-<a href="./AX06A Grove&5V_p_large.jpg"><img src="./AX06A Grove&5V_p_small.jpg" width="200"></a>
-<img src="./AX06A_block.png" width="200"></p>
+<a href="./AX06A Grove&5V_p_large.jpg"><img src="./AX06A Grove&5V_p_small.jpg" width="200"></a></p>
 <h2 id="特徴">特徴</h2>
-<p>Seeed Studio製 Groveシリーズに準拠する5Vで動作するUART、I2C、アナログ入力、デジタル入力が可能なリーフです。3.3Vから昇圧電源回路により5Vに変換しGroveに供給します。Grove対応ピンの仕様は以下の通り。 低消費電力を実現するためI2C Expander を制御することにより5Vの電源をオフすることが可能です。選択。</p>
-<h2 id="ドキュメント">ドキュメント</h2>
-<ul>
-<li>仕様書 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AX06A_Grove%265V/AX06A_Grove%265V_SpecSheet_JA.pdf"><i class="fas fa-globe-americas ml-2 "></i> 日本語</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AX06A_Grove%265V/AX06A_Grove%265V_SpecSheet_EN.pdf"><i class="fas fa-globe-americas ml-2 "></i> English</a></li>
-<li>回路図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AX06A_Grove%265V/AX06A_Grove%265V_Schematic.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>部品配置図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AX06A_Grove%265V/AX06A_Grove%265V_ComponentMarking.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>レイアウト図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AX06A_Grove%265V/AX06A_Grove%265V_PCBLayout.zip"><i class="fas fa-file-archive ml-2"></i> Zuken</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AX06A_Grove%265V/AX06A_Grove%265V_PCBLayout_dxf.zip"><i class="fas fa-file-archive ml-2"></i> dxf</a></li>
-</ul>
-<h2 id="ピン配置">ピン配置</h2>
-<img src="./AX06A_pinassign.png" width="600">
+<p>Seeed Studio製 Groveシリーズに準拠する5Vで動作するUART、I2C、アナログ入力、デジタル入力が可能なリーフです。3.3Vから昇圧電源回路により5Vに変換しGroveに供給します。Grove対応ピンの仕様は以下の通り。 低消費電力を実現するためI2C Expander を制御することにより5Vの電源をオフすることが可能です。</p>
+<h2 id="ブロック図">ブロック図</h2>
+<p><a href="./AX06A_block.png"><img src="./AX06A_block.png" width="200"></a></p>
 <h2 id="サンプルプロジェクト">サンプルプロジェクト</h2>
 <ul>
 <li><a href="/docs/examples/blink">LED点滅</a></li>
+</ul>
+<h2 id="ドキュメント">ドキュメント</h2>
+<ul>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AX06A_Grove%265V/AX06A_Grove%265V_SpecSheet_JA.pdf">仕様書</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AX06A_Grove%265V/AX06A_Grove%265V_Schematic.pdf">回路図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AX06A_Grove%265V/AX06A_Grove%265V_ComponentMarking.pdf">部品配置図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AX06A_Grove%265V/AX06A_Grove%265V_PCBLayout.zip">レイアウト図(Zuken)</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AX06A_Grove%265V/AX06A_Grove%265V_PCBLayout_dxf.zip">レイアウト図(dxf)</a></li>
 </ul>
 
         <div class="section-index">
@@ -1577,12 +1643,18 @@
         
             
         
+            
+        
+            
+        
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 16, 2020: <a  href="/commit/5064687c52dcab59d00f39cf93245f67720f78f6">merge (5064687)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 23, 2020: <a  href="/commit/9d3880e0fcac500fdbe697bfc8d09d3c7996074c">4/23変更H (9d3880e)</a>
 </div>
 </div>
 

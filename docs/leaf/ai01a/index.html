@@ -22,17 +22,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>AI01A 4-Sensors | Leafony</title><meta property="og:title" content="AI01A 4-Sensors" />
-<meta property="og:description" content="4-Sensors
-" />
+<meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/docs/leaf/ai01a/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="AI01A 4-Sensors">
-<meta itemprop="description" content="4-Sensors
-"><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AI01A 4-Sensors"/>
-<meta name="twitter:description" content="4-Sensors
-"/>
+<meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
 
@@ -376,6 +373,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplescamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesdistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
   </li>
   <ul>
@@ -541,6 +584,29 @@
   </li>
   <ul>
     <li class="collapse " id="docsexamplessound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Wi-Fi タッチセンサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleswifi_touchsensor">
       
       
       
@@ -1393,9 +1459,12 @@
   <ul>
     <li><a href="#特徴">特徴</a></li>
     <li><a href="#性能">性能</a></li>
-    <li><a href="#ドキュメント">ドキュメント</a></li>
+    <li><a href="#ブロック図">ブロック図</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
     <li><a href="#サンプルプロジェクト">サンプルプロジェクト</a></li>
+    <li><a href="#ライブラリ関数の概要は仕様書に記載">ライブラリ(関数の概要は、仕様書に記載）</a></li>
+    <li><a href="#温度または湿度の補正の仕方">温度（または、湿度）の補正の仕方</a></li>
+    <li><a href="#ドキュメント">ドキュメント</a></li>
   </ul>
 </nav>
 
@@ -1440,108 +1509,120 @@
             
 <div class="td-content">
 	<h1>AI01A 4-Sensors</h1>
-	<div class="lead">4-Sensors</div>
+	
 	<p><a href="./AI01A 4-Sensors_f_large.jpg"><img src="./AI01A 4-Sensors_f_small.jpg" width="200"></a>
 <a href="./AI01A 4-Sensors_b_large.jpg"><img src="./AI01A 4-Sensors_b_small.jpg" width="200"></a>
-<a href="./AI01A 4-Sensors_p_large.jpg"><img src="./AI01A 4-Sensors_p_small.jpg" width="200"></a>
-<img src="./AI01A_block.png" width="200"></p>
+<a href="./AI01A 4-Sensors_p_large.jpg"><img src="./AI01A 4-Sensors_p_small.jpg" width="200"></a></p>
 <h2 id="特徴">特徴</h2>
 <p>温湿度センサ、照度センサ、加速度センサを搭載したリーフです。MCUリーフとはI2Cで接続されます。</p>
 <h2 id="性能">性能</h2>
 <table>
 <thead>
 <tr>
-<th align="center">項目</th>
-<th align="center">内容</th>
+<th align="left">項目</th>
+<th align="left">内容　　　　　　　</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">温湿度センサ</td>
-<td align="center"></td>
+<td align="left"><strong>温湿度センサ</strong></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td align="center">温度計測範囲</td>
-<td align="center">-40～120℃</td>
+<td align="left">温度計測範囲</td>
+<td align="left">-40～120℃</td>
 </tr>
 <tr>
-<td align="center">Temperature accuracy</td>
-<td align="center">±0.5°C (15 to +40°C)</td>
+<td align="left">Temperature accuracy</td>
+<td align="left">±0.5°C (15 to +40°C)</td>
 </tr>
 <tr>
-<td align="center">Relative humidity range</td>
-<td align="center">0 to 100%</td>
+<td align="left">Relative humidity range</td>
+<td align="left">0 to 100%</td>
 </tr>
 <tr>
-<td align="center">Humidity accuracy</td>
-<td align="center">3.5% rH (20 to +80% rH)</td>
+<td align="left">Humidity accuracy</td>
+<td align="left">3.5% rH (20 to +80% rH)</td>
 </tr>
 <tr>
-<td align="center">Interfaces</td>
-<td align="center">I2C</td>
+<td align="left">Interfaces</td>
+<td align="left">I2C</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"></td>
+<td align="left"></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td align="center">照度センサ</td>
-<td align="center"></td>
+<td align="left"><strong>照度センサ</strong></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td align="center">Measurement range</td>
-<td align="center">0.01 lux to 83 k lux</td>
+<td align="left">Measurement range</td>
+<td align="left">0.01 lux to 83 k lux</td>
 </tr>
 <tr>
-<td align="center">IR Rejects</td>
-<td align="center">&gt; 99% (typ)</td>
+<td align="left">IR Rejects</td>
+<td align="left">&gt; 99% (typ)</td>
 </tr>
 <tr>
-<td align="center">Interfaces</td>
-<td align="center">I2C</td>
+<td align="left">Interfaces</td>
+<td align="left">I2C</td>
 </tr>
 <tr>
-<td align="center"></td>
-<td align="center"></td>
+<td align="left"></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td align="center">加速度センサ</td>
-<td align="center"></td>
+<td align="left"><strong>加速度センサ</strong></td>
+<td align="left"></td>
 </tr>
 <tr>
-<td align="center">Measurement range</td>
-<td align="center">±2g/±4g/±8g/±16g (selectable)</td>
+<td align="left">Measurement range</td>
+<td align="left">±2g/±4g/±8g/±16g (selectable)</td>
 </tr>
 <tr>
-<td align="center">Function</td>
-<td align="center">6D/4D orientation detection</td>
+<td align="left">Function</td>
+<td align="left">6D/4D orientation detection</td>
 </tr>
 <tr>
-<td align="center">Freefall detection</td>
-<td align="center"></td>
+<td align="left">Freefall detection</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td align="center">Motion detection</td>
-<td align="center"></td>
+<td align="left">Motion detection</td>
+<td align="left"></td>
 </tr>
 <tr>
-<td align="center">Interfaces</td>
-<td align="center">I2C</td>
+<td align="left">Interfaces</td>
+<td align="left">I2C</td>
 </tr>
 </tbody>
 </table>
-<h2 id="ドキュメント">ドキュメント</h2>
-<ul>
-<li>仕様書 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensor_SpecSheet_JA.pdf"><i class="fas fa-globe-americas ml-2 "></i> 日本語</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensor_SpecSheet_EN.pdf"><i class="fas fa-globe-americas ml-2 "></i> English</a></li>
-<li>回路図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensors_Schematic.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>部品配置図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensors_ComponentMarking.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>レイアウト図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensors_PCBLayout.zip"><i class="fas fa-file-archive ml-2"></i> Zuken</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensors_PCBLayout_dxf.zip"><i class="fas fa-file-archive ml-2"></i> dxf</a></li>
-</ul>
+<h2 id="ブロック図">ブロック図</h2>
+<p><a href="./AI01A_block.png"><img src="./AI01A_block.png" width="200"></a></p>
 <h2 id="ピン配置">ピン配置</h2>
 <img src="./AI01A_pinassign.png" width="600">
 <h2 id="サンプルプロジェクト">サンプルプロジェクト</h2>
 <ul>
 <li><a href="/docs/examples/blink">LED点滅</a></li>
+</ul>
+<h2 id="ライブラリ関数の概要は仕様書に記載">ライブラリ(関数の概要は、仕様書に記載）</h2>
+<ul>
+<li>ユニファイドセンサドライバ include file: <a href="https://github.com/adafruit/Adafruit_Sensor">Adafruit_Sensor.h</a></li>
+<li>温湿度センサデータ取得 include file: <a href="https://github.com/ameltech/sme-hts221-library">HTS221.h</a></li>
+<li>照度センサデータ取得 include file: <a href="https://github.com/closedcube/ClosedCube_OPT3001_Arduino">ClosedCube_OPT3001.h</a></li>
+<li>加速度センサデータ取得 include file : <a href="https://github.com/adafruit/Adafruit_LIS3DH">Adafruit_LIS3DH.h</a>※       <br>
+※：このまま使用すると書き込みエラーになります。<a href="https://github.com/Leafony/Adafruit_LIS3DH.h_change">こちら</a>を参照して編集してください。</li>
+</ul>
+<h2 id="温度または湿度の補正の仕方">温度（または、湿度）の補正の仕方</h2>
+<p>表示させたい温度（または、湿度）と４-Sensorsの温度（または、湿度）に、ずれがあるときは、２点間補正を行います。詳しくは、<a href="https://trillion-node.org/example/correction/">こちら</a>。</p>
+<h2 id="ドキュメント">ドキュメント</h2>
+<ul>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensor_SpecSheet_JA.pdf">仕様書</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensors_Schematic.pdf">回路図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensors_ComponentMarking.pdf">部品配置図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensors_PCBLayout.zip">レイアウト図(Zuken)</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensors_PCBLayout_dxf.zip">レイアウト図(dxf)</a></li>
 </ul>
 
         <div class="section-index">
@@ -1661,12 +1742,18 @@
         
             
         
+            
+        
+            
+        
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 17, 2020: <a  href="/commit/0978343f2617ec8d371681384e4f99ce6085f51d">update tables (0978343)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 23, 2020: <a  href="/commit/6b5cc641b27d918e02bcf2ee938294d8dc3783ef">4/23変更H (6b5cc64)</a>
 </div>
 </div>
 

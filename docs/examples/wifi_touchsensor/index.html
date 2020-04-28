@@ -1,0 +1,2091 @@
+<!doctype html>
+<html lang="jp" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.69.0" />
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/examples/wifi_touchsensor/index.xml">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Wi-Fi タッチセンサ | Leafony</title><meta property="og:title" content="Wi-Fi タッチセンサ" />
+<meta property="og:description" content="人が近づいたら音を鳴らそう　※修正お願いします。
+" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/docs/examples/wifi_touchsensor/" />
+<meta property="og:site_name" content="Leafony" />
+<meta itemprop="name" content="Wi-Fi タッチセンサ">
+<meta itemprop="description" content="人が近づいたら音を鳴らそう　※修正お願いします。
+"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Wi-Fi タッチセンサ"/>
+<meta name="twitter:description" content="人が近づいたら音を鳴らそう　※修正お願いします。
+"/>
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.df56c929024b3d9666383e2051ce5b2c40bbcc1771c8ca30622b22efe754ec4e.css" as="style">
+<link href="/scss/main.min.df56c929024b3d9666383e2051ce5b2c40bbcc1771c8ca30622b22efe754ec4e.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+    <title>Wi-Fi タッチセンサ | Leafony</title>
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo"></span><span class="text-uppercase font-weight-bold">Leafony</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/docs/" ><span class="active">技術資料</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="https://github.com/leafony" target="_blank" ><span>Github</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Japanese
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/en/">English</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block"></div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Japanese
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/en/">English</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">技術資料</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docs">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/overview/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">はじめに</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsoverview">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/overview/terms/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">用語の説明</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsoverviewterms">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/getting-started/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">クイックスタート</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsgetting-started">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/getting-started/basic/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic Kit A1.0</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsgetting-startedbasic">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/getting-started/esp32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 Wi-Fi Kit A1.0</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsgetting-startedesp32">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">開発環境設定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironment">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/basic/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironmentbasic">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/esp32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 Wi-Fi Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironmentesp32">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">サンプルデザイン</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsexamples">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/blink/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LED点滅</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesblink">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplescamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesdistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesread_battery">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/temp_humid_sensors/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">温湿度センサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplestemp_humid_sensors">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/illum_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">照度センサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesillum_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/accelerometer/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">加速度センサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesaccelerometer">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/webbluetooth_iot/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Web Bluetooth</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleswebbluetooth_iot">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/google_sheets_iot/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Google Sheets</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesgoogle_sheets_iot">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/speaker/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">スピーカ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesspeaker">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/sound_level/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">サウンドレベルメータ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplessound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed active td-sidebar-link td-sidebar-link__section">Wi-Fi タッチセンサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleswifi_touchsensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/ir_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">人感センサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesir_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/lcd/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LCD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleslcd">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/rtc/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">リアルタイムクロック</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesrtc">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/microsd/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Micro SD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesmicrosd">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">リーフ資料</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleaf">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/leafonybus/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Leafony bus</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafleafonybus">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ai01a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">4-Sensors</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafai01a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ap01a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">AVR MCU</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafap01a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ac03a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LoRa Easy</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafac03a">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsleafac03a_index-2" href="/docs/leaf/ac03a/_index-2/">LoRa Easy</a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ai02a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">SP&amp;PIR</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafai02a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ap02a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 MCU</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafap02a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/pcb_template/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">基板設計テンプレート</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafpcb_template">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ac02a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">BLE Sugar</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafac02a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ai03a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">MIC&amp;VR&amp;LED</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafai03a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ai04a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LCD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafai04a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/av01a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">CR2032</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafav01a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/av02a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">CR2450</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafav02a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/av03a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">AA BAT</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafav03a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/av04a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">2V～4.5V</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafav04a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ax01a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Shield</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafax01a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ax02a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">29 pin</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafax02a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ax03a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Leaf x2</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafax03a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ax04a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Spacer</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafax04a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ax05a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">I Meas</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafax05a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ax06a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Grove&amp;5V</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafax06a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ax07a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Back to back</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafax07a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/ax08a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">29pin header</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafax08a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/az61a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Connector</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafaz61a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/az01a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">USB</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafaz01a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/az62a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Connector Cover</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafaz62a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/az02a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">RTC&amp;MicroSD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafaz02a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/az63a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Nut Plate</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafaz63a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/az65a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Lowercase</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafaz65a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/az64a/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Uppercase</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafaz64a">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/license/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ライセンス・規約</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docslicense">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#概要">概要</a></li>
+    <li><a href="#使用するリーフ">使用するリーフ</a></li>
+    <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
+    <li><a href="#スケッチの書き込み">スケッチの書き込み</a></li>
+    <li><a href="#表示のやり方">表示のやり方</a></li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="/docs/">技術資料</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="/docs/examples/">サンプルデザイン</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="/docs/examples/wifi_touchsensor/">Wi-Fi タッチセンサ</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Wi-Fi タッチセンサ</h1>
+	<div class="lead">人が近づいたら音を鳴らそう　※修正お願いします。</div>
+	<h2 id="概要">概要</h2>
+<p>工場出荷時に、ESP32 MCUリーフにArduinoのスケッチが書き込まれているので、スマートフォンやパソコンのWi-Fiを使ってタッチセンサの値を送信して、表示がされます。</p>
+<h2 id="使用するリーフ">使用するリーフ</h2>
+<p>以下のリーフを使用します</p>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">AP02A</td>
+<td align="left">ESP32 MCU</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AV04A</td>
+<td align="left">2V~4.5V</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AX07A</td>
+<td align="left">Back to back</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AX08A</td>
+<td align="left">29pin header</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Screw M2×？mm</td>
+<td align="left">4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="リーフの組み立て">リーフの組み立て</h2>
+<p>下図のようにリーフを組み立てましょう。</p>
+<p><img src="./ESPWiFi_assemble.png" alt="assemble1"></p>
+<h2 id="スケッチの書き込み">スケッチの書き込み</h2>
+<ul>
+<li>ESP32 MCUをArduino IDEで使用するには、Arduino core for the ESP32 のインストールが必要です。詳しくは、こちら。</li>
+<li>Arduino IDEで、以下のスケッチをマイコンボードに書き込んでください。
+//=====================================================================
+//  Leafony Platform sample sketch
+//     Platform     : ESP32
+//     Processor    : ESP32-WROOM-32
+//     Application  : ESP32 Touch Sensor
+//
+//     Leaf configuration
+//       (1) AP02A ESP MCU
+//       (2) AX08A 29pin header
+//
+//    (c) 2019 Trillion-Node Study Group
+//    Released under the MIT license
+//    <a href="https://opensource.org/licenses/MIT">https://opensource.org/licenses/MIT</a>
+//
+//      Rev.00 2019/11/21  First release
+//=====================================================================
+#include &lt;WiFi.h&gt;                                             // ESP32用WiFiライブラリ
+#include &lt;WiFiClient.h&gt;
+#include &lt;WiFiAP.h&gt;</li>
+</ul>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// Wi-Fi Set these to your desired credentials.
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+const char *ssid = &ldquo;Leafony_ESP32-AP&rdquo;;
+const char *password = &ldquo;password&rdquo;;</p>
+<p>WiFiServer server(80);</p>
+<p>#define TIMEOUT 20000                                         // タイムアウト 20秒
+int update=1;                                                 // ブラウザのページ更新間隔(秒)初期値</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// Touch
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+int threshold = 20;                                           // Touch 検出閾値
+// bool touch1detected = false;
+// bool touch2detected = false;
+// bool touch3detected = false;
+// bool touch4detected = false;
+// bool touch5detected = false;
+// bool touch6detected = false;</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// Touch 割り込み
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// &mdash;&mdash; T0 &mdash;&mdash;
+// void gotTouch1(){
+//  touch1detected = true;
+// }
+// &mdash;&mdash; T3 &mdash;&mdash;
+// void gotTouch2(){
+//  touch2detected = true;
+// }
+// &mdash;&mdash; T4 &mdash;&mdash;
+// void gotTouch3(){
+//  touch3detected = true;
+// }
+// &mdash;&mdash; T5 &mdash;&mdash;
+// void gotTouch4(){
+//  touch4detected = true;
+// }
+// &mdash;&mdash; T6 &mdash;&mdash;
+// void gotTouch5(){
+//  touch5detected = true;
+// }
+// &mdash;&mdash; T7 &mdash;&mdash;
+// void gotTouch6(){
+//  touch6detected = true;
+// }</p>
+<p>//====================================================================
+void setup(){ 
+Serial.begin(115200);                                     // デバッグシリアル出力開始
+Serial.println(&ldquo;Wi-Fi &amp; Touch Sensor Test&rdquo;);              // シリアル出力表示</p>
+<pre><code>WiFi.softAP(ssid, password);
+IPAddress myIP = WiFi.softAPIP();
+Serial.print(&quot;AP IP address: &quot;);
+Serial.println(myIP);
+server.begin();                                           // サーバ起動
+delay(1000);                                              // Wait
+Serial.println(&quot;Server started&quot;);
+</code></pre>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// Touch 割り込み設定
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+//    touchAttachInterrupt(T0, gotTouch1, threshold);           // D2/22pin
+//    touchAttachInterrupt(T3, gotTouch2, threshold);           // D7/9pin
+//    touchAttachInterrupt(T4, gotTouch3, threshold);           // D5/28pin
+//    touchAttachInterrupt(T5, gotTouch4, threshold);           // D4/26pin
+//    touchAttachInterrupt(T6, gotTouch5, threshold);           // D6/7pin
+//    touchAttachInterrupt(T7, gotTouch6, threshold);           // D3/24pin
+}</p>
+<p>//====================================================================
+void loop(){
+delay(1000);                                              // Wait：これが短いと”このページは動作していません&quot;が頻発する
+WiFiClient client = server.available();                   // 接続中のクライアントからデータを受信</p>
+<pre><code>char read_data;                                           // 文字変数を定義
+char s[65];                                               // 文字列変数を定義 65バイト64文字
+byte data[32];                                            // 画像転送用の一時保存変数
+int len=0;                                                // 文字列等の長さカウント用
+int t_wait=0;                                             // 更新時間カウント用
+int i,f_size;
+
+delay(500);                                               // Wait：これが短いと”このページは動作していません&quot;が頻発する
+client = server.available();                              // 接続されたクライアントを生成
+
+if(!client)return;                                        // loop()の先頭に戻る
+</code></pre>
+<p>//    Serial.println(&ldquo;Connected&rdquo;);                              // シリアル出力表示
+while(client.connected()){                                // 当該クライアントの接続状態を確認
+if(client.available()){                               // クライアントからのデータを確認
+t_wait=0;                                         // 待ち時間変数をリセット
+read_data=client.read();                          // データを文字変数read_dataに代入</p>
+<pre><code>        if(read_data=='\n'){                              // 改行を検出した時
+            if(len&gt;5 &amp;&amp; strncmp(s,&quot;GET /&quot;,5)==0) break;
+            len=0;                                        // 文字列長を0に
+        }else if(read_data!='\r' &amp;&amp; read_data!='\0'){
+            s[len]=read_data;                             // 文字列変数に文字read_dataを追加
+            len++;                                        // 変数lenに1を加算
+            s[len]='\0';                                  // 文字列を終端
+            if(len&gt;=64) len=63;                           // 文字列変数の上限
+        }
+    }
+    t_wait++;                                             // 変数t_waitの値を1増加させる
+    if(t_wait&gt;TIMEOUT) break; else delay(1);              // TIMEOUTに到達したらwhileを抜ける
+}
+
+delay(1);                                                 // クライアント側の応答待ち時間
+if(!client.connected()||len&lt;6) return;                    // 切断された場合はloop()の先頭へ
+</code></pre>
+<p>//    Serial.println(s);                                        // 受信した命令をシリアル出力表示
+if(strncmp(s,&ldquo;GET / &ldquo;,6)==0){                             // コンテンツ取得命令時
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// Web 表示
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+html(client,update,WiFi.softAPIP());                  // コンテンツ表示
+client.flush();                                       // ESP32用 ERR_CONNECTION_RESET対策
+//        client.stop();                                      // クライアントの切断
+return;                                               // 処理の終了・loop()の先頭へ
+}</p>
+<pre><code>//----------------------------------------------
+// 更新時間の設定
+//----------------------------------------------
+if(strncmp(s,&quot;GET /?INT=&quot;,10)==0){                        // 更新時間の設定命令を受けた時
+    update = atoi(&amp;s[10]);                                // 受信値を変数updateに代入
+}
+
+//----------------------------------------------
+// コマンド送信
+//----------------------------------------------
+for(i=6;i&lt;strlen(s);i++) if(s[i]==' '||s[i]=='+') s[i]='\0';
+htmlMesg(client,&amp;s[6],WiFi.softAPIP());                   // メッセージ表示
+client.flush();                                           // ESP32用 ERR_CONNECTION_RESET対策
+</code></pre>
+<p>//    client.stop();                                          // クライアント切断
+Serial.println(&ldquo;Sent HTML&rdquo;);                              // シリアル出力表示
+}</p>
+<ul>
+<li>ESP32_AP_Touch.inoと同じフォルダに保存してください。自動的に読み込まれます</li>
+</ul>
+<p>//=====================================================================
+//  Leafony Platform sample sketch
+//     Application  : html
+//
+//    (c) 2019 Trillion-Node Study Group
+//    Released under the MIT license
+//    <a href="https://opensource.org/licenses/MIT">https://opensource.org/licenses/MIT</a>
+//
+//      Rev.00 2019/11/07  First release
+//=====================================================================
+//====================================================================
+// Web表示
+//====================================================================
+void html(WiFiClient &amp;client,  int update, uint32_t ip){
+char s[65],s_ip[16];
+uint16_t touchData;
+uint16_t touchTemp;
+sprintf(s_ip,&quot;%d.%d.%d.%d&rdquo;,
+ip &amp; 255,
+ip&raquo;8 &amp; 255,
+ip&raquo;16 &amp; 255,
+ip&raquo;24
+);
+client.println(&ldquo;HTTP/1.1 200 OK&rdquo;);              // HTTP OKを応答
+client.println(&ldquo;Content-Type: text/html&rdquo;);      // HTMLコンテンツ
+client.println(&ldquo;Connection: close&rdquo;);            // 応答終了後にセッションを閉じる
+client.println();
+client.println(&ldquo;<html>&rdquo;);
+client.println(&ldquo;<head><title>Test Page</title>&rdquo;);
+client.println(&ldquo;&lt;meta http-equiv=&quot;Content-type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;&rdquo;);
+if(update){
+client.print(&ldquo;&lt;meta http-equiv=&quot;refresh&quot; content=&quot;&quot;);
+client.print(update);
+client.print(&quot;;URL=http://&quot;);
+client.print(s_ip);
+client.println(&quot;/&quot;&gt;&rdquo;);
+}
+client.println(&ldquo;</head>&rdquo;);
+client.println(&ldquo;<body>&rdquo;);
+client.println(&ldquo;<h3>Wi-Fi &amp; Touch Sensor Test</h3>&rdquo;);
+// &mdash;&mdash; T6 &mdash;&mdash;
+touchData=touchRead(T6);
+client.print(&ldquo;F7 /D6:&quot;);
+for (touchTemp=0; touchTemp&lt;=touchData/5; touchTemp++){
+client.print(&quot;<em>&quot;);
+}
+client.print(&quot;:&ldquo;+String(touchData));
+//            if(touch5detected){
+if(touchData&lt;=threshold){
+//              touch5detected = false;
+Serial.println(&ldquo;T6/D6/ 7pin :&ldquo;+String(touchData)+&rdquo; :Touch detected&rdquo;);
+client.println(&rdquo; :Touch detected&rdquo;);
+}
+client.println(&ldquo;<br>&rdquo;);
+// &mdash;&mdash; T3 &mdash;&mdash;
+touchData=touchRead(T3);
+client.print(&ldquo;F9 /D7:&quot;);
+for (touchTemp=0; touchTemp&lt;=touchData/5; touchTemp++){
+client.print(&quot;</em>&quot;);
+}
+client.print(&quot;:&ldquo;+String(touchData));
+//            if(touch2detected){
+if(touchData&lt;=threshold){
+//              touch2detected = false;
+Serial.println(&ldquo;T3/D7/ 9pin :&ldquo;+String(touchData)+&rdquo; :Touch detected&rdquo;);
+client.println(&rdquo; :Touch detected&rdquo;);
+}
+client.println(&ldquo;<br>&rdquo;);
+// &mdash;&mdash; T0 &mdash;&mdash;
+touchData=touchRead(T0);
+client.print(&ldquo;F22/D2:&quot;);
+for (touchTemp=0; touchTemp&lt;=touchData/5; touchTemp++){
+client.print(&quot;<em>&quot;);
+}
+client.print(&quot;:&ldquo;+String(touchData));
+//            if(touch1detected){
+if(touchData&lt;=threshold){
+//              touch1detected = false;
+Serial.println(&ldquo;T0/D2/22pin :&ldquo;+String(touchData)+&rdquo; :Touch detected&rdquo;);
+client.println(&rdquo; :Touch detected&rdquo;);
+}
+client.println(&ldquo;<br>&rdquo;);
+/</em>
+// &mdash;&mdash; T7 &mdash;&mdash;
+touchData=touchRead(T7);
+client.print(&ldquo;F24/D3:&quot;);
+for (touchTemp=0; touchTemp&lt;=touchData/5; touchTemp++){
+client.print(&quot;<em>&quot;);
+}
+client.print(&quot;:&ldquo;+String(touchData));
+//            if(touch6detected){
+if(touchData&lt;=threshold){
+//              touch6detected = false;
+Serial.println(&ldquo;T7/D3/24pin :&ldquo;+String(touchData)+&rdquo; :Touch detected&rdquo;);
+client.println(&rdquo; :Touch detected&rdquo;);
+}
+client.print(&ldquo;<br>&rdquo;);
+<em>/
+// &mdash;&mdash; T5 &mdash;&mdash;
+touchData=touchRead(T5);
+client.print(&ldquo;F26/D4:&quot;);
+for (touchTemp=0; touchTemp&lt;=touchData/5; touchTemp++){
+client.print(&quot;</em>&quot;);
+}
+client.print(&quot;:&ldquo;+String(touchData));
+//            if(touch4detected){
+if(touchData&lt;=threshold){
+//              touch4detected = false;
+Serial.println(&ldquo;T5/D4/26pin :&ldquo;+String(touchData)+&rdquo; :Touch detected&rdquo;);
+client.println(&rdquo; :Touch detected&rdquo;);
+}
+client.println(&ldquo;<br>&rdquo;);
+// &mdash;&mdash; T4 &mdash;&mdash;
+touchData=touchRead(T4);
+client.print(&ldquo;F28/D5:&quot;);
+for (touchTemp=0; touchTemp&lt;=touchData/5; touchTemp++){
+client.print(&quot;</em>&quot;);
+}
+client.print(&quot;:&ldquo;+String(touchData));
+//            if(touch3detected){
+if(touchData&lt;=threshold){
+//              touch3detected = false;
+Serial.println(&ldquo;T4/D5/28pin :&ldquo;+String(touchData)+&rdquo; :Touch detected&rdquo;);
+client.println(&rdquo; :Touch detected&rdquo;);
+}
+client.println(&ldquo;<br>&rdquo;);</p>
+<pre><code>client.print(&quot;更新間隔 = &quot;);
+client.print(update);
+client.println(&quot; 秒&lt;/p&gt;&quot;);
+client.println(&quot;&lt;hr&gt;&quot;);
+</code></pre>
+<p>//    client.println(&ldquo;<h3>HTTP GET</h3>&rdquo;);
+client.print(&ldquo;<p>http://&quot;);
+client.print(s_ip);
+sprintf(s,&ldquo;&lt;form method=&quot;GET&quot; action=&quot;http://%s/&quot;&gt;&rdquo;,s_ip);
+client.println(s);</p>
+<pre><code>client.println(&quot;自動更新:&lt;input type=\&quot;submit\&quot; name=\&quot;INT\&quot; value=\&quot;0 停止\&quot;&gt;&quot;);
+client.println(&quot;&lt;input type=\&quot;submit\&quot; name=\&quot;INT\&quot; value=\&quot;1 秒\&quot;&gt;&quot;);
+</code></pre>
+<p>//    client.println(&ldquo;&lt;input type=&quot;submit&quot; name=&quot;INT&quot; value=&quot;2 秒&quot;&gt;&rdquo;);
+//    client.println(&ldquo;&lt;input type=&quot;submit&quot; name=&quot;INT&quot; value=&quot;5 秒&quot;&gt;&rdquo;);
+//    client.println(&ldquo;&lt;input type=&quot;submit&quot; name=&quot;INT&quot; value=&quot;10 秒&quot;&gt;&rdquo;);
+//    client.println(&rdquo;　&lt;input type=&quot;submit&quot; name=&quot;RESET&quot; value=&quot;リセット&quot;&gt;<br><br>&rdquo;);</p>
+<pre><code>client.println(&quot;&lt;/form&gt;&quot;);
+client.println(&quot;&lt;/body&gt;&quot;);
+client.println(&quot;&lt;/html&gt;&quot;);
+</code></pre>
+<p>}</p>
+<p>//====================================================================
+// コマンド送信
+//====================================================================
+void htmlMesg(WiFiClient &amp;client, char *txt, uint32_t ip){
+char s_ip[16];</p>
+<pre><code>sprintf(s_ip,&quot;%d.%d.%d.%d&quot;,
+    ip &amp; 255,
+    ip&gt;&gt;8 &amp; 255,
+    ip&gt;&gt;16 &amp; 255,
+    ip&gt;&gt;24
+);
+client.println(&quot;HTTP/1.1 200 OK&quot;);              // HTTP OKを応答
+client.println(&quot;Content-Type: text/html&quot;);      // HTMLコンテンツ
+client.println(&quot;Connection: close&quot;);            // 応答終了後にセッションを閉じる
+client.println();
+client.println(&quot;&lt;html&gt;&quot;);
+client.println(&quot;&lt;head&gt;&lt;title&gt;Test Page2&lt;/title&gt;&quot;);
+client.println(&quot;&lt;meta http-equiv=\&quot;Content-type\&quot; content=\&quot;text/html; charset=UTF-8\&quot;&gt;&quot;);
+client.print(&quot;&lt;meta http-equiv=\&quot;refresh\&quot; content=\&quot;3;URL=http://&quot;);
+client.print(s_ip);
+client.println(&quot;/\&quot;&gt;&quot;);
+client.print(&quot;&lt;p&gt;&quot;);
+client.print(txt);
+client.println(&quot;&lt;/p&gt;&quot;);
+client.println(&quot;&lt;/body&gt;&quot;);
+client.println(&quot;&lt;/html&gt;&quot;);
+</code></pre>
+<p>}</p>
+<ul>
+<li>Arduino IDE 1.8.9で動作を確認しています。書き込みエラーが発生したら、IDEのバージョンを確認してください</li>
+</ul>
+<h2 id="表示のやり方">表示のやり方</h2>
+<p>表示のやり方は、クイックスタートに記載していますので、ご参照願います。</p>
+
+        <div class="section-index">
+    
+    
+    
+    
+    <hr class="panel-line">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    
+</div>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 27, 2020: <a  href="/commit/02e642c7a1a12351365ef55566c3b42963d66b59">4/27変更H (02e642c)</a>
+</div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/Leafony">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Developer mailing list" aria-label="Developer mailing list">
+    <a class="text-white" target="_blank" href="https://example.org/mail">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2020 Trillion-Node Study Group All Rights Reserved</small>
+        
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+<script src="/js/main.min.29b0315468c00226fa6f4556a9cebc0ac4fe1ce1457a01b22c0a06b329877383.js" integrity="sha256-KbAxVGjAAib6b0VWqc68CsT&#43;HOFFegGyLAoGsymHc4M=" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>

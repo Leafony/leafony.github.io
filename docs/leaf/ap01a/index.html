@@ -22,17 +22,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>AP01A AVR MCU | Leafony</title><meta property="og:title" content="AP01A AVR MCU" />
-<meta property="og:description" content="AVR マイコンリーフ
-" />
+<meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/docs/leaf/ap01a/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="AP01A AVR MCU">
-<meta itemprop="description" content="AVR マイコンリーフ
-"><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AP01A AVR MCU"/>
-<meta name="twitter:description" content="AVR マイコンリーフ
-"/>
+<meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
 
@@ -376,6 +373,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplescamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesdistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
   </li>
   <ul>
@@ -541,6 +584,29 @@
   </li>
   <ul>
     <li class="collapse " id="docsexamplessound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Wi-Fi タッチセンサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleswifi_touchsensor">
       
       
       
@@ -1393,9 +1459,11 @@
   <ul>
     <li><a href="#特徴">特徴</a></li>
     <li><a href="#性能">性能</a></li>
-    <li><a href="#ドキュメント">ドキュメント</a></li>
+    <li><a href="#ブロック図">ブロック図</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
     <li><a href="#サンプルプロジェクト">サンプルプロジェクト</a></li>
+    <li><a href="#ライブラリ">ライブラリ</a></li>
+    <li><a href="#ドキュメント">ドキュメント</a></li>
   </ul>
 </nav>
 
@@ -1440,73 +1508,83 @@
             
 <div class="td-content">
 	<h1>AP01A AVR MCU</h1>
-	<div class="lead">AVR マイコンリーフ</div>
+	
 	<p><a href="./AP01A AVR MCU_f_large.jpg"><img src="./AP01A AVR MCU_f_small.jpg" width="200"></a>
 <a href="./AP01A AVR MCU_b_large.jpg"><img src="./AP01A AVR MCU_b_small.jpg" width="200"></a>
-<a href="./AP01A AVR MCU_p_large.jpg"><img src="./AP01A AVR MCU_p_small.jpg" width="200"></a>
-<img src="./AP01A_block.png" width="200"></p>
+<a href="./AP01A AVR MCU_p_large.jpg"><img src="./AP01A AVR MCU_p_small.jpg" width="200"></a></p>
 <h2 id="特徴">特徴</h2>
 <p>ATmega328Pを使用したリーフ。14個のデジタル入出力ピン（6個はPWM出力として使用可能）、6個のアナログ入力ピン、8MHz振動子、およびリセットボタンを備えています。 USB接続する場合はUSB を接続、ICSPを使用する場合はShield を接続します。 Arduino IDE使用時は、ボードをArduino Pro or Pro　Mini、プロセッサをATmega328P(3.3V,8MHz)選択。</p>
 <h2 id="性能">性能</h2>
 <table>
 <thead>
 <tr>
-<th align="center">項目</th>
-<th align="center">内容</th>
+<th align="left">項目</th>
+<th align="left">内容</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">MCU</td>
-<td align="center">ATmega328P</td>
+<td align="left">MCU</td>
+<td align="left">ATmega328P</td>
 </tr>
 <tr>
-<td align="center">動作電圧</td>
-<td align="center">3.3V</td>
+<td align="left">動作電圧</td>
+<td align="left">3.3V</td>
 </tr>
 <tr>
-<td align="center">動作電圧範囲</td>
-<td align="center">1.5-5V</td>
+<td align="left">動作電圧範囲</td>
+<td align="left">1.5-5V</td>
 </tr>
 <tr>
-<td align="center">Digital I/O</td>
-<td align="center">14</td>
+<td align="left">Digital I/O</td>
+<td align="left">14</td>
 </tr>
 <tr>
-<td align="center">Analog Input</td>
-<td align="center">6</td>
+<td align="left">Analog input</td>
+<td align="left">6</td>
 </tr>
 <tr>
-<td align="center">Flash Memory</td>
-<td align="center">32 KB</td>
+<td align="left">Flash Memory</td>
+<td align="left">32 KB</td>
 </tr>
 <tr>
-<td align="center">SRAM</td>
-<td align="center">2KB</td>
+<td align="left">SRAM</td>
+<td align="left">2KB</td>
 </tr>
 <tr>
-<td align="center">EEPROM</td>
-<td align="center">1KB</td>
+<td align="left">EEPROM</td>
+<td align="left">1KB</td>
 </tr>
 <tr>
-<td align="center">動作周波数</td>
-<td align="center">8MHz</td>
+<td align="left">動作周波数</td>
+<td align="left">8MHz</td>
 </tr>
 </tbody>
 </table>
-<h2 id="ドキュメント">ドキュメント</h2>
-<ul>
-<li>仕様書 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP01A_AVR_MCU/AP01A_AVR_MCU_SpecSheet_JA.pdf"><i class="fas fa-globe-americas ml-2 "></i> 日本語</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP01A_AVR_MCU/AP01A_AVR_MCU_SpecSheet_EN.pdf"><i class="fas fa-globe-americas ml-2 "></i> English</a></li>
-<li>回路図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP01A_AVR_MCU/AP01A_AVR_MCU_Schematic.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>部品配置図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP01A_AVR_MCU/AP01A_AVR_MCU_ComponentMarking.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>レイアウト図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP01A_AVR_MCU/AP01A_AVR_MCU_PCBLayout.zip"><i class="fas fa-file-archive ml-2"></i> Zuken</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP01A_AVR_MCU/AP01A_AVR_MCU_PCBLayout_dxf.zip"><i class="fas fa-file-archive ml-2"></i> dxf</a></li>
-<li>ブートローダ <a href="https://github.com/arduino/ArduinoCore-avr/blob/master/bootloaders/atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex"><i class="fas fa-file ml-2"></i> Rev.A</a></li>
-</ul>
+<h2 id="ブロック図">ブロック図</h2>
+<p><a href="./AP01A_block.png"><img src="./AP01A_block.png" width="200"></a></p>
 <h2 id="ピン配置">ピン配置</h2>
-<img src="./AP01A_pinassign.png" width="600">
+<p><a href="./AP01A_pinassign.png"><img src="./AP01A_pinassign.png"></a></p>
 <h2 id="サンプルプロジェクト">サンプルプロジェクト</h2>
 <ul>
 <li><a href="/docs/examples/blink">LED点滅</a></li>
+</ul>
+<h2 id="ライブラリ">ライブラリ</h2>
+<p>・関数の概要は、仕様書に記載<br>
+・タイマ割込み include file: <a href="https://github.com/PaulStoffregen/MsTimer2">MsTimer2.h</a><br>
+以下は、Standard Libraries。IDEをインストールすると、C:\Program Files (x86)\Arduino\libraries に保存されています。<br>
+・ソフトウェアシリアル通信　include file: SoftwareSerial.h<br>
+・I2C通信 include file: Wire.h<br>
+・ウォッチドッグタイマ include file: avr/wdt.h<br>
+・スリープモード include file: avr/sleep.h</p>
+<h2 id="ドキュメント">ドキュメント</h2>
+<ul>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP01A_AVR_MCU/AP01A_AVR_MCU_SpecSheet_JA.pdf">仕様書</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP01A_AVR_MCU/AP01A_AVR_MCU_Schematic.pdf">回路図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP01A_AVR_MCU/AP01A_AVR_MCU_ComponentMarking.pdf">部品配置図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP01A_AVR_MCU/AP01A_AVR_MCU_PCBLayout.zip">レイアウト図(Zuken)</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP01A_AVR_MCU/AP01A_AVR_MCU_PCBLayout_dxf.zip">レイアウト図(dxf)</a></li>
+<li><a href="https://github.com/arduino/ArduinoCore-avr/blob/master/bootloaders/atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex">ブートローダ</a></li>
 </ul>
 
         <div class="section-index">
@@ -1626,12 +1704,18 @@
         
             
         
+            
+        
+            
+        
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 17, 2020: <a  href="/commit/0978343f2617ec8d371681384e4f99ce6085f51d">update tables (0978343)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 21, 2020: <a  href="/commit/8d788bf561cef214368ac34231609832c0ba308c">4/21変更案U (8d788bf)</a>
 </div>
 </div>
 

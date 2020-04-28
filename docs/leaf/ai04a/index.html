@@ -22,17 +22,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>AI04A LCD | Leafony</title><meta property="og:title" content="AI04A LCD" />
-<meta property="og:description" content="LCDリーフ
-" />
+<meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/docs/leaf/ai04a/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="AI04A LCD">
-<meta itemprop="description" content="LCDリーフ
-"><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AI04A LCD"/>
-<meta name="twitter:description" content="LCDリーフ
-"/>
+<meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
 
@@ -376,6 +373,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplescamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesdistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
   </li>
   <ul>
@@ -541,6 +584,29 @@
   </li>
   <ul>
     <li class="collapse " id="docsexamplessound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Wi-Fi タッチセンサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleswifi_touchsensor">
       
       
       
@@ -1393,9 +1459,11 @@
   <ul>
     <li><a href="#特徴">特徴</a></li>
     <li><a href="#性能">性能</a></li>
-    <li><a href="#ドキュメント">ドキュメント</a></li>
+    <li><a href="#ブロック図">ブロック図</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
     <li><a href="#サンプルプロジェクト">サンプルプロジェクト</a></li>
+    <li><a href="#ライブラリ関数の概要は仕様書に記載">ライブラリ(関数の概要は、仕様書に記載）</a></li>
+    <li><a href="#ドキュメント">ドキュメント</a></li>
   </ul>
 </nav>
 
@@ -1440,80 +1508,86 @@
             
 <div class="td-content">
 	<h1>AI04A LCD</h1>
-	<div class="lead">LCDリーフ</div>
+	
 	<p><a href="./AI04A LCD_f_large.jpg"><img src="./AI04A LCD_f_small.jpg" width="200"></a>
 <a href="./AI04A LCD_b_large.jpg"><img src="./AI04A LCD_b_small.jpg" width="200"></a>
-<a href="./AI04A LCD_p_large.jpg"><img src="./AI04A LCD_p_small.jpg" width="200"></a>
-<img src="./AI04A_block.png" width="200"></p>
+<a href="./AI04A LCD_p_large.jpg"><img src="./AI04A LCD_p_small.jpg" width="200"></a></p>
 <h2 id="特徴">特徴</h2>
 <p>キャラクタLCDユニットとスイッチ2個を搭載したリーフです。LCDユニットはI2CでMCUリーフと接続されます。スイッチはMCUのデジタル入力ピンとI2C ExpanderのP1ピンに接続されています。 低消費電力化を実現するためI2C Expander を制御することにより電源をロードスイッチによりオフすることが可能です。</p>
 <h2 id="性能">性能</h2>
 <table>
 <thead>
 <tr>
-<th align="center">項目</th>
-<th align="center">内容</th>
+<th align="left">項目</th>
+<th align="left">内容</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">Display Format</td>
-<td align="center">8x2 Character</td>
+<td align="left">Display format</td>
+<td align="left">8x2 Character</td>
 </tr>
 <tr>
-<td align="center">Viewing Area (WxH)</td>
-<td align="center">27x10.5mm</td>
+<td align="left">Viewing area (WxH)</td>
+<td align="left">27x10.5mm</td>
 </tr>
 <tr>
-<td align="center">Dot Size (WxH)</td>
-<td align="center">0.45x0.5mm</td>
+<td align="left">Dot size (WxH)</td>
+<td align="left">0.45x0.5mm</td>
 </tr>
 <tr>
-<td align="center">Dot Pitch (WxH)</td>
-<td align="center">0.5x0.55mm</td>
+<td align="left">Dot pitch (WxH)</td>
+<td align="left">0.5x0.55mm</td>
 </tr>
 <tr>
-<td align="center">Character Size (WxH)</td>
-<td align="center">2.45x4.35mm</td>
+<td align="left">Character size (WxH)</td>
+<td align="left">2.45x4.35mm</td>
 </tr>
 <tr>
-<td align="center">Character Pitch (WxH)</td>
-<td align="center">2.95x4.9mm</td>
+<td align="left">Character pitch (WxH)</td>
+<td align="left">2.95x4.9mm</td>
 </tr>
 <tr>
-<td align="center">Viewing Direction</td>
-<td align="center">6:00 O&rsquo;Clock</td>
+<td align="left">Viewing direction</td>
+<td align="left">6:00 O&rsquo;Clock</td>
 </tr>
 <tr>
-<td align="center">Driving Method</td>
-<td align="center">1/16Duty,1/5Bias</td>
+<td align="left">Driving method</td>
+<td align="left">1/16Duty,1/5Bias</td>
 </tr>
 <tr>
-<td align="center">Controller IC</td>
-<td align="center">ST7032I-0D(Sitronix) or compatible</td>
+<td align="left">Controller IC</td>
+<td align="left">ST7032I-0D(Sitronix) or compatible</td>
 </tr>
 <tr>
-<td align="center">Display Mode</td>
-<td align="center">STN (Gray)/Positive/Reflective</td>
+<td align="left">Display mode</td>
+<td align="left">STN (Gray)/Positive/Reflective</td>
 </tr>
 <tr>
-<td align="center">Interfaces</td>
-<td align="center">I2C</td>
+<td align="left">Interfaces</td>
+<td align="left">I2C</td>
 </tr>
 </tbody>
 </table>
-<h2 id="ドキュメント">ドキュメント</h2>
-<ul>
-<li>仕様書 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_%20LCD_SpecSheet_JA.pdf"><i class="fas fa-globe-americas ml-2 "></i> 日本語</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_%20LCD_SpecSheet_EN.pdf"><i class="fas fa-globe-americas ml-2 "></i> English</a></li>
-<li>回路図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_LCD_Schematic.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>部品配置図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_LCD_ComponentMarking.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>レイアウト図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP01A_AVR_MCU/AP01A_AVR_MCU_PCBLayout.zip"><i class="fas fa-file-archive ml-2"></i> Zuken</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_LCD_PCBLayout_dxf.zip"><i class="fas fa-file-archive ml-2"></i> dxf</a></li>
-</ul>
+<h2 id="ブロック図">ブロック図</h2>
+<p><a href="./AI01A_block.png"><img src="./AI04A_block.png" width="200"></a></p>
 <h2 id="ピン配置">ピン配置</h2>
 <img src="./AI04A_pinassign.png" width="600">
 <h2 id="サンプルプロジェクト">サンプルプロジェクト</h2>
 <ul>
 <li><a href="/docs/examples/blink">LED点滅</a></li>
+</ul>
+<h2 id="ライブラリ関数の概要は仕様書に記載">ライブラリ(関数の概要は、仕様書に記載）</h2>
+<ul>
+<li>LCDの制御 include file: <a href="https://github.com/tomozh/arduino_ST7032">ST7032.h</a></li>
+</ul>
+<h2 id="ドキュメント">ドキュメント</h2>
+<ul>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_%20LCD_SpecSheet_JA.pdf">仕様書</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_LCD_Schematic.pdf">回路図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_LCD_ComponentMarking.pdf">部品配置図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP01A_AVR_MCU/AP01A_AVR_MCU_PCBLayout.zip">レイアウト図(Zuken)</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_LCD_PCBLayout_dxf.zip">レイアウト図(dxf)</a></li>
 </ul>
 
         <div class="section-index">
@@ -1633,12 +1707,18 @@
         
             
         
+            
+        
+            
+        
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 17, 2020: <a  href="/commit/0978343f2617ec8d371681384e4f99ce6085f51d">update tables (0978343)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 23, 2020: <a  href="/commit/6b5cc641b27d918e02bcf2ee938294d8dc3783ef">4/23変更H (6b5cc64)</a>
 </div>
 </div>
 

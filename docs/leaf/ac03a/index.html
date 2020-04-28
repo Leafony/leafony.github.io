@@ -22,17 +22,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>AC03A LoRa Easy | Leafony</title><meta property="og:title" content="AC03A LoRa Easy" />
-<meta property="og:description" content="LoRa Easy
-" />
+<meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/docs/leaf/ac03a/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="AC03A LoRa Easy">
-<meta itemprop="description" content="LoRa Easy
-"><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AC03A LoRa Easy"/>
-<meta name="twitter:description" content="LoRa Easy
-"/>
+<meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
 
@@ -376,6 +373,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplescamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesdistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
   </li>
   <ul>
@@ -541,6 +584,29 @@
   </li>
   <ul>
     <li class="collapse " id="docsexamplessound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Wi-Fi タッチセンサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleswifi_touchsensor">
       
       
       
@@ -1393,9 +1459,10 @@
   <ul>
     <li><a href="#特徴">特徴</a></li>
     <li><a href="#性能">性能</a></li>
-    <li><a href="#ドキュメント">ドキュメント</a></li>
+    <li><a href="#ブロック図">ブロック図</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
     <li><a href="#サンプルプロジェクト">サンプルプロジェクト</a></li>
+    <li><a href="#ドキュメント">ドキュメント</a></li>
   </ul>
 </nav>
 
@@ -1440,80 +1507,82 @@
             
 <div class="td-content">
 	<h1>AC03A LoRa Easy</h1>
-	<div class="lead">LoRa Easy</div>
+	
 	<p><a href="./AC03A LoRa Easy_f_large.jpg"><img src="./AC03A LoRa Easy_f_small.jpg" width="200"></a>
 <a href="./AC03A LoRa Easy_b_large.jpg"><img src="./AC03A LoRa Easy_b_small.jpg" width="200"></a>
-<a href="./AC03A LoRa Easy_p_large.jpg"><img src="./AC03A LoRa Easy_p_small.jpg" width="200"></a>
-<img src="./AC03A_block.png" width="200"></p>
+<a href="./AC03A LoRa Easy_p_large.jpg"><img src="./AC03A LoRa Easy_p_small.jpg" width="200"></a></p>
 <h2 id="特徴">特徴</h2>
 <p>EASELの技的認証済みLoRaモジュールES920LRA1を搭載したリーフです。MCUリーフとはUARTで接続されます。</p>
 <h2 id="性能">性能</h2>
 <table>
 <thead>
 <tr>
-<th align="center">項目</th>
-<th align="center">内容</th>
+<th align="left">項目</th>
+<th align="left">内容</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">SoC</td>
-<td align="center">MKL16Z128 (ARM Cortex-M0+)</td>
+<td align="left">SoC</td>
+<td align="left">MKL16Z128 (ARM Cortex-M0+)</td>
 </tr>
 <tr>
-<td align="center">RF Transceiver</td>
-<td align="center">SX1276 (SEMTECH)</td>
+<td align="left">RF transceiver</td>
+<td align="left">SX1276 (SEMTECH)</td>
 </tr>
 <tr>
-<td align="center">Frequency range</td>
-<td align="center">920.6～928.0MHz</td>
+<td align="left">Frequency range</td>
+<td align="left">920.6～928.0MHz</td>
 </tr>
 <tr>
-<td align="center">伝送速度</td>
-<td align="center">146bps～22kbps</td>
+<td align="left">伝送速度</td>
+<td align="left">146bps～22kbps</td>
 </tr>
 <tr>
-<td align="center">RX sensitivity</td>
-<td align="center">-118～-142dBm</td>
+<td align="left">RX sensitivity</td>
+<td align="left">-118～-142dBm</td>
 </tr>
 <tr>
-<td align="center">TX power</td>
-<td align="center">13dBm（20mW)以下</td>
+<td align="left">TX power</td>
+<td align="left">13dBm（20mW)以下</td>
 </tr>
 <tr>
-<td align="center">RF certification</td>
-<td align="center">TELEC</td>
+<td align="left">RF certification</td>
+<td align="left">TELEC</td>
 </tr>
 <tr>
-<td align="center">通信距離目安(ワイヤーアンテナ)</td>
-<td align="center">見通し 5km</td>
+<td align="left">通信距離目安(ワイヤーアンテナ)</td>
+<td align="left">見通し 5km</td>
 </tr>
 <tr>
-<td align="center">Flash</td>
-<td align="center">128KB</td>
+<td align="left">Flash</td>
+<td align="left">128KB</td>
 </tr>
 <tr>
-<td align="center">RAM</td>
-<td align="center">32KB</td>
+<td align="left">RAM</td>
+<td align="left">32KB</td>
 </tr>
 <tr>
-<td align="center">Interfaces</td>
-<td align="center">UART</td>
+<td align="left">Interfaces</td>
+<td align="left">UART</td>
 </tr>
 </tbody>
 </table>
-<h2 id="ドキュメント">ドキュメント</h2>
-<ul>
-<li>仕様書 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_SpecSheet_JA.pdf"><i class="fas fa-globe-americas ml-2 "></i> 日本語</a> / &lt;a href=&gt;<i class="fas fa-globe-americas ml-2 "></i> English</a></li>
-<li>回路図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_Schematic.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>部品配置図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_ComponentMarking.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>レイアウト図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_PCBLayout.zip"><i class="fas fa-file-archive ml-2"></i> Zuken</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_PCBLayout_dxf.zip"><i class="fas fa-file-archive ml-2"></i> dxf</a></li>
-</ul>
+<h2 id="ブロック図">ブロック図</h2>
+<p><a href="./AC03A_block.png"><img src="./AC03A_block.png" width="200"></a></p>
 <h2 id="ピン配置">ピン配置</h2>
 <img src="./AC03A_pinassign.png" width="600">
 <h2 id="サンプルプロジェクト">サンプルプロジェクト</h2>
 <ul>
 <li><a href="/docs/examples/blink">LED点滅</a></li>
+</ul>
+<h2 id="ドキュメント">ドキュメント</h2>
+<ul>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_SpecSheet_JA.pdf">仕様書</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_Schematic.pdf">回路図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_ComponentMarking.pdf">部品配置図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_PCBLayout.zip">レイアウト図(Zuken)</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_PCBLayout_dxf.zip">レイアウト図(dxf)</a></li>
 </ul>
 
         <div class="section-index">
@@ -1522,6 +1591,10 @@
     
     
     <hr class="panel-line">
+        
+            
+        
+            
         
             
         
@@ -1640,12 +1713,14 @@
         
             
         
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 17, 2020: <a  href="/commit/0978343f2617ec8d371681384e4f99ce6085f51d">update tables (0978343)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 23, 2020: <a  href="/commit/6b5cc641b27d918e02bcf2ee938294d8dc3783ef">4/23変更H (6b5cc64)</a>
 </div>
 </div>
 

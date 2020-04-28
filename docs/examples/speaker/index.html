@@ -22,16 +22,16 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>スピーカ | Leafony</title><meta property="og:title" content="スピーカ" />
-<meta property="og:description" content="スピーカでメロディーを鳴らそう
+<meta property="og:description" content="スピーカでメロディーを鳴らそう。
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/docs/examples/speaker/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="スピーカ">
-<meta itemprop="description" content="スピーカでメロディーを鳴らそう
+<meta itemprop="description" content="スピーカでメロディーを鳴らそう。
 "><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="スピーカ"/>
-<meta name="twitter:description" content="スピーカでメロディーを鳴らそう
+<meta name="twitter:description" content="スピーカでメロディーを鳴らそう。
 "/>
 
 
@@ -376,6 +376,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplescamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesdistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
   </li>
   <ul>
@@ -541,6 +587,29 @@
   </li>
   <ul>
     <li class="collapse " id="docsexamplessound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Wi-Fi タッチセンサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleswifi_touchsensor">
       
       
       
@@ -1389,6 +1458,16 @@
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#概要">概要</a></li>
+    <li><a href="#使用するリーフ">使用するリーフ</a></li>
+    <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
+    <li><a href="#プログラムの実行">プログラムの実行</a></li>
+    <li><a href="#ソースコード">ソースコード</a></li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -1430,8 +1509,119 @@
             
 <div class="td-content">
 	<h1>スピーカ</h1>
-	<div class="lead">スピーカでメロディーを鳴らそう</div>
-	
+	<div class="lead">スピーカでメロディーを鳴らそう。</div>
+	<h2 id="概要">概要</h2>
+<p>圧電スピーカを使って、メロディーを鳴らします。</p>
+<h2 id="使用するリーフ">使用するリーフ</h2>
+<p>以下のリーフを使用します</p>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">AI02A</td>
+<td align="left">SP&amp;PIR</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AP01A</td>
+<td align="left">AVR MCU</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AV01A</td>
+<td align="left">CR2032</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AZ01A</td>
+<td align="left">USB</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AZ62A</td>
+<td align="left">Connector Cover</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">CR2032 コイン電池</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">M2ネジ</td>
+<td align="left">2</td>
+</tr>
+</tbody>
+</table>
+<h2 id="リーフの組み立て">リーフの組み立て</h2>
+<p>下図のようにリーフを組み立てましょう。</p>
+<p><img src="./speaker_assemble.png" alt="assemble1"></p>
+<h2 id="プログラムの実行">プログラムの実行</h2>
+<ul>
+<li>以下を同じフォルダに保存してください。<br>
+[toneMelody.ino]<br>
+[pitches.h]</li>
+</ul>
+<h2 id="ソースコード">ソースコード</h2>
+<p>Arduino IDEで下記のプログラムを書きましょう。</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">/*
+</span><span style="color:#8f5902;font-style:italic">  Melody
+</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">  Plays a melody
+</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">  circuit:
+</span><span style="color:#8f5902;font-style:italic">  - 8 ohm speaker on digital pin 8
+</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">  created 21 Jan 2010
+</span><span style="color:#8f5902;font-style:italic">  modified 30 Aug 2011
+</span><span style="color:#8f5902;font-style:italic">  by Tom Igoe
+</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">  This example code is in the public domain.
+</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">  http://www.arduino.cc/en/Tutorial/Tone
+</span><span style="color:#8f5902;font-style:italic">*/</span>
+
+<span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&#34;pitches.h&#34;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">// notes in the melody:
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">melody</span><span style="color:#000;font-weight:bold">[]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#000">NOTE_C4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_G3</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_G3</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_A3</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_G3</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_B3</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_C4</span>
+<span style="color:#000;font-weight:bold">};</span>
+
+<span style="color:#8f5902;font-style:italic">// note durations: 4 = quarter note, 8 = eighth note, etc.:
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">noteDurations</span><span style="color:#000;font-weight:bold">[]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span>
+<span style="color:#000;font-weight:bold">};</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#8f5902;font-style:italic">// iterate over the notes of the melody:
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">thisNote</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">thisNote</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">thisNote</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+
+    <span style="color:#8f5902;font-style:italic">// to calculate the note duration, take one second divided by the note type.
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">noteDuration</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1000</span> <span style="color:#ce5c00;font-weight:bold">/</span> <span style="color:#000">noteDurations</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">thisNote</span><span style="color:#000;font-weight:bold">];</span>
+    <span style="color:#000">tone</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">melody</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">thisNote</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">noteDuration</span><span style="color:#000;font-weight:bold">);</span>
+
+    <span style="color:#8f5902;font-style:italic">// to distinguish the notes, set a minimum time between them.
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// the note&#39;s duration + 30% seems to work well:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">pauseBetweenNotes</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">noteDuration</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">1.30</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pauseBetweenNotes</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#8f5902;font-style:italic">// stop the tone playing:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">noTone</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#8f5902;font-style:italic">// no need to repeat the melody.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+</code></pre></div>
         <div class="section-index">
     
     
@@ -1549,12 +1739,18 @@
         
             
         
+            
+        
+            
+        
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 21, 2020: <a  href="/commit/7545edf23239d39a6dca9f13c81353caed93c3ba">サンプルページを追記 (7545edf)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 27, 2020: <a  href="/commit/02e642c7a1a12351365ef55566c3b42963d66b59">4/27変更H (02e642c)</a>
 </div>
 </div>
 

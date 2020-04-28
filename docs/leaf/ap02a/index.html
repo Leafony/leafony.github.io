@@ -22,17 +22,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>AP02A ESP32 MCU | Leafony</title><meta property="og:title" content="AP02A ESP32 MCU" />
-<meta property="og:description" content="ESP32 MCU リーフ
-" />
+<meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/docs/leaf/ap02a/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="AP02A ESP32 MCU">
-<meta itemprop="description" content="ESP32 MCU リーフ
-"><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AP02A ESP32 MCU"/>
-<meta name="twitter:description" content="ESP32 MCU リーフ
-"/>
+<meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
 
@@ -376,6 +373,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplescamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesdistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
   </li>
   <ul>
@@ -541,6 +584,29 @@
   </li>
   <ul>
     <li class="collapse " id="docsexamplessound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Wi-Fi タッチセンサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleswifi_touchsensor">
       
       
       
@@ -1393,9 +1459,10 @@
   <ul>
     <li><a href="#特徴">特徴</a></li>
     <li><a href="#性能">性能</a></li>
-    <li><a href="#ドキュメント">ドキュメント</a></li>
+    <li><a href="#ブロック図">ブロック図</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
     <li><a href="#サンプルプロジェクト">サンプルプロジェクト</a></li>
+    <li><a href="#ドキュメント">ドキュメント</a></li>
     <li><a href="#ソフトウェア仕様">ソフトウェア仕様</a></li>
   </ul>
 </nav>
@@ -1441,84 +1508,86 @@
             
 <div class="td-content">
 	<h1>AP02A ESP32 MCU</h1>
-	<div class="lead">ESP32 MCU リーフ</div>
+	
 	<p><a href="./AP02A ESP32 MCU_f_large.jpg"><img src="./AP02A ESP32 MCU_f_small.jpg" width="200"></a>
 <a href="./AP02A ESP32 MCU_b_large.jpg"><img src="./AP02A ESP32 MCU_b_small.jpg" width="200"></a>
-<a href="./AP02A ESP32 MCU_p_large.jpg"><img src="./AP02A ESP32 MCU_p_small.jpg" width="200"></a>
-<img src="./AP02A_block.png" width="200"></p>
+<a href="./AP02A ESP32 MCU_p_large.jpg"><img src="./AP02A ESP32 MCU_p_small.jpg" width="200"></a></p>
 <h2 id="特徴">特徴</h2>
 <p>Espressif SystemsのXtensa Dual-Core 32-bit LX6 マイクロプロセッサ、技的認証済みWi-FiとBLEを内蔵したESP32-WROOM-32を搭載した32bit MCUリーフである。無線の認証は、 FCC、CE-RED、IC、TELEC、KCC、SRRC、NCCを取得（Espressif Systems Data Sheet V2.9）。 USB電源を供給して、VBUS(5V)電源として使用可能。</p>
 <h2 id="性能">性能</h2>
 <table>
 <thead>
 <tr>
-<th align="center">項目</th>
-<th align="center">内容</th>
+<th align="left">項目</th>
+<th align="left">内容</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">SoC</td>
-<td align="center">ESP32-D0WDQ6 (CPU:Xtensa LX6)</td>
+<td align="left">SoC</td>
+<td align="left">ESP32-D0WDQ6 (CPU:Xtensa LX6)</td>
 </tr>
 <tr>
-<td align="center">動作電圧</td>
-<td align="center">3.3V</td>
+<td align="left">動作電圧</td>
+<td align="left">3.3V</td>
 </tr>
 <tr>
-<td align="center">動作電圧範囲</td>
-<td align="center">2.2-3.6V</td>
+<td align="left">動作電圧範囲</td>
+<td align="left">2.2-3.6V</td>
 </tr>
 <tr>
-<td align="center">Digital I/O</td>
-<td align="center">14</td>
+<td align="left">Digital I/O</td>
+<td align="left">14</td>
 </tr>
 <tr>
-<td align="center">Analog Input</td>
-<td align="center">6</td>
+<td align="left">Analog input</td>
+<td align="left">6</td>
 </tr>
 <tr>
-<td align="center">TouchSensor I/F</td>
-<td align="center">6</td>
+<td align="left">TouchSensor I/F</td>
+<td align="left">6</td>
 </tr>
 <tr>
-<td align="center">Flash Memory</td>
-<td align="center">4 MB</td>
+<td align="left">Flash Memory</td>
+<td align="left">4 MB</td>
 </tr>
 <tr>
-<td align="center">SRAM</td>
-<td align="center">520 KB</td>
+<td align="left">SRAM</td>
+<td align="left">520 KB</td>
 </tr>
 <tr>
-<td align="center">動作周波数</td>
-<td align="center">80M-240MHz</td>
+<td align="left">動作周波数</td>
+<td align="left">80M-240MHz</td>
 </tr>
 <tr>
-<td align="center">Wi-Fi protocols</td>
-<td align="center">IEEE 802.11b/g/n</td>
+<td align="left">Wi-Fi protocols</td>
+<td align="left">IEEE 802.11b/g/n</td>
 </tr>
 <tr>
-<td align="center">Bluetooth Protocols</td>
-<td align="center">Bluetooth v4.2 BR/EDR and BLE specification</td>
+<td align="left">Bluetooth protocols</td>
+<td align="left">Bluetooth v4.2 BR/EDR and BLE specification</td>
 </tr>
 <tr>
-<td align="center">RF certification</td>
-<td align="center">FCC/CE-RED/IC/TELEC/KCC/SRRC/NCC</td>
+<td align="left">RF certification</td>
+<td align="left">FCC/CE-RED/IC/TELEC/KCC/SRRC/NCC</td>
 </tr>
 </tbody>
 </table>
-<h2 id="ドキュメント">ドキュメント</h2>
-<ul>
-<li>仕様書 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP02A_ESP32_MCU/AP02A_ESP32_MCU_SpecSheet_JA.pdf"><i class="fas fa-globe-americas ml-2 "></i> 日本語</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP02A_ESP32_MCU/AP02A_ESP32_MCU_SpecSheet_EN.pdf"><i class="fas fa-globe-americas ml-2 "></i> English</a></li>
-<li>回路図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP02A_ESP32_MCU/AP02A_ESP32_MCU_Schematic.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>部品配置図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP02A_ESP32_MCU/AP02A_ESP32_MCU_ComponentMarking.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>レイアウト図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP02A_ESP32_MCU/AP02A_ESP32_MCU_PCBLayout.zip"><i class="fas fa-file-archive ml-2"></i> Zuken</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP02A_ESP32_MCU/AP02A_ESP32_MCU_PCBLayout_dxf.zip"><i class="fas fa-file-archive ml-2"></i> dxf</a></li>
-</ul>
+<h2 id="ブロック図">ブロック図</h2>
+<p><a href="./AP02A_block.png"><img src="./AP02A_block.png" width="200"></a></p>
 <h2 id="ピン配置">ピン配置</h2>
-<img src="./AP02A_pinassign.png" width="600">
+<p><a href="./AP02A_pinassign.png"><img src="./AP02A_pinassign.png"></a></p>
 <h2 id="サンプルプロジェクト">サンプルプロジェクト</h2>
 <ul>
-<li><a href="/docs/examples/blink">Wi-Fi を使ってタッチセンサの値を表示</a>※リンク先 要変更</li>
+<li><a href="/docs/examples/blink">Wi-Fi を使ってタッチセンサの値を表示</a> ※リンク先 要変更</li>
+</ul>
+<h2 id="ドキュメント">ドキュメント</h2>
+<ul>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP02A_ESP32_MCU/AP02A_ESP32_MCU_SpecSheet_JA.pdf">仕様書</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP02A_ESP32_MCU/AP02A_ESP32_MCU_Schematic.pdf">回路図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP02A_ESP32_MCU/AP02A_ESP32_MCU_ComponentMarking.pdf">部品配置図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP02A_ESP32_MCU/AP02A_ESP32_MCU_PCBLayout.zip">レイアウト図(Zuken)</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP02A_ESP32_MCU/AP02A_ESP32_MCU_PCBLayout_dxf.zip">レイアウト図(dxf)</a></li>
 </ul>
 <h2 id="ソフトウェア仕様">ソフトウェア仕様</h2>
 
@@ -1639,12 +1708,18 @@
         
             
         
+            
+        
+            
+        
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 17, 2020: <a  href="/commit/0978343f2617ec8d371681384e4f99ce6085f51d">update tables (0978343)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 23, 2020: <a  href="/commit/f516878c8f670b49171b225b744eaed25f69459e">4/23変更K (f516878)</a>
 </div>
 </div>
 

@@ -22,17 +22,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>AZ02A RTC&amp;MicroSD | Leafony</title><meta property="og:title" content="AZ02A RTC&amp;MicroSD" />
-<meta property="og:description" content="RTC&amp;MicroSD リーフ
-" />
+<meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/docs/leaf/az02a/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="AZ02A RTC&amp;MicroSD">
-<meta itemprop="description" content="RTC&amp;MicroSD リーフ
-"><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AZ02A RTC&amp;MicroSD"/>
-<meta name="twitter:description" content="RTC&amp;MicroSD リーフ
-"/>
+<meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
 
@@ -376,6 +373,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplescamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesdistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
   </li>
   <ul>
@@ -541,6 +584,29 @@
   </li>
   <ul>
     <li class="collapse " id="docsexamplessound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Wi-Fi タッチセンサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleswifi_touchsensor">
       
       
       
@@ -1393,9 +1459,11 @@
   <ul>
     <li><a href="#特徴">特徴</a></li>
     <li><a href="#性能">性能　</a></li>
-    <li><a href="#ドキュメント">ドキュメント</a></li>
+    <li><a href="#ブロック図">ブロック図</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
     <li><a href="#サンプルプロジェクト">サンプルプロジェクト</a></li>
+    <li><a href="#ライブラリ">ライブラリ</a></li>
+    <li><a href="#ドキュメント">ドキュメント</a></li>
   </ul>
 </nav>
 
@@ -1440,58 +1508,67 @@
             
 <div class="td-content">
 	<h1>AZ02A RTC&amp;MicroSD</h1>
-	<div class="lead">RTC&amp;MicroSD リーフ</div>
+	
 	<p><a href="./AZ02A RTC&MicroSD_f_large.jpg"><img src="./AZ02A RTC&MicroSD_f_small.jpg" width="200"></a>
 <a href="./AZ02A RTC&MicroSD_b_large.jpg"><img src="./AZ02A RTC&MicroSD_b_small.jpg" width="200"></a>
-<a href="./AZ02A RTC&MicroSD_p_large.jpg"><img src="./AZ02A RTC&MicroSD_p_small.jpg" width="200"></a>
-<img src="./AZ02A_block.png" width="200"></p>
+<a href="./AZ02A RTC&MicroSD_p_large.jpg"><img src="./AZ02A RTC&MicroSD_p_small.jpg" width="200"></a></p>
 <h2 id="特徴">特徴</h2>
 <p>NXPのReal-Time Clock PCF8523TKおよびMicro SDカードスロットを搭載したリーフです。RTCはアラームやタイマによりMCUに割り込み信号を出力することが可能です。micro SDカードはSPIでアクセスします。</p>
 <h2 id="性能">性能　</h2>
 <table>
 <thead>
 <tr>
-<th align="center">項目</th>
-<th align="center">内容</th>
+<th align="left">項目</th>
+<th align="left">内容</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">RTC</td>
+<td align="left">RTC</td>
 <td></td>
 </tr>
 <tr>
-<td align="center">Type</td>
-<td align="center">Real-Time Clock (RTC) and calendar</td>
+<td align="left">Type</td>
+<td align="left">Real-Time Clock (RTC) and calendar</td>
 </tr>
 <tr>
-<td align="center">Interrupt</td>
-<td align="center">Alarm and timer</td>
+<td align="left">Interrupt</td>
+<td align="left">Alarm and timer</td>
 </tr>
 <tr>
-<td align="center">使用水晶振動子</td>
-<td align="center">FC-12M 32.768000kHz 7.0 +20.0-20.0</td>
+<td align="left">使用水晶振動子</td>
+<td align="left">FC-12M 32.768000kHz 7.0 +20.0-20.0</td>
 </tr>
 <tr>
-<td align="center">Interfaces</td>
-<td align="center">I2C</td>
+<td align="left">Interfaces</td>
+<td align="left">I2C</td>
 </tr>
 </tbody>
 </table>
-<h2 id="ドキュメント">ドキュメント</h2>
-<ul>
-<li>仕様書 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ02A_RTC%26MicroSD/AZ02A_RTC%26MicroSD_SpecSheet_JA.pdf"><i class="fas fa-globe-americas ml-2 "></i> 日本語</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ02A_RTC%26MicroSD/AZ02A_RTC%26MicroSD_SpecSheet_EN.pdf"><i class="fas fa-globe-americas ml-2 "></i> English</a></li>
-<li>回路図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ02A_RTC%26MicroSD/AZ02A_RTC%EF%BC%86MicroSD_Schematic.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>部品配置図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ02A_RTC%26MicroSD/AZ02A_RTC%26MicroSD_ComponentMarking.pdf"><i class="fas fa-file-pdf ml-2 "></i> Rev.A</a></li>
-<li>レイアウト図 <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ02A_RTC%26MicroSD/AZ02A_RTC%26MicroSD_PCBLayout.zip"><i class="fas fa-file-archive ml-2"></i> Zuken</a> / <a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ02A_RTC%26MicroSD/AZ02_RTC%26MicroSD_PCBLayout_dxf.zip"><i class="fas fa-file-archive ml-2"></i> dxf</a></li>
-</ul>
+<h2 id="ブロック図">ブロック図</h2>
+<p><a href="./AZ02A_block.png"><img src="./AZ02A_block.png" width="200"></a></p>
 <h2 id="ピン配置">ピン配置</h2>
-<img src="./AZ02A_pinassign.png" width="600">
+<p><a href="./AZ02A_pinassign.png"><img src="./AZ02A_pinassign.png"></a></p>
 <h2 id="サンプルプロジェクト">サンプルプロジェクト</h2>
 <ul>
 <li><a href="/docs/examples/blink">時刻をパソコンに表示</a> ※リンク先要変更</li>
 <li><a href="/docs/examples/blink">microSD カードの情報をパソコンに表示</a> ※リンク先要変更</li>
 <li><a href="/docs/examples/blink">カメラを使って撮影した画像を microSD カードに保存</a> ※リンク先要変更</li>
+</ul>
+<h2 id="ライブラリ">ライブラリ</h2>
+<p>・関数の概要は、仕様書に記載<br>
+・RTCの制御　include file: <a href="https://github.com/adafruit/RTClib">RTClib.h</a><br>
+　以下は、Standard Libraries。<br>
+　IDEをインストールすると、C:\Program Files (x86)\Arduino\libraries に保存されている。<br>
+・SDカードの制御　　include:SD.h<br>
+　　　　　　　　　　 include:spi.h</p>
+<h2 id="ドキュメント">ドキュメント</h2>
+<ul>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ02A_RTC%26MicroSD/AZ02A_RTC%26MicroSD_SpecSheet_JA.pdf">仕様書</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ02A_RTC%26MicroSD/AZ02A_RTC%EF%BC%86MicroSD_Schematic.pdf">回路図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ02A_RTC%26MicroSD/AZ02A_RTC%26MicroSD_ComponentMarking.pdf">部品配置図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ02A_RTC%26MicroSD/AZ02A_RTC%26MicroSD_PCBLayout.zip">レイアウト図(Zuken)</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AZ02A_RTC%26MicroSD/AZ02_RTC%26MicroSD_PCBLayout_dxf.zip">レイアウト図(dxf)</a></li>
 </ul>
 
         <div class="section-index">
@@ -1611,12 +1688,18 @@
         
             
         
+            
+        
+            
+        
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 17, 2020: <a  href="/commit/a44493709949f056ab8df16f2c3844454ccadbc4">4/17変更K (a444937)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 23, 2020: <a  href="/commit/19a18f81269bd189a8e1f48e3961eafd3d80eaff">4/23変更K (19a18f8)</a>
 </div>
 </div>
 

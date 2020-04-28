@@ -22,14 +22,17 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>LCD | Leafony</title><meta property="og:title" content="LCD" />
-<meta property="og:description" content="A Leafony Documentation site" />
+<meta property="og:description" content="センサの値をLCDに表示させよう
+" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/docs/examples/lcd/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="LCD">
-<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="センサの値をLCDに表示させよう
+"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="LCD"/>
-<meta name="twitter:description" content="A Leafony Documentation site"/>
+<meta name="twitter:description" content="センサの値をLCDに表示させよう
+"/>
 
 
 
@@ -373,6 +376,52 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplescamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesdistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
   </li>
   <ul>
@@ -538,6 +587,29 @@
   </li>
   <ul>
     <li class="collapse " id="docsexamplessound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Wi-Fi タッチセンサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexampleswifi_touchsensor">
       
       
       
@@ -1386,6 +1458,15 @@
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#概要">概要</a></li>
+    <li><a href="#必要なハードウェアの準備">必要なハードウェアの準備</a></li>
+    <li><a href="#リーフの組立">リーフの組立</a></li>
+    <li><a href="#スケッチの書き込み">スケッチの書き込み</a></li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -1427,8 +1508,959 @@
             
 <div class="td-content">
 	<h1>LCD</h1>
-	
-	
+	<div class="lead">センサの値をLCDに表示させよう</div>
+	<h2 id="概要">概要</h2>
+<p>電源リーフには、電池電圧をモニタするためのADコンバータを実装。温度、湿度、照度、傾きだけでなく、電池電圧も測定し、LCDに表示させます。
+温度（または、湿度）の補正の仕方
+表示させたい温度（または、湿度）と４-Sensorsの温度（または、湿度）に、ずれがあるときは、２点間補正を行います。詳しくは、<a href="https://trillion-node.org/example/correction/">こちら</a>。</p>
+<p><img src="./LCD_overview2.png" alt="assemble1"><img src="./LCD_overview.png" alt="overview"></p>
+<h2 id="必要なハードウェアの準備">必要なハードウェアの準備</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">AI04A</td>
+<td align="left">LCD</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AI01A</td>
+<td align="left">4-Sensors</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AP01A</td>
+<td align="left">AVR MCU</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AZ01A</td>
+<td align="left">USB</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AX03A</td>
+<td align="left">Leaf×2</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AV01A</td>
+<td align="left">CR2032</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left">AZ62A</td>
+<td align="left">Connector Cover</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left">AZ63A</td>
+<td align="left">Nut Plate</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">CR2032 3V Lithium coin cell battery</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">Screw M2×25mm</td>
+<td align="left">4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="リーフの組立">リーフの組立</h2>
+<p><img src="./LCD_assemble.png" alt="assemble1"></p>
+<h2 id="スケッチの書き込み">スケッチの書き込み</h2>
+<ul>
+<li>書き込みには、4-Sensors、LCD、AVR MCUライブラリ（タイマ割り込み）が必要です。予め、ライブラリをインクルードしておいてください。詳しくは、[こちら]。</li>
+<li>Arduino IDEで、以下のスケッチをマイコンボードに書き込んでください。
+//=====================================================================
+//  Leafony Platform sample sketch
+//     Platform     : 4-Sensors
+//     Processor    : ATmega328P (3.3V /8MHz)
+//     Application  : 4-Sensors with LCD
+//
+//     Leaf configuration
+//       (1) AI01 4-Sensors
+//       (2) AI04 LCD
+//       (3) AP01 AVR MCU
+//       (4) AV02 CR2450 or AV01 CR2032
+//       (5) AZ01 USB		(for debug)
+//
+//		(c) 2019  Trillion-Node Study Group
+//		Released under the MIT license
+//		https://opensource.org/licenses/MIT
+//
+//      Rev.00 2019/08/20 First release
+//=====================================================================
+//use libraries
+//Adafruit LIS3DH
+//https://github.com/adafruit/Adafruit_LIS3DH
+//※  Adafruit_LIS3DH.h
+//    uint8_t readRegister8(uint8_t reg);
+//    void writeRegister8(uint8_t reg, uint8_t value);
+//    をpublic:に移動する
+//Adafruit Unified Sensor Driver
+//https://github.com/adafruit/Adafruit_Sensor
+//SmartEverything ST HTS221 Humidity Sensor
+//https://github.com/ameltech/sme-hts221-library
+//ClosedCube Arduino Library for ClosedCube OPT3001
+//https://github.com/closedcube/ClosedCube_OPT3001_Arduino
+//ST7032 - Arduino LiquidCrystal compatible library
+//https://github.com/tomozh/arduino_ST7032
+//=====================================================================</li>
+</ul>
+<p>//=====================================================================
+// difinition
+//=====================================================================
+#include &lt;MsTimer2.h&gt;
+#include &lt;avr/wdt.h&gt;
+#include &lt;avr/sleep.h&gt;
+#include &lt;avr/power.h&gt;</p>
+<p>#include &lt;Wire.h&gt;
+#include &lt;Adafruit_LIS3DH.h&gt; <br>
+#include &lt;Adafruit_Sensor.h&gt;
+#include &lt;HTS221.h&gt;
+#include &lt;ClosedCube_OPT3001.h&gt;
+#include &lt;SoftwareSerial.h&gt;
+#include &lt;ST7032.h&gt;
+//=====================================================================</p>
+<p>//=====================================================================
+// シリアルコンソールへのデバック出力
+//      #define DEBUG = 出力あり
+//　　//#define DEBUG = 出力なし（コメントアウトする）
+//=====================================================================
+#define DEBUG
+//=====================================================================</p>
+<p>//=====================================================================
+// IOピンの名前定義
+// 接続するリーフに合わせて定義する
+//=====================================================================
+// &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// PD port
+//     digital 0: PD0 = PCRX    (HW UART)
+//     digital 1: PD1 = PCTX    (HW UART)
+//     digital 2: PD2 = INT0#
+//     digital 3: PD3 = INT1#
+//     digital 4: PD4 = Reserved  /* not use */
+//     digital 5: PD5 = Reserved  /* not use */
+//     digital 6: PD6 = Reserved  /* not use */
+//     digital 7: PD7 = Reserved  /* not use */
+// &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+#define PCTX  0
+#define PCRX  1
+#define INT0  2
+#define INT1  3
+#define RSV_D4  4    <br>
+#define RSV_D5  5
+#define RSV_D6  6
+#define RSV_D7  7</p>
+<p>// &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// PB port
+//     digital 8: PB0 = Reserved  /* not use */
+//     digital 9: PB1 = Reserved  /* not use */
+//     digital 10:PB2 = SS#
+//     digital 11:PB3 = MOSI
+//     digital 12:PB4 = MISO
+//     digital 13:PB5 = SCK (LED)
+//                PB6 = XTAL1
+//                PB7 = XTAL2
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+#define RSV_D8  8
+#define RSV_D9  9
+#define SS      10
+#define MOSI    11
+#define MISO    12
+#define LED_PIN     13</p>
+<p>// &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// PC port
+//     digital 14/ Analog0: PC0 = Reserved  /* not use */
+//     digital 15/ Analog1: PC1 = Reserved  /* not use */
+//     digital 16/ Analog2: PC2 = Reserved  /* not use */
+//     digital 17/ Analog3: PC3 = Reserved  /* not use */
+//     digital 18/ SDA    : PC4 = SDA   (I2C)
+//     digital 19/ SCL    : PC5 = SCL   (I2C)
+//     RESET              : PC6 = RESET#
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+#define RSV_D14   14
+#define RSV_D15   15
+#define RSV_D16   16
+#define RSV_D17   17
+#define SDA       18
+#define SCL       19</p>
+<p>//=====================================================================
+// プログラム内で使用する定数定義
+// 
+//=====================================================================
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+//３軸センサ、輝度センサ I2Cアドレス
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+#define LIS2DH_ADDRESS 0x19       // SD0/SA0 pin = VCC 
+#define OPT3001_ADDRESS 0x45      // ADDR pin = VCC
+#define I2C_EXPANDER_ADDR_LCD   0x1A</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// loop() interval
+// MsTimer2のタイマー割り込み発生間隔(ms)
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+#define LOOP_INTERVAL 125         // 125ms interval</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// LIS2DH
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+#define DIVIDER_2G 16383          // full scale 2G  (=0xFFFF/4)
+#define DIVIDER_4G 8191           // full scale 4G  (=0xFFFF/4/2)
+#define DIVIDER_8G 4096           // full scale 8G  (=0xFFFF/4/4)
+#define DIVIDER_16G 1365          // full scale 16G (=0xFFFF/4/12)</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// Batt ADC ADC081C027
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+#define BATT_ADC_ADDR 0x50</p>
+<p>//=====================================================================
+// object
+//=====================================================================
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// Sensor
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+Adafruit_LIS3DH accel = Adafruit_LIS3DH();
+ClosedCube_OPT3001 light;</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// LCD
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+ST7032 lcd;</p>
+<p>//=====================================================================
+// プログラムで使用する変数定義
+// 
+//=====================================================================
+//=====================================================================
+// RAM data
+//=====================================================================
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// loop counter
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+uint8_t iLoop1s = 0;</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// event
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+bool eventSensorRead = false;
+bool eventWriteLCD = false;</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// int0 interrupt
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+volatile bool bEventSleep = false;</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// interval Timer2 interrupt
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+volatile bool bInterval = false;</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// LIS2DH : accelerometer
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+int16_t dataX, dataY, dataZ;
+float dataX_g, dataY_g, dataZ_g;
+float dataTilt, avrTilt;</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// HTS221 : Temperature/Humidity
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+float dataTemp, avrTemp;
+float dataHumid, avrHumid;
+float calcTemp = 0;
+float calcHumid = 0;</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// 2点補正用データ
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// 温度補正用データ0
+float TL0 = 25.0;     // 4-Sensors温度測定値
+float TM0 = 25.0;     // 温度計等測定値
+// 温度補正用データ1
+float TL1 = 40.0;     // 4-Sensors温度測定値
+float TM1 = 40.0;     // 温度計等測定値</p>
+<p>// 湿度補正用データ0
+float HL0 = 60.0;     // 4-Sensors湿度測定値
+float HM0 = 60.0;     // 湿度計等測定値
+// 湿度補正用データ1
+float HL1 = 80.0;     // 4-Sensors湿度測定値
+float HM1 = 80.0;     // 湿度計等測定値</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// OPT3001 : Light
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+float dataLight, avrLight;
+float calcLight = 0;</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// LCD
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+volatile bool  bLCDchange = false;
+volatile int lcd_view_sts = 0;</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// Sleep, Watchdog Timer
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
+<p>volatile int countWDT = 0;
+volatile int wakeupWDT = 2;</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// Batt
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+float dataBatt = 0;</p>
+<p>//=====================================================================
+// setup
+//=====================================================================
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// port
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+//=====================================================================
+// IOピンの入出力設定
+// 接続するリーフに合わせて設定する
+//=====================================================================
+void setupPort(){</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// PD port
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// PD0 : digital 0 = RX
+// PD1 : digital 1 = TX</p>
+<p>pinMode(INT0, INPUT);       // PD2 : digital 2 = BLE interrupt
+pinMode(INT1, INPUT);       // PD3 : digital 3 = sensor interrupt</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// PB port
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+pinMode(LED_PIN, OUTPUT);       // PB5 : digital 13 = DEV _LED
+digitalWrite(LED_PIN, LOW);
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// PC port
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// PC4 : digital 18 = I2C SDA
+// PC5 : digital 19 = I2C SCL 
+}
+//=====================================================================
+// 割り込み処理初期設定
+// 
+//=====================================================================
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// external interrupt
+// 外部割り込み設定
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+void setupExtInt(){</p>
+<p>attachInterrupt(0, intExtInt0, FALLING);    // Sw1    INT0# = enabled
+detachInterrupt(1);                         // sensor INT1# = disabled
+}</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// timer2 interrupt (interval=125ms, int=overflow)
+// メインループのタイマー割り込み設定
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+void setupTC2Int(){</p>
+<p>MsTimer2::set(LOOP_INTERVAL, intTimer2);
+}
+//=====================================================================
+// I2C　制御関数
+// 
+//=====================================================================
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+//I2C スレーブデバイスに1バイト書き込む
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+void i2c_write_byte(int device_address, int reg_address, int write_data){
+Wire.beginTransmission(device_address);
+Wire.write(reg_address);
+Wire.write(write_data);
+Wire.endTransmission();
+}
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+//I2C スレーブデバイスから1バイト読み込む
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+unsigned char i2c_read_byte(int device_address, int reg_address){</p>
+<p>int read_data = 0;</p>
+<p>Wire.beginTransmission(device_address);
+Wire.write(reg_address);
+Wire.endTransmission(false);</p>
+<p>Wire.requestFrom(device_address, 1);
+read_data = Wire.read();</p>
+<p>return read_data;
+}</p>
+<p>//=====================================================================
+// 各デバイスの初期設定
+// 
+//=====================================================================
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// sensor
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+void setupSensor(){</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// LIS2DH (accelerometer)
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// I2C address
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+accel.begin(LIS2DH_ADDRESS);</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// register
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+accel.writeRegister8(LIS3DH_REG_CTRL1, 0x07);    //X,Y,Z axis = enable
+accel.setDataRate(LIS3DH_DATARATE_1_HZ);         //Data rate = 1Hz</p>
+<p>accel.writeRegister8(LIS3DH_REG_CTRL2, 0x00);
+accel.writeRegister8(LIS3DH_REG_CTRL3, 0x00);    // INT Disable
+accel.writeRegister8(LIS3DH_REG_CTRL4, 0x80);    //BUD = enable, Scale = +/-2g</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// HTS221 (temperature /humidity)
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+smeHumidity.begin();</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// OPT3001 (light)
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+OPT3001_Config newConfig;
+OPT3001_ErrorCode errorConfig;</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// I2C address
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+light.begin(OPT3001_ADDRESS);</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// config register
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+newConfig.RangeNumber = B1100;               // automatic full scale
+newConfig.ConvertionTime = B1;               // convertion time = 800ms
+newConfig.ModeOfConversionOperation = B11;   // continous conversion
+newConfig.Latch = B0;                        // hysteresis-style</p>
+<p>errorConfig = light.writeConfig(newConfig);</p>
+<p>if(errorConfig != NO_ERROR){
+errorConfig = light.writeConfig(newConfig);   //retry
+}
+}</p>
+<p>//=====================================================================
+// 割り込み処理
+// 
+//=====================================================================
+//=====================================================================
+// interrupt
+//=====================================================================
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// Timer2 INT
+// タイマー割り込み関数
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+void intTimer2(){</p>
+<p>bInterval = 1;
+}</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// Watchdog Timer INT
+// WDT割り込み関数
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+ISR(WDT_vect){</p>
+<p>wdt_disable();</p>
+<p>countWDT += 1;</p>
+<p>if (countWDT &gt;= wakeupWDT){
+countWDT = 0;</p>
+<p>}
+}</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// INT0
+// INT0割り込み関数
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+void intExtInt0(){
+if (bEventSleep == false)
+{
+bEventSleep = true;
+}
+else
+{
+bEventSleep = false;
+}
+}</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// INT1
+// INT1割り込み関数
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+void intExtInt1(){
+//bWakeupINT1 = true;
+}</p>
+<p>//====================================================================
+// functions
+//====================================================================
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// counter /event
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// main loop
+// メインループのループ回数をカウントし
+// 1秒間隔でセンサーデータの取得をONにする
+// 4秒間隔でスリープ確認をONにする
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+void loopCounter(){</p>
+<p>iLoop1s += 1;</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// 1s period
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+if (iLoop1s &gt;=  8){             // 125ms x 8 = 1s</p>
+<pre><code>iLoop1s = 0;
+eventSensorRead = true;
+eventWriteLCD = true;
+</code></pre>
+<p>}
+}</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// sensor
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// main loop
+// センサーデータ取得がONのとき、各センサーからデータを取得
+// コンソール出力がONのときシリアルに測定値と計算結果を出力する
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+void loopSensor(){
+double temp_mv;
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// 1s period
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+if (eventSensorRead == true){</p>
+<pre><code>//-------------------------
+// initialize parameter
+//-------------------------
+eventSensorRead = false;
+
+//-------------------------
+// LIS2DH
+// 3軸センサーのデータ取得
+//-------------------------
+accel.read();
+dataX_g = accel.x_g;    //X軸
+dataY_g = accel.y_g;    //Y軸
+dataZ_g = accel.z_g;    //Z軸
+
+if(dataZ_g &gt;= 1.0){
+  dataZ_g = 1.00;
+} else if (dataZ_g &lt;= -1.0){
+  dataZ_g = -1.00;
+}
+
+dataTilt = acos(dataZ_g)/PI*180;
+
+//-------------------------
+// HTS221
+// 温湿度センサーデータ取得
+//-------------------------
+dataTemp = (float)smeHumidity.readTemperature();  //温度
+dataHumid = (float)smeHumidity.readHumidity();    //湿度
+
+//-------------------------
+// 温度と湿度の2点補正
+//-------------------------
+dataTemp=TM0+(TM1-TM0)*(dataTemp-TL0)/(TL1-TL0);      // 温度補正
+dataHumid=HM0+(HM1-HM0)*(dataHumid-HL0)/(HL1-HL0);    // 湿度補正
+
+//-------------------------
+// OPT3001
+// 照度センサーデータ取得
+//-------------------------
+OPT3001 result = light.readResult();
+
+if(result.error == NO_ERROR){
+  dataLight = result.lux;
+}
+</code></pre>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// ADC081C027（ADC)
+// 電池リーフ電池電圧取得
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+uint8_t adcVal1 = 0;
+uint8_t adcVal2 = 0;</p>
+<p>Wire.beginTransmission(BATT_ADC_ADDR);
+Wire.write(0x00);
+Wire.endTransmission(false);
+Wire.requestFrom(BATT_ADC_ADDR,2);
+adcVal1 = Wire.read();
+adcVal2 = Wire.read();</p>
+<p>if (adcVal1 == 0xff &amp;&amp; adcVal2 == 0xff) { 
+//測定値がFFならバッテリリーフはつながっていない
+adcVal1 = adcVal2 = 0;
+}</p>
+<p>//電圧計算　ADC　* （(リファレンス電圧(3.3V)/ ADCの分解能(256)) * 分圧比（２倍））
+//dataBatt = (((adcVal1 &laquo; 4) | (adcVal2 &raquo; 4)) * (3.3 / 256)) * 2 ;
+temp_mv = ((double)((adcVal1 &laquo; 4) | (adcVal2 &raquo; 4)) * 3300 * 2) / 256;
+dataBatt = (float)(temp_mv / 1000);</p>
+<pre><code>//-------------------------
+// シリアルモニタ表示
+//-------------------------
+</code></pre>
+<p>#ifdef DEBUG
+Serial.println(&quot;&quot;);
+#if 0 <br>
+Serial.println(&quot;&mdash; sensor data &mdash;&quot;); <br>
+Serial.println(&rdquo;  Tmp[degC]     = &quot; + String(dataTemp));
+Serial.println(&rdquo;  Hum[%]        = &quot; + String(dataHumid));
+Serial.println(&rdquo;  Lum[lx]       = &quot; + String(dataLight));
+Serial.println(&rdquo;  Ang[arc deg]  = &quot; + String(dataTilt));
+Serial.println(&rdquo;  Bat[V]        = &quot; + String(dataBatt));
+//Serial.println(&quot;&quot;);
+//Serial.println(&rdquo; Accel X,Y,Z&rdquo; + String(dataX_g) + &quot; &quot; + String(dataY_g) + &quot; &quot; + String(dataZ_g));
+#else
+Serial.println(&ldquo;T =&rdquo; + String(dataTemp) + &quot; H =&rdquo; + String(dataHumid) + &quot; L=&rdquo; + String(dataLight) + &quot; A=&rdquo; + String(dataTilt) + &quot; V=&rdquo; + String(dataBatt));
+#endif <br>
+#endif</p>
+<pre><code>//bWakeupINT1 = false;
+</code></pre>
+<p>}</p>
+<p>}
+//debug ///
+void getBattVal()
+{
+uint8_t adcVal1 = 0;
+uint8_t adcVal2 = 0;</p>
+<p>Wire.beginTransmission(BATT_ADC_ADDR);
+Wire.write(0x00);
+Wire.endTransmission(false);
+Wire.requestFrom(BATT_ADC_ADDR,2);
+adcVal1 = Wire.read();
+adcVal2 = Wire.read();</p>
+<p>if (adcVal1 == 0xff &amp;&amp; adcVal2 == 0xff) { 
+//測定値がFFならバッテリリーフはつながっていない
+adcVal1 = adcVal2 = 0;
+}</p>
+<p>//電圧計算　ADC　* （(リファレンス電圧(3.3V)/ ADCの分解能(256)) * 分圧比（２倍））
+//dataBatt = (((adcVal1 &laquo; 4) | (adcVal2 &raquo; 4)) * (3.3 / 256)) * 2 ;
+double temp_mv = ((double)((adcVal1 &laquo; 4) | (adcVal2 &raquo; 4)) * 3300 * 2) / 256;
+float batval = (float)(temp_mv / 1000);
+Serial.println(&rdquo; V=&rdquo; + String(batval));<br>
+}
+void loopLCD( void ){
+/*  */
+if( eventWriteLCD == true ){
+eventWriteLCD = false;
+veiwSencerData();
+}
+}</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+//  Veiw sensor data
+// センサーデータを文字列に変換してLCDに表示する
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+void veiwSencerData(){</p>
+<p>float value;
+char temp[7], humid[7], light[7], tilt[7],battVolt[7];
+char code[4];
+char sendData[40];</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+//センサーデータを文字列に変換
+//dtostrf(変換する数字,変換される文字数,小数点以下の桁数,変換した文字の格納先);
+//変換される文字数を-にすると変換される文字は左詰め、+なら右詰めとなる
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// Temperature (4Byte)
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+value = dataTemp;</p>
+<p>if(value &gt;= 100){
+value = 99.9;
+}
+else if(value &lt;= -10){ <br>
+value = -9.9;
+} 
+dtostrf(value,4,1,temp);</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// Humidity (4Byte)
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+value = dataHumid;<br>
+dtostrf(value,4,1,humid);</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// Ambient Light (5Byte)
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+value = dataLight;</p>
+<p>if(value &gt;= 100000){
+value = 99999;
+}   <br>
+dtostrf(value,5,0,light);</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// Tilt (4Byte)
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+value = dataTilt;</p>
+<p>if(value &lt; 3){
+value = 0;
+}
+dtostrf(value,4,0,tilt);</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+// Battery Voltage (4Byte)
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
+value = dataBatt;</p>
+<p>if (value &gt;= 10){
+value = 9.99;
+}
+dtostrf(value, 4, 2, battVolt);</p>
+<p>trim(temp);
+trim(humid);
+trim(light); 
+trim(tilt);
+trim(battVolt);</p>
+<p>lcd.clear();
+switch (lcd_view_sts)
+{
+case 0:
+//                 Tmp XX.X [degC]    <br>
+lcd.print(&ldquo;Temp&rdquo;);
+lcd.setCursor(0, 1);
+lcd.print( String(temp) +&rdquo; C&rdquo;);     <br>
+break;
+case 1:
+//                 Hum xx.x [%]
+lcd.print(&ldquo;Humidity&rdquo;);
+lcd.setCursor(0, 1);
+lcd.print( String(humid) +&rdquo; %&quot;);  <br>
+break;
+case 2:
+//                 Lum XXXXX [lx]
+lcd.print(&ldquo;Luminous&rdquo;);
+lcd.setCursor(0, 1);
+lcd.print( String(light) +&rdquo; lx&rdquo;); 
+break;
+case 3:
+//                 Ang XXXX [arc deg]
+lcd.print(&ldquo;Angle&rdquo;);
+lcd.setCursor(0, 1);
+lcd.print( String(tilt) +&rdquo; deg&rdquo;);
+break;
+case 4:
+//                 Bat X.XX [V]
+lcd.print(&ldquo;Battery&rdquo;);
+lcd.setCursor(0, 1);
+lcd.print( String(battVolt) +&rdquo; V&rdquo;);
+break;
+default:
+break;
+}
+if (lcd_view_sts &lt; 4){
+lcd_view_sts++;
+}
+else{
+lcd_view_sts = 0;
+}</p>
+<p>//debug//
+#ifdef DEBUG 
+//getBattVal();
+#endif
+//debug//
+}
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+// trim 
+// 文字列配列からSPを削除する
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+void trim(char * data)
+{
+int i = 0, j = 0;</p>
+<p>while (<em>(data + i) != &lsquo;\0&rsquo;){
+if (</em>(data + i) != ' &lsquo;){
+*(data + j) = *(data + i);
+j++;
+}
+i++;
+}
+*(data + j) = &lsquo;\0&rsquo;;
+}</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// sleep
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// main loop
+// スリープ移行要求があった場合、センサーリーフをSLEEPさせて
+// WDTをセットしマイコンリーフをスリープさせる
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+void loopSleep(){</p>
+<p>if (bEventSleep == true){
+//bEventSleep = false;</p>
+<p>#ifdef DEBUG
+Serial.print(&rdquo;  &raquo;&gt; Go to sleep :  &ldquo;);
+Serial.flush();
+#endif
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// sleep
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+sleepLCD();
+sleepSensor();
+//wdt_start();
+sleep();
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+//  wakeup
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+wakeupSensor();
+wakeupLCD();</p>
+<p>#ifdef DEBUG
+Serial.println(&rdquo;  &laquo;&lt; Wake up &laquo;&lt;&rdquo;);
+#endif     <br>
+}
+}
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// SLEEP
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+void sleep(){<br>
+ADCSRA &amp;= ~(1 &laquo; ADEN);                 //ADC停止
+set_sleep_mode(SLEEP_MODE_PWR_DOWN);    //SET SLEEP MODE
+sleep_enable();                         // SLEEP ENABLE</p>
+<p>// BOD停止
+MCUCR |= (1 &laquo; BODSE) | (1 &laquo; BODS);             // MCUCRのBODSとBODSEに1をセット
+MCUCR = (MCUCR &amp; ~(1 &laquo; BODSE)) | (1 &laquo; BODS);  // すぐに（4クロック以内）BODSSEを0, BODSを1に設定
+asm(&ldquo;sleep&rdquo;);                                   // 3クロック以内にスリープ 
+sleep_disable();                         // SLEEP DISABLE
+}
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// WDT
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+void wdt_start(){
+// watchdog timer reset
+wdt_reset();</p>
+<p>//disable interruput
+cli();
+//clear WatchDog system Reset Flag(WDRF)
+MCUSR &amp;= ~(1 &laquo; WDRF);
+// WDT変更許可
+// WDCEとWDE同時セットで変更許可
+WDTCSR |= 1 &laquo; WDCE | 1 &laquo; WDE;
+//WDT設定
+// WDE=0,WDIE=1 :WDT overflowで割り込み
+// WDP3=1,WDP2=0,WDP1=0,WDP0=1: 8s
+WDTCSR = 1 &laquo; WDIE | 0 &laquo; WDE | 1 &laquo; WDP3 | 0 &laquo; WDP2 | 0 &laquo; WDP1 | 1 &laquo; WDP0;
+//enable interruput
+sei();
+}
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// sleep sensor
+// センサーリーフをスリープさせる
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+void sleepSensor(){</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// OPT3001 sleep
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+OPT3001_Config newConfig;
+OPT3001_ErrorCode errorConfig;</p>
+<p>newConfig.ModeOfConversionOperation = B00;
+errorConfig = light.writeConfig(newConfig);
+if(errorConfig != NO_ERROR){</p>
+<pre><code>errorConfig = light.writeConfig(newConfig);
+</code></pre>
+<p>}</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// LIS2DH sleep
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+accel.setDataRate(LIS3DH_DATARATE_POWERDOWN);</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// HTS221 sleep
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+smeHumidity.deactivate();
+}</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// wakeup sensor
+// センサーリーフをスリープから復帰させる
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+void wakeupSensor(){
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// OPT3001 wakeup
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+OPT3001_Config newConfig;
+OPT3001_ErrorCode errorConfig;</p>
+<p>newConfig.RangeNumber = B1100;               //automatic full scale
+newConfig.ConvertionTime = B1;               //convertion time = 800ms
+newConfig.ModeOfConversionOperation = B11;   //continous conversion
+newConfig.Latch = B1;                        //latch window style</p>
+<p>errorConfig = light.writeConfig(newConfig);
+if(errorConfig != NO_ERROR){</p>
+<pre><code>errorConfig = light.writeConfig(newConfig);   //retry
+</code></pre>
+<p>}</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// LIS2DH wakeup
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+accel.setDataRate(LIS3DH_DATARATE_1_HZ);</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// HTS221 wakeup
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+smeHumidity.activate(); 
+}
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// sleep LCD
+// LCDリーフをスリープさせる
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+void sleepLCD()
+{
+lcd.noDisplay();
+}
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// sleep LCD
+// LCDリーフをスリープさせる
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+void wakeupLCD(){
+lcd.display();
+}
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// poweroff LCD
+// LCDの電源OFF
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+void powerOffLCD(){</p>
+<p>// LCD 電源 OFF
+i2c_write_byte(I2C_EXPANDER_ADDR_LCD, 0x01, 0x00); 
+}
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// wakeup LCD
+// LCDリーフをスリープさせる
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+void powerOnLCD(){
+// LCD 電源　ＯＮ
+i2c_write_byte(I2C_EXPANDER_ADDR_LCD, 0x01, 0x01);
+// LCDの電源が一度落ちたので、ＬＣＤを再設定
+lcd.begin(8, 2);
+lcd.setContrast(30);
+lcd.clear();<br>
+}</p>
+<p>//====================================================================
+// setup
+//====================================================================
+void setup() {</p>
+<p>//WDT disable
+wdt_disable();</p>
+<p>delay(10);</p>
+<p>Serial.begin(115200);       // UART 9600bps
+Wire.begin();             // I2C 100KHz</p>
+<p>i2c_write_byte(I2C_EXPANDER_ADDR_LCD, 0x03, 0xFE);
+powerOnLCD();</p>
+<p>#ifdef DEBUG
+Serial.println(&ldquo;=========================================&rdquo;);
+Serial.println(&ldquo;setup start&rdquo;);
+#endif</p>
+<p>setupPort();
+delay(10);</p>
+<p>noInterrupts();
+setupExtInt();
+setupTC2Int();
+interrupts();</p>
+<p>setupSensor();
+MsTimer2::start();      // Timer2 inverval start</p>
+<p>#ifdef DEBUG
+Serial.println(&quot;&quot;);
+Serial.println(&ldquo;=========================================&rdquo;);
+Serial.println(&ldquo;loop start&rdquo;);
+Serial.println(&quot;&quot;);
+#endif</p>
+<p>}</p>
+<p>//====================================================================
+// loop
+//====================================================================
+void loop() {</p>
+<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// Timer2 interval　125ms で1回ループ
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+if (bInterval == true){
+bInterval = false; 
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash; <br>
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// loop counter
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+loopCounter();
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// sensor read
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+loopSensor();
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// LCD
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+loopLCD();
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+// sleep/resume
+//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
+loopSleep();
+} 
+}</p>
+
         <div class="section-index">
     
     
@@ -1546,12 +2578,18 @@
         
             
         
+            
+        
+            
+        
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 21, 2020: <a  href="/commit/7545edf23239d39a6dca9f13c81353caed93c3ba">サンプルページを追記 (7545edf)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 27, 2020: <a  href="/commit/6de42161d59b33ccb58349df1f590255e9a8bae4">4/27変更H (6de4216)</a>
 </div>
 </div>
 
