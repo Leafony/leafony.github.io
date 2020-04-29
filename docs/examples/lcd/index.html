@@ -1581,886 +1581,1004 @@
 <h2 id="スケッチの書き込み">スケッチの書き込み</h2>
 <ul>
 <li>書き込みには、4-Sensors、LCD、AVR MCUライブラリ（タイマ割り込み）が必要です。予め、ライブラリをインクルードしておいてください。詳しくは、[こちら]。</li>
-<li>Arduino IDEで、以下のスケッチをマイコンボードに書き込んでください。
-//=====================================================================
-//  Leafony Platform sample sketch
-//     Platform     : 4-Sensors
-//     Processor    : ATmega328P (3.3V /8MHz)
-//     Application  : 4-Sensors with LCD
-//
-//     Leaf configuration
-//       (1) AI01 4-Sensors
-//       (2) AI04 LCD
-//       (3) AP01 AVR MCU
-//       (4) AV02 CR2450 or AV01 CR2032
-//       (5) AZ01 USB		(for debug)
-//
-//		(c) 2019  Trillion-Node Study Group
-//		Released under the MIT license
-//		https://opensource.org/licenses/MIT
-//
-//      Rev.00 2019/08/20 First release
-//=====================================================================
-//use libraries
-//Adafruit LIS3DH
-//https://github.com/adafruit/Adafruit_LIS3DH
-//※  Adafruit_LIS3DH.h
-//    uint8_t readRegister8(uint8_t reg);
-//    void writeRegister8(uint8_t reg, uint8_t value);
-//    をpublic:に移動する
-//Adafruit Unified Sensor Driver
-//https://github.com/adafruit/Adafruit_Sensor
-//SmartEverything ST HTS221 Humidity Sensor
-//https://github.com/ameltech/sme-hts221-library
-//ClosedCube Arduino Library for ClosedCube OPT3001
-//https://github.com/closedcube/ClosedCube_OPT3001_Arduino
-//ST7032 - Arduino LiquidCrystal compatible library
-//https://github.com/tomozh/arduino_ST7032
-//=====================================================================</li>
+<li>Arduino IDEで、以下のスケッチをマイコンボードに書き込んでください。</li>
 </ul>
-<p>//=====================================================================
-// difinition
-//=====================================================================
-#include &lt;MsTimer2.h&gt;
-#include &lt;avr/wdt.h&gt;
-#include &lt;avr/sleep.h&gt;
-#include &lt;avr/power.h&gt;</p>
-<p>#include &lt;Wire.h&gt;
-#include &lt;Adafruit_LIS3DH.h&gt; <br>
-#include &lt;Adafruit_Sensor.h&gt;
-#include &lt;HTS221.h&gt;
-#include &lt;ClosedCube_OPT3001.h&gt;
-#include &lt;SoftwareSerial.h&gt;
-#include &lt;ST7032.h&gt;
-//=====================================================================</p>
-<p>//=====================================================================
-// シリアルコンソールへのデバック出力
-//      #define DEBUG = 出力あり
-//　　//#define DEBUG = 出力なし（コメントアウトする）
-//=====================================================================
-#define DEBUG
-//=====================================================================</p>
-<p>//=====================================================================
-// IOピンの名前定義
-// 接続するリーフに合わせて定義する
-//=====================================================================
-// &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// PD port
-//     digital 0: PD0 = PCRX    (HW UART)
-//     digital 1: PD1 = PCTX    (HW UART)
-//     digital 2: PD2 = INT0#
-//     digital 3: PD3 = INT1#
-//     digital 4: PD4 = Reserved  /* not use */
-//     digital 5: PD5 = Reserved  /* not use */
-//     digital 6: PD6 = Reserved  /* not use */
-//     digital 7: PD7 = Reserved  /* not use */
-// &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-#define PCTX  0
-#define PCRX  1
-#define INT0  2
-#define INT1  3
-#define RSV_D4  4    <br>
-#define RSV_D5  5
-#define RSV_D6  6
-#define RSV_D7  7</p>
-<p>// &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// PB port
-//     digital 8: PB0 = Reserved  /* not use */
-//     digital 9: PB1 = Reserved  /* not use */
-//     digital 10:PB2 = SS#
-//     digital 11:PB3 = MOSI
-//     digital 12:PB4 = MISO
-//     digital 13:PB5 = SCK (LED)
-//                PB6 = XTAL1
-//                PB7 = XTAL2
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-#define RSV_D8  8
-#define RSV_D9  9
-#define SS      10
-#define MOSI    11
-#define MISO    12
-#define LED_PIN     13</p>
-<p>// &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// PC port
-//     digital 14/ Analog0: PC0 = Reserved  /* not use */
-//     digital 15/ Analog1: PC1 = Reserved  /* not use */
-//     digital 16/ Analog2: PC2 = Reserved  /* not use */
-//     digital 17/ Analog3: PC3 = Reserved  /* not use */
-//     digital 18/ SDA    : PC4 = SDA   (I2C)
-//     digital 19/ SCL    : PC5 = SCL   (I2C)
-//     RESET              : PC6 = RESET#
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-#define RSV_D14   14
-#define RSV_D15   15
-#define RSV_D16   16
-#define RSV_D17   17
-#define SDA       18
-#define SCL       19</p>
-<p>//=====================================================================
-// プログラム内で使用する定数定義
-// 
-//=====================================================================
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-//３軸センサ、輝度センサ I2Cアドレス
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-#define LIS2DH_ADDRESS 0x19       // SD0/SA0 pin = VCC 
-#define OPT3001_ADDRESS 0x45      // ADDR pin = VCC
-#define I2C_EXPANDER_ADDR_LCD   0x1A</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// loop() interval
-// MsTimer2のタイマー割り込み発生間隔(ms)
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-#define LOOP_INTERVAL 125         // 125ms interval</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// LIS2DH
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-#define DIVIDER_2G 16383          // full scale 2G  (=0xFFFF/4)
-#define DIVIDER_4G 8191           // full scale 4G  (=0xFFFF/4/2)
-#define DIVIDER_8G 4096           // full scale 8G  (=0xFFFF/4/4)
-#define DIVIDER_16G 1365          // full scale 16G (=0xFFFF/4/12)</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// Batt ADC ADC081C027
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-#define BATT_ADC_ADDR 0x50</p>
-<p>//=====================================================================
-// object
-//=====================================================================
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// Sensor
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-Adafruit_LIS3DH accel = Adafruit_LIS3DH();
-ClosedCube_OPT3001 light;</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// LCD
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-ST7032 lcd;</p>
-<p>//=====================================================================
-// プログラムで使用する変数定義
-// 
-//=====================================================================
-//=====================================================================
-// RAM data
-//=====================================================================
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// loop counter
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-uint8_t iLoop1s = 0;</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// event
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-bool eventSensorRead = false;
-bool eventWriteLCD = false;</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// int0 interrupt
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-volatile bool bEventSleep = false;</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// interval Timer2 interrupt
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-volatile bool bInterval = false;</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// LIS2DH : accelerometer
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-int16_t dataX, dataY, dataZ;
-float dataX_g, dataY_g, dataZ_g;
-float dataTilt, avrTilt;</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// HTS221 : Temperature/Humidity
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-float dataTemp, avrTemp;
-float dataHumid, avrHumid;
-float calcTemp = 0;
-float calcHumid = 0;</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// 2点補正用データ
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// 温度補正用データ0
-float TL0 = 25.0;     // 4-Sensors温度測定値
-float TM0 = 25.0;     // 温度計等測定値
-// 温度補正用データ1
-float TL1 = 40.0;     // 4-Sensors温度測定値
-float TM1 = 40.0;     // 温度計等測定値</p>
-<p>// 湿度補正用データ0
-float HL0 = 60.0;     // 4-Sensors湿度測定値
-float HM0 = 60.0;     // 湿度計等測定値
-// 湿度補正用データ1
-float HL1 = 80.0;     // 4-Sensors湿度測定値
-float HM1 = 80.0;     // 湿度計等測定値</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// OPT3001 : Light
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-float dataLight, avrLight;
-float calcLight = 0;</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// LCD
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-volatile bool  bLCDchange = false;
-volatile int lcd_view_sts = 0;</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// Sleep, Watchdog Timer
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</p>
-<p>volatile int countWDT = 0;
-volatile int wakeupWDT = 2;</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// Batt
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-float dataBatt = 0;</p>
-<p>//=====================================================================
-// setup
-//=====================================================================
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// port
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-//=====================================================================
-// IOピンの入出力設定
-// 接続するリーフに合わせて設定する
-//=====================================================================
-void setupPort(){</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// PD port
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// PD0 : digital 0 = RX
-// PD1 : digital 1 = TX</p>
-<p>pinMode(INT0, INPUT);       // PD2 : digital 2 = BLE interrupt
-pinMode(INT1, INPUT);       // PD3 : digital 3 = sensor interrupt</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// PB port
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-pinMode(LED_PIN, OUTPUT);       // PB5 : digital 13 = DEV _LED
-digitalWrite(LED_PIN, LOW);
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// PC port
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// PC4 : digital 18 = I2C SDA
-// PC5 : digital 19 = I2C SCL 
-}
-//=====================================================================
-// 割り込み処理初期設定
-// 
-//=====================================================================
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// external interrupt
-// 外部割り込み設定
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-void setupExtInt(){</p>
-<p>attachInterrupt(0, intExtInt0, FALLING);    // Sw1    INT0# = enabled
-detachInterrupt(1);                         // sensor INT1# = disabled
-}</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// timer2 interrupt (interval=125ms, int=overflow)
-// メインループのタイマー割り込み設定
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-void setupTC2Int(){</p>
-<p>MsTimer2::set(LOOP_INTERVAL, intTimer2);
-}
-//=====================================================================
-// I2C　制御関数
-// 
-//=====================================================================
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-//I2C スレーブデバイスに1バイト書き込む
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-void i2c_write_byte(int device_address, int reg_address, int write_data){
-Wire.beginTransmission(device_address);
-Wire.write(reg_address);
-Wire.write(write_data);
-Wire.endTransmission();
-}
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-//I2C スレーブデバイスから1バイト読み込む
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-unsigned char i2c_read_byte(int device_address, int reg_address){</p>
-<p>int read_data = 0;</p>
-<p>Wire.beginTransmission(device_address);
-Wire.write(reg_address);
-Wire.endTransmission(false);</p>
-<p>Wire.requestFrom(device_address, 1);
-read_data = Wire.read();</p>
-<p>return read_data;
-}</p>
-<p>//=====================================================================
-// 各デバイスの初期設定
-// 
-//=====================================================================
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// sensor
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-void setupSensor(){</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-// LIS2DH (accelerometer)
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-// I2C address
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-accel.begin(LIS2DH_ADDRESS);</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-// register
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-accel.writeRegister8(LIS3DH_REG_CTRL1, 0x07);    //X,Y,Z axis = enable
-accel.setDataRate(LIS3DH_DATARATE_1_HZ);         //Data rate = 1Hz</p>
-<p>accel.writeRegister8(LIS3DH_REG_CTRL2, 0x00);
-accel.writeRegister8(LIS3DH_REG_CTRL3, 0x00);    // INT Disable
-accel.writeRegister8(LIS3DH_REG_CTRL4, 0x80);    //BUD = enable, Scale = +/-2g</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-// HTS221 (temperature /humidity)
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-smeHumidity.begin();</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-// OPT3001 (light)
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-OPT3001_Config newConfig;
-OPT3001_ErrorCode errorConfig;</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-// I2C address
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-light.begin(OPT3001_ADDRESS);</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-// config register
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-newConfig.RangeNumber = B1100;               // automatic full scale
-newConfig.ConvertionTime = B1;               // convertion time = 800ms
-newConfig.ModeOfConversionOperation = B11;   // continous conversion
-newConfig.Latch = B0;                        // hysteresis-style</p>
-<p>errorConfig = light.writeConfig(newConfig);</p>
-<p>if(errorConfig != NO_ERROR){
-errorConfig = light.writeConfig(newConfig);   //retry
-}
-}</p>
-<p>//=====================================================================
-// 割り込み処理
-// 
-//=====================================================================
-//=====================================================================
-// interrupt
-//=====================================================================
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-// Timer2 INT
-// タイマー割り込み関数
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-void intTimer2(){</p>
-<p>bInterval = 1;
-}</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// Watchdog Timer INT
-// WDT割り込み関数
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-ISR(WDT_vect){</p>
-<p>wdt_disable();</p>
-<p>countWDT += 1;</p>
-<p>if (countWDT &gt;= wakeupWDT){
-countWDT = 0;</p>
-<p>}
-}</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-// INT0
-// INT0割り込み関数
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-void intExtInt0(){
-if (bEventSleep == false)
-{
-bEventSleep = true;
-}
-else
-{
-bEventSleep = false;
-}
-}</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-// INT1
-// INT1割り込み関数
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-void intExtInt1(){
-//bWakeupINT1 = true;
-}</p>
-<p>//====================================================================
-// functions
-//====================================================================
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// counter /event
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// main loop
-// メインループのループ回数をカウントし
-// 1秒間隔でセンサーデータの取得をONにする
-// 4秒間隔でスリープ確認をONにする
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-void loopCounter(){</p>
-<p>iLoop1s += 1;</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// 1s period
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-if (iLoop1s &gt;=  8){             // 125ms x 8 = 1s</p>
-<pre><code>iLoop1s = 0;
-eventSensorRead = true;
-eventWriteLCD = true;
-</code></pre>
-<p>}
-}</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// sensor
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// main loop
-// センサーデータ取得がONのとき、各センサーからデータを取得
-// コンソール出力がONのときシリアルに測定値と計算結果を出力する
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-void loopSensor(){
-double temp_mv;
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// 1s period
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-if (eventSensorRead == true){</p>
-<pre><code>//-------------------------
-// initialize parameter
-//-------------------------
-eventSensorRead = false;
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//  Leafony Platform sample sketch
+</span><span style="color:#8f5902;font-style:italic">//     Platform     : 4-Sensors
+</span><span style="color:#8f5902;font-style:italic">//     Processor    : ATmega328P (3.3V /8MHz)
+</span><span style="color:#8f5902;font-style:italic">//     Application  : 4-Sensors with LCD
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//     Leaf configuration
+</span><span style="color:#8f5902;font-style:italic">//       (1) AI01 4-Sensors
+</span><span style="color:#8f5902;font-style:italic">//       (2) AI04 LCD
+</span><span style="color:#8f5902;font-style:italic">//       (3) AP01 AVR MCU
+</span><span style="color:#8f5902;font-style:italic">//       (4) AV02 CR2450 or AV01 CR2032
+</span><span style="color:#8f5902;font-style:italic">//       (5) AZ01 USB		(for debug)
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//		(c) 2019  Trillion-Node Study Group
+</span><span style="color:#8f5902;font-style:italic">//		Released under the MIT license
+</span><span style="color:#8f5902;font-style:italic">//		https://opensource.org/licenses/MIT
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2019/08/20 First release
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//use libraries
+</span><span style="color:#8f5902;font-style:italic">//Adafruit LIS3DH
+</span><span style="color:#8f5902;font-style:italic">//https://github.com/adafruit/Adafruit_LIS3DH
+</span><span style="color:#8f5902;font-style:italic">//※  Adafruit_LIS3DH.h
+</span><span style="color:#8f5902;font-style:italic">//    uint8_t readRegister8(uint8_t reg);
+</span><span style="color:#8f5902;font-style:italic">//    void writeRegister8(uint8_t reg, uint8_t value);
+</span><span style="color:#8f5902;font-style:italic">//    をpublic:に移動する
+</span><span style="color:#8f5902;font-style:italic">//Adafruit Unified Sensor Driver
+</span><span style="color:#8f5902;font-style:italic">//https://github.com/adafruit/Adafruit_Sensor
+</span><span style="color:#8f5902;font-style:italic">//SmartEverything ST HTS221 Humidity Sensor
+</span><span style="color:#8f5902;font-style:italic">//https://github.com/ameltech/sme-hts221-library
+</span><span style="color:#8f5902;font-style:italic">//ClosedCube Arduino Library for ClosedCube OPT3001
+</span><span style="color:#8f5902;font-style:italic">//https://github.com/closedcube/ClosedCube_OPT3001_Arduino
+</span><span style="color:#8f5902;font-style:italic">//ST7032 - Arduino LiquidCrystal compatible library
+</span><span style="color:#8f5902;font-style:italic">//https://github.com/tomozh/arduino_ST7032
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// difinition
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;MsTimer2.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;avr/wdt.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;avr/sleep.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;avr/power.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Adafruit_LIS3DH.h&gt;    </span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Adafruit_Sensor.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;HTS221.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;ClosedCube_OPT3001.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;SoftwareSerial.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;ST7032.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// シリアルコンソールへのデバック出力
+</span><span style="color:#8f5902;font-style:italic">//      #define DEBUG = 出力あり
+</span><span style="color:#8f5902;font-style:italic">//　　//#define DEBUG = 出力なし（コメントアウトする）
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define DEBUG
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// IOピンの名前定義
+</span><span style="color:#8f5902;font-style:italic">// 接続するリーフに合わせて定義する
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// --------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// PD port
+</span><span style="color:#8f5902;font-style:italic">//     digital 0: PD0 = PCRX    (HW UART)
+</span><span style="color:#8f5902;font-style:italic">//     digital 1: PD1 = PCTX    (HW UART)
+</span><span style="color:#8f5902;font-style:italic">//     digital 2: PD2 = INT0#
+</span><span style="color:#8f5902;font-style:italic">//     digital 3: PD3 = INT1#
+</span><span style="color:#8f5902;font-style:italic">//     digital 4: PD4 = Reserved  /* not use */
+</span><span style="color:#8f5902;font-style:italic">//     digital 5: PD5 = Reserved  /* not use */
+</span><span style="color:#8f5902;font-style:italic">//     digital 6: PD6 = Reserved  /* not use */
+</span><span style="color:#8f5902;font-style:italic">//     digital 7: PD7 = Reserved  /* not use */
+</span><span style="color:#8f5902;font-style:italic">// --------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define PCTX  0
+</span><span style="color:#8f5902;font-style:italic">#define PCRX  1
+</span><span style="color:#8f5902;font-style:italic">#define INT0  2
+</span><span style="color:#8f5902;font-style:italic">#define INT1  3
+</span><span style="color:#8f5902;font-style:italic">#define RSV_D4  4       
+</span><span style="color:#8f5902;font-style:italic">#define RSV_D5  5
+</span><span style="color:#8f5902;font-style:italic">#define RSV_D6  6
+</span><span style="color:#8f5902;font-style:italic">#define RSV_D7  7
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">// --------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// PB port
+</span><span style="color:#8f5902;font-style:italic">//     digital 8: PB0 = Reserved  /* not use */
+</span><span style="color:#8f5902;font-style:italic">//     digital 9: PB1 = Reserved  /* not use */
+</span><span style="color:#8f5902;font-style:italic">//     digital 10:PB2 = SS#
+</span><span style="color:#8f5902;font-style:italic">//     digital 11:PB3 = MOSI
+</span><span style="color:#8f5902;font-style:italic">//     digital 12:PB4 = MISO
+</span><span style="color:#8f5902;font-style:italic">//     digital 13:PB5 = SCK (LED)
+</span><span style="color:#8f5902;font-style:italic">//                PB6 = XTAL1
+</span><span style="color:#8f5902;font-style:italic">//                PB7 = XTAL2
+</span><span style="color:#8f5902;font-style:italic">//---------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define RSV_D8  8
+</span><span style="color:#8f5902;font-style:italic">#define RSV_D9  9
+</span><span style="color:#8f5902;font-style:italic">#define SS      10
+</span><span style="color:#8f5902;font-style:italic">#define MOSI    11
+</span><span style="color:#8f5902;font-style:italic">#define MISO    12
+</span><span style="color:#8f5902;font-style:italic">#define LED_PIN     13
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">// --------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// PC port
+</span><span style="color:#8f5902;font-style:italic">//     digital 14/ Analog0: PC0 = Reserved  /* not use */
+</span><span style="color:#8f5902;font-style:italic">//     digital 15/ Analog1: PC1 = Reserved  /* not use */
+</span><span style="color:#8f5902;font-style:italic">//     digital 16/ Analog2: PC2 = Reserved  /* not use */
+</span><span style="color:#8f5902;font-style:italic">//     digital 17/ Analog3: PC3 = Reserved  /* not use */
+</span><span style="color:#8f5902;font-style:italic">//     digital 18/ SDA    : PC4 = SDA   (I2C)
+</span><span style="color:#8f5902;font-style:italic">//     digital 19/ SCL    : PC5 = SCL   (I2C)
+</span><span style="color:#8f5902;font-style:italic">//     RESET              : PC6 = RESET#
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define RSV_D14   14
+</span><span style="color:#8f5902;font-style:italic">#define RSV_D15   15
+</span><span style="color:#8f5902;font-style:italic">#define RSV_D16   16
+</span><span style="color:#8f5902;font-style:italic">#define RSV_D17   17
+</span><span style="color:#8f5902;font-style:italic">#define SDA       18
+</span><span style="color:#8f5902;font-style:italic">#define SCL       19
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// プログラム内で使用する定数定義
+</span><span style="color:#8f5902;font-style:italic">// 
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">//３軸センサ、輝度センサ I2Cアドレス
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define LIS2DH_ADDRESS 0x19       </span><span style="color:#8f5902;font-style:italic">// SD0/SA0 pin = VCC 
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define OPT3001_ADDRESS 0x45      </span><span style="color:#8f5902;font-style:italic">// ADDR pin = VCC
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define I2C_EXPANDER_ADDR_LCD   0x1A
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// loop() interval
+</span><span style="color:#8f5902;font-style:italic">// MsTimer2のタイマー割り込み発生間隔(ms)
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define LOOP_INTERVAL 125         </span><span style="color:#8f5902;font-style:italic">// 125ms interval
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// LIS2DH
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define DIVIDER_2G 16383          </span><span style="color:#8f5902;font-style:italic">// full scale 2G  (=0xFFFF/4)
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define DIVIDER_4G 8191           </span><span style="color:#8f5902;font-style:italic">// full scale 4G  (=0xFFFF/4/2)
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define DIVIDER_8G 4096           </span><span style="color:#8f5902;font-style:italic">// full scale 8G  (=0xFFFF/4/4)
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define DIVIDER_16G 1365          </span><span style="color:#8f5902;font-style:italic">// full scale 16G (=0xFFFF/4/12)
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// Batt ADC ADC081C027
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define BATT_ADC_ADDR 0x50
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// object
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// Sensor
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">Adafruit_LIS3DH</span> <span style="color:#000">accel</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Adafruit_LIS3DH</span><span style="color:#000;font-weight:bold">();</span>
+<span style="color:#000">ClosedCube_OPT3001</span> <span style="color:#000">light</span><span style="color:#000;font-weight:bold">;</span>      
 
-//-------------------------
-// LIS2DH
-// 3軸センサーのデータ取得
-//-------------------------
-accel.read();
-dataX_g = accel.x_g;    //X軸
-dataY_g = accel.y_g;    //Y軸
-dataZ_g = accel.z_g;    //Z軸
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// LCD
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">ST7032</span> <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">;</span>
+ 
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// プログラムで使用する変数定義
+</span><span style="color:#8f5902;font-style:italic">// 
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// RAM data
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic">// loop counter
+</span><span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">iLoop1s</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
 
-if(dataZ_g &gt;= 1.0){
-  dataZ_g = 1.00;
-} else if (dataZ_g &lt;= -1.0){
-  dataZ_g = -1.00;
-}
+<span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic">// event
+</span><span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">bool</span> <span style="color:#000">eventSensorRead</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">bool</span> <span style="color:#000">eventWriteLCD</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">;</span>
 
-dataTilt = acos(dataZ_g)/PI*180;
+<span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic">// int0 interrupt
+</span><span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">volatile</span> <span style="color:#204a87;font-weight:bold">bool</span> <span style="color:#000">bEventSleep</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">;</span>
 
-//-------------------------
-// HTS221
-// 温湿度センサーデータ取得
-//-------------------------
-dataTemp = (float)smeHumidity.readTemperature();  //温度
-dataHumid = (float)smeHumidity.readHumidity();    //湿度
+<span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic">// interval Timer2 interrupt
+</span><span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">volatile</span> <span style="color:#204a87;font-weight:bold">bool</span> <span style="color:#000">bInterval</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">;</span>
 
-//-------------------------
-// 温度と湿度の2点補正
-//-------------------------
-dataTemp=TM0+(TM1-TM0)*(dataTemp-TL0)/(TL1-TL0);      // 温度補正
-dataHumid=HM0+(HM1-HM0)*(dataHumid-HL0)/(HL1-HL0);    // 湿度補正
+<span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic">// LIS2DH : accelerometer
+</span><span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">int16_t</span> <span style="color:#000">dataX</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">dataY</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">dataZ</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">dataX_g</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">dataY_g</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">dataZ_g</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">dataTilt</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">avrTilt</span><span style="color:#000;font-weight:bold">;</span>
 
-//-------------------------
-// OPT3001
-// 照度センサーデータ取得
-//-------------------------
-OPT3001 result = light.readResult();
+<span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic">// HTS221 : Temperature/Humidity
+</span><span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">dataTemp</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">avrTemp</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">dataHumid</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">avrHumid</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">calcTemp</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">calcHumid</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
 
-if(result.error == NO_ERROR){
-  dataLight = result.lux;
-}
-</code></pre>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-// ADC081C027（ADC)
-// 電池リーフ電池電圧取得
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-uint8_t adcVal1 = 0;
-uint8_t adcVal2 = 0;</p>
-<p>Wire.beginTransmission(BATT_ADC_ADDR);
-Wire.write(0x00);
-Wire.endTransmission(false);
-Wire.requestFrom(BATT_ADC_ADDR,2);
-adcVal1 = Wire.read();
-adcVal2 = Wire.read();</p>
-<p>if (adcVal1 == 0xff &amp;&amp; adcVal2 == 0xff) { 
-//測定値がFFならバッテリリーフはつながっていない
-adcVal1 = adcVal2 = 0;
-}</p>
-<p>//電圧計算　ADC　* （(リファレンス電圧(3.3V)/ ADCの分解能(256)) * 分圧比（２倍））
-//dataBatt = (((adcVal1 &laquo; 4) | (adcVal2 &raquo; 4)) * (3.3 / 256)) * 2 ;
-temp_mv = ((double)((adcVal1 &laquo; 4) | (adcVal2 &raquo; 4)) * 3300 * 2) / 256;
-dataBatt = (float)(temp_mv / 1000);</p>
-<pre><code>//-------------------------
-// シリアルモニタ表示
-//-------------------------
-</code></pre>
-<p>#ifdef DEBUG
-Serial.println(&quot;&quot;);
-#if 0 <br>
-Serial.println(&quot;&mdash; sensor data &mdash;&quot;); <br>
-Serial.println(&rdquo;  Tmp[degC]     = &quot; + String(dataTemp));
-Serial.println(&rdquo;  Hum[%]        = &quot; + String(dataHumid));
-Serial.println(&rdquo;  Lum[lx]       = &quot; + String(dataLight));
-Serial.println(&rdquo;  Ang[arc deg]  = &quot; + String(dataTilt));
-Serial.println(&rdquo;  Bat[V]        = &quot; + String(dataBatt));
-//Serial.println(&quot;&quot;);
-//Serial.println(&rdquo; Accel X,Y,Z&rdquo; + String(dataX_g) + &quot; &quot; + String(dataY_g) + &quot; &quot; + String(dataZ_g));
-#else
-Serial.println(&ldquo;T =&rdquo; + String(dataTemp) + &quot; H =&rdquo; + String(dataHumid) + &quot; L=&rdquo; + String(dataLight) + &quot; A=&rdquo; + String(dataTilt) + &quot; V=&rdquo; + String(dataBatt));
-#endif <br>
-#endif</p>
-<pre><code>//bWakeupINT1 = false;
-</code></pre>
-<p>}</p>
-<p>}
-//debug ///
-void getBattVal()
-{
-uint8_t adcVal1 = 0;
-uint8_t adcVal2 = 0;</p>
-<p>Wire.beginTransmission(BATT_ADC_ADDR);
-Wire.write(0x00);
-Wire.endTransmission(false);
-Wire.requestFrom(BATT_ADC_ADDR,2);
-adcVal1 = Wire.read();
-adcVal2 = Wire.read();</p>
-<p>if (adcVal1 == 0xff &amp;&amp; adcVal2 == 0xff) { 
-//測定値がFFならバッテリリーフはつながっていない
-adcVal1 = adcVal2 = 0;
-}</p>
-<p>//電圧計算　ADC　* （(リファレンス電圧(3.3V)/ ADCの分解能(256)) * 分圧比（２倍））
-//dataBatt = (((adcVal1 &laquo; 4) | (adcVal2 &raquo; 4)) * (3.3 / 256)) * 2 ;
-double temp_mv = ((double)((adcVal1 &laquo; 4) | (adcVal2 &raquo; 4)) * 3300 * 2) / 256;
-float batval = (float)(temp_mv / 1000);
-Serial.println(&rdquo; V=&rdquo; + String(batval));<br>
-}
-void loopLCD( void ){
-/*  */
-if( eventWriteLCD == true ){
-eventWriteLCD = false;
-veiwSencerData();
-}
-}</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-//  Veiw sensor data
-// センサーデータを文字列に変換してLCDに表示する
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-void veiwSencerData(){</p>
-<p>float value;
-char temp[7], humid[7], light[7], tilt[7],battVolt[7];
-char code[4];
-char sendData[40];</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-//センサーデータを文字列に変換
-//dtostrf(変換する数字,変換される文字数,小数点以下の桁数,変換した文字の格納先);
-//変換される文字数を-にすると変換される文字は左詰め、+なら右詰めとなる
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-// Temperature (4Byte)
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-value = dataTemp;</p>
-<p>if(value &gt;= 100){
-value = 99.9;
-}
-else if(value &lt;= -10){ <br>
-value = -9.9;
-} 
-dtostrf(value,4,1,temp);</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-// Humidity (4Byte)
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-value = dataHumid;<br>
-dtostrf(value,4,1,humid);</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-// Ambient Light (5Byte)
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-value = dataLight;</p>
-<p>if(value &gt;= 100000){
-value = 99999;
-}   <br>
-dtostrf(value,5,0,light);</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-// Tilt (4Byte)
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-value = dataTilt;</p>
-<p>if(value &lt; 3){
-value = 0;
-}
-dtostrf(value,4,0,tilt);</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-// Battery Voltage (4Byte)
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-
-value = dataBatt;</p>
-<p>if (value &gt;= 10){
-value = 9.99;
-}
-dtostrf(value, 4, 2, battVolt);</p>
-<p>trim(temp);
-trim(humid);
-trim(light); 
-trim(tilt);
-trim(battVolt);</p>
-<p>lcd.clear();
-switch (lcd_view_sts)
-{
-case 0:
-//                 Tmp XX.X [degC]    <br>
-lcd.print(&ldquo;Temp&rdquo;);
-lcd.setCursor(0, 1);
-lcd.print( String(temp) +&rdquo; C&rdquo;);     <br>
-break;
-case 1:
-//                 Hum xx.x [%]
-lcd.print(&ldquo;Humidity&rdquo;);
-lcd.setCursor(0, 1);
-lcd.print( String(humid) +&rdquo; %&quot;);  <br>
-break;
-case 2:
-//                 Lum XXXXX [lx]
-lcd.print(&ldquo;Luminous&rdquo;);
-lcd.setCursor(0, 1);
-lcd.print( String(light) +&rdquo; lx&rdquo;); 
-break;
-case 3:
-//                 Ang XXXX [arc deg]
-lcd.print(&ldquo;Angle&rdquo;);
-lcd.setCursor(0, 1);
-lcd.print( String(tilt) +&rdquo; deg&rdquo;);
-break;
-case 4:
-//                 Bat X.XX [V]
-lcd.print(&ldquo;Battery&rdquo;);
-lcd.setCursor(0, 1);
-lcd.print( String(battVolt) +&rdquo; V&rdquo;);
-break;
-default:
-break;
-}
-if (lcd_view_sts &lt; 4){
-lcd_view_sts++;
-}
-else{
-lcd_view_sts = 0;
-}</p>
-<p>//debug//
-#ifdef DEBUG 
-//getBattVal();
-#endif
-//debug//
-}
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-// trim 
-// 文字列配列からSPを削除する
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
-void trim(char * data)
-{
-int i = 0, j = 0;</p>
-<p>while (<em>(data + i) != &lsquo;\0&rsquo;){
-if (</em>(data + i) != ' &lsquo;){
-*(data + j) = *(data + i);
-j++;
-}
-i++;
-}
-*(data + j) = &lsquo;\0&rsquo;;
-}</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// sleep
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// main loop
-// スリープ移行要求があった場合、センサーリーフをSLEEPさせて
-// WDTをセットしマイコンリーフをスリープさせる
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-void loopSleep(){</p>
-<p>if (bEventSleep == true){
-//bEventSleep = false;</p>
-<p>#ifdef DEBUG
-Serial.print(&rdquo;  &raquo;&gt; Go to sleep :  &ldquo;);
-Serial.flush();
-#endif
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// sleep
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-sleepLCD();
-sleepSensor();
-//wdt_start();
-sleep();
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-//  wakeup
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-wakeupSensor();
-wakeupLCD();</p>
-<p>#ifdef DEBUG
-Serial.println(&rdquo;  &laquo;&lt; Wake up &laquo;&lt;&rdquo;);
-#endif     <br>
-}
-}
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// SLEEP
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-void sleep(){<br>
-ADCSRA &amp;= ~(1 &laquo; ADEN);                 //ADC停止
-set_sleep_mode(SLEEP_MODE_PWR_DOWN);    //SET SLEEP MODE
-sleep_enable();                         // SLEEP ENABLE</p>
-<p>// BOD停止
-MCUCR |= (1 &laquo; BODSE) | (1 &laquo; BODS);             // MCUCRのBODSとBODSEに1をセット
-MCUCR = (MCUCR &amp; ~(1 &laquo; BODSE)) | (1 &laquo; BODS);  // すぐに（4クロック以内）BODSSEを0, BODSを1に設定
-asm(&ldquo;sleep&rdquo;);                                   // 3クロック以内にスリープ 
-sleep_disable();                         // SLEEP DISABLE
-}
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// WDT
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-void wdt_start(){
-// watchdog timer reset
-wdt_reset();</p>
-<p>//disable interruput
-cli();
-//clear WatchDog system Reset Flag(WDRF)
-MCUSR &amp;= ~(1 &laquo; WDRF);
-// WDT変更許可
-// WDCEとWDE同時セットで変更許可
-WDTCSR |= 1 &laquo; WDCE | 1 &laquo; WDE;
-//WDT設定
-// WDE=0,WDIE=1 :WDT overflowで割り込み
-// WDP3=1,WDP2=0,WDP1=0,WDP0=1: 8s
-WDTCSR = 1 &laquo; WDIE | 0 &laquo; WDE | 1 &laquo; WDP3 | 0 &laquo; WDP2 | 0 &laquo; WDP1 | 1 &laquo; WDP0;
-//enable interruput
-sei();
-}
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// sleep sensor
-// センサーリーフをスリープさせる
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-void sleepSensor(){</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// OPT3001 sleep
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-OPT3001_Config newConfig;
-OPT3001_ErrorCode errorConfig;</p>
-<p>newConfig.ModeOfConversionOperation = B00;
-errorConfig = light.writeConfig(newConfig);
-if(errorConfig != NO_ERROR){</p>
-<pre><code>errorConfig = light.writeConfig(newConfig);
-</code></pre>
-<p>}</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// LIS2DH sleep
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-accel.setDataRate(LIS3DH_DATARATE_POWERDOWN);</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// HTS221 sleep
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-smeHumidity.deactivate();
-}</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// wakeup sensor
-// センサーリーフをスリープから復帰させる
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-void wakeupSensor(){
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// OPT3001 wakeup
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-OPT3001_Config newConfig;
-OPT3001_ErrorCode errorConfig;</p>
-<p>newConfig.RangeNumber = B1100;               //automatic full scale
-newConfig.ConvertionTime = B1;               //convertion time = 800ms
-newConfig.ModeOfConversionOperation = B11;   //continous conversion
-newConfig.Latch = B1;                        //latch window style</p>
-<p>errorConfig = light.writeConfig(newConfig);
-if(errorConfig != NO_ERROR){</p>
-<pre><code>errorConfig = light.writeConfig(newConfig);   //retry
-</code></pre>
-<p>}</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// LIS2DH wakeup
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-accel.setDataRate(LIS3DH_DATARATE_1_HZ);</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// HTS221 wakeup
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-smeHumidity.activate(); 
-}
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// sleep LCD
-// LCDリーフをスリープさせる
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-void sleepLCD()
-{
-lcd.noDisplay();
-}
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// sleep LCD
-// LCDリーフをスリープさせる
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-void wakeupLCD(){
-lcd.display();
-}
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// poweroff LCD
-// LCDの電源OFF
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-void powerOffLCD(){</p>
-<p>// LCD 電源 OFF
-i2c_write_byte(I2C_EXPANDER_ADDR_LCD, 0x01, 0x00); 
-}
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// wakeup LCD
-// LCDリーフをスリープさせる
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-void powerOnLCD(){
-// LCD 電源　ＯＮ
-i2c_write_byte(I2C_EXPANDER_ADDR_LCD, 0x01, 0x01);
-// LCDの電源が一度落ちたので、ＬＣＤを再設定
-lcd.begin(8, 2);
-lcd.setContrast(30);
-lcd.clear();<br>
-}</p>
-<p>//====================================================================
-// setup
-//====================================================================
-void setup() {</p>
-<p>//WDT disable
-wdt_disable();</p>
-<p>delay(10);</p>
-<p>Serial.begin(115200);       // UART 9600bps
-Wire.begin();             // I2C 100KHz</p>
-<p>i2c_write_byte(I2C_EXPANDER_ADDR_LCD, 0x03, 0xFE);
-powerOnLCD();</p>
-<p>#ifdef DEBUG
-Serial.println(&ldquo;=========================================&rdquo;);
-Serial.println(&ldquo;setup start&rdquo;);
-#endif</p>
-<p>setupPort();
-delay(10);</p>
-<p>noInterrupts();
-setupExtInt();
-setupTC2Int();
-interrupts();</p>
-<p>setupSensor();
-MsTimer2::start();      // Timer2 inverval start</p>
-<p>#ifdef DEBUG
-Serial.println(&quot;&quot;);
-Serial.println(&ldquo;=========================================&rdquo;);
-Serial.println(&ldquo;loop start&rdquo;);
-Serial.println(&quot;&quot;);
-#endif</p>
-<p>}</p>
-<p>//====================================================================
-// loop
-//====================================================================
-void loop() {</p>
-<p>//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// Timer2 interval　125ms で1回ループ
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-if (bInterval == true){
-bInterval = false; 
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash; <br>
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// loop counter
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-loopCounter();
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// sensor read
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-loopSensor();
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// LCD
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-loopLCD();
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-// sleep/resume
-//&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;
-loopSleep();
-} 
-}</p>
+<span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic">// 2点補正用データ
+</span><span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic">// 温度補正用データ0
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">TL0</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">25.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 4-Sensors温度測定値
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">TM0</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">25.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 温度計等測定値
+</span><span style="color:#8f5902;font-style:italic">// 温度補正用データ1
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">TL1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">40.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 4-Sensors温度測定値
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">TM1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">40.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 温度計等測定値
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">// 湿度補正用データ0
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">HL0</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">60.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 4-Sensors湿度測定値
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">HM0</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">60.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 湿度計等測定値
+</span><span style="color:#8f5902;font-style:italic">// 湿度補正用データ1
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">HL1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">80.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 4-Sensors湿度測定値
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">HM1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">80.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 湿度計等測定値
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic">// OPT3001 : Light
+</span><span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">dataLight</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">avrLight</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">calcLight</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
 
+
+<span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic">// LCD
+</span><span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">volatile</span> <span style="color:#204a87;font-weight:bold">bool</span>  <span style="color:#000">bLCDchange</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">volatile</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">lcd_view_sts</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> 
+
+<span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic">// Sleep, Watchdog Timer
+</span><span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#204a87;font-weight:bold">volatile</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">countWDT</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">volatile</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">wakeupWDT</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">;</span>
+
+<span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic">// Batt
+</span><span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">dataBatt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+
+
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// setup
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// port
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// IOピンの入出力設定
+</span><span style="color:#8f5902;font-style:italic">// 接続するリーフに合わせて設定する
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setupPort</span><span style="color:#000;font-weight:bold">(){</span>
+
+  <span style="color:#8f5902;font-style:italic">//---------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// PD port
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//---------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// PD0 : digital 0 = RX
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// PD1 : digital 1 = TX
+</span><span style="color:#8f5902;font-style:italic"></span>
+  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">INT0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">INPUT</span><span style="color:#000;font-weight:bold">);</span>       <span style="color:#8f5902;font-style:italic">// PD2 : digital 2 = BLE interrupt
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">INT1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">INPUT</span><span style="color:#000;font-weight:bold">);</span>       <span style="color:#8f5902;font-style:italic">// PD3 : digital 3 = sensor interrupt
+</span><span style="color:#8f5902;font-style:italic"></span>
+  <span style="color:#8f5902;font-style:italic">//---------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// PB port
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//---------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_PIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">OUTPUT</span><span style="color:#000;font-weight:bold">);</span>       <span style="color:#8f5902;font-style:italic">// PB5 : digital 13 = DEV _LED
+</span><span style="color:#8f5902;font-style:italic"></span> <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_PIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#8f5902;font-style:italic">//---------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// PC port
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//---------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// PC4 : digital 18 = I2C SDA
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// PC5 : digital 19 = I2C SCL 
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// 割り込み処理初期設定
+</span><span style="color:#8f5902;font-style:italic">// 
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// external interrupt
+</span><span style="color:#8f5902;font-style:italic">// 外部割り込み設定
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setupExtInt</span><span style="color:#000;font-weight:bold">(){</span>
+
+  <span style="color:#000">attachInterrupt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">intExtInt0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">FALLING</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// Sw1    INT0# = enabled
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">detachInterrupt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>                         <span style="color:#8f5902;font-style:italic">// sensor INT1# = disabled
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// timer2 interrupt (interval=125ms, int=overflow)
+</span><span style="color:#8f5902;font-style:italic">// メインループのタイマー割り込み設定
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setupTC2Int</span><span style="color:#000;font-weight:bold">(){</span>
+
+  <span style="color:#000">MsTimer2</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">set</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LOOP_INTERVAL</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">intTimer2</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// I2C　制御関数
+</span><span style="color:#8f5902;font-style:italic">// 
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">//I2C スレーブデバイスに1バイト書き込む
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">write_data</span><span style="color:#000;font-weight:bold">){</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">write_data</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">endTransmission</span><span style="color:#000;font-weight:bold">();</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">//I2C スレーブデバイスから1バイト読み込む
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">i2c_read_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">){</span>
+
+  <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">read_data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">endTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">requestFrom</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">read_data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
+
+  <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">read_data</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// 各デバイスの初期設定
+</span><span style="color:#8f5902;font-style:italic">// 
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// sensor
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setupSensor</span><span style="color:#000;font-weight:bold">(){</span>
+
+  <span style="color:#8f5902;font-style:italic">//-------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// LIS2DH (accelerometer)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// I2C address
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS2DH_ADDRESS</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#8f5902;font-style:italic">//-------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// register
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_CTRL1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x07</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">//X,Y,Z axis = enable
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setDataRate</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_DATARATE_1_HZ</span><span style="color:#000;font-weight:bold">);</span>         <span style="color:#8f5902;font-style:italic">//Data rate = 1Hz
+</span><span style="color:#8f5902;font-style:italic"></span>  
+  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_CTRL2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x00</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_CTRL3</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x00</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// INT Disable
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_CTRL4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x80</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">//BUD = enable, Scale = +/-2g
+</span><span style="color:#8f5902;font-style:italic"></span>
+  <span style="color:#8f5902;font-style:italic">//-------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// HTS221 (temperature /humidity)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">smeHumidity</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">();</span> 
+
+  <span style="color:#8f5902;font-style:italic">//-------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// OPT3001 (light)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">OPT3001_Config</span> <span style="color:#000">newConfig</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000">OPT3001_ErrorCode</span> <span style="color:#000">errorConfig</span><span style="color:#000;font-weight:bold">;</span>
+
+  <span style="color:#8f5902;font-style:italic">//-------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// I2C address
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">light</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">OPT3001_ADDRESS</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#8f5902;font-style:italic">//-------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// config register
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">newConfig</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">RangeNumber</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">B1100</span><span style="color:#000;font-weight:bold">;</span>               <span style="color:#8f5902;font-style:italic">// automatic full scale
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">newConfig</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ConvertionTime</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">B1</span><span style="color:#000;font-weight:bold">;</span>               <span style="color:#8f5902;font-style:italic">// convertion time = 800ms
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">newConfig</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ModeOfConversionOperation</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">B11</span><span style="color:#000;font-weight:bold">;</span>   <span style="color:#8f5902;font-style:italic">// continous conversion
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">newConfig</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Latch</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">B0</span><span style="color:#000;font-weight:bold">;</span>                        <span style="color:#8f5902;font-style:italic">// hysteresis-style
+</span><span style="color:#8f5902;font-style:italic"></span>  
+  <span style="color:#000">errorConfig</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">light</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeConfig</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">newConfig</span><span style="color:#000;font-weight:bold">);</span>
+  
+  <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">errorConfig</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#000">NO_ERROR</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">errorConfig</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">light</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeConfig</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">newConfig</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">//retry
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// 割り込み処理
+</span><span style="color:#8f5902;font-style:italic">// 
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// interrupt
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// Timer2 INT
+</span><span style="color:#8f5902;font-style:italic">// タイマー割り込み関数
+</span><span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">intTimer2</span><span style="color:#000;font-weight:bold">(){</span>
+
+  <span style="color:#000">bInterval</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//---------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// Watchdog Timer INT
+</span><span style="color:#8f5902;font-style:italic">// WDT割り込み関数
+</span><span style="color:#8f5902;font-style:italic">//---------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">ISR</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">WDT_vect</span><span style="color:#000;font-weight:bold">){</span>
+
+  <span style="color:#000">wdt_disable</span><span style="color:#000;font-weight:bold">();</span>
+
+ <span style="color:#000">countWDT</span> <span style="color:#ce5c00;font-weight:bold">+=</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>
+
+  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">countWDT</span> <span style="color:#ce5c00;font-weight:bold">&gt;=</span> <span style="color:#000">wakeupWDT</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">countWDT</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+
+ <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// INT0
+</span><span style="color:#8f5902;font-style:italic">// INT0割り込み関数
+</span><span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">intExtInt0</span><span style="color:#000;font-weight:bold">(){</span>
+  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">bEventSleep</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">)</span>
+  <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000">bEventSleep</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#204a87;font-weight:bold">else</span>
+  <span style="color:#000;font-weight:bold">{</span>
+     <span style="color:#000">bEventSleep</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// INT1
+</span><span style="color:#8f5902;font-style:italic">// INT1割り込み関数
+</span><span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">intExtInt1</span><span style="color:#000;font-weight:bold">(){</span>
+  <span style="color:#8f5902;font-style:italic">//bWakeupINT1 = true;
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+
+
+<span style="color:#8f5902;font-style:italic">//====================================================================
+</span><span style="color:#8f5902;font-style:italic">// functions
+</span><span style="color:#8f5902;font-style:italic">//====================================================================
+</span><span style="color:#8f5902;font-style:italic">//--------------------------------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// counter /event
+</span><span style="color:#8f5902;font-style:italic">//--------------------------------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// main loop
+</span><span style="color:#8f5902;font-style:italic">// メインループのループ回数をカウントし
+</span><span style="color:#8f5902;font-style:italic">// 1秒間隔でセンサーデータの取得をONにする
+</span><span style="color:#8f5902;font-style:italic">// 4秒間隔でスリープ確認をONにする
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loopCounter</span><span style="color:#000;font-weight:bold">(){</span>
+
+  <span style="color:#000">iLoop1s</span> <span style="color:#ce5c00;font-weight:bold">+=</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>
+
+  <span style="color:#8f5902;font-style:italic">//--------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// 1s period
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//--------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">iLoop1s</span> <span style="color:#ce5c00;font-weight:bold">&gt;=</span>  <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">){</span>             <span style="color:#8f5902;font-style:italic">// 125ms x 8 = 1s
+</span><span style="color:#8f5902;font-style:italic"></span>
+    <span style="color:#000">iLoop1s</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">eventSensorRead</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">eventWriteLCD</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//--------------------------------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// sensor
+</span><span style="color:#8f5902;font-style:italic">//--------------------------------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// main loop
+</span><span style="color:#8f5902;font-style:italic">// センサーデータ取得がONのとき、各センサーからデータを取得
+</span><span style="color:#8f5902;font-style:italic">// コンソール出力がONのときシリアルに測定値と計算結果を出力する
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loopSensor</span><span style="color:#000;font-weight:bold">(){</span>
+  <span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">temp_mv</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// 1s period
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//---------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">eventSensorRead</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">){</span>
+
+    <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// initialize parameter
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">eventSensorRead</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">;</span>
+
+    <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// LIS2DH
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// 3軸センサーのデータ取得
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
+    <span style="color:#000">dataX_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">x_g</span><span style="color:#000;font-weight:bold">;</span>    <span style="color:#8f5902;font-style:italic">//X軸
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">dataY_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">y_g</span><span style="color:#000;font-weight:bold">;</span>    <span style="color:#8f5902;font-style:italic">//Y軸
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">z_g</span><span style="color:#000;font-weight:bold">;</span>    <span style="color:#8f5902;font-style:italic">//Z軸
+</span><span style="color:#8f5902;font-style:italic"></span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">&gt;=</span> <span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">){</span>
+      <span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1.00</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">&lt;=</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">){</span>
+      <span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1.00</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span>
+
+    <span style="color:#000">dataTilt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">acos</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataZ_g</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">PI</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#0000cf;font-weight:bold">180</span><span style="color:#000;font-weight:bold">;</span>
+    
+    <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// HTS221
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// 温湿度センサーデータ取得
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">dataTemp</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">float</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">smeHumidity</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">readTemperature</span><span style="color:#000;font-weight:bold">();</span>  <span style="color:#8f5902;font-style:italic">//温度
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">dataHumid</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">float</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">smeHumidity</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">readHumidity</span><span style="color:#000;font-weight:bold">();</span>    <span style="color:#8f5902;font-style:italic">//湿度
+</span><span style="color:#8f5902;font-style:italic"></span>
+    <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// 温度と湿度の2点補正
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">dataTemp</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">TM0</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">TM1</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">TM0</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataTemp</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">TL0</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">TL1</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">TL0</span><span style="color:#000;font-weight:bold">);</span>      <span style="color:#8f5902;font-style:italic">// 温度補正
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">dataHumid</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">HM0</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">HM1</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">HM0</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataHumid</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">HL0</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">HL1</span><span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">HL0</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// 湿度補正
+</span><span style="color:#8f5902;font-style:italic"></span>
+    <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// OPT3001
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// 照度センサーデータ取得
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">OPT3001</span> <span style="color:#000">result</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">light</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">readResult</span><span style="color:#000;font-weight:bold">();</span>
+
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">result</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">error</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#000">NO_ERROR</span><span style="color:#000;font-weight:bold">){</span>
+      <span style="color:#000">dataLight</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">result</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">lux</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span>
+
+  <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// ADC081C027（ADC)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// 電池リーフ電池電圧取得
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">BATT_ADC_ADDR</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0x00</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">endTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">requestFrom</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">BATT_ADC_ADDR</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
+
+  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0xff</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0xff</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span> 
+    <span style="color:#8f5902;font-style:italic">//測定値がFFならバッテリリーフはつながっていない
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+
+  <span style="color:#8f5902;font-style:italic">//電圧計算　ADC　* （(リファレンス電圧(3.3V)/ ADCの分解能(256)) * 分圧比（２倍））
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//dataBatt = (((adcVal1 &lt;&lt; 4) | (adcVal2 &gt;&gt; 4)) * (3.3 / 256)) * 2 ;
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">temp_mv</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">((</span><span style="color:#204a87;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">3300</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">/</span> <span style="color:#0000cf;font-weight:bold">256</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000">dataBatt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">float</span><span style="color:#000;font-weight:bold">)(</span><span style="color:#000">temp_mv</span> <span style="color:#ce5c00;font-weight:bold">/</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
+
+    <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// シリアルモニタ表示
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#ifdef DEBUG
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">#if 0</span><span style="color:#8f5902;font-style:italic">    
+</span><span style="color:#8f5902;font-style:italic">    Serial.println(&#34;--- sensor data ---&#34;);    
+</span><span style="color:#8f5902;font-style:italic">    Serial.println(&#34;  Tmp[degC]     = &#34; + String(dataTemp));
+</span><span style="color:#8f5902;font-style:italic">    Serial.println(&#34;  Hum[%]        = &#34; + String(dataHumid));
+</span><span style="color:#8f5902;font-style:italic">    Serial.println(&#34;  Lum[lx]       = &#34; + String(dataLight));
+</span><span style="color:#8f5902;font-style:italic">    Serial.println(&#34;  Ang[arc deg]  = &#34; + String(dataTilt));
+</span><span style="color:#8f5902;font-style:italic">    Serial.println(&#34;  Bat[V]        = &#34; + String(dataBatt));
+</span><span style="color:#8f5902;font-style:italic">    //Serial.println(&#34;&#34;);
+</span><span style="color:#8f5902;font-style:italic">    //Serial.println(&#34; Accel X,Y,Z&#34; + String(dataX_g) + &#34; &#34; + String(dataY_g) + &#34; &#34; + String(dataZ_g));
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#else
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;T =&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataTemp</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34; H =&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataHumid</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34; L=&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataLight</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34; A=&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataTilt</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34; V=&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataBatt</span><span style="color:#000;font-weight:bold">));</span>
+<span style="color:#8f5902;font-style:italic">#endif    
+</span><span style="color:#8f5902;font-style:italic">#endif
+</span><span style="color:#8f5902;font-style:italic"></span>
+
+    <span style="color:#8f5902;font-style:italic">//bWakeupINT1 = false;
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">//debug ///
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">getBattVal</span><span style="color:#000;font-weight:bold">()</span>
+<span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">BATT_ADC_ADDR</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0x00</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">endTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">requestFrom</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">BATT_ADC_ADDR</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
+
+  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0xff</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0xff</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span> 
+    <span style="color:#8f5902;font-style:italic">//測定値がFFならバッテリリーフはつながっていない
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+
+  <span style="color:#8f5902;font-style:italic">//電圧計算　ADC　* （(リファレンス電圧(3.3V)/ ADCの分解能(256)) * 分圧比（２倍））
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//dataBatt = (((adcVal1 &lt;&lt; 4) | (adcVal2 &gt;&gt; 4)) * (3.3 / 256)) * 2 ;
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">temp_mv</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">((</span><span style="color:#204a87;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">3300</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">/</span> <span style="color:#0000cf;font-weight:bold">256</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">batval</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">float</span><span style="color:#000;font-weight:bold">)(</span><span style="color:#000">temp_mv</span> <span style="color:#ce5c00;font-weight:bold">/</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34; V=&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">batval</span><span style="color:#000;font-weight:bold">));</span>  
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loopLCD</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#8f5902;font-style:italic">/*  */</span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">eventWriteLCD</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#204a87">true</span> <span style="color:#000;font-weight:bold">){</span>
+        <span style="color:#000">eventWriteLCD</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">;</span>
+        <span style="color:#000">veiwSencerData</span><span style="color:#000;font-weight:bold">();</span>
+    <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//---------------------------------------
+</span><span style="color:#8f5902;font-style:italic">//  Veiw sensor data
+</span><span style="color:#8f5902;font-style:italic">// センサーデータを文字列に変換してLCDに表示する
+</span><span style="color:#8f5902;font-style:italic">//---------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">veiwSencerData</span><span style="color:#000;font-weight:bold">(){</span>
+ 
+  <span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">value</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">temp</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">humid</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">light</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">tilt</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">],</span><span style="color:#000">battVolt</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">];</span>
+  <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">code</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">];</span>
+  <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">sendData</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">40</span><span style="color:#000;font-weight:bold">];</span>
+
+  <span style="color:#8f5902;font-style:italic">//-----------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//センサーデータを文字列に変換
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//dtostrf(変換する数字,変換される文字数,小数点以下の桁数,変換した文字の格納先);
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//変換される文字数を-にすると変換される文字は左詰め、+なら右詰めとなる
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-----------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>
+  <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// Temperature (4Byte)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">value</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">dataTemp</span><span style="color:#000;font-weight:bold">;</span>
+
+  <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">value</span> <span style="color:#ce5c00;font-weight:bold">&gt;=</span> <span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">value</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">99.9</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">value</span> <span style="color:#ce5c00;font-weight:bold">&lt;=</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">){</span>    
+    <span style="color:#000">value</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">9.9</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span> 
+  <span style="color:#000">dtostrf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">value</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">temp</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// Humidity (4Byte)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">value</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">dataHumid</span><span style="color:#000;font-weight:bold">;</span>   
+  <span style="color:#000">dtostrf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">value</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">humid</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// Ambient Light (5Byte)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">value</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">dataLight</span><span style="color:#000;font-weight:bold">;</span>
+    
+  <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">value</span> <span style="color:#ce5c00;font-weight:bold">&gt;=</span> <span style="color:#0000cf;font-weight:bold">100000</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">value</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">99999</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>      
+  <span style="color:#000">dtostrf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">value</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">light</span><span style="color:#000;font-weight:bold">);</span>
+ 
+  <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// Tilt (4Byte)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">value</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">dataTilt</span><span style="color:#000;font-weight:bold">;</span>
+
+  <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">value</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">value</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#000">dtostrf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">value</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">tilt</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// Battery Voltage (4Byte)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">value</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">dataBatt</span><span style="color:#000;font-weight:bold">;</span>
+
+  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">value</span> <span style="color:#ce5c00;font-weight:bold">&gt;=</span> <span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">){</span>
+   <span style="color:#000">value</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">9.99</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#000">dtostrf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">value</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">battVolt</span><span style="color:#000;font-weight:bold">);</span>
+
+ 
+  <span style="color:#000">trim</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">temp</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">trim</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">humid</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">trim</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">light</span><span style="color:#000;font-weight:bold">);</span> 
+  <span style="color:#000">trim</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">tilt</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">trim</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">battVolt</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">clear</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#204a87;font-weight:bold">switch</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">lcd_view_sts</span><span style="color:#000;font-weight:bold">)</span>
+  <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87;font-weight:bold">case</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#ce5c00;font-weight:bold">:</span>
+      <span style="color:#8f5902;font-style:italic">//                 Tmp XX.X [degC]       
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Temp&#34;</span><span style="color:#000;font-weight:bold">);</span>
+      <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setCursor</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
+      <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">temp</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#4e9a06">&#34; C&#34;</span><span style="color:#000;font-weight:bold">);</span>        
+      <span style="color:#204a87;font-weight:bold">break</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#204a87;font-weight:bold">case</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#ce5c00;font-weight:bold">:</span>
+      <span style="color:#8f5902;font-style:italic">//                 Hum xx.x [%]
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Humidity&#34;</span><span style="color:#000;font-weight:bold">);</span>
+      <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setCursor</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
+      <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">humid</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#4e9a06">&#34; %&#34;</span><span style="color:#000;font-weight:bold">);</span>     
+      <span style="color:#204a87;font-weight:bold">break</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#204a87;font-weight:bold">case</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#ce5c00;font-weight:bold">:</span>
+      <span style="color:#8f5902;font-style:italic">//                 Lum XXXXX [lx]
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Luminous&#34;</span><span style="color:#000;font-weight:bold">);</span>
+      <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setCursor</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
+      <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">light</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#4e9a06">&#34; lx&#34;</span><span style="color:#000;font-weight:bold">);</span> 
+      <span style="color:#204a87;font-weight:bold">break</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#204a87;font-weight:bold">case</span> <span style="color:#0000cf;font-weight:bold">3</span><span style="color:#ce5c00;font-weight:bold">:</span>
+      <span style="color:#8f5902;font-style:italic">//                 Ang XXXX [arc deg]
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Angle&#34;</span><span style="color:#000;font-weight:bold">);</span>
+      <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setCursor</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
+      <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">tilt</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#4e9a06">&#34; deg&#34;</span><span style="color:#000;font-weight:bold">);</span>
+      <span style="color:#204a87;font-weight:bold">break</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#204a87;font-weight:bold">case</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#ce5c00;font-weight:bold">:</span>
+      <span style="color:#8f5902;font-style:italic">//                 Bat X.XX [V]
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Battery&#34;</span><span style="color:#000;font-weight:bold">);</span>
+      <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setCursor</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
+      <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">battVolt</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#4e9a06">&#34; V&#34;</span><span style="color:#000;font-weight:bold">);</span>
+      <span style="color:#204a87;font-weight:bold">break</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#204a87;font-weight:bold">default</span><span style="color:#ce5c00;font-weight:bold">:</span>
+      <span style="color:#204a87;font-weight:bold">break</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">lcd_view_sts</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">lcd_view_sts</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#204a87;font-weight:bold">else</span><span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000">lcd_view_sts</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//debug//
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#ifdef DEBUG 
+</span><span style="color:#8f5902;font-style:italic"></span> <span style="color:#8f5902;font-style:italic">//getBattVal();
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#endif
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">//debug//
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">//---------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// trim 
+</span><span style="color:#8f5902;font-style:italic">// 文字列配列からSPを削除する
+</span><span style="color:#8f5902;font-style:italic">//---------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">trim</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">data</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">j</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+
+  <span style="color:#204a87;font-weight:bold">while</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">data</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">i</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#4e9a06">&#39;\0&#39;</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">data</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">i</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#4e9a06">&#39; &#39;</span><span style="color:#000;font-weight:bold">){</span>
+      <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">data</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">j</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">data</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">i</span><span style="color:#000;font-weight:bold">);</span>
+      <span style="color:#000">j</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">data</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">j</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;\0&#39;</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//--------------------------------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// sleep
+</span><span style="color:#8f5902;font-style:italic">//--------------------------------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// main loop
+</span><span style="color:#8f5902;font-style:italic">// スリープ移行要求があった場合、センサーリーフをSLEEPさせて
+</span><span style="color:#8f5902;font-style:italic">// WDTをセットしマイコンリーフをスリープさせる
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loopSleep</span><span style="color:#000;font-weight:bold">(){</span>
+
+  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">bEventSleep</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#8f5902;font-style:italic">//bEventSleep = false;
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">#ifdef DEBUG
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;  &gt;&gt;&gt; Go to sleep :  &#34;</span><span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">flush</span><span style="color:#000;font-weight:bold">();</span>
+<span style="color:#8f5902;font-style:italic">#endif
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#8f5902;font-style:italic">//-----------------------
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#8f5902;font-style:italic">// sleep
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#8f5902;font-style:italic">//-----------------------
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">sleepLCD</span><span style="color:#000;font-weight:bold">();</span>
+      <span style="color:#000">sleepSensor</span><span style="color:#000;font-weight:bold">();</span>
+      <span style="color:#8f5902;font-style:italic">//wdt_start();
+</span><span style="color:#8f5902;font-style:italic"></span>       <span style="color:#000">sleep</span><span style="color:#000;font-weight:bold">();</span>
+      <span style="color:#8f5902;font-style:italic">//-----------------------
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#8f5902;font-style:italic">//  wakeup
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#8f5902;font-style:italic">//-----------------------
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#000">wakeupSensor</span><span style="color:#000;font-weight:bold">();</span>
+      <span style="color:#000">wakeupLCD</span><span style="color:#000;font-weight:bold">();</span>
+
+<span style="color:#8f5902;font-style:italic">#ifdef DEBUG
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;  &lt;&lt;&lt; Wake up &lt;&lt;&lt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">#endif        
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// SLEEP
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">sleep</span><span style="color:#000;font-weight:bold">(){</span>  
+  <span style="color:#000">ADCSRA</span> <span style="color:#ce5c00;font-weight:bold">&amp;=</span> <span style="color:#ce5c00;font-weight:bold">~</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">ADEN</span><span style="color:#000;font-weight:bold">);</span>                 <span style="color:#8f5902;font-style:italic">//ADC停止
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">set_sleep_mode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SLEEP_MODE_PWR_DOWN</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">//SET SLEEP MODE
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">sleep_enable</span><span style="color:#000;font-weight:bold">();</span>                         <span style="color:#8f5902;font-style:italic">// SLEEP ENABLE
+</span><span style="color:#8f5902;font-style:italic"></span>
+  <span style="color:#8f5902;font-style:italic">// BOD停止
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">MCUCR</span> <span style="color:#ce5c00;font-weight:bold">|=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">BODSE</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">BODS</span><span style="color:#000;font-weight:bold">);</span>             <span style="color:#8f5902;font-style:italic">// MCUCRのBODSとBODSEに1をセット
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">MCUCR</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">MCUCR</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#ce5c00;font-weight:bold">~</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">BODSE</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">BODS</span><span style="color:#000;font-weight:bold">);</span>  <span style="color:#8f5902;font-style:italic">// すぐに（4クロック以内）BODSSEを0, BODSを1に設定
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">asm</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;sleep&#34;</span><span style="color:#000;font-weight:bold">);</span>                                   <span style="color:#8f5902;font-style:italic">// 3クロック以内にスリープ 
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">sleep_disable</span><span style="color:#000;font-weight:bold">();</span>                         <span style="color:#8f5902;font-style:italic">// SLEEP DISABLE
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// WDT
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">wdt_start</span><span style="color:#000;font-weight:bold">(){</span>
+  <span style="color:#8f5902;font-style:italic">// watchdog timer reset
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">wdt_reset</span><span style="color:#000;font-weight:bold">();</span>
+  
+  <span style="color:#8f5902;font-style:italic">//disable interruput
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">cli</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#8f5902;font-style:italic">//clear WatchDog system Reset Flag(WDRF)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">MCUSR</span> <span style="color:#ce5c00;font-weight:bold">&amp;=</span> <span style="color:#ce5c00;font-weight:bold">~</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">WDRF</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#8f5902;font-style:italic">// WDT変更許可
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// WDCEとWDE同時セットで変更許可
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">WDTCSR</span> <span style="color:#ce5c00;font-weight:bold">|=</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">WDCE</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">WDE</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#8f5902;font-style:italic">//WDT設定
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// WDE=0,WDIE=1 :WDT overflowで割り込み
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// WDP3=1,WDP2=0,WDP1=0,WDP0=1: 8s
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">WDTCSR</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">WDIE</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">0</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">WDE</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">WDP3</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">0</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">WDP2</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">0</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">WDP1</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">WDP0</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#8f5902;font-style:italic">//enable interruput
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">sei</span><span style="color:#000;font-weight:bold">();</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// sleep sensor
+</span><span style="color:#8f5902;font-style:italic">// センサーリーフをスリープさせる
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">sleepSensor</span><span style="color:#000;font-weight:bold">(){</span>
+
+  <span style="color:#8f5902;font-style:italic">//-----------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// OPT3001 sleep
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-----------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">OPT3001_Config</span> <span style="color:#000">newConfig</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000">OPT3001_ErrorCode</span> <span style="color:#000">errorConfig</span><span style="color:#000;font-weight:bold">;</span>
+
+  <span style="color:#000">newConfig</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ModeOfConversionOperation</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">B00</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000">errorConfig</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">light</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeConfig</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">newConfig</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">errorConfig</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#000">NO_ERROR</span><span style="color:#000;font-weight:bold">){</span>
+
+    <span style="color:#000">errorConfig</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">light</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeConfig</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">newConfig</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000;font-weight:bold">}</span>
+    
+  <span style="color:#8f5902;font-style:italic">//-----------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// LIS2DH sleep
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-----------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setDataRate</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_DATARATE_POWERDOWN</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#8f5902;font-style:italic">//-----------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// HTS221 sleep
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-----------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">smeHumidity</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">deactivate</span><span style="color:#000;font-weight:bold">();</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// wakeup sensor
+</span><span style="color:#8f5902;font-style:italic">// センサーリーフをスリープから復帰させる
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">wakeupSensor</span><span style="color:#000;font-weight:bold">(){</span>
+ <span style="color:#8f5902;font-style:italic">//-----------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// OPT3001 wakeup
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-----------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">OPT3001_Config</span> <span style="color:#000">newConfig</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000">OPT3001_ErrorCode</span> <span style="color:#000">errorConfig</span><span style="color:#000;font-weight:bold">;</span>
+      
+  <span style="color:#000">newConfig</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">RangeNumber</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">B1100</span><span style="color:#000;font-weight:bold">;</span>               <span style="color:#8f5902;font-style:italic">//automatic full scale
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">newConfig</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ConvertionTime</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">B1</span><span style="color:#000;font-weight:bold">;</span>               <span style="color:#8f5902;font-style:italic">//convertion time = 800ms
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">newConfig</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ModeOfConversionOperation</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">B11</span><span style="color:#000;font-weight:bold">;</span>   <span style="color:#8f5902;font-style:italic">//continous conversion
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">newConfig</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">Latch</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">B1</span><span style="color:#000;font-weight:bold">;</span>                        <span style="color:#8f5902;font-style:italic">//latch window style
+</span><span style="color:#8f5902;font-style:italic"></span>
+  <span style="color:#000">errorConfig</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">light</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeConfig</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">newConfig</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">errorConfig</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#000">NO_ERROR</span><span style="color:#000;font-weight:bold">){</span>
+
+    <span style="color:#000">errorConfig</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">light</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeConfig</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">newConfig</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">//retry
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000;font-weight:bold">}</span>
+      
+  <span style="color:#8f5902;font-style:italic">//-----------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// LIS2DH wakeup
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-----------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setDataRate</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_DATARATE_1_HZ</span><span style="color:#000;font-weight:bold">);</span>
+    
+  <span style="color:#8f5902;font-style:italic">//-----------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// HTS221 wakeup
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-----------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">smeHumidity</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">activate</span><span style="color:#000;font-weight:bold">();</span> 
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// sleep LCD
+</span><span style="color:#8f5902;font-style:italic">// LCDリーフをスリープさせる
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">sleepLCD</span><span style="color:#000;font-weight:bold">()</span>
+<span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">noDisplay</span><span style="color:#000;font-weight:bold">();</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// sleep LCD
+</span><span style="color:#8f5902;font-style:italic">// LCDリーフをスリープさせる
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">wakeupLCD</span><span style="color:#000;font-weight:bold">(){</span>
+  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">display</span><span style="color:#000;font-weight:bold">();</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// poweroff LCD
+</span><span style="color:#8f5902;font-style:italic">// LCDの電源OFF
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">powerOffLCD</span><span style="color:#000;font-weight:bold">(){</span>
+
+  <span style="color:#8f5902;font-style:italic">// LCD 電源 OFF
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_EXPANDER_ADDR_LCD</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x01</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x00</span><span style="color:#000;font-weight:bold">);</span> 
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// wakeup LCD
+</span><span style="color:#8f5902;font-style:italic">// LCDリーフをスリープさせる
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">powerOnLCD</span><span style="color:#000;font-weight:bold">(){</span>
+  <span style="color:#8f5902;font-style:italic">// LCD 電源　ＯＮ
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_EXPANDER_ADDR_LCD</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x01</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x01</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#8f5902;font-style:italic">// LCDの電源が一度落ちたので、ＬＣＤを再設定
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setContrast</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">30</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">clear</span><span style="color:#000;font-weight:bold">();</span>   
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//====================================================================
+</span><span style="color:#8f5902;font-style:italic">// setup
+</span><span style="color:#8f5902;font-style:italic">//====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+
+  <span style="color:#8f5902;font-style:italic">//WDT disable
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">wdt_disable</span><span style="color:#000;font-weight:bold">();</span>
+
+  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>       <span style="color:#8f5902;font-style:italic">// UART 9600bps
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">();</span>             <span style="color:#8f5902;font-style:italic">// I2C 100KHz
+</span><span style="color:#8f5902;font-style:italic"></span>
+ <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_EXPANDER_ADDR_LCD</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x03</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0xFE</span><span style="color:#000;font-weight:bold">);</span>
+ <span style="color:#000">powerOnLCD</span><span style="color:#000;font-weight:bold">();</span>
+
+ <span style="color:#a40000">#</span><span style="color:#000">ifdef</span> <span style="color:#000">DEBUG</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;=========================================&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;setup start&#34;</span><span style="color:#000;font-weight:bold">);</span>
+ <span style="color:#a40000">#</span><span style="color:#000">endif</span>
+
+  <span style="color:#000">setupPort</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#000">noInterrupts</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000">setupExtInt</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000">setupTC2Int</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000">interrupts</span><span style="color:#000;font-weight:bold">();</span>
+
+  <span style="color:#000">setupSensor</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000">MsTimer2</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">start</span><span style="color:#000;font-weight:bold">();</span>      <span style="color:#8f5902;font-style:italic">// Timer2 inverval start
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">#ifdef DEBUG
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;=========================================&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;loop start&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">#endif
+</span><span style="color:#8f5902;font-style:italic"></span>
+
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//====================================================================
+</span><span style="color:#8f5902;font-style:italic">// loop
+</span><span style="color:#8f5902;font-style:italic">//====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+
+  <span style="color:#8f5902;font-style:italic">//-----------------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// Timer2 interval　125ms で1回ループ
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-----------------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">bInterval</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">){</span>
+     <span style="color:#000">bInterval</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">;</span> 
+    <span style="color:#8f5902;font-style:italic">//--------------------------------------------    
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//--------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// loop counter
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//--------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">loopCounter</span><span style="color:#000;font-weight:bold">();</span>
+    <span style="color:#8f5902;font-style:italic">//--------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// sensor read
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//--------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">loopSensor</span><span style="color:#000;font-weight:bold">();</span>
+    <span style="color:#8f5902;font-style:italic">//--------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// LCD
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//--------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">loopLCD</span><span style="color:#000;font-weight:bold">();</span>
+    <span style="color:#8f5902;font-style:italic">//--------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// sleep/resume
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//--------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">loopSleep</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000;font-weight:bold">}</span> 
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div>
         <div class="section-index">
     
     
@@ -2589,7 +2707,7 @@ loopSleep();
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 27, 2020: <a  href="/commit/6de42161d59b33ccb58349df1f590255e9a8bae4">4/27変更H (6de4216)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 30, 2020: <a  href="/commit/88443c531ad12915b9c7e9eaf9c797007d9c9741">体裁を整えた (88443c5)</a>
 </div>
 </div>
 

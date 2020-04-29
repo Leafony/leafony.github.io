@@ -1568,7 +1568,60 @@
 <p><img src="./environment_assemble.png" alt="assemble1"></p>
 <h2 id="ソースコード">ソースコード</h2>
 <p>Arduino IDEで下記のプログラムを書きましょう。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Adafruit_LIS3DH.h&gt;    </span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">#define LIS2DH_ADDRESS 0x19       </span><span style="color:#8f5902;font-style:italic">// SD0/SA0 pin = VCC 
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">#define DIVIDER_2G 16383          </span><span style="color:#8f5902;font-style:italic">// full scale 2G  (=0xFFFF/4)
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define DIVIDER_4G 8191           </span><span style="color:#8f5902;font-style:italic">// full scale 4G  (=0xFFFF/4/2)
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define DIVIDER_8G 4096           </span><span style="color:#8f5902;font-style:italic">// full scale 8G  (=0xFFFF/4/4)
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define DIVIDER_16G 1365          </span><span style="color:#8f5902;font-style:italic">// full scale 16G (=0xFFFF/4/12)
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#000">Adafruit_LIS3DH</span> <span style="color:#000">accel</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Adafruit_LIS3DH</span><span style="color:#000;font-weight:bold">();</span>  
+
+<span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">dataX_g</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">dataY_g</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">dataZ_g</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">dataTilt</span><span style="color:#000;font-weight:bold">;</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>       <span style="color:#8f5902;font-style:italic">// UART 115200bps
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">();</span>               <span style="color:#8f5902;font-style:italic">// I2C 100KHz
+</span><span style="color:#8f5902;font-style:italic"></span>
+  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS2DH_ADDRESS</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#8f5902;font-style:italic">// register
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_CTRL1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x07</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// X,Y,Z axis = enable
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setDataRate</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_DATARATE_1_HZ</span><span style="color:#000;font-weight:bold">);</span>         <span style="color:#8f5902;font-style:italic">// Data rate = 1Hz
+</span><span style="color:#8f5902;font-style:italic"></span>  
+  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_CTRL2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x00</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_CTRL3</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x00</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// INT Disable
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_CTRL4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x80</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// BUD = enable, Scale = +/-2g
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+
+    <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
+    <span style="color:#000">dataX_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">x_g</span><span style="color:#000;font-weight:bold">;</span>    <span style="color:#8f5902;font-style:italic">//X軸
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">dataY_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">y_g</span><span style="color:#000;font-weight:bold">;</span>    <span style="color:#8f5902;font-style:italic">//Y軸
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">z_g</span><span style="color:#000;font-weight:bold">;</span>    <span style="color:#8f5902;font-style:italic">//Z軸
+</span><span style="color:#8f5902;font-style:italic"></span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">&gt;=</span> <span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">){</span>
+      <span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1.00</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">&lt;=</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">){</span>
+      <span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1.00</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span>
+
+    <span style="color:#000">dataTilt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">acos</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataZ_g</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">PI</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#0000cf;font-weight:bold">180</span><span style="color:#000;font-weight:bold">;</span>  <span style="color:#8f5902;font-style:italic">// 傾き
+</span><span style="color:#8f5902;font-style:italic"></span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;  X [g] = &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataX_g</span><span style="color:#000;font-weight:bold">));</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;  Y [g] = &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataY_g</span><span style="color:#000;font-weight:bold">));</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;  Z [g] = &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataZ_g</span><span style="color:#000;font-weight:bold">));</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;  Ang[arc deg] = &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataTilt</span><span style="color:#000;font-weight:bold">));</span>
+
+    <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><h3 id="ソースコードのビルド">ソースコードのビルド</h3>
 <p>4-Sensors リーフを使うためにはライブラリのインストールが必要です。
 まだインストールしていない場合は<a href="/docs/environment/basic/">こちら</a>のページを参考にライブラリをインストールしてください。</p>
@@ -1701,7 +1754,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 23, 2020: <a  href="/commit/e39d2c9a39a096f36b9e949117b217695d4b4d30">4/23変更K (e39d2c9)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 30, 2020: <a  href="/commit/8a9973b4b58d4bd7394bb2beb1e3d9d9163e3233">加速度センササンプルを追加 (8a9973b)</a>
 </div>
 </div>
 
