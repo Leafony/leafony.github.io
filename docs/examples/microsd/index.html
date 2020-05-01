@@ -1464,7 +1464,7 @@
     <li><a href="#必要なハードウェアの準備">必要なハードウェアの準備</a></li>
     <li><a href="#リーフの組立">リーフの組立</a></li>
     <li><a href="#スケッチの書き込み">スケッチの書き込み</a></li>
-    <li><a href="#スケッチの変更">スケッチの変更</a></li>
+    <li><a href="#ソースコード">ソースコード</a></li>
   </ul>
 </nav>
 
@@ -1571,18 +1571,20 @@
 <ul>
 <li>Arduino IDEで、「ファイル」→「スケッチ例」→「SD」→「CardInfo」で、マイコンボードに書き込んでください。</li>
 </ul>
-<h2 id="スケッチの変更">スケッチの変更</h2>
+<h2 id="ソースコード">ソースコード</h2>
 <ul>
 <li>安定してデータを取得するため、HALF→QUARTERにスピードを遅くしてください。</a></li>
 </ul>
-<p>　if (!card.init(SPI_HALF_SPEED, chipSelect)) {　　→if (!card.init(SPI_QUARTER_SPEED, chipSelect)) {</p>
-<ul>
-<li>
-<p>chipselectのデジタルピンを４→10に変更してください。</a></p>
-<p>const int chipSelect = 4;→const int chipSelect = 10;　</p>
-</li>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">　   <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span><span style="color:#000">card</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">init</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SPI_HALF_SPEED</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">chipSelect</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#000;font-weight:bold">{</span>　　
+  
+    <span style="color:#a40000">→</span><span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span><span style="color:#000">card</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">init</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SPI_QUARTER_SPEED</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">chipSelect</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#000;font-weight:bold">{</span>
+</code></pre></div><ul>
+<li>chipselectのデジタルピンを４→10に変更してください。</a></li>
 </ul>
-
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">     <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">chipSelect</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">;</span>
+  
+    <span style="color:#a40000">→</span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">chipSelect</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">;</span>　
+</code></pre></div>
         <div class="section-index">
     
     
@@ -1711,7 +1713,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 27, 2020: <a  href="/commit/02e642c7a1a12351365ef55566c3b42963d66b59">4/27変更H (02e642c)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 30, 2020: <a  href="/commit/a5ae7d73c6d03736a27344b059dfd496811036d1">4/30変更H (a5ae7d7)</a>
 </div>
 </div>
 

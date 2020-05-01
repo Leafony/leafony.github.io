@@ -43,9 +43,11 @@
 &lt;li&gt;「マイコンボードに書き込む」ボタンを押す&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;ライブラリのインストール&#34;&gt;ライブラリのインストール&lt;/h2&gt;
-&lt;p&gt;Arduinoのライブラリは、通常以下の2カ所に保存されている。
-1）&lt;code&gt;C:\Program Files (x86)\Arduino\libraries&lt;/code&gt;
-2）&lt;code&gt;C:\Users\ユーザ名\Documents\Arduino\libraries&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Arduinoのライブラリは、通常以下の2カ所に保存されている。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;C:\Program Files (x86)\Arduino\libraries&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:\Users\ユーザ名\Documents\Arduino\libraries&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;Arduino IDE をインストールした時、1）にライブラリが保存される。（Arduino IDE Standard Libraries） また、GitHubなどからダウンロードしたライブラリ（ZIPファイル）は、「スケッチ」→「ライブラリをインクルード」→「.ZIP形式のライブラリをインストール」を選択することで、 2)に保存される。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;1. Githubからライブラリをダウンロード&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;「Clone or download」→「Download ZIP」をクリックする。&lt;/p&gt;
