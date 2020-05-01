@@ -1507,28 +1507,87 @@
 <div class="td-content">
 	<h1>Basic Kit</h1>
 	
-	<h2 id="arduino-ideのインストール">Arduino IDEのインストール</h2>
-<p><a href="https://www.arduino.cc/">Arduino ホームページ</a>から「SOFTWARE」→「DOWNLOADS」をクリックし、Arduino IDE インストーラをダウンロードする。下記赤枠はWindowsの例。</p>
+	<p>以下の手順で Leafony Basic Kit 開発環境の設定を行いましょう。</p>
+<h2 id="arduino-ideのインストール">Arduino IDEのインストール</h2>
+<p>Leafonyに書き込むプログラムは、Arduino IDEを使って開発します。</p>
+<p><a href="https://www.arduino.cc/">Arduino ホームページ</a>から「SOFTWARE」→「DOWNLOADS」をクリックし、Arduino IDE インストーラをダウンロードしましょう。</p>
+<p>Windowsの場合は下記の手順でダウンロードできます。</p>
+<hr>
 <img src="./IDE_DL.jpg">
-<p>寄付しない場合はJUST DOWNLOADをクリックする。</p>
-<img src="./IDE_Contri.jpg">
 <h2 id="ボード設定">ボード設定</h2>
-<p>「ツール」 →「 ボード」から、”Arduino Pro or Pro Mini”と”ATmega328P(3.3V,8MHz)”を選択。</p>
+<p>Arduino IDEでLeafonyの開発を行うために、下記の手順でIDEの設定を行いましょう。</p>
+<ol>
+<li>
+<p>Arduino IDEを起動</p>
+</li>
+<li>
+<p>「ツール」→「ボード」から、<strong>Arduino Pro or Pro Mini</strong>を選択、「プロセッサ」で**ATmega328P(3.3V,8MHz)**を選択</p>
+</li>
+</ol>
 <img src="./IDE_ATmega.jpg">
-<p>シリアルポートの選択
-「ツール」→「 シリアルポート」から、COM番号を選択</p>
+<ol start="3">
+<li>「ツール」→「シリアルポート」から、Leafonyが接続されているシリアルポートを選択</li>
+</ol>
 <img src="./IDE_COM.jpg">
 <h2 id="leafonyにプログラムを書き込む">Leafonyにプログラムを書き込む</h2>
+<p>Leafonyを組み立ててLEDを点滅させてみましょう。</p>
 <ol>
 <li>Basic Kitを組み立てる</li>
 </ol>
 <img src="./blink_assemble.png">
 <ol start="2">
-<li>「ファイル」→「スケッチ例」→「01.Basics」→「Blink」</li>
+<li>Arduino IDEで「ファイル」→「スケッチ例」→「01.Basics」→「Blink」をクリックし、サンプルコードを開く</li>
 <li>「マイコンボードに書き込む」ボタンを押す</li>
 </ol>
+<p>AP01A AVR MCUに搭載されたLEDが点滅していることが確認できれば完了です。</p>
 <h2 id="ライブラリのインストール">ライブラリのインストール</h2>
-<p>Arduinoのライブラリは、通常以下の2カ所に保存されている。</p>
+<p>Basic Kitに含まれているリーフを使用するには、一部追加のライブラリをインストールする必要があります。</p>
+<p>下記の説明を参考に、予めライブラリをインストールしておきましょう。</p>
+<table>
+  <tr>
+    <th>リーフ名</th>
+    <th>必要なライブラリ名</th>
+    <th>説明</th>
+  </tr>
+  <tr>
+    <td>BLE</td>
+    <td><a href="https://github.com/Leafony/TBGLib">TBGLib</a></td>
+    <td>Bluetoothライブラリ</td>
+  </tr>
+  <tr>
+    <td rowspan=4>4-Sensors</td>
+    <td><a href="https://github.com/adafruit/Adafruit_Sensor">Adafruit_Sensor.h</a></td>
+    <td>ユニファイドセンサドライバ</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/ameltech/sme-hts221-library">HTS221.h</a></td>
+    <td>温湿度センサライブラリ</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/closedcube/ClosedCube_OPT3001_Arduino">ClosedCube_OPT3001.h</a></td>
+    <td>照度センサライブラリ</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/adafruit/Adafruit_LIS3DH">Adafruit_LSI3DH.h</a></td>
+    <td>加速度センサライブラリ</td>
+  </tr>
+  <tr>
+    <td>LCD</td>
+    <td><a href="https://github.com/tomozh/arduino_ST7032">ST7032.h</a></td>
+    <td>LCDライブラリ</td>
+  </tr>
+  <tr>
+    <td>AVR MCU</td>
+    <td><a href="https://github.com/PaulStoffregen/MsTimer2">MsTimer2.h</a></td>
+    <td>タイマ割り込みライブラリ</td>
+  </tr>
+  <tr>
+    <td>RTC&MicroSD</td>
+    <td><a href="https://github.com/adafruit/RTClib">RTClib.h</a></td>
+    <td>RTCライブラリ</td>
+  </tr>
+</table>
+<p>Arduinoのライブラリは、通常以下の2カ所に保存されています。</p>
 <ol>
 <li><code>C:\Program Files (x86)\Arduino\libraries</code></li>
 <li><code>C:\Users\ユーザ名\Documents\Arduino\libraries</code></li>
