@@ -113,8 +113,7 @@
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
 &lt;p&gt;Seeed Studio の Grove シリーズのセンサを利用した例。定点観測用カメラ。1分に一回カメラで撮影した画像をmicroSDカードに保存してみよう。
 &lt;img src=&#34;./camera_overview.png&#34; alt=&#34;overview1&#34;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://youtu.be/vXeyy4N4da4&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;314&#34; src=&#34;https://www.youtube.com/embed/vXeyy4N4da4&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;h2 id=&#34;必要なハードウェアの準備&#34;&gt;必要なハードウェアの準備&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -181,7 +180,7 @@
 &lt;p&gt;&lt;img src=&#34;./camera_assemble.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;書き込みには、4-Sensors、AVR MCUライブラリ（タイマ割り込み）が必要です。予め、ライブラリをインクルードしておいてください。詳しくは、こちら。&lt;/li&gt;
+&lt;li&gt;書き込みには、4-Sensors、AVR MCUライブラリ（タイマ割り込み）が必要です。予め、ライブラリをインクルードしておいてください。詳しくは、[こちら]。&lt;/li&gt;
 &lt;li&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
@@ -714,8 +713,7 @@
 &lt;p&gt;Seeed Studio の Grove シリーズのセンサを利用した例。超音波センサで測定した距離をLCDに表示させます。超音波センサは、通常、デジタルピンに入力するが、LCDのスイッチ1とGrove&amp;amp;5VのDin1が同じピンを使用しているため、UARTピンに接続しUARTピンをデジタルピンとして使用します。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./Distance_sensor_overview1.png&#34; alt=&#34;overview1&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./Distance_sensor_overview2.png&#34; alt=&#34;overview2&#34;&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://youtu.be/vXeyy4N4da4&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;314&#34; src=&#34;https://www.youtube.com/embed/LsaxA3F4KMY&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;h2 id=&#34;必要なハードウェアの準備&#34;&gt;必要なハードウェアの準備&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
