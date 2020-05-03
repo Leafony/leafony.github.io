@@ -1,0 +1,342 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leafony – 電源リーフ</title>
+    <link>/docs/leaf/power/</link>
+    <description>Recent content in 電源リーフ on Leafony</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/leaf/power/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: AV01A CR2032</title>
+      <link>/docs/leaf/power/av01a/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/leaf/power/av01a/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./AV01A CR2032_f_large.jpg&#34;&gt;&lt;img src=&#34;./AV01A CR2032_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AV01A CR2032_b_large.jpg&#34;&gt;&lt;img src=&#34;./AV01A CR2032_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AV01A CR2032_p_large.jpg&#34;&gt;&lt;img src=&#34;./AV01A CR2032_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;CR2032コイン電池ホルダを実装し、3Vの電池電圧を昇圧電源回路により3.3Vに変換し、3.3Vを各リーフに供給するリーフです。3.3Vをオン/オフするためのスイッチを実装しています。また、電池電圧をモニタするためのADコンバータを実装しています。&lt;/p&gt;
+&lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;項目&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;電池電圧&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;0.7～3.8V&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;出力電圧&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3.3V±2%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;制御方式&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;PWM/PFM 自動切替制御&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;最大出力電流&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;300mA @3.3V to 5V&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Protection circuit&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;過電流制限/サーマルシャットダウン&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Resolution&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;8bit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Reference voltage&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Vdd(3.3V)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Sample rate&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;188.9kSPS(max)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Interfaces&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;I2C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./AV01A_block.png&#34;&gt;&lt;img src=&#34;./AV01A_block.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./AV01A_pinassign.png&#34;&gt;&lt;img src=&#34;./AV01A_pinassign.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/examples/blink&#34;&gt;電池の電圧をパソコンに表示&lt;/a&gt; ※リンク先要変更&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV01A_CR2032/AV01A_CR2032_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV01A_CR2032/AV01A_CR2032_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV01A_CR2032/AV01A_CR2032_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV01A_CR2032/AV01A_CR2032_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV01A_CR2032/AV01A_CR2032_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: AV02A CR2450</title>
+      <link>/docs/leaf/power/av02a/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/leaf/power/av02a/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./AV02A CR2450_f_large.jpg&#34;&gt;&lt;img src=&#34;./AV02A CR2450_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AV02A CR2450_b_large.jpg&#34;&gt;&lt;img src=&#34;./AV02A CR2450_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AV02A CR2450_p_large.jpg&#34;&gt;&lt;img src=&#34;./AV02A CR2450_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;CR2450コイン電池ホルダを実装し、3Vの電池電圧を昇圧電源回路により3.3Vに変換し、3.3Vを各リーフに供給するリーフです。3.3Vをオン/オフするためのスイッチを実装しています。また、電池電圧をモニタするためのADコンバータを実装しています。&lt;/p&gt;
+&lt;h2 id=&#34;性能&#34;&gt;性能　&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;項目&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;電池電圧&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;0.7～3.8V&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;出力電圧&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3.3V±2%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;制御方式&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;PWM/PFM 自動切替制御&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;最大出力電流&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;300mA @3.3V to 5V&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Protection circuit&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;過電流制限/サーマルシャットダウン&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Resolution&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;8bit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Reference voltage&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Vdd(3.3V)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Sample rate&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;188.9kSPS(max)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Interfaces&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;I2C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./AV02A_block.png&#34;&gt;&lt;img src=&#34;./AV02A_block.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./AV02A_pinassign.png&#34;&gt;&lt;img src=&#34;./AV02A_pinassign.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/examples/blink&#34;&gt;電池の電圧をパソコンに表示&lt;/a&gt; ※リンク先要変更&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV02A_CR2450/AV02A_CR2450_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV02A_CR2450/AV02A_CR2450_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV02A_CR2450/AV02A_CR2450_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV02A_CR2450/AV02A_CR2450_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV02A_CR2450/AV02A_CR2450_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: AV03A AA BAT</title>
+      <link>/docs/leaf/power/av03a/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/leaf/power/av03a/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./AV03A AA BAT_f_large.jpg&#34;&gt;&lt;img src=&#34;./AV03A AA BAT_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AV03A AA BAT_b_large.jpg&#34;&gt;&lt;img src=&#34;./AV03A AA BAT_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AV03A AA BAT_p_large.jpg&#34;&gt;&lt;img src=&#34;./AV03A AA BAT_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;単3電池ホルダを実装し、1.5Vの電池電圧を昇圧電源回路により3.3Vに変換し、3.3Vを各リーフに供給するリーフです。3.3Vをオン/オフするためのスイッチを実装しています。また、電池電圧をモニタするためのADコンバータを実装しています。&lt;/p&gt;
+&lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;項目&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;電池電圧&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;0.7～3.8V&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;出力電圧&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3.3V±2%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;制御方式&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;PWM/PFM 自動切替制御&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;最大出力電流&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;300mA @3.3V to 5V&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Protection circuit&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;過電流制限/サーマルシャットダウン&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Resolution&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;8bit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Reference voltage&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Vdd(3.3V)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Sample rate&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;188.9kSPS(max)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Interfaces&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;I2C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./AV03A_block.png&#34;&gt;&lt;img src=&#34;./AV03A_block.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./AV03A_pinassign.png&#34;&gt;&lt;img src=&#34;./AV03A_pinassign.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/examples/blink&#34;&gt;電池の電圧をパソコンに表示&lt;/a&gt; ※リンク先要変更&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV03A_AA_BAT/AV03A_AA_BAT_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV03A_AA_BAT/AV03A_AA_BAT_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV03A_AA_BAT/AV03A_AA_BAT_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV03A_AA_BAT/AV03A_AA_BAT_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV03A_AA_BAT/AV03A_AA_BAT_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: AV04A 2V～4.5V</title>
+      <link>/docs/leaf/power/av04a/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/leaf/power/av04a/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./AV04A 2V～4.5V_f_large.jpg&#34;&gt;&lt;img src=&#34;./AV04A 2V～4.5V_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AV04A 2V～4.5V_b_large.jpg&#34;&gt;&lt;img src=&#34;./AV04A 2V～4.5V_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AV04A 2V～4.5V_p_large.jpg&#34;&gt;&lt;img src=&#34;./AV04A 2V～4.5V_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;SHコネクタを実装し、2～4.5Vの電池電圧を昇降圧電源回路により3.3Vに変換し、3.3Vを各リーフに供給するリーフです。3.3Vをオン/オフするためのスイッチを実装しています。また、電池電圧をモニターするためのADコンバータを実装しています。 SHコネクタに接続可能な電池は乾電池2～3本またはLi-Po、Li-ION電池を想定しています。&lt;/p&gt;
+&lt;h2 id=&#34;性能&#34;&gt;性能　&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;項目&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;電池電圧&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1.8～5.5V&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;出力電圧&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3.3V±2%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;制御方式&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;PWM/PFM 自動切替制御&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;最大出力電流&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;300mA (降圧時)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Protection circuit&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;過電流制限/サーマルシャットダウン&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Resolution&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;8bit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Reference voltage&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Vdd(3.3V)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Sample rate&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;188.9kSPS(max)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Interfaces&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;I2C&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./AV04A_block.png&#34;&gt;&lt;img src=&#34;./AV04A_block.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./AV04A_pinassign.png&#34;&gt;&lt;img src=&#34;./AV04A_pinassign.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/examples/blink&#34;&gt;電池の電圧をパソコンに表示&lt;/a&gt; ※リンク先要変更&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV04A_2V%EF%BD%9E4.5V/AV04A_2V%EF%BD%9E4.5V_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV04A_2V%EF%BD%9E4.5V/AV04A_2V~4.5V_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV04A_2V%EF%BD%9E4.5V/AV04A_2V~4.5V_ComponentMarking_F.pdf&#34;&gt;部品配置図(表面)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV04A_2V%EF%BD%9E4.5V/AV04A_2V~4.5V_ComponentMarking_B.pdf&#34;&gt;部品配置図(裏面)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV04A_2V%EF%BD%9E4.5V/AV04A_2V~4.5V_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AV04A_2V%EF%BD%9E4.5V/AV04A_2V~4.5V_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
