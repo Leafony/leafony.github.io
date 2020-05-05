@@ -366,52 +366,6 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsexamplescamera">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsexamplesdistance_sensor">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed active td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
   </li>
   <ul>
@@ -692,6 +646,52 @@
   </li>
   <ul>
     <li class="collapse " id="docsexamplesmicrosd">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesdistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplescamera">
       
       
       
@@ -1688,93 +1688,48 @@
 <p><img src="./read_battery_1.png" alt="CR2032"></p>
 <h2 id="ソースコード">ソースコード</h2>
 <p>Arduino IDEで下記のプログラムを書きましょう。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;SoftwareSerial.h&gt;</span><span style="color:#8f5902;font-style:italic">
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//  Battery Voltage
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//    (c) 2020 Trillion-Node Study Group
+</span><span style="color:#8f5902;font-style:italic">//    Released under the MIT license
+</span><span style="color:#8f5902;font-style:italic">//    https://opensource.org/licenses/MIT
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2020/05/05  First release
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
 </span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#8f5902;font-style:italic">#define SDA       18
-</span><span style="color:#8f5902;font-style:italic">#define SCL       19
+<span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#8f5902;font-style:italic">#define BATT_ADC_ADDR 0x50
-</span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">dataBatt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">BATT_ADC_ADDR</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0x50</span>
 
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">();</span>  <span style="color:#8f5902;font-style:italic">// I2C 100kHz
-</span><span style="color:#8f5902;font-style:italic"></span>
+  <span style="color:#8f5902;font-style:italic">// initialize serial communication at 9600 second per second:
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">9600</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#8f5902;font-style:italic">// initialize I2C communication at 100kHz:
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">();</span>
   <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
 
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">(){</span>
-  <span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">temp_mv</span><span style="color:#000;font-weight:bold">;</span>
-
-  <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
-  <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
-
-  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">BATT_ADC_ADDR</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#8f5902;font-style:italic">// read ADC registers:
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">BATT_ADC_ADDR</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0x00</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">endTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">requestFrom</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">BATT_ADC_ADDR</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
-  <span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
 
-  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0xff</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0xff</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#8f5902;font-style:italic">//測定値がFFならバッテリリーフはつながっていない
-</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#8f5902;font-style:italic">// when ADC is not connected, read values are 0xFF:
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0xff</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0xff</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
   <span style="color:#000;font-weight:bold">}</span>
 
-  <span style="color:#8f5902;font-style:italic">//電圧計算　ADC　* （(リファレンス電圧(3.3V)/ ADCの分解能(256)) * 分圧比（２倍））
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">temp_mv</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">((</span><span style="color:#204a87;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">3300</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">/</span> <span style="color:#0000cf;font-weight:bold">256</span><span style="color:#000;font-weight:bold">;</span>
-  <span style="color:#000">dataBatt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">float</span><span style="color:#000;font-weight:bold">)(</span><span style="color:#000">temp_mv</span> <span style="color:#ce5c00;font-weight:bold">/</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#8f5902;font-style:italic">// voltage mV = adcVal * Vref(3.3V) / resolution(8bit) * Vdiv(2)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">tempMillivolt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">((</span><span style="color:#204a87;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">3300</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">/</span> <span style="color:#0000cf;font-weight:bold">256</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">dataBatt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">float</span><span style="color:#000;font-weight:bold">)(</span><span style="color:#000">tempMillivolt</span> <span style="color:#ce5c00;font-weight:bold">/</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
 
-  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;  Batt[V]  = &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataBatt</span><span style="color:#000;font-weight:bold">));</span>
-
-  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// wait for a second
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
-
-<span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic">//I2C スレーブデバイスに1バイト書き込む
-</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">write_data</span><span style="color:#000;font-weight:bold">){</span>
-  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">write_data</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">endTransmission</span><span style="color:#000;font-weight:bold">();</span>
-<span style="color:#000;font-weight:bold">}</span>
-<span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic">//I2C スレーブデバイスから1バイト読み込む
-</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">i2c_read_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">){</span>
-
-  <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">read_data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
-
-  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">endTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">);</span>
-
-  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">requestFrom</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">read_data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
-
-  <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">read_data</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#000;font-weight:bold">}</span>
-
-<span style="color:#8f5902;font-style:italic">//---------------------------------------
-</span><span style="color:#8f5902;font-style:italic">// trim
-</span><span style="color:#8f5902;font-style:italic">// 文字列配列からSPを削除する
-</span><span style="color:#8f5902;font-style:italic">//---------------------------------------
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">trim</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">data</span><span style="color:#000;font-weight:bold">)</span>
-<span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">j</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
-
-  <span style="color:#204a87;font-weight:bold">while</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">data</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">i</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#4e9a06">&#39;\0&#39;</span><span style="color:#000;font-weight:bold">){</span>
-    <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">data</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">i</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">!=</span> <span style="color:#4e9a06">&#39; &#39;</span><span style="color:#000;font-weight:bold">){</span>
-      <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">data</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">j</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">data</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">i</span><span style="color:#000;font-weight:bold">);</span>
-      <span style="color:#000">j</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000;font-weight:bold">}</span>
-    <span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">;</span>
-  <span style="color:#000;font-weight:bold">}</span>
-  <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">data</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">j</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;\0&#39;</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Batt[V]  = &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataBatt</span><span style="color:#000;font-weight:bold">));</span>
+  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><h2 id="動作">動作</h2>
 <p>Arduino IDEのシリアルモニタを開き、ボーレートを115200bpsすると、電池の電圧が表示されます。</p>
@@ -1782,7 +1737,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 23, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 5, 2020
 </div>
 </div>
 

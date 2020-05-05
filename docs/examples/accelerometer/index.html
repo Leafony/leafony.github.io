@@ -366,52 +366,6 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsexamplescamera">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsexamplesdistance_sensor">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
   </li>
   <ul>
@@ -692,6 +646,52 @@
   </li>
   <ul>
     <li class="collapse " id="docsexamplesmicrosd">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesdistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplescamera">
       
       
       
@@ -1696,17 +1696,26 @@
 <p><img src="./environment_assemble.png" alt="assemble1"></p>
 <h2 id="ソースコード">ソースコード</h2>
 <p>Arduino IDEで下記のプログラムを書きましょう。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Adafruit_LIS3DH.h&gt;    </span><span style="color:#8f5902;font-style:italic">
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//  Accelerometer
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//    (c) 2020 Trillion-Node Study Group
+</span><span style="color:#8f5902;font-style:italic">//    Released under the MIT license
+</span><span style="color:#8f5902;font-style:italic">//    https://opensource.org/licenses/MIT
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2020/05/05  First release
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Adafruit_LIS3DH.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#8f5902;font-style:italic">#define LIS2DH_ADDRESS 0x19       </span><span style="color:#8f5902;font-style:italic">// SD0/SA0 pin = VCC 
+<span style="color:#8f5902;font-style:italic">#define LIS2DH_ADDRESS 0x19       </span><span style="color:#8f5902;font-style:italic">// SD0/SA0 pin = VCC
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#8f5902;font-style:italic">#define DIVIDER_2G 16383          </span><span style="color:#8f5902;font-style:italic">// full scale 2G  (=0xFFFF/4)
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define DIVIDER_4G 8191           </span><span style="color:#8f5902;font-style:italic">// full scale 4G  (=0xFFFF/4/2)
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define DIVIDER_8G 4096           </span><span style="color:#8f5902;font-style:italic">// full scale 8G  (=0xFFFF/4/4)
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define DIVIDER_16G 1365          </span><span style="color:#8f5902;font-style:italic">// full scale 16G (=0xFFFF/4/12)
 </span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#000">Adafruit_LIS3DH</span> <span style="color:#000">accel</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Adafruit_LIS3DH</span><span style="color:#000;font-weight:bold">();</span>  
+<span style="color:#000">Adafruit_LIS3DH</span> <span style="color:#000">accel</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Adafruit_LIS3DH</span><span style="color:#000;font-weight:bold">();</span>
 
 <span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">dataX_g</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">dataY_g</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">dataZ_g</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">dataTilt</span><span style="color:#000;font-weight:bold">;</span>
@@ -1722,7 +1731,7 @@
   <span style="color:#8f5902;font-style:italic">// register
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_CTRL1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x07</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// X,Y,Z axis = enable
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setDataRate</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_DATARATE_1_HZ</span><span style="color:#000;font-weight:bold">);</span>         <span style="color:#8f5902;font-style:italic">// Data rate = 1Hz
-</span><span style="color:#8f5902;font-style:italic"></span>  
+</span><span style="color:#8f5902;font-style:italic"></span>
   <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_CTRL2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x00</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_CTRL3</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x00</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// INT Disable
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_CTRL4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x80</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// BUD = enable, Scale = +/-2g
