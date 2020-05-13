@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.69.0" />
+<meta name="generator" content="Hugo 0.70.0" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -514,10 +514,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/speaker/" class="align-left pl-0 pr-2 collapsed active td-sidebar-link td-sidebar-link__section">スピーカ</a>
+    <a  href="/docs/examples/speaker/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">スピーカ</a>
   </li>
   <ul>
-    <li class="collapse " id="docsexamplesspeaker">
+    <li class="collapse show" id="docsexamplesspeaker">
       
       
       
@@ -1726,7 +1726,7 @@
 </span><span style="color:#8f5902;font-style:italic">  http://www.arduino.cc/en/Tutorial/Tone
 </span><span style="color:#8f5902;font-style:italic">*/</span>
 
-<span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&#34;pitches.h&#34;</span><span style="color:#8f5902;font-style:italic">
+<span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&#34;pitches.h&#34;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#8f5902;font-style:italic">// notes in the melody:
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">melody</span><span style="color:#000;font-weight:bold">[]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
@@ -1745,14 +1745,14 @@
     <span style="color:#8f5902;font-style:italic">// to calculate the note duration, take one second divided by the note type.
 </span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
 </span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">noteDuration</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1000</span> <span style="color:#ce5c00;font-weight:bold">/</span> <span style="color:#000">noteDurations</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">thisNote</span><span style="color:#000;font-weight:bold">];</span>
-    <span style="color:#000">tone</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">melody</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">thisNote</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">noteDuration</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">tone</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">melody</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">thisNote</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">noteDuration</span><span style="color:#000;font-weight:bold">);</span>
 
     <span style="color:#8f5902;font-style:italic">// to distinguish the notes, set a minimum time between them.
 </span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// the note&#39;s duration + 30% seems to work well:
 </span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">pauseBetweenNotes</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">noteDuration</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">1.30</span><span style="color:#000;font-weight:bold">;</span>
     <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pauseBetweenNotes</span><span style="color:#000;font-weight:bold">);</span>
     <span style="color:#8f5902;font-style:italic">// stop the tone playing:
-</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">noTone</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">);</span>
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">noTone</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000;font-weight:bold">}</span>
 <span style="color:#000;font-weight:bold">}</span>
 
@@ -1762,7 +1762,7 @@
 </code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 27, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 13, 2020
 </div>
 </div>
 
