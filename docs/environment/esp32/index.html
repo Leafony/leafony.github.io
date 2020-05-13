@@ -534,10 +534,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/sound_level/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">サウンドレベルメータ</a>
+    <a  href="/docs/examples/ir_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">人感センサ</a>
   </li>
   <ul>
-    <li class="collapse " id="docsexamplessound_level">
+    <li class="collapse " id="docsexamplesir_sensor">
       
       
       
@@ -580,10 +580,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/ir_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">人感センサ</a>
+    <a  href="/docs/examples/sound_level/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">サウンドレベルメータ</a>
   </li>
   <ul>
-    <li class="collapse " id="docsexamplesir_sensor">
+    <li class="collapse " id="docsexamplessound_level">
       
       
       
@@ -1598,7 +1598,13 @@
     <li><a href="#arduino-ideのインストール">Arduino IDEのインストール</a></li>
     <li><a href="#ボード設定">ボード設定</a></li>
     <li><a href="#サンプルデザインで動作確認">サンプルデザインで動作確認</a></li>
-    <li><a href="#ライブラリのインストール">ライブラリのインストール</a></li>
+    <li><a href="#ライブラリのインストール">ライブラリのインストール</a>
+      <ul>
+        <li><a href="#1-使用するライブラリ">1. 使用するライブラリ</a></li>
+        <li><a href="#2-githubからライブラリをダウンロード">2. Githubからライブラリをダウンロード</a></li>
+        <li><a href="#3-ライブラリのインクルード">3. ライブラリのインクルード</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -1644,24 +1650,32 @@
 <div class="td-content">
 	<h1>ESP32 Wi-Fi Kit</h1>
 	
-	<h2 id="arduino-ideのインストール">Arduino IDEのインストール</h2>
-<p><a href="https://www.arduino.cc/">Arduino ホームページ</a>から「SOFTWARE」→「DOWNLOADS」をクリックし、Arduino IDE インストーラをダウンロードする。下記赤枠はWindowsの例。</p>
+	<p>以下の手順で Leafony ESP32 Wi-Fi Kit 開発環境の設定を行いましょう。</p>
+<h2 id="arduino-ideのインストール">Arduino IDEのインストール</h2>
+<p>Leafonyに書き込むプログラムは、Arduino IDEを使って開発します。</p>
+<p><a href="https://www.arduino.cc/">Arduino ホームページ</a>から「SOFTWARE」→「DOWNLOADS」をクリックし、Arduino IDE インストーラをダウンロードしましょう。</p>
+<p>Windowsの場合は下記の手順でダウンロードできます。</p>
+<hr>
 <img src="./IDE_DL.jpg">
-<p>寄付しない場合はJUST DOWNLOADをクリックする。</p>
-<img src="./IDE_Contri.jpg">
 <h2 id="ボード設定">ボード設定</h2>
 <p>ESP32 MCUをArduino IDEで使用するには、Arduino core for the ESP32 のインストールが必要です。</p>
 <ol>
-<li>Arduino IDEのファイル→環境設定を開き、”追加のボードマネージャのURL:”に、下記URLを入力してください。
-<code>https://dl.espressif.com/dl/package_esp32_index.json</code></li>
+<li>Arduino IDEの<code>ファイル → 環境設定</code>を開き、<code>追加のボードマネージャのURL:</code>に、下記URLを入力してください。</li>
 </ol>
-<img src="./ArduinoIDE_URL.png">
+<pre><code>https://dl.espressif.com/dl/package_esp32_index.json
+</code></pre><img src="./ArduinoIDE_URL.png">
+<br>
+<br>
+<br>
 <ol start="2">
-<li><code>ツール→ボード→ボードマネージャ</code>を選択し、”全て”の右側に”esp32″と入力し、esp32 by Espressifl Systemsが表示されるので”インストール”のボタンを押します。</li>
+<li><code>ツール→ボード→ボードマネージャ</code>を選択し、<code>esp32 by Espressifl Systems</code>を検索し、インストールのボタンを押しましょう。</li>
 </ol>
 <img src="./BoardManager_esp32.png">
+<br>
+<br>
+<br>
 <ol start="3">
-<li>ツール→ボード→ESP32 Dev Moduleを選択すれば、ESP32 MCUが使えるようになります。</li>
+<li><code>ツール → ボード → ESP32 Dev Module</code>を選択すれば、ESP32 MCUが使えるようになります。</li>
 </ol>
 <h2 id="サンプルデザインで動作確認">サンプルデザインで動作確認</h2>
 <ol>
@@ -1669,16 +1683,60 @@
 <li>「マイコンボードに書き込む」ボタンを押す</li>
 </ol>
 <h2 id="ライブラリのインストール">ライブラリのインストール</h2>
-<p>Arduinoのライブラリは、通常以下の2カ所に保存されている。
-1）<code>C:\Program Files (x86)\Arduino\libraries</code>
-2）<code>C:\Users\ユーザ名\Documents\Arduino\libraries</code></p>
-<p>Arduino IDE をインストールした時、1）にライブラリが保存される。（Arduino IDE Standard Libraries） また、GitHubなどからダウンロードしたライブラリ（ZIPファイル）は、「スケッチ」→「ライブラリをインクルード」→「.ZIP形式のライブラリをインストール」を選択することで、 2)に保存される。</p>
-<p><strong>1. Githubからライブラリをダウンロード</strong></p>
-<p>「Clone or download」→「Download ZIP」をクリックする。</p>
-<p><img src="./github_1.png" alt="github">
-<img src="./github_2.png" alt="github"></p>
-<p><strong>2. ライブラリのインクルード</strong></p>
-<p>Arduinoを立ち上げ、スケッチ→ライブラリをインクルード→ZIP形式のライブラリうをインストールの順に選択して保存する。</p>
+<p>一部のリーフを使用するには、追加のライブラリのインストールが必要となる場合があります。
+下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきましょう。</p>
+<h3 id="1-使用するライブラリ">1. 使用するライブラリ</h3>
+<p>Basic Kit、Extension Kitで使用するライブラリは以下の通りです。</p>
+<table>
+  <tr>
+    <th>リーフ名</th>
+    <th>必要なライブラリ名</th>
+    <th>説明</th>
+  </tr>
+  <tr>
+    <td>BLE</td>
+    <td><a href="https://github.com/Leafony/TBGLib">TBGLib</a></td>
+    <td>Bluetoothライブラリ</td>
+  </tr>
+  <tr>
+    <td rowspan=4>4-Sensors</td>
+    <td><a href="https://github.com/adafruit/Adafruit_Sensor">Adafruit_Sensor.h</a></td>
+    <td>ユニファイドセンサドライバ</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/ameltech/sme-hts221-library">HTS221.h</a></td>
+    <td>温湿度センサライブラリ</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/closedcube/ClosedCube_OPT3001_Arduino">ClosedCube_OPT3001.h</a></td>
+    <td>照度センサライブラリ</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/adafruit/Adafruit_LIS3DH">Adafruit_LSI3DH.h</a></td>
+    <td>加速度センサライブラリ</td>
+  </tr>
+  <tr>
+    <td>LCD</td>
+    <td><a href="https://github.com/tomozh/arduino_ST7032">ST7032.h</a></td>
+    <td>LCDライブラリ</td>
+  </tr>
+  <tr>
+    <td>AVR MCU</td>
+    <td><a href="https://github.com/PaulStoffregen/MsTimer2">MsTimer2.h</a></td>
+    <td>タイマ割り込みライブラリ</td>
+  </tr>
+  <tr>
+    <td>RTC&MicroSD</td>
+    <td><a href="https://github.com/adafruit/RTClib">RTClib.h</a></td>
+    <td>RTCライブラリ</td>
+  </tr>
+</table>
+<h3 id="2-githubからライブラリをダウンロード">2. Githubからライブラリをダウンロード</h3>
+<p>上記表のリンクをクリックすると、ライブラリのGitHubリポジトリにアクセスします。
+<code>Clone or download → Download ZIP</code>をクリックし、ライブラリをダウンロードしましょう。</p>
+<p><img src="./github_1.png" alt="github"></p>
+<h3 id="3-ライブラリのインクルード">3. ライブラリのインクルード</h3>
+<p>Arduinoを立ち上げ、<code>スケッチ → ライブラリをインクルード → ZIP形式のライブラリをインストール</code>の順に選択して、先程ダウンロードしたZIPファイルを読み込みましょう。</p>
 <p><img src="./IDE_libinclude.png" alt="include"></p>
 
 	

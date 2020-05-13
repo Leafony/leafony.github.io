@@ -537,10 +537,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/sound_level/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">サウンドレベルメータ</a>
+    <a  href="/docs/examples/ir_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">人感センサ</a>
   </li>
   <ul>
-    <li class="collapse " id="docsexamplessound_level">
+    <li class="collapse " id="docsexamplesir_sensor">
       
       
       
@@ -583,10 +583,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/ir_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">人感センサ</a>
+    <a  href="/docs/examples/sound_level/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">サウンドレベルメータ</a>
   </li>
   <ul>
-    <li class="collapse " id="docsexamplesir_sensor">
+    <li class="collapse " id="docsexamplessound_level">
       
       
       
@@ -1649,8 +1649,8 @@
 	<h1>バッテリ残量</h1>
 	<div class="lead">コイン電池リーフに搭載されたADコンバータでバッテリの残量を読み取る。</div>
 	<h2 id="概要">概要</h2>
-<p>CR2032コイン電池リーフに搭載されたADコンバータを使って電池の電圧を読み取りましょう。
-このサンプルはAV03A AA BATリーフや、AV04A 2V～4.5Vリーフなどの電池リーフでも動作します。</p>
+<p>CR2032コイン電池リーフに搭載されたADコンバータを使って電池の電圧を読み取りましょう。</p>
+<p>このサンプルはAV03A AA BATリーフや、AV04A 2V～4.5Vリーフなどの電池リーフでも動作します。</p>
 <h2 id="使用するリーフ">使用するリーフ</h2>
 <p>以下のリーフを使用します</p>
 <table>
@@ -1697,7 +1697,7 @@
 <h2 id="リーフの組み立て">リーフの組み立て</h2>
 <p><img src="./read_battery_1.png" alt="CR2032"></p>
 <h2 id="ソースコード">ソースコード</h2>
-<p>Arduino IDEで下記のプログラムを書きましょう。</p>
+<p>Arduino IDEで下記のプログラムを作成しましょう。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#8f5902;font-style:italic">//=====================================================================
 </span><span style="color:#8f5902;font-style:italic">//  Battery Voltage
 </span><span style="color:#8f5902;font-style:italic">//
@@ -1713,7 +1713,7 @@
 <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">BATT_ADC_ADDR</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0x50</span><span style="color:#000;font-weight:bold">;</span>
 
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#8f5902;font-style:italic">// initialize serial communication at 9600 second per second:
+  <span style="color:#8f5902;font-style:italic">// initialize serial communication at 115200 second per second:
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#8f5902;font-style:italic">// initialize I2C communication at 100kHz:
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">();</span>

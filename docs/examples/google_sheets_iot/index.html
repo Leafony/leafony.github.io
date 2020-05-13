@@ -22,16 +22,16 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Google SheetsをつかったIoTサービス入門 | Leafony</title><meta property="og:title" content="Google SheetsをつかったIoTサービス入門" />
-<meta property="og:description" content="LEDを点滅させる。
+<meta property="og:description" content="Google Sheetsをデータベースにして環境ログをとるサービスをつくろう
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/docs/examples/google_sheets_iot/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="Google SheetsをつかったIoTサービス入門">
-<meta itemprop="description" content="LEDを点滅させる。
+<meta itemprop="description" content="Google Sheetsをデータベースにして環境ログをとるサービスをつくろう
 "><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Google SheetsをつかったIoTサービス入門"/>
-<meta name="twitter:description" content="LEDを点滅させる。
+<meta name="twitter:description" content="Google Sheetsをデータベースにして環境ログをとるサービスをつくろう
 "/>
 
 
@@ -537,10 +537,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/sound_level/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">サウンドレベルメータ</a>
+    <a  href="/docs/examples/ir_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">人感センサ</a>
   </li>
   <ul>
-    <li class="collapse " id="docsexamplessound_level">
+    <li class="collapse " id="docsexamplesir_sensor">
       
       
       
@@ -583,10 +583,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/ir_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">人感センサ</a>
+    <a  href="/docs/examples/sound_level/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">サウンドレベルメータ</a>
   </li>
   <ul>
-    <li class="collapse " id="docsexamplesir_sensor">
+    <li class="collapse " id="docsexamplessound_level">
       
       
       
@@ -1596,14 +1596,6 @@
 
 
 
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#使用するリーフ">使用するリーフ</a></li>
-    <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
-    <li><a href="#ソースコード">ソースコード</a></li>
-  </ul>
-</nav>
-
 
 
           </div>
@@ -1645,70 +1637,10 @@
             
 <div class="td-content">
 	<h1>Google SheetsをつかったIoTサービス入門</h1>
-	<div class="lead">LEDを点滅させる。</div>
-	<p>AVR MCUリーフに搭載されたLEDを1秒ごとに点灯、消灯を繰り返します。</p>
-<p><strong>ここに動作のイメージ図を載せる</strong></p>
-<h2 id="使用するリーフ">使用するリーフ</h2>
-<p>以下のリーフを使用します</p>
-<table>
-<thead>
-<tr>
-<th align="left">Type</th>
-<th align="left">Name</th>
-<th align="left">Q&rsquo;ty</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">AP01A</td>
-<td align="left">AVR MCU</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left">AZ01A</td>
-<td align="left">USB</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left">AV01A</td>
-<td align="left">CR2032</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left">AZ62A</td>
-<td align="left">コネクタカバー</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">CR2032 コイン電池</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">M2ネジ</td>
-<td align="left">2</td>
-</tr>
-</tbody>
-</table>
-<h2 id="リーフの組み立て">リーフの組み立て</h2>
-<p>下図のようにリーフを組み立てましょう。</p>
-<p><img src="./brink_assemble.png" alt="assemble1">
-<img src="./brink_assemble2.png" alt="assemble2"></p>
-<h2 id="ソースコード">ソースコード</h2>
-<p>Arduino IDEで下記のプログラムを書きましょう。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#8f5902;font-style:italic">// LEDピンを出力ピンに設定
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">OUTPUT</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#000;font-weight:bold">}</span>
+	<div class="lead">Google Sheetsをデータベースにして環境ログをとるサービスをつくろう</div>
+	<h2 id="概要">概要</h2>
+<p><a href="https://qiita.com/s_nkg/items/3615862323923162f71a">https://qiita.com/s_nkg/items/3615862323923162f71a</a></p>
 
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">// LEDを点灯
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// LEDを消灯
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
-</code></pre></div>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 30, 2020

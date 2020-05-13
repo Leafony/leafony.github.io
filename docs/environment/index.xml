@@ -36,12 +36,12 @@
 &lt;p&gt;Arduino IDEを起動&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;「ツール」→「ボード」から、&lt;strong&gt;Arduino Pro or Pro Mini&lt;/strong&gt;を選択、「プロセッサ」で**ATmega328P(3.3V,8MHz)**を選択&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ツール → ボード&lt;/code&gt;から、&lt;code&gt;Arduino Pro or Pro Mini&lt;/code&gt;を選択、&lt;code&gt;プロセッサ&lt;/code&gt;で&lt;code&gt;ATmega328P (3.3V,8MHz)&lt;/code&gt;を選択&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;./IDE_ATmega.jpg&#34;&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;「ツール」→「シリアルポート」から、Leafonyが接続されているシリアルポートを選択&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ツール → シリアルポート&lt;/code&gt;から、Leafonyが接続されているシリアルポートを選択&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;./IDE_COM.jpg&#34;&gt;
 &lt;h2 id=&#34;leafonyにプログラムを書き込む&#34;&gt;Leafonyにプログラムを書き込む&lt;/h2&gt;
@@ -51,13 +51,15 @@
 &lt;/ol&gt;
 &lt;img src=&#34;./blink_assemble.png&#34;&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Arduino IDEで「ファイル」→「スケッチ例」→「01.Basics」→「Blink」をクリックし、サンプルコードを開く&lt;/li&gt;
-&lt;li&gt;「マイコンボードに書き込む」ボタンを押す&lt;/li&gt;
+&lt;li&gt;Arduino IDEで&lt;code&gt;ファイル → スケッチ例 → 01.Basics → Blink&lt;/code&gt;をクリックし、サンプルコードを開く&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;マイコンボードに書き込む&lt;/code&gt;ボタンを押す&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;AP01A AVR MCUに搭載されたLEDが点滅していることが確認できれば完了です。&lt;/p&gt;
 &lt;h2 id=&#34;ライブラリのインストール&#34;&gt;ライブラリのインストール&lt;/h2&gt;
-&lt;p&gt;Basic Kitに含まれているリーフを使用するには、一部追加のライブラリをインストールする必要があります。&lt;/p&gt;
-&lt;p&gt;下記の説明を参考に、予めライブラリをインストールしておきましょう。&lt;/p&gt;
+&lt;p&gt;一部のリーフを使用するには、追加のライブラリのインストールが必要となる場合があります。
+下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきましょう。&lt;/p&gt;
+&lt;h3 id=&#34;1-使用するライブラリ&#34;&gt;1. 使用するライブラリ&lt;/h3&gt;
+&lt;p&gt;Basic Kit、Extension Kitで使用するライブラリは以下の通りです。&lt;/p&gt;
 &lt;table&gt;
   &lt;tr&gt;
     &lt;th&gt;リーフ名&lt;/th&gt;
@@ -102,26 +104,14 @@
     &lt;td&gt;RTCライブラリ&lt;/td&gt;
   &lt;/tr&gt;
 &lt;/table&gt;
-&lt;p&gt;Arduinoのライブラリは、通常以下の2カ所に保存されています。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;C:\Program Files (x86)\Arduino\libraries&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;C:\Users\ユーザ名\Documents\Arduino\libraries&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;Arduino IDE をインストールした時、1）にライブラリが保存される。（Arduino IDE Standard Libraries） また、GitHubなどからダウンロードしたライブラリ（ZIPファイル）は、「スケッチ」→「ライブラリをインクルード」→「.ZIP形式のライブラリをインストール」を選択することで、 2)に保存される。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1. Githubからライブラリをダウンロード&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;「Clone or download」→「Download ZIP」をクリックする。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./github_1.png&#34; alt=&#34;github&#34;&gt;
-&lt;img src=&#34;./github_2.png&#34; alt=&#34;github&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2. ライブラリのインクルード&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Arduinoを立ち上げ、スケッチ→ライブラリをインクルード→ZIP形式のライブラリうをインストールの順に選択して保存する。&lt;/p&gt;
+&lt;h3 id=&#34;2-githubからライブラリをダウンロード&#34;&gt;2. Githubからライブラリをダウンロード&lt;/h3&gt;
+&lt;p&gt;上記表のリンクをクリックすると、ライブラリのGitHubリポジトリにアクセスします。
+&lt;code&gt;Clone or download → Download ZIP&lt;/code&gt;をクリックし、ライブラリをダウンロードしましょう。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./github_1.png&#34; alt=&#34;github&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-ライブラリのインクルード&#34;&gt;3. ライブラリのインクルード&lt;/h3&gt;
+&lt;p&gt;Arduinoを立ち上げ、&lt;code&gt;スケッチ → ライブラリをインクルード → ZIP形式のライブラリをインストール&lt;/code&gt;の順に選択して、先程ダウンロードしたZIPファイルを読み込みましょう。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./IDE_libinclude.png&#34; alt=&#34;include&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;トラブルシューティング&#34;&gt;トラブルシューティング&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;USBシリアル変換ボードのデバイスドライバが見つからない場合&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;USBシリアル変換ドライバーをインストールすることで、AVR MCUへの書き込みが可能。Aruduino UNOと異なるため、要注意。
-&lt;a href=&#34;http://www.ftdichip.com/Drivers/VCP.htm&#34;&gt;FTDI VCP Driverサイト&lt;/a&gt;からsetup executableをクリックしてインストールファイルをダウンロードし実行する。&lt;/p&gt;
-&lt;img src=&#34;./FTDI_DL.jpg&#34;&gt;
+
       </description>
     </item>
     
@@ -134,24 +124,32 @@
       <description>
         
         
-        &lt;h2 id=&#34;arduino-ideのインストール&#34;&gt;Arduino IDEのインストール&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.arduino.cc/&#34;&gt;Arduino ホームページ&lt;/a&gt;から「SOFTWARE」→「DOWNLOADS」をクリックし、Arduino IDE インストーラをダウンロードする。下記赤枠はWindowsの例。&lt;/p&gt;
+        &lt;p&gt;以下の手順で Leafony ESP32 Wi-Fi Kit 開発環境の設定を行いましょう。&lt;/p&gt;
+&lt;h2 id=&#34;arduino-ideのインストール&#34;&gt;Arduino IDEのインストール&lt;/h2&gt;
+&lt;p&gt;Leafonyに書き込むプログラムは、Arduino IDEを使って開発します。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.arduino.cc/&#34;&gt;Arduino ホームページ&lt;/a&gt;から「SOFTWARE」→「DOWNLOADS」をクリックし、Arduino IDE インストーラをダウンロードしましょう。&lt;/p&gt;
+&lt;p&gt;Windowsの場合は下記の手順でダウンロードできます。&lt;/p&gt;
+&lt;hr&gt;
 &lt;img src=&#34;./IDE_DL.jpg&#34;&gt;
-&lt;p&gt;寄付しない場合はJUST DOWNLOADをクリックする。&lt;/p&gt;
-&lt;img src=&#34;./IDE_Contri.jpg&#34;&gt;
 &lt;h2 id=&#34;ボード設定&#34;&gt;ボード設定&lt;/h2&gt;
 &lt;p&gt;ESP32 MCUをArduino IDEで使用するには、Arduino core for the ESP32 のインストールが必要です。&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Arduino IDEのファイル→環境設定を開き、”追加のボードマネージャのURL:”に、下記URLを入力してください。
-&lt;code&gt;https://dl.espressif.com/dl/package_esp32_index.json&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Arduino IDEの&lt;code&gt;ファイル → 環境設定&lt;/code&gt;を開き、&lt;code&gt;追加のボードマネージャのURL:&lt;/code&gt;に、下記URLを入力してください。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;./ArduinoIDE_URL.png&#34;&gt;
+&lt;pre&gt;&lt;code&gt;https://dl.espressif.com/dl/package_esp32_index.json
+&lt;/code&gt;&lt;/pre&gt;&lt;img src=&#34;./ArduinoIDE_URL.png&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt;を選択し、”全て”の右側に”esp32″と入力し、esp32 by Espressifl Systemsが表示されるので”インストール”のボタンを押します。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt;を選択し、&lt;code&gt;esp32 by Espressifl Systems&lt;/code&gt;を検索し、インストールのボタンを押しましょう。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;./BoardManager_esp32.png&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;ツール→ボード→ESP32 Dev Moduleを選択すれば、ESP32 MCUが使えるようになります。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ツール → ボード → ESP32 Dev Module&lt;/code&gt;を選択すれば、ESP32 MCUが使えるようになります。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;サンプルデザインで動作確認&#34;&gt;サンプルデザインで動作確認&lt;/h2&gt;
 &lt;ol&gt;
@@ -159,16 +157,60 @@
 &lt;li&gt;「マイコンボードに書き込む」ボタンを押す&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;ライブラリのインストール&#34;&gt;ライブラリのインストール&lt;/h2&gt;
-&lt;p&gt;Arduinoのライブラリは、通常以下の2カ所に保存されている。
-1）&lt;code&gt;C:\Program Files (x86)\Arduino\libraries&lt;/code&gt;
-2）&lt;code&gt;C:\Users\ユーザ名\Documents\Arduino\libraries&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Arduino IDE をインストールした時、1）にライブラリが保存される。（Arduino IDE Standard Libraries） また、GitHubなどからダウンロードしたライブラリ（ZIPファイル）は、「スケッチ」→「ライブラリをインクルード」→「.ZIP形式のライブラリをインストール」を選択することで、 2)に保存される。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1. Githubからライブラリをダウンロード&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;「Clone or download」→「Download ZIP」をクリックする。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./github_1.png&#34; alt=&#34;github&#34;&gt;
-&lt;img src=&#34;./github_2.png&#34; alt=&#34;github&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2. ライブラリのインクルード&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Arduinoを立ち上げ、スケッチ→ライブラリをインクルード→ZIP形式のライブラリうをインストールの順に選択して保存する。&lt;/p&gt;
+&lt;p&gt;一部のリーフを使用するには、追加のライブラリのインストールが必要となる場合があります。
+下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきましょう。&lt;/p&gt;
+&lt;h3 id=&#34;1-使用するライブラリ&#34;&gt;1. 使用するライブラリ&lt;/h3&gt;
+&lt;p&gt;Basic Kit、Extension Kitで使用するライブラリは以下の通りです。&lt;/p&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;リーフ名&lt;/th&gt;
+    &lt;th&gt;必要なライブラリ名&lt;/th&gt;
+    &lt;th&gt;説明&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;BLE&lt;/td&gt;
+    &lt;td&gt;&lt;a href=&#34;https://github.com/Leafony/TBGLib&#34;&gt;TBGLib&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;Bluetoothライブラリ&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td rowspan=4&gt;4-Sensors&lt;/td&gt;
+    &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_Sensor&#34;&gt;Adafruit_Sensor.h&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;ユニファイドセンサドライバ&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;a href=&#34;https://github.com/ameltech/sme-hts221-library&#34;&gt;HTS221.h&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;温湿度センサライブラリ&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;a href=&#34;https://github.com/closedcube/ClosedCube_OPT3001_Arduino&#34;&gt;ClosedCube_OPT3001.h&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;照度センサライブラリ&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_LIS3DH&#34;&gt;Adafruit_LSI3DH.h&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;加速度センサライブラリ&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;LCD&lt;/td&gt;
+    &lt;td&gt;&lt;a href=&#34;https://github.com/tomozh/arduino_ST7032&#34;&gt;ST7032.h&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;LCDライブラリ&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;AVR MCU&lt;/td&gt;
+    &lt;td&gt;&lt;a href=&#34;https://github.com/PaulStoffregen/MsTimer2&#34;&gt;MsTimer2.h&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;タイマ割り込みライブラリ&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;RTC&amp;MicroSD&lt;/td&gt;
+    &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/RTClib&#34;&gt;RTClib.h&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;RTCライブラリ&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;2-githubからライブラリをダウンロード&#34;&gt;2. Githubからライブラリをダウンロード&lt;/h3&gt;
+&lt;p&gt;上記表のリンクをクリックすると、ライブラリのGitHubリポジトリにアクセスします。
+&lt;code&gt;Clone or download → Download ZIP&lt;/code&gt;をクリックし、ライブラリをダウンロードしましょう。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./github_1.png&#34; alt=&#34;github&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-ライブラリのインクルード&#34;&gt;3. ライブラリのインクルード&lt;/h3&gt;
+&lt;p&gt;Arduinoを立ち上げ、&lt;code&gt;スケッチ → ライブラリをインクルード → ZIP形式のライブラリをインストール&lt;/code&gt;の順に選択して、先程ダウンロードしたZIPファイルを読み込みましょう。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./IDE_libinclude.png&#34; alt=&#34;include&#34;&gt;&lt;/p&gt;
 
       </description>

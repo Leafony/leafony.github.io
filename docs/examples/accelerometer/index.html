@@ -537,10 +537,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/sound_level/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">サウンドレベルメータ</a>
+    <a  href="/docs/examples/ir_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">人感センサ</a>
   </li>
   <ul>
-    <li class="collapse " id="docsexamplessound_level">
+    <li class="collapse " id="docsexamplesir_sensor">
       
       
       
@@ -583,10 +583,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/ir_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">人感センサ</a>
+    <a  href="/docs/examples/sound_level/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">サウンドレベルメータ</a>
   </li>
   <ul>
-    <li class="collapse " id="docsexamplesir_sensor">
+    <li class="collapse " id="docsexamplessound_level">
       
       
       
@@ -1603,7 +1603,7 @@
     <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
     <li><a href="#ソースコード">ソースコード</a>
       <ul>
-        <li><a href="#ソースコードのビルド">ソースコードのビルド</a></li>
+        <li><a href="#実行結果">実行結果</a></li>
       </ul>
     </li>
   </ul>
@@ -1652,7 +1652,7 @@
 	<h1>加速度センサ読み取り</h1>
 	<div class="lead">4-Sensorsリーフを使って加速度を測定をしてみよう。</div>
 	<h2 id="概要">概要</h2>
-<p><a href="/docs/leaf/ai01a/">4-Sensorsリーフ</a>に搭載された<strong>加速度センサ</strong>、の値を読み取って、シリアルモニタに表示するサンプルです。</p>
+<p><a href="/docs/leaf/ai01a/">4-Sensorsリーフ</a>に搭載された<strong>加速度センサ</strong>の値を読み取って、シリアルモニタに表示するサンプルです。</p>
 <h2 id="使用するリーフ">使用するリーフ</h2>
 <p>以下のリーフを使用します</p>
 <table>
@@ -1706,6 +1706,8 @@
 <p><img src="./environment_assemble.png" alt="assemble1"></p>
 <h2 id="ソースコード">ソースコード</h2>
 <p>Arduino IDEで下記のプログラムを書きましょう。</p>
+<p>4-Sensors リーフを使うためにはライブラリのインストールが必要です。
+まだインストールしていない場合は<a href="/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">開発環境設定ページ</a>を参考にライブラリをインストールしてください。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
 </span><span style="color:#8f5902;font-style:italic">//  Accelerometer
 </span><span style="color:#8f5902;font-style:italic">//
@@ -1731,9 +1733,11 @@
 <span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">dataTilt</span><span style="color:#000;font-weight:bold">;</span>
 
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>       <span style="color:#8f5902;font-style:italic">// UART 115200bps
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">();</span>               <span style="color:#8f5902;font-style:italic">// I2C 100KHz
-</span><span style="color:#8f5902;font-style:italic"></span>
+  <span style="color:#8f5902;font-style:italic">// initialize serial communication at 115200 second per second:
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#8f5902;font-style:italic">// initialize i2c communication with LIS3DH:
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">();</span>
+
   <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">);</span>
 
   <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS2DH_ADDRESS</span><span style="color:#000;font-weight:bold">);</span>
@@ -1750,9 +1754,9 @@
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
 
     <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
-    <span style="color:#000">dataX_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">x_g</span><span style="color:#000;font-weight:bold">;</span>    <span style="color:#8f5902;font-style:italic">//X軸
-</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">dataY_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">y_g</span><span style="color:#000;font-weight:bold">;</span>    <span style="color:#8f5902;font-style:italic">//Y軸
-</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">z_g</span><span style="color:#000;font-weight:bold">;</span>    <span style="color:#8f5902;font-style:italic">//Z軸
+    <span style="color:#000">dataX_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">x_g</span><span style="color:#000;font-weight:bold">;</span>    <span style="color:#8f5902;font-style:italic">//X axis
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">dataY_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">y_g</span><span style="color:#000;font-weight:bold">;</span>    <span style="color:#8f5902;font-style:italic">//Y axis
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">z_g</span><span style="color:#000;font-weight:bold">;</span>    <span style="color:#8f5902;font-style:italic">//Z axis
 </span><span style="color:#8f5902;font-style:italic"></span>
     <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">&gt;=</span> <span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">){</span>
       <span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1.00</span><span style="color:#000;font-weight:bold">;</span>
@@ -1760,7 +1764,7 @@
       <span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1.00</span><span style="color:#000;font-weight:bold">;</span>
     <span style="color:#000;font-weight:bold">}</span>
 
-    <span style="color:#000">dataTilt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">acos</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataZ_g</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">PI</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#0000cf;font-weight:bold">180</span><span style="color:#000;font-weight:bold">;</span>  <span style="color:#8f5902;font-style:italic">// 傾き
+    <span style="color:#000">dataTilt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">acos</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataZ_g</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">PI</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#0000cf;font-weight:bold">180</span><span style="color:#000;font-weight:bold">;</span>  <span style="color:#8f5902;font-style:italic">// Tilt
 </span><span style="color:#8f5902;font-style:italic"></span>
     <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;  X [g] = &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataX_g</span><span style="color:#000;font-weight:bold">));</span>
     <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;  Y [g] = &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataY_g</span><span style="color:#000;font-weight:bold">));</span>
@@ -1769,9 +1773,8 @@
 
     <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><h3 id="ソースコードのビルド">ソースコードのビルド</h3>
-<p>4-Sensors リーフを使うためにはライブラリのインストールが必要です。
-まだインストールしていない場合は<a href="/docs/environment/basic/">こちら</a>のページを参考にライブラリをインストールしてください。</p>
+</code></pre></div><h3 id="実行結果">実行結果</h3>
+<p>Arduino IDEのシリアルモニタを開き、ボーレートを115200bpsとすると、加速度と傾きが表示されます。</p>
 
 	
 	
