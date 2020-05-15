@@ -1696,13 +1696,23 @@
 <p>下図のようにリーフを組み立てましょう。</p>
 <p><img src="./speaker_assemble.png" alt="assemble1"></p>
 <h2 id="ソースコード">ソースコード</h2>
-<p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/PIR_Melody_test">https://github.com/Leafony/Sample-Sketches/tree/master/PIR_Melody_test</a></p>
-<h2 id="実行結果">実行結果</h2>
+<p>Arduinoを開き、<code>ファイル → スケッチ例 → 02.Digital → toneMelody</code>を開いてください。</p>
+<p>このサンプルコードでは、スピーカが8番ピンに接続されている事になっています。<br>
+しかし、Leafonyではスピーカが5番ピンに接続されているので、下記の部分を修正して正しいピン接続になるようにしましょう。</p>
+<ul>
+<li>37行目の<code>8</code>を<code>5</code>に変更</li>
+</ul>
+<pre><code>tone(5, melody[thisNote], noteDuration);
+</code></pre><ul>
+<li>44行目の<code>8</code>を<code>5</code>に変更</li>
+</ul>
+<pre><code>noTone(5);
+</code></pre><h2 id="実行結果">実行結果</h2>
 <p>スピーカーから一度だけメロディが鳴ります。</p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 14, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 15, 2020
 </div>
 </div>
 
