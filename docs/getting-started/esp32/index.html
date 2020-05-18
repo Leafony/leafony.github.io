@@ -22,16 +22,16 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>ESP32 Wi-Fi Kit A1.0 | Leafony</title><meta property="og:title" content="ESP32 Wi-Fi Kit A1.0" />
-<meta property="og:description" content="Leafonyとスマホでセンシングをしてみよう
+<meta property="og:description" content="人気のESP32マイコンを試してみよう
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/docs/getting-started/esp32/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="ESP32 Wi-Fi Kit A1.0">
-<meta itemprop="description" content="Leafonyとスマホでセンシングをしてみよう
+<meta itemprop="description" content="人気のESP32マイコンを試してみよう
 "><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ESP32 Wi-Fi Kit A1.0"/>
-<meta name="twitter:description" content="Leafonyとスマホでセンシングをしてみよう
+<meta name="twitter:description" content="人気のESP32マイコンを試してみよう
 "/>
 
 
@@ -906,6 +906,12 @@
       
       
       
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsleafcommunicationac02a_index2" href="/docs/leaf/communication/ac02a/_index2/">BLE Sugar</a>
+      
+      
     </li>
   </ul>
 </ul>
@@ -1631,11 +1637,52 @@
             
 <div class="td-content">
 	<h1>ESP32 Wi-Fi Kit A1.0</h1>
-	<div class="lead">Leafonyとスマホでセンシングをしてみよう</div>
+	<div class="lead">人気のESP32マイコンを試してみよう</div>
+	<ul>
+<li>ESP32 Wi-Fi Kit A1.0には、既に組み立てられたハードウェアが入っています。そのままで、スマートフォンやパソコンにWi-Fiを使ってタッチセンサの値を送信し、簡単に表示できます。</li>
+<li>下記SSIDとパスワードでESP32 Wi-Fi Kitとパソコン等を接続します。<br>
+SSID：Leafony_ESP32-AP<br>
+パスワード：password</li>
+<li>ブラウザを起動して、下記URLにアクセスしてください。<br>
+http://192.168.4.1</li>
+<li>29pin headerの7、9、22、24、26、28ピンがタッチセンサに割り当てられております。<br>
+ピンに触れると静電容量が減るため、値が減少します。値が閾値20以下になると”Touch detected”と表示されます。</li>
+<li>24ピンはRTC&amp;microSDと干渉しているため、サンプルスケッチでは非表示にしています。<br>
+検出閾値は、スケッチで変更可能です。以下の写真では、指先で26ピンに触れています。</li>
+</ul>
+<p><img src="Wi-FiTouch-Sensor-Test_1-300x222.png" alt="Wi-FiTouch-Sensor-Test_1-300x222.png"></p>
+<ul>
+<li>26ピンに触れていると、以下のようにブラウザの表示が変化します。　</li>
+</ul>
+<p><img src="Wi-FiTouch-Sensor-Test_2.png" alt="Wi-FiTouch-Sensor-Test_2.png"></p>
+<p><strong>重要：クイックスタートのプログラム等を詳しく知りたい方は、<a href="https://trillion-node.org/example/wi-fi_touch_sensor/">こちら</a>を参照してください。</strong></p>
+<h2 id="より深く理解したい方へ">より深く理解したい方へ</h2>
+<ul>
+<li>
+<p><strong>ESP32 MCUのスケッチを書く方へ</strong><br>
+以下に注意点が纏めてありますので、まずはお読みください。</p>
+<ul>
+<li><a href="https://trillion-node.org/start/esp32-information/">ESP32 MCU ご使用時の注意点</a></li>
+<li><a href="https://garretlab.web.fc2.com/arduino/esp32/">https://garretlab.web.fc2.com/arduino/esp32/</a></li>
+</ul>
+</li>
+<li>
+<p><strong>他のMCUからESP32 MCUのWi-Fiを制御する方へ</strong><br>
+以下に注意点が纏めてありますので、まずはお読みください。</p>
+<ul>
+<li><a href="https://trillion-node.org/start/esp32_at-command/">ESP32 MCUをATコマンドで使用する場合</a></li>
+</ul>
+</li>
+<li>
+<p><strong>ESP32 Wi-Fi Kitを固定したい方へ</strong><br>
+ESP32 Wi-Fi Kitに同梱しているNut Plateの材質は、鉄（めっき処理）にしました。マグネットが、同梱しているので、冷蔵庫に取り付けることが容易にできます。</p>
+<p><img src="magnet_1-225x300.png" alt="magnet_1-225x300.png"></p>
+</li>
+</ul>
+
 	
 	
-	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 9, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 18, 2020
 </div>
 </div>
 

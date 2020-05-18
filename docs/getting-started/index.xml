@@ -64,7 +64,48 @@
       <description>
         
         
-        
+        &lt;ul&gt;
+&lt;li&gt;ESP32 Wi-Fi Kit A1.0には、既に組み立てられたハードウェアが入っています。そのままで、スマートフォンやパソコンにWi-Fiを使ってタッチセンサの値を送信し、簡単に表示できます。&lt;/li&gt;
+&lt;li&gt;下記SSIDとパスワードでESP32 Wi-Fi Kitとパソコン等を接続します。&lt;br&gt;
+SSID：Leafony_ESP32-AP&lt;br&gt;
+パスワード：password&lt;/li&gt;
+&lt;li&gt;ブラウザを起動して、下記URLにアクセスしてください。&lt;br&gt;
+http://192.168.4.1&lt;/li&gt;
+&lt;li&gt;29pin headerの7、9、22、24、26、28ピンがタッチセンサに割り当てられております。&lt;br&gt;
+ピンに触れると静電容量が減るため、値が減少します。値が閾値20以下になると”Touch detected”と表示されます。&lt;/li&gt;
+&lt;li&gt;24ピンはRTC&amp;amp;microSDと干渉しているため、サンプルスケッチでは非表示にしています。&lt;br&gt;
+検出閾値は、スケッチで変更可能です。以下の写真では、指先で26ピンに触れています。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;Wi-FiTouch-Sensor-Test_1-300x222.png&#34; alt=&#34;Wi-FiTouch-Sensor-Test_1-300x222.png&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;26ピンに触れていると、以下のようにブラウザの表示が変化します。　&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;Wi-FiTouch-Sensor-Test_2.png&#34; alt=&#34;Wi-FiTouch-Sensor-Test_2.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;重要：クイックスタートのプログラム等を詳しく知りたい方は、&lt;a href=&#34;https://trillion-node.org/example/wi-fi_touch_sensor/&#34;&gt;こちら&lt;/a&gt;を参照してください。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;より深く理解したい方へ&#34;&gt;より深く理解したい方へ&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;ESP32 MCUのスケッチを書く方へ&lt;/strong&gt;&lt;br&gt;
+以下に注意点が纏めてありますので、まずはお読みください。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://trillion-node.org/start/esp32-information/&#34;&gt;ESP32 MCU ご使用時の注意点&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://garretlab.web.fc2.com/arduino/esp32/&#34;&gt;https://garretlab.web.fc2.com/arduino/esp32/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;他のMCUからESP32 MCUのWi-Fiを制御する方へ&lt;/strong&gt;&lt;br&gt;
+以下に注意点が纏めてありますので、まずはお読みください。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://trillion-node.org/start/esp32_at-command/&#34;&gt;ESP32 MCUをATコマンドで使用する場合&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;ESP32 Wi-Fi Kitを固定したい方へ&lt;/strong&gt;&lt;br&gt;
+ESP32 Wi-Fi Kitに同梱しているNut Plateの材質は、鉄（めっき処理）にしました。マグネットが、同梱しているので、冷蔵庫に取り付けることが容易にできます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;magnet_1-225x300.png&#34; alt=&#34;magnet_1-225x300.png&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
       </description>
     </item>
     

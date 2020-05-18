@@ -13,5 +13,101 @@
       
     
     
+    <item>
+      <title>Docs: AC02A BLE Sugar</title>
+      <link>/docs/leaf/communication/ac02a/_index2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/leaf/communication/ac02a/_index2/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./AC02A BLE Sugar_f_large.jpg&#34;&gt;&lt;img src=&#34;./AC02A BLE Sugar_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AC02A BLE Sugar_b_large.jpg&#34;&gt;&lt;img src=&#34;./AC02A BLE Sugar_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AC02A BLE Sugar_p_large.jpg&#34;&gt;&lt;img src=&#34;./AC02A BLE Sugar_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;Silicon Labsの技的認証済みBLEモジュールBGM11S22F256GA-V2を搭載したリーフです。MCUリーフとはUARTで接続されます。無線の認証は、CE、FCC、ISED Canada、TELEC、KC South-Korea、NCC Taiwanを取得（SLICON LABS Module Data Sheet　Revision 1.2)。&lt;/p&gt;
+&lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;項目　　　&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;SoC&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;EFR32BG1 (ARM Cortex-M4)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Bluetooth version&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Frequency range&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2400M ~ 2483.5MHz&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Internetsecurity　&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;General Purpose CRC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Random Number Generator&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Hardware Cryptographic Acceleration for AES 128/256,SHA-1, SHA-2 (SHA-224 and SHA-256) and ECC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;RX sensitivity&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;-90 dBm @ 1 Mbit/s GFSK&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;TX power&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;+8dBm以下&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;RF certification&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;CE, full FCC, ISED Canada, Japan and South-Korea&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Flash&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;256KB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;RAM&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;32KB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Interfaces&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;UART&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./AC02A_block.png&#34;&gt;&lt;img src=&#34;./AC02A_block.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./AC02A_pinassign.png&#34;&gt;&lt;img src=&#34;./AC02A_pinassign.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/examples/blink&#34;&gt;Web Bluetooth を使ってセンサの値を表示&lt;/a&gt; 　※リンク先要変更&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h2&gt;
+&lt;p&gt;・関数の概要は、仕様書に記載&lt;br&gt;
+・BLE制御　include file: &lt;a href=&#34;https://github.com/Leafony/TBGLib&#34;&gt;TBGLib&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC02A_BLE_Sugar/AC02A_BLE_Sugar_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC02A_BLE_Sugar/AC02A_BLE_Sugar_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC02A_BLE_Sugar/AC02A_BLE_Sugar_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC02A_BLE_Sugar/AC02A_BLE_Sugar_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC02A_BLE_Sugar/AC02A_BLE_Sugar_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
   </channel>
 </rss>
