@@ -35,8 +35,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.df56c929024b3d9666383e2051ce5b2c40bbcc1771c8ca30622b22efe754ec4e.css" as="style">
-<link href="/scss/main.min.df56c929024b3d9666383e2051ce5b2c40bbcc1771c8ca30622b22efe754ec4e.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.dbe0611ae2965f099225ad09e7eef8cf6c98f272a1d7fa37d63d8e5d89a2b3b4.css" as="style">
+<link href="/scss/main.min.dbe0611ae2965f099225ad09e7eef8cf6c98f272a1d7fa37d63d8e5d89a2b3b4.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -44,8 +44,12 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
 
-    <title>AI02A SP&amp;PIR | Leafony</title>
+
   </head>
   <body class="td-section">
     <header>
@@ -78,7 +82,7 @@
 			
 			
 			
-			<li class="nav-item dropdown d-lg-block">
+			<li class="nav-item dropdown d-none d-lg-block">
 				
 
 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -93,7 +97,21 @@
 			
 		</ul>
 	</div>
-	<div class="navbar-nav d-none d-lg-block"></div>
+	<div class="navbar-nav d-none d-lg-block">
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; サイトを検索..."
+  aria-label="サイトを検索..."
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.b78238c4d72551d0fdcc0112686e0afb4eefab090dddf69e3c0c715da8b3fcd76af17d11d6e5510b30778680a481cce13fa7d0337f43b0c56b73fea3a9723a5f.json"
+  data-offline-search-base-href="/"
+>
+
+</div>
 </nav>
 
     </header>
@@ -107,6 +125,26 @@
 
 
 <div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; サイトを検索..."
+  aria-label="サイトを検索..."
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.b78238c4d72551d0fdcc0112686e0afb4eefab090dddf69e3c0c715da8b3fcd76af17d11d6e5510b30778680a481cce13fa7d0337f43b0c56b73fea3a9723a5f.json"
+  data-offline-search-base-href="/"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
   
   <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
     
@@ -1593,10 +1631,17 @@
 
 
 
+
+
 <nav id="TableOfContents">
   <ul>
     <li><a href="#特徴">特徴</a></li>
-    <li><a href="#性能">性能</a></li>
+    <li><a href="#性能">性能</a>
+      <ul>
+        <li><a href="#圧電スピーカ">圧電スピーカ</a></li>
+        <li><a href="#人感センサ">人感センサ</a></li>
+      </ul>
+    </li>
     <li><a href="#ブロック図">ブロック図</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
     <li><a href="#サンプルプロジェクト">サンプルプロジェクト</a></li>
@@ -1608,6 +1653,9 @@
 
           </div>
           <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
             <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
 	<ol class="breadcrumb spb-1">
 		
@@ -1662,7 +1710,7 @@
 <h2 id="特徴">特徴</h2>
 <p>圧電スピーカと人感センサを搭載したリーフです。圧電スピーカはPWM、人感センサはI2CでMCUリーフと接続されます。人感センサは接近検知アルゴリズムを内蔵しており、簡単な設定で接近を検知することが出来、接近検知時に割り込み信号を出力することが可能です。</p>
 <h2 id="性能">性能</h2>
-<p><strong>圧電スピーカ</strong></p>
+<h3 id="圧電スピーカ">圧電スピーカ</h3>
 <table>
 <thead>
 <tr>
@@ -1689,8 +1737,8 @@
 </tr>
 </tbody>
 </table>
-<br> 
-<p><strong>人感センサ</strong></p>
+<br>
+<h3 id="人感センサ">人感センサ</h3>
 <table>
 <thead>
 <tr>
@@ -1699,6 +1747,10 @@
 </tr>
 </thead>
 <tbody>
+<tr>
+<td align="left">デバイス</td>
+<td align="left">AK9754</td>
+</tr>
 <tr>
 <td align="left">Sensor</td>
 <td align="left">Quantum-type IR Sensor</td>
@@ -1709,7 +1761,7 @@
 </tr>
 <tr>
 <td align="left">Interfaces</td>
-<td align="left">　I2C （I2Cアドレス;65または64に変更可能，型番;AK9754）</td>
+<td align="left">I2C (Address: 0x64 or 0x64)</td>
 </tr>
 </tbody>
 </table>
@@ -1735,7 +1787,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 20, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 21, 2020
 </div>
 </div>
 
@@ -1796,7 +1848,10 @@
 
 
 
-<script src="/js/main.min.29b0315468c00226fa6f4556a9cebc0ac4fe1ce1457a01b22c0a06b329877383.js" integrity="sha256-KbAxVGjAAib6b0VWqc68CsT&#43;HOFFegGyLAoGsymHc4M=" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
 
 
 

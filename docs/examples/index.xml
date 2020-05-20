@@ -592,7 +592,116 @@
         
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://qiita.com/s_nkg/items/3615862323923162f71a&#34;&gt;https://qiita.com/s_nkg/items/3615862323923162f71a&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Leafony Beacon1)とRaspberry Piとを使ってIoT環境センサを作り、Google スプレッドシートを使って、センサデータを可視化します。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Beaconとは、地上にある電波を特定の機器で受信することで、位置をはじめとした各種情報を取得するための設備です。BluetoothのBeacon機器の場合、温度や気圧などのセンサを搭載したモジュールを任意の場所に設置して、その場所の環境を観測します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;gs_about.jpg&#34; alt=&#34;about&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;必要なハードウェア&#34;&gt;必要なハードウェア&lt;/h2&gt;
+&lt;h3 id=&#34;leafony-beacon-送信側&#34;&gt;Leafony Beacon (送信側)&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;AC02A&lt;/td&gt;
+&lt;td&gt;BLE Sugar&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AI01A&lt;/td&gt;
+&lt;td&gt;4-Sensors&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AP01A&lt;/td&gt;
+&lt;td&gt;AVR MCU&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AV01A&lt;/td&gt;
+&lt;td&gt;CR2032&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AZ01A&lt;/td&gt;
+&lt;td&gt;USB&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;AZ62A&lt;/td&gt;
+&lt;td&gt;Connector Cover&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;CR2032 3V Lithium coin cell battery&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;Screw M2×25mm&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;raspberry-pi-受信側&#34;&gt;Raspberry Pi (受信側)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Raspberry Pi 初めての方は、Raspberry Pi 3 B＋ スターターキット（ &lt;a href=&#34;https://www.switch-science.com/catalog/3880/&#34;&gt;https://www.switch-science.com/catalog/3880/&lt;/a&gt; ）が便利です。Raspbian OSイメージを書き込んだmicroSDが入っていますが、ディスプレイ、キーボード、マウスは有りません。別途　ご用意してください。&lt;/li&gt;
+&lt;li&gt;Raspberry Pi は、無線LANでインターネットに接続します。こちらも事前にご用意してください。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;leafony-beaconの作成&#34;&gt;Leafony Beaconの作成&lt;/h2&gt;
+&lt;h3 id=&#34;組み立て&#34;&gt;組み立て&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;./gs_assemble.png&#34; alt=&#34;assemble&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;スケッチの書き込み&#34;&gt;スケッチの書き込み&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;書き込みには、BLE、4-Sensorsライブラリが必要です。予め、ライブラリをインクルードしておいてください。詳しくは、こちら。&lt;/li&gt;
+&lt;li&gt;Arduino IDEで、以下のスケッチをマイコンボードに書き込んでください。
+・leafony_beacon.ino&lt;/li&gt;
+&lt;li&gt;Arduino IDE 1.8.9で動作を確認しています。書き込みエラーが発生したら、IDEのバージョンを確認してください。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;raspberry-piの環境構築&#34;&gt;Raspberry Piの環境構築&lt;/h3&gt;
+&lt;p&gt;BLE Beaconの受信機にはRaspberry Piを使います。今回使用するサンプルコードでは、Node.jsでnobleを使ってBLE Beaconを受信します。受信したデータはGoogle API経由でGoogle スプレッドシートに書き込んでいます。&lt;/p&gt;
+&lt;p&gt;下記のスクリプト(6項目)を実行して環境構築をします。https://github.com/Leafony/leafony-beacon/tree/master/spreadsheet-logger&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;sudo apt update
+sudo apt upgrade
+sudo apt install -y bluetooth libbluetooth-dev libudev-dev git
+git clone https://github.com/Leafony/leafony-beacon
+&lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; leafony-beacon/spreadsheet-logger
+npm install
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;注意:WARNINGと表示されますが、このまま進んでください。&lt;/strong&gt;
+&lt;img src=&#34;./gs_pi_1.png&#34; alt=&#34;gs_pi_1&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;google-sheets-apiの取得&#34;&gt;Google Sheets APIの取得&lt;/h3&gt;
+&lt;p&gt;Google スプレットシートをNode.jsで操作するためにはAPIを取得する必要があります。まず、下記 Node.js Quick Start のStep.1で、  Enable the Google Sheets API をクリックし、credentials.jsonをダウンロードします。次に、credentials.jsonをleafony-beacon/spreadsheet-loggerディレクトリにコピーしてください。&lt;/p&gt;
+&lt;p&gt;Node.js Quickstart | Sheets API | Google Developers : &lt;a href=&#34;https://developers.google.com/sheets/api/quickstart/nodejs&#34;&gt;https://developers.google.com/sheets/api/quickstart/nodejs&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;indexjs-へgoogle-sheetsのidとシート名の設定&#34;&gt;index.js へGoogle SheetsのIDとシート名の設定&lt;/h3&gt;
+&lt;p&gt;Google スプレッドシート を開いて、URLの赤線部分の「シートID」と「シート名」を確認します。
+&lt;img src=&#34;./gs_pi_2.png&#34; alt=&#34;gs_pi_2&#34;&gt;
+&lt;img src=&#34;./gs_pi_3.png&#34; alt=&#34;gs_pi_3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;leafony-beacon/spreadsheet-loggerディレクトリ「index.js」があります。「index.js」の18, 19行目にある「spreadsheetId」と「sheetName」に、上記の「シートID」と「シート名」を貼り付けることで、データが書き込まれます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./gs_pi_4.png&#34; alt=&#34;gs_pi_4&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;アプリの実行&#34;&gt;アプリの実行&lt;/h3&gt;
+&lt;p&gt;Raspberry piのターミナルに「sudo node .」と入力してEnterをクリックしてください。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./gs_pi_5.png&#34; alt=&#34;gs_pi_5&#34;&gt;&lt;/p&gt;
+&lt;p&gt;上記URLにブラウザでアクセスすると、Googleアカウントに移動し、ご自身のアカウントを選択します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./gs_pi_6.png&#34; alt=&#34;gs_pi_6&#34;&gt;&lt;/p&gt;
+&lt;p&gt;「詳細」をクリックしてください。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./gs_pi_7.png&#34; alt=&#34;gs_pi_7&#34;&gt;&lt;/p&gt;
+&lt;p&gt;「Leafony Beacon Logger「安全ではないページ」に移動」をクリックしてください。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./gs_pi_8.png&#34; alt=&#34;gs_pi_8&#34;&gt;&lt;/p&gt;
+&lt;p&gt;「詳細」をクリックしてください。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./gs_pi_9.png&#34; alt=&#34;gs_pi_9&#34;&gt;&lt;/p&gt;
+&lt;p&gt;「Leafony Beacon Logger「安全ではないページ」に移動」をクリックしてください。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./gs_pi_10.png&#34; alt=&#34;gs_pi_10&#34;&gt;&lt;/p&gt;
+&lt;p&gt;「許可」をクリックしてください。以下のコードをコピーしてください。ターミナル内に貼り付けると、「token.json」というファイルが生成されたあとに、beaconのスキャンが始まります。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./gs_pi_11.png&#34; alt=&#34;gs_pi_11&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Beaconが見つかるとログが表示されると同時に、スプレッドシートに同じ内容が追記されるので、スプレッドシートを開いてデータを確認してください。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./gs_pi_12.png&#34; alt=&#34;gs_pi_12&#34;&gt;&lt;/p&gt;
 
       </description>
     </item>
