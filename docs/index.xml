@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: AC02A BLE Sugar</title>
-      <link>/docs/leaf/communication/ac02a/_index2/</link>
+      <link>/docs/leaf/communication/ac02a/_index%EF%BC%93/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/leaf/communication/ac02a/_index2/</guid>
+      <guid>/docs/leaf/communication/ac02a/_index%EF%BC%93/</guid>
       <description>
         
         
@@ -86,6 +86,62 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;div style=overflow-x:scroll&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;項目&lt;/th&gt;
+    &lt;th&gt;内容&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;SoC&lt;/td&gt;
+    &lt;td&gt;EFR32BG1 (ARM Cortex-M4)&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Bluetooth version&lt;/td&gt;
+    &lt;td&gt;4.2&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Frequency range&lt;/td&gt;
+    &lt;td&gt;2400M ~ 2483.5MHz&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Internetsecurity&lt;/td&gt;
+    &lt;td&gt;General Purpose CRC&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;Random Number Generator&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;Hardware Cryptographic Acceleration for AES 128/256,SHA-1, SHA-2 (SHA-224 and SHA-256) and ECC&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;RX sensitivity&lt;/td&gt;
+    &lt;td&gt;-90 dBm @ 1 Mbit/s GFSK&lt;/td&gt;
+  &lt;/tr&gt;  
+  &lt;tr&gt;
+    &lt;td&gt;TX power&lt;/td&gt;
+    &lt;td&gt;+8dBm以下&lt;/td&gt;    
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;RF certification&lt;/td&gt;
+    &lt;td&gt;CE, full FCC, ISED Canada, Japan and South-Korea&lt;/td&gt;    
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Flash&lt;/td&gt;
+    &lt;td&gt;256KB&lt;/td&gt;    
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;RAM&lt;/td&gt;
+    &lt;td&gt;32KB&lt;/td&gt;    
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Interfaces&lt;/td&gt;
+    &lt;td&gt;UART&lt;/td&gt;    
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
 &lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./AC02A_block.png&#34;&gt;&lt;img src=&#34;./AC02A_block.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;

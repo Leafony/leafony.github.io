@@ -909,7 +909,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsleafcommunicationac02a_index2" href="/docs/leaf/communication/ac02a/_index2/">BLE Sugar</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsleafcommunicationac02a_indexefbc93" href="/docs/leaf/communication/ac02a/_index%EF%BC%93/">BLE Sugar</a>
       
       
     </li>
@@ -1717,59 +1717,34 @@
 </span><span style="color:#8f5902;font-style:italic">//
 </span><span style="color:#8f5902;font-style:italic">//      Rev.00 2020/05/05  First release
 </span><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Adafruit_LIS3DH.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Adafruit_LIS3DH.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#8f5902;font-style:italic">#define LIS2DH_ADDRESS 0x19       </span><span style="color:#8f5902;font-style:italic">// SD0/SA0 pin = VCC
-</span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#8f5902;font-style:italic">#define DIVIDER_2G 16383          </span><span style="color:#8f5902;font-style:italic">// full scale 2G  (=0xFFFF/4)
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define DIVIDER_4G 8191           </span><span style="color:#8f5902;font-style:italic">// full scale 4G  (=0xFFFF/4/2)
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define DIVIDER_8G 4096           </span><span style="color:#8f5902;font-style:italic">// full scale 8G  (=0xFFFF/4/4)
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define DIVIDER_16G 1365          </span><span style="color:#8f5902;font-style:italic">// full scale 16G (=0xFFFF/4/12)
+<span style="color:#8f5902;font-style:italic">#define LIS3DH_ADDRESS 0x19
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#000">Adafruit_LIS3DH</span> <span style="color:#000">accel</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Adafruit_LIS3DH</span><span style="color:#000;font-weight:bold">();</span>
-
-<span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">dataX_g</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">dataY_g</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">dataZ_g</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">dataTilt</span><span style="color:#000;font-weight:bold">;</span>
 
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#8f5902;font-style:italic">// initialize serial communication at 115200 second per second:
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#8f5902;font-style:italic">// initialize i2c communication with LIS3DH:
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">();</span>
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_ADDRESS</span><span style="color:#000;font-weight:bold">);</span>
 
-  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">);</span>
-
-  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS2DH_ADDRESS</span><span style="color:#000;font-weight:bold">);</span>
-
-  <span style="color:#8f5902;font-style:italic">// register
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_CTRL1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x07</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// X,Y,Z axis = enable
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setDataRate</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_DATARATE_1_HZ</span><span style="color:#000;font-weight:bold">);</span>         <span style="color:#8f5902;font-style:italic">// Data rate = 1Hz
+  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setClick</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>                      <span style="color:#8f5902;font-style:italic">// Disable Interrupt
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setRange</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_RANGE_2_G</span><span style="color:#000;font-weight:bold">);</span>          <span style="color:#8f5902;font-style:italic">// Full scale +/- 2G
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setDataRate</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_DATARATE_10_HZ</span><span style="color:#000;font-weight:bold">);</span>  <span style="color:#8f5902;font-style:italic">// Data rate = 10Hz
 </span><span style="color:#8f5902;font-style:italic"></span>
-  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_CTRL2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x00</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_CTRL3</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x00</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// INT Disable
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_CTRL4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x80</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// BUD = enable, Scale = +/-2g
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
 
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-
     <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
-    <span style="color:#000">dataX_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">x_g</span><span style="color:#000;font-weight:bold">;</span>    <span style="color:#8f5902;font-style:italic">//X axis
-</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">dataY_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">y_g</span><span style="color:#000;font-weight:bold">;</span>    <span style="color:#8f5902;font-style:italic">//Y axis
-</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">z_g</span><span style="color:#000;font-weight:bold">;</span>    <span style="color:#8f5902;font-style:italic">//Z axis
-</span><span style="color:#8f5902;font-style:italic"></span>
-    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">&gt;=</span> <span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">){</span>
-      <span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1.00</span><span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">&lt;=</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1.0</span><span style="color:#000;font-weight:bold">){</span>
-      <span style="color:#000">dataZ_g</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1.00</span><span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000;font-weight:bold">}</span>
 
-    <span style="color:#000">dataTilt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">acos</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataZ_g</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">PI</span><span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#0000cf;font-weight:bold">180</span><span style="color:#000;font-weight:bold">;</span>  <span style="color:#8f5902;font-style:italic">// Tilt
-</span><span style="color:#8f5902;font-style:italic"></span>
-    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;  X [g] = &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataX_g</span><span style="color:#000;font-weight:bold">));</span>
-    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;  Y [g] = &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataY_g</span><span style="color:#000;font-weight:bold">));</span>
-    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;  Z [g] = &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataZ_g</span><span style="color:#000;font-weight:bold">));</span>
-    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;  Ang[arc deg] = &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataTilt</span><span style="color:#000;font-weight:bold">));</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;X [g] = &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">x_g</span><span style="color:#000;font-weight:bold">));</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;, &#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Y [g] = &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">y_g</span><span style="color:#000;font-weight:bold">));</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;, &#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Z [g] = &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">z_g</span><span style="color:#000;font-weight:bold">));</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">);</span>
 
     <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
@@ -1778,7 +1753,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 14, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 21, 2020
 </div>
 </div>
 
