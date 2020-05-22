@@ -179,12 +179,8 @@
 &lt;li&gt;&lt;a href=&#34;/docs/examples/blink&#34;&gt;カメラを使って撮影した画像を microSD カードに保存&lt;/a&gt; ※リンク先要変更&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h2&gt;
-&lt;p&gt;・関数の概要は、仕様書に記載&lt;br&gt;
-・RTCの制御　include file: &lt;a href=&#34;https://github.com/adafruit/RTClib&#34;&gt;RTClib.h&lt;/a&gt;&lt;br&gt;
-　以下は、Standard Libraries。&lt;br&gt;
-　IDEをインストールすると、C:\Program Files (x86)\Arduino\libraries に保存されている。&lt;br&gt;
-・SDカードの制御　　include:SD.h&lt;br&gt;
-　　　　　　　　　　 include:spi.h&lt;/p&gt;
+&lt;p&gt;ライブラリは、予め&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/#1-%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA&#34;&gt;ここから&lt;/a&gt;インストールしておきましょう。&lt;br&gt;
+関数は、仕様書に記載していますので、必要に応じて、確認してください。　　&lt;/p&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ02A_RTC%26MicroSD/AZ02A_RTC%26MicroSD_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
