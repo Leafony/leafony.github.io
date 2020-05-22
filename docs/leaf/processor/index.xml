@@ -84,12 +84,8 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h2&gt;
 &lt;p&gt;・関数の概要は、仕様書に記載&lt;br&gt;
-・タイマ割込み include file: &lt;a href=&#34;https://github.com/PaulStoffregen/MsTimer2&#34;&gt;MsTimer2.h&lt;/a&gt;&lt;br&gt;
-以下は、Standard Libraries。IDEをインストールすると、C:\Program Files (x86)\Arduino\libraries に保存されています。&lt;br&gt;
-・ソフトウェアシリアル通信　include file: SoftwareSerial.h&lt;br&gt;
-・I2C通信 include file: Wire.h&lt;br&gt;
-・ウォッチドッグタイマ include file: avr/wdt.h&lt;br&gt;
-・スリープモード include file: avr/sleep.h&lt;/p&gt;
+・タイマ割込み include file: &lt;a href=&#34;https://github.com/PaulStoffregen/MsTimer2&#34;&gt;MsTimer2.h&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;使用するライブラリは、予め[ここから](&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/#1&#34;&gt;https://docs.leafony.com/docs/environment/basic/#1&lt;/a&gt;. 使用するライブラリ)インストールしておきましょう。&lt;/p&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP01A_AVR_MCU/AP01A_AVR_MCU_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
