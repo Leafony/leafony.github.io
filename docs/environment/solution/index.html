@@ -7,7 +7,7 @@
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="/docs/examples/distance_sensor/index.xml">
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/environment/solution/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,17 +21,17 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>超音波センサで距離測定 | Leafony</title><meta property="og:title" content="超音波センサで距離測定" />
-<meta property="og:description" content="超音波距離センサで測定した距離をLCDに表示させよう。　※要修正
+<title>うまく動かないときは | Leafony</title><meta property="og:title" content="うまく動かないときは" />
+<meta property="og:description" content="Leafonyがうまく動かないときはこちらを参考に
 " />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/docs/examples/distance_sensor/" />
+<meta property="og:url" content="/docs/environment/solution/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="超音波センサで距離測定">
-<meta itemprop="description" content="超音波距離センサで測定した距離をLCDに表示させよう。　※要修正
+<meta itemprop="name" content="うまく動かないときは">
+<meta itemprop="description" content="Leafonyがうまく動かないときはこちらを参考に
 "><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="超音波センサで距離測定"/>
-<meta name="twitter:description" content="超音波距離センサで測定した距離をLCDに表示させよう。　※要修正
+<meta name="twitter:title" content="うまく動かないときは"/>
+<meta name="twitter:description" content="Leafonyがうまく動かないときはこちらを参考に
 "/>
 
 
@@ -305,10 +305,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/environment/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">開発環境設定</a>
+    <a  href="/docs/environment/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">開発環境設定</a>
   </li>
   <ul>
-    <li class="collapse " id="docsenvironment">
+    <li class="collapse show" id="docsenvironment">
       
       
       
@@ -368,10 +368,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/environment/solution/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">うまく動かないときは</a>
+    <a  href="/docs/environment/solution/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">うまく動かないときは</a>
   </li>
   <ul>
-    <li class="collapse " id="docsenvironmentsolution">
+    <li class="collapse show" id="docsenvironmentsolution">
       
       
       
@@ -397,10 +397,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">サンプルデザイン</a>
+    <a  href="/docs/examples/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">サンプルデザイン</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsexamples">
+    <li class="collapse " id="docsexamples">
       
       
       
@@ -736,10 +736,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+    <a  href="/docs/examples/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsexamplesdistance_sensor">
+    <li class="collapse " id="docsexamplesdistance_sensor">
       
       
       
@@ -1684,10 +1684,8 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#概要">概要</a></li>
-    <li><a href="#必要なハードウェアの準備">必要なハードウェアの準備</a></li>
-    <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
-    <li><a href="#ソースコード">ソースコード</a></li>
+    <li><a href="#シリアルポートが見つからない">シリアルポートが見つからない</a></li>
+    <li><a href="#電源が入らない">電源が入らない</a></li>
   </ul>
 </nav>
 
@@ -1719,14 +1717,14 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="/docs/examples/">サンプルデザイン</a>
+	<a href="/docs/environment/">開発環境設定</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="/docs/examples/distance_sensor/">超音波センサで距離測定</a>
+	<a href="/docs/environment/solution/">うまく動かないときは</a>
 </li>
 
 	</ol>
@@ -1734,174 +1732,24 @@
 
             
 <div class="td-content">
-	<h1>超音波センサで距離測定</h1>
-	<div class="lead">超音波距離センサで測定した距離をLCDに表示させよう。　※要修正</div>
-	<h2 id="概要">概要</h2>
-<p>Seeed Studio の Grove シリーズのセンサを利用した例。超音波センサで測定した距離をLCDに表示させます。超音波センサは、通常、デジタルピンに入力するが、LCDのスイッチ1とGrove&amp;5VのDin1が同じピンを使用しているため、UARTピンに接続しUARTピンをデジタルピンとして使用します。</p>
-<p><img src="./Distance_sensor_overview1.png" alt="overview1"></p>
-<p><img src="./Distance_sensor_overview2.png" alt="overview2"></p>
-<iframe width="560" height="314" src="https://www.youtube.com/embed/LsaxA3F4KMY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<h2 id="必要なハードウェアの準備">必要なハードウェアの準備</h2>
-<table>
-<thead>
-<tr>
-<th align="left">Type</th>
-<th align="left">Name</th>
-<th align="left">Q&rsquo;ty</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">AI04A</td>
-<td align="left">LCD</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left">AP01A</td>
-<td align="left">AVR MCU</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left">AV01A</td>
-<td align="left">CR2032</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left">AX06A</td>
-<td align="left">Grove&amp;5V</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left">AZ01A</td>
-<td align="left">USB</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left">AZ62A</td>
-<td align="left">Connector Cover</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left"><a href="https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html">Grove – Ultrasonic Distance Sensor</a></td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">CR2032 3V Lithium coin cell battery</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">Screw M2×25mm</td>
-<td align="left">2</td>
-</tr>
-</tbody>
-</table>
-<h2 id="リーフの組み立て">リーフの組み立て</h2>
-<p>下図のようにリーフを組み立てましょう。</p>
-<p><img src="./Distance_sensor_assemble.png" alt="assemble1"></p>
-<h2 id="ソースコード">ソースコード</h2>
+	<h1>うまく動かないときは</h1>
+	<div class="lead">Leafonyがうまく動かないときはこちらを参考に</div>
+	<h2 id="シリアルポートが見つからない">シリアルポートが見つからない</h2>
+<p>Arduino IDEでLeafonyのシリアルポートが見つからない場合は、USBシリアル変換IC(FT232)のドライバをインストールしてみましょう。
+<a href="http://www.ftdichip.com/Drivers/VCP.htm">FTDI VCP Driver</a>からデバイスドライバをダウンロードしてインストールしましょう。</p>
+<p><img src="./FTDI_DL.jpg" alt="FTDI_DL"></p>
+<h2 id="電源が入らない">電源が入らない</h2>
+<p>Leafonyの電源が入らない場合は以下の項目を確かめてみましょう。</p>
 <ul>
-<li>書き込みには、LCDライブラリ、超音波制御 ライブラリ（ <a href="https://github.com/Seeed-Studio/Grove_Ultrasonic_Ranger/">Ultrasonic.h</a> ）が必要です。予め、ライブラリをインクルードしておいてください。詳しくは、[こちら]。</li>
-<li>Arduino IDEで下記のプログラムを書きましょう。</li>
+<li>ボタン電池の入れる向き</li>
+<li>電源スイッチがONになっているか</li>
+<li>ネジの締まり具合</li>
+<li>電池の残量が十分にあるか</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic">//  Leafony Platform sample sketch
-</span><span style="color:#8f5902;font-style:italic">//     Platform     : Grove + Ultrasonic
-</span><span style="color:#8f5902;font-style:italic">//     Processor    : ATmega328P (3.3V /8MHz)
-</span><span style="color:#8f5902;font-style:italic">//     Application  : Ultrasonic Ranger demo
-</span><span style="color:#8f5902;font-style:italic">//
-</span><span style="color:#8f5902;font-style:italic">//     Leaf configuration
-</span><span style="color:#8f5902;font-style:italic">//       (1) AI04 LCD
-</span><span style="color:#8f5902;font-style:italic">//       (2) AP01 AVR MCU
-</span><span style="color:#8f5902;font-style:italic">//       (3) AX01 Grove&amp;5V + Grove - Ultrasonic Ranger (UART pinに接続)
-</span><span style="color:#8f5902;font-style:italic">//           ※  Ultrasonic RangerはGrove&amp;5VのUARTに接続する
-</span><span style="color:#8f5902;font-style:italic">//       (4) AZ01 USB
-</span><span style="color:#8f5902;font-style:italic">//
-</span><span style="color:#8f5902;font-style:italic">//		(c) 2019  Trillion-Node Study Group
-</span><span style="color:#8f5902;font-style:italic">//		Released under the MIT license
-</span><span style="color:#8f5902;font-style:italic">//		https://opensource.org/licenses/MIT
-</span><span style="color:#8f5902;font-style:italic">//
-</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2019/08/01 First release
-</span><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic">//Grove - Ultrasonic Rangerを使用したデモ
-</span><span style="color:#8f5902;font-style:italic">//LCDに超音波センサーから取得した対象物からの距離を表示
-</span><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic">//use libraries
-</span><span style="color:#8f5902;font-style:italic">//ST7032 - Arduino LiquidCrystal compatible library
-</span><span style="color:#8f5902;font-style:italic">//https://github.com/tomozh/arduino_ST7032
-</span><span style="color:#8f5902;font-style:italic">//Grove_Ultrasonic_Ranger
-</span><span style="color:#8f5902;font-style:italic">//https://github.com/Seeed-Studio/Grove_Ultrasonic_Ranger/
-</span><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic"></span>
 
-<span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;ST7032.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#8f5902;font-style:italic">// LCD
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">ST7032</span> <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">strMessage</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">];</span>
-
-<span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&#34;Ultrasonic.h&#34;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">Ultrasonic</span> <span style="color:#000">ultrasonic</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">A1</span><span style="color:#000;font-weight:bold">);</span>
-
-
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
-
-  <span style="color:#8f5902;font-style:italic">//LCD Initialize
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setContrast</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">30</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">clear</span><span style="color:#000;font-weight:bold">();</span>
-  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34; Hello!&#34;</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setCursor</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setContrast</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">30</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">clear</span><span style="color:#000;font-weight:bold">();</span>
-  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;12345678&#34;</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setCursor</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;87654321&#34;</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">500</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">clear</span><span style="color:#000;font-weight:bold">();</span>
-  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">blink</span><span style="color:#000;font-weight:bold">();</span>
-  <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">i</span><span style="color:#000;font-weight:bold">;</span>
-  <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">0</span> <span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#0000cf;font-weight:bold">8</span> <span style="color:#000;font-weight:bold">;</span><span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000;font-weight:bold">{</span>
-     <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setCursor</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>
-      <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000;font-weight:bold">}</span>
-  <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">0</span> <span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#0000cf;font-weight:bold">8</span> <span style="color:#000;font-weight:bold">;</span><span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000;font-weight:bold">{</span>
-     <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setCursor</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
-      <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000;font-weight:bold">}</span>
-  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">noBlink</span><span style="color:#000;font-weight:bold">();</span>
-
-<span style="color:#000;font-weight:bold">}</span>
-
-
-
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#204a87;font-weight:bold">long</span> <span style="color:#000">RangeInCentimeters</span><span style="color:#000;font-weight:bold">;</span>
-    
-      <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">clear</span><span style="color:#000;font-weight:bold">();</span>
-      <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Distance&#34;</span><span style="color:#000;font-weight:bold">);</span>
-      <span style="color:#000">RangeInCentimeters</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">ultrasonic</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">MeasureInCentimeters</span><span style="color:#000;font-weight:bold">();</span>
-      <span style="color:#000">sprintf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">strMessage</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34;%5d cm&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">RangeInCentimeters</span><span style="color:#000;font-weight:bold">);</span>    
-      <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setCursor</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
-      <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">strMessage</span><span style="color:#000;font-weight:bold">);</span>
-
-  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">250</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#000;font-weight:bold">}</span>
-
-
-
-</code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 5, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 22, 2020
 </div>
 </div>
 

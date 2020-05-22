@@ -107,7 +107,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3515b3a6d4dace76fc25fbb22fd6c058403d0f5107de31b7968ca95c0521428845c01775194ec0f2749f278d87ed96a2b4a6d0ff9d7c045aad1212e94f2dc475.json"
+  data-offline-search-index-json-src="/offline-search-index.3fedb389c2c4c2ab90a4ea8dcf643e307214b35acd6e37b4cf02b03642126a2a417ac5ccc4f0843c912e634725a05f5a345e21b7fed02a1754b83593e3c19195.json"
   data-offline-search-base-href="/"
 >
 
@@ -137,7 +137,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3515b3a6d4dace76fc25fbb22fd6c058403d0f5107de31b7968ca95c0521428845c01775194ec0f2749f278d87ed96a2b4a6d0ff9d7c045aad1212e94f2dc475.json"
+  data-offline-search-index-json-src="/offline-search-index.3fedb389c2c4c2ab90a4ea8dcf643e307214b35acd6e37b4cf02b03642126a2a417ac5ccc4f0843c912e634725a05f5a345e21b7fed02a1754b83593e3c19195.json"
   data-offline-search-base-href="/"
 >
 
@@ -346,6 +346,29 @@
   </li>
   <ul>
     <li class="collapse " id="docsenvironmentesp32">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/solution/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">うまく動かないときは</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironmentsolution">
       
       
       
@@ -1596,6 +1619,29 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/pcb/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">自作リーフ開発</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docspcb">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/license/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ライセンス・規約</a>
   </li>
   <ul>
@@ -1636,8 +1682,6 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#arduino-ideのインストール">Arduino IDEのインストール</a></li>
-    <li><a href="#ボード設定">ボード設定</a></li>
-    <li><a href="#leafonyにプログラムを書き込む">Leafonyにプログラムを書き込む</a></li>
     <li><a href="#ライブラリのインストール">ライブラリのインストール</a>
       <ul>
         <li><a href="#1-使用するライブラリ">1. 使用するライブラリ</a></li>
@@ -1645,6 +1689,10 @@
         <li><a href="#3-ライブラリのインクルード">3. ライブラリのインクルード</a></li>
       </ul>
     </li>
+    <li><a href="#leafonyをpcと接続">LeafonyをPCと接続</a></li>
+    <li><a href="#ボード設定">ボード設定</a></li>
+    <li><a href="#leafonyにプログラムを書き込む">Leafonyにプログラムを書き込む</a></li>
+    <li><a href="#困ったときは">困ったときは</a></li>
   </ul>
 </nav>
 
@@ -1700,34 +1748,6 @@
 <p>Windowsの場合は下記の手順でダウンロードできます。</p>
 <hr>
 <img src="./IDE_DL.jpg">
-<h2 id="ボード設定">ボード設定</h2>
-<p>Arduino IDEでLeafonyの開発を行うために、下記の手順でIDEの設定を行いましょう。</p>
-<ol>
-<li>
-<p>Arduino IDEを起動</p>
-</li>
-<li>
-<p><code>ツール → ボード</code>から、<code>Arduino Pro or Pro Mini</code>を選択、<code>プロセッサ</code>で<code>ATmega328P (3.3V,8MHz)</code>を選択</p>
-</li>
-</ol>
-<img src="./IDE_ATmega.jpg">
-<p><br><br></p>
-<ol start="3">
-<li><code>ツール → シリアルポート</code>から、Leafonyが接続されているシリアルポートを選択</li>
-</ol>
-<img src="./IDE_COM.jpg">
-<h2 id="leafonyにプログラムを書き込む">Leafonyにプログラムを書き込む</h2>
-<p>Leafonyを組み立ててLEDを点滅させてみましょう。</p>
-<ol>
-<li>Basic Kitを組み立てる</li>
-</ol>
-<img src="./blink_assemble.png">
-<br><br>
-<ol start="2">
-<li>Arduino IDEで<code>ファイル → スケッチ例 → 01.Basics → Blink</code>をクリックし、サンプルコードを開く</li>
-<li><code>マイコンボードに書き込む</code>ボタンを押す</li>
-</ol>
-<p>AP01A AVR MCUに搭載されたLEDが点滅していることが確認できれば完了です。</p>
 <h2 id="ライブラリのインストール">ライブラリのインストール</h2>
 <p>一部のリーフを使用するには、追加のライブラリのインストールが必要となる場合があります。
 下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきましょう。</p>
@@ -1750,12 +1770,7 @@
       <td>Bluetoothライブラリ</td>
     </tr>
     <tr>
-      <td rowspan=4>4-Sensors</td>
-      <td><a href="https://github.com/adafruit/Adafruit_Sensor">Adafruit_Sensor.h</a></td>
-      <td></td>
-      <td>ユニファイドセンサドライバ</td>
-    </tr>
-    <tr>
+      <td rowspan=3>4-Sensors</td>
       <td><a href="https://github.com/ameltech/sme-hts221-library">HTS221.h</a></td>
       <td></td>
       <td>温湿度センサライブラリ</td>
@@ -1797,10 +1812,33 @@
 <h3 id="3-ライブラリのインクルード">3. ライブラリのインクルード</h3>
 <p>Arduinoを立ち上げ、<code>スケッチ → ライブラリをインクルード → ZIP形式のライブラリをインストール</code>の順に選択して、先程ダウンロードしたZIPファイルを読み込みましょう。</p>
 <p><img src="./IDE_libinclude.png" alt="include"></p>
+<h2 id="leafonyをpcと接続">LeafonyをPCと接続</h2>
+<p>図のようにLeafonyを組み立てて、USBでPCと接続しましょう。</p>
+<img src="./blink_assemble.png">
+<br><br>
+<h2 id="ボード設定">ボード設定</h2>
+<p>Arduino IDEでLeafonyの開発を行うために、下記の手順でIDEの設定を行いましょう。</p>
+<ol>
+<li><code>ツール → ボード</code>から、<code>Arduino Pro or Pro Mini</code>を選択、<code>プロセッサ</code>で<code>ATmega328P (3.3V,8MHz)</code>を選択</li>
+</ol>
+<img src="./IDE_ATmega.jpg">
+<p><br><br></p>
+<ol start="2">
+<li><code>ツール → シリアルポート</code>から、Leafonyが接続されているシリアルポートを選択</li>
+</ol>
+<img src="./IDE_COM.jpg">
+<h2 id="leafonyにプログラムを書き込む">Leafonyにプログラムを書き込む</h2>
+<ol>
+<li>Arduino IDEで<code>ファイル → スケッチ例 → 01.Basics → Blink</code>をクリックし、サンプルプロジェクトを開きましょう。</li>
+<li><code>マイコンボードに書き込む</code>ボタンを押すをLeafonyにプログラムが書き込まれます。</li>
+<li>AP01A AVR MCUに搭載されたLEDが点滅していることが確認できれば完了です。</li>
+</ol>
+<h2 id="困ったときは">困ったときは</h2>
+<p><a href="../solution">うまく動かないときは</a>で解決方法を探してみましょう。</p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 21, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 22, 2020
 </div>
 </div>
 

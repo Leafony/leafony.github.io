@@ -147,6 +147,10 @@
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;型番&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;PCF8523TK&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;Type&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Real-Time Clock (RTC) and calendar&lt;/td&gt;
 &lt;/tr&gt;
@@ -160,7 +164,7 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;Interfaces&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;I2C&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;I2C(Address: 0x68)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;

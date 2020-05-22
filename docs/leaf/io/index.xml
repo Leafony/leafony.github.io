@@ -222,7 +222,7 @@
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;デバイス&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;型番&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;AK9754&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -236,10 +236,6 @@
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;Interfaces&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;I2C (Address: 0x64 or 0x64)&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;型番&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;AK9754&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -368,7 +364,7 @@
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;デバイス&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;型番&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;PCA9557RGVR&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -376,16 +372,11 @@
 &lt;td align=&#34;left&#34;&gt;I2C (Address: 0x1B)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;型番&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;PCA9557RGVR&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;Interfaces&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;I2C (I2Cアドレス;1B)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;br&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;br&gt;
 &lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./AI03A_block.png&#34;&gt;&lt;img src=&#34;./AI03A_block.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
@@ -431,7 +422,7 @@
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;デバイス&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;型番&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;AQM0802A-RN-GBW&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -480,6 +471,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;br&gt;
 &lt;h3 id=&#34;i2c-io-expander&#34;&gt;I2C I/O Expander&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -490,7 +482,7 @@
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;デバイス&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;型番&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;PCA9557RGVR&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
