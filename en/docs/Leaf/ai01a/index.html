@@ -107,7 +107,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b78238c4d72551d0fdcc0112686e0afb4eefab090dddf69e3c0c715da8b3fcd76af17d11d6e5510b30778680a481cce13fa7d0337f43b0c56b73fea3a9723a5f.json"
+  data-offline-search-index-json-src="/offline-search-index.57f896c3a4a5b37f0788e35ab85d41a641476795894d59f024e2a62a5499016bb2a88e77bce1d6a20ef96c75b99d3e2023599ab97e03559b25ef5bc40e9850d6.json"
   data-offline-search-base-href="/"
 >
 
@@ -137,7 +137,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b78238c4d72551d0fdcc0112686e0afb4eefab090dddf69e3c0c715da8b3fcd76af17d11d6e5510b30778680a481cce13fa7d0337f43b0c56b73fea3a9723a5f.json"
+  data-offline-search-index-json-src="/offline-search-index.57f896c3a4a5b37f0788e35ab85d41a641476795894d59f024e2a62a5499016bb2a88e77bce1d6a20ef96c75b99d3e2023599ab97e03559b25ef5bc40e9850d6.json"
   data-offline-search-base-href="/"
 >
 
@@ -1111,6 +1111,7 @@
 <h2 id="features">Features</h2>
 <p>This is a leaf equipped with a temperature/humidity sensor, an illuminance sensor, and an acceleration sensor, which is connected to the MCU leaf via I2C.</p>
 <h2 id="specification">Specification</h2>
+<p><strong>Temperature and humidity sensor</strong></p>
 <table>
 <thead>
 <tr>
@@ -1119,10 +1120,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td align="left"><strong>Temperature and humidity sensor</strong></td>
-<td align="left"></td>
-</tr>
 <tr>
 <td align="left">Temperature measurement range</td>
 <td align="left">-40～120℃</td>
@@ -1141,16 +1138,24 @@
 </tr>
 <tr>
 <td align="left">Interfaces</td>
-<td align="left">I2C</td>
+<td align="left">I2C(Address: 0x5F)</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">model number</td>
+<td align="left">HTS221TR</td>
 </tr>
+</tbody>
+</table>
+<br>
+<p><strong>Illuminance sensor</strong></p>
+<table>
+<thead>
 <tr>
-<td align="left"><strong>Illuminance sensor</strong></td>
-<td align="left"></td>
+<th align="left">Item</th>
+<th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td align="left">Measurement range</td>
 <td align="left">0.01 lux to 83 k lux</td>
@@ -1161,16 +1166,24 @@
 </tr>
 <tr>
 <td align="left">Interfaces</td>
-<td align="left">I2C</td>
+<td align="left">I2C(Address: 0x44 or 0x45)</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">model number</td>
+<td align="left">OPT3001</td>
 </tr>
+</tbody>
+</table>
+<br>
+<p><strong>Accelerometer</strong></p>
+<table>
+<thead>
 <tr>
-<td align="left"><strong>Accelerometer</strong></td>
-<td align="left"></td>
+<th align="left">Item</th>
+<th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td align="left">Measurement range</td>
 <td align="left">±2g/±4g/±8g/±16g (selectable)</td>
@@ -1189,7 +1202,11 @@
 </tr>
 <tr>
 <td align="left">Interfaces</td>
-<td align="left">I2C</td>
+<td align="left">I2C(Address: 0x49)</td>
+</tr>
+<tr>
+<td align="left">model number</td>
+<td align="left">LIS2DHTR</td>
 </tr>
 </tbody>
 </table>
@@ -1223,7 +1240,7 @@ to edit it.</li>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 23.04.2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 21.05.2020
 </div>
 </div>
 
