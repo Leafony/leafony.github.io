@@ -107,7 +107,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3fedb389c2c4c2ab90a4ea8dcf643e307214b35acd6e37b4cf02b03642126a2a417ac5ccc4f0843c912e634725a05f5a345e21b7fed02a1754b83593e3c19195.json"
+  data-offline-search-index-json-src="/offline-search-index.c7469c55ca52a24ea64bd105c0b326d552ad709a2a35fa91452cee3dd3cd4e13ddfe12921a95213947806252ac3a25ae36833e687fed488660c8e8d174a2fcf8.json"
   data-offline-search-base-href="/"
 >
 
@@ -137,7 +137,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3fedb389c2c4c2ab90a4ea8dcf643e307214b35acd6e37b4cf02b03642126a2a417ac5ccc4f0843c912e634725a05f5a345e21b7fed02a1754b83593e3c19195.json"
+  data-offline-search-index-json-src="/offline-search-index.c7469c55ca52a24ea64bd105c0b326d552ad709a2a35fa91452cee3dd3cd4e13ddfe12921a95213947806252ac3a25ae36833e687fed488660c8e8d174a2fcf8.json"
   data-offline-search-base-href="/"
 >
 
@@ -1109,6 +1109,7 @@
 <h2 id="features">Features</h2>
 <p>The Leaf is equipped with a piezoelectric speaker and a human-detecting sensor. The piezoelectric speaker is connected to the MCU leaf by PWM and the human-detecting sensor by I2C. The human-detecting sensor has a built-in proximity detection algorithm that can detect proximity with simple settings, and can output an interrupt signal when proximity is detected.</p>
 <h2 id="specification">Specification</h2>
+<p><strong>Piezoelectric speaker</strong></p>
 <table>
 <thead>
 <tr>
@@ -1117,10 +1118,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td align="left"><strong>Piezoelectric speaker</strong></td>
-<td></td>
-</tr>
 <tr>
 <td align="left">dimensions</td>
 <td align="left">12 x 12 x 3mm</td>
@@ -1137,13 +1134,21 @@
 <td align="left">Current consumption</td>
 <td align="left">5mA(max) at 5 Vp-p, 4,000 Hz square wave</td>
 </tr>
+</tbody>
+</table>
+<br>
+<p><strong>human-detecting sensor</strong></p>
+<table>
+<thead>
 <tr>
-<td align="left"></td>
-<td align="left"></td>
+<th align="left">Item</th>
+<th align="left">Description</th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td align="left"><strong>human-detecting sensor</strong></td>
-<td></td>
+<td align="left">model number</td>
+<td align="left">AK9754</td>
 </tr>
 <tr>
 <td align="left">Sensor</td>
@@ -1155,7 +1160,7 @@
 </tr>
 <tr>
 <td align="left">Interfaces</td>
-<td align="left">I2C</td>
+<td align="left">I2C(Address: 0x65 or 0x64)</td>
 </tr>
 </tbody>
 </table>
@@ -1181,7 +1186,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 23.04.2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 22.05.2020
 </div>
 </div>
 
