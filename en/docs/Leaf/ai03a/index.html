@@ -107,7 +107,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.57f896c3a4a5b37f0788e35ab85d41a641476795894d59f024e2a62a5499016bb2a88e77bce1d6a20ef96c75b99d3e2023599ab97e03559b25ef5bc40e9850d6.json"
+  data-offline-search-index-json-src="/offline-search-index.5d49ddc9e3ad05500a90021a7c110f702427bb7bb6ab43da5d7137033516a45f3606702673f608b5a728a7b4f9dd4038964008ab840386a10422c71402927f1f.json"
   data-offline-search-base-href="/"
 >
 
@@ -137,7 +137,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.57f896c3a4a5b37f0788e35ab85d41a641476795894d59f024e2a62a5499016bb2a88e77bce1d6a20ef96c75b99d3e2023599ab97e03559b25ef5bc40e9850d6.json"
+  data-offline-search-index-json-src="/offline-search-index.5d49ddc9e3ad05500a90021a7c110f702427bb7bb6ab43da5d7137033516a45f3606702673f608b5a728a7b4f9dd4038964008ab840386a10422c71402927f1f.json"
   data-offline-search-base-href="/"
 >
 
@@ -1050,7 +1050,11 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#features">Features</a></li>
-    <li><a href="#specification">Specification</a></li>
+    <li><a href="#specification">Specification</a>
+      <ul>
+        <li><a href="#i2c-io-expander">I2C I/O Expander</a></li>
+      </ul>
+    </li>
     <li><a href="#block-diagram">Block diagram</a></li>
     <li><a href="#pinassign">Pinassign</a></li>
     <li><a href="#sample-project">Sample project</a></li>
@@ -1109,6 +1113,7 @@
 <h2 id="features">Features</h2>
 <p>MEMS microphone, volume and LED are connected to the MCU LEAF with analog input pin for MEMS microphone and volume and digital output pin for LED. In order to achieve low power consumption, it is possible to turn off the power supply with a load switch by controlling the I2C Expander.</p>
 <h2 id="specification">Specification</h2>
+<p><strong>Microphone</strong></p>
 <table>
 <thead>
 <tr>
@@ -1117,10 +1122,6 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td align="left"><strong>Microphone</strong></td>
-<td align="left"></td>
-</tr>
 <tr>
 <td align="left">Type</td>
 <td align="left">MEMS</td>
@@ -1141,14 +1142,18 @@
 <td align="left">Interfaces</td>
 <td align="left">Interfaces</td>
 </tr>
+</tbody>
+</table>
+<br>
+<p><strong>Volume</strong></p>
+<table>
+<thead>
 <tr>
-<td align="left"></td>
-<td align="left"></td>
+<th align="left">Item</th>
+<th align="left">Description</th>
 </tr>
-<tr>
-<td align="left"><strong>Volume</strong></td>
-<td align="left"></td>
-</tr>
+</thead>
+<tbody>
 <tr>
 <td align="left">Nominal resistance</td>
 <td align="left">10kΩ</td>
@@ -1161,14 +1166,18 @@
 <td align="left">Effective electrical angle</td>
 <td align="left">210° (1 turn)</td>
 </tr>
+</tbody>
+</table>
+<br>
+<p><strong>LED</strong></p>
+<table>
+<thead>
 <tr>
-<td align="left"></td>
-<td align="left"></td>
+<th align="left">Item</th>
+<th align="left">Description</th>
 </tr>
-<tr>
-<td align="left"><strong>LED</strong></td>
-<td align="left"></td>
-</tr>
+</thead>
+<tbody>
 <tr>
 <td align="left">Package type</td>
 <td align="left">Side-view</td>
@@ -1176,6 +1185,26 @@
 <tr>
 <td align="left">Emitting color</td>
 <td align="left">Yellow</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h3 id="i2c-io-expander">I2C I/O Expander</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Item</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">model number</td>
+<td align="left">PCA9557RGVR</td>
+</tr>
+<tr>
+<td align="left">Interface</td>
+<td align="left">I2C (Address: 0x1B)</td>
 </tr>
 </tbody>
 </table>
@@ -1198,7 +1227,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 23.04.2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 22.05.2020
 </div>
 </div>
 

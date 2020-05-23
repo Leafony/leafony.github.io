@@ -107,7 +107,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.57f896c3a4a5b37f0788e35ab85d41a641476795894d59f024e2a62a5499016bb2a88e77bce1d6a20ef96c75b99d3e2023599ab97e03559b25ef5bc40e9850d6.json"
+  data-offline-search-index-json-src="/offline-search-index.5d49ddc9e3ad05500a90021a7c110f702427bb7bb6ab43da5d7137033516a45f3606702673f608b5a728a7b4f9dd4038964008ab840386a10422c71402927f1f.json"
   data-offline-search-base-href="/"
 >
 
@@ -137,7 +137,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.57f896c3a4a5b37f0788e35ab85d41a641476795894d59f024e2a62a5499016bb2a88e77bce1d6a20ef96c75b99d3e2023599ab97e03559b25ef5bc40e9850d6.json"
+  data-offline-search-index-json-src="/offline-search-index.5d49ddc9e3ad05500a90021a7c110f702427bb7bb6ab43da5d7137033516a45f3606702673f608b5a728a7b4f9dd4038964008ab840386a10422c71402927f1f.json"
   data-offline-search-base-href="/"
 >
 
@@ -1050,6 +1050,11 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#features">Features</a></li>
+    <li><a href="#specification">Specification</a>
+      <ul>
+        <li><a href="#i2c-io-expander">I2C I/O Expander</a></li>
+      </ul>
+    </li>
     <li><a href="#block-diagram">Block diagram</a></li>
     <li><a href="#pinassign">Pinassign</a></li>
     <li><a href="#sample-project">Sample project</a></li>
@@ -1107,6 +1112,30 @@
 <a href="./AX06A Grove&5V_p_large.jpg"><img src="./AX06A Grove&5V_p_small.jpg" width="200"></a></p>
 <h2 id="features">Features</h2>
 <p>It is a leaf capable of UART, I2C, analog input, and digital input that operates at 5V and complies with Seeed Studio&rsquo;s Grove series. 3.3V is converted to 5V by a step-up power supply circuit and supplied to Grove. In order to achieve low power consumption, it is possible to turn off the 5V power supply by controlling the I2C Expander.</p>
+<h2 id="specification">Specification</h2>
+<h3 id="i2c-io-expander">I2C I/O Expander</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Item</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">model number</td>
+<td align="left">PCA9557RGVR</td>
+</tr>
+<tr>
+<td align="left">Interface</td>
+<td align="left">I2C (Address: 0x1B)</td>
+</tr>
+<tr>
+<td align="left"><br></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="block-diagram">Block diagram</h2>
 <p><a href="./AX06A_block.png"><img src="./AX06A_block.png" width="200"></a></p>
 <h2 id="pinassign">Pinassign</h2>
@@ -1126,7 +1155,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 23.04.2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 22.05.2020
 </div>
 </div>
 
