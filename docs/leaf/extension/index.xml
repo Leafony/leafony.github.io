@@ -28,7 +28,7 @@
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;Arduino Shield接続用コネクタ、SWDコネクタ、ICSPコネクタ、リーフI/F3個を実装した拡張基板です。&lt;/p&gt;
 &lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AXP01A_block.png&#34;&gt;&lt;img src=&#34;./AX01A_block.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./AX01A_block.png&#34;&gt;&lt;img src=&#34;./AX01A_block.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AX01A_Shield/AX01A_Shield_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
@@ -219,12 +219,9 @@
 &lt;td align=&#34;left&#34;&gt;Interfaces&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;I2C (Address: 0x18)&lt;/td&gt;
 &lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;br&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;br&gt;
 &lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./AX06A_block.png&#34;&gt;&lt;img src=&#34;./AX06A_block.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
