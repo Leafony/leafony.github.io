@@ -107,7 +107,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8be460bcc77dc91866a07a977a13070dee04d3c8e43d953a11e60960605514cd110793fddab59f17aec6e4b36335526014053b9620ac1fdf3b8248e0c880a9fa.json"
+  data-offline-search-index-json-src="/offline-search-index.033556dd04fa7a6edc377baac2b83ecbb0e9610da18de5a3cdc880e406180420891de3572f411d4063ed75526ba60ad0adb36023cc5cc906e6221fd18b1c6291.json"
   data-offline-search-base-href="/"
 >
 
@@ -137,7 +137,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8be460bcc77dc91866a07a977a13070dee04d3c8e43d953a11e60960605514cd110793fddab59f17aec6e4b36335526014053b9620ac1fdf3b8248e0c880a9fa.json"
+  data-offline-search-index-json-src="/offline-search-index.033556dd04fa7a6edc377baac2b83ecbb0e9610da18de5a3cdc880e406180420891de3572f411d4063ed75526ba60ad0adb36023cc5cc906e6221fd18b1c6291.json"
   data-offline-search-base-href="/"
 >
 
@@ -993,12 +993,6 @@
 
       
       
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsleafprocessor_index2" href="/docs/leaf/processor/_index2/">リーフ技術資料</a>
-      
-      
     </li>
   </ul>
 </ul>
@@ -1780,7 +1774,12 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#特徴">特徴</a></li>
-    <li><a href="#性能">性能</a></li>
+    <li><a href="#性能">性能</a>
+      <ul>
+        <li><a href="#電源">電源</a></li>
+        <li><a href="#adコンバータ">ADコンバータ</a></li>
+      </ul>
+    </li>
     <li><a href="#ブロック図">ブロック図</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
     <li><a href="#サンプルプロジェクト">サンプルプロジェクト</a></li>
@@ -1849,6 +1848,7 @@
 <h2 id="特徴">特徴</h2>
 <p>CR2032コイン電池ホルダを実装し、3Vの電池電圧を昇圧電源回路により3.3Vに変換し、3.3Vを各リーフに供給するリーフです。3.3Vをオン/オフするためのスイッチを実装しています。また、電池電圧をモニタするためのADコンバータを実装しています。</p>
 <h2 id="性能">性能</h2>
+<h3 id="電源">電源</h3>
 <table>
 <thead>
 <tr>
@@ -1859,7 +1859,7 @@
 <tbody>
 <tr>
 <td align="left">型番</td>
-<td align="left">ADC081C027CIMK</td>
+<td align="left">TPS61099YFFR</td>
 </tr>
 <tr>
 <td align="left">電池電圧</td>
@@ -1880,6 +1880,22 @@
 <tr>
 <td align="left">Protection circuit</td>
 <td align="left">過電流制限/サーマルシャットダウン</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h3 id="adコンバータ">ADコンバータ</h3>
+<table>
+<thead>
+<tr>
+<th align="left">項目</th>
+<th align="left">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">型番</td>
+<td align="left">ADC081C027CIMK</td>
 </tr>
 <tr>
 <td align="left">Resolution</td>
@@ -1918,7 +1934,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 22, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 25, 2020
 </div>
 </div>
 

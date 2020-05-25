@@ -107,7 +107,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8be460bcc77dc91866a07a977a13070dee04d3c8e43d953a11e60960605514cd110793fddab59f17aec6e4b36335526014053b9620ac1fdf3b8248e0c880a9fa.json"
+  data-offline-search-index-json-src="/offline-search-index.033556dd04fa7a6edc377baac2b83ecbb0e9610da18de5a3cdc880e406180420891de3572f411d4063ed75526ba60ad0adb36023cc5cc906e6221fd18b1c6291.json"
   data-offline-search-base-href="/"
 >
 
@@ -137,7 +137,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8be460bcc77dc91866a07a977a13070dee04d3c8e43d953a11e60960605514cd110793fddab59f17aec6e4b36335526014053b9620ac1fdf3b8248e0c880a9fa.json"
+  data-offline-search-index-json-src="/offline-search-index.033556dd04fa7a6edc377baac2b83ecbb0e9610da18de5a3cdc880e406180420891de3572f411d4063ed75526ba60ad0adb36023cc5cc906e6221fd18b1c6291.json"
   data-offline-search-base-href="/"
 >
 
@@ -993,12 +993,6 @@
 
       
       
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsleafprocessor_index2" href="/docs/leaf/processor/_index2/">リーフ技術資料</a>
-      
-      
     </li>
   </ul>
 </ul>
@@ -1780,7 +1774,12 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#特徴">特徴</a></li>
-    <li><a href="#性能">性能</a></li>
+    <li><a href="#性能">性能</a>
+      <ul>
+        <li><a href="#usb-uart変換">USB-UART変換</a></li>
+        <li><a href="#電源">電源</a></li>
+      </ul>
+    </li>
     <li><a href="#ブロック図">ブロック図</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
     <li><a href="#ドキュメント">ドキュメント</a></li>
@@ -1848,6 +1847,7 @@
 <h2 id="特徴">特徴</h2>
 <p>AVR MCU へのスケッチ書き込みやシリアルモニタを使用する場合に接続するリーフです。USB-UART変換ICとしてFTDI製FT232RQを搭載しています。USBのVBUS(5V)から降圧電源回路により3.3Vに変換し、各リーフにVBUSと3.3Vを供給します。</p>
 <h2 id="性能">性能</h2>
+<h3 id="usb-uart変換">USB-UART変換</h3>
 <table>
 <thead>
 <tr>
@@ -1857,23 +1857,39 @@
 </thead>
 <tbody>
 <tr>
+<td align="left">型番</td>
+<td align="left">FT232RQ</td>
+</tr>
+<tr>
 <td align="left">USB</td>
-<td align="left">USB 2.0 Full Speed 　</td>
+<td align="left">USB 2.0 Full Speed</td>
 </tr>
 <tr>
 <td align="left">Data transfer rates</td>
 <td align="left">300 baud to 3 Mbaud</td>
 </tr>
+</tbody>
+</table>
+<br>
+<h3 id="電源">電源</h3>
+<table>
+<thead>
 <tr>
-<td align="left">電源</td>
-<td></td>
+<th align="left">項目</th>
+<th align="left">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">型番</td>
+<td align="left">XCL222B331ER-G</td>
 </tr>
 <tr>
 <td align="left">出力電圧</td>
 <td align="left">3.3V±2%</td>
 </tr>
 <tr>
-<td align="left">制御方式　</td>
+<td align="left">制御方式</td>
 <td align="left">PWM/PFM 自動切替制御</td>
 </tr>
 <tr>
@@ -1901,7 +1917,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 3, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 25, 2020
 </div>
 </div>
 
