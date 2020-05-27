@@ -22,9 +22,9 @@
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./AP01A AVR MCU_f_large.jpg&#34;&gt;&lt;img src=&#34;./AP01A AVR MCU_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AP01A AVR MCU_b_large.jpg&#34;&gt;&lt;img src=&#34;./AP01A AVR MCU_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AP01A AVR MCU_p_large.jpg&#34;&gt;&lt;img src=&#34;./AP01A AVR MCU_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;./AP01A_f_large.jpg&#34;&gt;&lt;img src=&#34;./AP01A_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AP01A_b_large.jpg&#34;&gt;&lt;img src=&#34;./AP01A_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AP01A_p_large.jpg&#34;&gt;&lt;img src=&#34;./AP01A_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;ATmega328Pを使用したリーフ。14個のデジタル入出力ピン（6個はPWM出力として使用可能）、6個のアナログ入力ピン、8MHz振動子、およびリセットボタンを備えています。 USB接続する場合はUSB を接続、ICSPを使用する場合はShield を接続します。 Arduino IDE使用時は、ボードをArduino Pro or Pro　Mini、プロセッサをATmega328P(3.3V,8MHz)選択。&lt;/p&gt;
 &lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
@@ -37,7 +37,7 @@
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;MCU&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;型番&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;ATmega328P&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -107,9 +107,9 @@
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./AP02A ESP32 MCU_f_large.jpg&#34;&gt;&lt;img src=&#34;./AP02A ESP32 MCU_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AP02A ESP32 MCU_b_large.jpg&#34;&gt;&lt;img src=&#34;./AP02A ESP32 MCU_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AP02A ESP32 MCU_p_large.jpg&#34;&gt;&lt;img src=&#34;./AP02A ESP32 MCU_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;./AP02A_f_large.jpg&#34;&gt;&lt;img src=&#34;./AP02A_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AP02A_b_large.jpg&#34;&gt;&lt;img src=&#34;./AP02A_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AP02A_p_large.jpg&#34;&gt;&lt;img src=&#34;./AP02A_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;Espressif SystemsのXtensa Dual-Core 32-bit LX6 マイクロプロセッサ、技的認証済みWi-FiとBLEを内蔵したESP32-WROOM-32を搭載した32bit MCUリーフである。無線の認証は、 FCC、CE-RED、IC、TELEC、KCC、SRRC、NCCを取得（Espressif Systems Data Sheet V2.9）。 USB電源を供給して、VBUS(5V)電源として使用可能。&lt;/p&gt;
 &lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
@@ -121,6 +121,10 @@
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;型番&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ESP32-WROOM-32       　　　　&lt;/td&gt;
+&lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;SoC&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;ESP32-D0WDQ6 (CPU:Xtensa LX6)&lt;/td&gt;

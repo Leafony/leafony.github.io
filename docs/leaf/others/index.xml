@@ -42,12 +42,13 @@
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./AZ01A USB_f_large.jpg&#34;&gt;&lt;img src=&#34;./AZ01A USB_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AZ01A USB_b_large.jpg&#34;&gt;&lt;img src=&#34;./AZ01A USB_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AZ01A USB_p_large.jpg&#34;&gt;&lt;img src=&#34;./AZ01A USB_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;./AZ01A_f_large.jpg&#34;&gt;&lt;img src=&#34;./AZ01A_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AZ01A_b_large.jpg&#34;&gt;&lt;img src=&#34;./AZ01A_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AZ01A_p_large.jpg&#34;&gt;&lt;img src=&#34;./AZ01A_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;AVR MCU へのスケッチ書き込みやシリアルモニタを使用する場合に接続するリーフです。USB-UART変換ICとしてFTDI製FT232RQを搭載しています。USBのVBUS(5V)から降圧電源回路により3.3Vに変換し、各リーフにVBUSと3.3Vを供給します。&lt;/p&gt;
 &lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
+&lt;h3 id=&#34;usb-uart変換&#34;&gt;USB-UART変換&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -57,23 +58,39 @@
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;型番&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FT232RQ&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;USB&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;USB 2.0 Full Speed 　&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;USB 2.0 Full Speed&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;Data transfer rates&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;300 baud to 3 Mbaud&lt;/td&gt;
 &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;h3 id=&#34;電源&#34;&gt;電源&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;電源&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
+&lt;th align=&#34;left&#34;&gt;項目&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;内容&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;型番&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;XCL222B331ER-G&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;出力電圧&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;3.3V±2%&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;制御方式　&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;制御方式&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;PWM/PFM 自動切替制御&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -111,14 +128,11 @@
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./AZ62A Connector Cover_large.jpg&#34;&gt;&lt;img src=&#34;./AZ62A Connector Cover_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;./AZ62A_large.jpg&#34;&gt;&lt;img src=&#34;./AZ62A_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;Connector Coverは、ACR (Anisotropic Conductive Rubber)に付着するゴミを防御することが出来ます。&lt;/p&gt;
-&lt;h2 id=&#34;ハードウェア&#34;&gt;ハードウェア&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;外形図&lt;br&gt;
-&lt;a href=&#34;./AZ62A_Outline Drawing.png&#34;&gt;&lt;img src=&#34;./AZ62A_Outline Drawing.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2 id=&#34;外形図&#34;&gt;外形図&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./AZ62A_Outline.png&#34;&gt;&lt;img src=&#34;./AZ62A_Outline.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
       </description>
     </item>
@@ -205,11 +219,24 @@
         &lt;p&gt;&lt;a href=&#34;./AZ63A Nut Plate_large.jpg&#34;&gt;&lt;img src=&#34;./AZ63A Nut Plate_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;Nut Plateは、リーフをネジで固定する時に使用します。市販の六角ナットを用いると基板の電極に触れて、ショートをおこすことがあるので要注意&lt;/p&gt;
-&lt;h2 id=&#34;ハードウェア&#34;&gt;ハードウェア&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;外形図&lt;br&gt;
-&lt;a href=&#34;./AZ63A_Outline Drawing.png&#34;&gt;&lt;img src=&#34;./AZ63A_Outline Drawing.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;h2 id=&#34;外形図&#34;&gt;外形図&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./AZ63A_Outline Drawing.png&#34;&gt;&lt;img src=&#34;./AZ63A_Outline Drawing.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: AZ66A Basic Kit Case</title>
+      <link>/docs/leaf/others/az64a/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/leaf/others/az64a/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./AZ64A_large.jpg&#34;&gt;&lt;img src=&#34;./AZ64A_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;外形図&#34;&gt;外形図&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./AZ64A_Outline.png&#34;&gt;&lt;img src=&#34;./AZ64A_Outline.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
       </description>
     </item>
@@ -223,32 +250,12 @@
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./AZ65A Lowercase_large.jpg&#34;&gt;&lt;img src=&#34;./AZ65A Lowercase_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;./AZ65A_large.jpg&#34;&gt;&lt;img src=&#34;./AZ65A_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;ケース（下）&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;外形図&lt;br&gt;
-&lt;a href=&#34;./AZ65A_Outline Drawing.png&#34;&gt;&lt;img src=&#34;./AZ65A_Outline Drawing.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: AZ64A Uppercase</title>
-      <link>/docs/leaf/others/az64a/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/leaf/others/az64a/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;a href=&#34;./AZ64A Uppercase_large.jpg&#34;&gt;&lt;img src=&#34;./AZ64A Uppercase_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;p&gt;ケース（上）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;外形図&lt;br&gt;
-&lt;a href=&#34;./AZ64A_Outline Drawing.png&#34;&gt;&lt;img src=&#34;./AZ64A_Outline Drawing.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;a href=&#34;./AZ65A_Outline.png&#34;&gt;&lt;img src=&#34;./AZ65A_Outline.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>

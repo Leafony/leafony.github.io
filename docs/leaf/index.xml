@@ -56,23 +56,6 @@
     </item>
     
     <item>
-      <title>Docs: 基板設計テンプレート</title>
-      <link>/docs/leaf/pcb_template/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/leaf/pcb_template/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Leafonyの基板設計にはCADテンプレートを用いると便利です。
-各CADごとの利用方法は下記をご覧ください。&lt;/p&gt;
-&lt;h2 id=&#34;kicad&#34;&gt;KiCad&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/cad-template&#34;&gt;https://github.com/Leafony/cad-template&lt;/a&gt;&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: プロセッサリーフ</title>
       <link>/docs/leaf/processor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -90,11 +73,11 @@
 
 
   &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
-    &lt;a href=&#34;ap01a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;ap01a/AP01A%20AVR%20MCU_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;ap01a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;ap01a/AP01A_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;ap01a&#34;&gt;AVR MCU&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AP01A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;ATmega328Pを使用したリーフ。14個のデジタル入出力ピン（6個はPWM出力として使用可能）、6個のアナログ入力ピン、8MHz振動子、およびリセットボタンを備えています。 USB接続する場合はUSB を接続、ICSPを使用する場合はShield を接続します。 Arduino IDE使用時は、ボードをArduino Pro or Pro　Mini、プロセッサをATmega328P(3.3V,8MHz)選択。&lt;/p&gt;&lt;a href=&#34;https://leafony.com/basic-kit-a-1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;ATmega328Pを使用したリーフ。14個のデジタル入出力ピン（6個はPWM出力として使用可能）、6個のアナログ入力ピン、8MHz振動子、およびリセットボタンを備えています。 USB接続する場合はUSB を接続、ICSPを使用する場合はShield を接続します。 Arduino IDE使用時は、ボードをArduino Pro or Pro　Mini、プロセッサをATmega328P(3.3V,8MHz)選択。&lt;/p&gt;&lt;a href=&#34;/docs/products/basic/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -103,11 +86,11 @@
 
 
   &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
-    &lt;a href=&#34;ap02a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;ap02a/AP02A%20ESP32%20MCU_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;ap02a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;ap02a/AP02A_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;ap02a&#34;&gt;ESP32 MCU&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AP02A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;Espressif SystemsのXtensa Dual-Core 32-bit LX6 マイクロプロセッサ、技的認証済みWi-FiとBLEを内蔵したESP32-WROOM-32を搭載した32bit MCUリーフである。 無線の認証は、 FCC、CE-RED、IC、TELEC、KCC、SRRC、NCCを取得（Espressif Systems Data Sheet V2.9）。USB電源を供給して、VBUS(5V)電源として使用可能。&lt;/p&gt;&lt;a href=&#34;https://leafony.com/esp32-wi-fi-kit-a1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-warning&#34;&gt;ESP32 Wi-Fi Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;Espressif SystemsのXtensa Dual-Core 32-bit LX6 マイクロプロセッサ、技的認証済みWi-FiとBLEを内蔵したESP32-WROOM-32を搭載した32bit MCUリーフである。 無線の認証は、 FCC、CE-RED、IC、TELEC、KCC、SRRC、NCCを取得（Espressif Systems Data Sheet V2.9）。USB電源を供給して、VBUS(5V)電源として使用可能。&lt;/p&gt;&lt;a href=&#34;/docs/products/esp32/&#34; target=&#34;_brank&#34; class=&#34;badge badge-warning&#34;&gt;ESP32 Wi-Fi Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -132,11 +115,11 @@
 
 
   &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
-    &lt;a href=&#34;ac02a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;ac02a/AC02A%20BLE%20Sugar_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;ac02a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;ac02a/AC02A_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;ac02a&#34;&gt;BLE Sugar&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AC02A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;Silicon Labsの技的認証済みBLEモジュールBGM11S22F256GA-V2を搭載したリーフです。MCUリーフとはUARTで接続されます。無線の認証は、CE、FCC、ISED Canada、TELEC、KC South-Korea、NCC Taiwanを取得（SLICON LABS Module Data Sheet　Revision 1.2)。&lt;/p&gt;&lt;a href=&#34;https://leafony.com/basic-kit-a-1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;Silicon Labsの技的認証済みBLEモジュールBGM11S22F256GA-V2を搭載したリーフです。MCUリーフとはUARTで接続されます。無線の認証は、CE、FCC、ISED Canada、TELEC、KC South-Korea、NCC Taiwanを取得（SLICON LABS Module Data Sheet　Revision 1.2)。&lt;/p&gt;&lt;a href=&#34;/docs/products/basic/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -145,7 +128,7 @@
 
 
   &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
-    &lt;a href=&#34;ac03a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;ac03a/AC03A%20LoRa%20Easy_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;ac03a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;ac03a/AC03A_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;ac03a&#34;&gt;LoRa Easy&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AC03A&lt;/h6&gt;
@@ -178,7 +161,7 @@
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;ai01a&#34;&gt;4-Sensors&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AI01A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;温湿度センサ、照度センサ、加速度センサを搭載したリーフです。MCUリーフとはI2Cで接続されます。&lt;/p&gt;&lt;a href=&#34;https://leafony.com/basic-kit-a-1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;温湿度センサ、照度センサ、加速度センサを搭載したリーフです。MCUリーフとはI2Cで接続されます。&lt;/p&gt;&lt;a href=&#34;/docs/products/basic/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -191,7 +174,7 @@
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;ai02a&#34;&gt;SP&amp;amp;PIR&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AI02A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;圧電スピーカと人感センサを搭載したリーフです。圧電スピーカはPWM、人感センサはI2CでMCUリーフと接続されます。人感センサは接近検知アルゴリズムを内蔵しており、簡単な設定で接近を検知することが出来、接近検知時に割り込み信号を出力することが可能です。&lt;/p&gt;&lt;a href=&#34;https://leafony.com/extension-kit-a1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;圧電スピーカと人感センサを搭載したリーフです。圧電スピーカはPWM、人感センサはI2CでMCUリーフと接続されます。人感センサは接近検知アルゴリズムを内蔵しており、簡単な設定で接近を検知することが出来、接近検知時に割り込み信号を出力することが可能です。&lt;/p&gt;&lt;a href=&#34;/docs/products/extension/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -204,7 +187,7 @@
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;ai03a&#34;&gt;MIC&amp;amp;VR&amp;amp;LED&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AI03A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;MEMSマイク、ボリューム、LEDを搭載したリーフです。MEMSマイクとボリュームはアナログ入力ピン、LEDはデジタル出力ピンでMCUリーフと接続されます。低消費電力を実現するためI2C Expander を制御することにより電源をロードスイッチによりオフすることが可能です。&lt;/p&gt;&lt;a href=&#34;https://leafony.com/extension-kit-a1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;MEMSマイク、ボリューム、LEDを搭載したリーフです。MEMSマイクとボリュームはアナログ入力ピン、LEDはデジタル出力ピンでMCUリーフと接続されます。低消費電力を実現するためI2C Expander を制御することにより電源をロードスイッチによりオフすることが可能です。&lt;/p&gt;&lt;a href=&#34;/docs/products/extension/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -217,7 +200,7 @@
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;ai04a&#34;&gt;LCD&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AI04A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;キャラクタLCDユニットとスイッチ2個を搭載したリーフです。LCDユニットはI2CでMCUリーフと接続される。スイッチはMCUのデジタル入力ピンとI2C ExpanderのP1ピンに接続されています。 低消費電力を実現するためI2C Expander を制御することにより電源をロードスイッチによりオフすることが可能です。&lt;/p&gt;&lt;a href=&#34;https://leafony.com/extension-kit-a1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;キャラクタLCDユニットとスイッチ2個を搭載したリーフです。LCDユニットはI2CでMCUリーフと接続される。スイッチはMCUのデジタル入力ピンとI2C ExpanderのP1ピンに接続されています。 低消費電力を実現するためI2C Expander を制御することにより電源をロードスイッチによりオフすることが可能です。&lt;/p&gt;&lt;a href=&#34;/docs/products/extension/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -242,11 +225,11 @@
 
 
   &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
-    &lt;a href=&#34;av01a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;av01a/AV01A%20CR2032_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;av01a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;av01a/AV01A_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;av01a&#34;&gt;CR2032&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AV01A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;CR2032コイン電池ホルダを実装し、3Vの電池電圧を昇圧電源回路により3.3Vに変換し、3.3Vを各リーフに供給するリーフです。3.3Vをオン/オフするためのスイッチを実装しています。また、電池電圧をモニタするためのADコンバータを実装しています。&lt;/p&gt;&lt;a href=&#34;https://leafony.com/basic-kit-a-1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;CR2032コイン電池ホルダを実装し、3Vの電池電圧を昇圧電源回路により3.3Vに変換し、3.3Vを各リーフに供給するリーフです。3.3Vをオン/オフするためのスイッチを実装しています。また、電池電圧をモニタするためのADコンバータを実装しています。&lt;/p&gt;&lt;a href=&#34;/docs/products/basic/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -272,7 +255,7 @@
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;av03a&#34;&gt;AA BAT&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AV03A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;単3電池ホルダを実装し、1.5Vの電池電圧を昇圧電源回路により3.3Vに変換し、3.3Vを各リーフに供給するリーフです。3.3Vをオン/オフするためのスイッチを実装しています。また、電池電圧をモニタするためのADコンバータを実装しています。&lt;/p&gt;&lt;a href=&#34;https://leafony.com/extension-kit-a1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;単3電池ホルダを実装し、1.5Vの電池電圧を昇圧電源回路により3.3Vに変換し、3.3Vを各リーフに供給するリーフです。3.3Vをオン/オフするためのスイッチを実装しています。また、電池電圧をモニタするためのADコンバータを実装しています。&lt;/p&gt;&lt;a href=&#34;/docs/products/extension/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -285,7 +268,7 @@
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;av04a&#34;&gt;2V～4.5V&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AV04A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;SHコネクタを実装し、2～4.5Vの電池電圧を昇降圧電源回路により3.3Vに変換し、3.3Vを各リーフに供給するリーフです。3.3Vをオン/オフするためのスイッチを実装しています。また、電池電圧をモニタするためのADコンバータを実装しています。 SHコネクタに接続可能な電池は乾電池2～3本またはLi-Po、Li-ION電池を想定しています。&lt;/p&gt;&lt;a href=&#34;https://leafony.com/extension-kit-a1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;SHコネクタを実装し、2～4.5Vの電池電圧を昇降圧電源回路により3.3Vに変換し、3.3Vを各リーフに供給するリーフです。3.3Vをオン/オフするためのスイッチを実装しています。また、電池電圧をモニタするためのADコンバータを実装しています。 SHコネクタに接続可能な電池は乾電池2～3本またはLi-Po、Li-ION電池を想定しています。&lt;/p&gt;&lt;a href=&#34;/docs/products/extension/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -314,7 +297,7 @@
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;ax01a&#34;&gt;Shield&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AX01A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;Arduino Shield接続用コネクタ、SWDコネクタ、ICSPコネクタ、リーフI/F3個を実装した拡張基板です。(Connectorは1つのみ）&lt;/p&gt;&lt;a href=&#34;https://leafony.com/extension-kit-a1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;Arduino Shield接続用コネクタ、SWDコネクタ、ICSPコネクタ、リーフI/F3個を実装した拡張基板です。(Connectorは1つのみ）&lt;/p&gt;&lt;a href=&#34;/docs/products/extension/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -323,11 +306,11 @@
 
 
   &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
-    &lt;a href=&#34;ax02a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;ax02a/AX02A%2029pin_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;ax02a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;ax02a/AX02A_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;ax02a&#34;&gt;29pin&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AX02A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;リーフI/Fの29ピン全てをスルーホールに接続したリーフです。&lt;/p&gt;&lt;a href=&#34;https://leafony.com/basic-kit-a-1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;リーフI/Fの29ピン全てをスルーホールに接続したリーフです。&lt;/p&gt;&lt;a href=&#34;/docs/products/basic/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -340,7 +323,7 @@
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;ax03a&#34;&gt;Leaf x2&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AX03A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;全てのリーフI/F端子を接続したリーフを横に接続するためのリーフです。&lt;/p&gt;&lt;a href=&#34;https://leafony.com/extension-kit-a1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;全てのリーフI/F端子を接続したリーフを横に接続するためのリーフです。&lt;/p&gt;&lt;a href=&#34;/docs/products/extension/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -353,7 +336,7 @@
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;ax04a&#34;&gt;Spacer&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AX04A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;全てのリーフI/F端子を接続した高さが2mm以上ある部品を使用しているリーフの上に別のリーフを接続するためのリーフです。&lt;/p&gt;&lt;a href=&#34;https://leafony.com/extension-kit-a1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;全てのリーフI/F端子を接続した高さが2mm以上ある部品を使用しているリーフの上に別のリーフを接続するためのリーフです。&lt;/p&gt;&lt;a href=&#34;/docs/products/extension/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -366,7 +349,7 @@
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;ax05a&#34;&gt;I Meas.&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AX05A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;3.3VおよびVBUSの消費電流を測定することが出来るリーフです。 電流測定リーフでは3.3VとVBUSは表面と裏面のパッドが電気的に切り離されているので、下記の各々スルーホールに電流計を接続することで、電池リーフから遠い部分にある単体リーフあるいは複数リーフ群の全電源電流を測定できます。下の例では、センサリーフとBLEリーフが電流測定リーフを介して、電池リーフの遠い側に配置されているので、両リーフの合計電流が測定できます。&lt;/p&gt;&lt;a href=&#34;https://leafony.com/extension-kit-a1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;3.3VおよびVBUSの消費電流を測定することが出来るリーフです。 電流測定リーフでは3.3VとVBUSは表面と裏面のパッドが電気的に切り離されているので、下記の各々スルーホールに電流計を接続することで、電池リーフから遠い部分にある単体リーフあるいは複数リーフ群の全電源電流を測定できます。下の例では、センサリーフとBLEリーフが電流測定リーフを介して、電池リーフの遠い側に配置されているので、両リーフの合計電流が測定できます。&lt;/p&gt;&lt;a href=&#34;/docs/products/extension/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -379,7 +362,7 @@
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;ax06a&#34;&gt;Grove&amp;amp;5V&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AX06A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;Seeed Studio製 Groveシリーズに準拠する5Vで動作するUART、I2C、アナログ入力、デジタル入力が可能なリーフです。3.3Vから昇圧電源回路により5Vに変換しGroveに供給します。Grove対応ピンの仕様は以下の通り。 低消費電力を実現するためI2C Expander を制御することにより5Vの電源をオフすることが可能です。&lt;/p&gt;&lt;a href=&#34;https://leafony.com/extension-kit-a1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;Seeed Studio製 Groveシリーズに準拠する5Vで動作するUART、I2C、アナログ入力、デジタル入力が可能なリーフです。3.3Vから昇圧電源回路により5Vに変換しGroveに供給します。Grove対応ピンの仕様は以下の通り。 低消費電力を実現するためI2C Expander を制御することにより5Vの電源をオフすることが可能です。&lt;/p&gt;&lt;a href=&#34;/docs/products/extension/&#34; target=&#34;_brank&#34; class=&#34;badge badge-secondary&#34;&gt;Extension Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -392,7 +375,7 @@
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;ax07a&#34;&gt;Back to back&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AX07A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;全てのリーフI/F端子を接続したリーフを反転させて接続するためのリーフです。&lt;/p&gt;&lt;a href=&#34;https://leafony.com/esp32-wi-fi-kit-a1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-warning&#34;&gt;ESP32 Wi-Fi Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;全てのリーフI/F端子を接続したリーフを反転させて接続するためのリーフです。&lt;/p&gt;&lt;a href=&#34;/docs/products/esp32/&#34; target=&#34;_brank&#34; class=&#34;badge badge-warning&#34;&gt;ESP32 Wi-Fi Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -405,7 +388,7 @@
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;ax08a&#34;&gt;29pin header&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AX08A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;リーフI/Fの29ピン全てをピンヘッダに接続したリーフです。&lt;/p&gt;&lt;a href=&#34;https://leafony.com/esp32-wi-fi-kit-a1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-warning&#34;&gt;ESP32 Wi-Fi Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;リーフI/Fの29ピン全てをピンヘッダに接続したリーフです。&lt;/p&gt;&lt;a href=&#34;/docs/products/esp32/&#34; target=&#34;_brank&#34; class=&#34;badge badge-warning&#34;&gt;ESP32 Wi-Fi Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -430,11 +413,11 @@
 
 
   &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
-    &lt;a href=&#34;az01a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;az01a/AZ01A%20USB_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;az01a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;az01a/AZ01A_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;az01a&#34;&gt;USB&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AZ01A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;AVR MCU へのスケッチ書き込みやシリアルモニタを使用する場合に接続するリーフです。USB-UART変換ICとしてFTDI製FT232RQを搭載しています。USBのVBUS(5V)から降圧電源回路により3.3Vに変換し、各リーフにVBUSと3.3Vを供給します。&lt;/p&gt;&lt;a href=&#34;https://leafony.com/basic-kit-a-1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;AVR MCU へのスケッチ書き込みやシリアルモニタを使用する場合に接続するリーフです。USB-UART変換ICとしてFTDI製FT232RQを搭載しています。USBのVBUS(5V)から降圧電源回路により3.3Vに変換し、各リーフにVBUSと3.3Vを供給します。&lt;/p&gt;&lt;a href=&#34;/docs/products/basic/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -447,7 +430,7 @@
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;az02a&#34;&gt;RTC&amp;amp;microSD&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AZ02A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;NXPのReal-Time Clock PCF8523TKおよびMicro SDカードスロットを搭載したリーフです。RTCはアラームやタイマによりMCUに割り込み信号を出力することが可能です。micro SDカードはSPIでアクセスします。&lt;/p&gt;&lt;a href=&#34;https://leafony.com/esp32-wi-fi-kit-a1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-warning&#34;&gt;ESP32 Wi-Fi Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;NXPのReal-Time Clock PCF8523TKおよびMicro SDカードスロットを搭載したリーフです。RTCはアラームやタイマによりMCUに割り込み信号を出力することが可能です。micro SDカードはSPIでアクセスします。&lt;/p&gt;&lt;a href=&#34;/docs/products/esp32/&#34; target=&#34;_brank&#34; class=&#34;badge badge-warning&#34;&gt;ESP32 Wi-Fi Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -460,7 +443,7 @@
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;az61a&#34;&gt;Connector&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AZ61A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;Leafony Platformは、ACR (Anisotropic Conductive Rubber)を採用しています。ACRは、絶縁性シリコーンゴムに、金属又は導電性エラストマの導電部材が、狭ピッチで配列されており、圧縮されることで電気的接続が実現できます。&lt;/p&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;Leafony Platformは、ACR (Anisotropic Conductive Rubber)を採用しています。ACRは、絶縁性シリコーンゴムに、金属又は導電性エラストマの導電部材が、狭ピッチで配列されており、圧縮されることで電気的接続が実現できます。&lt;/p&gt;&lt;a href=&#34;/docs/products/conn/&#34; target=&#34;_brank&#34; class=&#34;badge badge-success&#34;&gt;Connector&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -469,11 +452,11 @@
 
 
   &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
-    &lt;a href=&#34;az62a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;az62a/AZ62A%20Connector%20Cover_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;az62a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;az62a/AZ62A_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;az62a&#34;&gt;Connector Cover&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AZ62A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;Connector Coverは、ACR (Anisotropic Conductive Rubber)に付着するゴミを防御することが出来ます。&lt;/p&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;Connector Coverは、ACR (Anisotropic Conductive Rubber)に付着するゴミを防御することが出来ます。&lt;/p&gt;&lt;a href=&#34;/docs/products/nut/&#34; target=&#34;_brank&#34; class=&#34;badge badge-info&#34;&gt;Nut &amp; Conn. Cover&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -486,7 +469,7 @@
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;az63a&#34;&gt;Nut Plate&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AZ63A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;Nut Plateは、リーフをネジで固定する時に使用します。市販の六角ナットを用いると基板の電極に触れて、ショートをおこすことがあるので要注意&lt;/p&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;Nut Plateは、リーフをネジで固定する時に使用します。市販の六角ナットを用いると基板の電極に触れて、ショートをおこすことがあるので要注意&lt;/p&gt;&lt;a href=&#34;/docs/products/nut/&#34; target=&#34;_brank&#34; class=&#34;badge badge-info&#34;&gt;Nut &amp; Conn. Cover&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -495,11 +478,11 @@
 
 
   &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
-    &lt;a href=&#34;az64a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;az64a/AZ64A%20Uppercase_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;az64a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;az64a/AZ64A_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;az64a&#34;&gt;Uppercase&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AZ64A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;ケース（上）&lt;/p&gt;&lt;a href=&#34;https://leafony.com/basic-kit-a-1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;ケース（上）&lt;/p&gt;&lt;a href=&#34;/docs/products/basic/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 
 
@@ -508,11 +491,11 @@
 
 
   &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
-    &lt;a href=&#34;az65a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;az65a/AZ65A%20Lowercase_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
+    &lt;a href=&#34;az65a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;az65a/AZ65A_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
     &lt;div class=&#34;card-body&#34;&gt;
       &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;az65a&#34;&gt;Lowercase&lt;/a&gt;&lt;/h5&gt;
       &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AZ65A&lt;/h6&gt;
-      &lt;p class=&#34;card-text text-truncate&#34;&gt;ケース（下）&lt;/p&gt;&lt;a href=&#34;https://leafony.com/basic-kit-a-1-0/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;ケース（下）&lt;/p&gt;&lt;a href=&#34;/docs/products/basic/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
       </description>
