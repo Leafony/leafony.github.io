@@ -23,98 +23,104 @@
         
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;AVRマイコン(Atmega328P)、Bluetooth LE、温湿度センサ、照度センサ、加速度センサを搭載したリーフと2cm立法のマグネット付きプラスチックケースが含まれており、簡単にIoTセンサデバイスを作ることができます。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;キット全体写真を入れる&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;内容物&#34;&gt;内容物&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;aaa&lt;/li&gt;
-&lt;li&gt;aaa&lt;/li&gt;
-&lt;li&gt;aaa&lt;/li&gt;
+&lt;li&gt;1 x &lt;a href=&#34;../../leaf/communication/ac02a&#34;&gt;AC02A BLE Sugar leaf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;1 x &lt;a href=&#34;../../leaf/io/ai01a&#34;&gt;AI01A 4-Sensors leaf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;1 x &lt;a href=&#34;../../leaf/processor/ap01a&#34;&gt;AP01A AVR MCU leaf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;1 x &lt;a href=&#34;../../leaf/power/av01a&#34;&gt;AV01A CR2032 leaf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;1 x &lt;a href=&#34;../../leaf/extension/ax02a&#34;&gt;AX02A 29pin leaf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;1 x &lt;a href=&#34;../../leaf/others/az01a&#34;&gt;AZ01A USB leaf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;1 x &lt;a href=&#34;../../leaf/others/az62a&#34;&gt;AZ62A Connector Cover&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;1 x &lt;a href=&#34;../../leaf/others/az64a&#34;&gt;AZ64A Uppercase&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;1 x &lt;a href=&#34;../../leaf/others/az65a&#34;&gt;AZ65A Lowercase&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;1 x Screw driver&lt;/li&gt;
+&lt;li&gt;1 x CR2032 Coin cell&lt;/li&gt;
+&lt;li&gt;2 x M2*15mm Screw&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;リーフ&#34;&gt;リーフ&lt;/h2&gt;
-&lt;p&gt;cardで　&lt;/p&gt;
-&lt;table&gt;
-  &lt;thread&gt;
-    &lt;tr&gt;
-      &lt;th&gt;型番&lt;/th&gt;
-      &lt;th&gt;名称&lt;/th&gt;
-      &lt;th colspan=&#34;2&#34;&gt;概要&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thread&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-        &lt;td&gt;&lt;a href=&#34;../../leaf/communication/ac02a&#34;&gt;AC02A&lt;/a&gt;&lt;/td&gt;
-        &lt;td&gt;BLE Sugar&lt;/td&gt;
-        &lt;td&gt;Silicon Labsの技的認証済みBLEモジュールBGM11S22F256GA-V2を搭載したリーフである。MCUリーフとはUARTで接続される。無線の認証は、CE、FCC、ISED Canada、TELEC、KC South-Korea、NCC Taiwanを取得（SLICON LABS Module Data Sheet　Revision 1.2)。&lt;/td&gt;
-        &lt;td&gt;&lt;img src=&#34;../../leaf/communication/ac02a/AC02A_f_small.jpg&#34; width=&#34;400&#34;&gt;&lt;/img&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;&lt;a href=&#34;../../leaf/io/ai01a&#34;&gt;AI01A&lt;/a&gt;&lt;/td&gt;
-        &lt;td&gt;4-Sensors&lt;/td&gt;
-        &lt;td&gt;温湿度センサ、照度センサ、加速度センサを搭載したリーフである。MCUリーフとはI2Cで接続される。&lt;/td&gt;
-        &lt;td&gt;&lt;img src=&#34;../../leaf/io/ai01a/AI01A_f_small.jpg&#34; width=&#34;400&#34;&gt;&lt;/img&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;&lt;a href=&#34;../../leaf/processor/ap01a&#34;&gt;AP01A&lt;/a&gt;&lt;/td&gt;
-        &lt;td&gt;AVR MCU&lt;/td&gt;
-        &lt;td&gt;ATmega328Pを使用したリーフ。14個のデジタル入出力ピン（6個はPWM出力として使用可能）、6個のアナログ入力ピン、8MHz振動子、およびリセットボタンを備えている。 USB接続する場合はUSB を接続、ICSPを使用する場合はShield を接続する。 Arduino IDE使用時は、ボードをArduino Pro or Pro　Mini、プロセッサをATmega328P(3.3V,8MHz)選択。&lt;/td&gt;
-        &lt;td&gt;&lt;img src=&#34;../../leaf/processor/ap01a/AP01A_f_small.jpg&#34; width=&#34;400&#34;&gt;&lt;/img&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;&lt;a href=&#34;../../leaf/power/av01a&#34;&gt;AV01A&lt;/a&gt;&lt;/td&gt;
-        &lt;td&gt;CR2032&lt;/td&gt;
-        &lt;td&gt;CR2032コイン電池ホルダを実装し、3Vの電池電圧を昇圧電源回路により3.3Vに変換し、3.3Vを各リーフに供給するリーフである。3.3Vをオン/オフするためのスイッチを実装している。また、電池電圧をモニタするためのADコンバータを実装している。&lt;/td&gt;
-        &lt;td&gt;&lt;img src=&#34;/docs/leaf/power/av01a/AV01A_f_small.jpg&#34; width=&#34;400&#34;&gt;&lt;/img&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;&lt;a href=&#34;../../leaf/extension/ax02a&#34;&gt;AX02A&lt;/a&gt;&lt;/td&gt;
-        &lt;td&gt;29pin&lt;/td&gt;
-        &lt;td&gt;リーフI/Fの29ピン全てをスルーホールに接続したリーフ。&lt;/td&gt;
-        &lt;td&gt;&lt;img src=&#34;/docs/leaf/extension/ax02a/AX02A_f_small.jpg&#34; width=&#34;400&#34;&gt;&lt;/img&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;&lt;a href=&#34;../../leaf/others/az01a&#34;&gt;AZ01A&lt;/a&gt;&lt;/td&gt;
-        &lt;td&gt;USB&lt;/td&gt;
-        &lt;td&gt;AVR MCU へのスケッチ書き込みやシリアルモニタを使用する場合に接続するリーフである。USB-UART変換ICとしてFTDI製FT232RQを搭載している。USBのVBUS(5V)から降圧電源回路により3.3Vに変換し、各リーフにVBUSと3.3Vを供給する。&lt;/td&gt;
-        &lt;td&gt;&lt;img src=&#34;/docs/leaf/others/az01a/AZ01A_f_small.jpg&#34; width=&#34;400&#34;&gt;&lt;/img&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;&lt;a href=&#34;../../leaf/others/az62a&#34;&gt;AZ62A&lt;/a&gt;&lt;/td&gt;
-        &lt;td&gt;Connector Cover&lt;/td&gt;
-        &lt;td&gt;Connector Coverは、ACR (Anisotropic Conductive Rubber)に付着するゴミを防御することが出来る。&lt;/td&gt;
-        &lt;td&gt;&lt;img src=&#34;/docs/leaf/others/az62a/AZ62A_small.jpg&#34; width=&#34;400&#34;&gt;&lt;/img&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;&lt;a href=&#34;../../leaf/others/az64a&#34;&gt;AZ64A&lt;/a&gt;&lt;/td&gt;
-        &lt;td&gt;Uppercase&lt;/td&gt;
-        &lt;td&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;img src=&#34;/docs/leaf/others/az64a/AZ64A_small.jpg&#34; width=&#34;400&#34;&gt;&lt;/img&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;&lt;a href=&#34;../../leaf/others/az65a&#34;&gt;AZ65A&lt;/a&gt;&lt;/td&gt;
-        &lt;td&gt;Lowercase&lt;/td&gt;
-        &lt;td&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;img src=&#34;/docs/leaf/others/az65a/AZ65A_small.jpg&#34; width=&#34;400&#34;&gt;&lt;/img&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;-&lt;/td&gt;
-        &lt;td&gt;Screw driver&lt;/td&gt;
-        &lt;td&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;-&lt;/td&gt;
-        &lt;td&gt;CR2032&lt;/td&gt;
-        &lt;td&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-        &lt;td&gt;-&lt;/td&gt;
-        &lt;td&gt;Screw M2&lt;/td&gt;
-        &lt;td&gt;&lt;/td&gt;
-        &lt;td&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
+&lt;h2 id=&#34;リーフ一覧&#34;&gt;リーフ一覧&lt;/h2&gt;
+&lt;div class=&#34;row&#34;&gt;
+
+
+
+
+
+
+  &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
+    &lt;a href=&#34;../../leaf/communication/ac02a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;../../leaf/communication/ac02a/AC02A_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
+    &lt;div class=&#34;card-body&#34;&gt;
+      &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;../../leaf/communication/ac02a&#34;&gt;BLE Sugar&lt;/a&gt;&lt;/h5&gt;
+      &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AC02A&lt;/h6&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;Silicon Labsの技的認証済みBLEモジュールBGM11S22F256GA-V2を搭載したリーフです。MCUリーフとはUARTで接続されます。無線の認証は、CE、FCC、ISED Canada、TELEC、KC South-Korea、NCC Taiwanを取得（SLICON LABS Module Data Sheet　Revision 1.2)。&lt;/p&gt;&lt;a href=&#34;/docs/products/basic/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+
+
+
+
+
+  &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
+    &lt;a href=&#34;../../leaf/io/ai01a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;../../leaf/io/ai01a/AI01A_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
+    &lt;div class=&#34;card-body&#34;&gt;
+      &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;../../leaf/io/ai01a&#34;&gt;4-Sensors&lt;/a&gt;&lt;/h5&gt;
+      &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AI01A&lt;/h6&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;温湿度センサ、照度センサ、加速度センサを搭載したリーフです。MCUリーフとはI2Cで接続されます。&lt;/p&gt;&lt;a href=&#34;/docs/products/basic/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+
+
+
+
+
+  &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
+    &lt;a href=&#34;../../leaf/processor/ap01a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;../../leaf/processor/ap01a/AP01A_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
+    &lt;div class=&#34;card-body&#34;&gt;
+      &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;../../leaf/processor/ap01a&#34;&gt;AVR MCU&lt;/a&gt;&lt;/h5&gt;
+      &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AP01A&lt;/h6&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;ATmega328Pを使用したリーフ。14個のデジタル入出力ピン（6個はPWM出力として使用可能）、6個のアナログ入力ピン、8MHz振動子、およびリセットボタンを備えています。 USB接続する場合はUSB を接続、ICSPを使用する場合はShield を接続します。 Arduino IDE使用時は、ボードをArduino Pro or Pro　Mini、プロセッサをATmega328P(3.3V,8MHz)選択。&lt;/p&gt;&lt;a href=&#34;/docs/products/basic/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+
+
+
+
+
+  &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
+    &lt;a href=&#34;../../leaf/power/av01a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;../../leaf/power/av01a/AV01A_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
+    &lt;div class=&#34;card-body&#34;&gt;
+      &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;../../leaf/power/av01a&#34;&gt;CR2032&lt;/a&gt;&lt;/h5&gt;
+      &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AV01A&lt;/h6&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;CR2032コイン電池ホルダを実装し、3Vの電池電圧を昇圧電源回路により3.3Vに変換し、3.3Vを各リーフに供給するリーフです。3.3Vをオン/オフするためのスイッチを実装しています。また、電池電圧をモニタするためのADコンバータを実装しています。&lt;/p&gt;&lt;a href=&#34;/docs/products/basic/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+
+
+
+
+
+  &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
+    &lt;a href=&#34;../../leaf/extension/ax02a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;../../leaf/extension/ax02a/AX02A_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
+    &lt;div class=&#34;card-body&#34;&gt;
+      &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;../../leaf/extension/ax02a&#34;&gt;29pin&lt;/a&gt;&lt;/h5&gt;
+      &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AX02A&lt;/h6&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;リーフI/Fの29ピン全てをスルーホールに接続したリーフです。&lt;/p&gt;&lt;a href=&#34;/docs/products/basic/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+
+
+
+
+
+
+  &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
+    &lt;a href=&#34;../../leaf/others/az01a&#34;&gt;&lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;../../leaf/others/az01a/AZ01A_p_small.jpg&#34; alt=&#34;Card image cap&#34;&gt;&lt;/a&gt;
+    &lt;div class=&#34;card-body&#34;&gt;
+      &lt;h5 class=&#34;card-title&#34;&gt;&lt;a href=&#34;../../leaf/others/az01a&#34;&gt;USB&lt;/a&gt;&lt;/h5&gt;
+      &lt;h6 class=&#34;card-subtitle mb-2 text-muted&#34;&gt;AZ01A&lt;/h6&gt;
+      &lt;p class=&#34;card-text text-truncate&#34;&gt;AVR MCU へのスケッチ書き込みやシリアルモニタを使用する場合に接続するリーフです。USB-UART変換ICとしてFTDI製FT232RQを搭載しています。USBのVBUS(5V)から降圧電源回路により3.3Vに変換し、各リーフにVBUSと3.3Vを供給します。&lt;/p&gt;&lt;a href=&#34;/docs/products/basic/&#34; target=&#34;_brank&#34; class=&#34;badge badge-primary&#34;&gt;Basic Kit&lt;/a&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
       </description>
     </item>
     
