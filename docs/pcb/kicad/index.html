@@ -7,7 +7,7 @@
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="/docs/examples/extension/index.xml">
+<link rel="alternate" type="application/rss&#43;xml" href="/docs/pcb/kicad/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,14 +21,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Extension Kit | Leafony</title><meta property="og:title" content="Extension Kit" />
+<title>KiCad | Leafony</title><meta property="og:title" content="KiCad" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="/docs/examples/extension/" />
+<meta property="og:url" content="/docs/pcb/kicad/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="Extension Kit">
+<meta itemprop="name" content="KiCad">
 <meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Extension Kit"/>
+<meta name="twitter:title" content="KiCad"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -448,10 +448,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">サンプルデザイン</a>
+    <a  href="/docs/examples/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">サンプルデザイン</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsexamples">
+    <li class="collapse " id="docsexamples">
       
       
       
@@ -649,10 +649,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/extension/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Extension Kit</a>
+    <a  href="/docs/examples/extension/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Extension Kit</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsexamplesextension">
+    <li class="collapse " id="docsexamplesextension">
       
       
       
@@ -1736,10 +1736,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/pcb/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">自作リーフ開発</a>
+    <a  href="/docs/pcb/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">自作リーフ開発</a>
   </li>
   <ul>
-    <li class="collapse " id="docspcb">
+    <li class="collapse show" id="docspcb">
       
       
       
@@ -1753,10 +1753,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/pcb/kicad/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">KiCad</a>
+    <a  href="/docs/pcb/kicad/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">KiCad</a>
   </li>
   <ul>
-    <li class="collapse " id="docspcbkicad">
+    <li class="collapse show" id="docspcbkicad">
       
       
       
@@ -1819,6 +1819,19 @@
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#概要">概要</a></li>
+    <li><a href="#テンプレート">テンプレート</a></li>
+    <li><a href="#開発環境">開発環境</a></li>
+    <li><a href="#使い方">使い方</a>
+      <ul>
+        <li><a href="#新規プロジェクトを作成">新規プロジェクトを作成</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -1847,14 +1860,14 @@
 
 
 <li class="breadcrumb-item" >
-	<a href="/docs/examples/">サンプルデザイン</a>
+	<a href="/docs/pcb/">自作リーフ開発</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="/docs/examples/extension/">Extension Kit</a>
+	<a href="/docs/pcb/kicad/">KiCad</a>
 </li>
 
 	</ol>
@@ -1862,22 +1875,35 @@
 
             
 <div class="td-content">
-	<h1>Extension Kit</h1>
+	<h1>KiCad</h1>
 	
-	<h2 id="extension-kit">Extension Kit</h2>
-<p>Basic KitとExtension Kitと組み合わせて遊べるサンプル</p>
+	<h2 id="概要">概要</h2>
+<p>KiCad向けLeafonyテンプレートプロジェクトを使うとリーフの設計を簡単に行えます。<br>
+テンプレートには下記の項目が設定がされています。</p>
 <ul>
-<li><a href="./speaker">スピーカ</a></li>
-<li><a href="./ir_sensor">人感センサ</a></li>
-<li><a href="./sound_level">サウンドレベルメータ</a></li>
-<li><a href="./lcd">LCD ディスプレイ</a></li>
-<li><a href="./rtc">リアルタイムクロック</a></li>
-<li><a href="./microsd">MicroSDカード</a></li>
+<li>2cm x 2cm リーフの外形</li>
+<li>Leafony bus フットプリント</li>
+<li>デザインルール</li>
 </ul>
+<p><img src="./brd.png" width="250"></img></p>
+<h2 id="テンプレート">テンプレート</h2>
+<p>下記のリンクからテンプレートプロジェクトがダウンロードできます。</p>
+<p><a href="https://github.com/Leafony/cad-template">GitHub - Leafony/cad-template</a></p>
+<h2 id="開発環境">開発環境</h2>
+<ul>
+<li><a href="https://kicad-pcb.org/">KiCad</a> 5.0.0 or later</li>
+</ul>
+<h2 id="使い方">使い方</h2>
+<h3 id="新規プロジェクトを作成">新規プロジェクトを作成</h3>
+<ol>
+<li>KiCadを起動</li>
+<li><code>File -&gt; New -&gt; Project -&gt; from Template</code></li>
+<li><code>Browse</code>をクリックし、ダウンロードしたテンプレートフォルダを選択</li>
+</ol>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 23, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 28, 2020
 </div>
 </div>
 
