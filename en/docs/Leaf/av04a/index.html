@@ -35,8 +35,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.dbe0611ae2965f099225ad09e7eef8cf6c98f272a1d7fa37d63d8e5d89a2b3b4.css" as="style">
-<link href="/scss/main.min.dbe0611ae2965f099225ad09e7eef8cf6c98f272a1d7fa37d63d8e5d89a2b3b4.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.a99b4cc5a332ea8037d795ea27873fd388d815489e2d5bbea382b733fa907b77.css" as="style">
+<link href="/scss/main.min.a99b4cc5a332ea8037d795ea27873fd388d815489e2d5bbea382b733fa907b77.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -115,7 +115,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.864440112a9f50ceb00b6d62e1a8cd1361aad9de1d051e5c90b4a3fbf6de16d03f990a57213f973a1a97a828da37d9476c985915b73b026dff8d19e94d3b99a9.json"
+  data-offline-search-index-json-src="/offline-search-index.3f18dee62bfffbf3463116390032742ebf823fff078aa230ce7221bac6ca23de343dd8c9372ce227bbd754d8dddb7346045c79c6e4c68a0aaa7949cf6effa13b.json"
   data-offline-search-base-href="/"
 >
 
@@ -145,7 +145,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.864440112a9f50ceb00b6d62e1a8cd1361aad9de1d051e5c90b4a3fbf6de16d03f990a57213f973a1a97a828da37d9476c985915b73b026dff8d19e94d3b99a9.json"
+  data-offline-search-index-json-src="/offline-search-index.3f18dee62bfffbf3463116390032742ebf823fff078aa230ce7221bac6ca23de343dd8c9372ce227bbd754d8dddb7346045c79c6e4c68a0aaa7949cf6effa13b.json"
   data-offline-search-base-href="/"
 >
 
@@ -430,12 +430,6 @@
   <ul>
     <li class="collapse " id="endocsleafac03a">
       
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsleafac03a_index-2" href="/en/docs/leaf/ac03a/_index-2/">LoRa Easy</a>
       
       
     </li>
@@ -783,12 +777,6 @@
       
       
       
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-endocsleafax05a_index_2" href="/en/docs/leaf/ax05a/_index_2/">I Meas</a>
-      
-      
     </li>
   </ul>
 </ul>
@@ -1058,7 +1046,12 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#features">Features</a></li>
-    <li><a href="#specification">Specification　</a></li>
+    <li><a href="#specification">Specification　</a>
+      <ul>
+        <li><a href="#power-supply">Power supply</a></li>
+        <li><a href="#ad-converter">AD Converter</a></li>
+      </ul>
+    </li>
     <li><a href="#block-diagram">Block diagram</a></li>
     <li><a href="#pinassign">Pinassign</a></li>
     <li><a href="#sample-project">Sample Project</a></li>
@@ -1117,6 +1110,7 @@
 <h2 id="features">Features</h2>
 <p>A switch to turn on/off the 3.3V is mounted. In addition, an AD converter to monitor the battery voltage is implemented. Two to three dry cell batteries or Li-Po and Li-ION batteries are assumed to be connectable to the SH connector.</p>
 <h2 id="specification">Specification　</h2>
+<h3 id="power-supply">Power supply</h3>
 <table>
 <thead>
 <tr>
@@ -1126,8 +1120,8 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">model number</td>
-<td align="left">ADC081C027CIMK</td>
+<td align="left">Part number</td>
+<td align="left">RP604K331B-TR</td>
 </tr>
 <tr>
 <td align="left">Battery voltage</td>
@@ -1138,16 +1132,32 @@
 <td align="left">3.3V±2%</td>
 </tr>
 <tr>
-<td align="left">Control method</td>
+<td align="left">Controlling method</td>
 <td align="left">PWM/PFM Automatic switching control</td>
 </tr>
 <tr>
 <td align="left">Maximum output current</td>
-<td align="left">300mA (at the time of the buck)</td>
+<td align="left">300mA (when step down)</td>
 </tr>
 <tr>
 <td align="left">Protection circuit</td>
-<td align="left">Overcurrent limit / thermal shutdown</td>
+<td align="left">Over current protection / Thermal shutdown</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h3 id="ad-converter">AD Converter</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Item</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Part number</td>
+<td align="left">ADC081C027CIMK</td>
 </tr>
 <tr>
 <td align="left">Resolution</td>
@@ -1163,10 +1173,12 @@
 </tr>
 <tr>
 <td align="left">Interfaces</td>
-<td align="left">I2C  (Address: 0x50)</td>
+<td align="left">I2C (Address: 0x50)</td>
 </tr>
 </tbody>
 </table>
+<br>
+<br>
 <h2 id="block-diagram">Block diagram</h2>
 <p><a href="./AV04A_block.png"><img src="./AV04A_block.png" width="250"></a></p>
 <h2 id="pinassign">Pinassign</h2>
@@ -1187,7 +1199,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 27.05.2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 03.06.2020
 </div>
 </div>
 

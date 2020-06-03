@@ -13,37 +13,5 @@
       
     
     
-    <item>
-      <title>Docs: AX05A I Meas</title>
-      <link>/en/docs/leaf/ax05a/_index_2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/en/docs/leaf/ax05a/_index_2/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;a href=&#34;./AX05A I Meas._f_large.jpg&#34;&gt;&lt;img src=&#34;./AX05A I Meas._f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AX05A I Meas._b_large.jpg&#34;&gt;&lt;img src=&#34;./AX05A I Meas._b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AX05A I Meas._p_large.jpg&#34;&gt;&lt;img src=&#34;./AX05A I Meas._p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;img src=&#34;./AX05A_block.png&#34; width=&#34;200&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;p&gt;3.3VおよびVBUSの消費電流を測定することが出来るリーフです。 電流測定リーフでは3.3VとVBUSは表面と裏面のパッドが電気的に切り離されているので、下記の各々スルーホールに電流計を接続することで、電池リーフから遠い部分にある単体リーフあるいは複数リーフ群の全電源電流を測定出来ます。下の例では、センサーリーフとBLEリーフが電流測定リーフを介して、電池リーフの遠い側に配置されているので、両リーフの合計電流が測定出来ます。&lt;/p&gt;
-&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;仕様書 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AX05A_I_Meas/AX05A_I_Meas_SpecSheet_JA..pdf&#34;&gt;&lt;i class=&#34;fas fa-globe-americas ml-2 &#34;&gt;&lt;/i&gt; 日本語&lt;/a&gt; / &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AX05A_I_Meas/AX05A_I_Meas_SpecSheet_EN..pdf&#34;&gt;&lt;i class=&#34;fas fa-globe-americas ml-2 &#34;&gt;&lt;/i&gt; English&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;回路図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AX05A_I_Meas/AX05A_I_Meas._Schematic.pdf&#34;&gt;&lt;i class=&#34;fas fa-file-pdf ml-2 &#34;&gt;&lt;/i&gt; Rev.A&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;部品配置図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AX05A_I_Meas/AX05A_I_Meas._ComponentMarking.pdf&#34;&gt;&lt;i class=&#34;fas fa-file-pdf ml-2 &#34;&gt;&lt;/i&gt; Rev.A&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;レイアウト図 &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AX05A_I_Meas/AX05A_I_Meas._PCBLayout.zip&#34;&gt;&lt;i class=&#34;fas fa-file-archive ml-2&#34;&gt;&lt;/i&gt; Zuken&lt;/a&gt; / &lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AX05A_I_Meas/AX05A_I_Meas_PCBLayout_dxf.zip&#34;&gt;&lt;i class=&#34;fas fa-file-archive ml-2&#34;&gt;&lt;/i&gt; dxf&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
-&lt;img src=&#34;./AX05A_pinassign.png&#34; width=&#34;600&#34;&gt;
-&lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;/docs/examples/blink&#34;&gt;LED点滅&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
   </channel>
 </rss>
