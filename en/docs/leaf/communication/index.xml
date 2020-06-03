@@ -1,0 +1,198 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leafony – 通信</title>
+    <link>/en/docs/leaf/communication/</link>
+    <description>Recent content in 通信 on Leafony</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/en/docs/leaf/communication/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: AC03A LoRa Easy</title>
+      <link>/en/docs/leaf/communication/ac03a/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/docs/leaf/communication/ac03a/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./AC03A_f_large.jpg&#34;&gt;&lt;img src=&#34;./AC03A_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AC03A_b_large.jpg&#34;&gt;&lt;img src=&#34;./AC03A_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AC03A_p_large.jpg&#34;&gt;&lt;img src=&#34;./AC03A_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;EASELの技的認証済みLoRaモジュールES920LRA1を搭載したリーフです。MCUリーフとはUARTで接続されます。&lt;/p&gt;
+&lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Item&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Part Number&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ES920LRA1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;SoC&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;MKL16Z128 (ARM Cortex-M0+)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;RF Transceiver&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;SX1276 (SEMTECH)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Frequency range&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;920.6～928.0MHz&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Transmission speed&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;146bps～22kbps&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;RX sensitivity&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;-118～-142dBm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;TX power&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Max 13dBm（20mW)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;RF certification&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;TELEC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Approximate communication distance (wire antenna)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Prospect 5km&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Flash&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;128KB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;RAM&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;32KB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Interfaces&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;UART&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./AC03A_block.png&#34;&gt;&lt;img src=&#34;./AC03A_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;img src=&#34;./AC03A_pinassign.png&#34; width=&#34;600&#34;&gt;
+&lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/examples/blink&#34;&gt;LED点滅&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: AC02A BLE Sugar</title>
+      <link>/en/docs/leaf/communication/ac02a/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/en/docs/leaf/communication/ac02a/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./AC02A_f_large.jpg&#34;&gt;&lt;img src=&#34;./AC02A_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AC02A_b_large.jpg&#34;&gt;&lt;img src=&#34;./AC02A_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./AC02A_p_large.jpg&#34;&gt;&lt;img src=&#34;./AC02A_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;Silicon Labsの技的認証済みBLEモジュールBGM11S22F256GA-V2を搭載したリーフです。MCUリーフとはUARTで接続されます。無線の認証は、CE、FCC、ISED Canada、TELEC、KC South-Korea、NCC Taiwanを取得（SLICON LABS Module Data Sheet　Revision 1.2)。&lt;/p&gt;
+&lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Item　　　　　　　&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Part number&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;BGM11S22F256GA-V2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;SoC&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;EFR32BG1 (ARM Cortex-M4)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Bluetooth version&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Frequency range&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2400M ~ 2483.5MHz&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;RX sensitivity&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;-90 dBm @ 1 Mbit/s GFSK&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;TX power&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;+8dBm以下&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;RF certification&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;CE, full FCC, ISED Canada, Japan and South-Korea&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Flash&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;256KB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;RAM&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;32KB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Interfaces&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;UART&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./AC02A_block.png&#34;&gt;&lt;img src=&#34;./AC02A_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./AC02A_pinassign.png&#34;&gt;&lt;img src=&#34;./AC02A_pinassign.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/docs/examples/blink&#34;&gt;Web Bluetooth を使ってセンサの値を表示&lt;/a&gt; 　※リンク先要変更&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h2&gt;
+&lt;p&gt;ライブラリは、予め&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/#1-%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA&#34;&gt;ここから&lt;/a&gt;インストールしておきましょう。 &lt;br&gt;
+関数は、仕様書に記載していますので、必要に応じて、確認してください。&lt;/p&gt;
+&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC02A_BLE_Sugar/AC02A_BLE_Sugar_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC02A_BLE_Sugar/AC02A_BLE_Sugar_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC02A_BLE_Sugar/AC02A_BLE_Sugar_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC02A_BLE_Sugar/AC02A_BLE_Sugar_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC02A_BLE_Sugar/AC02A_BLE_Sugar_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
