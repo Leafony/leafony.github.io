@@ -107,7 +107,7 @@
 &lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./AZ01A_block.png&#34;&gt;&lt;img src=&#34;./AZ01A_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AZ01A_pinassign.jpg&#34;&gt;&lt;img src=&#34;./AZ01A_pinassign.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./AZ01A_pinassign.jpg&#34;&gt;&lt;img src=&#34;./AZ01A_pinassign.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ01A_USB/AZ01A_USB_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
@@ -139,7 +139,7 @@
     </item>
     
     <item>
-      <title>Docs: AZ02A RTC&amp;MicroSD</title>
+      <title>Docs: AZ02A RTC&amp;microSD</title>
       <link>/docs/leaf/others/az02a/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -151,7 +151,7 @@
 &lt;a href=&#34;./AZ02A_b_large.jpg&#34;&gt;&lt;img src=&#34;./AZ02A_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
 &lt;a href=&#34;./AZ02A_p_large.jpg&#34;&gt;&lt;img src=&#34;./AZ02A_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;p&gt;NXPのReal-Time Clock PCF8523TKおよびMicro SDカードスロットを搭載したリーフです。RTCはアラームやタイマによりMCUに割り込み信号を出力することが可能です。micro SDカードはSPIでアクセスします。&lt;/p&gt;
+&lt;p&gt;NXPのReal-Time Clock PCF8523TKおよびmicro SDカードスロットを搭載したリーフです。RTCはアラームやタイマによりMCUに割り込み信号を出力することが可能です。micro SDカードはSPIでアクセスします。&lt;/p&gt;
 &lt;h2 id=&#34;性能&#34;&gt;性能　&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -238,6 +238,22 @@
         
         &lt;p&gt;&lt;a href=&#34;./AZ64A_large.jpg&#34;&gt;&lt;img src=&#34;./AZ64A_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;外形図&#34;&gt;外形図&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./AZ64A_Outline.png&#34;&gt;&lt;img src=&#34;./AZ64A_Outline.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: AZ66A Basic kit case</title>
+      <link>/docs/leaf/others/az66a/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/leaf/others/az66a/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./AZ66A_large.jpg&#34;&gt;&lt;img src=&#34;./AZ66A_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;外形図--修正&#34;&gt;外形図  ※修正？&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./AZ64A_Outline.png&#34;&gt;&lt;img src=&#34;./AZ64A_Outline.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
       </description>
