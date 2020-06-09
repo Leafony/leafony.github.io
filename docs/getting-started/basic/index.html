@@ -21,17 +21,17 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Basic Kit A1.0 | Leafony</title><meta property="og:title" content="Basic Kit A1.0" />
-<meta property="og:description" content="Leafonyとスマホでセンシングをしてみよう
+<title>Basic Kit スタートガイド | Leafony</title><meta property="og:title" content="Basic Kit スタートガイド" />
+<meta property="og:description" content="Leafonyで環境センシングを始めよう！
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="/docs/getting-started/basic/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="Basic Kit A1.0">
-<meta itemprop="description" content="Leafonyとスマホでセンシングをしてみよう
+<meta itemprop="name" content="Basic Kit スタートガイド">
+<meta itemprop="description" content="Leafonyで環境センシングを始めよう！
 "><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Basic Kit A1.0"/>
-<meta name="twitter:description" content="Leafonyとスマホでセンシングをしてみよう
+<meta name="twitter:title" content="Basic Kit スタートガイド"/>
+<meta name="twitter:description" content="Leafonyで環境センシングを始めよう！
 "/>
 
 
@@ -131,7 +131,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.2900cb260edbbcd3edbd59ce39445e146bf6c86de7e77194b17d255b302cf5120f0a462ca7d9da64ef2da9e55d614f78ccaa9d1244b3850114a8d57df723f7fe.json"
+  data-offline-search-index-json-src="/offline-search-index.f6809163923d8013d0c44226bc33cebefd52ba627c24e6d1fce68e7fb5ec8c6124e8e0f462ac6a78e0ab1e5f9e5deb11b9df126fbfeba0b28af82168e6a5a097.json"
   data-offline-search-base-href="/"
 >
 
@@ -161,7 +161,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.2900cb260edbbcd3edbd59ce39445e146bf6c86de7e77194b17d255b302cf5120f0a462ca7d9da64ef2da9e55d614f78ccaa9d1244b3850114a8d57df723f7fe.json"
+  data-offline-search-index-json-src="/offline-search-index.f6809163923d8013d0c44226bc33cebefd52ba627c24e6d1fce68e7fb5ec8c6124e8e0f462ac6a78e0ab1e5f9e5deb11b9df126fbfeba0b28af82168e6a5a097.json"
   data-offline-search-base-href="/"
 >
 
@@ -412,7 +412,7 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/getting-started/basic/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Basic Kit A1.0</a>
+    <a  href="/docs/getting-started/basic/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Basic Kit</a>
   </li>
   <ul>
     <li class="collapse show" id="docsgetting-startedbasic">
@@ -1952,8 +1952,15 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#androidmac-oswindowsの場合">Android/Mac OS/Windowsの場合</a></li>
-    <li><a href="#iphoneipadの場合">iPhone/iPadの場合</a></li>
+    <li><a href="#用意するもの">用意するもの</a></li>
+    <li><a href="#デモ動画">デモ動画</a></li>
+    <li><a href="#使い方">使い方</a></li>
+    <li><a href="#androidの場合">Androidの場合</a></li>
+    <li><a href="#iphoneまたはipadの場合">iPhoneまたはiPadの場合</a></li>
+    <li><a href="#windowsまたはmacosの場合">WindowsまたはmacOSの場合</a></li>
+    <li><a href="#linuxの場合">Linuxの場合</a></li>
+    <li><a href="#chrome-osの場合">Chrome OSの場合</a></li>
+    <li><a href="#サンプルアプリのソースコード">サンプルアプリのソースコード</a></li>
   </ul>
 </nav>
 
@@ -1992,7 +1999,7 @@ if (!doNotTrack) {
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="/docs/getting-started/basic/">Basic Kit A1.0</a>
+	<a href="/docs/getting-started/basic/">Basic Kit</a>
 </li>
 
 	</ol>
@@ -2000,43 +2007,160 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>Basic Kit A1.0</h1>
-	<div class="lead">Leafonyとスマホでセンシングをしてみよう</div>
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/XC8G1dTXSR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<br>
-<br>
-<ul>
-<li>Basic Kit A1.0は、スマートフォンやパソコンに、Bluetoothを使って温度、湿度、照度、傾きセンサの値を送信し、簡単に表示できます。</li>
-<li>スマートフォンやパソコンにセンサの値を表示させるには、ソフトウェア（Web Bluetooth）が必要です。</li>
-<li>Web Bluetooth は、Android、Mac、WindowsのGoogle Chrome に対応しており、OSによって対応バージョンが異なります。詳細は、<a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/gh-pages/implementation-status.md">Implementation Status</a>を参照願います。</li>
-<li>iPhoneの場合は、アプリ（有償）をダウンロードすれば、使えます。まずは、iPhoneの例の動画をご覧ください。</li>
-</ul>
+	<h1>Basic Kit スタートガイド</h1>
+	<div class="lead">Leafonyで環境センシングを始めよう！</div>
+	<p><strong>Leafony Basic Kit</strong>には、温湿度、照度、加速度センサを搭載した4-Sensorsリーフと、AVR MCUリーフ、Bluetooth LEリーフ、CR2032コイン電池リーフを組み合わせた、2cm立方のIoTデバイスが入っています。</p>
+<p>Bluetoothを使ってスマートフォンやパソコンにセンサの情報を送信したり、Leafonyに搭載されたLEDをコントロールすることが簡単にできます。</p>
+<p>Basic Kitに含まれるLeafonyには、箱を開けたらすぐに使えるサンプルアプリが書き込まれています。</p>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">Note</h4>
+WebBluetoothを使ったWebアプリで、Bluetooth接続もプラットフォームを問わずインストール不要で動作します。
+</div>
+
 <p><img src="Ble2-300x281.png" alt="Ble2-300x281.png"></p>
-<h2 id="androidmac-oswindowsの場合">Android/Mac OS/Windowsの場合</h2>
+<h2 id="用意するもの">用意するもの</h2>
 <ul>
-<li>Android 6.0 Marshmallow 以降、OS X Yosemite 以降、Windows 10 version 1703以降 でなければ、動作しません。端末のバージョンを確認してください。</li>
-<li>Google Chromeウェブブラウザを立ち上げます。MacやWindowsの端末で、Chromeが無い場合は、インストールしてください。</li>
-<li>Windowsの場合、Chromeのアドレスバーにchrome://flags/#enable-experimental-web-platform-features を入力し、enterを押し、Experimental Web Platform featuresでEnableを選択します。Android、Macの端末の場合は不要です。</li>
-<li>次に、下記のリンクにアクセスするとアプリが立ち上がります。
-<a href="https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html">https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html</a></li>
-<li>Basic Kitの電池リーフに付属のコイン電池を入れて、電池リーフのスイッチをオンにします。
-「Connect」 ボタンを押して「Leaf_A_xxxxx..」を選択後、「ペア設定」ボタンを押します。画面にセンサの値が表示されます。</li>
+<li>Leafony Basic Kit</li>
+<li>Windows<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>、 Mac<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>、 Linux<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>、 Chrome OSのPCまたは<br>Android<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>、 iPhone<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>、 iPad<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>のスマートフォンまたはタブレット</li>
+<li>Google Chrome (バージョン70.0.3526.0以降)</li>
 </ul>
-<p><img src="CR2032_switch.png" alt=""></p>
-<h2 id="iphoneipadの場合">iPhone/iPadの場合</h2>
+<h2 id="デモ動画">デモ動画</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XC8G1dTXSR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+<br>
+<h2 id="使い方">使い方</h2>
 <ul>
-<li>App Storeから<a href="https://apps.apple.com/us/app/webble/id1193531073">WebBLE</a> (有償)をダウンロードします。</li>
-<li>WebBLEを立ち上げ、一番上にあるアドレスバーに以下のURLを貼り付けてください。
-<a href="https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html">https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html</a></li>
-<li>WebBLEの「Connect」 ボタンを押して「Leaf_A_xxxxx..」を選択後、「Done」ボタンを押します。画面にセンサの値が表示されます。</li>
-<li>画面上に「Download CSV 」のボタンはありますが、iPhoneでは使用できません。</li>
+<li><a href="#android%E3%81%AE%E5%A0%B4%E5%90%88">Androidの場合</a></li>
+<li><a href="#iphone%E3%81%BE%E3%81%9F%E3%81%AFipad%E3%81%AE%E5%A0%B4%E5%90%88">iPhoneまたはiPadの場合</a></li>
+<li><a href="#windows%E3%81%BE%E3%81%9F%E3%81%AFmacos%E3%81%AE%E5%A0%B4%E5%90%88">WindowsまたはmacOSの場合</a></li>
+<li><a href="#linux%E3%81%AE%E5%A0%B4%E5%90%88">Linuxの場合</a></li>
+<li><a href="#chrome-os%E3%81%AE%E5%A0%B4%E5%90%88">Chrome OSの場合</a></li>
 </ul>
-<p><strong>重要：クイックスタートのプログラム等を詳しく知りたい方へは、Web Bluetoothを使ってセンサの値を表示　を参照してください。</strong></p>
-<p><img src="CR2032_switch.png" alt=""></p>
+<h2 id="androidの場合">Androidの場合</h2>
+<ol>
+<li>Basic Kitに電池を挿入し、電源スイッチをONにする</li>
+</ol>
+<br>
+<p><img src="CR2032_switch.png" alt="Leaf SW"></p>
+<br>
+<ol start="2">
+<li>Google Chromeを開く</li>
+<li><a href="https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html">サンプルWebアプリのページ</a>を開く</li>
+<li>Webアプリの<code>Connect</code>ボタンを押して、<code>Leaf_A_&lt;任意の番号&gt;」</code>を選択し、<code>ペア設定</code>ボタンを押す</li>
+<li>接続完了</li>
+<li>サンプルアプリのソースコードは<a href="#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">こちら</a></li>
+</ol>
+<br>
+<p><img src="basic_android.jpg" alt="basic_android"></p>
+<br>
+<h2 id="iphoneまたはipadの場合">iPhoneまたはiPadの場合</h2>
+<ol>
+<li>Basic Kitに電池を挿入し、電源スイッチをONにする</li>
+</ol>
+<br>
+<p><img src="CR2032_switch.png" alt="Leaf SW"></p>
+<br>
+<ol start="2">
+<li>App Storeから<a href="https://apps.apple.com/us/app/webble/id1193531073">WebBLE</a> (有償)をダウンロード<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></li>
+<li>WebBLEを立ち上げ、下記のURLにアクセス<br>
+<a href="https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html">https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html</a></li>
+<li>Webアプリの<code>Connect</code>ボタンを押して、<code>Leaf_A_&lt;任意の番号&gt;」</code>を選択し、<code>ペア設定</code>ボタンを押す</li>
+</ol>
+<br>
+<p><img src="basic_android.jpg" alt="basic_android"></p>
+<br>
+<p>注) 画面上に「Download CSV 」のボタンはありますが、iPhoneでは使用できません。</p>
+<h2 id="windowsまたはmacosの場合">WindowsまたはmacOSの場合</h2>
+<ol>
+<li>Basic Kitに電池を挿入し、電源スイッチをONにする</li>
+</ol>
+<br>
+<p><img src="CR2032_switch.png" alt="Leaf SW"></p>
+<br>
+<ol start="2">
+<li>Google Chromeを開く</li>
+<li><a href="https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html">サンプルWebアプリのページ</a>を開く</li>
+<li>Webアプリの<code>Connect</code>ボタンを押して、<code>Leaf_A_&lt;任意の番号&gt;」</code>を選択し、<code>ペア設定</code>ボタンを押す</li>
+<li>接続完了</li>
+<li>サンプルアプリのソースコードは<a href="#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">こちら</a></li>
+</ol>
+<br>
+<p><img src="basic_android.jpg" alt="basic_android"></p>
+<br>
+<p>注) Chromeがバージョン79未満の場合、標準でWeb Bluetoothが有効になっていません。
+Chromeのアドレスバーに次のURLを入力し、<code>Experimental Web Platform features</code>を<code>Enable</code>にしてください。<br>
+<code>chrome://flags/#enable-experimental-web-platform-features</code></p>
+<h2 id="linuxの場合">Linuxの場合</h2>
+<ol>
+<li>
+<p>Linux上でWebBluetoothを有効にするために、下記の記事を参考に環境を設定してください。<br>
+<a href="https://acassis.wordpress.com/2016/06/28/how-to-get-chrome-web-bluetooth-working-on-linux/">How to get Chrome Web Bluetooth working on Linux</a></p>
+</li>
+<li>
+<p>Basic Kitに電池を挿入し、電源スイッチをONにする</p>
+</li>
+</ol>
+<br>
+<p><img src="CR2032_switch.png" alt="Leaf SW"></p>
+<br>
+<ol start="3">
+<li>Google Chromeを開く</li>
+<li><a href="https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html">サンプルWebアプリのページ</a>を開く</li>
+<li>Webアプリの<code>Connect</code>ボタンを押して、<code>Leaf_A_&lt;任意の番号&gt;」</code>を選択し、<code>ペア設定</code>ボタンを押す</li>
+<li>接続完了</li>
+<li>サンプルアプリのソースコードは<a href="#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">こちら</a></li>
+</ol>
+<br>
+<p><img src="basic_android.jpg" alt="basic_android"></p>
+<br>
+<h2 id="chrome-osの場合">Chrome OSの場合</h2>
+<ol>
+<li>Basic Kitに電池を挿入し、電源スイッチをONにする</li>
+</ol>
+<br>
+<p><img src="CR2032_switch.png" alt="Leaf SW"></p>
+<br>
+<ol start="2">
+<li>Google Chromeを開く</li>
+<li><a href="https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html">サンプルWebアプリのページ</a>を開く</li>
+<li>Webアプリの<code>Connect</code>ボタンを押して、<code>Leaf_A_&lt;任意の番号&gt;」</code>を選択し、<code>ペア設定</code>ボタンを押す</li>
+<li>接続完了</li>
+<li>サンプルアプリのソースコードは<a href="#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">こちら</a></li>
+</ol>
+<br>
+<p><img src="basic_android.jpg" alt="basic_android"></p>
+<br>
+<h2 id="サンプルアプリのソースコード">サンプルアプリのソースコード</h2>
+<ul>
+<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE">Arduino スケッチ</a></li>
+<li><a href="https://github.com/Leafony/WebBluetooth_for_Leafony_app">Web Bluetooth アプリ</a></li>
+</ul>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Windows 10 version 1703以降 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>OS X Yosemite以降 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Kernel 3.19+ and BlueZ 5.41+ installed. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>Android 6.0 Marshmallow以降 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p>iPhoneまたはiPadの場合は <a href="https://itunes.apple.com/us/app/webble/id1193531073">WebBLE</a>(有料)が必要です。iPhone、iPad版のChromeではWeb Bluetoothが実装されていないためです。 <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 28, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 10, 2020
 </div>
 </div>
 
