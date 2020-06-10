@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Leafony – Basic Kit</title>
-    <link>/docs/examples/basic/</link>
+    <link>https://docs.leafony.com/docs/examples/basic/</link>
     <description>Recent content in Basic Kit on Leafony</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="/docs/examples/basic/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://docs.leafony.com/docs/examples/basic/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: LED点滅</title>
-      <link>/docs/examples/basic/blink/</link>
+      <link>https://docs.leafony.com/docs/examples/basic/blink/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/examples/basic/blink/</guid>
+      <guid>https://docs.leafony.com/docs/examples/basic/blink/</guid>
       <description>
         
         
@@ -100,10 +100,10 @@
     
     <item>
       <title>Docs: バッテリ残量</title>
-      <link>/docs/examples/basic/read_battery/</link>
+      <link>https://docs.leafony.com/docs/examples/basic/read_battery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/examples/basic/read_battery/</guid>
+      <guid>https://docs.leafony.com/docs/examples/basic/read_battery/</guid>
       <description>
         
         
@@ -209,15 +209,15 @@
     
     <item>
       <title>Docs: 温湿度センサ読み取り</title>
-      <link>/docs/examples/basic/temp_humid_sensors/</link>
+      <link>https://docs.leafony.com/docs/examples/basic/temp_humid_sensors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/examples/basic/temp_humid_sensors/</guid>
+      <guid>https://docs.leafony.com/docs/examples/basic/temp_humid_sensors/</guid>
       <description>
         
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;/docs/leaf/ai01a/&#34;&gt;4-Sensorsリーフ&lt;/a&gt;に搭載された&lt;strong&gt;温湿度センサ&lt;/strong&gt;の値を読み取って、シリアルモニタに表示するサンプルです。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/ai01a/&#34;&gt;4-Sensorsリーフ&lt;/a&gt;に搭載された&lt;strong&gt;温湿度センサ&lt;/strong&gt;の値を読み取って、シリアルモニタに表示するサンプルです。&lt;/p&gt;
 &lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
 &lt;p&gt;以下のリーフを使用します&lt;/p&gt;
 &lt;table&gt;
@@ -272,7 +272,7 @@
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
 &lt;p&gt;4-Sensors リーフを使うためにはライブラリのインストールが必要です。
-まだインストールしていない場合は&lt;a href=&#34;/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください。&lt;/p&gt;
+まだインストールしていない場合は&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//  Thermo-hygrometer
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//
@@ -330,15 +330,15 @@
     
     <item>
       <title>Docs: 照度センサ読み取り</title>
-      <link>/docs/examples/basic/illum_sensor/</link>
+      <link>https://docs.leafony.com/docs/examples/basic/illum_sensor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/examples/basic/illum_sensor/</guid>
+      <guid>https://docs.leafony.com/docs/examples/basic/illum_sensor/</guid>
       <description>
         
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;/docs/leaf/ai01a/&#34;&gt;4-Sensorsリーフ&lt;/a&gt;に搭載された&lt;strong&gt;照度センサ&lt;/strong&gt;の値を読み取って、シリアルモニタに表示するサンプルです。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/ai01a/&#34;&gt;4-Sensorsリーフ&lt;/a&gt;に搭載された&lt;strong&gt;照度センサ&lt;/strong&gt;の値を読み取って、シリアルモニタに表示するサンプルです。&lt;/p&gt;
 &lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
 &lt;p&gt;以下のリーフを使用します&lt;/p&gt;
 &lt;table&gt;
@@ -393,7 +393,7 @@
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
 &lt;p&gt;4-Sensors リーフを使うためにはライブラリのインストールが必要です。
-まだインストールしていない場合は&lt;a href=&#34;/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください&lt;/p&gt;
+まだインストールしていない場合は&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++:illum.ino&#34; data-lang=&#34;c++:illum.ino&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//  Illuminance meter
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//
@@ -457,15 +457,15 @@
     
     <item>
       <title>Docs: 加速度センサ読み取り</title>
-      <link>/docs/examples/basic/accelerometer/</link>
+      <link>https://docs.leafony.com/docs/examples/basic/accelerometer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/examples/basic/accelerometer/</guid>
+      <guid>https://docs.leafony.com/docs/examples/basic/accelerometer/</guid>
       <description>
         
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;/docs/leaf/ai01a/&#34;&gt;4-Sensorsリーフ&lt;/a&gt;に搭載された&lt;strong&gt;加速度センサ&lt;/strong&gt;の値を読み取って、シリアルモニタに表示するサンプルです。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/ai01a/&#34;&gt;4-Sensorsリーフ&lt;/a&gt;に搭載された&lt;strong&gt;加速度センサ&lt;/strong&gt;の値を読み取って、シリアルモニタに表示するサンプルです。&lt;/p&gt;
 &lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
 &lt;p&gt;以下のリーフを使用します&lt;/p&gt;
 &lt;table&gt;
@@ -520,7 +520,7 @@
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
 &lt;p&gt;4-Sensors リーフを使うためにはライブラリのインストールが必要です。
-まだインストールしていない場合は&lt;a href=&#34;/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください。&lt;/p&gt;
+まだインストールしていない場合は&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//  Accelerometer
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//
@@ -569,10 +569,10 @@
     
     <item>
       <title>Docs: Web BluetoothをつかったIoTアプリ入門</title>
-      <link>/docs/examples/basic/webbluetooth_iot/</link>
+      <link>https://docs.leafony.com/docs/examples/basic/webbluetooth_iot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/examples/basic/webbluetooth_iot/</guid>
+      <guid>https://docs.leafony.com/docs/examples/basic/webbluetooth_iot/</guid>
       <description>
         
         
@@ -584,10 +584,10 @@
     
     <item>
       <title>Docs: Google SheetsをつかったIoTサービス入門</title>
-      <link>/docs/examples/basic/google_sheets_iot/</link>
+      <link>https://docs.leafony.com/docs/examples/basic/google_sheets_iot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/examples/basic/google_sheets_iot/</guid>
+      <guid>https://docs.leafony.com/docs/examples/basic/google_sheets_iot/</guid>
       <description>
         
         

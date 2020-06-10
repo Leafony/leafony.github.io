@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Leafony – Extension Kit</title>
-    <link>/docs/examples/extension/</link>
+    <link>https://docs.leafony.com/docs/examples/extension/</link>
     <description>Recent content in Extension Kit on Leafony</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="/docs/examples/extension/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://docs.leafony.com/docs/examples/extension/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,15 +15,15 @@
     
     <item>
       <title>Docs: スピーカ</title>
-      <link>/docs/examples/extension/speaker/</link>
+      <link>https://docs.leafony.com/docs/examples/extension/speaker/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/examples/extension/speaker/</guid>
+      <guid>https://docs.leafony.com/docs/examples/extension/speaker/</guid>
       <description>
         
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;/docs/leaf/io/ai02a/&#34;&gt;SP&amp;amp;PIRリーフ&lt;/a&gt;に搭載された圧電スピーカを使って、メロディーを鳴らしましょう。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai02a/&#34;&gt;SP&amp;amp;PIRリーフ&lt;/a&gt;に搭載された圧電スピーカを使って、メロディーを鳴らしましょう。&lt;/p&gt;
 &lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
 &lt;p&gt;以下のリーフを使用します。&lt;/p&gt;
 &lt;table&gt;
@@ -95,15 +95,15 @@
     
     <item>
       <title>Docs: 人感センサ</title>
-      <link>/docs/examples/extension/ir_sensor/</link>
+      <link>https://docs.leafony.com/docs/examples/extension/ir_sensor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/examples/extension/ir_sensor/</guid>
+      <guid>https://docs.leafony.com/docs/examples/extension/ir_sensor/</guid>
       <description>
         
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;/docs/leaf/io/ai02a/&#34;&gt;SP&amp;amp;PIRリーフ&lt;/a&gt;に搭載された近距離検出用途の赤外線センサIC(AKM AK9754AE)を使って、人が近づいたら音が鳴るシステムを作りましょう。
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai02a/&#34;&gt;SP&amp;amp;PIRリーフ&lt;/a&gt;に搭載された近距離検出用途の赤外線センサIC(AKM AK9754AE)を使って、人が近づいたら音が鳴るシステムを作りましょう。
 磁石付きのLeafonyケースに入れると、玄関などにくっつけて使えます。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./ir_about.png&#34; alt=&#34;ir_about&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
@@ -335,10 +335,10 @@
     
     <item>
       <title>Docs: サウンドレベルメータ</title>
-      <link>/docs/examples/extension/sound_level/</link>
+      <link>https://docs.leafony.com/docs/examples/extension/sound_level/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/examples/extension/sound_level/</guid>
+      <guid>https://docs.leafony.com/docs/examples/extension/sound_level/</guid>
       <description>
         
         
@@ -399,7 +399,7 @@
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
 &lt;p&gt;MIC&amp;amp;VR&amp;amp;LEDリーフを使うためにはライブラリのインストールが必要です。
-まだインストールしていない場合は&lt;a href=&#34;/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください&lt;/p&gt;
+まだインストールしていない場合は&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//  Sound level meter
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//
@@ -558,10 +558,10 @@
     
     <item>
       <title>Docs: LCD</title>
-      <link>/docs/examples/extension/lcd/</link>
+      <link>https://docs.leafony.com/docs/examples/extension/lcd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/examples/extension/lcd/</guid>
+      <guid>https://docs.leafony.com/docs/examples/extension/lcd/</guid>
       <description>
         
         
@@ -1640,10 +1640,10 @@
     
     <item>
       <title>Docs: リアルタイムクロック</title>
-      <link>/docs/examples/extension/rtc/</link>
+      <link>https://docs.leafony.com/docs/examples/extension/rtc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/examples/extension/rtc/</guid>
+      <guid>https://docs.leafony.com/docs/examples/extension/rtc/</guid>
       <description>
         
         
@@ -1746,10 +1746,10 @@
     
     <item>
       <title>Docs: micro SD</title>
-      <link>/docs/examples/extension/microsd/</link>
+      <link>https://docs.leafony.com/docs/examples/extension/microsd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/docs/examples/extension/microsd/</guid>
+      <guid>https://docs.leafony.com/docs/examples/extension/microsd/</guid>
       <description>
         
         
