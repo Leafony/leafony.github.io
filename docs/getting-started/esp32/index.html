@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.72.0" />
+<meta name="generator" content="Hugo 0.70.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -21,17 +21,17 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>ESP32 Wi-Fi Kit A1.0 | Leafony</title><meta property="og:title" content="ESP32 Wi-Fi Kit A1.0" />
-<meta property="og:description" content="人気のESP32マイコンを試してみよう
+<title>ESP32 Wi-Fi Kit スタートガイド | Leafony</title><meta property="og:title" content="ESP32 Wi-Fi Kit スタートガイド" />
+<meta property="og:description" content="Wi-Fi搭載のリーフを使ってみよう
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/getting-started/esp32/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="ESP32 Wi-Fi Kit A1.0">
-<meta itemprop="description" content="人気のESP32マイコンを試してみよう
+<meta itemprop="name" content="ESP32 Wi-Fi Kit スタートガイド">
+<meta itemprop="description" content="Wi-Fi搭載のリーフを使ってみよう
 "><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="ESP32 Wi-Fi Kit A1.0"/>
-<meta name="twitter:description" content="人気のESP32マイコンを試してみよう
+<meta name="twitter:title" content="ESP32 Wi-Fi Kit スタートガイド"/>
+<meta name="twitter:description" content="Wi-Fi搭載のリーフを使ってみよう
 "/>
 
 
@@ -131,7 +131,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89895cfea3118c9bf8c8a38443f1e5282f4e3b23fdba0497f9d069012c594e2426074dcf29d3888cb3f6aed55129030473c5b47677b02ef42d1628e2a8ff9e40.json"
+  data-offline-search-index-json-src="/offline-search-index.5cce3f0f9a35f293593b7138a0d82b79a0dc70cfb0470e37f9e1b61ad4ee0d69df3d619e81d1479a87f4c24d3d71a2373f6fd677937a4f80779c676854ae3390.json"
   data-offline-search-base-href="/"
 >
 
@@ -161,7 +161,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89895cfea3118c9bf8c8a38443f1e5282f4e3b23fdba0497f9d069012c594e2426074dcf29d3888cb3f6aed55129030473c5b47677b02ef42d1628e2a8ff9e40.json"
+  data-offline-search-index-json-src="/offline-search-index.5cce3f0f9a35f293593b7138a0d82b79a0dc70cfb0470e37f9e1b61ad4ee0d69df3d619e81d1479a87f4c24d3d71a2373f6fd677937a4f80779c676854ae3390.json"
   data-offline-search-base-href="/"
 >
 
@@ -1950,6 +1950,14 @@ if (!doNotTrack) {
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#用意するもの">用意するもの</a></li>
+    <li><a href="#使い方">使い方</a></li>
+    <li><a href="#サンプルアプリのソースコード">サンプルアプリのソースコード</a></li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -1993,53 +2001,67 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>ESP32 Wi-Fi Kit A1.0</h1>
-	<div class="lead">人気のESP32マイコンを試してみよう</div>
-	<ul>
-<li>ESP32 Wi-Fi Kit A1.0には、既に組み立てられたハードウェアが入っています。そのままで、スマートフォンやパソコンにWi-Fiを使ってタッチセンサの値を送信し、簡単に表示できます。</li>
-<li>下記SSIDとパスワードでESP32 Wi-Fi Kitとパソコン等を接続します。<br>
-SSID：Leafony_ESP32-AP<br>
-パスワード：password</li>
-<li>ブラウザを起動して、下記URLにアクセスしてください。<br>
-http://192.168.4.1</li>
-<li>29pin headerの7、9、22、24、26、28ピンがタッチセンサに割り当てられております。<br>
-ピンに触れると静電容量が減るため、値が減少します。値が閾値20以下になると”Touch detected”と表示されます。</li>
-<li>24ピンはRTC&amp;microSDと干渉しているため、サンプルスケッチでは非表示にしています。<br>
-検出閾値は、スケッチで変更可能です。以下の写真では、指先で26ピンに触れています。</li>
+	<h1>ESP32 Wi-Fi Kit スタートガイド</h1>
+        <div class="lead">Wi-Fi搭載のリーフを使ってみよう</div>
+	
+	<p>ESP32 Wi-Fi Kit A1.0には、既に組み立てられたハードウェアが入っています。そのままで、スマートフォンやパソコンにWi-Fiを使ってタッチセンサの値を送信し、簡単に表示できます。</p>
+<h2 id="用意するもの">用意するもの</h2>
+<ul>
+<li>ESP32 Wi-Fi Kit</li>
+<li>Wi-Fi機能を搭載したPCまたはスマートフォン・タブレット</li>
+<li>お好みのブラウザ</li>
 </ul>
+<h2 id="使い方">使い方</h2>
+<ol>
+<li>ESP32 Wi-Fi Kitに単4電池3本をセットし、電源スイッチを入れて下さい。</li>
+<li>お使いのPCまたはスマートフォン・タブレット等で周辺のWi-Fiを検索し、下記のSSIDのWi-Fiに接続します。
+<ul>
+<li>SSID: Leafony_ESP32-AP</li>
+<li>Password: password</li>
+</ul>
+</li>
+<li>ブラウザを起動して、下記URLにアクセスしてください。 <br><a href="http://192.168.4.1">http://192.168.4.1</a></li>
+<li>29pin headerの7、9、22、24、26、28ピンがタッチセンサに割り当てられています。<br>
+ピンに触れると静電容量が減るため、値が減少します。値が閾値20以下になると”Touch detected”と表示されます。<br>
+(24ピンはRTC&amp;microSDと干渉しているため、サンプルスケッチでは非表示にしています。検出閾値は、スケッチで変更可能です。以下の写真では、指先で26ピンに触れています。)</li>
+</ol>
 <p><img src="Wi-FiTouch-Sensor-Test_1-300x222.png" alt="Wi-FiTouch-Sensor-Test_1-300x222.png"></p>
-<ul>
+<br>
+<ol start="5">
 <li>26ピンに触れていると、以下のようにブラウザの表示が変化します。　</li>
-</ul>
+</ol>
 <p><img src="Wi-FiTouch-Sensor-Test_2.png" alt="Wi-FiTouch-Sensor-Test_2.png"></p>
-<p><strong>重要：クイックスタートのプログラム等を詳しく知りたい方は、<a href="https://trillion-node.org/example/wi-fi_touch_sensor/">こちら</a>を参照してください。</strong></p>
-<h2 id="より深く理解したい方へ">より深く理解したい方へ</h2>
-<ul>
-<li>
-<p><strong>ESP32 MCUのスケッチを書く方へ</strong><br>
-以下に注意点が纏めてありますので、まずはお読みください。</p>
-<ul>
-<li><a href="https://trillion-node.org/start/esp32-information/">ESP32 MCU ご使用時の注意点</a></li>
-<li><a href="https://garretlab.web.fc2.com/arduino/esp32/">https://garretlab.web.fc2.com/arduino/esp32/</a></li>
-</ul>
-</li>
-<li>
-<p><strong>他のMCUからESP32 MCUのWi-Fiを制御する方へ</strong><br>
-以下に注意点が纏めてありますので、まずはお読みください。</p>
-<ul>
-<li><a href="https://trillion-node.org/start/esp32_at-command/">ESP32 MCUをATコマンドで使用する場合</a></li>
-</ul>
-</li>
-<li>
-<p><strong>ESP32 Wi-Fi Kitを固定したい方へ</strong><br>
-ESP32 Wi-Fi Kitに同梱しているNut Plateの材質は、鉄（めっき処理）にしました。マグネットが、同梱しているので、冷蔵庫に取り付けることが容易にできます。</p>
+<br>
+<ol start="6">
+<li>ESP32 Wi-Fi KitのNut Plate部分にマグネットが付いています。金属の壁などに設置してみましょう。</li>
+</ol>
 <p><img src="magnet_1-225x300.png" alt="magnet_1-225x300.png"></p>
-</li>
+<ol start="7">
+<li>今回つかったサンプルのソースコードは<a href="#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">こちら</a>です。</li>
+</ol>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">次のステップ</h4>
+<a href="/docs/environment/esp32">開発環境設定</a>を読んで、ESP32 Wi-Fi KitにLED点滅スケッチを書き込んでみましょう。
+</div>
+
+<h2 id="サンプルアプリのソースコード">サンプルアプリのソースコード</h2>
+<ul>
+<li><a href="/docs/examples/esp32/wifi_touchsensor/">Arduinoスケッチ</a></li>
 </ul>
+
+        <div class="section-index">
+    
+    
+    
+    
+    
+</div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 10, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 12, 2020
 </div>
 </div>
 

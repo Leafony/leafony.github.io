@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.72.0" />
+<meta name="generator" content="Hugo 0.70.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -21,15 +21,18 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Basic Kit | Leafony</title><meta property="og:title" content="Basic Kit" />
-<meta property="og:description" content="A Leafony Documentation site" />
+<title>Basic Kit 開発環境設定マニュアル | Leafony</title><meta property="og:title" content="Basic Kit 開発環境設定マニュアル" />
+<meta property="og:description" content="Leafonyにプログラムを書き込んでみよう！
+" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/environment/basic/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="Basic Kit">
-<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Basic Kit"/>
-<meta name="twitter:description" content="A Leafony Documentation site"/>
+<meta itemprop="name" content="Basic Kit 開発環境設定マニュアル">
+<meta itemprop="description" content="Leafonyにプログラムを書き込んでみよう！
+"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Basic Kit 開発環境設定マニュアル"/>
+<meta name="twitter:description" content="Leafonyにプログラムを書き込んでみよう！
+"/>
 
 
 <script type="application/javascript">
@@ -128,7 +131,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89895cfea3118c9bf8c8a38443f1e5282f4e3b23fdba0497f9d069012c594e2426074dcf29d3888cb3f6aed55129030473c5b47677b02ef42d1628e2a8ff9e40.json"
+  data-offline-search-index-json-src="/offline-search-index.5cce3f0f9a35f293593b7138a0d82b79a0dc70cfb0470e37f9e1b61ad4ee0d69df3d619e81d1479a87f4c24d3d71a2373f6fd677937a4f80779c676854ae3390.json"
   data-offline-search-base-href="/"
 >
 
@@ -158,7 +161,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89895cfea3118c9bf8c8a38443f1e5282f4e3b23fdba0497f9d069012c594e2426074dcf29d3888cb3f6aed55129030473c5b47677b02ef42d1628e2a8ff9e40.json"
+  data-offline-search-index-json-src="/offline-search-index.5cce3f0f9a35f293593b7138a0d82b79a0dc70cfb0470e37f9e1b61ad4ee0d69df3d619e81d1479a87f4c24d3d71a2373f6fd677937a4f80779c676854ae3390.json"
   data-offline-search-base-href="/"
 >
 
@@ -1949,6 +1952,7 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#用意するもの">用意するもの</a></li>
     <li><a href="#arduino-ideのインストール">Arduino IDEのインストール</a></li>
     <li><a href="#ライブラリのインストール">ライブラリのインストール</a>
       <ul>
@@ -2007,17 +2011,36 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>Basic Kit</h1>
+	<h1>Basic Kit 開発環境設定マニュアル</h1>
+        <div class="lead">Leafonyにプログラムを書き込んでみよう！</div>
 	
-	<p>以下の手順で Leafony Basic Kit 開発環境の設定を行いましょう。</p>
+	<p>Leafonyはプログラムを書き込んで初めて動作します。<br>
+たとえば、<a href="/docs/getting-started/basic/">クイックスタート</a>では、4つのセンサを読み取って、Bluetooth LEでデータを送信するプログラムが書き込まれています。</p>
+<p>これからLeafonyを使い始める皆さんは、Leafonyにどんなことをしてもらいたいのかプログラムに記述して書き込むことで、思い通りの動作をさせることができます。</p>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">Next</h4>
+Leafonyにプログラムを書き込むためにパソコンの設定をしていきましょう！
+</div>
+
+<h2 id="用意するもの">用意するもの</h2>
+<ul>
+<li>Leafony Basic Kit</li>
+<li>PC (Windows または Mac OS X または Linux)</li>
+</ul>
 <h2 id="arduino-ideのインストール">Arduino IDEのインストール</h2>
-<p>Leafonyに書き込むプログラムは、Arduino IDEを使って開発します。</p>
-<p><a href="https://www.arduino.cc/">Arduino ホームページ</a>から「SOFTWARE」→「DOWNLOADS」をクリックし、Arduino IDE インストーラをダウンロードしましょう。</p>
-<p>Windowsの場合は下記の手順でダウンロードできます。</p>
-<hr>
-<img src="./IDE_DL.jpg">
+<p>Arduino IDEは、オープンソースの電子工作向けハードウェアプラットフォームであるArduinoの開発環境です。<br>
+この開発環境では、プログラムを記述したり、Arduino基板にプログラムを書き込んだり、基板から送られてくるデータを表示したりすることができます。<br>
+LeafonyはArduino互換の基板なので、Arduino IDEを使って開発できます。</p>
+<p>早速Arduino IDEをダウンロードしてみましょう。</p>
+<ol>
+<li><a href="https://www.arduino.cc/">Arduino ホームページ</a>から「SOFTWARE」 → 「DOWNLOADS」の順でページを開き、Arduino IDEのダウンロードページに飛ぶ</li>
+<li>「Download the Arduino IDE」と書いてある場所で、使用しているOSにあったインストーラをダウンロード</li>
+<li>ダウンロードしたインストーラを実行して、画面の指示に従ってArduino IDEをインストール</li>
+</ol>
 <h2 id="ライブラリのインストール">ライブラリのインストール</h2>
-<p>一部のリーフを使用するには、追加のライブラリのインストールが必要となる場合があります。
+<p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。<br>
 下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきましょう。</p>
 <h3 id="1-使用するライブラリ">1. 使用するライブラリ</h3>
 <p>Basic Kit、Extension Kitで使用するライブラリは以下の通りです。</p>
@@ -2086,7 +2109,8 @@ if (!doNotTrack) {
 <p>Arduinoを立ち上げ、<code>スケッチ → ライブラリをインクルード → ZIP形式のライブラリをインストール</code>の順に選択して、先程ダウンロードしたZIPファイルを読み込みましょう。</p>
 <p><img src="./IDE_libinclude.png" alt="include"></p>
 <h2 id="leafonyをpcと接続">LeafonyをPCと接続</h2>
-<p>図のようにLeafonyを組み立てて、USBでPCと接続しましょう。</p>
+<p>図のようにLeafonyを組み立てて、USBでPCと接続しましょう。<br>
+Leafonyにプログラムを書き込むためには最低限、AVR MCUリーフとUSBリーフが必要です。</p>
 <img src="./blink_assemble.png">
 <br><br>
 <h2 id="ボード設定">ボード設定</h2>
@@ -2106,12 +2130,27 @@ if (!doNotTrack) {
 <li><code>マイコンボードに書き込む</code>ボタンを押すをLeafonyにプログラムが書き込まれます。</li>
 <li>AP01A AVR MCUに搭載されたLEDが点滅していることが確認できれば完了です。</li>
 </ol>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">次のステップ</h4>
+<a href="/docs/examples">サンプルデザイン</a>にあるコードをLeafonyに書き込んでみましょう。
+</div>
+
 <h2 id="困ったときは">困ったときは</h2>
 <p><a href="../solution">うまく動かないときは</a>で解決方法を探してみましょう。</p>
 
+        <div class="section-index">
+    
+    
+    
+    
+    
+</div>
+
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 10, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 12, 2020
 </div>
 </div>
 
