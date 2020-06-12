@@ -14,7 +14,7 @@
     
     
     <item>
-      <title>Docs: AC03A LoRa Easy</title>
+      <title>Docs: ac03 LoRa Easy</title>
       <link>https://docs.leafony.com/en/docs/leaf/communication/ac03a/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -22,9 +22,9 @@
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./AC03A_f_large.jpg&#34;&gt;&lt;img src=&#34;./AC03A_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AC03A_b_large.jpg&#34;&gt;&lt;img src=&#34;./AC03A_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AC03A_p_large.jpg&#34;&gt;&lt;img src=&#34;./AC03A_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;./ac03_f_large.jpg&#34;&gt;&lt;img src=&#34;./ac03_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ac03_b_large.jpg&#34;&gt;&lt;img src=&#34;./ac03_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ac03_p_large.jpg&#34;&gt;&lt;img src=&#34;./ac03_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;EASELの技的認証済みLoRaモジュールES920LRA1を搭載したリーフです。MCUリーフとはUARTで接続されます。&lt;/p&gt;
 &lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
@@ -87,27 +87,27 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AC03A_block.png&#34;&gt;&lt;img src=&#34;./AC03A_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ac03_block.png&#34;&gt;&lt;img src=&#34;./ac03_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
-&lt;img src=&#34;./AC03A_pinassign.png&#34; width=&#34;600&#34;&gt;
+&lt;img src=&#34;./ac03_pinassign.png&#34; width=&#34;600&#34;&gt;
 &lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/blink&#34;&gt;LED点滅&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC03A_LoRa_Easy/AC03A_LoRa_Easy_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ac03_LoRa_Easy/ac03_LoRa_Easy_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ac03_LoRa_Easy/ac03_LoRa_Easy_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ac03_LoRa_Easy/ac03_LoRa_Easy_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ac03_LoRa_Easy/ac03_LoRa_Easy_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ac03_LoRa_Easy/ac03_LoRa_Easy_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
     </item>
     
     <item>
-      <title>Docs: AC02A BLE Sugar</title>
+      <title>Docs: ac02 BLE Sugar</title>
       <link>https://docs.leafony.com/en/docs/leaf/communication/ac02a/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -115,9 +115,9 @@
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./AC02A_f_large.jpg&#34;&gt;&lt;img src=&#34;./AC02A_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AC02A_b_large.jpg&#34;&gt;&lt;img src=&#34;./AC02A_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AC02A_p_large.jpg&#34;&gt;&lt;img src=&#34;./AC02A_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;./ac02_f_large.jpg&#34;&gt;&lt;img src=&#34;./ac02_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ac02_b_large.jpg&#34;&gt;&lt;img src=&#34;./ac02_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ac02_p_large.jpg&#34;&gt;&lt;img src=&#34;./ac02_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;Silicon Labsの技的認証済みBLEモジュールBGM11S22F256GA-V2を搭載したリーフです。MCUリーフとはUARTで接続されます。無線の認証は、CE、FCC、ISED Canada、TELEC、KC South-Korea、NCC Taiwanを取得（SLICON LABS Module Data Sheet　Revision 1.2)。&lt;/p&gt;
 &lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
@@ -172,9 +172,9 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AC02A_block.png&#34;&gt;&lt;img src=&#34;./AC02A_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ac02_block.png&#34;&gt;&lt;img src=&#34;./ac02_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AC02A_pinassign.png&#34;&gt;&lt;img src=&#34;./AC02A_pinassign.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ac02_pinassign.png&#34;&gt;&lt;img src=&#34;./ac02_pinassign.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/blink&#34;&gt;Web Bluetooth を使ってセンサの値を表示&lt;/a&gt; 　※リンク先要変更&lt;/li&gt;
@@ -184,11 +184,11 @@
 関数は、仕様書に記載していますので、必要に応じて、確認してください。&lt;/p&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC02A_BLE_Sugar/AC02A_BLE_Sugar_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC02A_BLE_Sugar/AC02A_BLE_Sugar_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC02A_BLE_Sugar/AC02A_BLE_Sugar_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC02A_BLE_Sugar/AC02A_BLE_Sugar_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC02A_BLE_Sugar/AC02A_BLE_Sugar_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ac02_BLE_Sugar/ac02_BLE_Sugar_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ac02_BLE_Sugar/ac02_BLE_Sugar_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ac02_BLE_Sugar/ac02_BLE_Sugar_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ac02_BLE_Sugar/ac02_BLE_Sugar_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ac02_BLE_Sugar/ac02_BLE_Sugar_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>

@@ -15,16 +15,16 @@
     
     <item>
       <title>Docs: AI01A 4-Sensors</title>
-      <link>https://docs.leafony.com/docs/leaf/io/ai01a/</link>
+      <link>https://docs.leafony.com/docs/leaf/io/ai01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.leafony.com/docs/leaf/io/ai01a/</guid>
+      <guid>https://docs.leafony.com/docs/leaf/io/ai01/</guid>
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./AI01A_f_large.jpg&#34;&gt;&lt;img src=&#34;./AI01A_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AI01A_b_large.jpg&#34;&gt;&lt;img src=&#34;./AI01A_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AI01A_p_large.jpg&#34;&gt;&lt;img src=&#34;./AI01A_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;./ai01a_f_large.jpg&#34;&gt;&lt;img src=&#34;./ai01a_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ai01a_b_large.jpg&#34;&gt;&lt;img src=&#34;./ai01a_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ai01a_p_large.jpg&#34;&gt;&lt;img src=&#34;./ai01a_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;温湿度センサ、照度センサ、加速度センサを搭載したリーフです。MCUリーフとはI2Cで接続されます。&lt;/p&gt;
 &lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
@@ -129,9 +129,9 @@
 &lt;/table&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AI01A_block.png&#34;&gt;&lt;img src=&#34;./AI01A_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ai01_block.png&#34;&gt;&lt;img src=&#34;./ai01_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AI01A_pinassign.jpg&#34;&gt;&lt;img src=&#34;./AI01A_pinassign.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ai01_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ai01_pinassign.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;サンプルデザイン&#34;&gt;サンプルデザイン&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/basic/temp_humid_sensors&#34;&gt;温湿度センサ読み取り&lt;/a&gt;&lt;/li&gt;
@@ -145,11 +145,11 @@
 &lt;p&gt;表示させたい温度（または、湿度）と４-Sensorsの温度（または、湿度）に、ずれがあるときは、２点間補正を行います。詳しくは、&lt;a href=&#34;https://trillion-node.org/example/correction/&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensor_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensors_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensors_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensors_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI01A_4-Sensors/AI01A_4-Sensors_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai01_4-Sensors/ai01_4-Sensor_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai01_4-Sensors/ai01_4-Sensors_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai01_4-Sensors/ai01_4-Sensors_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai01_4-Sensors/ai01_4-Sensors_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai01_4-Sensors/ai01_4-Sensors_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -157,16 +157,16 @@
     
     <item>
       <title>Docs: AI02A SP&amp;PIR</title>
-      <link>https://docs.leafony.com/docs/leaf/io/ai02a/</link>
+      <link>https://docs.leafony.com/docs/leaf/io/ai02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.leafony.com/docs/leaf/io/ai02a/</guid>
+      <guid>https://docs.leafony.com/docs/leaf/io/ai02/</guid>
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./AI02A_f_large.jpg&#34;&gt;&lt;img src=&#34;./AI02A_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AI02A_b_large.jpg&#34;&gt;&lt;img src=&#34;./AI02A_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AI02A_p_large.jpg&#34;&gt;&lt;img src=&#34;./AI02A_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;./ai02a_f_large.jpg&#34;&gt;&lt;img src=&#34;./ai02a_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ai02a_b_large.jpg&#34;&gt;&lt;img src=&#34;./ai02a_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ai02a_p_large.jpg&#34;&gt;&lt;img src=&#34;./ai02a_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;圧電スピーカと人感センサを搭載したリーフです。圧電スピーカはPWM、人感センサはI2CでMCUリーフと接続されます。人感センサは接近検知アルゴリズムを内蔵しており、簡単な設定で接近を検知することが出来、接近検知時に割り込み信号を出力することが可能です。&lt;/p&gt;
 &lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
@@ -227,23 +227,23 @@
 &lt;/table&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
-&lt;img src=&#34;./AI02A_block.png&#34; width=&#34;250&#34;&gt;
+&lt;img src=&#34;./ai02_block.png&#34; width=&#34;250&#34;&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AI02A_pinassign.jpg&#34;&gt;&lt;img src=&#34;./AI02A_pinassign.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ai02_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ai02_pinassign.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;サンプルデザイン&#34;&gt;サンプルデザイン&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/extension/speaker&#34;&gt;スピーカ&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_Schematic.pdf&#34;&gt;回路図 SP&amp;amp;PIR&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_PIR_Schematic.pdf&#34;&gt;回路図 PIR&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_PCBLayout.zip&#34;&gt;レイアウト図 SP＆PIR (Zuken)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_PIR_PCBLayout.zip&#34;&gt;レイアウト図 PIR (Zuken)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_SP%26PIR_PCBLayout_dxf.zip&#34;&gt;レイアウト図 SP＆PIR (dxf)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI02A_SP%26PIR/AI02A_PIR_PCBLayout_dxf.zip&#34;&gt;レイアウト図 PIR (dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai02_SP%26PIR/ai02_SP%26PIR_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai02_SP%26PIR/ai02_SP%26PIR_Schematic.pdf&#34;&gt;回路図 SP&amp;amp;PIR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai02_SP%26PIR/ai02_PIR_Schematic.pdf&#34;&gt;回路図 PIR&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai02_SP%26PIR/ai02_SP%26PIR_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai02_SP%26PIR/ai02_SP%26PIR_PCBLayout.zip&#34;&gt;レイアウト図 SP＆PIR (Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai02_SP%26PIR/ai02_PIR_PCBLayout.zip&#34;&gt;レイアウト図 PIR (Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai02_SP%26PIR/ai02_SP%26PIR_PCBLayout_dxf.zip&#34;&gt;レイアウト図 SP＆PIR (dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai02_SP%26PIR/ai02_PIR_PCBLayout_dxf.zip&#34;&gt;レイアウト図 PIR (dxf)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -251,17 +251,16 @@
     
     <item>
       <title>Docs: AI03A MIC&amp;VR&amp;LED</title>
-      <link>https://docs.leafony.com/docs/leaf/io/ai03a/</link>
+      <link>https://docs.leafony.com/docs/leaf/io/ai03/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.leafony.com/docs/leaf/io/ai03a/</guid>
+      <guid>https://docs.leafony.com/docs/leaf/io/ai03/</guid>
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./AI03A_f_large.jpg&#34;&gt;&lt;img src=&#34;./AI03A_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AI03A_b_large.jpg&#34;&gt;&lt;img src=&#34;./AI03A_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AI03A_p_large.jpg&#34;&gt;&lt;img src=&#34;./AI03A_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&amp;lt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;./ai03a_f_large.jpg&#34;&gt;&lt;img src=&#34;./ai03a_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ai03a_b_large.jpg&#34;&gt;&lt;img src=&#34;./ai03a_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ai03a_p_large.jpg&#34;&gt;&lt;img src=&#34;./ai03a_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;MEMSマイク、ボリューム、LEDを搭載したリーフです。MEMSマイクとボリュームはアナログ入力ピン、LEDはデジタル出力ピンでMCUリーフと接続されます。低消費電力を実現するのためI2C Expander を制御することにより電源をロードスイッチによりオフすることが可能です。&lt;/p&gt;
 &lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
@@ -374,20 +373,20 @@
 &lt;/table&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AI03A_block.png&#34;&gt;&lt;img src=&#34;./AI03A_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ai03_block.png&#34;&gt;&lt;img src=&#34;./ai03_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AI03A_pinassign.jpg&#34;&gt;&lt;img src=&#34;./AI03A_pinassign.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ai03_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ai03_pinassign.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;サンプルデザイン&#34;&gt;サンプルデザイン&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/extension/sound_level&#34;&gt;サウンドレベルメータ&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI03A_MIC%26VR%26LED/AI03A_MIC%26VR%26LED_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai03_MIC%26VR%26LED/ai03_MIC%26VR%26LED_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai03_MIC%26VR%26LED/ai03_MIC%26VR%26LED_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai03_MIC%26VR%26LED/ai03_MIC%26VR%26LED_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai03_MIC%26VR%26LED/ai03_MIC%26VR%26LED_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai03_MIC%26VR%26LED/ai03_MIC%26VR%26LED_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -395,16 +394,16 @@
     
     <item>
       <title>Docs: AI04A LCD</title>
-      <link>https://docs.leafony.com/docs/leaf/io/ai04a/</link>
+      <link>https://docs.leafony.com/docs/leaf/io/ai04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.leafony.com/docs/leaf/io/ai04a/</guid>
+      <guid>https://docs.leafony.com/docs/leaf/io/ai04/</guid>
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./AI04A_f_large.jpg&#34;&gt;&lt;img src=&#34;./AI04A_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AI04A_b_large.jpg&#34;&gt;&lt;img src=&#34;./AI04A_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AI04A_p_large.jpg&#34;&gt;&lt;img src=&#34;./AI04A_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;./ai04a_f_large.jpg&#34;&gt;&lt;img src=&#34;./ai04a_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ai04a_b_large.jpg&#34;&gt;&lt;img src=&#34;./ai04a_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ai04a_p_large.jpg&#34;&gt;&lt;img src=&#34;./ai04a_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;キャラクタLCDユニットとスイッチ2個を搭載したリーフです。LCDユニットはI2CでMCUリーフと接続されます。スイッチはMCUのデジタル入力ピンとI2C ExpanderのP1ピンに接続されています。 低消費電力化を実現するためI2C Expander を制御することにより電源をロードスイッチによりオフすることが可能です。&lt;/p&gt;
 &lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
@@ -489,9 +488,9 @@
 &lt;/table&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AI01A_block.png&#34;&gt;&lt;img src=&#34;./AI04A_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ai01_block.png&#34;&gt;&lt;img src=&#34;./ai04_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AI04A_pinassign.jpg&#34;&gt;&lt;img src=&#34;./AI04A_pinassign.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ai04_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ai04_pinassign.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;サンプルデザイン&#34;&gt;サンプルデザイン&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/extension/lcd&#34;&gt;LCD ディスプレイ&lt;/a&gt;&lt;/li&gt;
@@ -501,11 +500,11 @@
 関数は、仕様書に記載していますので、必要に応じて、確認してください。&lt;/p&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_%20LCD_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_LCD_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_LCD_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP01A_AVR_MCU/AP01A_AVR_MCU_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI04A_LCD/AI04A_LCD_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai04_LCD/ai04_%20LCD_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai04_LCD/ai04_LCD_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai04_LCD/ai04_LCD_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ap01_AVR_MCU/ap01_AVR_MCU_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai04_LCD/ai04_LCD_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>

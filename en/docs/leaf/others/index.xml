@@ -14,7 +14,7 @@
     
     
     <item>
-      <title>Docs: AZ61A Connector</title>
+      <title>Docs: az61 Connector</title>
       <link>https://docs.leafony.com/en/docs/leaf/others/az61a/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -22,19 +22,19 @@
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./AZ61A_large.jpg&#34;&gt;&lt;img src=&#34;./AZ61A_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;./az61_large.jpg&#34;&gt;&lt;img src=&#34;./az61_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;Leafony Platformは、ACR (Anisotropic Conductive Rubber)を採用しています。ACRは、絶縁性シリコーンゴムに、金属又は導電性エラストマの導電部材が、狭ピッチで配列されており、圧縮されることで電気的接続が実現できます。&lt;/p&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ61A_Connector/AZ61A_Connector_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/az61_Connector/az61_Connector_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
     </item>
     
     <item>
-      <title>Docs: AZ01A USB</title>
+      <title>Docs: az01 USB</title>
       <link>https://docs.leafony.com/en/docs/leaf/others/az01a/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -42,9 +42,9 @@
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./AZ01A_f_large.jpg&#34;&gt;&lt;img src=&#34;./AZ01A_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AZ01A_b_large.jpg&#34;&gt;&lt;img src=&#34;./AZ01A_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AZ01A_p_large.jpg&#34;&gt;&lt;img src=&#34;./AZ01A_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;./az01_f_large.jpg&#34;&gt;&lt;img src=&#34;./az01_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./az01_b_large.jpg&#34;&gt;&lt;img src=&#34;./az01_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./az01_p_large.jpg&#34;&gt;&lt;img src=&#34;./az01_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;AVR MCU へのスケッチ書き込みやシリアルモニタを使用する場合に接続するリーフです。USB-UART変換ICとしてFTDI製FT232RQを搭載しています。USBのVBUS(5V)から降圧電源回路により3.3Vに変換し、各リーフにVBUSと3.3Vを供給します。&lt;/p&gt;
 &lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
@@ -105,23 +105,23 @@
 &lt;/table&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AZ01A_block.png&#34;&gt;&lt;img src=&#34;./AZ01A_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./az01_block.png&#34;&gt;&lt;img src=&#34;./az01_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AZ01A_pinassign.png&#34;&gt;&lt;img src=&#34;./AZ01A_pinassign.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./az01_pinassign.png&#34;&gt;&lt;img src=&#34;./az01_pinassign.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ01A_USB/AZ01A_USB_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ01A_USB/AZ01A_USB_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ01A_USB/AZ01A_USB_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ01A_USB/AZ01A_USB_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ01A_USB/AZ01A_USB_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/az01_USB/az01_USB_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/az01_USB/az01_USB_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/az01_USB/az01_USB_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/az01_USB/az01_USB_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/az01_USB/az01_USB_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
     </item>
     
     <item>
-      <title>Docs: AZ62A Connector Cover</title>
+      <title>Docs: az62 Connector Cover</title>
       <link>https://docs.leafony.com/en/docs/leaf/others/az62a/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -129,17 +129,17 @@
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./AZ62A_large.jpg&#34;&gt;&lt;img src=&#34;./AZ62A_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;./az62_large.jpg&#34;&gt;&lt;img src=&#34;./az62_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;Connector Coverは、ACR (Anisotropic Conductive Rubber)に付着するゴミを防御することが出来ます。&lt;/p&gt;
 &lt;h2 id=&#34;外形図&#34;&gt;外形図&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AZ62A_Outline.png&#34;&gt;&lt;img src=&#34;./AZ62A_Outline.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./az62_Outline.png&#34;&gt;&lt;img src=&#34;./az62_Outline.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
-      <title>Docs: AZ02A RTC&amp;MicroSD</title>
+      <title>Docs: az02 RTC&amp;MicroSD</title>
       <link>https://docs.leafony.com/en/docs/leaf/others/az02a/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -147,9 +147,9 @@
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./AZ02A_f_large.jpg&#34;&gt;&lt;img src=&#34;./AZ02A_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AZ02A_b_large.jpg&#34;&gt;&lt;img src=&#34;./AZ02A_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./AZ02A_p_large.jpg&#34;&gt;&lt;img src=&#34;./AZ02A_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;./az02_f_large.jpg&#34;&gt;&lt;img src=&#34;./az02_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./az02_b_large.jpg&#34;&gt;&lt;img src=&#34;./az02_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./az02_p_large.jpg&#34;&gt;&lt;img src=&#34;./az02_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;NXPのReal-Time Clock PCF8523TKおよびMicro SDカードスロットを搭載したリーフです。RTCはアラームやタイマによりMCUに割り込み信号を出力することが可能です。micro SDカードはSPIでアクセスします。&lt;/p&gt;
 &lt;h2 id=&#34;性能&#34;&gt;性能　&lt;/h2&gt;
@@ -185,9 +185,9 @@
 &lt;/table&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AZ02A_block.png&#34;&gt;&lt;img src=&#34;./AZ02A_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./az02_block.png&#34;&gt;&lt;img src=&#34;./az02_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AZ02A_pinassign.png&#34;&gt;&lt;img src=&#34;./AZ02A_pinassign.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./az02_pinassign.png&#34;&gt;&lt;img src=&#34;./az02_pinassign.png&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;サンプルプロジェクト&#34;&gt;サンプルプロジェクト&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/blink&#34;&gt;時刻をパソコンに表示&lt;/a&gt; ※リンク先要変更&lt;/li&gt;
@@ -199,18 +199,18 @@
 関数は、仕様書に記載していますので、必要に応じて、確認してください。　　&lt;/p&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ02A_RTC%26MicroSD/AZ02A_RTC%26MicroSD_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ02A_RTC%26MicroSD/AZ02A_RTC%EF%BC%86MicroSD_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ02A_RTC%26MicroSD/AZ02A_RTC%26MicroSD_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ02A_RTC%26MicroSD/AZ02A_RTC%26MicroSD_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ02A_RTC%26MicroSD/AZ02_RTC%26MicroSD_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/az02_RTC%26MicroSD/az02_RTC%26MicroSD_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/az02_RTC%26MicroSD/az02_RTC%EF%BC%86MicroSD_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/az02_RTC%26MicroSD/az02_RTC%26MicroSD_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/az02_RTC%26MicroSD/az02_RTC%26MicroSD_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/az02_RTC%26MicroSD/AZ02_RTC%26MicroSD_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
     </item>
     
     <item>
-      <title>Docs: AZ63A Nut Plate</title>
+      <title>Docs: az63 Nut Plate</title>
       <link>https://docs.leafony.com/en/docs/leaf/others/az63a/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -218,17 +218,17 @@
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./AZ63A_large.jpg&#34;&gt;&lt;img src=&#34;./AZ63A_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;./az63_large.jpg&#34;&gt;&lt;img src=&#34;./az63_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;Nut Plateは、リーフをネジで固定する時に使用します。市販の六角ナットを用いると基板の電極に触れて、ショートをおこすことがあるので要注意&lt;/p&gt;
 &lt;h2 id=&#34;外形図&#34;&gt;外形図&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AZ63A_Outline Drawing.png&#34;&gt;&lt;img src=&#34;./AZ63A_Outline Drawing.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./az63_Outline Drawing.png&#34;&gt;&lt;img src=&#34;./az63_Outline Drawing.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
-      <title>Docs: AZ66A Basic Kit Case</title>
+      <title>Docs: az66 Basic Kit Case</title>
       <link>https://docs.leafony.com/en/docs/leaf/others/az64a/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
