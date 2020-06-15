@@ -1,0 +1,2730 @@
+<!doctype html>
+<html lang="jp" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.71.0" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="https://docs.leafony.com/docs/examples/beginner/esp32/wifi_touchsensor/index.xml">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Wi-Fi タッチセンサ | Leafony</title><meta property="og:title" content="Wi-Fi タッチセンサ" />
+<meta property="og:description" content="人が近づいたら音を鳴らそう　※修正お願いします。
+" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.leafony.com/docs/examples/beginner/esp32/wifi_touchsensor/" />
+<meta property="og:site_name" content="Leafony" />
+<meta itemprop="name" content="Wi-Fi タッチセンサ">
+<meta itemprop="description" content="人が近づいたら音を鳴らそう　※修正お願いします。
+"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Wi-Fi タッチセンサ"/>
+<meta name="twitter:description" content="人が近づいたら音を鳴らそう　※修正お願いします。
+"/>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168974589-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.2eeeb234160bc6498799b61d991eac391793067635a900d54a31acd01d175fd0.css" as="style">
+<link href="/scss/main.min.2eeeb234160bc6498799b61d991eac391793067635a900d54a31acd01d175fd0.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo"></span><span class="text-uppercase font-weight-bold">Leafony</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/docs/" ><span class="active">Top</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="https://github.com/leafony" target="_blank" ><span>GitHub</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/shop/" ><span>Shop</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Japanese
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/en/">English</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; サイトを検索..."
+  aria-label="サイトを検索..."
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.08ece7addefba234dde66efbd63b625272c4cde5f7be9467ebda252c7d5c2fc79106d94c24dbea9127be0be0340a855c0745705511956fbc2913c965d3f32c23.json"
+  data-offline-search-base-href="/"
+>
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; サイトを検索..."
+  aria-label="サイトを検索..."
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.08ece7addefba234dde66efbd63b625272c4cde5f7be9467ebda252c7d5c2fc79106d94c24dbea9127be0be0340a855c0745705511956fbc2913c965d3f32c23.json"
+  data-offline-search-base-href="/"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Japanese
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/en/">English</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Top</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docs">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/overview/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">はじめに</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsoverview">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/overview/terms/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">用語の説明</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsoverviewterms">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/products/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">製品一覧</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsproducts">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/products/basic/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsproductsbasic">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/products/extension/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Extension Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsproductsextension">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/products/esp32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 Wi-Fi Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsproductsesp32">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/products/conn/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Connector</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsproductsconn">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/products/nut/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Nut &amp; Conn Cover</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsproductsnut">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/getting-started/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">クイックスタート</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsgetting-started">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/getting-started/basic/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsgetting-startedbasic">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/getting-started/esp32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 Wi-Fi Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsgetting-startedesp32">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">開発環境設定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironment">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/basic/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironmentbasic">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/esp32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 Wi-Fi Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironmentesp32">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/solution/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">うまく動かないときは</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironmentsolution">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">サンプルデザイン</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsexamples">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Beginner</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsexamplesbeginner">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/basic/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerbasic">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/basic/blink/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LED点滅</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerbasicblink">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/basic/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerbasicread_battery">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/basic/temp_humid_sensors/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">温湿度センサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerbasictemp_humid_sensors">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/basic/illum_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">照度センサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerbasicillum_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/basic/accelerometer/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">加速度センサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerbasicaccelerometer">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/basic/webbluetooth_iot/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Web Bluetooth</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerbasicwebbluetooth_iot">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/basic/google_sheets_iot/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Google Sheets</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerbasicgoogle_sheets_iot">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/extension/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Extension Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerextension">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/extension/speaker/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">スピーカ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerextensionspeaker">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/extension/ir_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">人感センサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerextensionir_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/extension/sound_level/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">サウンドレベルメータ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerextensionsound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/extension/lcd/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LCD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerextensionlcd">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/extension/rtc/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">リアルタイムクロック</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerextensionrtc">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/extension/microsd/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">micro SD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerextensionmicrosd">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/esp32/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ESP32</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsexamplesbeginneresp32">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/esp32/wifi_touchsensor/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Wi-Fi タッチセンサ</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsexamplesbeginneresp32wifi_touchsensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Advanced</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsexamplesadvancedbasic_kit" href="/docs/examples/advanced/basic_kit/">センサの値をシリアルモニタに表示</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsexamplesadvancedextension_kit" href="/docs/examples/advanced/extension_kit/"></a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsexamplesadvancedlora" href="/docs/examples/advanced/lora/"></a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/grove/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Grove</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesgrove">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/grove/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesgrovedistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/grove/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesgrovecamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">リーフ技術資料</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleaf">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/leafonybus/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Leafony bus</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafleafonybus">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/processor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">プロセッサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafprocessor">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/processor/ap01/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">AVR MCU</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafprocessorap01">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/processor/ap02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 MCU</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafprocessorap02">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/communication/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">通信</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafcommunication">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/communication/ac03/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LoRa Easy</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafcommunicationac03">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/communication/ac02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">BLE Sugar</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafcommunicationac02">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/io/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">IO</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafio">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/io/ai01/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">4-Sensors</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafioai01">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/io/ai02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">SP&amp;PIR</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafioai02">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/io/ai03/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">MIC&amp;VR&amp;LED</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafioai03">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/io/ai04/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LCD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafioai04">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/power/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">電源</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafpower">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/power/av01/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">CR2032</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafpowerav01">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/power/av02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">CR2450</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafpowerav02">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/power/av03/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">AA BAT</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafpowerav03">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/power/av04/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">2V～4.5V</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafpowerav04">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">拡張</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextension">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax01/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Shield</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax01">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">29 pin</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax02">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax03/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Leaf x2</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax03">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax04/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Spacer</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax04">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax05/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">I Meas</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax05">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax06/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Grove&amp;5V</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax06">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax07/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Back to back</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax07">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax08/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">29pin header</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax08">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">その他</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothers">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az61/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Connector</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz61">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az01/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">USB</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz01">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az62/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Connector Cover</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz62">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">RTC&amp;microSD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz02">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az63/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Nut Plate</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz63">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az64/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic Kit Case</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz64">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az66/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic kit case</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz66">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az65/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Lowercase</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz65">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/pcb/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">自作リーフ開発</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docspcb">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/pcb/kicad/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">KiCad</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docspcbkicad">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/license/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ライセンス・規約</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docslicense">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#概要">概要</a></li>
+    <li><a href="#使用するリーフ">使用するリーフ</a></li>
+    <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
+    <li><a href="#ソースコード">ソースコード</a></li>
+    <li><a href="#表示のやり方">表示のやり方</a></li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://docs.leafony.com/docs/">Top</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://docs.leafony.com/docs/examples/">サンプルデザイン</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://docs.leafony.com/docs/examples/beginner/">Beginner</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://docs.leafony.com/docs/examples/beginner/esp32/">ESP32</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="https://docs.leafony.com/docs/examples/beginner/esp32/wifi_touchsensor/">Wi-Fi タッチセンサ</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Wi-Fi タッチセンサ</h1>
+        <div class="lead">人が近づいたら音を鳴らそう　※修正お願いします。</div>
+	
+	<h2 id="概要">概要</h2>
+<p>工場出荷時に、ESP32 MCUリーフにArduinoのスケッチが書き込まれているので、スマートフォンやパソコンのWi-Fiを使ってタッチセンサの値を送信して、表示がされます。</p>
+<h2 id="使用するリーフ">使用するリーフ</h2>
+<p>以下のリーフを使用します</p>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="/docs/leaf/processor/ap02">AP02</a></td>
+<td align="left"><a href="/docs/leaf/processor/ap02">ESP32 MCU</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/power/av04">AV04</a></td>
+<td align="left"><a href="/docs/leaf/power/av04">2V~4.5V</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/extension/ax07">AX07</a></td>
+<td align="left"><a href="/docs/leaf/extension/ax07">Back to back</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/extension/ax08">AX08</a></td>
+<td align="left"><a href="/docs/leaf/extension/ax08">29pin header</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">M2*15mm screw</td>
+<td align="left">4</td>
+</tr>
+</tbody>
+</table>
+<h2 id="リーフの組み立て">リーフの組み立て</h2>
+<p>下図のようにリーフを組み立てましょう。</p>
+<p><img src="./ESPWiFi_assemble.png" alt="assemble1"></p>
+<h2 id="ソースコード">ソースコード</h2>
+<ul>
+<li>ESP32 MCUをArduino IDEで使用するには、Arduino core for the ESP32 のインストールが必要です。詳しくは、[こちら]。</li>
+<li>Arduino IDEで、以下のスケッチをマイコンボードに書き込んでください。</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//  Leafony Platform sample sketch
+</span><span style="color:#8f5902;font-style:italic">//     Platform     : ESP32
+</span><span style="color:#8f5902;font-style:italic">//     Processor    : ESP32-WROOM-32
+</span><span style="color:#8f5902;font-style:italic">//     Application  : ESP32 Touch Sensor
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//     Leaf configuration
+</span><span style="color:#8f5902;font-style:italic">//       (1) ap02 ESP MCU
+</span><span style="color:#8f5902;font-style:italic">//       (2) ax08 29pin header
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//    (c) 2019 Trillion-Node Study Group
+</span><span style="color:#8f5902;font-style:italic">//    Released under the MIT license
+</span><span style="color:#8f5902;font-style:italic">//    https://opensource.org/licenses/MIT
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2019/11/21  First release
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;WiFi.h&gt;                                             // ESP32用WiFiライブラリ</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;WiFiClient.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;WiFiAP.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// Wi-Fi Set these to your desired credentials.
+</span><span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">ssid</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Leafony_ESP32-AP&#34;</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">password</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;password&#34;</span><span style="color:#000;font-weight:bold">;</span>
+
+<span style="color:#000">WiFiServer</span> <span style="color:#000">server</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">80</span><span style="color:#000;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">#define TIMEOUT 20000                                         </span><span style="color:#8f5902;font-style:italic">// タイムアウト 20秒
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">update</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>                                                 <span style="color:#8f5902;font-style:italic">// ブラウザのページ更新間隔(秒)初期値
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// Touch
+</span><span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">threshold</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">20</span><span style="color:#000;font-weight:bold">;</span>                                           <span style="color:#8f5902;font-style:italic">// Touch 検出閾値
+</span><span style="color:#8f5902;font-style:italic">// bool touch1detected = false;
+</span><span style="color:#8f5902;font-style:italic">// bool touch2detected = false;
+</span><span style="color:#8f5902;font-style:italic">// bool touch3detected = false;
+</span><span style="color:#8f5902;font-style:italic">// bool touch4detected = false;
+</span><span style="color:#8f5902;font-style:italic">// bool touch5detected = false;
+</span><span style="color:#8f5902;font-style:italic">// bool touch6detected = false;
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// Touch 割り込み
+</span><span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// ------ T0 ------
+</span><span style="color:#8f5902;font-style:italic">// void gotTouch1(){
+</span><span style="color:#8f5902;font-style:italic">//  touch1detected = true;
+</span><span style="color:#8f5902;font-style:italic">// }
+</span><span style="color:#8f5902;font-style:italic">// ------ T3 ------
+</span><span style="color:#8f5902;font-style:italic">// void gotTouch2(){
+</span><span style="color:#8f5902;font-style:italic">//  touch2detected = true;
+</span><span style="color:#8f5902;font-style:italic">// }
+</span><span style="color:#8f5902;font-style:italic">// ------ T4 ------
+</span><span style="color:#8f5902;font-style:italic">// void gotTouch3(){
+</span><span style="color:#8f5902;font-style:italic">//  touch3detected = true;
+</span><span style="color:#8f5902;font-style:italic">// }
+</span><span style="color:#8f5902;font-style:italic">// ------ T5 ------
+</span><span style="color:#8f5902;font-style:italic">// void gotTouch4(){
+</span><span style="color:#8f5902;font-style:italic">//  touch4detected = true;
+</span><span style="color:#8f5902;font-style:italic">// }
+</span><span style="color:#8f5902;font-style:italic">// ------ T6 ------
+</span><span style="color:#8f5902;font-style:italic">// void gotTouch5(){
+</span><span style="color:#8f5902;font-style:italic">//  touch5detected = true;
+</span><span style="color:#8f5902;font-style:italic">// }
+</span><span style="color:#8f5902;font-style:italic">// ------ T7 ------
+</span><span style="color:#8f5902;font-style:italic">// void gotTouch6(){
+</span><span style="color:#8f5902;font-style:italic">//  touch6detected = true;
+</span><span style="color:#8f5902;font-style:italic">// }
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">//====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">(){</span> 
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>                                     <span style="color:#8f5902;font-style:italic">// デバッグシリアル出力開始
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Wi-Fi &amp; Touch Sensor Test&#34;</span><span style="color:#000;font-weight:bold">);</span>              <span style="color:#8f5902;font-style:italic">// シリアル出力表示
+</span><span style="color:#8f5902;font-style:italic"></span>
+    <span style="color:#000">WiFi</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">softAP</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">ssid</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">password</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">IPAddress</span> <span style="color:#000">myIP</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">WiFi</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">softAPIP</span><span style="color:#000;font-weight:bold">();</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;AP IP address: &#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">myIP</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">server</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">();</span>                                           <span style="color:#8f5902;font-style:italic">// サーバ起動
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>                                              <span style="color:#8f5902;font-style:italic">// Wait
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Server started&#34;</span><span style="color:#000;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// Touch 割り込み設定
+</span><span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">//    touchAttachInterrupt(T0, gotTouch1, threshold);           // D2/22pin
+</span><span style="color:#8f5902;font-style:italic">//    touchAttachInterrupt(T3, gotTouch2, threshold);           // D7/9pin
+</span><span style="color:#8f5902;font-style:italic">//    touchAttachInterrupt(T4, gotTouch3, threshold);           // D5/28pin
+</span><span style="color:#8f5902;font-style:italic">//    touchAttachInterrupt(T5, gotTouch4, threshold);           // D4/26pin
+</span><span style="color:#8f5902;font-style:italic">//    touchAttachInterrupt(T6, gotTouch5, threshold);           // D6/7pin
+</span><span style="color:#8f5902;font-style:italic">//    touchAttachInterrupt(T7, gotTouch6, threshold);           // D3/24pin
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">(){</span>
+    <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>                                              <span style="color:#8f5902;font-style:italic">// Wait：これが短いと”このページは動作していません&#34;が頻発する
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">WiFiClient</span> <span style="color:#000">client</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">server</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">available</span><span style="color:#000;font-weight:bold">();</span>                   <span style="color:#8f5902;font-style:italic">// 接続中のクライアントからデータを受信
+</span><span style="color:#8f5902;font-style:italic"></span>
+    <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">read_data</span><span style="color:#000;font-weight:bold">;</span>                                           <span style="color:#8f5902;font-style:italic">// 文字変数を定義
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">s</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">65</span><span style="color:#000;font-weight:bold">];</span>                                               <span style="color:#8f5902;font-style:italic">// 文字列変数を定義 65バイト64文字
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">byte</span> <span style="color:#000">data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">32</span><span style="color:#000;font-weight:bold">];</span>                                            <span style="color:#8f5902;font-style:italic">// 画像転送用の一時保存変数
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">len</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>                                                <span style="color:#8f5902;font-style:italic">// 文字列等の長さカウント用
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">t_wait</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>                                             <span style="color:#8f5902;font-style:italic">// 更新時間カウント用
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">i</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">f_size</span><span style="color:#000;font-weight:bold">;</span>
+    
+    <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">500</span><span style="color:#000;font-weight:bold">);</span>                                               <span style="color:#8f5902;font-style:italic">// Wait：これが短いと”このページは動作していません&#34;が頻発する
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">client</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">server</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">available</span><span style="color:#000;font-weight:bold">();</span>                              <span style="color:#8f5902;font-style:italic">// 接続されたクライアントを生成
+</span><span style="color:#8f5902;font-style:italic"></span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span><span style="color:#000">client</span><span style="color:#000;font-weight:bold">)</span><span style="color:#204a87;font-weight:bold">return</span><span style="color:#000;font-weight:bold">;</span>                                        <span style="color:#8f5902;font-style:italic">// loop()の先頭に戻る
+</span><span style="color:#8f5902;font-style:italic">//    Serial.println(&#34;Connected&#34;);                              // シリアル出力表示
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">while</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">connected</span><span style="color:#000;font-weight:bold">()){</span>                                <span style="color:#8f5902;font-style:italic">// 当該クライアントの接続状態を確認
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">available</span><span style="color:#000;font-weight:bold">()){</span>                               <span style="color:#8f5902;font-style:italic">// クライアントからのデータを確認
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#000">t_wait</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>                                         <span style="color:#8f5902;font-style:italic">// 待ち時間変数をリセット
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#000">read_data</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>                          <span style="color:#8f5902;font-style:italic">// データを文字変数read_dataに代入
+</span><span style="color:#8f5902;font-style:italic"></span>
+            <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">read_data</span><span style="color:#ce5c00;font-weight:bold">==</span><span style="color:#4e9a06">&#39;\n&#39;</span><span style="color:#000;font-weight:bold">){</span>                              <span style="color:#8f5902;font-style:italic">// 改行を検出した時
+</span><span style="color:#8f5902;font-style:italic"></span>                <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">len</span><span style="color:#ce5c00;font-weight:bold">&gt;</span><span style="color:#0000cf;font-weight:bold">5</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#000">strncmp</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34;GET /&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">==</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">break</span><span style="color:#000;font-weight:bold">;</span>
+                <span style="color:#000">len</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>                                        <span style="color:#8f5902;font-style:italic">// 文字列長を0に
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#000;font-weight:bold">}</span><span style="color:#204a87;font-weight:bold">else</span> <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">read_data</span><span style="color:#ce5c00;font-weight:bold">!=</span><span style="color:#4e9a06">&#39;\r&#39;</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#000">read_data</span><span style="color:#ce5c00;font-weight:bold">!=</span><span style="color:#4e9a06">&#39;\0&#39;</span><span style="color:#000;font-weight:bold">){</span>
+                <span style="color:#000">s</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">len</span><span style="color:#000;font-weight:bold">]</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">read_data</span><span style="color:#000;font-weight:bold">;</span>                             <span style="color:#8f5902;font-style:italic">// 文字列変数に文字read_dataを追加
+</span><span style="color:#8f5902;font-style:italic"></span>                <span style="color:#000">len</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">;</span>                                        <span style="color:#8f5902;font-style:italic">// 変数lenに1を加算
+</span><span style="color:#8f5902;font-style:italic"></span>                <span style="color:#000">s</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">len</span><span style="color:#000;font-weight:bold">]</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;\0&#39;</span><span style="color:#000;font-weight:bold">;</span>                                  <span style="color:#8f5902;font-style:italic">// 文字列を終端
+</span><span style="color:#8f5902;font-style:italic"></span>                <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">len</span><span style="color:#ce5c00;font-weight:bold">&gt;=</span><span style="color:#0000cf;font-weight:bold">64</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">len</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">63</span><span style="color:#000;font-weight:bold">;</span>                           <span style="color:#8f5902;font-style:italic">// 文字列変数の上限
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#000;font-weight:bold">}</span>
+        <span style="color:#000;font-weight:bold">}</span>
+        <span style="color:#000">t_wait</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">;</span>                                             <span style="color:#8f5902;font-style:italic">// 変数t_waitの値を1増加させる
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">t_wait</span><span style="color:#ce5c00;font-weight:bold">&gt;</span><span style="color:#000">TIMEOUT</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">break</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>              <span style="color:#8f5902;font-style:italic">// TIMEOUTに到達したらwhileを抜ける
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">}</span>
+
+    <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>                                                 <span style="color:#8f5902;font-style:italic">// クライアント側の応答待ち時間
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span><span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">connected</span><span style="color:#000;font-weight:bold">()</span><span style="color:#ce5c00;font-weight:bold">||</span><span style="color:#000">len</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#0000cf;font-weight:bold">6</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">return</span><span style="color:#000;font-weight:bold">;</span>                    <span style="color:#8f5902;font-style:italic">// 切断された場合はloop()の先頭へ
+</span><span style="color:#8f5902;font-style:italic">//    Serial.println(s);                                        // 受信した命令をシリアル出力表示
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">strncmp</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34;GET / &#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">6</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">==</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">){</span>                             <span style="color:#8f5902;font-style:italic">// コンテンツ取得命令時
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#8f5902;font-style:italic">// Web 表示
+</span><span style="color:#8f5902;font-style:italic"></span>      <span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000">html</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">client</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">update</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">WiFi</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">softAPIP</span><span style="color:#000;font-weight:bold">());</span>                  <span style="color:#8f5902;font-style:italic">// コンテンツ表示
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">flush</span><span style="color:#000;font-weight:bold">();</span>                                       <span style="color:#8f5902;font-style:italic">// ESP32用 ERR_CONNECTION_RESET対策
+</span><span style="color:#8f5902;font-style:italic">//        client.stop();                                      // クライアントの切断
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#204a87;font-weight:bold">return</span><span style="color:#000;font-weight:bold">;</span>                                               <span style="color:#8f5902;font-style:italic">// 処理の終了・loop()の先頭へ
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">}</span>
+
+    <span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// 更新時間の設定
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">strncmp</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34;GET /?INT=&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">==</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">){</span>                        <span style="color:#8f5902;font-style:italic">// 更新時間の設定命令を受けた時
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000">update</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">atoi</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">]);</span>                                <span style="color:#8f5902;font-style:italic">// 受信値を変数updateに代入
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">}</span>
+
+    <span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// コマンド送信
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">for</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">6</span><span style="color:#000;font-weight:bold">;</span><span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#000">strlen</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">);</span><span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]</span><span style="color:#ce5c00;font-weight:bold">==</span><span style="color:#4e9a06">&#39; &#39;</span><span style="color:#ce5c00;font-weight:bold">||</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]</span><span style="color:#ce5c00;font-weight:bold">==</span><span style="color:#4e9a06">&#39;+&#39;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000">s</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#4e9a06">&#39;\0&#39;</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">htmlMesg</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">client</span><span style="color:#000;font-weight:bold">,</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">6</span><span style="color:#000;font-weight:bold">],</span><span style="color:#000">WiFi</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">softAPIP</span><span style="color:#000;font-weight:bold">());</span>                   <span style="color:#8f5902;font-style:italic">// メッセージ表示
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">flush</span><span style="color:#000;font-weight:bold">();</span>                                           <span style="color:#8f5902;font-style:italic">// ESP32用 ERR_CONNECTION_RESET対策
+</span><span style="color:#8f5902;font-style:italic">//    client.stop();                                          // クライアント切断
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Sent HTML&#34;</span><span style="color:#000;font-weight:bold">);</span>                              <span style="color:#8f5902;font-style:italic">// シリアル出力表示
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+<span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">ESP32_AP_Touch</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">inoと同じフォルダに保存してください</span><span style="color:#a40000">。自動的に読み込まれます</span>
+
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//  Leafony Platform sample sketch
+</span><span style="color:#8f5902;font-style:italic">//     Application  : html
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//    (c) 2019 Trillion-Node Study Group
+</span><span style="color:#8f5902;font-style:italic">//    Released under the MIT license
+</span><span style="color:#8f5902;font-style:italic">//    https://opensource.org/licenses/MIT
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2019/11/07  First release
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//====================================================================
+</span><span style="color:#8f5902;font-style:italic">// Web表示
+</span><span style="color:#8f5902;font-style:italic">//====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">html</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">WiFiClient</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">client</span><span style="color:#000;font-weight:bold">,</span>  <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">update</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">uint32_t</span> <span style="color:#000">ip</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">s</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">65</span><span style="color:#000;font-weight:bold">],</span><span style="color:#000">s_ip</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">16</span><span style="color:#000;font-weight:bold">];</span>
+    <span style="color:#204a87;font-weight:bold">uint16_t</span> <span style="color:#000">touchData</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#204a87;font-weight:bold">uint16_t</span> <span style="color:#000">touchTemp</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">sprintf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s_ip</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34;%d.%d.%d.%d&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#000">ip</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">255</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#000">ip</span><span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span><span style="color:#0000cf;font-weight:bold">8</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">255</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#000">ip</span><span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span><span style="color:#0000cf;font-weight:bold">16</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">255</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#000">ip</span><span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span><span style="color:#0000cf;font-weight:bold">24</span>
+    <span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;HTTP/1.1 200 OK&#34;</span><span style="color:#000;font-weight:bold">);</span>              <span style="color:#8f5902;font-style:italic">// HTTP OKを応答
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Content-Type: text/html&#34;</span><span style="color:#000;font-weight:bold">);</span>      <span style="color:#8f5902;font-style:italic">// HTMLコンテンツ
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Connection: close&#34;</span><span style="color:#000;font-weight:bold">);</span>            <span style="color:#8f5902;font-style:italic">// 応答終了後にセッションを閉じる
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">();</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;html&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;head&gt;&lt;title&gt;Test Page&lt;/title&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;meta http-equiv=</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">Content-type</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06"> content=</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">text/html; charset=UTF-8</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">update</span><span style="color:#000;font-weight:bold">){</span>
+        <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;meta http-equiv=</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">refresh</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06"> content=</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">update</span><span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;;URL=http://&#34;</span><span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s_ip</span><span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;/</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;/head&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;body&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;h3&gt;Wi-Fi &amp; Touch Sensor Test&lt;/h3&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// ------ T6 ------
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#000">touchData</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">touchRead</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">T6</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;F7 /D6:&#34;</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchTemp</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">touchTemp</span><span style="color:#ce5c00;font-weight:bold">&lt;=</span><span style="color:#000">touchData</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">touchTemp</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">){</span>
+              <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;*&#34;</span><span style="color:#000;font-weight:bold">);</span>
+              <span style="color:#000;font-weight:bold">}</span>
+            <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;:&#34;</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchData</span><span style="color:#000;font-weight:bold">));</span>
+<span style="color:#8f5902;font-style:italic">//            if(touch5detected){
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchData</span><span style="color:#ce5c00;font-weight:bold">&lt;=</span><span style="color:#000">threshold</span><span style="color:#000;font-weight:bold">){</span>
+<span style="color:#8f5902;font-style:italic">//              touch5detected = false;
+</span><span style="color:#8f5902;font-style:italic"></span>              <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;T6/D6/ 7pin :&#34;</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchData</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#4e9a06">&#34; :Touch detected&#34;</span><span style="color:#000;font-weight:bold">);</span>
+              <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34; :Touch detected&#34;</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#000;font-weight:bold">}</span>
+            <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;br&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// ------ T3 ------
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#000">touchData</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">touchRead</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">T3</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;F9 /D7:&#34;</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchTemp</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">touchTemp</span><span style="color:#ce5c00;font-weight:bold">&lt;=</span><span style="color:#000">touchData</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">touchTemp</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">){</span>
+              <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;*&#34;</span><span style="color:#000;font-weight:bold">);</span>
+              <span style="color:#000;font-weight:bold">}</span>
+            <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;:&#34;</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchData</span><span style="color:#000;font-weight:bold">));</span>
+<span style="color:#8f5902;font-style:italic">//            if(touch2detected){
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchData</span><span style="color:#ce5c00;font-weight:bold">&lt;=</span><span style="color:#000">threshold</span><span style="color:#000;font-weight:bold">){</span>
+<span style="color:#8f5902;font-style:italic">//              touch2detected = false;
+</span><span style="color:#8f5902;font-style:italic"></span>              <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;T3/D7/ 9pin :&#34;</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchData</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#4e9a06">&#34; :Touch detected&#34;</span><span style="color:#000;font-weight:bold">);</span>
+              <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34; :Touch detected&#34;</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#000;font-weight:bold">}</span>
+            <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;br&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// ------ T0 ------
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#000">touchData</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">touchRead</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">T0</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;F22/D2:&#34;</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchTemp</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">touchTemp</span><span style="color:#ce5c00;font-weight:bold">&lt;=</span><span style="color:#000">touchData</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">touchTemp</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">){</span>
+              <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;*&#34;</span><span style="color:#000;font-weight:bold">);</span>
+              <span style="color:#000;font-weight:bold">}</span>
+            <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;:&#34;</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchData</span><span style="color:#000;font-weight:bold">));</span>
+<span style="color:#8f5902;font-style:italic">//            if(touch1detected){
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchData</span><span style="color:#ce5c00;font-weight:bold">&lt;=</span><span style="color:#000">threshold</span><span style="color:#000;font-weight:bold">){</span>
+<span style="color:#8f5902;font-style:italic">//              touch1detected = false;
+</span><span style="color:#8f5902;font-style:italic"></span>              <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;T0/D2/22pin :&#34;</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchData</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#4e9a06">&#34; :Touch detected&#34;</span><span style="color:#000;font-weight:bold">);</span>
+              <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34; :Touch detected&#34;</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#000;font-weight:bold">}</span>
+            <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;br&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">/*
+</span><span style="color:#8f5902;font-style:italic">// ------ T7 ------
+</span><span style="color:#8f5902;font-style:italic">            touchData=touchRead(T7);
+</span><span style="color:#8f5902;font-style:italic">            client.print(&#34;F24/D3:&#34;);
+</span><span style="color:#8f5902;font-style:italic">            for (touchTemp=0; touchTemp&lt;=touchData/5; touchTemp++){
+</span><span style="color:#8f5902;font-style:italic">              client.print(&#34;*&#34;);
+</span><span style="color:#8f5902;font-style:italic">              }
+</span><span style="color:#8f5902;font-style:italic">            client.print(&#34;:&#34;+String(touchData));
+</span><span style="color:#8f5902;font-style:italic">//            if(touch6detected){
+</span><span style="color:#8f5902;font-style:italic">            if(touchData&lt;=threshold){
+</span><span style="color:#8f5902;font-style:italic">//              touch6detected = false;
+</span><span style="color:#8f5902;font-style:italic">              Serial.println(&#34;T7/D3/24pin :&#34;+String(touchData)+&#34; :Touch detected&#34;);
+</span><span style="color:#8f5902;font-style:italic">              client.println(&#34; :Touch detected&#34;);
+</span><span style="color:#8f5902;font-style:italic">            }
+</span><span style="color:#8f5902;font-style:italic">            client.print(&#34;&lt;br&gt;&#34;);
+</span><span style="color:#8f5902;font-style:italic">*/</span>
+<span style="color:#8f5902;font-style:italic">// ------ T5 ------
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#000">touchData</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">touchRead</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">T5</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;F26/D4:&#34;</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchTemp</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">touchTemp</span><span style="color:#ce5c00;font-weight:bold">&lt;=</span><span style="color:#000">touchData</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">touchTemp</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">){</span>
+              <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;*&#34;</span><span style="color:#000;font-weight:bold">);</span>
+              <span style="color:#000;font-weight:bold">}</span>
+            <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;:&#34;</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchData</span><span style="color:#000;font-weight:bold">));</span>
+<span style="color:#8f5902;font-style:italic">//            if(touch4detected){
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchData</span><span style="color:#ce5c00;font-weight:bold">&lt;=</span><span style="color:#000">threshold</span><span style="color:#000;font-weight:bold">){</span>
+<span style="color:#8f5902;font-style:italic">//              touch4detected = false;
+</span><span style="color:#8f5902;font-style:italic"></span>              <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;T5/D4/26pin :&#34;</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchData</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#4e9a06">&#34; :Touch detected&#34;</span><span style="color:#000;font-weight:bold">);</span>
+              <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34; :Touch detected&#34;</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#000;font-weight:bold">}</span>
+            <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;br&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">// ------ T4 ------
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#000">touchData</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#000">touchRead</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">T4</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;F28/D5:&#34;</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchTemp</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">touchTemp</span><span style="color:#ce5c00;font-weight:bold">&lt;=</span><span style="color:#000">touchData</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">touchTemp</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">){</span>
+              <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;*&#34;</span><span style="color:#000;font-weight:bold">);</span>
+              <span style="color:#000;font-weight:bold">}</span>
+            <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;:&#34;</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchData</span><span style="color:#000;font-weight:bold">));</span>
+<span style="color:#8f5902;font-style:italic">//            if(touch3detected){
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchData</span><span style="color:#ce5c00;font-weight:bold">&lt;=</span><span style="color:#000">threshold</span><span style="color:#000;font-weight:bold">){</span>
+<span style="color:#8f5902;font-style:italic">//              touch3detected = false;
+</span><span style="color:#8f5902;font-style:italic"></span>              <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;T4/D5/28pin :&#34;</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">touchData</span><span style="color:#000;font-weight:bold">)</span><span style="color:#ce5c00;font-weight:bold">+</span><span style="color:#4e9a06">&#34; :Touch detected&#34;</span><span style="color:#000;font-weight:bold">);</span>
+              <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34; :Touch detected&#34;</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#000;font-weight:bold">}</span>
+            <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;br&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;更新間隔 = &#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">update</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34; 秒&lt;/p&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;hr&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//    client.println(&#34;&lt;h3&gt;HTTP GET&lt;/h3&gt;&#34;);
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;p&gt;http://&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s_ip</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">sprintf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34;&lt;form method=</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">GET</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06"> action=</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">http://%s/</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">&gt;&#34;</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">s_ip</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s</span><span style="color:#000;font-weight:bold">);</span>
+
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;自動更新:&lt;input type=</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">submit</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06"> name=</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">INT</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06"> value=</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">0 停止</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;input type=</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">submit</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06"> name=</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">INT</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06"> value=</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">1 秒</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//    client.println(&#34;&lt;input type=\&#34;submit\&#34; name=\&#34;INT\&#34; value=\&#34;2 秒\&#34;&gt;&#34;);
+</span><span style="color:#8f5902;font-style:italic">//    client.println(&#34;&lt;input type=\&#34;submit\&#34; name=\&#34;INT\&#34; value=\&#34;5 秒\&#34;&gt;&#34;);
+</span><span style="color:#8f5902;font-style:italic">//    client.println(&#34;&lt;input type=\&#34;submit\&#34; name=\&#34;INT\&#34; value=\&#34;10 秒\&#34;&gt;&#34;);
+</span><span style="color:#8f5902;font-style:italic">//    client.println(&#34;　&lt;input type=\&#34;submit\&#34; name=\&#34;RESET\&#34; value=\&#34;リセット\&#34;&gt;&lt;br&gt;&lt;br&gt;&#34;);
+</span><span style="color:#8f5902;font-style:italic"></span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;/form&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;/body&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;/html&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//====================================================================
+</span><span style="color:#8f5902;font-style:italic">// コマンド送信
+</span><span style="color:#8f5902;font-style:italic">//====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">htmlMesg</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">WiFiClient</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">client</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">txt</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">uint32_t</span> <span style="color:#000">ip</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">s_ip</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">16</span><span style="color:#000;font-weight:bold">];</span>
+    
+    <span style="color:#000">sprintf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s_ip</span><span style="color:#000;font-weight:bold">,</span><span style="color:#4e9a06">&#34;%d.%d.%d.%d&#34;</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#000">ip</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">255</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#000">ip</span><span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span><span style="color:#0000cf;font-weight:bold">8</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">255</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#000">ip</span><span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span><span style="color:#0000cf;font-weight:bold">16</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">255</span><span style="color:#000;font-weight:bold">,</span>
+        <span style="color:#000">ip</span><span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span><span style="color:#0000cf;font-weight:bold">24</span>
+    <span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;HTTP/1.1 200 OK&#34;</span><span style="color:#000;font-weight:bold">);</span>              <span style="color:#8f5902;font-style:italic">// HTTP OKを応答
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Content-Type: text/html&#34;</span><span style="color:#000;font-weight:bold">);</span>      <span style="color:#8f5902;font-style:italic">// HTMLコンテンツ
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Connection: close&#34;</span><span style="color:#000;font-weight:bold">);</span>            <span style="color:#8f5902;font-style:italic">// 応答終了後にセッションを閉じる
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">();</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;html&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;head&gt;&lt;title&gt;Test Page2&lt;/title&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;meta http-equiv=</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">Content-type</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06"> content=</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">text/html; charset=UTF-8</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;meta http-equiv=</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">refresh</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06"> content=</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">3;URL=http://&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">s_ip</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;/</span><span style="color:#4e9a06">\&#34;</span><span style="color:#4e9a06">&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;p&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">txt</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;/p&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;/body&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">client</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&lt;/html&gt;&#34;</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><ul>
+<li><a href="https://www.arduino.cc/en/Main/OldSoftwareReleases#previous">Arduino IDE 1.8.9</a>で動作を確認しています。書き込みエラーが発生したら、IDEのバージョンを確認してください</li>
+</ul>
+<h2 id="表示のやり方">表示のやり方</h2>
+<p>表示のやり方は、クイックスタートに記載していますので、ご参照願います。</p>
+
+        <div class="section-index">
+    
+    
+    
+    
+    <hr class="panel-line">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    
+</div>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 15, 2020
+</div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/Leafony">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Contact us" aria-label="Contact us">
+    <a class="text-white" target="_blank" href="mailto:staff@lowpower.sakura.ne.jp">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2020 Trillion-Node Study Group  </small>
+        
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>

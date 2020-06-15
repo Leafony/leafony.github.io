@@ -14,7 +14,7 @@
     
     
     <item>
-      <title>Docs: AI01A 4-Sensors</title>
+      <title>Docs: AI01 4-Sensors</title>
       <link>https://docs.leafony.com/docs/leaf/io/ai01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -129,9 +129,9 @@
 &lt;/table&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./ai01_block.png&#34;&gt;&lt;img src=&#34;./ai01_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ai01a_block.png&#34;&gt;&lt;img src=&#34;./ai01a_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./ai01_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ai01_pinassign.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ai01a_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ai01a_pinassign.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;サンプルデザイン&#34;&gt;サンプルデザイン&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/basic/temp_humid_sensors&#34;&gt;温湿度センサ読み取り&lt;/a&gt;&lt;/li&gt;
@@ -151,12 +151,16 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai01_4-Sensors/ai01_4-Sensors_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai01_4-Sensors/ai01_4-Sensors_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Rev A: 2019年8月初版&lt;/li&gt;
+&lt;/ul&gt;
 
       </description>
     </item>
     
     <item>
-      <title>Docs: AI02A SP&amp;PIR</title>
+      <title>Docs: AI02 SP&amp;PIR</title>
       <link>https://docs.leafony.com/docs/leaf/io/ai02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -227,9 +231,9 @@
 &lt;/table&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
-&lt;img src=&#34;./ai02_block.png&#34; width=&#34;250&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;./ai02a_block.png&#34;&gt;&lt;img src=&#34;./ai02a_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./ai02_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ai02_pinassign.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ai02a_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ai02a_pinassign.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;サンプルデザイン&#34;&gt;サンプルデザイン&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/extension/speaker&#34;&gt;スピーカ&lt;/a&gt;&lt;/li&gt;
@@ -245,12 +249,16 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai02_SP%26PIR/ai02_SP%26PIR_PCBLayout_dxf.zip&#34;&gt;レイアウト図 SP＆PIR (dxf)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai02_SP%26PIR/ai02_PIR_PCBLayout_dxf.zip&#34;&gt;レイアウト図 PIR (dxf)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Rev A: 2019年8月初版&lt;/li&gt;
+&lt;/ul&gt;
 
       </description>
     </item>
     
     <item>
-      <title>Docs: AI03A MIC&amp;VR&amp;LED</title>
+      <title>Docs: AI03 MIC&amp;VR&amp;LED</title>
       <link>https://docs.leafony.com/docs/leaf/io/ai03/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -373,9 +381,9 @@
 &lt;/table&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./ai03_block.png&#34;&gt;&lt;img src=&#34;./ai03_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ai03a_block.png&#34;&gt;&lt;img src=&#34;./ai03a_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./ai03_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ai03_pinassign.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ai03a_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ai03a_pinassign.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;サンプルデザイン&#34;&gt;サンプルデザイン&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/extension/sound_level&#34;&gt;サウンドレベルメータ&lt;/a&gt;&lt;/li&gt;
@@ -388,12 +396,16 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai03_MIC%26VR%26LED/ai03_MIC%26VR%26LED_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai03_MIC%26VR%26LED/ai03_MIC%26VR%26LED_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Rev A: 2019年8月初版&lt;/li&gt;
+&lt;/ul&gt;
 
       </description>
     </item>
     
     <item>
-      <title>Docs: AI04A LCD</title>
+      <title>Docs: AI04 LCD</title>
       <link>https://docs.leafony.com/docs/leaf/io/ai04/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -488,9 +500,9 @@
 &lt;/table&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./ai01_block.png&#34;&gt;&lt;img src=&#34;./ai04_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ai01a_block.png&#34;&gt;&lt;img src=&#34;./ai04a_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./ai04_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ai04_pinassign.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ai04a_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ai04a_pinassign.jpg&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;サンプルデザイン&#34;&gt;サンプルデザイン&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/extension/lcd&#34;&gt;LCD ディスプレイ&lt;/a&gt;&lt;/li&gt;
@@ -505,6 +517,10 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai04_LCD/ai04_LCD_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ap01_AVR_MCU/ap01_AVR_MCU_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ai04_LCD/ai04_LCD_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Rev A: 2019年8月初版&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>

@@ -1,0 +1,2552 @@
+<!doctype html>
+<html lang="jp" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.71.0" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="https://docs.leafony.com/docs/examples/beginner/basic/webbluetooth_iot/index.xml">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>Web BluetoothをつかったIoTアプリ入門 | Leafony</title><meta property="og:title" content="Web BluetoothをつかったIoTアプリ入門" />
+<meta property="og:description" content="マルチプラットフォームなIoT開発を体験しよう
+" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.leafony.com/docs/examples/beginner/basic/webbluetooth_iot/" />
+<meta property="og:site_name" content="Leafony" />
+<meta itemprop="name" content="Web BluetoothをつかったIoTアプリ入門">
+<meta itemprop="description" content="マルチプラットフォームなIoT開発を体験しよう
+"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Web BluetoothをつかったIoTアプリ入門"/>
+<meta name="twitter:description" content="マルチプラットフォームなIoT開発を体験しよう
+"/>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168974589-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.2eeeb234160bc6498799b61d991eac391793067635a900d54a31acd01d175fd0.css" as="style">
+<link href="/scss/main.min.2eeeb234160bc6498799b61d991eac391793067635a900d54a31acd01d175fd0.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo"></span><span class="text-uppercase font-weight-bold">Leafony</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/docs/" ><span class="active">Top</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="https://github.com/leafony" target="_blank" ><span>GitHub</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/shop/" ><span>Shop</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Japanese
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/en/">English</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; サイトを検索..."
+  aria-label="サイトを検索..."
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.08ece7addefba234dde66efbd63b625272c4cde5f7be9467ebda252c7d5c2fc79106d94c24dbea9127be0be0340a855c0745705511956fbc2913c965d3f32c23.json"
+  data-offline-search-base-href="/"
+>
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; サイトを検索..."
+  aria-label="サイトを検索..."
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.08ece7addefba234dde66efbd63b625272c4cde5f7be9467ebda252c7d5c2fc79106d94c24dbea9127be0be0340a855c0745705511956fbc2913c965d3f32c23.json"
+  data-offline-search-base-href="/"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Japanese
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/en/">English</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Top</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docs">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/overview/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">はじめに</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsoverview">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/overview/terms/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">用語の説明</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsoverviewterms">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/products/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">製品一覧</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsproducts">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/products/basic/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsproductsbasic">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/products/extension/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Extension Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsproductsextension">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/products/esp32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 Wi-Fi Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsproductsesp32">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/products/conn/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Connector</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsproductsconn">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/products/nut/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Nut &amp; Conn Cover</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsproductsnut">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/getting-started/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">クイックスタート</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsgetting-started">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/getting-started/basic/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsgetting-startedbasic">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/getting-started/esp32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 Wi-Fi Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsgetting-startedesp32">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">開発環境設定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironment">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/basic/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironmentbasic">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/esp32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 Wi-Fi Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironmentesp32">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/solution/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">うまく動かないときは</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironmentsolution">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">サンプルデザイン</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsexamples">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Beginner</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsexamplesbeginner">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/basic/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Basic Kit</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsexamplesbeginnerbasic">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/basic/blink/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LED点滅</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerbasicblink">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/basic/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">バッテリ残量</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerbasicread_battery">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/basic/temp_humid_sensors/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">温湿度センサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerbasictemp_humid_sensors">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/basic/illum_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">照度センサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerbasicillum_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/basic/accelerometer/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">加速度センサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerbasicaccelerometer">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/basic/webbluetooth_iot/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Web Bluetooth</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsexamplesbeginnerbasicwebbluetooth_iot">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/basic/google_sheets_iot/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Google Sheets</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerbasicgoogle_sheets_iot">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/extension/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Extension Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerextension">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/extension/speaker/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">スピーカ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerextensionspeaker">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/extension/ir_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">人感センサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerextensionir_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/extension/sound_level/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">サウンドレベルメータ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerextensionsound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/extension/lcd/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LCD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerextensionlcd">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/extension/rtc/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">リアルタイムクロック</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerextensionrtc">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/extension/microsd/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">micro SD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginnerextensionmicrosd">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/esp32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginneresp32">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/esp32/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Wi-Fi タッチセンサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginneresp32wifi_touchsensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Advanced</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced">
+      
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsexamplesadvancedbasic_kit" href="/docs/examples/advanced/basic_kit/">センサの値をシリアルモニタに表示</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsexamplesadvancedextension_kit" href="/docs/examples/advanced/extension_kit/"></a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsexamplesadvancedlora" href="/docs/examples/advanced/lora/"></a>
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/grove/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Grove</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesgrove">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/grove/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">超音波センサで距離測定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesgrovedistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/grove/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">カメラの撮影</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesgrovecamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">リーフ技術資料</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleaf">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/leafonybus/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Leafony bus</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafleafonybus">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/processor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">プロセッサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafprocessor">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/processor/ap01/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">AVR MCU</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafprocessorap01">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/processor/ap02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 MCU</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafprocessorap02">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/communication/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">通信</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafcommunication">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/communication/ac03/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LoRa Easy</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafcommunicationac03">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/communication/ac02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">BLE Sugar</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafcommunicationac02">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/io/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">IO</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafio">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/io/ai01/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">4-Sensors</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafioai01">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/io/ai02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">SP&amp;PIR</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafioai02">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/io/ai03/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">MIC&amp;VR&amp;LED</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafioai03">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/io/ai04/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LCD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafioai04">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/power/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">電源</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafpower">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/power/av01/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">CR2032</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafpowerav01">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/power/av02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">CR2450</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafpowerav02">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/power/av03/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">AA BAT</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafpowerav03">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/power/av04/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">2V～4.5V</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafpowerav04">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">拡張</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextension">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax01/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Shield</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax01">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">29 pin</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax02">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax03/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Leaf x2</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax03">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax04/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Spacer</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax04">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax05/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">I Meas</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax05">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax06/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Grove&amp;5V</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax06">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax07/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Back to back</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax07">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax08/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">29pin header</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax08">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">その他</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothers">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az61/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Connector</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz61">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az01/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">USB</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz01">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az62/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Connector Cover</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz62">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">RTC&amp;microSD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz02">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az63/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Nut Plate</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz63">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az64/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic Kit Case</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz64">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az66/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic kit case</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz66">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az65/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Lowercase</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz65">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/pcb/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">自作リーフ開発</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docspcb">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/pcb/kicad/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">KiCad</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docspcbkicad">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/license/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ライセンス・規約</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docslicense">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#用意するもの">用意するもの</a></li>
+    <li><a href="#サンプルアプリのソースコード">サンプルアプリのソースコード</a></li>
+    <li><a href="#leafony側">Leafony側</a>
+      <ul>
+        <li><a href="#leafonyがbleで送信する仕組み">LeafonyがBLEで送信する仕組み</a></li>
+      </ul>
+    </li>
+    <li><a href="#webアプリ側">Webアプリ側</a>
+      <ul>
+        <li><a href="#webbluetoothを使ってleafonyと接続する処理">WebBluetoothを使ってLeafonyと接続する処理</a></li>
+        <li><a href="#データを受信した時の処理">データを受信した時の処理</a></li>
+        <li><a href="#データを送信する時の処理">データを送信する時の処理</a></li>
+      </ul>
+    </li>
+    <li><a href="#webbluetoothの注意点">WebBluetoothの注意点</a></li>
+    <li><a href="#参考">参考</a></li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://docs.leafony.com/docs/">Top</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://docs.leafony.com/docs/examples/">サンプルデザイン</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://docs.leafony.com/docs/examples/beginner/">Beginner</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://docs.leafony.com/docs/examples/beginner/basic/">Basic Kit</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="https://docs.leafony.com/docs/examples/beginner/basic/webbluetooth_iot/">Web Bluetooth</a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>Web BluetoothをつかったIoTアプリ入門</h1>
+        <div class="lead">マルチプラットフォームなIoT開発を体験しよう</div>
+	
+	<p>このサンプルは<a href="/docs/getting-started/basic/">Basic Kit スタートガイド</a>で紹介したものと同様です。ソースコードを読みながら、動作を理解していきましょう。</p>
+<h2 id="はじめに">はじめに</h2>
+<p>Leafonyは省電力で小型なIoTデバイスの開発を簡単に行えるように、それぞれのリーフが省電力な設計になっています。
+バッテリで長時間動作するため、様々な場所に設置してセンサで定点観測を行うことも可能です。</p>
+<p>では、センサで測定した温度や湿度、照度のようなデータはどのようにして集められるのでしょうか。
+一般的にWi-FiやBluetooth、LoRaといった無線通信が用いられるでしょう。
+Leafonyでは無線通信規格の中でも省電力なBluetoothを搭載したリーフが存在します。</p>
+<p>Basic Kitは省電力なセンサを複数搭載した4-Sensorリーフと、省電力なBluetooth規格であるBluetooth LE (以下、BLE)を搭載したBLEリーフを使った長時間バッテリ駆動のIoTセンサの開発を簡単に行えるキットです。</p>
+<p>それでは、Leafonyが送るBLEを受信するためにはどうすれば良いでしょうか。
+PCやスマホ・タブレットには色々な環境があります。Windowsが動くPC、MacOSが動くPC、Android、iPhoneなど、身近なものでも非常に沢山の環境が存在します。
+これらの環境でBluetoothを使うためには、それぞれの環境に合わせたプログラミング言語で開発するのが普通です。PCであればC言語やPythonなどの言語を使って開発できますが、AndroidやiPhoneであれば、Android StudioやXcode等を使ってまた別のプログラミング言語でソフトを作る必要があります。</p>
+<p>多くの人が様々な環境で使うものを簡単に開発するにはどうすれば良いでしょうか。
+今回のサンプルアプリでは一つの方法として、<strong>Bluetoothの通信を行いデータを画面に表示するためにWebブラウザを使う</strong>ことにしました。</p>
+<p>使用する言語はHTMLとJava Scriptです。この2つの言語で記述したプログラムが、Webブラウザ上であればどの環境においても同様に動作します。</p>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">ポイント</h4>
+<ul>
+<li>Web Bluetoothライブラリを使うと、Bluetooth接続するソフトをWebアプリで記述できる。</li>
+<li>Webアプリであればブラウザが動く機器であれば同じソースコードが動く。</li>
+<li>表やグラフ等のGUIはHTMLとCSSでラクラク開発</li>
+</ul>
+
+</div>
+
+<h2 id="用意するもの">用意するもの</h2>
+<ul>
+<li>Leafony Basic Kit</li>
+<li>Windows<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>、 Mac<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>、 Linux<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>のどれかのPC (開発用)</li>
+<li>Android<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>、 iPhone<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>、 iPad<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>のスマートフォンまたはタブレット (テスト用 なくても良い)</li>
+<li>Google Chrome (バージョン70.0.3526.0以降)</li>
+<li>Arduino IDE</li>
+</ul>
+<h2 id="サンプルアプリのソースコード">サンプルアプリのソースコード</h2>
+<p>あらかじめどちらもダウンロードしてください。</p>
+<ul>
+<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE">Arduino スケッチ</a></li>
+<li><a href="https://github.com/Leafony/WebBluetooth_for_Leafony_app">Web Bluetooth アプリ</a></li>
+</ul>
+<h2 id="leafony側">Leafony側</h2>
+<h3 id="leafonyがbleで送信する仕組み">LeafonyがBLEで送信する仕組み</h3>
+<p><code>4-Sensors_BLE.ino</code>の1030行目付近に次のような記述があり、この部分でテキストデータをBluetoothで送信しています。
+このテキストを変えることで任意のデータを送信可能です。</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++:4-Sensors_BLE.ino" data-lang="c++:4-Sensors_BLE.ino"><span style="color:#000">sendLen</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">sprintf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">sendData</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;%04s,%04s,%04s,%04s,%04s,%01s</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">temp</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">humid</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">light</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">tilt</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">battVolt</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pips</span><span style="color:#000;font-weight:bold">)</span>
+</code></pre></div><h2 id="webアプリ側">Webアプリ側</h2>
+<p><code>index.html</code>と<code>app.js</code>と<code>leafony.js</code>の3つのファイルで構成されています。</p>
+<p><code>index.html</code>はボタンや表の配置を行ったり、他2つのjavascriptのファイルを読み込むだけの単純なものです。<br>
+<code>app.js</code>はボタンが押されたときの処理などメインの処理が記述されています。<br>
+<code>leafony.js</code>はWeb Bluetoothを使ってLeafonyと接続するための具体的な処理がかかれています。<br></p>
+<p>簡単に中のコードを追って見ていきましょう。</p>
+<h3 id="webbluetoothを使ってleafonyと接続する処理">WebBluetoothを使ってLeafonyと接続する処理</h3>
+<p><code>app.js</code>内の以下の部分に「Connect」ボタンが押された時の処理が書かれています。(説明用のコメントを追加しました。)<br>
+データを受信した時に呼び出される関数の指定や、Sleepモードの設定をしてから<code>leafony.connect()</code>で接続します。<br>
+(現状はSleepモードのチェックボックスはUI側で非表示になっていて、常に無効となっています。)<br></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:app.js" data-lang="javascript:app.js"><span style="color:#000">buttonConnect</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">addEventListener</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;click&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+
+    <span style="color:#000">leafony</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">Leafony</span><span style="color:#000;font-weight:bold">();</span>
+    <span style="color:#8f5902;font-style:italic">// Leafonyからデータが送られてきた時に実行される処理
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">leafony</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">onStateChange</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#000">state</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000">updateTable</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">state</span> <span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#8f5902;font-style:italic">// LeafonyのSleep機能を使うかどうか
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// 現状は動作が不安定なのでswitchSleepModeのチェックボックスが押せなくなっています。
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// leafony.disableSleep()側が呼び出されます。
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#000">switchSleepMode</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">checked</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000">leafony</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">enableSleep</span><span style="color:#000;font-weight:bold">();</span>
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000">leafony</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">disableSleep</span><span style="color:#000;font-weight:bold">();</span>
+    <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#8f5902;font-style:italic">// Leafonyと接続 ここで周辺のBluetoothを検索するポップアップが出現します。
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">leafony</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">connect</span><span style="color:#000;font-weight:bold">();</span>
+
+    <span style="color:#000">buttonConnect</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">style</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">display</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;none&#39;</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">buttonDisconnect</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">style</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">display</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;&#39;</span><span style="color:#000;font-weight:bold">;</span>
+
+<span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">);</span>
+</code></pre></div><p><code>leafony.connect()</code>の中ではWeb Bluetoothを呼び出してLeafonyと接続する処理が書かれています。</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:leafony.js" data-lang="javascript:leafony.js">    <span style="color:#8f5902;font-style:italic">// LeafonyのBluetoothのUUID
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">SERVICE_UUID</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;442f1570-8a00-9a28-cbe1-e1d4212d53eb&#34;</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">CHARACTERISTIC_READ_UUID</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;442f1571-8a00-9a28-cbe1-e1d4212d53eb&#34;</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">CHARACTERISTIC_WRITE_UUID</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;442f1572-8a00-9a28-cbe1-e1d4212d53eb&#34;</span><span style="color:#000;font-weight:bold">;</span>
+
+    <span style="color:#8f5902;font-style:italic">// 省略
+</span><span style="color:#8f5902;font-style:italic"></span>
+    <span style="color:#8f5902;font-style:italic">/**
+</span><span style="color:#8f5902;font-style:italic">     * Bluetoothリーフと接続する関数
+</span><span style="color:#8f5902;font-style:italic">     * @param none
+</span><span style="color:#8f5902;font-style:italic">     * @return none
+</span><span style="color:#8f5902;font-style:italic">     */</span>
+    <span style="color:#000">async</span> <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">connect</span> <span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+
+        <span style="color:#204a87;font-weight:bold">try</span> <span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#8f5902;font-style:italic">// Web Bluetoothのデバイス検索ポップアップを表示する
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#000">device</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">await</span> <span style="color:#000">navigator</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">bluetooth</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">requestDevice</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000;font-weight:bold">{</span>
+                <span style="color:#000">acceptAllDevices</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
+                <span style="color:#000">optionalServices</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span> <span style="color:#4e9a06">&#39;generic_access&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">SERVICE_UUID</span> <span style="color:#000;font-weight:bold">],</span>
+            <span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">);</span>
+
+            <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;&gt; Unique Name: &#39;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">device</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">name</span> <span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;&gt; ID: &#39;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">device</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">id</span> <span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;&gt; Connected: &#39;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">device</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">gatt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">connected</span> <span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#000">uniqueName</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">String</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">device</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">name</span> <span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#8f5902;font-style:italic">// 切断時に呼び出される関数
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#000">device</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">addEventListener</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;gattserverdisconnected&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">onDisconnected</span> <span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#8f5902;font-style:italic">// GATTと接続
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#000">server</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">await</span> <span style="color:#000">device</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">gatt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">connect</span><span style="color:#000;font-weight:bold">();</span>
+            <span style="color:#8f5902;font-style:italic">// ServiceやCharacteristicと接続
+</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#000">connectService</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">server</span> <span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">catch</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#000">error</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">error</span> <span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#000;font-weight:bold">}</span>
+
+    <span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><h3 id="データを受信した時の処理">データを受信した時の処理</h3>
+<p>データを受信したら<code>updateTable()</code>が呼び出されます。
+受信したデータはstate変数の中に入っているので、次のようにテーブルに表示しています。</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:app.js" data-lang="javascript:app.js"><span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">updateTable</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#000">state</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#8f5902;font-style:italic">// 省略
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// Bluetoothで受信したデータをテーブルに表示
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">textDeviceName</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">innerText</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">devn</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">textUniqueName</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">innerText</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">unin</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">textDateTime</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">innerText</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">datetime</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">textTemp</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">innerText</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">temp</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">textHumid</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">innerText</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">humd</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">textIllum</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">innerText</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">illm</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">textTilt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">innerText</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">tilt</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">textBatt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">innerText</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">batt</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">textDice</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">innerText</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">dice</span><span style="color:#000;font-weight:bold">;</span>
+
+    <span style="color:#8f5902;font-style:italic">// 省略
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><p>もしLeafony側で送信するデータを変更した場合は、<code>leafony.js</code>内の以下の部分を変更すれば任意のデータを扱えます。
+<code>state.xxxx</code>のような名前も以下の部分でつけることができます。
+Leafony側で送信するデータの変え方は次の章で説明します。</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:leafony.js" data-lang="javascript:leafony.js">    <span style="color:#8f5902;font-style:italic">/**
+</span><span style="color:#8f5902;font-style:italic">     * Characteristicの値が変化した時に呼び出される関数
+</span><span style="color:#8f5902;font-style:italic">     * @param {*} event 
+</span><span style="color:#8f5902;font-style:italic">     */</span>
+    <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">handleData</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">event</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#8f5902;font-style:italic">// 受信したデータの文字コードを変換して、カンマでデータを分けている
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#8f5902;font-style:italic">// このサンプルではLeafonyは
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#8f5902;font-style:italic">// 温度,湿度,傾き,電池の電圧
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#8f5902;font-style:italic">// のようにカンマ区切りのテキストを送信している。
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">event</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">target</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">value</span><span style="color:#000;font-weight:bold">;</span>
+        <span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">decoder</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">TextDecoder</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;utf-8&#39;</span> <span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#000">data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">decoder</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">decode</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">data</span> <span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#000">data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">data</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">replace</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">/\r?\n/g</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#39;&#39;</span> <span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#000">data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">data</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">split</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;,&#39;</span> <span style="color:#000;font-weight:bold">);</span>
+
+        <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">devn</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">deviceName</span><span style="color:#000;font-weight:bold">;</span>
+        <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">unin</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">uniqueName</span><span style="color:#000;font-weight:bold">;</span>
+        <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">temp</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">];</span>
+        <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">humd</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">];</span>
+        <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">illm</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">];</span>
+        <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">tilt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">];</span>
+        <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">batt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">];</span>
+        <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">dice</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">];</span>
+        <span style="color:#8f5902;font-style:italic">// ここで updateTable() が実行されている
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000">onStateChangeCallback</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">state</span> <span style="color:#000;font-weight:bold">);</span>
+
+        <span style="color:#8f5902;font-style:italic">// 省略
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><h3 id="データを送信する時の処理">データを送信する時の処理</h3>
+<p>また、「LED+」「LED-」ボタンを押すと、LeafonyのLEDの点滅スピードを変えることができます。
+ボタンが押された時にLeafonyに<code>PLS</code>や<code>MNS</code>といったコマンドを次のように送ることで、Leafonyのコントロールも可能です。</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:app.js" data-lang="javascript:app.js"><span style="color:#000">buttonLedPls</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">addEventListener</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;click&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+
+    <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;LED Plus Button Clicked&#39;</span> <span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">leafony</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">sendCommand</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;PLS&#39;</span> <span style="color:#000;font-weight:bold">);</span>
+
+<span style="color:#000;font-weight:bold">});</span>
+</code></pre></div><p>このように、LeafonyのサンプルアプリではとてもシンプルにBluetoothとの接続やデータのやり取りを記述しています。</p>
+<h2 id="webbluetoothの注意点">WebBluetoothの注意点</h2>
+<p>2020年6月時点ではWeb Bluetoothは以下の点に注意しなければいけません。</p>
+<ul>
+<li>iPhoneのChromeでは動作しません。<a href="https://apps.apple.com/jp/app/webble/id1193531073">WebBLE</a>という有料のアプリを使えば利用可能です。</li>
+<li>Web Bluetoothの開発状況については<a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md">implementation-status.md</a>で確認できます。</li>
+</ul>
+<h2 id="参考">参考</h2>
+<p><a href="https://qiita.com/s_nkg/items/bdb235388eaeb567b54d">https://qiita.com/s_nkg/items/bdb235388eaeb567b54d</a></p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Windows 10 version 1703以降 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>OS X Yosemite以降 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>Kernel 3.19+ and BlueZ 5.41+ installed. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>Android 6.0 Marshmallow以降 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p>iPhoneまたはiPadの場合は <a href="https://itunes.apple.com/us/app/webble/id1193531073">WebBLE</a>(有料)が必要です。iPhone、iPad版のChromeではWeb Bluetoothが実装されていないためです。 <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+        <div class="section-index">
+    
+    
+    
+    
+    <hr class="panel-line">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    
+</div>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 15, 2020
+</div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/Leafony">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Contact us" aria-label="Contact us">
+    <a class="text-white" target="_blank" href="mailto:staff@lowpower.sakura.ne.jp">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2020 Trillion-Node Study Group  </small>
+        
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>
