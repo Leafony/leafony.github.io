@@ -26,7 +26,7 @@
 &lt;a href=&#34;./ap01a_b_large.jpg&#34;&gt;&lt;img src=&#34;./ap01a_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
 &lt;a href=&#34;./ap01a_p_large.jpg&#34;&gt;&lt;img src=&#34;./ap01a_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;p&gt;ATmega328Pを使用したリーフ。14個のデジタル入出力ピン（6個はPWM出力として使用可能）、6個のアナログ入力ピン、8MHz振動子、およびリセットボタンを備えています。 USB接続する場合はUSB を接続、ICSPを使用する場合はShield を接続します。 Arduino IDE使用時は、ボードをArduino Pro or Pro Mini、プロセッサをATmega328P(3.3V,8MHz)選択。&lt;/p&gt;
+&lt;p&gt;ATmega328Pを使用したリーフ。14個のデジタル入出力ピン（6個はPWM出力として使用可能）、6個のアナログ入力ピン、8MHz振動子、およびリセットボタンを備えています。 USB接続する場合はUSB を接続、ICSPを使用する場合はShield を接続します。 Arduino IDE使用時は、ボードをArduino Pro or Pro　Mini、プロセッサをATmega328P(3.3V,8MHz)選択。&lt;/p&gt;
 &lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -88,7 +88,7 @@
 関数は、仕様書に記載していますので、必要に応じて、確認してください。&lt;/p&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP01_AVR_MCU/AP01_AVR_MCU_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ap01_AVR_MCU/ap01_AVR_MCU_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ap01_AVR_MCU/ap01_AVR_MCU_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ap01_AVR_MCU/ap01_AVR_MCU_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/ap01_AVR_MCU/ap01_AVR_MCU_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
