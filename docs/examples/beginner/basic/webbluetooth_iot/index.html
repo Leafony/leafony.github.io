@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.70.0" />
+<meta name="generator" content="Hugo 0.72.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -133,7 +133,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.45a98d7b589b47281216bc7935fd3bea2747a5af68d81417db10974ce3df88e0faeb48409f4cbbef03ef42c41ffcc0e1e9a0cfd0343e89c08ddf1bbaeb90e1ba.json"
+  data-offline-search-index-json-src="/offline-search-index.0aef750bc561bee9ece73b50aa5b10a10828429d44ba85cc9cb25555627c283bbd6e744f150d945cb3f1cc4de04ef729c36bb3ec2e10a08f333a99ff7953668e.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.45a98d7b589b47281216bc7935fd3bea2747a5af68d81417db10974ce3df88e0faeb48409f4cbbef03ef42c41ffcc0e1e9a0cfd0343e89c08ddf1bbaeb90e1ba.json"
+  data-offline-search-index-json-src="/offline-search-index.0aef750bc561bee9ece73b50aa5b10a10828429d44ba85cc9cb25555627c283bbd6e744f150d945cb3f1cc4de04ef729c36bb3ec2e10a08f333a99ff7953668e.json"
   data-offline-search-base-href="/"
 >
 
@@ -2021,19 +2021,17 @@ if (!doNotTrack) {
     <li><a href="#はじめに">はじめに</a></li>
     <li><a href="#用意するもの">用意するもの</a></li>
     <li><a href="#サンプルアプリのソースコード">サンプルアプリのソースコード</a></li>
-    <li><a href="#leafony側">Leafony側</a>
+    <li><a href="#実行方法">実行方法</a></li>
+    <li><a href="#仕組み">仕組み</a>
       <ul>
         <li><a href="#leafonyがbleで送信する仕組み">LeafonyがBLEで送信する仕組み</a></li>
-      </ul>
-    </li>
-    <li><a href="#webアプリ側">Webアプリ側</a>
-      <ul>
+        <li><a href="#webアプリ側">Webアプリ側</a></li>
         <li><a href="#webbluetoothを使ってleafonyと接続する処理">WebBluetoothを使ってLeafonyと接続する処理</a></li>
         <li><a href="#データを受信した時の処理">データを受信した時の処理</a></li>
         <li><a href="#データを送信する時の処理">データを送信する時の処理</a></li>
+        <li><a href="#webbluetoothの注意点">WebBluetoothの注意点</a></li>
       </ul>
     </li>
-    <li><a href="#webbluetoothの注意点">WebBluetoothの注意点</a></li>
     <li><a href="#参考">参考</a></li>
   </ul>
 </nav>
@@ -2144,12 +2142,18 @@ PCやスマホ・タブレットには色々な環境があります。Windows�
 <li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE">Arduino スケッチ</a></li>
 <li><a href="https://github.com/Leafony/WebBluetooth_for_Leafony_app">Web Bluetooth アプリ</a></li>
 </ul>
-<h2 id="leafony側">Leafony側</h2>
+<h2 id="実行方法">実行方法</h2>
+<ol>
+<li>Arduino IDEで<a href="https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE">4-Sensors_BLE.ino</a>を書き込む</li>
+<li>Google Chromeで<a href="https://github.com/Leafony/WebBluetooth_for_Leafony_app">Web Bluetoothアプリ</a>を開く</li>
+</ol>
+<p>使い方の詳細は<a href="/docs/getting-started/basic">Basic Kit クイックスタートガイド</a>を参考</p>
+<h2 id="仕組み">仕組み</h2>
 <h3 id="leafonyがbleで送信する仕組み">LeafonyがBLEで送信する仕組み</h3>
 <p><code>4-Sensors_BLE.ino</code>の1030行目付近に次のような記述があり、この部分でテキストデータをBluetoothで送信しています。
 このテキストを変えることで任意のデータを送信可能です。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++:4-Sensors_BLE.ino" data-lang="c++:4-Sensors_BLE.ino"><span style="color:#000">sendLen</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">sprintf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">sendData</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;%04s,%04s,%04s,%04s,%04s,%01s</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">temp</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">humid</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">light</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">tilt</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">battVolt</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pips</span><span style="color:#000;font-weight:bold">)</span>
-</code></pre></div><h2 id="webアプリ側">Webアプリ側</h2>
+</code></pre></div><h3 id="webアプリ側">Webアプリ側</h3>
 <p><code>index.html</code>と<code>app.js</code>と<code>leafony.js</code>の3つのファイルで構成されています。</p>
 <p><code>index.html</code>はボタンや表の配置を行ったり、他2つのjavascriptのファイルを読み込むだけの単純なものです。<br>
 <code>app.js</code>はボタンが押されたときの処理などメインの処理が記述されています。<br>
@@ -2277,7 +2281,7 @@ Leafony側で送信するデータの変え方は次の章で説明します。<
 
 <span style="color:#000;font-weight:bold">});</span>
 </code></pre></div><p>このように、LeafonyのサンプルアプリではとてもシンプルにBluetoothとの接続やデータのやり取りを記述しています。</p>
-<h2 id="webbluetoothの注意点">WebBluetoothの注意点</h2>
+<h3 id="webbluetoothの注意点">WebBluetoothの注意点</h3>
 <p>2020年6月時点ではWeb Bluetoothは以下の点に注意しなければいけません。</p>
 <ul>
 <li>iPhoneのChromeでは動作しません。<a href="https://apps.apple.com/jp/app/webble/id1193531073">WebBLE</a>という有料のアプリを使えば利用可能です。</li>
@@ -2480,7 +2484,7 @@ Leafony側で送信するデータの変え方は次の章で説明します。<
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 16, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 17, 2020
 </div>
 </div>
 
