@@ -133,7 +133,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.382b48010df6ffa64dd62608c37a122987eac4c31276950463e0421ef268ae585986fbdfbc0acc3460172bbf31f8c90f97dbcfda8951f080335ae24256b68063.json"
+  data-offline-search-index-json-src="/offline-search-index.25680f02168ba34695e9625863212657569fc0f0dbb940feca9a939cc42be4415840836e58ee7cfedb2e65af89ac501559563e0640d85f983d8516a8757711eb.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.382b48010df6ffa64dd62608c37a122987eac4c31276950463e0421ef268ae585986fbdfbc0acc3460172bbf31f8c90f97dbcfda8951f080335ae24256b68063.json"
+  data-offline-search-index-json-src="/offline-search-index.25680f02168ba34695e9625863212657569fc0f0dbb940feca9a939cc42be4415840836e58ee7cfedb2e65af89ac501559563e0640d85f983d8516a8757711eb.json"
   data-offline-search-base-href="/"
 >
 
@@ -2023,14 +2023,23 @@ if (!doNotTrack) {
     <li><a href="#サンプルアプリのソースコード">サンプルアプリのソースコード</a></li>
     <li><a href="#leafonyの構成">Leafonyの構成</a></li>
     <li><a href="#実行方法">実行方法</a></li>
-    <li><a href="#どこでデータを送っているのか受け取っているのか">どこでデータを送っているのか・受け取っているのか</a>
+    <li><a href="#データの送信">データの送信</a>
       <ul>
         <li><a href="#leafony側">Leafony側</a></li>
         <li><a href="#webアプリ側">Webアプリ側</a></li>
-        <li><a href="#送るデータを変えるには">送るデータを変えるには</a></li>
       </ul>
     </li>
-    <li><a href="#仕組み">仕組み</a></li>
+    <li><a href="#データの受信">データの受信</a>
+      <ul>
+        <li><a href="#webアプリ側-1">Webアプリ側</a></li>
+        <li><a href="#leafony側-1">Leafony側</a></li>
+      </ul>
+    </li>
+    <li><a href="#仕組み">仕組み</a>
+      <ul>
+        <li><a href="#webアプリ側-2">Webアプリ側</a></li>
+      </ul>
+    </li>
     <li><a href="#web-bluetoothの注意点">Web Bluetoothの注意点</a></li>
     <li><a href="#参考">参考</a></li>
   </ul>
@@ -2103,6 +2112,7 @@ if (!doNotTrack) {
         <div class="lead">マルチプラットフォームなIoT開発を体験しよう</div>
 	
 	<p>このサンプルは<a href="/docs/getting-started/basic/">Basic Kit スタートガイド</a>で紹介したものと同様です。ソースコードを読みながら、動作を理解していきましょう。</p>
+<p><img src="webbluetooth.png" alt="webbluetooth.png"></p>
 <h2 id="はじめに">はじめに</h2>
 <p>Leafonyは省電力で小型なIoTデバイスの開発を簡単に行えるように、それぞれのリーフが省電力な設計になっています。
 バッテリで長時間動作するため、様々な場所に設置してセンサで定点観測を行うことも可能です。</p>
@@ -2201,101 +2211,25 @@ PCやスマホ・タブレットには色々な環境があります。Windows�
 <li>ダウンロードした<a href="https://github.com/Leafony/WebBluetooth_for_Leafony_app">Web Bluetooth アプリ</a>の<code>index.html</code>をGoogle Chromeで開く<br>
 Webアプリの使い方の詳細は<a href="/docs/getting-started/basic">Basic Kit クイックスタートガイド</a>を参考</li>
 </ol>
-<h2 id="どこでデータを送っているのか受け取っているのか">どこでデータを送っているのか・受け取っているのか</h2>
+<h2 id="データの送信">データの送信</h2>
+<p>BLEでデータを送受信する方法を見てみましょう。</p>
 <h3 id="leafony側">Leafony側</h3>
-<p><code>4-Sensors_BLE.ino</code>の1030行目付近に次のような記述があり、この部分でテキストデータをBluetoothで送信しています。
+<p><code>4-Sensors_BLE.ino</code>の1020行目付近でBluetoothで送信するテキストデータを生成しています。
 このテキストを変えることで任意のデータを送信可能です。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++:4-Sensors_BLE.ino" data-lang="c++:4-Sensors_BLE.ino"><span style="color:#000">sendLen</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">sprintf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">sendData</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;%04s,%04s,%04s,%04s,%04s,%01s</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">temp</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">humid</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">light</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">tilt</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">battVolt</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pips</span><span style="color:#000;font-weight:bold">)</span>
+</code></pre></div><p>上記では<code>&lt;温度&gt;,&lt;湿度&gt;,&lt;照度&gt;,&lt;傾き&gt;,&lt;電池電圧&gt;,&lt;サイコロ&gt;</code>のようにカンマ区切りのデータを送信しています。</p>
+<p>実際にこのテキストデータを送信しているのは下記の部分です。(1085行目付近)</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++:4-Sensors_BLE.ino" data-lang="c++:4-Sensors_BLE.ino"><span style="color:#000">ble112</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ble_cmd_gatt_server_send_characteristic_notification</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x000C</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">sendLen</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">uint8</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">sendData</span> <span style="color:#000;font-weight:bold">);</span>
 </code></pre></div><h3 id="webアプリ側">Webアプリ側</h3>
-<p><code>index.html</code>と<code>app.js</code>と<code>leafony.js</code>の3つのファイルで構成されています。</p>
-<p><code>index.html</code>はボタンや表の配置を行ったり、他2つのjavascriptのファイルを読み込むだけの単純なものです。<br>
-<code>app.js</code>はボタンが押されたときの処理などメインの処理が記述されています。<br>
-<code>leafony.js</code>はWeb Bluetoothを使ってLeafonyと接続するための具体的な処理がかかれています。<br></p>
-<p>簡単に中のコードを追って見ていきましょう。</p>
-<h4 id="webbluetoothを使ってleafonyと接続する処理">WebBluetoothを使ってLeafonyと接続する処理</h4>
-<p><code>app.js</code>内の以下の部分に「Connect」ボタンが押された時の処理が書かれています。(説明用のコメントを追加しました。)<br>
-データを受信した時に呼び出される関数の指定や、Sleepモードの設定をしてから<code>leafony.connect()</code>で接続します。<br>
-(現状はSleepモードのチェックボックスはUI側で非表示になっていて、常に無効となっています。)<br></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:app.js" data-lang="javascript:app.js"><span style="color:#000">buttonConnect</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">addEventListener</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;click&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-
-    <span style="color:#000">leafony</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">Leafony</span><span style="color:#000;font-weight:bold">();</span>
-    <span style="color:#8f5902;font-style:italic">// Leafonyからデータが送られてきた時に実行される処理
-</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">leafony</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">onStateChange</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#000">state</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-        <span style="color:#000">updateTable</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">state</span> <span style="color:#000;font-weight:bold">);</span>
-    <span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">);</span>
-    <span style="color:#8f5902;font-style:italic">// LeafonyのSleep機能を使うかどうか
-</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// 現状は動作が不安定なのでswitchSleepModeのチェックボックスが押せなくなっています。
-</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// leafony.disableSleep()側が呼び出されます。
-</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#000">switchSleepMode</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">checked</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-        <span style="color:#000">leafony</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">enableSleep</span><span style="color:#000;font-weight:bold">();</span>
-    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
-        <span style="color:#000">leafony</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">disableSleep</span><span style="color:#000;font-weight:bold">();</span>
-    <span style="color:#000;font-weight:bold">}</span>
-    <span style="color:#8f5902;font-style:italic">// Leafonyと接続 ここで周辺のBluetoothを検索するポップアップが出現します。
-</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">leafony</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">connect</span><span style="color:#000;font-weight:bold">();</span>
-
-    <span style="color:#000">buttonConnect</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">style</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">display</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;none&#39;</span><span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000">buttonDisconnect</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">style</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">display</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;&#39;</span><span style="color:#000;font-weight:bold">;</span>
-
-<span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">);</span>
-</code></pre></div><p><code>leafony.connect()</code>の中ではWeb Bluetoothを呼び出してLeafonyと接続する処理が書かれています。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:leafony.js" data-lang="javascript:leafony.js">    <span style="color:#8f5902;font-style:italic">// LeafonyのBluetoothのUUID
-</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">SERVICE_UUID</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;442f1570-8a00-9a28-cbe1-e1d4212d53eb&#34;</span><span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">CHARACTERISTIC_READ_UUID</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;442f1571-8a00-9a28-cbe1-e1d4212d53eb&#34;</span><span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">CHARACTERISTIC_WRITE_UUID</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;442f1572-8a00-9a28-cbe1-e1d4212d53eb&#34;</span><span style="color:#000;font-weight:bold">;</span>
-
-    <span style="color:#8f5902;font-style:italic">// 省略
-</span><span style="color:#8f5902;font-style:italic"></span>
-    <span style="color:#8f5902;font-style:italic">/**
-</span><span style="color:#8f5902;font-style:italic">     * Bluetoothリーフと接続する関数
-</span><span style="color:#8f5902;font-style:italic">     * @param none
-</span><span style="color:#8f5902;font-style:italic">     * @return none
-</span><span style="color:#8f5902;font-style:italic">     */</span>
-    <span style="color:#000">async</span> <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">connect</span> <span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-
-        <span style="color:#204a87;font-weight:bold">try</span> <span style="color:#000;font-weight:bold">{</span>
-            <span style="color:#8f5902;font-style:italic">// Web Bluetoothのデバイス検索ポップアップを表示する
-</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#000">device</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">await</span> <span style="color:#000">navigator</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">bluetooth</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">requestDevice</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000;font-weight:bold">{</span>
-                <span style="color:#000">acceptAllDevices</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#204a87;font-weight:bold">true</span><span style="color:#000;font-weight:bold">,</span>
-                <span style="color:#000">optionalServices</span><span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">[</span> <span style="color:#4e9a06">&#39;generic_access&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">SERVICE_UUID</span> <span style="color:#000;font-weight:bold">],</span>
-            <span style="color:#000;font-weight:bold">}</span> <span style="color:#000;font-weight:bold">);</span>
-
-            <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;&gt; Unique Name: &#39;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">device</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">name</span> <span style="color:#000;font-weight:bold">);</span>
-            <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;&gt; ID: &#39;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">device</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">id</span> <span style="color:#000;font-weight:bold">);</span>
-            <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;&gt; Connected: &#39;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">device</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">gatt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">connected</span> <span style="color:#000;font-weight:bold">);</span>
-            <span style="color:#000">uniqueName</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">String</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">device</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">name</span> <span style="color:#000;font-weight:bold">);</span>
-            <span style="color:#8f5902;font-style:italic">// 切断時に呼び出される関数
-</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#000">device</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">addEventListener</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;gattserverdisconnected&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">onDisconnected</span> <span style="color:#000;font-weight:bold">);</span>
-            <span style="color:#8f5902;font-style:italic">// GATTと接続
-</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#000">server</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">await</span> <span style="color:#000">device</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">gatt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">connect</span><span style="color:#000;font-weight:bold">();</span>
-            <span style="color:#8f5902;font-style:italic">// ServiceやCharacteristicと接続
-</span><span style="color:#8f5902;font-style:italic"></span>            <span style="color:#000">connectService</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">server</span> <span style="color:#000;font-weight:bold">);</span>
-        <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">catch</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#000">error</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-            <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">error</span> <span style="color:#000;font-weight:bold">);</span>
-        <span style="color:#000;font-weight:bold">}</span>
-
-    <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><h4 id="データを受信した時の処理">データを受信した時の処理</h4>
-<p>データを受信したら<code>updateTable()</code>が呼び出されます。
-受信したデータはstate変数の中に入っているので、次のようにテーブルに表示しています。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:app.js" data-lang="javascript:app.js"><span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">updateTable</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#000">state</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#8f5902;font-style:italic">// 省略
-</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// Bluetoothで受信したデータをテーブルに表示
-</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">textDeviceName</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">innerText</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">devn</span><span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000">textUniqueName</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">innerText</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">unin</span><span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000">textDateTime</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">innerText</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">datetime</span><span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000">textTemp</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">innerText</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">temp</span><span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000">textHumid</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">innerText</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">humd</span><span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000">textIllum</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">innerText</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">illm</span><span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000">textTilt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">innerText</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">tilt</span><span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000">textBatt</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">innerText</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">batt</span><span style="color:#000;font-weight:bold">;</span>
-    <span style="color:#000">textDice</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">innerText</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">state</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">dice</span><span style="color:#000;font-weight:bold">;</span>
-
-    <span style="color:#8f5902;font-style:italic">// 省略
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><p>もしLeafony側で送信するデータを変更した場合は、<code>leafony.js</code>内の以下の部分を変更すれば任意のデータを扱えます。
-<code>state.xxxx</code>のような名前も以下の部分でつけることができます。
-Leafony側で送信するデータの変え方は次の章で説明します。</p>
+<p>Webアプリ側では<code>leafony.js</code>にデータ受信時の処理が書かれています。</p>
+<p><code>leafony.js</code>の75行目の記述で、データを受信した時に呼び出される関数を指定します。
+ここでは<code>handleData()</code>という関数が呼び出されます。</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js:leafony.js" data-lang="js:leafony.js"><span style="color:#204a87;font-weight:bold">char</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">addEventListener</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;characteristicvaluechanged&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">handleData</span> <span style="color:#000;font-weight:bold">);</span>
+</code></pre></div><p><code>handleData()</code>関数も<code>leafony.js</code>に記述されています。<br>
+BLEで受信したデータは<code>event.target.value</code>に含まれています。<br>
+一旦<code>data</code>という変数に値をコピーした後に、受信データをutf-8でデコードし、改行コード(<code>\r\n</code>)を取り除いてから、カンマ<code>,</code>で区切って配列にしています。<br>
+これらのデータは<code>state</code>という変数に任意の名前をつけて保存しています。(<code>state.temp</code>や<code>state.humid</code>など)</p>
+<p>Leafony側で送るデータを変更した際は、<code>handleData()</code>関数を修正することでデコードすることが可能です。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:leafony.js" data-lang="javascript:leafony.js">    <span style="color:#8f5902;font-style:italic">/**
 </span><span style="color:#8f5902;font-style:italic">     * Characteristicの値が変化した時に呼び出される関数
 </span><span style="color:#8f5902;font-style:italic">     * @param {*} event
@@ -2324,17 +2258,52 @@ Leafony側で送信するデータの変え方は次の章で説明します。<
 
         <span style="color:#8f5902;font-style:italic">// 省略
 </span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><h4 id="データを送信する時の処理">データを送信する時の処理</h4>
-<p>また、「LED+」「LED-」ボタンを押すと、LeafonyのLEDの点滅スピードを変えることができます。
-ボタンが押された時にLeafonyに<code>PLS</code>や<code>MNS</code>といったコマンドを次のように送ることで、Leafonyのコントロールも可能です。</p>
+</code></pre></div><h2 id="データの受信">データの受信</h2>
+<h3 id="webアプリ側-1">Webアプリ側</h3>
+<p>Webアプリの画面で「LED+」「LED-」ボタンを押すと、LeafonyのLEDの点滅スピードを変えることができます。<br>
+ボタン押された時の処理は<code>app.js</code>の下記の部分に記述されています。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:app.js" data-lang="javascript:app.js"><span style="color:#000">buttonLedPls</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">addEventListener</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;click&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
 
     <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;LED Plus Button Clicked&#39;</span> <span style="color:#000;font-weight:bold">);</span>
     <span style="color:#000">leafony</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">sendCommand</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;PLS&#39;</span> <span style="color:#000;font-weight:bold">);</span>
 
 <span style="color:#000;font-weight:bold">});</span>
-</code></pre></div><p>このように、LeafonyのサンプルアプリではとてもシンプルにBluetoothとの接続やデータのやり取りを記述しています。</p>
-<h3 id="送るデータを変えるには">送るデータを変えるには</h3>
+</code></pre></div><p><code>leafony.sendCommand( '文字列' );</code>で任意の文字列をLeafonyに送信しています。</p>
+<h3 id="leafony側-1">Leafony側</h3>
+<p>Webアプリ側から送信された文字列をLeafonyが受信したとき、<code>4-Sensors.ino</code>の<code>my_evt_gatt_server_attribute_value()</code>関数が呼び出されます。<br>
+デコードされた文字列は<code>rcv_data</code>という変数にコピーされ、その文字列の内容に応じた処理をしています。</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++:4-Sensors.ino" data-lang="c++:4-Sensors.ino"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">my_evt_gatt_server_attribute_value</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000">ble_msg_gatt_server_attribute_value_evt_t</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">msg</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000">uint16</span> <span style="color:#000">attribute</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">uint16</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">msg</span> <span style="color:#ce5c00;font-weight:bold">-&gt;</span> <span style="color:#000">attribute</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">uint16</span> <span style="color:#000">offset</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">uint8</span> <span style="color:#000">value_len</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">msg</span> <span style="color:#ce5c00;font-weight:bold">-&gt;</span> <span style="color:#000">value</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">len</span><span style="color:#000;font-weight:bold">;</span>
+
+    <span style="color:#000">uint8</span> <span style="color:#000">value_data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">20</span><span style="color:#000;font-weight:bold">];</span>
+    <span style="color:#204a87;font-weight:bold">String</span> <span style="color:#000">rcv_data</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">rcv_data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;&#34;</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#000">value_len</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000">rcv_data</span> <span style="color:#ce5c00;font-weight:bold">+=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">char</span><span style="color:#000;font-weight:bold">)(</span><span style="color:#000">msg</span> <span style="color:#ce5c00;font-weight:bold">-&gt;</span> <span style="color:#000">value</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]);</span>
+    <span style="color:#000;font-weight:bold">}</span>
+
+    <span style="color:#8f5902;font-style:italic">// 中略
+</span><span style="color:#8f5902;font-style:italic"></span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">rcv_data</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">indexOf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;SND&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0</span> <span style="color:#000;font-weight:bold">){</span>
+        <span style="color:#000">bBLEsendData</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">;</span>
+        <span style="color:#000">iToggle</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">rcv_data</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">indexOf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;STP&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0</span> <span style="color:#000;font-weight:bold">){</span>
+        <span style="color:#000">bBLEsendData</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">;</span>
+        <span style="color:#000">bLCDchange</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">;</span>
+        <span style="color:#000">lcd_view_sts</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">rcv_data</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">indexOf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;PLS&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">){</span>
+      <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">iToggle</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">16</span><span style="color:#000;font-weight:bold">){</span>
+        <span style="color:#000">iToggle</span> <span style="color:#ce5c00;font-weight:bold">+=</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">;</span>
+      <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">rcv_data</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">indexOf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;MNS&#34;</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">){</span>
+      <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">iToggle</span> <span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">){</span>
+        <span style="color:#000">iToggle</span> <span style="color:#ce5c00;font-weight:bold">-=</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">;</span>
+      <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><p>上記の部分を修正することで簡単にデータの送受信を行うことができます。</p>
 <h2 id="仕組み">仕組み</h2>
 <ul>
 <li>PeripheralとCentral</li>
@@ -2342,6 +2311,11 @@ Leafony側で送信するデータの変え方は次の章で説明します。<
 <li>GATT</li>
 <li>Characteristic</li>
 </ul>
+<h3 id="webアプリ側-2">Webアプリ側</h3>
+<p><code>index.html</code>と<code>app.js</code>と<code>leafony.js</code>の3つのファイルで構成されています。</p>
+<p><code>index.html</code>はボタンや表の配置を行ったり、他2つのjavascriptのファイルを読み込むだけの単純なものです。<br>
+<code>app.js</code>はボタンが押されたときの処理などメインの処理が記述されています。<br>
+<code>leafony.js</code>はWeb Bluetoothを使ってLeafonyと接続するための具体的な処理がかかれています。<br></p>
 <h2 id="web-bluetoothの注意点">Web Bluetoothの注意点</h2>
 <p>2020年6月時点ではWeb Bluetoothは以下の点に注意しなければいけません。</p>
 <ul>
