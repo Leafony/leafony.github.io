@@ -133,7 +133,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.0aef750bc561bee9ece73b50aa5b10a10828429d44ba85cc9cb25555627c283bbd6e744f150d945cb3f1cc4de04ef729c36bb3ec2e10a08f333a99ff7953668e.json"
+  data-offline-search-index-json-src="/offline-search-index.382b48010df6ffa64dd62608c37a122987eac4c31276950463e0421ef268ae585986fbdfbc0acc3460172bbf31f8c90f97dbcfda8951f080335ae24256b68063.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.0aef750bc561bee9ece73b50aa5b10a10828429d44ba85cc9cb25555627c283bbd6e744f150d945cb3f1cc4de04ef729c36bb3ec2e10a08f333a99ff7953668e.json"
+  data-offline-search-index-json-src="/offline-search-index.382b48010df6ffa64dd62608c37a122987eac4c31276950463e0421ef268ae585986fbdfbc0acc3460172bbf31f8c90f97dbcfda8951f080335ae24256b68063.json"
   data-offline-search-base-href="/"
 >
 
@@ -2021,17 +2021,17 @@ if (!doNotTrack) {
     <li><a href="#はじめに">はじめに</a></li>
     <li><a href="#用意するもの">用意するもの</a></li>
     <li><a href="#サンプルアプリのソースコード">サンプルアプリのソースコード</a></li>
+    <li><a href="#leafonyの構成">Leafonyの構成</a></li>
     <li><a href="#実行方法">実行方法</a></li>
-    <li><a href="#仕組み">仕組み</a>
+    <li><a href="#どこでデータを送っているのか受け取っているのか">どこでデータを送っているのか・受け取っているのか</a>
       <ul>
-        <li><a href="#leafonyがbleで送信する仕組み">LeafonyがBLEで送信する仕組み</a></li>
+        <li><a href="#leafony側">Leafony側</a></li>
         <li><a href="#webアプリ側">Webアプリ側</a></li>
-        <li><a href="#webbluetoothを使ってleafonyと接続する処理">WebBluetoothを使ってLeafonyと接続する処理</a></li>
-        <li><a href="#データを受信した時の処理">データを受信した時の処理</a></li>
-        <li><a href="#データを送信する時の処理">データを送信する時の処理</a></li>
-        <li><a href="#webbluetoothの注意点">WebBluetoothの注意点</a></li>
+        <li><a href="#送るデータを変えるには">送るデータを変えるには</a></li>
       </ul>
     </li>
+    <li><a href="#仕組み">仕組み</a></li>
+    <li><a href="#web-bluetoothの注意点">Web Bluetoothの注意点</a></li>
     <li><a href="#参考">参考</a></li>
   </ul>
 </nav>
@@ -2142,14 +2142,67 @@ PCやスマホ・タブレットには色々な環境があります。Windows�
 <li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE">Arduino スケッチ</a></li>
 <li><a href="https://github.com/Leafony/WebBluetooth_for_Leafony_app">Web Bluetooth アプリ</a></li>
 </ul>
+<h2 id="leafonyの構成">Leafonyの構成</h2>
+<p>このサンプルでは下記のリーフ構成で試せます。</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Name</th>
+<th>Q&rsquo;ty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="/docs/leaf/communication/ac02">AC02</a></td>
+<td><a href="/docs/leaf/communication/ac02">BLE Sugar</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/docs/leaf/io/ai01">AI01</a></td>
+<td><a href="/docs/leaf/io/ai01">4-Sensors</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/docs/leaf/processor/ap01">AP01</a></td>
+<td><a href="/docs/leaf/processor/ap01">AVR MCU</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/docs/leaf/power/av01">AV01</a></td>
+<td><a href="/docs/leaf/power/av01">CR2032</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/docs/leaf/others/az01">AZ01</a></td>
+<td><a href="/docs/leaf/others/az01">USB</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/docs/leaf/others/az62">AZ62</a></td>
+<td><a href="/docs/leaf/others/az62">Connector Cover</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td>-</td>
+<td>CR2032 coin cell battery</td>
+<td>1</td>
+</tr>
+<tr>
+<td>-</td>
+<td>M2*18mm screw</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
 <h2 id="実行方法">実行方法</h2>
 <ol>
 <li>Arduino IDEで<a href="https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE">4-Sensors_BLE.ino</a>を書き込む</li>
-<li>Google Chromeで<a href="https://github.com/Leafony/WebBluetooth_for_Leafony_app">Web Bluetoothアプリ</a>を開く</li>
+<li>ダウンロードした<a href="https://github.com/Leafony/WebBluetooth_for_Leafony_app">Web Bluetooth アプリ</a>の<code>index.html</code>をGoogle Chromeで開く<br>
+Webアプリの使い方の詳細は<a href="/docs/getting-started/basic">Basic Kit クイックスタートガイド</a>を参考</li>
 </ol>
-<p>使い方の詳細は<a href="/docs/getting-started/basic">Basic Kit クイックスタートガイド</a>を参考</p>
-<h2 id="仕組み">仕組み</h2>
-<h3 id="leafonyがbleで送信する仕組み">LeafonyがBLEで送信する仕組み</h3>
+<h2 id="どこでデータを送っているのか受け取っているのか">どこでデータを送っているのか・受け取っているのか</h2>
+<h3 id="leafony側">Leafony側</h3>
 <p><code>4-Sensors_BLE.ino</code>の1030行目付近に次のような記述があり、この部分でテキストデータをBluetoothで送信しています。
 このテキストを変えることで任意のデータを送信可能です。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++:4-Sensors_BLE.ino" data-lang="c++:4-Sensors_BLE.ino"><span style="color:#000">sendLen</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">sprintf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">sendData</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;%04s,%04s,%04s,%04s,%04s,%01s</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">temp</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">humid</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">light</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">tilt</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">battVolt</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pips</span><span style="color:#000;font-weight:bold">)</span>
@@ -2159,7 +2212,7 @@ PCやスマホ・タブレットには色々な環境があります。Windows�
 <code>app.js</code>はボタンが押されたときの処理などメインの処理が記述されています。<br>
 <code>leafony.js</code>はWeb Bluetoothを使ってLeafonyと接続するための具体的な処理がかかれています。<br></p>
 <p>簡単に中のコードを追って見ていきましょう。</p>
-<h3 id="webbluetoothを使ってleafonyと接続する処理">WebBluetoothを使ってLeafonyと接続する処理</h3>
+<h4 id="webbluetoothを使ってleafonyと接続する処理">WebBluetoothを使ってLeafonyと接続する処理</h4>
 <p><code>app.js</code>内の以下の部分に「Connect」ボタンが押された時の処理が書かれています。(説明用のコメントを追加しました。)<br>
 データを受信した時に呼び出される関数の指定や、Sleepモードの設定をしてから<code>leafony.connect()</code>で接続します。<br>
 (現状はSleepモードのチェックボックスはUI側で非表示になっていて、常に無効となっています。)<br></p>
@@ -2222,7 +2275,7 @@ PCやスマホ・タブレットには色々な環境があります。Windows�
         <span style="color:#000;font-weight:bold">}</span>
 
     <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><h3 id="データを受信した時の処理">データを受信した時の処理</h3>
+</code></pre></div><h4 id="データを受信した時の処理">データを受信した時の処理</h4>
 <p>データを受信したら<code>updateTable()</code>が呼び出されます。
 受信したデータはstate変数の中に入っているので、次のようにテーブルに表示しています。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:app.js" data-lang="javascript:app.js"><span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">updateTable</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#000">state</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
@@ -2245,7 +2298,7 @@ PCやスマホ・タブレットには色々な環境があります。Windows�
 Leafony側で送信するデータの変え方は次の章で説明します。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:leafony.js" data-lang="javascript:leafony.js">    <span style="color:#8f5902;font-style:italic">/**
 </span><span style="color:#8f5902;font-style:italic">     * Characteristicの値が変化した時に呼び出される関数
-</span><span style="color:#8f5902;font-style:italic">     * @param {*} event 
+</span><span style="color:#8f5902;font-style:italic">     * @param {*} event
 </span><span style="color:#8f5902;font-style:italic">     */</span>
     <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">handleData</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#000">event</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
         <span style="color:#8f5902;font-style:italic">// 受信したデータの文字コードを変換して、カンマでデータを分けている
@@ -2271,7 +2324,7 @@ Leafony側で送信するデータの変え方は次の章で説明します。<
 
         <span style="color:#8f5902;font-style:italic">// 省略
 </span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><h3 id="データを送信する時の処理">データを送信する時の処理</h3>
+</code></pre></div><h4 id="データを送信する時の処理">データを送信する時の処理</h4>
 <p>また、「LED+」「LED-」ボタンを押すと、LeafonyのLEDの点滅スピードを変えることができます。
 ボタンが押された時にLeafonyに<code>PLS</code>や<code>MNS</code>といったコマンドを次のように送ることで、Leafonyのコントロールも可能です。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:app.js" data-lang="javascript:app.js"><span style="color:#000">buttonLedPls</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">addEventListener</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;click&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
@@ -2281,11 +2334,19 @@ Leafony側で送信するデータの変え方は次の章で説明します。<
 
 <span style="color:#000;font-weight:bold">});</span>
 </code></pre></div><p>このように、LeafonyのサンプルアプリではとてもシンプルにBluetoothとの接続やデータのやり取りを記述しています。</p>
-<h3 id="webbluetoothの注意点">WebBluetoothの注意点</h3>
+<h3 id="送るデータを変えるには">送るデータを変えるには</h3>
+<h2 id="仕組み">仕組み</h2>
+<ul>
+<li>PeripheralとCentral</li>
+<li>アドバタイズ</li>
+<li>GATT</li>
+<li>Characteristic</li>
+</ul>
+<h2 id="web-bluetoothの注意点">Web Bluetoothの注意点</h2>
 <p>2020年6月時点ではWeb Bluetoothは以下の点に注意しなければいけません。</p>
 <ul>
 <li>iPhoneのChromeでは動作しません。<a href="https://apps.apple.com/jp/app/webble/id1193531073">WebBLE</a>という有料のアプリを使えば利用可能です。</li>
-<li>Web Bluetoothの開発状況については<a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md">implementation-status.md</a>で確認できます。</li>
+<li>Web Bluetoothの開発状況と対応ブラウザについては<a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md">implementation-status.md</a>で確認できます。</li>
 </ul>
 <h2 id="参考">参考</h2>
 <p><a href="https://qiita.com/s_nkg/items/bdb235388eaeb567b54d">https://qiita.com/s_nkg/items/bdb235388eaeb567b54d</a></p>

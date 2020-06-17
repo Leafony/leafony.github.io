@@ -616,14 +616,67 @@ PCやスマホ・タブレットには色々な環境があります。Windows�
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE&#34;&gt;Arduino スケッチ&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/WebBluetooth_for_Leafony_app&#34;&gt;Web Bluetooth アプリ&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;leafonyの構成&#34;&gt;Leafonyの構成&lt;/h2&gt;
+&lt;p&gt;このサンプルでは下記のリーフ構成で試せます。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac02&#34;&gt;AC02&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac02&#34;&gt;BLE Sugar&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;AI01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AP01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AVR MCU&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;AV01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;CR2032&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;AZ01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;USB&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;Connector Cover&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;CR2032 coin cell battery&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;M2*18mm screw&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h2 id=&#34;実行方法&#34;&gt;実行方法&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Arduino IDEで&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE&#34;&gt;4-Sensors_BLE.ino&lt;/a&gt;を書き込む&lt;/li&gt;
-&lt;li&gt;Google Chromeで&lt;a href=&#34;https://github.com/Leafony/WebBluetooth_for_Leafony_app&#34;&gt;Web Bluetoothアプリ&lt;/a&gt;を開く&lt;/li&gt;
+&lt;li&gt;ダウンロードした&lt;a href=&#34;https://github.com/Leafony/WebBluetooth_for_Leafony_app&#34;&gt;Web Bluetooth アプリ&lt;/a&gt;の&lt;code&gt;index.html&lt;/code&gt;をGoogle Chromeで開く&lt;br&gt;
+Webアプリの使い方の詳細は&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/basic&#34;&gt;Basic Kit クイックスタートガイド&lt;/a&gt;を参考&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;使い方の詳細は&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/basic&#34;&gt;Basic Kit クイックスタートガイド&lt;/a&gt;を参考&lt;/p&gt;
-&lt;h2 id=&#34;仕組み&#34;&gt;仕組み&lt;/h2&gt;
-&lt;h3 id=&#34;leafonyがbleで送信する仕組み&#34;&gt;LeafonyがBLEで送信する仕組み&lt;/h3&gt;
+&lt;h2 id=&#34;どこでデータを送っているのか受け取っているのか&#34;&gt;どこでデータを送っているのか・受け取っているのか&lt;/h2&gt;
+&lt;h3 id=&#34;leafony側&#34;&gt;Leafony側&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;4-Sensors_BLE.ino&lt;/code&gt;の1030行目付近に次のような記述があり、この部分でテキストデータをBluetoothで送信しています。
 このテキストを変えることで任意のデータを送信可能です。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++:4-Sensors_BLE.ino&#34; data-lang=&#34;c++:4-Sensors_BLE.ino&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;sendLen&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;sprintf&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;sendData&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;%04s,%04s,%04s,%04s,%04s,%01s&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;temp&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;humid&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;light&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;tilt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;battVolt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;pips&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
@@ -633,7 +686,7 @@ PCやスマホ・タブレットには色々な環境があります。Windows�
 &lt;code&gt;app.js&lt;/code&gt;はボタンが押されたときの処理などメインの処理が記述されています。&lt;br&gt;
 &lt;code&gt;leafony.js&lt;/code&gt;はWeb Bluetoothを使ってLeafonyと接続するための具体的な処理がかかれています。&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;簡単に中のコードを追って見ていきましょう。&lt;/p&gt;
-&lt;h3 id=&#34;webbluetoothを使ってleafonyと接続する処理&#34;&gt;WebBluetoothを使ってLeafonyと接続する処理&lt;/h3&gt;
+&lt;h4 id=&#34;webbluetoothを使ってleafonyと接続する処理&#34;&gt;WebBluetoothを使ってLeafonyと接続する処理&lt;/h4&gt;
 &lt;p&gt;&lt;code&gt;app.js&lt;/code&gt;内の以下の部分に「Connect」ボタンが押された時の処理が書かれています。(説明用のコメントを追加しました。)&lt;br&gt;
 データを受信した時に呼び出される関数の指定や、Sleepモードの設定をしてから&lt;code&gt;leafony.connect()&lt;/code&gt;で接続します。&lt;br&gt;
 (現状はSleepモードのチェックボックスはUI側で非表示になっていて、常に無効となっています。)&lt;br&gt;&lt;/p&gt;
@@ -696,7 +749,7 @@ PCやスマホ・タブレットには色々な環境があります。Windows�
         &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 
     &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;データを受信した時の処理&#34;&gt;データを受信した時の処理&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;データを受信した時の処理&#34;&gt;データを受信した時の処理&lt;/h4&gt;
 &lt;p&gt;データを受信したら&lt;code&gt;updateTable()&lt;/code&gt;が呼び出されます。
 受信したデータはstate変数の中に入っているので、次のようにテーブルに表示しています。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript:app.js&#34; data-lang=&#34;javascript:app.js&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;updateTable&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;state&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -719,7 +772,7 @@ PCやスマホ・タブレットには色々な環境があります。Windows�
 Leafony側で送信するデータの変え方は次の章で説明します。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript:leafony.js&#34; data-lang=&#34;javascript:leafony.js&#34;&gt;    &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;/**
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;     * Characteristicの値が変化した時に呼び出される関数
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;     * @param {*} event 
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;     * @param {*} event
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;     */&lt;/span&gt;
     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;handleData&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;event&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
         &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 受信したデータの文字コードを変換して、カンマでデータを分けている
@@ -745,7 +798,7 @@ Leafony側で送信するデータの変え方は次の章で説明します。&
 
         &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 省略
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;データを送信する時の処理&#34;&gt;データを送信する時の処理&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;データを送信する時の処理&#34;&gt;データを送信する時の処理&lt;/h4&gt;
 &lt;p&gt;また、「LED+」「LED-」ボタンを押すと、LeafonyのLEDの点滅スピードを変えることができます。
 ボタンが押された時にLeafonyに&lt;code&gt;PLS&lt;/code&gt;や&lt;code&gt;MNS&lt;/code&gt;といったコマンドを次のように送ることで、Leafonyのコントロールも可能です。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript:app.js&#34; data-lang=&#34;javascript:app.js&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;buttonLedPls&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;addEventListener&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -755,11 +808,19 @@ Leafony側で送信するデータの変え方は次の章で説明します。&
 
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;});&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;このように、LeafonyのサンプルアプリではとてもシンプルにBluetoothとの接続やデータのやり取りを記述しています。&lt;/p&gt;
-&lt;h3 id=&#34;webbluetoothの注意点&#34;&gt;WebBluetoothの注意点&lt;/h3&gt;
+&lt;h3 id=&#34;送るデータを変えるには&#34;&gt;送るデータを変えるには&lt;/h3&gt;
+&lt;h2 id=&#34;仕組み&#34;&gt;仕組み&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;PeripheralとCentral&lt;/li&gt;
+&lt;li&gt;アドバタイズ&lt;/li&gt;
+&lt;li&gt;GATT&lt;/li&gt;
+&lt;li&gt;Characteristic&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;web-bluetoothの注意点&#34;&gt;Web Bluetoothの注意点&lt;/h2&gt;
 &lt;p&gt;2020年6月時点ではWeb Bluetoothは以下の点に注意しなければいけません。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;iPhoneのChromeでは動作しません。&lt;a href=&#34;https://apps.apple.com/jp/app/webble/id1193531073&#34;&gt;WebBLE&lt;/a&gt;という有料のアプリを使えば利用可能です。&lt;/li&gt;
-&lt;li&gt;Web Bluetoothの開発状況については&lt;a href=&#34;https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md&#34;&gt;implementation-status.md&lt;/a&gt;で確認できます。&lt;/li&gt;
+&lt;li&gt;Web Bluetoothの開発状況と対応ブラウザについては&lt;a href=&#34;https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md&#34;&gt;implementation-status.md&lt;/a&gt;で確認できます。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://qiita.com/s_nkg/items/bdb235388eaeb567b54d&#34;&gt;https://qiita.com/s_nkg/items/bdb235388eaeb567b54d&lt;/a&gt;&lt;/p&gt;
