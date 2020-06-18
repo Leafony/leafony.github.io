@@ -830,8 +830,23 @@ BLEで受信したデータは&lt;code&gt;event.target.value&lt;/code&gt;に含�
 &lt;li&gt;Beaconとは、地上にある電波を特定の機器で受信することで、位置をはじめとした各種情報を取得するための設備です。BluetoothのBeacon機器の場合、温度や気圧などのセンサを搭載したモジュールを任意の場所に設置して、その場所の環境を観測します。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;gs_about.jpg&#34; alt=&#34;about&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;必要なハードウェア&#34;&gt;必要なハードウェア&lt;/h2&gt;
-&lt;h3 id=&#34;leafony-beacon-送信側&#34;&gt;Leafony Beacon (送信側)&lt;/h3&gt;
+&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Leafony Basic Kit&lt;/li&gt;
+&lt;li&gt;Raspberry Pi (3, 4, zero等)&lt;/li&gt;
+&lt;li&gt;ブラウザが閲覧できるPCやスマホ&lt;/li&gt;
+&lt;li&gt;Arduino IDE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;サンプルアプリのコード&#34;&gt;サンプルアプリのコード&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/leafony-beacon&#34;&gt;Github - Leafony/leafony-beacon&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;raspberry-piの準備&#34;&gt;Raspberry Piの準備&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Raspberry Pi 初めての方は、Raspberry Pi 3 B＋ スターターキット（ &lt;a href=&#34;https://www.switch-science.com/catalog/3880/&#34;&gt;https://www.switch-science.com/catalog/3880/&lt;/a&gt; ）が便利です。Raspbian OSイメージを書き込んだmicroSDが入っていますが、ディスプレイ、キーボード、マウスは有りません。別途　ご用意してください。&lt;/li&gt;
+&lt;li&gt;Raspberry Pi は、無線LANでインターネットに接続します。こちらも事前にご用意してください。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;leafonyの構成&#34;&gt;Leafonyの構成&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -881,20 +896,9 @@ BLEで受信したデータは&lt;code&gt;event.target.value&lt;/code&gt;に含�
 &lt;td&gt;M2*18mm screw&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
 &lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;8&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;td&gt;&lt;/td&gt;
-&lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;raspberry-pi-受信側&#34;&gt;Raspberry Pi (受信側)&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Raspberry Pi 初めての方は、Raspberry Pi 3 B＋ スターターキット（ &lt;a href=&#34;https://www.switch-science.com/catalog/3880/&#34;&gt;https://www.switch-science.com/catalog/3880/&lt;/a&gt; ）が便利です。Raspbian OSイメージを書き込んだmicroSDが入っていますが、ディスプレイ、キーボード、マウスは有りません。別途　ご用意してください。&lt;/li&gt;
-&lt;li&gt;Raspberry Pi は、無線LANでインターネットに接続します。こちらも事前にご用意してください。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;leafony-beaconの作成&#34;&gt;Leafony Beaconの作成&lt;/h2&gt;
-&lt;h3 id=&#34;組み立て&#34;&gt;組み立て&lt;/h3&gt;
+&lt;h2 id=&#34;leafonyの組み立て&#34;&gt;Leafonyの組み立て&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;./gs_assemble.png&#34; alt=&#34;assemble&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;スケッチの書き込み&#34;&gt;スケッチの書き込み&lt;/h3&gt;
 &lt;ul&gt;
@@ -912,14 +916,14 @@ sudo apt install -y bluetooth libbluetooth-dev libudev-dev git
 git clone https://github.com/Leafony/leafony-beacon
 &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; leafony-beacon/spreadsheet-logger
 npm install
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;注意:WARNINGと表示されますが、このまま進んでください。&lt;/strong&gt;
-&lt;img src=&#34;./gs_pi_1.png&#34; alt=&#34;gs_pi_1&#34;&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;注意:WARNINGと表示されますが、このまま進んでください。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./gs_pi_1.png&#34; alt=&#34;gs_pi_1&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;google-sheets-apiの取得&#34;&gt;Google Sheets APIの取得&lt;/h3&gt;
 &lt;p&gt;Google スプレットシートをNode.jsで操作するためにはAPIを取得する必要があります。まず、下記 Node.js Quick Start のStep.1で、  Enable the Google Sheets API をクリックし、credentials.jsonをダウンロードします。次に、credentials.jsonをleafony-beacon/spreadsheet-loggerディレクトリにコピーしてください。&lt;/p&gt;
 &lt;p&gt;Node.js Quickstart | Sheets API | Google Developers : &lt;a href=&#34;https://developers.google.com/sheets/api/quickstart/nodejs&#34;&gt;https://developers.google.com/sheets/api/quickstart/nodejs&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;indexjs-へgoogle-sheetsのidとシート名の設定&#34;&gt;index.js へGoogle SheetsのIDとシート名の設定&lt;/h3&gt;
-&lt;p&gt;Google スプレッドシート を開いて、URLの赤線部分の「シートID」と「シート名」を確認します。
-&lt;img src=&#34;./gs_pi_2.png&#34; alt=&#34;gs_pi_2&#34;&gt;
+&lt;p&gt;Google スプレッドシート を開いて、URLの赤線部分の「シートID」と「シート名」を確認します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./gs_pi_2.png&#34; alt=&#34;gs_pi_2&#34;&gt;
 &lt;img src=&#34;./gs_pi_3.png&#34; alt=&#34;gs_pi_3&#34;&gt;&lt;/p&gt;
 &lt;p&gt;leafony-beacon/spreadsheet-loggerディレクトリ「index.js」があります。「index.js」の18, 19行目にある「spreadsheetId」と「sheetName」に、上記の「シートID」と「シート名」を貼り付けることで、データが書き込まれます。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./gs_pi_4.png&#34; alt=&#34;gs_pi_4&#34;&gt;&lt;/p&gt;

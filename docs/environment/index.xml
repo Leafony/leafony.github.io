@@ -282,6 +282,9 @@ Leafonyにプログラムを書き込むためには最低限、AVR MCUリーフ
 &lt;li&gt;ネジの締まり具合&lt;/li&gt;
 &lt;li&gt;電池の残量が十分にあるか&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;接続不良時の対処&#34;&gt;接続不良時の対処&lt;/h2&gt;
+&lt;p&gt;Connectorや基板の接点に汚れが付着すると、接続不良が生じることがあります。その場合、&lt;a href=&#34;https://amzn.to/2SyTxQK&#34;&gt;無水エタノール&lt;/a&gt;を含ませた&lt;a href=&#34;https://amzn.to/2SCrnEm&#34;&gt;紙製ウエス&lt;/a&gt;で払拭してください。それでも改善しない場合は、Connectorを交換してください。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./Connector-trouble.jpg&#34; alt=&#34;Connector-trouble&#34;&gt;&lt;/p&gt;
 
       </description>
     </item>

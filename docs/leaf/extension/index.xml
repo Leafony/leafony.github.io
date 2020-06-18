@@ -59,12 +59,6 @@
 &lt;a href=&#34;./ax02a_p_large.jpg&#34;&gt;&lt;img src=&#34;./ax02a_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;リーフI/Fの29ピン全てをスルーホールに接続したリーフです。&lt;/p&gt;
-&lt;h2 id=&#34;kicadとeagleのデータ&#34;&gt;KiCadとEAGLEのデータ&lt;/h2&gt;
-&lt;p&gt;個人の方が、多く利用しているKiCadとEAGLEのデータをご用意しました。Zuken のCADデータを変換して作成したので、変換ミスの可能性をぬぐいきれません。各自で、寸法等十分確認の上、ご使用ください。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AX02_29pin/AX02_29pin_PCBLayout_KiCad.zip&#34;&gt;レイアウト図(KiCad)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AX02_29pin/AX02_29pin_PCBLayout_EAGLE.zip&#34;&gt;レイアウト図(EAGLE)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AX02_29pin/AX02_29pin_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
@@ -72,6 +66,11 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AX02_29pin/AX02_29pin_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AX02_29pin/AX02_29pin_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AX02_29pin/AX02_29pin_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;※個人の方が、多く利用しているKiCadとEAGLEのデータをご用意しました。Zuken のCADデータを変換して作成したので、変換ミスの可能性をぬぐいきれません。各自で、寸法等十分確認の上、ご使用ください。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AX02_29pin/AX02_29pin_PCBLayout_KiCad.zip&#34;&gt;レイアウト図(KiCad)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AX02_29pin/AX02_29pin_PCBLayout_EAGLE.zip&#34;&gt;レイアウト図(EAGLE)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
 &lt;ul&gt;
@@ -251,6 +250,8 @@
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/grove/distance_sensor&#34;&gt;超音波センサで距離測定&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/grove/camera&#34;&gt;カメラの撮影&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h2&gt;
+&lt;p&gt;ライブラリは、予め&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/#1-%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA&#34;&gt;ここから&lt;/a&gt;インストールしておきましょう。&lt;/p&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AX06_Grove%265V/AX06_Grove%265V_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;

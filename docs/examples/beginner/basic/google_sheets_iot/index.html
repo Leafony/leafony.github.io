@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.70.0" />
+<meta name="generator" content="Hugo 0.72.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -133,7 +133,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.25680f02168ba34695e9625863212657569fc0f0dbb940feca9a939cc42be4415840836e58ee7cfedb2e65af89ac501559563e0640d85f983d8516a8757711eb.json"
+  data-offline-search-index-json-src="/offline-search-index.e5bda603c7ba26dfbfca2d30def869739ef178a179f91eee94099f1b9fe5c18d4f14d76ee39247cad710a80f872b6f879995074a5c7ca9d0a776508ccc09f99e.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.25680f02168ba34695e9625863212657569fc0f0dbb940feca9a939cc42be4415840836e58ee7cfedb2e65af89ac501559563e0640d85f983d8516a8757711eb.json"
+  data-offline-search-index-json-src="/offline-search-index.e5bda603c7ba26dfbfca2d30def869739ef178a179f91eee94099f1b9fe5c18d4f14d76ee39247cad710a80f872b6f879995074a5c7ca9d0a776508ccc09f99e.json"
   data-offline-search-base-href="/"
 >
 
@@ -2019,15 +2019,12 @@ if (!doNotTrack) {
 <nav id="TableOfContents">
   <ul>
     <li><a href="#概要">概要</a></li>
-    <li><a href="#必要なハードウェア">必要なハードウェア</a>
+    <li><a href="#用意するもの">用意するもの</a></li>
+    <li><a href="#サンプルアプリのコード">サンプルアプリのコード</a></li>
+    <li><a href="#raspberry-piの準備">Raspberry Piの準備</a></li>
+    <li><a href="#leafonyの構成">Leafonyの構成</a></li>
+    <li><a href="#leafonyの組み立て">Leafonyの組み立て</a>
       <ul>
-        <li><a href="#leafony-beacon-送信側">Leafony Beacon (送信側)</a></li>
-        <li><a href="#raspberry-pi-受信側">Raspberry Pi (受信側)</a></li>
-      </ul>
-    </li>
-    <li><a href="#leafony-beaconの作成">Leafony Beaconの作成</a>
-      <ul>
-        <li><a href="#組み立て">組み立て</a></li>
         <li><a href="#スケッチの書き込み">スケッチの書き込み</a></li>
         <li><a href="#raspberry-piの環境構築">Raspberry Piの環境構築</a></li>
         <li><a href="#google-sheets-apiの取得">Google Sheets APIの取得</a></li>
@@ -2110,8 +2107,23 @@ if (!doNotTrack) {
 <li>Beaconとは、地上にある電波を特定の機器で受信することで、位置をはじめとした各種情報を取得するための設備です。BluetoothのBeacon機器の場合、温度や気圧などのセンサを搭載したモジュールを任意の場所に設置して、その場所の環境を観測します。</li>
 </ol>
 <p><img src="gs_about.jpg" alt="about"></p>
-<h2 id="必要なハードウェア">必要なハードウェア</h2>
-<h3 id="leafony-beacon-送信側">Leafony Beacon (送信側)</h3>
+<h2 id="用意するもの">用意するもの</h2>
+<ul>
+<li>Leafony Basic Kit</li>
+<li>Raspberry Pi (3, 4, zero等)</li>
+<li>ブラウザが閲覧できるPCやスマホ</li>
+<li>Arduino IDE</li>
+</ul>
+<h2 id="サンプルアプリのコード">サンプルアプリのコード</h2>
+<ul>
+<li><a href="https://github.com/Leafony/leafony-beacon">Github - Leafony/leafony-beacon</a></li>
+</ul>
+<h2 id="raspberry-piの準備">Raspberry Piの準備</h2>
+<ul>
+<li>Raspberry Pi 初めての方は、Raspberry Pi 3 B＋ スターターキット（ <a href="https://www.switch-science.com/catalog/3880/">https://www.switch-science.com/catalog/3880/</a> ）が便利です。Raspbian OSイメージを書き込んだmicroSDが入っていますが、ディスプレイ、キーボード、マウスは有りません。別途　ご用意してください。</li>
+<li>Raspberry Pi は、無線LANでインターネットに接続します。こちらも事前にご用意してください。</li>
+</ul>
+<h2 id="leafonyの構成">Leafonyの構成</h2>
 <table>
 <thead>
 <tr>
@@ -2161,20 +2173,9 @@ if (!doNotTrack) {
 <td>M2*18mm screw</td>
 <td>2</td>
 </tr>
-<tr>
-<td>8</td>
-<td></td>
-<td></td>
-</tr>
 </tbody>
 </table>
-<h3 id="raspberry-pi-受信側">Raspberry Pi (受信側)</h3>
-<ul>
-<li>Raspberry Pi 初めての方は、Raspberry Pi 3 B＋ スターターキット（ <a href="https://www.switch-science.com/catalog/3880/">https://www.switch-science.com/catalog/3880/</a> ）が便利です。Raspbian OSイメージを書き込んだmicroSDが入っていますが、ディスプレイ、キーボード、マウスは有りません。別途　ご用意してください。</li>
-<li>Raspberry Pi は、無線LANでインターネットに接続します。こちらも事前にご用意してください。</li>
-</ul>
-<h2 id="leafony-beaconの作成">Leafony Beaconの作成</h2>
-<h3 id="組み立て">組み立て</h3>
+<h2 id="leafonyの組み立て">Leafonyの組み立て</h2>
 <p><img src="./gs_assemble.png" alt="assemble"></p>
 <h3 id="スケッチの書き込み">スケッチの書き込み</h3>
 <ul>
@@ -2192,14 +2193,14 @@ sudo apt install -y bluetooth libbluetooth-dev libudev-dev git
 git clone https://github.com/Leafony/leafony-beacon
 <span style="color:#204a87">cd</span> leafony-beacon/spreadsheet-logger
 npm install
-</code></pre></div><p><strong>注意:WARNINGと表示されますが、このまま進んでください。</strong>
-<img src="./gs_pi_1.png" alt="gs_pi_1"></p>
+</code></pre></div><p><strong>注意:WARNINGと表示されますが、このまま進んでください。</strong></p>
+<p><img src="./gs_pi_1.png" alt="gs_pi_1"></p>
 <h3 id="google-sheets-apiの取得">Google Sheets APIの取得</h3>
 <p>Google スプレットシートをNode.jsで操作するためにはAPIを取得する必要があります。まず、下記 Node.js Quick Start のStep.1で、  Enable the Google Sheets API をクリックし、credentials.jsonをダウンロードします。次に、credentials.jsonをleafony-beacon/spreadsheet-loggerディレクトリにコピーしてください。</p>
 <p>Node.js Quickstart | Sheets API | Google Developers : <a href="https://developers.google.com/sheets/api/quickstart/nodejs">https://developers.google.com/sheets/api/quickstart/nodejs</a></p>
 <h3 id="indexjs-へgoogle-sheetsのidとシート名の設定">index.js へGoogle SheetsのIDとシート名の設定</h3>
-<p>Google スプレッドシート を開いて、URLの赤線部分の「シートID」と「シート名」を確認します。
-<img src="./gs_pi_2.png" alt="gs_pi_2">
+<p>Google スプレッドシート を開いて、URLの赤線部分の「シートID」と「シート名」を確認します。</p>
+<p><img src="./gs_pi_2.png" alt="gs_pi_2">
 <img src="./gs_pi_3.png" alt="gs_pi_3"></p>
 <p>leafony-beacon/spreadsheet-loggerディレクトリ「index.js」があります。「index.js」の18, 19行目にある「spreadsheetId」と「sheetName」に、上記の「シートID」と「シート名」を貼り付けることで、データが書き込まれます。</p>
 <p><img src="./gs_pi_4.png" alt="gs_pi_4"></p>
@@ -2395,7 +2396,7 @@ npm install
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 17, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 18, 2020
 </div>
 </div>
 
