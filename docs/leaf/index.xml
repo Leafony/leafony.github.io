@@ -14,37 +14,6 @@
     
     
     <item>
-      <title>Docs: Leafony bus</title>
-      <link>https://docs.leafony.com/docs/leaf/leafonybus/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.leafony.com/docs/leaf/leafonybus/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;leafony-bus-の仕様&#34;&gt;Leafony bus の仕様&lt;/h2&gt;
-&lt;p&gt;Leafony busは、複数のリーフが電気信号および電源接続を行う共通経路部。リーフの相互接続を可能にするために、Leafony busは、リーフの20mm x 5.5mm領域の電気的及び、物理的な仕様が定められています。&lt;/p&gt;
-&lt;h2 id=&#34;ピンアウト&#34;&gt;ピンアウト&lt;/h2&gt;
-&lt;img src=&#34;./leafony_bus_pin_assign.jpg&#34; width=300&gt;
-&lt;h2 id=&#34;コネクタ形状&#34;&gt;コネクタ形状&lt;/h2&gt;
-&lt;p&gt;基板の厚さは、t=0.8。パッド部分は、金めっき。レイアウト図のデータは（dxf、、KiCad、EAGLE)は、&lt;a href=&#34;../ax02&#34;&gt;ax02 29pin&lt;/a&gt; を参照願います。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./leafony_bus_size.png&#34; alt=&#34;leafony_bus_size&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;コネクタの取り付け取り外し&#34;&gt;コネクタの取り付け・取り外し&lt;/h2&gt;
-&lt;p&gt;リーフ基板にコネクタを取り付ける、または、外す場合は下図のように行ってください。&lt;/p&gt;
-&lt;p&gt;&amp;ndash; 取り付け&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./leafony_connector_assemble.png&#34; alt=&#34;leafony_connector_assemble&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;ndash; 取り外し&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./leafony_connector_teardown.png&#34; alt=&#34;leafony_connector_teardown&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;コネクタの試験結果&#34;&gt;コネクタの試験結果&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/az61_Connector/az61_Connector_SpecSheet_JA.pdf&#34;&gt;AX61Aコネクタ仕様書&lt;/a&gt;を参考&lt;/p&gt;
-&lt;h2 id=&#34;接続不良時の対処&#34;&gt;接続不良時の対処　&lt;/h2&gt;
-&lt;p&gt;Connectorや基板の接点に汚れが付着すると、接続不良が生じることがあります。その場合、&lt;a href=&#34;https://amzn.to/2SyTxQK&#34;&gt;無水エタノール&lt;/a&gt;を含ませた&lt;a href=&#34;https://amzn.to/2SCrnEm&#34;&gt;紙製ウエス&lt;/a&gt;で払拭してください。それでも改善しない場合は、Connectorを交換してください。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./Connector-trouble.jpg&#34; alt=&#34;Connector-trouble&#34;&gt;&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: プロセッサリーフ</title>
       <link>https://docs.leafony.com/docs/leaf/processor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
