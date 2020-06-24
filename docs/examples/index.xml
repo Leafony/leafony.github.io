@@ -22,7 +22,30 @@
       <description>
         
         
-        
+        &lt;h2 id=&#34;basic-kit&#34;&gt;Basic Kit&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;././basic/blink&#34;&gt;LED点滅&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;././basic/read_battery&#34;&gt;バッテリ電圧読み取り&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;././basic/temp_humid_sensors&#34;&gt;温湿度センサ読み取り&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;././basic/illum_sensor&#34;&gt;照度センサ読み取り&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;././basic/accelerometer&#34;&gt;加速度センサ読み取り&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;././basic/webbluetooth_iot&#34;&gt;Web Bluetoothを使ったIoTアプリ入門&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;././basic/google_sheets_iot&#34;&gt;Google sheetsを使ったIoTサービス入門&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;extension-kit&#34;&gt;Extension Kit&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;././extension/speaker&#34;&gt;スピーカ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;././extension/ir_sensor&#34;&gt;人感センサ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;././extension/sound_level&#34;&gt;サウンドレベルメータ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;././extension/lcd&#34;&gt;LCD ディスプレイ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;././extension/rtc&#34;&gt;リアルタイムクロック&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;././extension/microsd&#34;&gt;microSDカード&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;esp32-wi-fi&#34;&gt;ESP32 Wi-Fi&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;././esp32/wifi_touchsensor&#34;&gt;Wi-Fi タッチセンサ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
       </description>
     </item>
     
@@ -35,7 +58,28 @@
       <description>
         
         
-        
+        &lt;h2 id=&#34;basic-kit&#34;&gt;Basic Kit&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;././basic_kit/4-sensors_serial_monitor/&#34;&gt;センサの値をシリアルモニタに表示&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;././basic_kit/4-sensors_ble/&#34;&gt;センサの値をBLEで送信&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;extension-kit&#34;&gt;Extension Kit&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;././extension_kit/4-sensors_lcd/&#34;&gt;センサの値をLCDに表示&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;././extension_kit/4-sensors_lcd_ble/&#34;&gt;センサの値をLCDに表示しBLEで送信&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;././extension_kit/pir_melody_test/&#34;&gt;人の接近を検知しメロディをならす&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;grove&#34;&gt;Grove&lt;/h2&gt;
+&lt;p&gt;Extention KitのGroveリーフとGroveモジュールで遊べるサンプル&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;././grove/distance_sensor&#34;&gt;超音波センサで距離測定&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;././grove/camera&#34;&gt;カメラの撮影&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;lora&#34;&gt;LoRa&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;././lora/lora/&#34;&gt;LoRaを使ってセンサの値を表示&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
       </description>
     </item>
     
