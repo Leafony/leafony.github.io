@@ -130,7 +130,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d3893d0bf6e07043c831c5fad9310d1de9c336ea9583b117f8819356081bb22a323ab783fe1072ed6acfae2536e974c497ca3edeeab5c1bc3fd494956fb91fb3.json"
+  data-offline-search-index-json-src="/offline-search-index.c98da0f8402a456b54f1cc9469845aea189c62273e7a6893a83e7308235865b23de4c80d97dd3175a847e99954fac6c41f3a526d20d48a94effaba2b795f1609.json"
   data-offline-search-base-href="/"
 >
 
@@ -160,7 +160,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d3893d0bf6e07043c831c5fad9310d1de9c336ea9583b117f8819356081bb22a323ab783fe1072ed6acfae2536e974c497ca3edeeab5c1bc3fd494956fb91fb3.json"
+  data-offline-search-index-json-src="/offline-search-index.c98da0f8402a456b54f1cc9469845aea189c62273e7a6893a83e7308235865b23de4c80d97dd3175a847e99954fac6c41f3a526d20d48a94effaba2b795f1609.json"
   data-offline-search-base-href="/"
 >
 
@@ -2205,11 +2205,18 @@ if (!doNotTrack) {
 <nav id="TableOfContents">
   <ul>
     <li><a href="#概要">概要</a></li>
-    <li><a href="#使用するリーフ">使用するリーフ</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
+    <li><a href="#使用するリーフ">使用するリーフ</a>
+      <ul>
+        <li><a href="#送信側リーフ">送信側リーフ</a></li>
+        <li><a href="#受信側リーフ">受信側リーフ</a></li>
+      </ul>
+    </li>
+    <li><a href="#リーフの組み立て">リーフの組み立て</a>
+      <ul>
+        <li><a href="#sender">Sender</a></li>
+        <li><a href="#receiver">Receiver</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -2283,7 +2290,7 @@ if (!doNotTrack) {
 <p><a href="/docs/leaf/communication/ac03/">LoRa Easyリーフ</a>を使って、センサデータ（温度・湿度・照度・傾き）を、遠く離れた場所に送り、パソコンのターミナルに出力します。</p>
 <h2 id="使用するリーフ">使用するリーフ</h2>
 <p>以下のリーフを使用します</p>
-<h1 id="送信側リーフ">送信側リーフ</h1>
+<h3 id="送信側リーフ">送信側リーフ</h3>
 <table>
 <thead>
 <tr>
@@ -2296,6 +2303,11 @@ if (!doNotTrack) {
 <tr>
 <td align="left"><a href="/docs/leaf/communication/ac03">AC03</a></td>
 <td align="left"><a href="/docs/leaf/communication/ac03">LoRa Easy</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/extension/ax04">AX04</a></td>
+<td align="left"><a href="/docs/leaf/extension/ax04">Spacer</a></td>
 <td align="left">1</td>
 </tr>
 <tr>
@@ -2320,7 +2332,7 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td align="left"><a href="/docs/leaf/others/az61">AZ61</a></td>
-<td align="left"><a href="/docs/leaf/others/az61">Connector Cover</a></td>
+<td align="left"><a href="/docs/leaf/others/az61">Connector</a></td>
 <td align="left">2</td>
 </tr>
 <tr>
@@ -2330,7 +2342,7 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td align="left"><a href="/docs/leaf/others/az63">AZ63</a></td>
-<td align="left"><a href="/docs/leaf/others/az63">Connector Cover</a></td>
+<td align="left"><a href="/docs/leaf/others/az63">Nut Plate</a></td>
 <td align="left">2</td>
 </tr>
 <tr>
@@ -2345,10 +2357,59 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
-<p>#　受信側リーフ</p>
+<h3 id="受信側リーフ">受信側リーフ</h3>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="/docs/leaf/communication/ac03">AC03</a></td>
+<td align="left"><a href="/docs/leaf/communication/ac03">LoRa Easy</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/processor/ap01">AP01</a></td>
+<td align="left"><a href="/docs/leaf/processor/ap01">AVR MCU</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/extension/ax03">AX03</a></td>
+<td align="left"><a href="/docs/leaf/extension/ax03">Leaf x2</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/others/az01">AZ01</a></td>
+<td align="left"><a href="/docs/leaf/others/az01">USB</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/others/az62">AZ62</a></td>
+<td align="left"><a href="/docs/leaf/others/az62">Connector Cover</a></td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/others/az63">AZ63</a></td>
+<td align="left"><a href="/docs/leaf/others/az63">Nut Plate</a></td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">M2*15mm screw</td>
+<td align="left">4</td>
+</tr>
+</tbody>
+</table>
 <h2 id="リーフの組み立て">リーフの組み立て</h2>
 <p>下図を参考にリーフを組み立ててみましょう。</p>
-<p><img src="./environment_assemble.png" alt="assemble1"></p>
+<h3 id="sender">Sender</h3>
+<p><img src="./LoRa_sender_assemble.png" alt="assemble1"></p>
+<h3 id="receiver">Receiver</h3>
+<p><img src="./LoRa_receiver_assemble.png" alt="assemble2"></p>
 
         <div class="section-index">
     

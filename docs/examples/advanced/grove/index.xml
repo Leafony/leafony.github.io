@@ -89,7 +89,7 @@
 &lt;p&gt;&lt;img src=&#34;./Distance_sensor_assemble.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;書き込みには、LCDライブラリ、超音波制御 ライブラリ（ &lt;a href=&#34;https://github.com/Seeed-Studio/Grove_Ultrasonic_Ranger/&#34;&gt;Ultrasonic.h&lt;/a&gt; ）が必要です。予め、ライブラリをインクルードしておいてください。詳しくは、[こちら]。&lt;/li&gt;
+&lt;li&gt;書き込みには、LCDライブラリ、超音波制御 ライブラリ（ &lt;a href=&#34;https://github.com/Seeed-Studio/Grove_Ultrasonic_Ranger/&#34;&gt;Ultrasonic.h&lt;/a&gt; ）が必要です。予め、ライブラリをインクルードしておいてください。詳しくは、&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/&#34;&gt;こちら&lt;/a&gt;。&lt;/li&gt;
 &lt;li&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
@@ -184,7 +184,8 @@
 
 
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/blob/master/Grove-Ultrasonic_LCD/Grove-Ultrasonic_LCD.ino&#34;&gt;Grove-Ultrasonic_LCD.ino&lt;/a&gt;&lt;/p&gt;
+
       </description>
     </item>
     
@@ -267,7 +268,7 @@
 &lt;p&gt;&lt;img src=&#34;./camera_assemble.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;書き込みには、4-Sensors、AVR MCUライブラリ（タイマ割り込み）が必要です。予め、ライブラリをインクルードしておいてください。詳しくは、[こちら]。&lt;/li&gt;
+&lt;li&gt;書き込みには、4-Sensors、AVR MCUライブラリ（タイマ割り込み）が必要です。予め、ライブラリをインクルードしておいてください。詳しくは、&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/&#34;&gt;こちら&lt;/a&gt;。&lt;/li&gt;
 &lt;li&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
@@ -783,7 +784,8 @@
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 
 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/blob/master/Grove-Camera_microSD/Grove-Camera_microSD.ino&#34;&gt;Grove-Camera_microSD.ino&lt;/a&gt;&lt;/p&gt;
+
       </description>
     </item>
     

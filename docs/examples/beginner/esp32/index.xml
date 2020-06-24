@@ -87,7 +87,7 @@
 &lt;p&gt;&lt;img src=&#34;./ESPWiFi_assemble.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;ESP32 MCUをArduino IDEで使用するには、Arduino core for the ESP32 のインストールが必要です。詳しくは、[こちら]。&lt;/li&gt;
+&lt;li&gt;ESP32 MCUをArduino IDEで使用するには、Arduino core for the ESP32 のインストールが必要です。詳しくは、&lt;a href=&#34;https://docs.leafony.com/docs/environment/esp32&#34;&gt;こちら&lt;/a&gt;。&lt;/li&gt;
 &lt;li&gt;Arduino IDEで、以下のスケッチをマイコンボードに書き込んでください。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
@@ -428,7 +428,8 @@
     &lt;span style=&#34;color:#000&#34;&gt;client&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;lt;/body&amp;gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
     &lt;span style=&#34;color:#000&#34;&gt;client&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&amp;lt;/html&amp;gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/blob/master/ESP32_AP_Touch/ESP32_AP_Touch.ino&#34;&gt;ESP32_AP_Touch.ino&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.arduino.cc/en/Main/OldSoftwareReleases#previous&#34;&gt;Arduino IDE 1.8.9&lt;/a&gt;で動作を確認しています。書き込みエラーが発生したら、IDEのバージョンを確認してください&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;表示のやり方&#34;&gt;表示のやり方&lt;/h2&gt;
