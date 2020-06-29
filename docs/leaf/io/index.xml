@@ -132,6 +132,9 @@
 &lt;p&gt;&lt;a href=&#34;./ai01a_block.png&#34;&gt;&lt;img src=&#34;./ai01a_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./ai01a_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ai01a_pinassign.jpg&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+&lt;h3 id=&#34;２点間補正&#34;&gt;２点間補正&lt;/h3&gt;
+&lt;p&gt;表示させたい温度（または、湿度）と４-Sensorsの温度（または、湿度）に、ずれがあるときは、２点間補正を行います。詳しくは、&lt;a href=&#34;https://trillion-node.org/example/correction/&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
 &lt;h2 id=&#34;サンプルデザイン&#34;&gt;サンプルデザイン&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/basic/temp_humid_sensors&#34;&gt;温湿度センサ読み取り&lt;/a&gt;&lt;/li&gt;
@@ -148,7 +151,6 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI01_4-Sensors/AI01_4-Sensors_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AI01_4-Sensors/AI01_4-Sensors_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;※表示させたい温度（または、湿度）と４-Sensorsの温度（または、湿度）に、ずれがあるときは、２点間補正を行います。詳しくは、&lt;a href=&#34;https://trillion-node.org/example/correction/&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
 &lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Rev A: 2019年8月初版&lt;/li&gt;
