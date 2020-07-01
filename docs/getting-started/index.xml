@@ -45,11 +45,16 @@ WebBluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 &lt;br&gt;
 &lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#%E7%94%A8%E6%84%8F%E3%81%99%E3%82%8B%E3%82%82%E3%81%AE&#34;&gt;用意するもの&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E3%83%87%E3%83%A2%E5%8B%95%E7%94%BB&#34;&gt;デモ動画&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E4%BD%BF%E3%81%84%E6%96%B9&#34;&gt;使い方&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#android%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;Androidの場合&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#iphone%E3%81%BE%E3%81%9F%E3%81%AFipad%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;iPhoneまたはiPadの場合&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#windows%E3%81%BE%E3%81%9F%E3%81%AFmacos%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;WindowsまたはmacOSの場合&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#linux%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;Linuxの場合&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#chrome-os%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;Chrome OSの場合&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E3%83%94%E3%83%B3%E9%85%8D%E7%BD%AE&#34;&gt;ピン配置&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89&#34;&gt;サンプルアプリのソースコード&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;androidの場合&#34;&gt;Androidの場合&lt;/h2&gt;
 &lt;ol&gt;
@@ -179,6 +184,8 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 &lt;a href=&#34;https://docs.leafony.com/docs/environment/basic&#34;&gt;開発環境設定&lt;/a&gt;を読んで、LeafonyにLED点滅スケッチを書き込んでみましょう。
 &lt;/div&gt;
 
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;../pinassign/basic_kit_pinassign.xlsx&#34;&gt;&lt;img src=&#34;../pinassign/basic_kit_pinassign.jpg&#34; width=&#34;800&#34;&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;サンプルアプリのソースコード&#34;&gt;サンプルアプリのソースコード&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE&#34;&gt;Arduino スケッチ&lt;/a&gt;&lt;/li&gt;
@@ -259,6 +266,8 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 &lt;a href=&#34;https://docs.leafony.com/docs/environment/esp32&#34;&gt;開発環境設定&lt;/a&gt;を読んで、ESP32 Wi-Fi KitにLED点滅スケッチを書き込んでみましょう。
 &lt;/div&gt;
 
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;../pinassign/esp32_wi-fi_kit_pinassign.xlsx&#34;&gt;&lt;img src=&#34;../pinassign/esp32_wi-fi_kit_pinassign.jpg&#34; width=&#34;800&#34;&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;サンプルアプリのソースコード&#34;&gt;サンプルアプリのソースコード&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/esp32/wifi_touchsensor/&#34;&gt;Arduinoスケッチ&lt;/a&gt;&lt;/li&gt;
@@ -276,7 +285,9 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
       <description>
         
         
-        &lt;h2 id=&#34;サンプルデザイン&#34;&gt;サンプルデザイン&lt;/h2&gt;
+        &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;../pinassign/extension_kit_pinassign.xlsx&#34;&gt;&lt;img src=&#34;../pinassign/extension_kit_pinassign.jpg&#34; width=&#34;800&#34;&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;サンプルデザイン&#34;&gt;サンプルデザイン&lt;/h2&gt;
 
       </description>
     </item>
