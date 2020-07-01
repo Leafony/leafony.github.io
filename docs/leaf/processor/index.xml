@@ -194,16 +194,18 @@ pin13によりLED制御する(Arduino UNOと同じ)。&lt;br&gt;
 &lt;p&gt;&lt;a href=&#34;./ap02a_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ap02a_pinassign.jpg&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;LED DS700&lt;br&gt;
-FT232RQが制御するLEDである。&lt;br&gt;
+&lt;li&gt;LED DS700
+FT232RQが制御するLEDである。
 UART TX通信によるプログラム書き込み時に点滅する。&lt;/li&gt;
-&lt;li&gt;LED DS701&lt;br&gt;
-FT232RQが制御するLEDである。&lt;br&gt;
+&lt;li&gt;LED DS701
+FT232RQが制御するLEDである。
 UART RX通信によるプログラム書き込み時に点滅する。&lt;/li&gt;
-&lt;li&gt;Reset switch&lt;br&gt;
+&lt;li&gt;Reset switch
 ESP32、および他のデバイスをリセットする。&lt;/li&gt;
-&lt;li&gt;Boot mode switch&lt;br&gt;
+&lt;li&gt;Boot mode switch
 ブートモードを変更するためのスイッチである。&lt;/li&gt;
+&lt;li&gt;スケッチの書き込み方
+書き込み中にBoot mode switchを長押しする&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;サンプルデザイン&#34;&gt;サンプルデザイン&lt;/h2&gt;
 &lt;ul&gt;
