@@ -119,6 +119,17 @@
 &lt;p&gt;&lt;a href=&#34;./az01a_block.png&#34;&gt;&lt;img src=&#34;./az01a_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./az01a_pinassign.jpg&#34;&gt;&lt;img src=&#34;./az01a_pinassign.jpg&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Micro USB
+USBのVBUS(5V)から降圧電源回路により3.3Vに変換し、各リーフにVBUSと3.3Vを供給する。&lt;/li&gt;
+&lt;li&gt;LED DS120&lt;br&gt;
+FT232RQが制御するLEDである。&lt;br&gt;
+UART TX通信によるプログラム書き込み時に点滅する。&lt;/li&gt;
+&lt;li&gt;LED DS121&lt;br&gt;
+FT232RQが制御するLEDである。&lt;br&gt;
+UART RX通信によるプログラム書き込み時に点滅する。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ01_USB/AZ01_USB_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
