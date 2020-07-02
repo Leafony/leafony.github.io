@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.70.0" />
+<meta name="generator" content="Hugo 0.72.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -130,7 +130,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f8c81dc6838cc2848162d4366d7597aff44d449ceace543ac03a6bde244697ff09b17ad99fe3eb9dd17f310cb52d8d16579a0b155579f3c80278f094d32a02bc.json"
+  data-offline-search-index-json-src="/offline-search-index.e5917ce5fc8b212c2af0bb31cfeba961758d08f731647970a34f8db124e49b76aa4fc8116cd23dee3af119c0930d79bff783291ea987f60935ffbf85782224eb.json"
   data-offline-search-base-href="/"
 >
 
@@ -160,7 +160,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f8c81dc6838cc2848162d4366d7597aff44d449ceace543ac03a6bde244697ff09b17ad99fe3eb9dd17f310cb52d8d16579a0b155579f3c80278f094d32a02bc.json"
+  data-offline-search-index-json-src="/offline-search-index.e5917ce5fc8b212c2af0bb31cfeba961758d08f731647970a34f8db124e49b76aa4fc8116cd23dee3af119c0930d79bff783291ea987f60935ffbf85782224eb.json"
   data-offline-search-base-href="/"
 >
 
@@ -2334,7 +2334,7 @@ if (!doNotTrack) {
 <tbody>
 <tr>
 <td align="left">Part number</td>
-<td align="left">ESP32-WROOM-32       　　　　</td>
+<td align="left">ESP32-WROOM-32</td>
 </tr>
 <tr>
 <td align="left">SoC</td>
@@ -2392,20 +2392,45 @@ if (!doNotTrack) {
 <h2 id="ピン配置">ピン配置</h2>
 <p><a href="./ap02a_pinassign.jpg"><img src="./ap02a_pinassign.jpg" width="750"></a></p>
 <h2 id="tips">Tips</h2>
-<ul>
-<li>LED DS700
-FT232RQが制御するLEDである。
-UART TX通信によるプログラム書き込み時に点滅する。</li>
-<li>LED DS701
-FT232RQが制御するLEDである。
-UART RX通信によるプログラム書き込み時に点滅する。</li>
-<li>Reset switch
-ESP32、および他のデバイスをリセットする。</li>
-<li>Boot mode switch
-ブートモードを変更するためのスイッチである。</li>
-<li>スケッチの書き込み方
-書き込み中にBoot mode switchを長押しする</li>
-</ul>
+<p><a href="./AP02_tips.jpg"><img src="./AP02_tips.jpg" width="450"></a></p>
+<table>
+<thead>
+<tr>
+<th align="left">Item</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">LED RX</td>
+<td align="left">FT232RQが制御するLEDである。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">UART TX通信によるプログラム書き込み時に点滅する。</td>
+</tr>
+<tr>
+<td align="left">LED TX</td>
+<td align="left">FT232RQが制御するLEDである。</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">UART RX通信によるプログラム書き込み時に点滅する。</td>
+</tr>
+<tr>
+<td align="left">Reset switch</td>
+<td align="left">ESP32、および他のデバイスをリセットする。</td>
+</tr>
+<tr>
+<td align="left">Boot mode switch</td>
+<td align="left">ブートモードを変更するためのスイッチである。</td>
+</tr>
+<tr>
+<td align="left">スケッチの書き込み方</td>
+<td align="left">書き込み中にBoot mode switchを長押しする。</td>
+</tr>
+</tbody>
+</table>
 <h2 id="サンプルデザイン">サンプルデザイン</h2>
 <ul>
 <li><a href="/docs/examples/esp32/wifi_touchsensor">Wi-Fi タッチセンサ</a></li>
@@ -2615,7 +2640,7 @@ ESP32、および他のデバイスをリセットする。</li>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 1, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 2, 2020
 </div>
 </div>
 

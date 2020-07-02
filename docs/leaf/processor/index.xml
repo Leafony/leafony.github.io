@@ -80,7 +80,7 @@
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./ap01a_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ap01a_pinassign.jpg&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AP01_tips.jpg&#34;&gt;&lt;img src=&#34;./AP01_tips.jpg.jpg&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./AP01_tips.jpg&#34;&gt;&lt;img src=&#34;./AP01_tips.jpg&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -151,7 +151,7 @@
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;Part number&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ESP32-WROOM-32       　　　　&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ESP32-WROOM-32&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;SoC&lt;/td&gt;
@@ -209,20 +209,45 @@
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./ap02a_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ap02a_pinassign.jpg&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;LED DS700
-FT232RQが制御するLEDである。
-UART TX通信によるプログラム書き込み時に点滅する。&lt;/li&gt;
-&lt;li&gt;LED DS701
-FT232RQが制御するLEDである。
-UART RX通信によるプログラム書き込み時に点滅する。&lt;/li&gt;
-&lt;li&gt;Reset switch
-ESP32、および他のデバイスをリセットする。&lt;/li&gt;
-&lt;li&gt;Boot mode switch
-ブートモードを変更するためのスイッチである。&lt;/li&gt;
-&lt;li&gt;スケッチの書き込み方
-書き込み中にBoot mode switchを長押しする&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;./AP02_tips.jpg&#34;&gt;&lt;img src=&#34;./AP02_tips.jpg&#34; width=&#34;450&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Item&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;LED RX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FT232RQが制御するLEDである。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;UART TX通信によるプログラム書き込み時に点滅する。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;LED TX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FT232RQが制御するLEDである。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;UART RX通信によるプログラム書き込み時に点滅する。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Reset switch&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ESP32、および他のデバイスをリセットする。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Boot mode switch&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ブートモードを変更するためのスイッチである。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;スケッチの書き込み方&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;書き込み中にBoot mode switchを長押しする。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h2 id=&#34;サンプルデザイン&#34;&gt;サンプルデザイン&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/esp32/wifi_touchsensor&#34;&gt;Wi-Fi タッチセンサ&lt;/a&gt;&lt;/li&gt;
