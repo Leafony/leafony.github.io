@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Leafony – Environment Settings</title>
+    <title>Leafony – Exvironment Settings</title>
     <link>https://docs.leafony.com/en/docs/environment/</link>
-    <description>Recent content in Environment Settings on Leafony</description>
+    <description>Recent content in Exvironment Settings on Leafony</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	  <atom:link href="https://docs.leafony.com/en/docs/environment/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +14,7 @@
     
     
     <item>
-      <title>Docs: Basic Kit</title>
+      <title>Docs: Basic Kit 開発環境設定マニュアル</title>
       <link>https://docs.leafony.com/en/docs/environment/basic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -22,50 +22,137 @@
       <description>
         
         
-        &lt;h2 id=&#34;arduino-ideのインストール&#34;&gt;Arduino IDEのインストール&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.arduino.cc/&#34;&gt;Arduino ホームページ&lt;/a&gt;から「SOFTWARE」→「DOWNLOADS」をクリックし、Arduino IDE インストーラをダウンロードする。下記赤枠はWindowsの例。&lt;/p&gt;
-&lt;img src=&#34;./IDE_DL.jpg&#34;&gt;
-&lt;p&gt;寄付しない場合はJUST DOWNLOADをクリックする。&lt;/p&gt;
-&lt;img src=&#34;./IDE_Contri.jpg&#34;&gt;
+        &lt;p&gt;Leafonyはプログラムを書き込んで初めて動作します。&lt;br&gt;
+たとえば、&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/basic/&#34;&gt;クイックスタート&lt;/a&gt;では、4つのセンサを読み取って、Bluetooth LEでデータを送信するプログラムが書き込まれています。&lt;/p&gt;
+&lt;p&gt;これからLeafonyを使い始める皆さんは、Leafonyにどんなことをしてもらいたいのかプログラムに記述して書き込むことで、思い通りの動作をさせることができます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Next&lt;/h4&gt;
+Leafonyにプログラムを書き込むためにパソコンの設定をしていきましょう！
+&lt;/div&gt;
+
+&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Leafony Basic Kit&lt;/li&gt;
+&lt;li&gt;PC (Windows または Mac OS X または Linux)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;arduino-ideのインストール&#34;&gt;Arduino IDEのインストール&lt;/h2&gt;
+&lt;p&gt;Arduino IDEは、オープンソースの電子工作向けハードウェアプラットフォームであるArduinoの開発環境です。&lt;br&gt;
+この開発環境では、プログラムを記述したり、Arduino基板にプログラムを書き込んだり、基板から送られてくるデータを表示したりすることができます。&lt;br&gt;
+LeafonyはArduino互換の基板なので、Arduino IDEを使って開発できます。&lt;/p&gt;
+&lt;p&gt;早速Arduino IDEをダウンロードしてみましょう。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.arduino.cc/&#34;&gt;Arduino ホームページ&lt;/a&gt;から「SOFTWARE」 → 「DOWNLOADS」の順でページを開き、Arduino IDEのダウンロードページに飛ぶ&lt;/li&gt;
+&lt;li&gt;「Download the Arduino IDE」と書いてある場所で、使用しているOSにあったインストーラをダウンロード&lt;/li&gt;
+&lt;li&gt;ダウンロードしたインストーラを実行して、画面の指示に従ってArduino IDEをインストール&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;ライブラリのインストール&#34;&gt;ライブラリのインストール&lt;/h2&gt;
+&lt;p&gt;一部のリーフを使用するには、追加のライブラリをインストールする必要があります。&lt;br&gt;
+下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきましょう。&lt;/p&gt;
+&lt;h3 id=&#34;1-使用するライブラリ&#34;&gt;1. 使用するライブラリ&lt;/h3&gt;
+&lt;p&gt;Basic Kit、Extension Kitで使用するライブラリは以下の通りです。&lt;/p&gt;
+&lt;table class=&#34;table-hover&#34;&gt;
+  &lt;thread&gt;
+    &lt;tr&gt;
+      &lt;th&gt;リーフ名&lt;/th&gt;
+      &lt;th&gt;必要なライブラリ名&lt;/th&gt;
+      &lt;th&gt;推奨バージョン&lt;/th&gt;
+      &lt;th&gt;説明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thread&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;BLE&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/Leafony/TBGLib&#34;&gt;TBGLib&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;Bluetoothライブラリ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td rowspan=4&gt;4-Sensors&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/ameltech/sme-hts221-library&#34;&gt;HTS221.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;温湿度センサライブラリ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/closedcube/ClosedCube_OPT3001_Arduino&#34;&gt;ClosedCube_OPT3001.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;照度センサライブラリ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_LIS3DH/tree/1.1.2&#34;&gt;Adafruit_LSI3DH.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;1.1.2&lt;/td&gt;
+      &lt;td&gt;加速度センサライブラリ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_Sensor&#34;&gt;Adafruit_Sensor.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;ユニファイドセンサドライバ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;LCD&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/tomozh/arduino_ST7032&#34;&gt;ST7032.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;LCDライブラリ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;AVR MCU&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/PaulStoffregen/MsTimer2&#34;&gt;MsTimer2.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;タイマ割り込みライブラリ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RTC&amp;MicroSD&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/RTClib&#34;&gt;RTClib.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;RTCライブラリ&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;2-githubからライブラリをダウンロード&#34;&gt;2. Githubからライブラリをダウンロード&lt;/h3&gt;
+&lt;p&gt;上記表のリンクをクリックすると、ライブラリのGitHubリポジトリにアクセスします。
+&lt;code&gt;Clone or download → Download ZIP&lt;/code&gt;をクリックし、ライブラリをダウンロードしましょう。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./github_1.png&#34; alt=&#34;github&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-ライブラリのインクルード&#34;&gt;3. ライブラリのインクルード&lt;/h3&gt;
+&lt;p&gt;Arduinoを立ち上げ、&lt;code&gt;スケッチ → ライブラリをインクルード → ZIP形式のライブラリをインストール&lt;/code&gt;の順に選択して、先程ダウンロードしたZIPファイルを読み込みましょう。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./IDE_libinclude.png&#34; alt=&#34;include&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;leafonyをpcと接続&#34;&gt;LeafonyをPCと接続&lt;/h2&gt;
+&lt;p&gt;図のようにLeafonyを組み立てて、USBでPCと接続しましょう。&lt;br&gt;
+Leafonyにプログラムを書き込むためには最低限、AVR MCUリーフとUSBリーフが必要です。&lt;/p&gt;
+&lt;img src=&#34;./blink_assemble.png&#34;&gt;
+&lt;br&gt;&lt;br&gt;
 &lt;h2 id=&#34;ボード設定&#34;&gt;ボード設定&lt;/h2&gt;
-&lt;p&gt;「ツール」 →「 ボード」から、”Arduino Pro or Pro Mini”と”ATmega328P(3.3V,8MHz)”を選択。&lt;/p&gt;
+&lt;p&gt;Arduino IDEでLeafonyの開発を行うために、下記の手順でIDEの設定を行いましょう。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;ツール → ボード&lt;/code&gt;から、&lt;code&gt;Arduino Pro or Pro Mini&lt;/code&gt;を選択、&lt;code&gt;プロセッサ&lt;/code&gt;で&lt;code&gt;ATmega328P (3.3V,8MHz)&lt;/code&gt;を選択&lt;/li&gt;
+&lt;/ol&gt;
 &lt;img src=&#34;./IDE_ATmega.jpg&#34;&gt;
-&lt;p&gt;シリアルポートの選択
-「ツール」→「 シリアルポート」から、COM番号を選択&lt;/p&gt;
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;code&gt;ツール → シリアルポート&lt;/code&gt;から、Leafonyが接続されているシリアルポートを選択&lt;/li&gt;
+&lt;/ol&gt;
 &lt;img src=&#34;./IDE_COM.jpg&#34;&gt;
 &lt;h2 id=&#34;leafonyにプログラムを書き込む&#34;&gt;Leafonyにプログラムを書き込む&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Basic Kitを組み立てる&lt;/li&gt;
+&lt;li&gt;Arduino IDEで&lt;code&gt;ファイル → スケッチ例 → 01.Basics → Blink&lt;/code&gt;をクリックし、サンプルプロジェクトを開きましょう。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;マイコンボードに書き込む&lt;/code&gt;ボタンを押すをLeafonyにプログラムが書き込まれます。&lt;/li&gt;
+&lt;li&gt;ap01 AVR MCUに搭載されたLEDが点滅していることが確認できれば完了です。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;./blink_assemble.png&#34;&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;「ファイル」→「スケッチ例」→「01.Basics」→「Blink」&lt;/li&gt;
-&lt;li&gt;「マイコンボードに書き込む」ボタンを押す&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;ライブラリのインストール&#34;&gt;ライブラリのインストール&lt;/h2&gt;
-&lt;p&gt;Arduinoのライブラリは、通常以下の2カ所に保存されている。
-1）&lt;code&gt;C:\Program Files (x86)\Arduino\libraries&lt;/code&gt;
-2）&lt;code&gt;C:\Users\ユーザ名\Documents\Arduino\libraries&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Arduino IDE をインストールした時、1）にライブラリが保存される。（Arduino IDE Standard Libraries） また、GitHubなどからダウンロードしたライブラリ（ZIPファイル）は、「スケッチ」→「ライブラリをインクルード」→「.ZIP形式のライブラリをインストール」を選択することで、 2)に保存される。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1. Githubからライブラリをダウンロード&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;「Clone or download」→「Download ZIP」をクリックする。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./github_1.png&#34; alt=&#34;github&#34;&gt;
-&lt;img src=&#34;./github_2.png&#34; alt=&#34;github&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2. ライブラリのインクルード&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Arduinoを立ち上げ、スケッチ→ライブラリをインクルード→ZIP形式のライブラリうをインストールの順に選択して保存する。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./IDE_libinclude.png&#34; alt=&#34;include&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;トラブルシューティング&#34;&gt;トラブルシューティング&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;USBシリアル変換ボードのデバイスドライバが見つからない場合&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;USBシリアル変換ドライバーをインストールすることで、AVR MCUへの書き込みが可能。Aruduino UNOと異なるため、要注意。
-&lt;a href=&#34;http://www.ftdichip.com/Drivers/VCP.htm&#34;&gt;FTDI VCP Driverサイト&lt;/a&gt;からsetup executableをクリックしてインストールファイルをダウンロードし実行する。&lt;/p&gt;
-&lt;img src=&#34;./FTDI_DL.jpg&#34;&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
+&lt;a href=&#34;https://docs.leafony.com/docs/examples&#34;&gt;サンプルデザイン&lt;/a&gt;にあるコードをLeafonyに書き込んでみましょう。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;困ったときは&#34;&gt;困ったときは&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;../solution&#34;&gt;うまく動かないときは&lt;/a&gt;で解決方法を探してみましょう。&lt;/p&gt;
+
       </description>
     </item>
     
     <item>
-      <title>Docs: ESP32 Wi-Fi Kit</title>
+      <title>Docs: ESP32 Wi-Fi Kit 開発環境設定マニュアル</title>
       <link>https://docs.leafony.com/en/docs/environment/esp32/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -73,42 +160,168 @@
       <description>
         
         
-        &lt;h2 id=&#34;arduino-ideのインストール&#34;&gt;Arduino IDEのインストール&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.arduino.cc/&#34;&gt;Arduino ホームページ&lt;/a&gt;から「SOFTWARE」→「DOWNLOADS」をクリックし、Arduino IDE インストーラをダウンロードする。下記赤枠はWindowsの例。&lt;/p&gt;
-&lt;img src=&#34;./IDE_DL.jpg&#34;&gt;
-&lt;p&gt;寄付しない場合はJUST DOWNLOADをクリックする。&lt;/p&gt;
-&lt;img src=&#34;./IDE_Contri.jpg&#34;&gt;
+        &lt;p&gt;以下の手順で Leafony ESP32 Wi-Fi Kit 開発環境の設定を行いましょう。&lt;/p&gt;
+&lt;h2 id=&#34;arduino-ideのインストール&#34;&gt;Arduino IDEのインストール&lt;/h2&gt;
+&lt;p&gt;Arduino IDEは、オープンソースの電子工作向けハードウェアプラットフォームであるArduinoの開発環境です。&lt;br&gt;
+この開発環境では、プログラムを記述したり、Arduino基板にプログラムを書き込んだり、基板から送られてくるデータを表示したりすることができます。&lt;br&gt;
+LeafonyはArduino互換の基板なので、Arduino IDEを使って開発できます。&lt;/p&gt;
+&lt;p&gt;早速Arduino IDEをダウンロードしてみましょう。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.arduino.cc/&#34;&gt;Arduino ホームページ&lt;/a&gt;から「SOFTWARE」 → 「DOWNLOADS」の順でページを開き、Arduino IDEのダウンロードページに飛ぶ&lt;/li&gt;
+&lt;li&gt;「Download the Arduino IDE」と書いてある場所で、使用しているOSにあったインストーラをダウンロード&lt;/li&gt;
+&lt;li&gt;ダウンロードしたインストーラを実行して、画面の指示に従ってArduino IDEをインストール&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&#34;ボード設定&#34;&gt;ボード設定&lt;/h2&gt;
-&lt;p&gt;ESP32 MCUをArduino IDEで使用するには、Arduino core for the ESP32 のインストールが必要です。&lt;/p&gt;
+&lt;p&gt;ESP32 MCUリーフをArduino IDEで使用するには、Arduino core for the ESP32 のインストールが必要です。&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Arduino IDEのファイル→環境設定を開き、”追加のボードマネージャのURL:”に、下記URLを入力してください。
-&lt;code&gt;https://dl.espressif.com/dl/package_esp32_index.json&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Arduino IDEの&lt;code&gt;ファイル → 環境設定&lt;/code&gt;を開き、&lt;code&gt;追加のボードマネージャのURL:&lt;/code&gt;に、下記URLを入力してください。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;./ArduinoIDE_URL.png&#34;&gt;
+&lt;pre&gt;&lt;code&gt;https://dl.espressif.com/dl/package_esp32_index.json
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;./ArduinoIDE_URL.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt;を選択し、”全て”の右側に”esp32″と入力し、esp32 by Espressifl Systemsが表示されるので”インストール”のボタンを押します。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt;を選択し、&lt;code&gt;esp32 by Espressif Systems&lt;/code&gt;を検索し、インストールのボタンを押しましょう。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;./BoardManager_esp32.png&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;./BoardManager_esp32.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;ツール→ボード→ESP32 Dev Moduleを選択すれば、ESP32 MCUが使えるようになります。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;サンプルデザインで動作確認&#34;&gt;サンプルデザインで動作確認&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;「ファイル」→「スケッチ例」→「01.Basics」→「Blink」&lt;/li&gt;
-&lt;li&gt;「マイコンボードに書き込む」ボタンを押す&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ツール → ボード → ESP32 Dev Module&lt;/code&gt;を選択すれば、ESP32 MCUが使えるようになります。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;ライブラリのインストール&#34;&gt;ライブラリのインストール&lt;/h2&gt;
-&lt;p&gt;Arduinoのライブラリは、通常以下の2カ所に保存されている。
-1）&lt;code&gt;C:\Program Files (x86)\Arduino\libraries&lt;/code&gt;
-2）&lt;code&gt;C:\Users\ユーザ名\Documents\Arduino\libraries&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Arduino IDE をインストールした時、1）にライブラリが保存される。（Arduino IDE Standard Libraries） また、GitHubなどからダウンロードしたライブラリ（ZIPファイル）は、「スケッチ」→「ライブラリをインクルード」→「.ZIP形式のライブラリをインストール」を選択することで、 2)に保存される。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1. Githubからライブラリをダウンロード&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;「Clone or download」→「Download ZIP」をクリックする。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./github_1.png&#34; alt=&#34;github&#34;&gt;
-&lt;img src=&#34;./github_2.png&#34; alt=&#34;github&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2. ライブラリのインクルード&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Arduinoを立ち上げ、スケッチ→ライブラリをインクルード→ZIP形式のライブラリうをインストールの順に選択して保存する。&lt;/p&gt;
+&lt;p&gt;一部のリーフを使用するには、追加のライブラリのインストールが必要となる場合があります。
+下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきましょう。&lt;/p&gt;
+&lt;h3 id=&#34;1-使用するライブラリ&#34;&gt;1. 使用するライブラリ&lt;/h3&gt;
+&lt;p&gt;Basic Kit、Extension Kitで使用するライブラリは以下の通りです。&lt;/p&gt;
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;リーフ名&lt;/th&gt;
+    &lt;th&gt;必要なライブラリ名&lt;/th&gt;
+    &lt;th&gt;推奨バージョン&lt;/th&gt;
+    &lt;th&gt;説明&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;BLE&lt;/td&gt;
+    &lt;td&gt;&lt;a href=&#34;https://github.com/Leafony/TBGLib&#34;&gt;TBGLib&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;Bluetoothライブラリ&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td rowspan=4&gt;4-Sensors&lt;/td&gt;
+    &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_Sensor&#34;&gt;Adafruit_Sensor.h&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;ユニファイドセンサドライバ&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;a href=&#34;https://github.com/ameltech/sme-hts221-library&#34;&gt;HTS221.h&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;温湿度センサライブラリ&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;a href=&#34;https://github.com/closedcube/ClosedCube_OPT3001_Arduino&#34;&gt;ClosedCube_OPT3001.h&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;照度センサライブラリ&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_LIS3DH/tree/1.1.2&#34;&gt;Adafruit_LSI3DH.h&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;1.1.2&lt;/td&gt;
+    &lt;td&gt;加速度センサライブラリ&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;LCD&lt;/td&gt;
+    &lt;td&gt;&lt;a href=&#34;https://github.com/tomozh/arduino_ST7032&#34;&gt;ST7032.h&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;LCDライブラリ&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;AVR MCU&lt;/td&gt;
+    &lt;td&gt;&lt;a href=&#34;https://github.com/PaulStoffregen/MsTimer2&#34;&gt;MsTimer2.h&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;タイマ割り込みライブラリ&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;RTC&amp;MicroSD&lt;/td&gt;
+    &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/RTClib&#34;&gt;RTClib.h&lt;/a&gt;&lt;/td&gt;
+    &lt;td&gt;&lt;/td&gt;
+    &lt;td&gt;RTCライブラリ&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;2-githubからライブラリをダウンロード&#34;&gt;2. Githubからライブラリをダウンロード&lt;/h3&gt;
+&lt;p&gt;上記表のリンクをクリックすると、ライブラリのGitHubリポジトリにアクセスします。
+&lt;code&gt;Clone or download → Download ZIP&lt;/code&gt;をクリックし、ライブラリをダウンロードしましょう。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./github_1.png&#34; alt=&#34;github&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-ライブラリのインクルード&#34;&gt;3. ライブラリのインクルード&lt;/h3&gt;
+&lt;p&gt;Arduinoを立ち上げ、&lt;code&gt;スケッチ → ライブラリをインクルード → ZIP形式のライブラリをインストール&lt;/code&gt;の順に選択して、先程ダウンロードしたZIPファイルを読み込みましょう。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./IDE_libinclude.png&#34; alt=&#34;include&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;サンプルスケッチで動作確認&#34;&gt;サンプルスケッチで動作確認&lt;/h2&gt;
+&lt;p&gt;サンプルスケッチを書き込んで、ESP32 Wi-Fi Kitを動かしてみましょう。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Arduinoを起動する。&lt;/li&gt;
+&lt;li&gt;下記のサンプルコードをコードエディタに貼り付ける。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//*****************************
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// ボタン入力の状態をシリアルモニタに表示するサンプル
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//*****************************
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;pushButton&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;Serial&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;begin&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;115200&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;pinMode&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pushButton&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;INPUT&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;loop&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;buttonState&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;digitalRead&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pushButton&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;Serial&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buttonState&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;ESP32リーフが接続されたCOMポートを選択する。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;マイコンボードに書き込む&lt;/code&gt;ボタンを押してスケッチを書き込む。&lt;/li&gt;
+&lt;li&gt;書き込み中に下記の表示が出たら、ESP32リーフの&lt;code&gt;Bootボタン&lt;/code&gt;を長押しする。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;./esp32_write.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;シリアルモニタを開いて、通信速度を&lt;code&gt;115200bps&lt;/code&gt;にする。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Bootボタン(IO0)&lt;/code&gt;を押してボタンの入力状態が変わるのを確認する。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
+&lt;a href=&#34;https://docs.leafony.com/docs/examples&#34;&gt;サンプルデザイン&lt;/a&gt;にあるコードをLeafonyに書き込んでみましょう。
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: うまく動かないときは</title>
+      <link>https://docs.leafony.com/en/docs/environment/solution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/en/docs/environment/solution/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;シリアルポートが見つからない&#34;&gt;シリアルポートが見つからない&lt;/h2&gt;
+&lt;p&gt;Arduino IDEでLeafonyのシリアルポートが見つからない場合は、USBシリアル変換IC(FT232)のドライバをインストールしてみましょう。
+&lt;a href=&#34;http://www.ftdichip.com/Drivers/VCP.htm&#34;&gt;FTDI VCP Driver&lt;/a&gt;からデバイスドライバをダウンロードしてインストールしましょう。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./FTDI_DL.jpg&#34; alt=&#34;FTDI_DL&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;電源が入らない&#34;&gt;電源が入らない&lt;/h2&gt;
+&lt;p&gt;Leafonyの電源が入らない場合は以下の項目を確かめてみましょう。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ボタン電池の入れる向き&lt;/li&gt;
+&lt;li&gt;電源スイッチがONになっているか&lt;/li&gt;
+&lt;li&gt;ネジの締まり具合&lt;/li&gt;
+&lt;li&gt;電池の残量が十分にあるか&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;接続不良時の対処&#34;&gt;接続不良時の対処&lt;/h2&gt;
+&lt;p&gt;Connectorや基板の接点に汚れが付着すると、接続不良が生じることがあります。その場合、&lt;a href=&#34;https://amzn.to/2SyTxQK&#34;&gt;無水エタノール&lt;/a&gt;を含ませた&lt;a href=&#34;https://amzn.to/2SCrnEm&#34;&gt;紙製ウエス&lt;/a&gt;で払拭してください。それでも改善しない場合は、Connectorを交換してください。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./Connector-trouble.jpg&#34; alt=&#34;Connector-trouble&#34;&gt;&lt;/p&gt;
 
       </description>
     </item>

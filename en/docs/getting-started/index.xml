@@ -14,7 +14,7 @@
     
     
     <item>
-      <title>Docs: Basic Kit A1.0</title>
+      <title>Docs: Basic Kit スタートガイド</title>
       <link>https://docs.leafony.com/en/docs/getting-started/basic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -22,43 +22,198 @@
       <description>
         
         
-        &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/XC8G1dTXSR4&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;ul&gt;
-&lt;li&gt;Basic Kit A1.0は、スマートフォンやパソコンに、Bluetoothを使って温度、湿度、照度、傾きセンサの値を送信し、簡単に表示できます。&lt;/li&gt;
-&lt;li&gt;スマートフォンやパソコンにセンサの値を表示させるには、ソフトウェア（Web Bluetooth）が必要です。&lt;/li&gt;
-&lt;li&gt;Web Bluetooth は、Android、Mac、WindowsのGoogle Chrome に対応しており、OSによって対応バージョンが異なります。詳細は、&lt;a href=&#34;https://github.com/WebBluetoothCG/web-bluetooth/blob/gh-pages/implementation-status.md&#34;&gt;Implementation Status&lt;/a&gt;を参照願います。&lt;/li&gt;
-&lt;li&gt;iPhoneの場合は、アプリ（有償）をダウンロードすれば、使えます。まずは、iPhoneの例の動画をご覧ください。&lt;/li&gt;
-&lt;/ul&gt;
+        &lt;p&gt;&lt;strong&gt;Leafony Basic Kit&lt;/strong&gt;には、温湿度、照度、加速度センサを搭載した4-Sensorsリーフと、AVR MCUリーフ、Bluetooth LEリーフ、CR2032コイン電池リーフを組み合わせた、2cm立方のIoTデバイスが入っています。&lt;/p&gt;
+&lt;p&gt;Bluetoothを使ってスマートフォンやパソコンにセンサの情報を送信したり、Leafonyに搭載されたLEDをコントロールすることが簡単にできます。&lt;/p&gt;
+&lt;p&gt;Basic Kitに含まれるLeafonyには、箱を開けたらすぐに使えるサンプルアプリが書き込まれています。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Note&lt;/h4&gt;
+WebBluetoothを使ったWebアプリで、Bluetooth接続もプラットフォームを問わずインストール不要で動作します。
+&lt;/div&gt;
+
 &lt;p&gt;&lt;img src=&#34;Ble2-300x281.png&#34; alt=&#34;Ble2-300x281.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;androidmac-oswindowsの場合&#34;&gt;Android/Mac OS/Windowsの場合&lt;/h2&gt;
+&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Android 6.0 Marshmallow 以降、OS X Yosemite 以降、Windows 10 version 1703以降 でなければ、動作しません。端末のバージョンを確認してください。&lt;/li&gt;
-&lt;li&gt;Google Chromeウェブブラウザを立ち上げます。MacやWindowsの端末で、Chromeが無い場合は、インストールしてください。&lt;/li&gt;
-&lt;li&gt;Windowsの場合、Chromeのアドレスバーにchrome://flags/#enable-experimental-web-platform-features を入力し、enterを押し、Experimental Web Platform featuresでEnableを選択します。Android、Macの端末の場合は不要です。&lt;/li&gt;
-&lt;li&gt;次に、下記のリンクにアクセスするとアプリが立ち上がります。
-&lt;a href=&#34;https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html&#34;&gt;https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Basic Kitの電池リーフに付属のコイン電池を入れて、電池リーフのスイッチをオンにします。
-「Connect」 ボタンを押して「Leaf_A_xxxxx..」を選択後、「ペア設定」ボタンを押します。画面にセンサの値が表示されます。&lt;/li&gt;
+&lt;li&gt;Leafony Basic Kit&lt;/li&gt;
+&lt;li&gt;Windows&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;、 Mac&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;、 Linux&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;、 Chrome OSのPCまたは&lt;br&gt;Android&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;、 iPhone&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;、 iPad&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;のスマートフォンまたはタブレット&lt;/li&gt;
+&lt;li&gt;Google Chrome (バージョン70.0.3526.0以降)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img src=&#34;CR2032_switch.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;iphoneipadの場合&#34;&gt;iPhone/iPadの場合&lt;/h2&gt;
+&lt;h2 id=&#34;デモ動画&#34;&gt;デモ動画&lt;/h2&gt;
+&lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/XC8G1dTXSR4&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;App Storeから&lt;a href=&#34;https://apps.apple.com/us/app/webble/id1193531073&#34;&gt;WebBLE&lt;/a&gt; (有償)をダウンロードします。&lt;/li&gt;
-&lt;li&gt;WebBLEを立ち上げ、一番上にあるアドレスバーに以下のURLを貼り付けてください。
-&lt;a href=&#34;https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html&#34;&gt;https://trillion-node.org/wp/wp-content/SW/sensor-trillion-app/index.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;WebBLEの「Connect」 ボタンを押して「Leaf_A_xxxxx..」を選択後、「Done」ボタンを押します。画面にセンサの値が表示されます。&lt;/li&gt;
-&lt;li&gt;画面上に「Download CSV 」のボタンはありますが、iPhoneでは使用できません。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#android%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;Androidの場合&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#iphone%E3%81%BE%E3%81%9F%E3%81%AFipad%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;iPhoneまたはiPadの場合&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#windows%E3%81%BE%E3%81%9F%E3%81%AFmacos%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;WindowsまたはmacOSの場合&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#linux%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;Linuxの場合&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#chrome-os%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;Chrome OSの場合&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E3%83%94%E3%83%B3%E9%85%8D%E7%BD%AE&#34;&gt;ピン配置&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89&#34;&gt;サンプルアプリのソースコード&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;重要：クイックスタートのプログラム等を詳しく知りたい方へは、Web Bluetoothを使ってセンサの値を表示　を参照してください。&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;CR2032_switch.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;androidの場合&#34;&gt;Androidの場合&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Basic Kitに電池を挿入し、電源スイッチをONにする&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;CR2032_switch.png&#34; alt=&#34;Leaf SW&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Google Chromeを開く&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34;&gt;サンプルWebアプリのページ&lt;/a&gt;を開く&lt;/li&gt;
+&lt;li&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_&amp;lt;任意の番号&amp;gt;」&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す&lt;/li&gt;
+&lt;li&gt;接続完了&lt;/li&gt;
+&lt;li&gt;サンプルアプリのソースコードは&lt;a href=&#34;#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89&#34;&gt;こちら&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
+&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic&#34;&gt;開発環境設定&lt;/a&gt;を読んで、LeafonyにLED点滅スケッチを書き込んでみましょう。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;iphoneまたはipadの場合&#34;&gt;iPhoneまたはiPadの場合&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Basic Kitに電池を挿入し、電源スイッチをONにする&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;CR2032_switch.png&#34; alt=&#34;Leaf SW&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;App Storeから&lt;a href=&#34;https://apps.apple.com/us/app/webble/id1193531073&#34;&gt;WebBLE&lt;/a&gt; (有償)をダウンロード&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;WebBLEを立ち上げ、下記のURLにアクセス&lt;br&gt;
+&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34;&gt;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_&amp;lt;任意の番号&amp;gt;」&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;注) 画面上に「Download CSV 」のボタンはありますが、iPhoneでは使用できません。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
+&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic&#34;&gt;開発環境設定&lt;/a&gt;を読んで、LeafonyにLED点滅スケッチを書き込んでみましょう。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;windowsまたはmacosの場合&#34;&gt;WindowsまたはmacOSの場合&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Basic Kitに電池を挿入し、電源スイッチをONにする&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;CR2032_switch.png&#34; alt=&#34;Leaf SW&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Google Chromeを開く&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34;&gt;サンプルWebアプリのページ&lt;/a&gt;を開く&lt;/li&gt;
+&lt;li&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_&amp;lt;任意の番号&amp;gt;」&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す&lt;/li&gt;
+&lt;li&gt;接続完了&lt;/li&gt;
+&lt;li&gt;サンプルアプリのソースコードは&lt;a href=&#34;#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89&#34;&gt;こちら&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;注) Chromeがバージョン79未満の場合、標準でWeb Bluetoothが有効になっていません。
+Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental Web Platform features&lt;/code&gt;を&lt;code&gt;Enable&lt;/code&gt;にしてください。&lt;br&gt;
+&lt;code&gt;chrome://flags/#enable-experimental-web-platform-features&lt;/code&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
+&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic&#34;&gt;開発環境設定&lt;/a&gt;を読んで、LeafonyにLED点滅スケッチを書き込んでみましょう。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;linuxの場合&#34;&gt;Linuxの場合&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Linux上でWebBluetoothを有効にするために、下記の記事を参考に環境を設定してください。&lt;br&gt;
+&lt;a href=&#34;https://acassis.wordpress.com/2016/06/28/how-to-get-chrome-web-bluetooth-working-on-linux/&#34;&gt;How to get Chrome Web Bluetooth working on Linux&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Basic Kitに電池を挿入し、電源スイッチをONにする&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;CR2032_switch.png&#34; alt=&#34;Leaf SW&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Google Chromeを開く&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34;&gt;サンプルWebアプリのページ&lt;/a&gt;を開く&lt;/li&gt;
+&lt;li&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_&amp;lt;任意の番号&amp;gt;」&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す&lt;/li&gt;
+&lt;li&gt;接続完了&lt;/li&gt;
+&lt;li&gt;サンプルアプリのソースコードは&lt;a href=&#34;#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89&#34;&gt;こちら&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
+&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic&#34;&gt;開発環境設定&lt;/a&gt;を読んで、LeafonyにLED点滅スケッチを書き込んでみましょう。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;chrome-osの場合&#34;&gt;Chrome OSの場合&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Basic Kitに電池を挿入し、電源スイッチをONにする&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;CR2032_switch.png&#34; alt=&#34;Leaf SW&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Google Chromeを開く&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34;&gt;サンプルWebアプリのページ&lt;/a&gt;を開く&lt;/li&gt;
+&lt;li&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_&amp;lt;任意の番号&amp;gt;」&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す&lt;/li&gt;
+&lt;li&gt;接続完了&lt;/li&gt;
+&lt;li&gt;サンプルアプリのソースコードは&lt;a href=&#34;#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89&#34;&gt;こちら&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
+&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic&#34;&gt;開発環境設定&lt;/a&gt;を読んで、LeafonyにLED点滅スケッチを書き込んでみましょう。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;../pinassign/basic_kit_pinassign.xlsx&#34;&gt;&lt;img src=&#34;../pinassign/basic_kit_pinassign.jpg&#34; width=&#34;800&#34;&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;サンプルアプリのソースコード&#34;&gt;サンプルアプリのソースコード&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE&#34;&gt;Arduino スケッチ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/WebBluetooth_for_Leafony_app&#34;&gt;Web Bluetooth アプリ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Windows 10 version 1703以降 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;OS X Yosemite以降 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Kernel 3.19+ and BlueZ 5.41+ installed. &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Android 6.0 Marshmallow以降 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;iPhoneまたはiPadの場合は &lt;a href=&#34;https://itunes.apple.com/us/app/webble/id1193531073&#34;&gt;WebBLE&lt;/a&gt;(有料)が必要です。iPhone、iPad版のChromeではWeb Bluetoothが実装されていないためです。 &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
 
       </description>
     </item>
     
     <item>
-      <title>Docs: ESP32 Wi-Fi Kit A1.0</title>
+      <title>Docs: ESP32 Wi-Fi Kit スタートガイド</title>
       <link>https://docs.leafony.com/en/docs/getting-started/esp32/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -66,47 +221,70 @@
       <description>
         
         
-        &lt;ul&gt;
-&lt;li&gt;ESP32 Wi-Fi Kit A1.0には、既に組み立てられたハードウェアが入っています。そのままで、スマートフォンやパソコンにWi-Fiを使ってタッチセンサの値を送信し、簡単に表示できます。&lt;/li&gt;
-&lt;li&gt;下記SSIDとパスワードでESP32 Wi-Fi Kitとパソコン等を接続します。&lt;br&gt;
-SSID：Leafony_ESP32-AP&lt;br&gt;
-パスワード：password&lt;/li&gt;
-&lt;li&gt;ブラウザを起動して、下記URLにアクセスしてください。&lt;br&gt;
-http://192.168.4.1&lt;/li&gt;
-&lt;li&gt;29pin headerの7、9、22、24、26、28ピンがタッチセンサに割り当てられております。&lt;br&gt;
-ピンに触れると静電容量が減るため、値が減少します。値が閾値20以下になると”Touch detected”と表示されます。&lt;/li&gt;
-&lt;li&gt;24ピンはRTC&amp;amp;microSDと干渉しているため、サンプルスケッチでは非表示にしています。&lt;br&gt;
-検出閾値は、スケッチで変更可能です。以下の写真では、指先で26ピンに触れています。&lt;/li&gt;
+        &lt;p&gt;ESP32 Wi-Fi Kit A1.0には、既に組み立てられたハードウェアが入っています。そのままで、スマートフォンやパソコンにWi-Fiを使ってタッチセンサの値を送信し、簡単に表示できます。&lt;/p&gt;
+&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ESP32 Wi-Fi Kit&lt;/li&gt;
+&lt;li&gt;Wi-Fi機能を搭載したPCまたはスマートフォン・タブレット&lt;/li&gt;
+&lt;li&gt;お好みのブラウザ&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;ESP32 Wi-Fi Kitに単4電池3本をセットし、電源スイッチを入れて下さい。&lt;/li&gt;
+&lt;li&gt;お使いのPCまたはスマートフォン・タブレット等で周辺のWi-Fiを検索し、下記のSSIDのWi-Fiに接続します。
+&lt;ul&gt;
+&lt;li&gt;SSID: Leafony_ESP32-AP&lt;/li&gt;
+&lt;li&gt;Password: password&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;ブラウザを起動して、下記URLにアクセスしてください。 &lt;br&gt;&lt;a href=&#34;http://192.168.4.1&#34;&gt;http://192.168.4.1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;29pin headerの7、9、22、24、26、28ピンがタッチセンサに割り当てられています。&lt;br&gt;
+ピンに触れると静電容量が減るため、値が減少します。値が閾値20以下になると”Touch detected”と表示されます。&lt;br&gt;
+(24ピンはRTC&amp;amp;microSDと干渉しているため、サンプルスケッチでは非表示にしています。検出閾値は、スケッチで変更可能です。以下の写真では、指先で26ピンに触れています。)&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;Wi-FiTouch-Sensor-Test_1-300x222.png&#34; alt=&#34;Wi-FiTouch-Sensor-Test_1-300x222.png&#34;&gt;&lt;/p&gt;
-&lt;ul&gt;
+&lt;br&gt;
+&lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;26ピンに触れていると、以下のようにブラウザの表示が変化します。　&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;Wi-FiTouch-Sensor-Test_2.png&#34; alt=&#34;Wi-FiTouch-Sensor-Test_2.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;重要：クイックスタートのプログラム等を詳しく知りたい方は、&lt;a href=&#34;https://trillion-node.org/example/wi-fi_touch_sensor/&#34;&gt;こちら&lt;/a&gt;を参照してください。&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;より深く理解したい方へ&#34;&gt;より深く理解したい方へ&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;ESP32 MCUのスケッチを書く方へ&lt;/strong&gt;&lt;br&gt;
-以下に注意点が纏めてありますので、まずはお読みください。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://trillion-node.org/start/esp32-information/&#34;&gt;ESP32 MCU ご使用時の注意点&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://garretlab.web.fc2.com/arduino/esp32/&#34;&gt;https://garretlab.web.fc2.com/arduino/esp32/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;他のMCUからESP32 MCUのWi-Fiを制御する方へ&lt;/strong&gt;&lt;br&gt;
-以下に注意点が纏めてありますので、まずはお読みください。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://trillion-node.org/start/esp32_at-command/&#34;&gt;ESP32 MCUをATコマンドで使用する場合&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;ESP32 Wi-Fi Kitを固定したい方へ&lt;/strong&gt;&lt;br&gt;
-ESP32 Wi-Fi Kitに同梱しているNut Plateの材質は、鉄（めっき処理）にしました。マグネットが、同梱しているので、冷蔵庫に取り付けることが容易にできます。&lt;/p&gt;
+&lt;br&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;ESP32 Wi-Fi KitのNut Plate部分にマグネットが付いています。金属の壁などに設置してみましょう。&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;magnet_1-225x300.png&#34; alt=&#34;magnet_1-225x300.png&#34;&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;今回つかったサンプルのソースコードは&lt;a href=&#34;#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89&#34;&gt;こちら&lt;/a&gt;です。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
+&lt;a href=&#34;https://docs.leafony.com/docs/environment/esp32&#34;&gt;開発環境設定&lt;/a&gt;を読んで、ESP32 Wi-Fi KitにLED点滅スケッチを書き込んでみましょう。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;../pinassign/esp32_wi-fi_kit_pinassign.xlsx&#34;&gt;&lt;img src=&#34;../pinassign/esp32_wi-fi_kit_pinassign.jpg&#34; width=&#34;800&#34;&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;サンプルアプリのソースコード&#34;&gt;サンプルアプリのソースコード&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/esp32/wifi_touchsensor/&#34;&gt;Arduinoスケッチ&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Extension Kit スタートガイド</title>
+      <link>https://docs.leafony.com/en/docs/getting-started/extension/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/en/docs/getting-started/extension/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;../pinassign/extension_kit_pinassign.xlsx&#34;&gt;&lt;img src=&#34;../pinassign/extension_kit_pinassign.jpg&#34; width=&#34;800&#34;&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;サンプルデザイン&#34;&gt;サンプルデザイン&lt;/h2&gt;
 
       </description>
     </item>
