@@ -49,9 +49,6 @@ WebBluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 &lt;li&gt;&lt;a href=&#34;#iphone%E3%81%BE%E3%81%9F%E3%81%AFipad%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;iPhoneまたはiPadの場合&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#windows%E3%81%BE%E3%81%9F%E3%81%AFmacos%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;WindowsまたはmacOSの場合&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#linux%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;Linuxの場合&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#chrome-os%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;Chrome OSの場合&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#%E3%83%94%E3%83%B3%E9%85%8D%E7%BD%AE&#34;&gt;ピン配置&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89&#34;&gt;サンプルアプリのソースコード&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;androidの場合&#34;&gt;Androidの場合&lt;/h2&gt;
 &lt;ol&gt;
@@ -62,8 +59,8 @@ WebBluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 &lt;br&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Google Chromeを開く&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34;&gt;サンプルWebアプリのページ&lt;/a&gt;を開く&lt;/li&gt;
-&lt;li&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_&amp;lt;任意の番号&amp;gt;」&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34; target=&#34;_blank&#34;&gt;サンプルWebアプリのページ&lt;/a&gt;を開く&lt;/li&gt;
+&lt;li&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_&amp;lt;任意の番号&amp;gt;&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す&lt;/li&gt;
 &lt;li&gt;接続完了&lt;/li&gt;
 &lt;li&gt;サンプルアプリのソースコードは&lt;a href=&#34;#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89&#34;&gt;こちら&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -87,7 +84,7 @@ WebBluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 &lt;li&gt;App Storeから&lt;a href=&#34;https://apps.apple.com/us/app/webble/id1193531073&#34;&gt;WebBLE&lt;/a&gt; (有償)をダウンロード&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;li&gt;WebBLEを立ち上げ、下記のURLにアクセス&lt;br&gt;
 &lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34;&gt;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_&amp;lt;任意の番号&amp;gt;」&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す&lt;/li&gt;
+&lt;li&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_&amp;lt;任意の番号&amp;gt;&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す&lt;/li&gt;
 &lt;/ol&gt;
 &lt;br&gt;
 &lt;p&gt;&lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
@@ -109,8 +106,8 @@ WebBluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 &lt;br&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Google Chromeを開く&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34;&gt;サンプルWebアプリのページ&lt;/a&gt;を開く&lt;/li&gt;
-&lt;li&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_&amp;lt;任意の番号&amp;gt;」&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34; target=&#34;_blank&#34;&gt;サンプルWebアプリのページ&lt;/a&gt;を開く&lt;/li&gt;
+&lt;li&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_&amp;lt;任意の番号&amp;gt;&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す&lt;/li&gt;
 &lt;li&gt;接続完了&lt;/li&gt;
 &lt;li&gt;サンプルアプリのソースコードは&lt;a href=&#34;#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89&#34;&gt;こちら&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -142,32 +139,8 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 &lt;br&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Google Chromeを開く&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34;&gt;サンプルWebアプリのページ&lt;/a&gt;を開く&lt;/li&gt;
-&lt;li&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_&amp;lt;任意の番号&amp;gt;」&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す&lt;/li&gt;
-&lt;li&gt;接続完了&lt;/li&gt;
-&lt;li&gt;サンプルアプリのソースコードは&lt;a href=&#34;#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89&#34;&gt;こちら&lt;/a&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;br&gt;
-&lt;p&gt;&lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
-&lt;br&gt;
-
-
-&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
-&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic&#34;&gt;開発環境設定&lt;/a&gt;を読んで、LeafonyにLED点滅スケッチを書き込んでみましょう。
-&lt;/div&gt;
-
-&lt;h2 id=&#34;chrome-osの場合&#34;&gt;Chrome OSの場合&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Basic Kitに電池を挿入し、電源スイッチをONにする&lt;/li&gt;
-&lt;/ol&gt;
-&lt;br&gt;
-&lt;p&gt;&lt;img src=&#34;CR2032_switch.png&#34; alt=&#34;Leaf SW&#34;&gt;&lt;/p&gt;
-&lt;br&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Google Chromeを開く&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34;&gt;サンプルWebアプリのページ&lt;/a&gt;を開く&lt;/li&gt;
-&lt;li&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_&amp;lt;任意の番号&amp;gt;」&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34; target=&#34;_blank&#34;&gt;サンプルWebアプリのページ&lt;/a&gt;を開く&lt;/li&gt;
+&lt;li&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_&amp;lt;任意の番号&amp;gt;&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す&lt;/li&gt;
 &lt;li&gt;接続完了&lt;/li&gt;
 &lt;li&gt;サンプルアプリのソースコードは&lt;a href=&#34;#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89&#34;&gt;こちら&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -202,7 +175,7 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 &lt;p&gt;Android 6.0 Marshmallow以降 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;iPhoneまたはiPadの場合は &lt;a href=&#34;https://itunes.apple.com/us/app/webble/id1193531073&#34;&gt;WebBLE&lt;/a&gt;(有料)が必要です。iPhone、iPad版のChromeではWeb Bluetoothが実装されていないためです。 &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;iPhoneまたはiPadの場合は &lt;a href=&#34;https://itunes.apple.com/us/app/webble/id1193531073&#34; target=&#34;_blank&#34;&gt;WebBLE&lt;/a&gt;(有料)が必要です。iPhone、iPad版のChromeではWeb Bluetoothが実装されていないためです。 &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
@@ -263,7 +236,7 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 
 &lt;h2 id=&#34;サンプルアプリのソースコード&#34;&gt;サンプルアプリのソースコード&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/esp32/wifi_touchsensor/&#34;&gt;Arduinoスケッチ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/esp32/wifi_touchsensor/&#34;&gt;Wi-Fi タッチセンサ&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
