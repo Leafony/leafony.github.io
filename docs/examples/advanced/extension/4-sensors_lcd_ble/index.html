@@ -21,14 +21,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>センサの値をLCDに表示しBLEで送信(工事中) | Leafony</title><meta property="og:title" content="センサの値をLCDに表示しBLEで送信(工事中)" />
+<title>センサの値をLCDに表示しBLEで送信(公開予定) | Leafony</title><meta property="og:title" content="センサの値をLCDに表示しBLEで送信(公開予定)" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/extension/4-sensors_lcd_ble/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="センサの値をLCDに表示しBLEで送信(工事中)">
+<meta itemprop="name" content="センサの値をLCDに表示しBLEで送信(公開予定)">
 <meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="センサの値をLCDに表示しBLEで送信(工事中)"/>
+<meta name="twitter:title" content="センサの値をLCDに表示しBLEで送信(公開予定)"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -130,7 +130,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d5ed94f607accc735b35cf6cc1c97032070a98ae7d2603224607f4b78f0efe78ce022ac62d8c2b32676f732dce60b7755d322b90ddc795b7fc77c89ece375388.json"
+  data-offline-search-index-json-src="/offline-search-index.27a178e4d8f49f4235002aaf394f4173205d5eebb97624efa40fdc7990de4db996c8f0a4bdc0806aebc584fbf951613447abab5ff8e6f73508af034ca05ead00.json"
   data-offline-search-base-href="/"
 >
 
@@ -160,7 +160,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d5ed94f607accc735b35cf6cc1c97032070a98ae7d2603224607f4b78f0efe78ce022ac62d8c2b32676f732dce60b7755d322b90ddc795b7fc77c89ece375388.json"
+  data-offline-search-index-json-src="/offline-search-index.27a178e4d8f49f4235002aaf394f4173205d5eebb97624efa40fdc7990de4db996c8f0a4bdc0806aebc584fbf951613447abab5ff8e6f73508af034ca05ead00.json"
   data-offline-search-base-href="/"
 >
 
@@ -2248,17 +2248,6 @@ if (!doNotTrack) {
 
 
 
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#概要">概要</a></li>
-    <li><a href="#使用するリーフ要変更">使用するリーフ※要変更</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#リーフの組み立て要変更">リーフの組み立て※要変更</a></li>
-  </ul>
-</nav>
-
 
 
           </div>
@@ -2322,80 +2311,10 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>センサの値をLCDに表示しBLEで送信(工事中)</h1>
+	<h1>センサの値をLCDに表示しBLEで送信(公開予定)</h1>
         
 	
-	<h2 id="概要">概要</h2>
-<p><a href="/docs/leaf/communication/ac03/">LoRa Easyリーフ</a>を使って、センサデータ（温度・湿度・照度・傾き）を、遠く離れた場所に送り、パソコンのターミナルに出力します。※要変更</p>
-<h2 id="使用するリーフ要変更">使用するリーフ※要変更</h2>
-<p>以下のリーフを使用します</p>
-<h1 id="送信側リーフ">送信側リーフ</h1>
-<table>
-<thead>
-<tr>
-<th align="left">Type</th>
-<th align="left">Name</th>
-<th align="left">Q&rsquo;ty</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><a href="/docs/leaf/communication/ac03">AC03</a></td>
-<td align="left"><a href="/docs/leaf/communication/ac03">LoRa Easy</a></td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left"><a href="/docs/leaf/io/ai01">AI01</a></td>
-<td align="left"><a href="/docs/leaf/io/ai01">4-Sensors</a></td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left"><a href="/docs/leaf/processor/ap01">AP01</a></td>
-<td align="left"><a href="/docs/leaf/processor/ap01">AVR MCU</a></td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left"><a href="/docs/leaf/power/av03">AV03</a></td>
-<td align="left"><a href="/docs/leaf/power/av03">CR2032</a></td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left"><a href="/docs/leaf/others/az01">AZ01</a></td>
-<td align="left"><a href="/docs/leaf/others/az01">USB</a></td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left"><a href="/docs/leaf/others/az61">AZ61</a></td>
-<td align="left"><a href="/docs/leaf/others/az61">Connector Cover</a></td>
-<td align="left">2</td>
-</tr>
-<tr>
-<td align="left"><a href="/docs/leaf/others/az62">AZ62</a></td>
-<td align="left"><a href="/docs/leaf/others/az62">Connector Cover</a></td>
-<td align="left">3</td>
-</tr>
-<tr>
-<td align="left">[AZ6]3(/docs/leaf/others/az63)</td>
-<td align="left"><a href="/docs/leaf/others/az63">Connector Cover</a></td>
-<td align="left">2</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">AA battery</td>
-<td align="left">2</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">M2*25mm screw</td>
-<td align="left">6</td>
-</tr>
-</tbody>
-</table>
-<p>#　受信側リーフ</p>
-<h2 id="リーフの組み立て要変更">リーフの組み立て※要変更</h2>
-<p>下図を参考にリーフを組み立ててみましょう。</p>
-<p><img src="./environment_assemble.png" alt="assemble1"></p>
-
+	
         <div class="section-index">
     
     
