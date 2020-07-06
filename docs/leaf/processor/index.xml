@@ -234,11 +234,11 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;micro USB&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;This also converts USB’s VBUS(5V) to 3.3V by using step-down power circuit and provide VBUS and 3.3V to each leaf.&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;It is used for writing a sketch to the MCU and serial monitoring by connecting a PC.This also converts USB’s VBUS(5V) to 3.3V by using step-down power circuit and provide VBUS and 3.3V to each leaf.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;Antenna&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;This is a shared antenna for Bluetooth LE and Wi-Fi.&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
