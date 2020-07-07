@@ -130,7 +130,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.1890f898a928d49883a3db0eef0999e4013379ddf6eee33ed1003fce1a23aba93c47bc582f2c61d0592d47d5ca74ea0e33fe7da94f6000fa1d40bb789e1b51ef.json"
+  data-offline-search-index-json-src="/offline-search-index.abc8d823f18c6a825986152ee9afb39b6c92acf691a25bbb3c34106f07abbcde0ec0f0644a5aba3b498891f22f3dfccc9bde7c373806f17de2b23ba4347a203f.json"
   data-offline-search-base-href="/"
 >
 
@@ -160,7 +160,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.1890f898a928d49883a3db0eef0999e4013379ddf6eee33ed1003fce1a23aba93c47bc582f2c61d0592d47d5ca74ea0e33fe7da94f6000fa1d40bb789e1b51ef.json"
+  data-offline-search-index-json-src="/offline-search-index.abc8d823f18c6a825986152ee9afb39b6c92acf691a25bbb3c34106f07abbcde0ec0f0644a5aba3b498891f22f3dfccc9bde7c373806f17de2b23ba4347a203f.json"
   data-offline-search-base-href="/"
 >
 
@@ -2232,15 +2232,12 @@ if (!doNotTrack) {
     <li><a href="#サンプルアプリのコード">サンプルアプリのコード</a></li>
     <li><a href="#raspberry-piの準備">Raspberry Piの準備</a></li>
     <li><a href="#leafonyの構成">Leafonyの構成</a></li>
-    <li><a href="#leafonyの組み立て">Leafonyの組み立て</a>
-      <ul>
-        <li><a href="#スケッチの書き込み">スケッチの書き込み</a></li>
-        <li><a href="#raspberry-piの環境構築">Raspberry Piの環境構築</a></li>
-        <li><a href="#google-sheets-apiの取得">Google Sheets APIの取得</a></li>
-        <li><a href="#indexjs-へgoogle-sheetsのidとシート名の設定">index.js へGoogle SheetsのIDとシート名の設定</a></li>
-        <li><a href="#アプリの実行">アプリの実行</a></li>
-      </ul>
-    </li>
+    <li><a href="#leafonyの組み立て">Leafonyの組み立て</a></li>
+    <li><a href="#スケッチの書き込み">スケッチの書き込み</a></li>
+    <li><a href="#raspberry-piの環境構築">Raspberry Piの環境構築</a></li>
+    <li><a href="#google-sheets-apiの取得">Google Sheets APIの取得</a></li>
+    <li><a href="#indexjs-へgoogle-sheetsのidとシート名の設定">index.js へGoogle SheetsのIDとシート名の設定</a></li>
+    <li><a href="#アプリの実行">アプリの実行</a></li>
   </ul>
 </nav>
 
@@ -2385,15 +2382,15 @@ if (!doNotTrack) {
 </tbody>
 </table>
 <h2 id="leafonyの組み立て">Leafonyの組み立て</h2>
-<p><img src="./gs_assemble.png" alt="assemble"></p>
-<h3 id="スケッチの書き込み">スケッチの書き込み</h3>
+<img src="./gs_assemble.png" width="350">
+<h2 id="スケッチの書き込み">スケッチの書き込み</h2>
 <ul>
 <li>書き込みには、BLE、4-Sensorsライブラリが必要です。予め、ライブラリをインクルードしておいてください。詳しくは、こちら。</li>
 <li>Arduino IDEで、以下のスケッチをマイコンボードに書き込んでください。
 ・leafony_beacon.ino</li>
 <li>Arduino IDE 1.8.9で動作を確認しています。書き込みエラーが発生したら、IDEのバージョンを確認してください。</li>
 </ul>
-<h3 id="raspberry-piの環境構築">Raspberry Piの環境構築</h3>
+<h2 id="raspberry-piの環境構築">Raspberry Piの環境構築</h2>
 <p>BLE Beaconの受信機にはRaspberry Piを使います。今回使用するサンプルコードでは、Node.jsでnobleを使ってBLE Beaconを受信します。受信したデータはGoogle API経由でGoogle スプレッドシートに書き込んでいます。</p>
 <p>下記のスクリプト(6項目)を実行して環境構築をします。https://github.com/Leafony/leafony-beacon/tree/master/spreadsheet-logger</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt update
@@ -2404,16 +2401,16 @@ git clone https://github.com/Leafony/leafony-beacon
 npm install
 </code></pre></div><p><strong>注意:WARNINGと表示されますが、このまま進んでください。</strong></p>
 <p><img src="./gs_pi_1.png" alt="gs_pi_1"></p>
-<h3 id="google-sheets-apiの取得">Google Sheets APIの取得</h3>
+<h2 id="google-sheets-apiの取得">Google Sheets APIの取得</h2>
 <p>Google スプレットシートをNode.jsで操作するためにはAPIを取得する必要があります。まず、下記 Node.js Quick Start のStep.1で、  Enable the Google Sheets API をクリックし、credentials.jsonをダウンロードします。次に、credentials.jsonをleafony-beacon/spreadsheet-loggerディレクトリにコピーしてください。</p>
 <p>Node.js Quickstart | Sheets API | Google Developers : <a href="https://developers.google.com/sheets/api/quickstart/nodejs">https://developers.google.com/sheets/api/quickstart/nodejs</a></p>
-<h3 id="indexjs-へgoogle-sheetsのidとシート名の設定">index.js へGoogle SheetsのIDとシート名の設定</h3>
+<h2 id="indexjs-へgoogle-sheetsのidとシート名の設定">index.js へGoogle SheetsのIDとシート名の設定</h2>
 <p>Google スプレッドシート を開いて、URLの赤線部分の「シートID」と「シート名」を確認します。</p>
 <p><img src="./gs_pi_2.png" alt="gs_pi_2">
 <img src="./gs_pi_3.png" alt="gs_pi_3"></p>
 <p>leafony-beacon/spreadsheet-loggerディレクトリ「index.js」があります。「index.js」の18, 19行目にある「spreadsheetId」と「sheetName」に、上記の「シートID」と「シート名」を貼り付けることで、データが書き込まれます。</p>
 <p><img src="./gs_pi_4.png" alt="gs_pi_4"></p>
-<h3 id="アプリの実行">アプリの実行</h3>
+<h2 id="アプリの実行">アプリの実行</h2>
 <p>Raspberry piのターミナルに「sudo node .」と入力してEnterをクリックしてください。</p>
 <p><img src="./gs_pi_5.png" alt="gs_pi_5"></p>
 <p>上記URLにブラウザでアクセスすると、Googleアカウントに移動し、ご自身のアカウントを選択します。</p>
@@ -2619,7 +2616,7 @@ npm install
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 5, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 8, 2020
 </div>
 </div>
 

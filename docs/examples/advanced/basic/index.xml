@@ -129,6 +129,12 @@ PCやスマホ・タブレットには色々な環境があります。Windows�
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
+&lt;p&gt;下図のようにリーフを組み立てましょう。&lt;/p&gt;
+&lt;img src=&#34;./assemble.png&#34; width=&#34;350&#34;&gt;
+&lt;h2 id=&#34;ピンアサイン&#34;&gt;ピンアサイン&lt;/h2&gt;
+&lt;p&gt;各リーフのピンアサインは下図を参考&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/pinassign/basic_kit_pinassign.jpg&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/getting-started/pinassign/basic_kit_pinassign.jpg&#34; width=&#34;600&#34;&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;実行方法&#34;&gt;実行方法&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Arduino IDEで&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE&#34;&gt;4-Sensors_BLE.ino&lt;/a&gt;を書き込む&lt;/li&gt;
@@ -358,15 +364,15 @@ BLEで受信したデータは&lt;code&gt;event.target.value&lt;/code&gt;に含�
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;leafonyの組み立て&#34;&gt;Leafonyの組み立て&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;./gs_assemble.png&#34; alt=&#34;assemble&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;スケッチの書き込み&#34;&gt;スケッチの書き込み&lt;/h3&gt;
+&lt;img src=&#34;./gs_assemble.png&#34; width=&#34;350&#34;&gt;
+&lt;h2 id=&#34;スケッチの書き込み&#34;&gt;スケッチの書き込み&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;書き込みには、BLE、4-Sensorsライブラリが必要です。予め、ライブラリをインクルードしておいてください。詳しくは、こちら。&lt;/li&gt;
 &lt;li&gt;Arduino IDEで、以下のスケッチをマイコンボードに書き込んでください。
 ・leafony_beacon.ino&lt;/li&gt;
 &lt;li&gt;Arduino IDE 1.8.9で動作を確認しています。書き込みエラーが発生したら、IDEのバージョンを確認してください。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;raspberry-piの環境構築&#34;&gt;Raspberry Piの環境構築&lt;/h3&gt;
+&lt;h2 id=&#34;raspberry-piの環境構築&#34;&gt;Raspberry Piの環境構築&lt;/h2&gt;
 &lt;p&gt;BLE Beaconの受信機にはRaspberry Piを使います。今回使用するサンプルコードでは、Node.jsでnobleを使ってBLE Beaconを受信します。受信したデータはGoogle API経由でGoogle スプレッドシートに書き込んでいます。&lt;/p&gt;
 &lt;p&gt;下記のスクリプト(6項目)を実行して環境構築をします。https://github.com/Leafony/leafony-beacon/tree/master/spreadsheet-logger&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;sudo apt update
@@ -377,16 +383,16 @@ git clone https://github.com/Leafony/leafony-beacon
 npm install
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;注意:WARNINGと表示されますが、このまま進んでください。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./gs_pi_1.png&#34; alt=&#34;gs_pi_1&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;google-sheets-apiの取得&#34;&gt;Google Sheets APIの取得&lt;/h3&gt;
+&lt;h2 id=&#34;google-sheets-apiの取得&#34;&gt;Google Sheets APIの取得&lt;/h2&gt;
 &lt;p&gt;Google スプレットシートをNode.jsで操作するためにはAPIを取得する必要があります。まず、下記 Node.js Quick Start のStep.1で、  Enable the Google Sheets API をクリックし、credentials.jsonをダウンロードします。次に、credentials.jsonをleafony-beacon/spreadsheet-loggerディレクトリにコピーしてください。&lt;/p&gt;
 &lt;p&gt;Node.js Quickstart | Sheets API | Google Developers : &lt;a href=&#34;https://developers.google.com/sheets/api/quickstart/nodejs&#34;&gt;https://developers.google.com/sheets/api/quickstart/nodejs&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;indexjs-へgoogle-sheetsのidとシート名の設定&#34;&gt;index.js へGoogle SheetsのIDとシート名の設定&lt;/h3&gt;
+&lt;h2 id=&#34;indexjs-へgoogle-sheetsのidとシート名の設定&#34;&gt;index.js へGoogle SheetsのIDとシート名の設定&lt;/h2&gt;
 &lt;p&gt;Google スプレッドシート を開いて、URLの赤線部分の「シートID」と「シート名」を確認します。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./gs_pi_2.png&#34; alt=&#34;gs_pi_2&#34;&gt;
 &lt;img src=&#34;./gs_pi_3.png&#34; alt=&#34;gs_pi_3&#34;&gt;&lt;/p&gt;
 &lt;p&gt;leafony-beacon/spreadsheet-loggerディレクトリ「index.js」があります。「index.js」の18, 19行目にある「spreadsheetId」と「sheetName」に、上記の「シートID」と「シート名」を貼り付けることで、データが書き込まれます。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./gs_pi_4.png&#34; alt=&#34;gs_pi_4&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;アプリの実行&#34;&gt;アプリの実行&lt;/h3&gt;
+&lt;h2 id=&#34;アプリの実行&#34;&gt;アプリの実行&lt;/h2&gt;
 &lt;p&gt;Raspberry piのターミナルに「sudo node .」と入力してEnterをクリックしてください。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./gs_pi_5.png&#34; alt=&#34;gs_pi_5&#34;&gt;&lt;/p&gt;
 &lt;p&gt;上記URLにブラウザでアクセスすると、Googleアカウントに移動し、ご自身のアカウントを選択します。&lt;/p&gt;
