@@ -204,8 +204,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/Battery_Voltage&#34;&gt;Battery_Voltage.ino&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
 &lt;p&gt;Arduino IDEのシリアルモニタを開き、ボーレートを115200bpsとすると、電池の電圧が表示されます。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./read_battery_result.png&#34; alt=&#34;result&#34;&gt;&lt;/p&gt;
-
+&lt;img src=&#34;read_battery_result.png&#34; width=&#34;750&#34;&gt;
       </description>
     </item>
     
@@ -328,11 +327,10 @@
 &lt;h3 id=&#34;2点間補正&#34;&gt;2点間補正&lt;/h3&gt;
 &lt;p&gt;表示させたい温度（または、湿度）と４-Sensorsの温度（または、湿度）に、ずれがあるときは、２点間補正を行います。以下は、温度を例に、補正方法を記します。&lt;/p&gt;
 &lt;p&gt;まず、４-Sensorsと、基準となる計測器で、２点の温度を測定してください。次に、測定した値を、サンプルスケッチに書き込んで、実行して頂ければ、４-Sensorsの温度が、表示させたい温度に近づきます。　&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./chart.png&#34; alt=&#34;温度補正&#34;&gt;&lt;img src=&#34;./sketch.png&#34; alt=&#34;補正用スケッチ&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;chart.png&#34; width=&#34;380&#34;&gt; &lt;img src=&#34;sketch.png&#34; width=&#34;350&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
-&lt;p&gt;Arduino IDEのシリアルモニタを開き、ボーレートを115200bpsとすると、温度と湿度が表示されます。
-&lt;img src=&#34;./thermo-hygrometer.PNG&#34; alt=&#34;result&#34;&gt;&lt;/p&gt;
-
+&lt;p&gt;Arduino IDEのシリアルモニタを開き、ボーレートを115200bpsとすると、温度と湿度が表示されます。&lt;/p&gt;
+&lt;img src=&#34;thermo-hygrometer.png&#34; width=&#34;750&#34;&gt;
       </description>
     </item>
     
@@ -459,9 +457,8 @@
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/blob/master/Illuminance_Meter/Illuminance_Meter.ino&#34;&gt;Illuminance_Meter.ino&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
-&lt;p&gt;Arduino IDEのシリアルモニタを開き、ボーレートを115200bpsとすると、照度が表示されます。
-&lt;img src=&#34;./illuminance_meter.png&#34; alt=&#34;result&#34;&gt;&lt;/p&gt;
-
+&lt;p&gt;Arduino IDEのシリアルモニタを開き、ボーレートを115200bpsとすると、照度が表示されます。&lt;/p&gt;
+&lt;img src=&#34;illuminance_meter.png&#34; width=&#34;700&#34;&gt;
       </description>
     </item>
     
@@ -573,9 +570,8 @@
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/blob/master/Accelerometer/Accelerometer.ino&#34;&gt;Accelerometer.ino&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
-&lt;p&gt;Arduino IDEのシリアルモニタを開き、ボーレートを115200bpsとすると、加速度と傾きが表示されます。
-&lt;img src=&#34;./accelerometer.PNG&#34; alt=&#34;result&#34;&gt;&lt;/p&gt;
-
+&lt;p&gt;Arduino IDEのシリアルモニタを開き、ボーレートを115200bpsとすると、加速度と傾きが表示されます。&lt;/p&gt;
+&lt;img src=&#34;accelerometer.png&#34; width=&#34;700&#34;&gt;
       </description>
     </item>
     
