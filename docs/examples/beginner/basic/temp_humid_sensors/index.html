@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.70.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -130,7 +130,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.abc8d823f18c6a825986152ee9afb39b6c92acf691a25bbb3c34106f07abbcde0ec0f0644a5aba3b498891f22f3dfccc9bde7c373806f17de2b23ba4347a203f.json"
+  data-offline-search-index-json-src="/offline-search-index.b300070993ac7f4dfc9b0a3719c961d045cadf12f65df09a9ba8c1c21ac7130dcb3cb123737173052c619df23769635d34c23dcb32e199018b1b7ff1b443cc3f.json"
   data-offline-search-base-href="/"
 >
 
@@ -160,7 +160,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.abc8d823f18c6a825986152ee9afb39b6c92acf691a25bbb3c34106f07abbcde0ec0f0644a5aba3b498891f22f3dfccc9bde7c373806f17de2b23ba4347a203f.json"
+  data-offline-search-index-json-src="/offline-search-index.b300070993ac7f4dfc9b0a3719c961d045cadf12f65df09a9ba8c1c21ac7130dcb3cb123737173052c619df23769635d34c23dcb32e199018b1b7ff1b443cc3f.json"
   data-offline-search-base-href="/"
 >
 
@@ -859,29 +859,6 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/beginner/extension/rtc/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">リアルタイムクロック</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsexamplesbeginnerextensionrtc">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/beginner/extension/microsd/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">micro SD</a>
   </li>
   <ul>
@@ -932,6 +909,29 @@ if (!doNotTrack) {
   </li>
   <ul>
     <li class="collapse " id="docsexamplesbeginneresp32button">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/esp32/rtc/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">リアルタイムクロック</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginneresp32rtc">
       
       
       
@@ -2230,7 +2230,11 @@ if (!doNotTrack) {
     <li><a href="#概要">概要</a></li>
     <li><a href="#使用するリーフ">使用するリーフ</a></li>
     <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
-    <li><a href="#ソースコード">ソースコード</a></li>
+    <li><a href="#ソースコード">ソースコード</a>
+      <ul>
+        <li><a href="#2点間補正">2点間補正</a></li>
+      </ul>
+    </li>
     <li><a href="#実行結果">実行結果</a></li>
   </ul>
 </nav>
@@ -2315,13 +2319,13 @@ if (!doNotTrack) {
 </thead>
 <tbody>
 <tr>
-<td align="left"><a href="/docs/leaf/io/ai01">AI01</a></td>
-<td align="left"><a href="/docs/leaf/io/ai01">4-Sensors</a></td>
+<td align="left"><a href="/docs/leaf/others/az62">AZ62</a></td>
+<td align="left"><a href="/docs/leaf/others/az62">Connector Cover</a></td>
 <td align="left">1</td>
 </tr>
 <tr>
-<td align="left"><a href="/docs/leaf/processor/ap01">AP01</a></td>
-<td align="left"><a href="/docs/leaf/processor/ap01">AVR MCU</a></td>
+<td align="left"><a href="/docs/leaf/io/ai01">AI01</a></td>
+<td align="left"><a href="/docs/leaf/io/ai01">4-Sensors</a></td>
 <td align="left">1</td>
 </tr>
 <tr>
@@ -2330,13 +2334,13 @@ if (!doNotTrack) {
 <td align="left">1</td>
 </tr>
 <tr>
-<td align="left"><a href="/docs/leaf/power/av01">AV01</a></td>
-<td align="left"><a href="/docs/leaf/power/av01">CR2032</a></td>
+<td align="left"><a href="/docs/leaf/processor/ap01">AP01</a></td>
+<td align="left"><a href="/docs/leaf/processor/ap01">AVR MCU</a></td>
 <td align="left">1</td>
 </tr>
 <tr>
-<td align="left"><a href="/docs/leaf/others/az62">AZ62</a></td>
-<td align="left"><a href="/docs/leaf/others/az62">Connector Cover</a></td>
+<td align="left"><a href="/docs/leaf/power/av01">AV01</a></td>
+<td align="left"><a href="/docs/leaf/power/av01">CR2032</a></td>
 <td align="left">1</td>
 </tr>
 <tr>
@@ -2408,8 +2412,13 @@ if (!doNotTrack) {
   <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/Thermo-Hygrometer">Thermo-Hygrometer.ino</a></p>
+<h3 id="2点間補正">2点間補正</h3>
+<p>表示させたい温度（または、湿度）と４-Sensorsの温度（または、湿度）に、ずれがあるときは、２点間補正を行います。以下は、温度を例に、補正方法を記します。</p>
+<p>まず、４-Sensorsと、基準となる計測器で、２点の温度を測定してください。次に、測定した値を、サンプルスケッチに書き込んで、実行して頂ければ、４-Sensorsの温度が、表示させたい温度に近づきます。　</p>
+<p><img src="./chart.png" alt="温度補正"><img src="./sketch.png" alt="補正用スケッチ"></p>
 <h2 id="実行結果">実行結果</h2>
-<p>Arduino IDEのシリアルモニタを開き、ボーレートを115200bpsとすると、温度と湿度が表示されます。</p>
+<p>Arduino IDEのシリアルモニタを開き、ボーレートを115200bpsとすると、温度と湿度が表示されます。
+<img src="./thermo-hygrometer.PNG" alt="result"></p>
 
         <div class="section-index">
     
@@ -2599,7 +2608,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 6, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 8, 2020
 </div>
 </div>
 

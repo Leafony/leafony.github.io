@@ -118,13 +118,13 @@
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai02&#34;&gt;AI02&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai02&#34;&gt;SP&amp;amp;PIR&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;Connector Cover&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AP01&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AVR MCU&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai02&#34;&gt;AI02&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai02&#34;&gt;SP&amp;amp;PIR&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -133,13 +133,13 @@
 &lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;AV01&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;CR2032&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AP01&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AVR MCU&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;Connector Cover&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;AV01&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;CR2032&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -772,112 +772,6 @@
     </item>
     
     <item>
-      <title>Docs: リアルタイムクロック</title>
-      <link>https://docs.leafony.com/docs/examples/beginner/extension/rtc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.leafony.com/docs/examples/beginner/extension/rtc/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;時刻がパソコンのシリアルモニタに表示されます。&lt;/p&gt;
-&lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;Type&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Name&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az02&#34;&gt;AZ02&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az02&#34;&gt;RTC&amp;amp;microSD&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AP01&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AVR MCU&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;AV01&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;CR2032&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;AZ01&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;USB&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;Connector Cover&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;CR2032 coin cell battery&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;M2*15mm screw&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;リーフの組立&#34;&gt;リーフの組立&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;./RTC_assembly.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;スケッチの書き込み&#34;&gt;スケッチの書き込み&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;書き込みには、RTC＆MicroSDライブラリが必要です。予め、ライブラリをインクルードしておいてください。詳しくは、[こちら]。&lt;/li&gt;
-&lt;li&gt;Arduino IDEで、「ファイル」→「スケッチ例」→「RTClib」→「pcf8523」で、マイコンボードに書き込んでください。&lt;/li&gt;
-&lt;li&gt;ここまででRTC自体は作動しますが、時刻の設定がされていません。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;現在の時刻の自動設定と、低消費電力設定のため、以下のように青字の部分のスケッチを変更してください。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-
-　&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Serial&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-　　&lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// for Leonardo/Micro/Zero
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;　&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-
-　&lt;span style=&#34;color:#000&#34;&gt;Serial&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;begin&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;57600&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;　　　　　　　　　　　　　　
- 　　&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;!&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;rtc&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;begin&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-　　&lt;span style=&#34;color:#000&#34;&gt;Serial&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;“&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Couldn&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;’&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;t&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;find&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;RTC&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;”&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
-　　&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
-　&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-
-　&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;!&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;rtc&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;initialized&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;())&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-　　&lt;span style=&#34;color:#000&#34;&gt;Serial&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;“&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;RTC&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;is&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;NOT&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;running&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;”&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
-　　&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// following line sets the RTC to the date &amp;amp; time this sketch was compiled
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;　　&lt;span style=&#34;color:#000&#34;&gt;rtc&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;adjust&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;DateTime&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;F&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;__DATE__&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;),&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;F&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;__TIME__&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)));&lt;/span&gt;　　　　&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//自動時刻合わせ
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;　　&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// This line sets the RTC with an explicit date &amp;amp; time, for example to set
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;　　&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// January 21, 2014 at 3am you would call:
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;　　&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//rtc.adjust(DateTime(2019, 8, 9, 13, 0, 0));　
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt; 　&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-　&lt;span style=&#34;color:#000&#34;&gt;rtc&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;writeSqwPinMode&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;PCF8523_OFF&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;　　　　　　　　　　 　&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//低消費電力化
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;時刻の設定&#34;&gt;時刻の設定&lt;/h2&gt;
-&lt;p&gt;RTCの停止と起動を行って、時刻を設定してください。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;USBケーブルを抜き、CR2032リーフのPower switchをOFFにして、RTCを停止します。&lt;/li&gt;
-&lt;li&gt;USBケーブルを入れ、RTCを起動させます。&lt;/li&gt;
-&lt;li&gt;CR2032リーフのPower switchをONにします。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
-&lt;p&gt;シリアルモニターを起動すると、時刻が表示されます。
-&lt;img src=&#34;./RTC_overview.png&#34; alt=&#34;overview&#34;&gt;&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: micro SD</title>
       <link>https://docs.leafony.com/docs/examples/beginner/extension/microsd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -899,18 +793,8 @@
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AP01&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AVR MCU&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;AV01&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;CR2032&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;AZ01&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;USB&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;Connector Cover&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -919,8 +803,18 @@
 &lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;Connector Cover&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;AZ01&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;USB&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AP01&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AVR MCU&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;AV01&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;CR2032&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -961,7 +855,7 @@
     &lt;span style=&#34;color:#a40000&#34;&gt;→&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;chipSelect&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;　
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
 &lt;p&gt;microSD カードの情報が、パソコンのシリアルモニタに表示されます。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./microSD_overview.png&#34; alt=&#34;overview&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./microSD_overview.png&#34; alt=&#34;result&#34;&gt;&lt;/p&gt;
 
       </description>
     </item>
