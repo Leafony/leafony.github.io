@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.70.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -133,7 +133,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.01b7e3cd2a2fdd4a665cb3a5ba18b8594a83b535b81d4cc86c6600e342ff39c86fed0028bb66ba22e360ea3f8dcfdc56eea5e7a8d85668b884496b0c71b12b1d.json"
+  data-offline-search-index-json-src="/offline-search-index.60a9fc8061c08f1e31c2d172a1ef9a3dc5e0102d89ba437f1edae02331c2fb91c69edc51940bcb151c7e7b72d81759830732a56925a87af8d396d577bd102d8c.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.01b7e3cd2a2fdd4a665cb3a5ba18b8594a83b535b81d4cc86c6600e342ff39c86fed0028bb66ba22e360ea3f8dcfdc56eea5e7a8d85668b884496b0c71b12b1d.json"
+  data-offline-search-index-json-src="/offline-search-index.60a9fc8061c08f1e31c2d172a1ef9a3dc5e0102d89ba437f1edae02331c2fb91c69edc51940bcb151c7e7b72d81759830732a56925a87af8d396d577bd102d8c.json"
   data-offline-search-base-href="/"
 >
 
@@ -2235,8 +2235,8 @@ if (!doNotTrack) {
     <li><a href="#ライブラリのインストール">ライブラリのインストール</a>
       <ul>
         <li><a href="#1-使用するライブラリ">1. 使用するライブラリ</a></li>
-        <li><a href="#2-githubからライブラリをダウンロード">2. Githubからライブラリをダウンロード</a></li>
-        <li><a href="#3-ライブラリのインクルード">3. ライブラリのインクルード</a></li>
+        <li><a href="#2-ライブラリをダウンロード">2. ライブラリをダウンロード</a></li>
+        <li><a href="#3-ライブラリをインクルード">3. ライブラリをインクルード</a></li>
       </ul>
     </li>
     <li><a href="#leafonyをpcと接続">LeafonyをPCと接続</a></li>
@@ -2299,7 +2299,7 @@ if (!doNotTrack) {
 
 <div class="alert alert-primary" role="alert">
 <h4 class="alert-heading">Next</h4>
-Leafonyにプログラムを書き込むためにパソコンの設定をしていきましょう！
+Leafonyにプログラムを書き込むために必要なソフトウェアをインストールしましょう！
 </div>
 
 <h2 id="用意するもの">用意するもの</h2>
@@ -2317,6 +2317,13 @@ LeafonyはArduino互換の基板なので、Arduino IDEを使って開発でき�
 <li>「Download the Arduino IDE」と書いてある場所で、使用しているOSにあったインストーラをダウンロード</li>
 <li>ダウンロードしたインストーラを実行して、画面の指示に従ってArduino IDEをインストール</li>
 </ol>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">次のステップ</h4>
+ライブラリをインストールして開発をより簡単にしましょう！
+</div>
+
 <h2 id="ライブラリのインストール">ライブラリのインストール</h2>
 <p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。<br>
 下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきましょう。</p>
@@ -2379,29 +2386,38 @@ LeafonyはArduino互換の基板なので、Arduino IDEを使って開発でき�
     </tr>
   </tbody>
 </table>
-<h3 id="2-githubからライブラリをダウンロード">2. Githubからライブラリをダウンロード</h3>
+<h3 id="2-ライブラリをダウンロード">2. ライブラリをダウンロード</h3>
 <p>上記表のリンクをクリックすると、ライブラリのGitHubリポジトリにアクセスします。
 <code>Clone or download → Download ZIP</code>をクリックし、ライブラリをダウンロードしましょう。</p>
-<p><img src="./github_1.png" alt="github"></p>
-<h3 id="3-ライブラリのインクルード">3. ライブラリのインクルード</h3>
+<img src="github_1.png" width="600">
+<h3 id="3-ライブラリをインクルード">3. ライブラリをインクルード</h3>
 <p>Arduinoを立ち上げ、<code>スケッチ → ライブラリをインクルード → ZIP形式のライブラリをインストール</code>の順に選択して、先程ダウンロードしたZIPファイルを読み込みましょう。</p>
-<p><img src="./IDE_libinclude.png" alt="include"></p>
+<img src="IDE_libinclude.png" width="640">
+<br>
+<br>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">次のステップ</h4>
+Leafonyにプログラムを書き込んで動かしてみましょう！
+</div>
+
 <h2 id="leafonyをpcと接続">LeafonyをPCと接続</h2>
 <p>図のようにLeafonyを組み立てて、USBでPCと接続しましょう。<br>
 Leafonyにプログラムを書き込むためには最低限、AVR MCUリーフとUSBリーフが必要です。</p>
-<img src="./blink_assemble.png">
+<img src="./blink_assemble.png" width="480">
 <br><br>
 <h2 id="ボード設定">ボード設定</h2>
 <p>Arduino IDEでLeafonyの開発を行うために、下記の手順でIDEの設定を行いましょう。</p>
 <ol>
 <li><code>ツール → ボード</code>から、<code>Arduino Pro or Pro Mini</code>を選択、<code>プロセッサ</code>で<code>ATmega328P (3.3V,8MHz)</code>を選択</li>
 </ol>
-<img src="./IDE_ATmega.jpg">
+<img src="./IDE_ATmega.jpg" width="640">
 <p><br><br></p>
 <ol start="2">
 <li><code>ツール → シリアルポート</code>から、Leafonyが接続されているシリアルポートを選択</li>
 </ol>
-<img src="./IDE_COM.jpg">
+<img src="./IDE_COM.jpg" width="640">
 <h2 id="leafonyにプログラムを書き込む">Leafonyにプログラムを書き込む</h2>
 <ol>
 <li>Arduino IDEで<code>ファイル → スケッチ例 → 01.Basics → Blink</code>をクリックし、サンプルプロジェクトを開きましょう。</li>
@@ -2412,11 +2428,11 @@ Leafonyにプログラムを書き込むためには最低限、AVR MCUリーフ
 
 <div class="alert alert-primary" role="alert">
 <h4 class="alert-heading">次のステップ</h4>
-<a href="/docs/examples">サンプルデザイン</a>にあるコードをLeafonyに書き込んでみましょう。
+<a href="/docs/examples">サンプルデザイン</a>にあるプログラムをLeafonyに書き込んでみましょう。
 </div>
 
 <h2 id="困ったときは">困ったときは</h2>
-<p><a href="../solution">うまく動かないときは</a>で解決方法を探してみましょう。</p>
+<p>「<a href="../solution">うまく動かないときは</a>」で解決方法を探してみましょう。</p>
 
         <div class="section-index">
     
