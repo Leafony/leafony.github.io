@@ -135,7 +135,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 &lt;h2 id=&#34;leafonyをpcと接続&#34;&gt;LeafonyをPCと接続&lt;/h2&gt;
 &lt;p&gt;図のようにLeafonyを組み立てて、USBでPCと接続しましょう。&lt;br&gt;
 Leafonyにプログラムを書き込むためには最低限、AVR MCUリーフとUSBリーフが必要です。&lt;/p&gt;
-&lt;img src=&#34;./blink_assemble.png&#34; width=&#34;480&#34;&gt;
+&lt;img src=&#34;./basic_assemble.png&#34; width=&#34;480&#34;&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;h2 id=&#34;ボード設定&#34;&gt;ボード設定&lt;/h2&gt;
 &lt;p&gt;Arduino IDEでLeafonyの開発を行うために、下記の手順でIDEの設定を行いましょう。&lt;/p&gt;
@@ -187,6 +187,9 @@ LeafonyはArduino互換の基板なので、Arduino IDEを使って開発でき�
 &lt;li&gt;「Download the Arduino IDE」と書いてある場所で、使用しているOSにあったインストーラをダウンロード&lt;/li&gt;
 &lt;li&gt;ダウンロードしたインストーラを実行して、画面の指示に従ってArduino IDEをインストール&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h2 id=&#34;leafonyをpcと接続&#34;&gt;LeafonyをPCと接続&lt;/h2&gt;
+&lt;p&gt;図のようにLeafonyを組み立てて、USBでPCと接続しましょう。&lt;br&gt;
+&lt;img src=&#34;./esp32_assemble.png&#34; alt=&#34;assemble&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ボード設定&#34;&gt;ボード設定&lt;/h2&gt;
 &lt;p&gt;ESP32 MCUリーフをArduino IDEで使用するには、Arduino core for the ESP32 のインストールが必要です。&lt;/p&gt;
 &lt;ol&gt;

@@ -101,7 +101,7 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02&#34;&gt;AP02&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02&#34;&gt;ESP32&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02&#34;&gt;ESP32 MCU&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -116,13 +116,18 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;CR2032 coin cell battery&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;M2*15mm screw&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;リーフの組立&#34;&gt;リーフの組立&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;./RTC_assembly.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./rtc_assemble.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;スケッチの書き込み&#34;&gt;スケッチの書き込み&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;書き込みには、RTC＆MicroSDライブラリが必要です。予め、ライブラリをインクルードしておいてください。詳しくは、[こちら]。&lt;/li&gt;
