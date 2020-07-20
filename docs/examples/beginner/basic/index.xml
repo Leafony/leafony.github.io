@@ -110,7 +110,7 @@
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
 &lt;p&gt;CR2032コイン電池リーフに搭載されたADコンバータを使って電池の電圧を読み取りましょう。&lt;/p&gt;
-&lt;p&gt;このサンプルはav03 AA BATリーフや、av04 2V～4.5Vリーフなどの電池リーフでも動作します。&lt;/p&gt;
+&lt;p&gt;このサンプルはAA BATリーフや、2V～4.5Vリーフなどの電池リーフでも動作します。&lt;/p&gt;
 &lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
 &lt;p&gt;以下のリーフを使用します&lt;/p&gt;
 &lt;table&gt;
@@ -218,7 +218,7 @@
         
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01/&#34;&gt;4-Sensorsリーフ&lt;/a&gt;に搭載された&lt;strong&gt;温湿度センサ&lt;/strong&gt;の値を読み取って、シリアルモニタに表示するサンプルです。&lt;/p&gt;
+&lt;p&gt;4-Sensorsリーフに搭載された温湿度センサの値を読み取って、シリアルモニタに表示するサンプルです。&lt;/p&gt;
 &lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
 &lt;p&gt;以下のリーフを使用します&lt;/p&gt;
 &lt;table&gt;
@@ -272,7 +272,7 @@
 &lt;p&gt;&lt;img src=&#34;./environment_assemble.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
-&lt;p&gt;4-Sensors リーフを使うためにはライブラリのインストールが必要です。
+&lt;p&gt;このスケッチを動かすためには、ライブラリのインストールが必要です。
 まだインストールしていない場合は&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//  Thermo-hygrometer
@@ -344,7 +344,7 @@
         
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01/&#34;&gt;4-Sensorsリーフ&lt;/a&gt;に搭載された&lt;strong&gt;照度センサ&lt;/strong&gt;の値を読み取って、シリアルモニタに表示するサンプルです。&lt;/p&gt;
+&lt;p&gt;4-Sensorsリーフに搭載された照度センサの値を読み取って、シリアルモニタに表示するサンプルです。&lt;/p&gt;
 &lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
 &lt;p&gt;以下のリーフを使用します&lt;/p&gt;
 &lt;table&gt;
@@ -398,8 +398,8 @@
 &lt;p&gt;&lt;img src=&#34;./environment_assemble.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
-&lt;p&gt;4-Sensors リーフを使うためにはライブラリのインストールが必要です。
-まだインストールしていない場合は&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください&lt;/p&gt;
+&lt;p&gt;このスケッチを動かすためには、ライブラリのインストールが必要です。
+まだインストールしていない場合は&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++:illum.ino&#34; data-lang=&#34;c++:illum.ino&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//  Illuminance meter
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//
@@ -472,7 +472,7 @@
         
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01/&#34;&gt;4-Sensorsリーフ&lt;/a&gt;に搭載された&lt;strong&gt;加速度センサ&lt;/strong&gt;の値を読み取って、シリアルモニタに表示するサンプルです。&lt;/p&gt;
+&lt;p&gt;4-Sensorsリーフに搭載された加速度センサの値を読み取って、シリアルモニタに表示するサンプルです。&lt;/p&gt;
 &lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
 &lt;p&gt;以下のリーフを使用します&lt;/p&gt;
 &lt;table&gt;
@@ -526,7 +526,7 @@
 &lt;p&gt;&lt;img src=&#34;./environment_assemble.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
-&lt;p&gt;4-Sensors リーフを使うためにはライブラリのインストールが必要です。
+&lt;p&gt;このスケッチを動かすためには、ライブラリのインストールが必要です。
 まだインストールしていない場合は&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//  Accelerometer
