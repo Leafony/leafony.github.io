@@ -22,7 +22,7 @@
       <description>
         
         
-        &lt;p&gt;&lt;img src=&#34;Ble2-300x281.png&#34; alt=&#34;Ble2-300x281.png&#34;&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;img src=&#34;Ble2.png&#34; alt=&#34;Ble2-300x281.png&#34;&gt;&lt;/p&gt;
 &lt;br&gt;
 &lt;p&gt;&lt;strong&gt;Leafony Basic Kit&lt;/strong&gt;には、温湿度、照度、加速度センサを搭載した4-Sensorsリーフと、AVR MCUリーフ、Bluetooth LEリーフ、CR2032コイン電池リーフを組み合わせた、2cm立方のIoTデバイスが入っています。&lt;/p&gt;
 &lt;p&gt;Bluetoothを使ってスマートフォンやパソコンにセンサの情報を送信したり、Leafonyに搭載されたLEDをコントロールすることが簡単にできます。&lt;/p&gt;
@@ -88,7 +88,7 @@ Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Basic Kitに電池を挿入し、電源スイッチをONにする&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;CR2032_switch.png&#34; width=&#34;150&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;quick_basic_assemble.png&#34; width=&#34;250&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;App Storeから&lt;a href=&#34;https://apps.apple.com/us/app/webble/id1193531073&#34;&gt;WebBLE&lt;/a&gt; (有償)をダウンロード&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
@@ -119,7 +119,7 @@ Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Basic Kitに電池を挿入し、電源スイッチをONにする&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;CR2032_switch.png&#34; width=&#34;150&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;quick_basic_assemble.png&#34; width=&#34;250&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Google Chromeを開く&lt;/p&gt;
@@ -156,7 +156,7 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Basic Kitに電池を挿入し、電源スイッチをONにする&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;CR2032_switch.png&#34; width=&#34;150&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;quick_basic_assemble.png&#34; width=&#34;250&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Google Chromeを開く&lt;/p&gt;
@@ -225,7 +225,7 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 &lt;/ul&gt;
 &lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;ESP32 Wi-Fi Kitに単4電池3本をセットし、電源スイッチを入れて下さい。
+&lt;li&gt;ESP32 Wi-Fi Kitに単4電池3本をセットし、電源スイッチを入れて下さい。&lt;br&gt;
 &lt;img src=&#34;./quick_esp_assemble.png&#34; alt=&#34;assemble&#34;&gt;&lt;/li&gt;
 &lt;li&gt;お使いのPCまたはスマートフォン・タブレット等で周辺のWi-Fiを検索し、下記のSSIDのWi-Fiに接続します。
 &lt;ul&gt;
@@ -242,7 +242,7 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 ピンに触れると静電容量が減るため、値が減少します。値が閾値20以下になると”Touch detected”と表示されます。&lt;br&gt;
 (24ピンはRTC&amp;amp;microSDと干渉しているため、サンプルスケッチでは非表示にしています。検出閾値は、スケッチで変更可能です。以下の写真では、指先で26ピンに触れています。)&lt;/li&gt;
 &lt;/ol&gt;
-  &lt;img src=&#34;Wi-FiTouch-Sensor-Test_1-300x222.png&#34; width=&#34;300&#34;&gt;
+  &lt;img src=&#34;Wi-FiTouch-Sensor-Test_1.png&#34; width=&#34;200&#34;&gt;
 &lt;br&gt;
 &lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;26ピンに触れていると、以下のようにブラウザの表示が変化します。　&lt;/li&gt;
@@ -252,7 +252,7 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;ESP32 Wi-Fi KitのNut Plate部分にマグネットが付いています。金属の壁などに設置してみましょう。&lt;/li&gt;
 &lt;/ol&gt;
-  &lt;img src=&#34;magnet_1-225x300.png&#34; width=&#34;250&#34;&gt;
+  &lt;img src=&#34;magnet_1.png&#34; width=&#34;400&#34;&gt;
 &lt;ol start=&#34;7&#34;&gt;
 &lt;li&gt;今回つかったサンプルのソースコードは&lt;a href=&#34;#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89&#34;&gt;こちら&lt;/a&gt;です。&lt;/li&gt;
 &lt;/ol&gt;
