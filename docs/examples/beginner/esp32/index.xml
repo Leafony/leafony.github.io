@@ -66,7 +66,8 @@
   &lt;span style=&#34;color:#000&#34;&gt;Serial&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buttonState&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;&#34;&gt;Button.ino&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
 &lt;p&gt;シリアルモニタにボタンの入力状態が表示されます。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./button_serial.jpg&#34; width=&#34;600&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 
@@ -495,15 +496,20 @@
 &lt;/table&gt;
 &lt;h2 id=&#34;リーフの組立&#34;&gt;リーフの組立&lt;/h2&gt;
 &lt;p&gt;&lt;img src=&#34;./rtc_assemble.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;スケッチの書き込み&#34;&gt;スケッチの書き込み&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;書き込みには、RTC＆MicroSDライブラリが必要です。予め、ライブラリをインクルードしておいてください。詳しくは、[こちら]。&lt;/li&gt;
-&lt;li&gt;Arduino IDEで、「ファイル」→「スケッチ例」→「RTClib」→「pcf8523」で、マイコンボードに書き込んでください。&lt;/li&gt;
-&lt;li&gt;ここまででRTC自体は作動しますが、時刻の設定がされていません。&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
+&lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
+&lt;p&gt;このスケッチを動かすためには、ライブラリのインストールが必要です。
+まだインストールしていない場合は&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;現在の時刻の自動設定と、低消費電力設定のため、以下のように青字の部分のスケッチを変更してください。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Arduino IDEで、「ファイル」→「スケッチ例」→「RTClib」→「pcf8523」で、マイコンボードに書き込んでください。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ここまででRTC自体は作動しますが、時刻の設定がされていません。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;現在の時刻の自動設定と、低消費電力設定のため、以下のように青字の部分のスケッチを変更してください。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 
@@ -620,7 +626,8 @@
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;chipSelect&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
   
     &lt;span style=&#34;color:#a40000&#34;&gt;→&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;chipSelect&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;　
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;&#34;&gt;CardInfo.ino&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
 &lt;p&gt;microSD カードの情報が、パソコンのシリアルモニタに表示されます。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./microSD_overview.png&#34; alt=&#34;result&#34;&gt;&lt;/p&gt;
 

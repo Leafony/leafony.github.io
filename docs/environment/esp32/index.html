@@ -133,7 +133,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.630d9180187ca8863be169c8f01c4c42dfddbc912a92099c24ebcdc9816703ac41168538bc9d07ed24dc3e0b82f8e1b3afe1c98fd1fd3d64b03f7301f38e04c3.json"
+  data-offline-search-index-json-src="/offline-search-index.187d28c8117c411e61c04ea4d938c2bb42c72c389c7baf3739f1a25b226d5c79863192ffd23ab3fc3133baf3396cdc52dd109d2118f1cb99017b837f3019f64f.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.630d9180187ca8863be169c8f01c4c42dfddbc912a92099c24ebcdc9816703ac41168538bc9d07ed24dc3e0b82f8e1b3afe1c98fd1fd3d64b03f7301f38e04c3.json"
+  data-offline-search-index-json-src="/offline-search-index.187d28c8117c411e61c04ea4d938c2bb42c72c389c7baf3739f1a25b226d5c79863192ffd23ab3fc3133baf3396cdc52dd109d2118f1cb99017b837f3019f64f.json"
   data-offline-search-base-href="/"
 >
 
@@ -843,29 +843,6 @@ if (!doNotTrack) {
   </li>
   <ul>
     <li class="collapse " id="docsexamplesbeginnerextensionlcd">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/beginner/extension/microsd/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">micro SD</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsexamplesbeginnerextensionmicrosd">
       
       
       
@@ -2382,19 +2359,19 @@ if (!doNotTrack) {
 	<h1>ESP32 Wi-Fi Kit 開発環境設定マニュアル</h1>
         <div class="lead">Wi-Fi搭載リーフを使ってみよう！</div>
 	
-	<p>以下の手順で Leafony ESP32 Wi-Fi Kit 開発環境の設定を行いましょう。</p>
+	<p>以下の手順で ESP32 Wi-Fi Kit 開発環境の設定を行いましょう。</p>
 <h2 id="arduino-ideのインストール">Arduino IDEのインストール</h2>
 <p>Arduino IDEは、オープンソースの電子工作向けハードウェアプラットフォームであるArduinoの開発環境です。<br>
 この開発環境では、プログラムを記述したり、Arduino基板にプログラムを書き込んだり、基板から送られてくるデータを表示したりすることができます。<br>
 LeafonyはArduino互換の基板なので、Arduino IDEを使って開発できます。</p>
 <p>早速Arduino IDEをダウンロードしてみましょう。</p>
 <ol>
-<li><a href="https://www.arduino.cc/">Arduino ホームページ</a>から「SOFTWARE」 → 「DOWNLOADS」の順でページを開き、Arduino IDEのダウンロードページに飛ぶ</li>
-<li>「Download the Arduino IDE」と書いてある場所で、使用しているOSにあったインストーラをダウンロード</li>
-<li>ダウンロードしたインストーラを実行して、画面の指示に従ってArduino IDEをインストール</li>
+<li><a href="https://www.arduino.cc/">Arduino ホームページ</a>から「SOFTWARE」 → 「DOWNLOADS」の順でページを開き、Arduino IDEのダウンロードページに飛ぶ。</li>
+<li>「Download the Arduino IDE」と書いてある場所で、使用しているOSにあったインストーラをダウンロード。</li>
+<li>ダウンロードしたインストーラを実行して、画面の指示に従ってArduino IDEをインストール。</li>
 </ol>
 <h2 id="leafonyをpcと接続">LeafonyをPCと接続</h2>
-<p>図のようにLeafonyを組み立てて、USBでPCと接続しましょう。<br>
+<p>以下のようにLeafonyを組み立てて、USBでPCと接続しましょう。<br>
 <img src="./esp32_assemble.png" alt="assemble"></p>
 <h2 id="ボード設定">ボード設定</h2>
 <p>ESP32 MCUリーフをArduino IDEで使用するには、Arduino core for the ESP32 のインストールが必要です。</p>
@@ -2417,10 +2394,10 @@ LeafonyはArduino互換の基板なので、Arduino IDEを使って開発でき�
 <li><code>ツール → ボード → ESP32 Dev Module</code>を選択すれば、ESP32 MCUが使えるようになります。</li>
 </ol>
 <h2 id="ライブラリのインストール">ライブラリのインストール</h2>
-<p>一部のリーフを使用するには、追加のライブラリのインストールが必要となる場合があります。
+<p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。
 下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきましょう。</p>
 <h3 id="1-使用するライブラリ">1. 使用するライブラリ</h3>
-<p>Basic Kit、Extension Kitで使用するライブラリは以下の通りです。</p>
+<p>各Kitで使用するライブラリは以下の通りです。</p>
 <table>
   <tr>
     <th>リーフ名</th>
@@ -2516,7 +2493,7 @@ LeafonyはArduino互換の基板なので、Arduino IDEを使って開発でき�
 
 <div class="alert alert-primary" role="alert">
 <h4 class="alert-heading">次のステップ</h4>
-<a href="/docs/examples">サンプルデザイン</a>にあるコードをLeafonyに書き込んでみましょう。
+<a href="/docs/examples">サンプルアプリ</a>にあるコードをLeafonyに書き込んでみましょう。
 </div>
 
 
@@ -2530,7 +2507,7 @@ LeafonyはArduino互換の基板なので、Arduino IDEを使って開発でき�
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 9, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 22, 2020
 </div>
 </div>
 

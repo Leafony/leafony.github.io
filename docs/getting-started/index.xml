@@ -24,8 +24,8 @@
         
         &lt;p&gt;&lt;img src=&#34;Ble2.png&#34; alt=&#34;Ble2-300x281.png&#34;&gt;&lt;/p&gt;
 &lt;br&gt;
-&lt;p&gt;&lt;strong&gt;Leafony Basic Kit&lt;/strong&gt;には、温湿度、照度、加速度センサを搭載した4-Sensorsリーフと、AVR MCUリーフ、Bluetooth LEリーフ、CR2032コイン電池リーフを組み合わせた、IoTデバイスが入っています。&lt;/p&gt;
-&lt;p&gt;Bluetoothを使ってスマートフォンやパソコンにセンサの情報を送信したり、Leafonyに搭載されたLEDをコントロールすることが簡単にできます。&lt;/p&gt;
+&lt;p&gt;Basic Kitには、温湿度、照度、加速度センサを搭載した4-Sensorsリーフと、AVR MCUリーフ、Bluetooth LEリーフ、CR2032コイン電池リーフを組み合わせた、IoTデバイスが入っています。&lt;/p&gt;
+&lt;p&gt;Bluetoothを使ってスマートフォンやパソコンにセンサの情報を送信したり、Basic Kitに搭載されたLEDをコントロールすることが簡単にできます。&lt;/p&gt;
 &lt;p&gt;Basic Kitには、箱を開けたらすぐに使えるサンプルアプリが書き込まれています。&lt;/p&gt;
 
 
@@ -37,7 +37,7 @@ Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 &lt;img src=&#34;./Cross-platform.png&#34; width=&#34;450&#34;&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Leafony Basic Kit&lt;/li&gt;
+&lt;li&gt;Basic Kit&lt;/li&gt;
 &lt;li&gt;Windows&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;、 Mac&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;、 Linux&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;、 Chrome OSのPCまたは&lt;br&gt;Android&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;、 iPhone&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;、 iPad&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;のスマートフォンまたはタブレット&lt;/li&gt;
 &lt;li&gt;Google Chrome (バージョン70.0.3526.0以降)&lt;/li&gt;
 &lt;/ul&gt;
@@ -60,7 +60,7 @@ Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 &lt;h2 id=&#34;androidの場合&#34;&gt;Androidの場合&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Basic Kitに電池を挿入し、電源スイッチをONにする。&lt;/p&gt;
+&lt;p&gt;Basic KitにCR2032コイン電池を挿入し、電源スイッチをONにする。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;quick_basic_assemble.png&#34; width=&#34;250&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -90,14 +90,14 @@ Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 &lt;h2 id=&#34;iphoneまたはipadの場合&#34;&gt;iPhoneまたはiPadの場合&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Basic Kitに電池を挿入し、電源スイッチをONにする。&lt;/p&gt;
+&lt;p&gt;Basic KitにCR2032コイン電池を挿入し、電源スイッチをONにする。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;quick_basic_assemble.png&#34; width=&#34;250&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;App Storeから&lt;a href=&#34;https://apps.apple.com/us/app/webble/id1193531073&#34;&gt;WebBLE&lt;/a&gt; (有償)をダウンロード&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;以下のURLをコピーし、WebBLEを立ち上げ、アドレスバーに貼り付けてください。
+&lt;p&gt;以下のURLをコピーし、WebBLEを立ち上げてアドレスバーに貼り付けてください。
 &lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34;&gt;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -122,7 +122,7 @@ Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 &lt;h2 id=&#34;windowsまたはmacosの場合&#34;&gt;WindowsまたはmacOSの場合&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Basic Kitに電池を挿入し、電源スイッチをONにする。&lt;/p&gt;
+&lt;p&gt;Basic KitにCR2032コイン電池を挿入し、電源スイッチをONにする。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;quick_basic_assemble.png&#34; width=&#34;250&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -159,7 +159,7 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 &lt;a href=&#34;https://acassis.wordpress.com/2016/06/28/how-to-get-chrome-web-bluetooth-working-on-linux/&#34;&gt;How to get Chrome Web Bluetooth working on Linux&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Basic Kitに電池を挿入し、電源スイッチをONにする。&lt;/p&gt;
+&lt;p&gt;Basic KitにCR2032コイン電池を挿入し、電源スイッチをONにする。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;quick_basic_assemble.png&#34; width=&#34;250&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -224,20 +224,20 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;ESP32 Wi-Fi Kit&lt;/li&gt;
-&lt;li&gt;Wi-Fi機能を搭載したPCまたはスマートフォン・タブレット&lt;/li&gt;
-&lt;li&gt;お好みのブラウザ&lt;/li&gt;
+&lt;li&gt;Wi-Fi機能を搭載したPC、スマートフォン、またはタブレット&lt;/li&gt;
+&lt;li&gt;お好みのWebブラウザ&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;ESP32 Wi-Fi Kitに単4電池3本をセットし、電源スイッチを入れて下さい。&lt;br&gt;
+&lt;li&gt;ESP32 Wi-Fi Kitに単4電池3本をセットし、電源スイッチをONにして下さい。&lt;br&gt;
 &lt;img src=&#34;./quick_esp_assemble.png&#34; alt=&#34;assemble&#34;&gt;&lt;/li&gt;
-&lt;li&gt;お使いのPCまたはスマートフォン・タブレット等で周辺のWi-Fiを検索し、下記のSSIDのWi-Fiに接続します。
+&lt;li&gt;PC、スマートフォン、またはタブレット等で周辺のWi-Fiを検索し、以下のSSIDのWi-Fiに接続します。
 &lt;ul&gt;
 &lt;li&gt;SSID: Leafony_ESP32-AP&lt;/li&gt;
 &lt;li&gt;Password: password&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;ブラウザを起動して、下記URLにアクセスしてください。
+&lt;li&gt;Webブラウザを起動して、以下のURLにアクセスしてください。
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://192.168.4.1&#34;&gt;http://192.168.4.1&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -249,7 +249,7 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
   &lt;img src=&#34;Wi-FiTouch-Sensor-Test_1.png&#34; width=&#34;200&#34;&gt;
 &lt;br&gt;
 &lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;26ピンに触れていると、以下のようにブラウザの表示が変化します。　&lt;/li&gt;
+&lt;li&gt;26ピンに触れていると、以下のようにWebブラウザの表示が変化します。　&lt;/li&gt;
 &lt;/ol&gt;
   &lt;img src=&#34;Wi-FiTouch-Sensor-Test_2.png&#34; width=&#34;600&#34;&gt;
 &lt;br&gt;

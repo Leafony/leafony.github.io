@@ -130,7 +130,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.630d9180187ca8863be169c8f01c4c42dfddbc912a92099c24ebcdc9816703ac41168538bc9d07ed24dc3e0b82f8e1b3afe1c98fd1fd3d64b03f7301f38e04c3.json"
+  data-offline-search-index-json-src="/offline-search-index.187d28c8117c411e61c04ea4d938c2bb42c72c389c7baf3739f1a25b226d5c79863192ffd23ab3fc3133baf3396cdc52dd109d2118f1cb99017b837f3019f64f.json"
   data-offline-search-base-href="/"
 >
 
@@ -160,7 +160,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.630d9180187ca8863be169c8f01c4c42dfddbc912a92099c24ebcdc9816703ac41168538bc9d07ed24dc3e0b82f8e1b3afe1c98fd1fd3d64b03f7301f38e04c3.json"
+  data-offline-search-index-json-src="/offline-search-index.187d28c8117c411e61c04ea4d938c2bb42c72c389c7baf3739f1a25b226d5c79863192ffd23ab3fc3133baf3396cdc52dd109d2118f1cb99017b837f3019f64f.json"
   data-offline-search-base-href="/"
 >
 
@@ -840,29 +840,6 @@ if (!doNotTrack) {
   </li>
   <ul>
     <li class="collapse " id="docsexamplesbeginnerextensionlcd">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/beginner/extension/microsd/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">micro SD</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsexamplesbeginnerextensionmicrosd">
       
       
       
@@ -2322,7 +2299,6 @@ if (!doNotTrack) {
     <li><a href="#概要">概要</a></li>
     <li><a href="#使用するリーフ">使用するリーフ</a></li>
     <li><a href="#リーフの組立">リーフの組立</a></li>
-    <li><a href="#スケッチの書き込み">スケッチの書き込み</a></li>
     <li><a href="#ソースコード">ソースコード</a></li>
     <li><a href="#時刻の設定">時刻の設定</a></li>
     <li><a href="#実行結果">実行結果</a></li>
@@ -2441,15 +2417,20 @@ if (!doNotTrack) {
 </table>
 <h2 id="リーフの組立">リーフの組立</h2>
 <p><img src="./rtc_assemble.png" alt="assemble1"></p>
-<h2 id="スケッチの書き込み">スケッチの書き込み</h2>
-<ul>
-<li>書き込みには、RTC＆MicroSDライブラリが必要です。予め、ライブラリをインクルードしておいてください。詳しくは、[こちら]。</li>
-<li>Arduino IDEで、「ファイル」→「スケッチ例」→「RTClib」→「pcf8523」で、マイコンボードに書き込んでください。</li>
-<li>ここまででRTC自体は作動しますが、時刻の設定がされていません。</li>
-</ul>
 <h2 id="ソースコード">ソースコード</h2>
+<p>Arduino IDEで下記のプログラムを書きましょう。</p>
+<p>このスケッチを動かすためには、ライブラリのインストールが必要です。
+まだインストールしていない場合は<a href="/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">開発環境設定ページ</a>を参考にライブラリをインストールしてください。</p>
 <ul>
-<li>現在の時刻の自動設定と、低消費電力設定のため、以下のように青字の部分のスケッチを変更してください。</li>
+<li>
+<p>Arduino IDEで、「ファイル」→「スケッチ例」→「RTClib」→「pcf8523」で、マイコンボードに書き込んでください。</p>
+</li>
+<li>
+<p>ここまででRTC自体は作動しますが、時刻の設定がされていません。</p>
+</li>
+<li>
+<p>現在の時刻の自動設定と、低消費電力設定のため、以下のように青字の部分のスケッチを変更してください。</p>
+</li>
 </ul>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span> <span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
 
@@ -2673,14 +2654,12 @@ if (!doNotTrack) {
         
             
         
-            
-        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 9, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 22, 2020
 </div>
 </div>
 
