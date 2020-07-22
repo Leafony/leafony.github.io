@@ -24,9 +24,9 @@
         
         &lt;p&gt;&lt;img src=&#34;Ble2.png&#34; alt=&#34;Ble2-300x281.png&#34;&gt;&lt;/p&gt;
 &lt;br&gt;
-&lt;p&gt;&lt;strong&gt;Leafony Basic Kit&lt;/strong&gt;には、温湿度、照度、加速度センサを搭載した4-Sensorsリーフと、AVR MCUリーフ、Bluetooth LEリーフ、CR2032コイン電池リーフを組み合わせた、2cm立方のIoTデバイスが入っています。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Leafony Basic Kit&lt;/strong&gt;には、温湿度、照度、加速度センサを搭載した4-Sensorsリーフと、AVR MCUリーフ、Bluetooth LEリーフ、CR2032コイン電池リーフを組み合わせた、IoTデバイスが入っています。&lt;/p&gt;
 &lt;p&gt;Bluetoothを使ってスマートフォンやパソコンにセンサの情報を送信したり、Leafonyに搭載されたLEDをコントロールすることが簡単にできます。&lt;/p&gt;
-&lt;p&gt;Basic Kitに含まれるLeafonyには、箱を開けたらすぐに使えるサンプルアプリが書き込まれています。&lt;/p&gt;
+&lt;p&gt;Basic Kitには、箱を開けたらすぐに使えるサンプルアプリが書き込まれています。&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
@@ -49,6 +49,9 @@ Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 &lt;br&gt;
 &lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
 &lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#%E7%94%A8%E6%84%8F%E3%81%99%E3%82%8B%E3%82%82%E3%81%AE&#34;&gt;用意するもの&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E3%83%87%E3%83%A2%E5%8B%95%E7%94%BB&#34;&gt;デモ動画&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#%E4%BD%BF%E3%81%84%E6%96%B9&#34;&gt;使い方&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#android%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;Androidの場合&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#iphone%E3%81%BE%E3%81%9F%E3%81%AFipad%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;iPhoneまたはiPadの場合&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;#windows%E3%81%BE%E3%81%9F%E3%81%AFmacos%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;WindowsまたはmacOSの場合&lt;/a&gt;&lt;/li&gt;
@@ -57,84 +60,85 @@ Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 &lt;h2 id=&#34;androidの場合&#34;&gt;Androidの場合&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Basic Kitに電池を挿入し、電源スイッチをONにする&lt;/p&gt;
+&lt;p&gt;Basic Kitに電池を挿入し、電源スイッチをONにする。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;quick_basic_assemble.png&#34; width=&#34;250&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Google Chromeを開く&lt;/p&gt;
+&lt;p&gt;Google Chromeを開く。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34; target=&#34;_blank&#34;&gt;サンプルWebアプリのページ&lt;/a&gt;を開く&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34; target=&#34;_blank&#34;&gt;Webアプリ&lt;/a&gt;を開く。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_002&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す&lt;/p&gt;
+&lt;p&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_002&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;接続完了&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;今回使用したサンプルプロジェクトは「&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/basic/webbluetooth_iot&#34; target=&#34;_blank&#34;&gt;Web Bluetoothを使ったIoTアプリ入門&lt;/a&gt;」です。ソースコードや動作の仕組みはこちらでご覧になれます。&lt;/p&gt;
+&lt;p&gt;今回使用したサンプルアプリは「&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/basic/webbluetooth_iot&#34; target=&#34;_blank&#34;&gt;Web Bluetoothを使ったIoTアプリ入門&lt;/a&gt;」です。ソースコードや動作の仕組みはこちらでご覧になれます。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
-&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic&#34;&gt;開発環境設定&lt;/a&gt;を読んで、LeafonyにLED点滅スケッチを書き込んでみましょう。
+&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic&#34;&gt;開発環境設定&lt;/a&gt;を読んで、Basic KitにLED点滅スケッチを書き込んでみましょう。
 &lt;/div&gt;
 
 &lt;p&gt;&lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;iphoneまたはipadの場合&#34;&gt;iPhoneまたはiPadの場合&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Basic Kitに電池を挿入し、電源スイッチをONにする&lt;/p&gt;
+&lt;p&gt;Basic Kitに電池を挿入し、電源スイッチをONにする。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;quick_basic_assemble.png&#34; width=&#34;250&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;App Storeから&lt;a href=&#34;https://apps.apple.com/us/app/webble/id1193531073&#34;&gt;WebBLE&lt;/a&gt; (有償)をダウンロード&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;WebBLEを立ち上げ、&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34; target=&#34;_blank&#34;&gt;サンプルWebアプリのページ&lt;/a&gt;を開く&lt;/p&gt;
+&lt;p&gt;以下のURLをコピーし、WebBLEを立ち上げ、アドレスバーに貼り付けてください。
+&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34;&gt;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_002&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す&lt;/p&gt;
+&lt;p&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_002&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;接続完了&lt;br&gt;
 注) 画面上に「Download CSV 」のボタンはありますが、iPhoneでは使用できません。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;今回使用したサンプルプロジェクトは「&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/basic/webbluetooth_iot&#34; target=&#34;_blank&#34;&gt;Web Bluetoothを使ったIoTアプリ入門&lt;/a&gt;」です。ソースコードや動作の仕組みはこちらでご覧になれます。&lt;/p&gt;
+&lt;p&gt;今回使用したサンプルアプリは「&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/basic/webbluetooth_iot&#34; target=&#34;_blank&#34;&gt;Web Bluetoothを使ったIoTアプリ入門&lt;/a&gt;」です。ソースコードや動作の仕組みはこちらでご覧になれます。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
-&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic&#34;&gt;開発環境設定&lt;/a&gt;を読んで、LeafonyにLED点滅スケッチを書き込んでみましょう。
+&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic&#34;&gt;開発環境設定&lt;/a&gt;を読んで、Basic KitにLED点滅スケッチを書き込んでみましょう。
 &lt;/div&gt;
 
 &lt;p&gt;&lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;windowsまたはmacosの場合&#34;&gt;WindowsまたはmacOSの場合&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;Basic Kitに電池を挿入し、電源スイッチをONにする&lt;/p&gt;
+&lt;p&gt;Basic Kitに電池を挿入し、電源スイッチをONにする。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;quick_basic_assemble.png&#34; width=&#34;250&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Google Chromeを開く&lt;/p&gt;
+&lt;p&gt;Google Chromeを開く。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34; target=&#34;_blank&#34;&gt;サンプルWebアプリのページ&lt;/a&gt;を開く&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34; target=&#34;_blank&#34;&gt;Webアプリ&lt;/a&gt;を開く。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_002&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す&lt;/p&gt;
+&lt;p&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_002&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;接続完了&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;今回使用したサンプルプロジェクトは「&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/basic/webbluetooth_iot&#34; target=&#34;_blank&#34;&gt;Web Bluetoothを使ったIoTアプリ入門&lt;/a&gt;」です。ソースコードや動作の仕組みはこちらでご覧になれます。&lt;/p&gt;
+&lt;p&gt;今回使用したサンプルアプリは「&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/basic/webbluetooth_iot&#34; target=&#34;_blank&#34;&gt;Web Bluetoothを使ったIoTアプリ入門&lt;/a&gt;」です。ソースコードや動作の仕組みはこちらでご覧になれます。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 
@@ -155,30 +159,30 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 &lt;a href=&#34;https://acassis.wordpress.com/2016/06/28/how-to-get-chrome-web-bluetooth-working-on-linux/&#34;&gt;How to get Chrome Web Bluetooth working on Linux&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Basic Kitに電池を挿入し、電源スイッチをONにする&lt;/p&gt;
+&lt;p&gt;Basic Kitに電池を挿入し、電源スイッチをONにする。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;quick_basic_assemble.png&#34; width=&#34;250&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Google Chromeを開く&lt;/p&gt;
+&lt;p&gt;Google Chromeを開く。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34; target=&#34;_blank&#34;&gt;サンプルWebアプリのページ&lt;/a&gt;を開く&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34; target=&#34;_blank&#34;&gt;Webアプリ&lt;/a&gt;を開く。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_002&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す&lt;/p&gt;
+&lt;p&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leaf_A_002&lt;/code&gt;を選択し、&lt;code&gt;ペア設定&lt;/code&gt;ボタンを押す。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;接続完了&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;今回使用したサンプルプロジェクトは「&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/basic/webbluetooth_iot&#34; target=&#34;_blank&#34;&gt;Web Bluetoothを使ったIoTアプリ入門&lt;/a&gt;」です。ソースコードや動作の仕組みはこちらでご覧になれます。&lt;/p&gt;
+&lt;p&gt;今回使用したサンプルアプリは「&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/basic/webbluetooth_iot&#34; target=&#34;_blank&#34;&gt;Web Bluetoothを使ったIoTアプリ入門&lt;/a&gt;」です。ソースコードや動作の仕組みはこちらでご覧になれます。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
-&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic&#34;&gt;開発環境設定&lt;/a&gt;を読んで、LeafonyにLED点滅スケッチを書き込んでみましょう。
+&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic&#34;&gt;開発環境設定&lt;/a&gt;を読んで、Basic KitにLED点滅スケッチを書き込んでみましょう。
 &lt;/div&gt;
 
 &lt;p&gt;&lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
@@ -216,7 +220,7 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
       <description>
         
         
-        &lt;p&gt;ESP32 Wi-Fi Kit A1.0には、既に組み立てられたハードウェアが入っています。そのままで、スマートフォンやパソコンにWi-Fiを使ってタッチセンサの値を送信し、簡単に表示できます。&lt;/p&gt;
+        &lt;p&gt;ESP32 Wi-Fi Kitには、既に組み立てられたハードウェアが入っています。そのままで、スマートフォンやパソコンにWi-Fiを使ってタッチセンサの値を送信し、簡単に表示できます。&lt;/p&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;ESP32 Wi-Fi Kit&lt;/li&gt;
