@@ -133,7 +133,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.187d28c8117c411e61c04ea4d938c2bb42c72c389c7baf3739f1a25b226d5c79863192ffd23ab3fc3133baf3396cdc52dd109d2118f1cb99017b837f3019f64f.json"
+  data-offline-search-index-json-src="/offline-search-index.c981a399d7db2caa6e1480d5359962895acfc6b769e8a7b39187566ca2cbe0ac60b31662266d06cd64c627849da4dfc41ed0dfbaa238cb2a75ec17bf663fa352.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.187d28c8117c411e61c04ea4d938c2bb42c72c389c7baf3739f1a25b226d5c79863192ffd23ab3fc3133baf3396cdc52dd109d2118f1cb99017b837f3019f64f.json"
+  data-offline-search-index-json-src="/offline-search-index.c981a399d7db2caa6e1480d5359962895acfc6b769e8a7b39187566ca2cbe0ac60b31662266d06cd64c627849da4dfc41ed0dfbaa238cb2a75ec17bf663fa352.json"
   data-offline-search-base-href="/"
 >
 
@@ -2297,14 +2297,6 @@ if (!doNotTrack) {
 
 
 
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#用意するもの">用意するもの</a></li>
-    <li><a href="#使い方">使い方</a></li>
-    <li><a href="#サンプルアプリのソースコード">サンプルアプリのソースコード</a></li>
-  </ul>
-</nav>
-
 
 
           </div>
@@ -2351,7 +2343,9 @@ if (!doNotTrack) {
 	<h1>ESP32 Wi-Fi Kit スタートガイド</h1>
         <div class="lead">Wi-Fi搭載のリーフを使ってみよう！</div>
 	
-	<p>ESP32 Wi-Fi Kitには、既に組み立てられたハードウェアが入っています。そのままで、スマートフォンやパソコンにWi-Fiを使ってタッチセンサの値を送信し、簡単に表示できます。</p>
+	<p>ESP32 Wi-Fi Kit は、Wi-FiとBluetooth LE内臓のESP32-WROOM-32を搭載した乾電池やリチウムバッテリーで駆動可能な開発キットです。</p>
+<p>Wi-Fiを使ってスマートフォンやパソコンに、タッチセンサの値を送信することが簡単にできます。</p>
+<p>ESP32 Wi-Fi  Kitは、箱を開けたらすぐに使えるサンプルアプリが書き込まれています。</p>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
 <li>ESP32 Wi-Fi Kit</li>
@@ -2360,24 +2354,30 @@ if (!doNotTrack) {
 </ul>
 <h2 id="使い方">使い方</h2>
 <ol>
-<li>ESP32 Wi-Fi Kitに単4電池3本をセットし、電源スイッチをONにして下さい。<br>
-<img src="./quick_esp_assemble.png" alt="assemble"></li>
-<li>PC、スマートフォン、またはタブレット等で周辺のWi-Fiを検索し、以下のSSIDのWi-Fiに接続します。
+<li>
+<p>ESP32 Wi-Fi Kitに単4電池3本をセットし、電源スイッチをONにして下さい。<br>
+<img src="./quick_esp_assemble.png" alt="assemble"></p>
+</li>
+<li>
+<p>PC、スマートフォン、またはタブレット等で周辺のWi-Fiを検索し、以下のSSIDのWi-Fiに接続します。</p>
 <ul>
 <li>SSID: Leafony_ESP32-AP</li>
 <li>Password: password</li>
 </ul>
 </li>
-<li>Webブラウザを起動して、以下のURLにアクセスしてください。
+<li>
+<p>Webブラウザを起動して、以下のURLにアクセスしてください。</p>
 <ul>
 <li><a href="http://192.168.4.1">http://192.168.4.1</a></li>
 </ul>
 </li>
-<li>29pin headerの7、9、22、24、26、28ピンがタッチセンサに割り当てられています。<br>
+<li>
+<p>29pin headerの7、9、22、24、26、28ピンがタッチセンサに割り当てられています。<br>
 ピンに触れると静電容量が減るため、値が減少します。値が閾値20以下になると”Touch detected”と表示されます。<br>
-(24ピンはRTC&amp;microSDと干渉しているため、サンプルスケッチでは非表示にしています。検出閾値は、スケッチで変更可能です。以下の写真では、指先で26ピンに触れています。)</li>
+(24ピンはRTC&amp;microSDと干渉しているため、サンプルスケッチでは非表示にしています。検出閾値は、スケッチで変更可能です。以下の写真では、指先で26ピンに触れています。)</p>
+ <img src="Wi-FiTouch-Sensor-Test_1.png" width="200">
+</li>
 </ol>
-  <img src="Wi-FiTouch-Sensor-Test_1.png" width="200">
 <br>
 <ol start="5">
 <li>26ピンに触れていると、以下のようにWebブラウザの表示が変化します。　</li>
@@ -2389,7 +2389,7 @@ if (!doNotTrack) {
 </ol>
   <img src="magnet_1.png" width="400">
 <ol start="7">
-<li>今回つかったサンプルのソースコードは<a href="#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">こちら</a>です。</li>
+<li>今回使用したサンプルアプリは「Wi-Fi タッチセンサ」です。ソースコードや動作の仕組みは<a href="/docs/examples/advanced/esp32/wifi_touchsensor/">こちら</a>でご覧になれます。</li>
 </ol>
 
 
@@ -2398,10 +2398,6 @@ if (!doNotTrack) {
 <a href="/docs/environment/esp32">開発環境設定</a>を読んで、ESP32 Wi-Fi KitにLED点滅スケッチを書き込んでみましょう。
 </div>
 
-<h2 id="サンプルアプリのソースコード">サンプルアプリのソースコード</h2>
-<ul>
-<li><a href="/docs/examples/advanced/esp32/wifi_touchsensor/">Wi-Fi タッチセンサ</a></li>
-</ul>
 
         <div class="section-index">
     
@@ -2413,7 +2409,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 22, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 27, 2020
 </div>
 </div>
 

@@ -133,7 +133,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.187d28c8117c411e61c04ea4d938c2bb42c72c389c7baf3739f1a25b226d5c79863192ffd23ab3fc3133baf3396cdc52dd109d2118f1cb99017b837f3019f64f.json"
+  data-offline-search-index-json-src="/offline-search-index.c981a399d7db2caa6e1480d5359962895acfc6b769e8a7b39187566ca2cbe0ac60b31662266d06cd64c627849da4dfc41ed0dfbaa238cb2a75ec17bf663fa352.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.187d28c8117c411e61c04ea4d938c2bb42c72c389c7baf3739f1a25b226d5c79863192ffd23ab3fc3133baf3396cdc52dd109d2118f1cb99017b837f3019f64f.json"
+  data-offline-search-index-json-src="/offline-search-index.c981a399d7db2caa6e1480d5359962895acfc6b769e8a7b39187566ca2cbe0ac60b31662266d06cd64c627849da4dfc41ed0dfbaa238cb2a75ec17bf663fa352.json"
   data-offline-search-base-href="/"
 >
 
@@ -2301,11 +2301,14 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#用意するもの">用意するもの</a></li>
     <li><a href="#デモ動画">デモ動画</a></li>
-    <li><a href="#使い方">使い方</a></li>
-    <li><a href="#androidの場合">Androidの場合</a></li>
-    <li><a href="#iphoneまたはipadの場合">iPhoneまたはiPadの場合</a></li>
-    <li><a href="#windowsまたはmacosの場合">WindowsまたはmacOSの場合</a></li>
-    <li><a href="#linuxの場合">Linuxの場合</a></li>
+    <li><a href="#使い方">使い方</a>
+      <ul>
+        <li><a href="#androidの場合">Androidの場合</a></li>
+        <li><a href="#iphoneまたはipadの場合">iPhoneまたはiPadの場合</a></li>
+        <li><a href="#windowsまたはmacosの場合">WindowsまたはmacOSの場合</a></li>
+        <li><a href="#linuxの場合">Linuxの場合</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -2357,7 +2360,7 @@ if (!doNotTrack) {
 	
 	<p><img src="Ble2.png" alt="Ble2-300x281.png"></p>
 <br>
-<p>Basic Kitには、温湿度、照度、加速度センサを搭載した4-Sensorsリーフと、AVR MCUリーフ、Bluetooth LEリーフ、CR2032コイン電池リーフを組み合わせた、IoTデバイスが入っています。</p>
+<p>Basic Kitは、温湿度、照度、加速度センサを搭載した4-Sensorsリーフ、AVR MCUリーフ、Bluetooth LEリーフを搭載した小型でコイン電池駆動可能な開発キットです。</p>
 <p>Bluetoothを使ってスマートフォンやパソコンにセンサの情報を送信したり、Basic Kitに搭載されたLEDをコントロールすることが簡単にできます。</p>
 <p>Basic Kitには、箱を開けたらすぐに使えるサンプルアプリが書き込まれています。</p>
 
@@ -2382,15 +2385,12 @@ Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 <br>
 <h2 id="使い方">使い方</h2>
 <ul>
-<li><a href="#%E7%94%A8%E6%84%8F%E3%81%99%E3%82%8B%E3%82%82%E3%81%AE">用意するもの</a></li>
-<li><a href="#%E3%83%87%E3%83%A2%E5%8B%95%E7%94%BB">デモ動画</a></li>
-<li><a href="#%E4%BD%BF%E3%81%84%E6%96%B9">使い方</a></li>
 <li><a href="#android%E3%81%AE%E5%A0%B4%E5%90%88">Androidの場合</a></li>
 <li><a href="#iphone%E3%81%BE%E3%81%9F%E3%81%AFipad%E3%81%AE%E5%A0%B4%E5%90%88">iPhoneまたはiPadの場合</a></li>
 <li><a href="#windows%E3%81%BE%E3%81%9F%E3%81%AFmacos%E3%81%AE%E5%A0%B4%E5%90%88">WindowsまたはmacOSの場合</a></li>
 <li><a href="#linux%E3%81%AE%E5%A0%B4%E5%90%88">Linuxの場合</a></li>
 </ul>
-<h2 id="androidの場合">Androidの場合</h2>
+<h3 id="androidの場合">Androidの場合</h3>
 <ol>
 <li>
 <p>Basic KitにCR2032コイン電池を挿入し、電源スイッチをONにする。</p>
@@ -2420,7 +2420,7 @@ Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 </div>
 
 <p><img src="basic_android.jpg" alt="basic_android"></p>
-<h2 id="iphoneまたはipadの場合">iPhoneまたはiPadの場合</h2>
+<h3 id="iphoneまたはipadの場合">iPhoneまたはiPadの場合</h3>
 <ol>
 <li>
 <p>Basic KitにCR2032コイン電池を挿入し、電源スイッチをONにする。</p>
@@ -2430,19 +2430,15 @@ Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 <p>App Storeから<a href="https://apps.apple.com/us/app/webble/id1193531073">WebBLE</a> (有償)をダウンロード<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
 </li>
 <li>
-<p>以下のURLをコピーし、WebBLEを立ち上げてアドレスバーに貼り付けてください。
-<a href="https://docs.leafony.com/WebBluetooth_for_Leafony_app/">https://docs.leafony.com/WebBluetooth_for_Leafony_app/</a></p>
+<p>以下のURLをコピーし、WebBLEを立ち上げてアドレスバーに貼り付けてください。</p>
 </li>
-<li>
-<p>Webアプリの<code>Connect</code>ボタンを押して、<code>Leaf_A_002</code>を選択し、<code>ペア設定</code>ボタンを押す。</p>
-</li>
-<li>
-<p>接続完了<br>
-注) 画面上に「Download CSV 」のボタンはありますが、iPhoneでは使用できません。</p>
-</li>
-<li>
-<p>今回使用したサンプルアプリは「<a href="/docs/examples/advanced/basic/webbluetooth_iot" target="_blank">Web Bluetoothを使ったIoTアプリ入門</a>」です。ソースコードや動作の仕組みはこちらでご覧になれます。</p>
-</li>
+</ol>
+<pre><code> https://docs.leafony.com/WebBluetooth_for_Leafony_app/
+</code></pre><ol start="4">
+<li>Webアプリの<code>Connect</code>ボタンを押して、<code>Leaf_A_002</code>を選択し、<code>ペア設定</code>ボタンを押す。</li>
+<li>接続完了<br>
+画面上に「Download CSV 」のボタンはありますが、iPhoneでは使用できません。</li>
+<li>今回使用したサンプルアプリは「<a href="/docs/examples/advanced/basic/webbluetooth_iot" target="_blank">Web Bluetoothを使ったIoTアプリ入門</a>」です。ソースコードや動作の仕組みはこちらでご覧になれます。</li>
 </ol>
 
 
@@ -2452,7 +2448,7 @@ Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 </div>
 
 <p><img src="basic_android.jpg" alt="basic_android"></p>
-<h2 id="windowsまたはmacosの場合">WindowsまたはmacOSの場合</h2>
+<h3 id="windowsまたはmacosの場合">WindowsまたはmacOSの場合</h3>
 <ol>
 <li>
 <p>Basic KitにCR2032コイン電池を挿入し、電源スイッチをONにする。</p>
@@ -2485,7 +2481,7 @@ Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 <p>注) Chromeがバージョン79未満の場合、標準でWeb Bluetoothが有効になっていません。<br>
 Chromeのアドレスバーに次のURLを入力し、<code>Experimental Web Platform features</code>を<code>Enable</code>にしてください。<br>
 <code>chrome://flags/#enable-experimental-web-platform-features</code></p>
-<h2 id="linuxの場合">Linuxの場合</h2>
+<h3 id="linuxの場合">Linuxの場合</h3>
 <ol>
 <li>
 <p>Linux上でWeb Bluetoothを有効にするために、下記の記事を参考に環境を設定してください。<br>
@@ -2551,7 +2547,7 @@ Chromeのアドレスバーに次のURLを入力し、<code>Experimental Web Pla
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 22, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 27, 2020
 </div>
 </div>
 

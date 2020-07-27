@@ -133,7 +133,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.187d28c8117c411e61c04ea4d938c2bb42c72c389c7baf3739f1a25b226d5c79863192ffd23ab3fc3133baf3396cdc52dd109d2118f1cb99017b837f3019f64f.json"
+  data-offline-search-index-json-src="/offline-search-index.c981a399d7db2caa6e1480d5359962895acfc6b769e8a7b39187566ca2cbe0ac60b31662266d06cd64c627849da4dfc41ed0dfbaa238cb2a75ec17bf663fa352.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.187d28c8117c411e61c04ea4d938c2bb42c72c389c7baf3739f1a25b226d5c79863192ffd23ab3fc3133baf3396cdc52dd109d2118f1cb99017b837f3019f64f.json"
+  data-offline-search-index-json-src="/offline-search-index.c981a399d7db2caa6e1480d5359962895acfc6b769e8a7b39187566ca2cbe0ac60b31662266d06cd64c627849da4dfc41ed0dfbaa238cb2a75ec17bf663fa352.json"
   data-offline-search-base-href="/"
 >
 
@@ -2299,9 +2299,12 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#用意するもの">用意するもの</a></li>
     <li><a href="#arduino-ideのインストール">Arduino IDEのインストール</a></li>
-    <li><a href="#leafonyをpcと接続">LeafonyをPCと接続</a></li>
-    <li><a href="#ボード設定">ボード設定</a></li>
+    <li><a href="#pcと接続">PCと接続</a></li>
+    <li><a href="#マイコンボードの設定">マイコンボードの設定</a></li>
+    <li><a href="#マイコンボードの動作確認">マイコンボードの動作確認</a></li>
+    <li><a href="#困ったときは">困ったときは</a></li>
     <li><a href="#ライブラリのインストール">ライブラリのインストール</a>
       <ul>
         <li><a href="#1-使用するライブラリ">1. 使用するライブラリ</a></li>
@@ -2360,6 +2363,18 @@ if (!doNotTrack) {
         <div class="lead">Wi-Fi搭載リーフを使ってみよう！</div>
 	
 	<p>以下の手順で ESP32 Wi-Fi Kit 開発環境の設定を行いましょう。</p>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">次のステップ</h4>
+Leafonyにプログラムを書き込むために必要なソフトウェアをインストール
+</div>
+
+<h2 id="用意するもの">用意するもの</h2>
+<ul>
+<li>ESP32 Wi-Fi Kit</li>
+<li>PC (Windows、Mac OS X 、または Linux)</li>
+</ul>
 <h2 id="arduino-ideのインストール">Arduino IDEのインストール</h2>
 <p>Arduino IDEは、オープンソースの電子工作向けハードウェアプラットフォームであるArduinoの開発環境です。<br>
 この開発環境では、プログラムを記述したり、Arduino基板にプログラムを書き込んだり、基板から送られてくるデータを表示したりすることができます。<br>
@@ -2370,10 +2385,17 @@ LeafonyはArduino互換の基板なので、Arduino IDEを使って開発でき�
 <li>「Download the Arduino IDE」と書いてある場所で、使用しているOSにあったインストーラをダウンロード。</li>
 <li>ダウンロードしたインストーラを実行して、画面の指示に従ってArduino IDEをインストール。</li>
 </ol>
-<h2 id="leafonyをpcと接続">LeafonyをPCと接続</h2>
-<p>以下のようにLeafonyを組み立てて、USBでPCと接続しましょう。<br>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">次のステップ</h4>
+Leafonyにプログラムを書き込んで動かしてみましょう！
+</div>
+
+<h2 id="pcと接続">PCと接続</h2>
+<p>USBケーブルでPCと接続しましょう。<br>
 <img src="./esp32_assemble.png" alt="assemble"></p>
-<h2 id="ボード設定">ボード設定</h2>
+<h2 id="マイコンボードの設定">マイコンボードの設定</h2>
 <p>ESP32 MCUリーフをArduino IDEで使用するには、Arduino core for the ESP32 のインストールが必要です。</p>
 <ol>
 <li>Arduino IDEの<code>ファイル → 環境設定</code>を開き、<code>追加のボードマネージャのURL:</code>に、下記URLを入力してください。</li>
@@ -2393,6 +2415,21 @@ LeafonyはArduino互換の基板なので、Arduino IDEを使って開発でき�
 <ol start="3">
 <li><code>ツール → ボード → ESP32 Dev Module</code>を選択すれば、ESP32 MCUが使えるようになります。</li>
 </ol>
+<h2 id="マイコンボードの動作確認">マイコンボードの動作確認</h2>
+<ol>
+<li>Arduino IDEで<code>ファイル → スケッチ例 → 01.Basics → Blink</code>をクリックし、サンプルアプリを開きましょう。</li>
+<li><code>マイコンボードに書き込む</code>ボタンを押すをLeafonyにプログラムが書き込まれます。</li>
+<li>AVR MCUリーフに搭載されたLEDが点滅していることが確認できれば完了です。</li>
+</ol>
+<h2 id="困ったときは">困ったときは</h2>
+<p>「<a href="../solution">うまく動かないときは</a>」で解決方法を探してみましょう。</p>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">次のステップ</h4>
+ライブラリをインストールして開発をより簡単にしましょう！
+</div>
+
 <h2 id="ライブラリのインストール">ライブラリのインストール</h2>
 <p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。
 下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきましょう。</p>
@@ -2480,7 +2517,7 @@ LeafonyはArduino互換の基板なので、Arduino IDEを使って開発でき�
   <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><ol start="3">
-<li>ESP32リーフが接続されたCOMポートを選択する。</li>
+<li>ESP32 MCUリーフが接続されたCOMポートを選択する。</li>
 <li><code>マイコンボードに書き込む</code>ボタンを押してスケッチを書き込む。</li>
 <li>書き込み中に下記の表示が出たら、ESP32リーフの<code>Bootボタン</code>を長押しする。</li>
 </ol>
@@ -2493,10 +2530,11 @@ LeafonyはArduino互換の基板なので、Arduino IDEを使って開発でき�
 
 <div class="alert alert-primary" role="alert">
 <h4 class="alert-heading">次のステップ</h4>
-<a href="/docs/examples">サンプルアプリ</a>にあるコードをLeafonyに書き込んでみましょう。
+<a href="/docs/examples">サンプルアプリ</a>にあるプログラムをLeafonyに書き込んでみましょう。
 </div>
 
-
+<br>
+<br>
         <div class="section-index">
     
     
@@ -2507,7 +2545,7 @@ LeafonyはArduino互換の基板なので、Arduino IDEを使って開発でき�
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 22, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 27, 2020
 </div>
 </div>
 

@@ -133,7 +133,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.187d28c8117c411e61c04ea4d938c2bb42c72c389c7baf3739f1a25b226d5c79863192ffd23ab3fc3133baf3396cdc52dd109d2118f1cb99017b837f3019f64f.json"
+  data-offline-search-index-json-src="/offline-search-index.c981a399d7db2caa6e1480d5359962895acfc6b769e8a7b39187566ca2cbe0ac60b31662266d06cd64c627849da4dfc41ed0dfbaa238cb2a75ec17bf663fa352.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.187d28c8117c411e61c04ea4d938c2bb42c72c389c7baf3739f1a25b226d5c79863192ffd23ab3fc3133baf3396cdc52dd109d2118f1cb99017b837f3019f64f.json"
+  data-offline-search-index-json-src="/offline-search-index.c981a399d7db2caa6e1480d5359962895acfc6b769e8a7b39187566ca2cbe0ac60b31662266d06cd64c627849da4dfc41ed0dfbaa238cb2a75ec17bf663fa352.json"
   data-offline-search-base-href="/"
 >
 
@@ -2301,6 +2301,10 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#用意するもの">用意するもの</a></li>
     <li><a href="#arduino-ideのインストール">Arduino IDEのインストール</a></li>
+    <li><a href="#pcと接続">PCと接続</a></li>
+    <li><a href="#マイコンボードの設定">マイコンボードの設定</a></li>
+    <li><a href="#マイコンボードの動作確認">マイコンボードの動作確認</a></li>
+    <li><a href="#困ったときは">困ったときは</a></li>
     <li><a href="#ライブラリのインストール">ライブラリのインストール</a>
       <ul>
         <li><a href="#1-使用するライブラリ">1. 使用するライブラリ</a></li>
@@ -2308,10 +2312,6 @@ if (!doNotTrack) {
         <li><a href="#3-ライブラリをインクルード">3. ライブラリをインクルード</a></li>
       </ul>
     </li>
-    <li><a href="#leafonyをpcと接続">LeafonyをPCと接続</a></li>
-    <li><a href="#ボード設定">ボード設定</a></li>
-    <li><a href="#サンプルスケッチで動作確認">サンプルスケッチで動作確認</a></li>
-    <li><a href="#困ったときは">困ったときは</a></li>
   </ul>
 </nav>
 
@@ -2368,7 +2368,7 @@ if (!doNotTrack) {
 
 <div class="alert alert-primary" role="alert">
 <h4 class="alert-heading">次のステップ</h4>
-Leafonyにプログラムを書き込むために必要なソフトウェアをインストールしましょう！
+Leafonyにプログラムを書き込むために必要なソフトウェアをインストール
 </div>
 
 <h2 id="用意するもの">用意するもの</h2>
@@ -2379,13 +2379,44 @@ Leafonyにプログラムを書き込むために必要なソフトウェアを�
 <h2 id="arduino-ideのインストール">Arduino IDEのインストール</h2>
 <p>Arduino IDEは、オープンソースの電子工作向けハードウェアプラットフォームであるArduinoの開発環境です。<br>
 この開発環境では、プログラムを記述したり、Arduino基板にプログラムを書き込んだり、基板から送られてくるデータを表示したりすることができます。<br>
-LeafonyはArduino互換の基板なので、Arduino IDEを使って開発できます。</p>
+Leafonyは、Arduino IDEを使って開発できます。</p>
 <p>早速Arduino IDEをダウンロードしてみましょう。</p>
 <ol>
 <li><a href="https://www.arduino.cc/">Arduino ホームページ</a>から「SOFTWARE」 → 「DOWNLOADS」の順でページを開き、Arduino IDEのダウンロードページに飛ぶ。</li>
 <li>「Download the Arduino IDE」と書いてある場所で、使用しているOSにあったインストーラをダウンロード。</li>
 <li>ダウンロードしたインストーラを実行して、画面の指示に従ってArduino IDEをインストール。</li>
 </ol>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">次のステップ</h4>
+Leafonyにプログラムを書き込んで動かしてみましょう！
+</div>
+
+<h2 id="pcと接続">PCと接続</h2>
+<p>図のように組み立て、USBケーブルでPCと接続しましょう。<br>
+プログラムを書き込むためには最低限、AVR MCUリーフとUSBリーフが必要です。</p>
+<img src="./basic_assemble.png" width="480">
+<br><br>
+<h2 id="マイコンボードの設定">マイコンボードの設定</h2>
+<p>Arduino IDEでLeafonyの開発を行うために、下記の手順でIDEの設定を行いましょう。</p>
+<ol>
+<li><code>ツール → ボード</code>から、<code>Arduino Pro or Pro Mini</code>を選択、<code>プロセッサ</code>で<code>ATmega328P (3.3V,8MHz)</code>を選択</li>
+</ol>
+<img src="./IDE_ATmega.jpg" width="640">
+<p><br><br></p>
+<ol start="2">
+<li><code>ツール → シリアルポート</code>から、Leafonyが接続されているシリアルポートを選択</li>
+</ol>
+<img src="./IDE_COM.jpg" width="640">
+<h2 id="マイコンボードの動作確認">マイコンボードの動作確認</h2>
+<ol>
+<li>Arduino IDEで<code>ファイル → スケッチ例 → 01.Basics → Blink</code>をクリックし、サンプルアプリを開きましょう。</li>
+<li><code>マイコンボードに書き込む</code>ボタンを押すをLeafonyにプログラムが書き込まれます。</li>
+<li>AVR MCUリーフに搭載されたLEDが点滅していることが確認できれば完了です。</li>
+</ol>
+<h2 id="困ったときは">困ったときは</h2>
+<p>「<a href="../solution">うまく動かないときは</a>」で解決方法を探してみましょう。</p>
 
 
 <div class="alert alert-primary" role="alert">
@@ -2457,42 +2488,11 @@ LeafonyはArduino互換の基板なので、Arduino IDEを使って開発でき�
 </table>
 <h3 id="2-ライブラリをダウンロード">2. ライブラリをダウンロード</h3>
 <p>上記表のリンクをクリックすると、ライブラリのGitHubリポジトリにアクセスします。
-<code>Clone or download → Download ZIP</code>をクリックし、ライブラリをダウンロードしましょう。</p>
+<code>Clone → Download ZIP</code>をクリックし、ライブラリをダウンロードしましょう。</p>
 <img src="github_1.png" width="600">
 <h3 id="3-ライブラリをインクルード">3. ライブラリをインクルード</h3>
 <p>Arduinoを立ち上げ、<code>スケッチ → ライブラリをインクルード → ZIP形式のライブラリをインストール</code>の順に選択して、先程ダウンロードしたZIPファイルを読み込みましょう。</p>
-<img src="IDE_libinclude.png" width="640">
-<br>
-<br>
-
-
-<div class="alert alert-primary" role="alert">
-<h4 class="alert-heading">次のステップ</h4>
-Leafonyにプログラムを書き込んで動かしてみましょう！
-</div>
-
-<h2 id="leafonyをpcと接続">LeafonyをPCと接続</h2>
-<p>図のようにLeafonyを組み立てて、USBでPCと接続しましょう。<br>
-Leafonyにプログラムを書き込むためには最低限、AVR MCUリーフとUSBリーフが必要です。</p>
-<img src="./basic_assemble.png" width="480">
-<br><br>
-<h2 id="ボード設定">ボード設定</h2>
-<p>Arduino IDEでLeafonyの開発を行うために、下記の手順でIDEの設定を行いましょう。</p>
-<ol>
-<li><code>ツール → ボード</code>から、<code>Arduino Pro or Pro Mini</code>を選択、<code>プロセッサ</code>で<code>ATmega328P (3.3V,8MHz)</code>を選択</li>
-</ol>
-<img src="./IDE_ATmega.jpg" width="640">
-<p><br><br></p>
-<ol start="2">
-<li><code>ツール → シリアルポート</code>から、Leafonyが接続されているシリアルポートを選択</li>
-</ol>
-<img src="./IDE_COM.jpg" width="640">
-<h2 id="サンプルスケッチで動作確認">サンプルスケッチで動作確認</h2>
-<ol>
-<li>Arduino IDEで<code>ファイル → スケッチ例 → 01.Basics → Blink</code>をクリックし、サンプルアプリを開きましょう。</li>
-<li><code>マイコンボードに書き込む</code>ボタンを押すをLeafonyにプログラムが書き込まれます。</li>
-<li>AVR MCUリーフに搭載されたLEDが点滅していることが確認できれば完了です。</li>
-</ol>
+<img src="IDE_libinclude.png" width="640">  
 
 
 <div class="alert alert-primary" role="alert">
@@ -2500,8 +2500,8 @@ Leafonyにプログラムを書き込むためには最低限、AVR MCUリーフ
 <a href="/docs/examples">サンプルアプリ</a>にあるプログラムをLeafonyに書き込んでみましょう。
 </div>
 
-<h2 id="困ったときは">困ったときは</h2>
-<p>「<a href="../solution">うまく動かないときは</a>」で解決方法を探してみましょう。</p>
+<br>
+<br>
 
         <div class="section-index">
     
@@ -2513,7 +2513,7 @@ Leafonyにプログラムを書き込むためには最低限、AVR MCUリーフ
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 22, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 27, 2020
 </div>
 </div>
 
