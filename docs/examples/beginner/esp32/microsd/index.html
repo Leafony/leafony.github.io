@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.72.0" />
+<meta name="generator" content="Hugo 0.74.1" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -130,7 +130,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d7994d426f29cd6c12f238318ce1f5e1ca915127825d494d151db501ae22f991baff5631292e386daebf66d0a24e49f7a50360ab1145a5a56e32183133aa8ea0.json"
+  data-offline-search-index-json-src="/offline-search-index.22b51c8bf38b018f313437f9fdaa7cc1ad275e3bab57f495d924a904e845cd1bec009e487c0b3f7ae667146eb34ad127ea59048d2634cb126e7d59ad8c7d9b53.json"
   data-offline-search-base-href="/"
 >
 
@@ -160,7 +160,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d7994d426f29cd6c12f238318ce1f5e1ca915127825d494d151db501ae22f991baff5631292e386daebf66d0a24e49f7a50360ab1145a5a56e32183133aa8ea0.json"
+  data-offline-search-index-json-src="/offline-search-index.22b51c8bf38b018f313437f9fdaa7cc1ad275e3bab57f495d924a904e845cd1bec009e487c0b3f7ae667146eb34ad127ea59048d2634cb126e7d59ad8c7d9b53.json"
   data-offline-search-base-href="/"
 >
 
@@ -2398,8 +2398,8 @@ if (!doNotTrack) {
 <td align="left">1</td>
 </tr>
 <tr>
-<td align="left"><a href="/docs/leaf/processor/ap01">AP01</a></td>
-<td align="left"><a href="/docs/leaf/processor/ap01">AVR MCU</a></td>
+<td align="left"><a href="/docs/leaf/processor/ap02">AP02</a></td>
+<td align="left"><a href="/docs/leaf/processor/ap02">ESP32 MCU</a></td>
 <td align="left">1</td>
 </tr>
 <tr>
@@ -2428,20 +2428,230 @@ if (!doNotTrack) {
 <p><img src="./microSD_assemble.png" alt="assemble1"></p>
 <h2 id="ソースコード">ソースコード</h2>
 <ul>
-<li>Arduino IDEで、「ファイル」→「スケッチ例」→「SD」→「CardInfo」で、マイコンボードに書き込んでください。</li>
-<li>安定してデータを取得するため、HALF→QUARTERにスピードを遅くしてください。</a></li>
+<li>Arduino IDEで、「ファイル」→「スケッチ例」→「SD(esp32)」→「SD_Test」で、マイコンボードに書き込んでください。</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">　   <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span><span style="color:#000">card</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">init</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SPI_HALF_SPEED</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">chipSelect</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#000;font-weight:bold">{</span>　　
-  
-    <span style="color:#a40000">→</span><span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span><span style="color:#000">card</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">init</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SPI_QUARTER_SPEED</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">chipSelect</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#000;font-weight:bold">{</span>
-</code></pre></div><ul>
-<li>chipselectのデジタルピンを４→10に変更してください。</a></li>
-</ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">     <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">chipSelect</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">;</span>
-  
-    <span style="color:#a40000">→</span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">chipSelect</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">;</span>　
-</code></pre></div><p><a href="">CardInfo.ino</a></p>
-<h2 id="実行結果">実行結果</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">/*
+</span><span style="color:#8f5902;font-style:italic"> * Connect the SD card to the following pins:
+</span><span style="color:#8f5902;font-style:italic"> *
+</span><span style="color:#8f5902;font-style:italic"> * SD Card | ESP32
+</span><span style="color:#8f5902;font-style:italic"> *    D2       -
+</span><span style="color:#8f5902;font-style:italic"> *    D3       SS
+</span><span style="color:#8f5902;font-style:italic"> *    CMD      MOSI
+</span><span style="color:#8f5902;font-style:italic"> *    VSS      GND
+</span><span style="color:#8f5902;font-style:italic"> *    VDD      3.3V
+</span><span style="color:#8f5902;font-style:italic"> *    CLK      SCK
+</span><span style="color:#8f5902;font-style:italic"> *    VSS      GND
+</span><span style="color:#8f5902;font-style:italic"> *    D0       MISO
+</span><span style="color:#8f5902;font-style:italic"> *    D1       -
+</span><span style="color:#8f5902;font-style:italic"> */</span>
+<span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&#34;FS.h&#34;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&#34;SD.h&#34;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&#34;SPI.h&#34;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">listDir</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fs</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">FS</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">fs</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">dirname</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">levels</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Listing directory: %s</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">dirname</span><span style="color:#000;font-weight:bold">);</span>
+
+    <span style="color:#000">File</span> <span style="color:#000">root</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">fs</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">open</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dirname</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span><span style="color:#000">root</span><span style="color:#000;font-weight:bold">){</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Failed to open directory&#34;</span><span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#204a87;font-weight:bold">return</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span><span style="color:#000">root</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">isDirectory</span><span style="color:#000;font-weight:bold">()){</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Not a directory&#34;</span><span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#204a87;font-weight:bold">return</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span>
+
+    <span style="color:#000">File</span> <span style="color:#000">file</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">root</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">openNextFile</span><span style="color:#000;font-weight:bold">();</span>
+    <span style="color:#204a87;font-weight:bold">while</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">file</span><span style="color:#000;font-weight:bold">){</span>
+        <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">file</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">isDirectory</span><span style="color:#000;font-weight:bold">()){</span>
+            <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;  DIR : &#34;</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">file</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">name</span><span style="color:#000;font-weight:bold">());</span>
+            <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">levels</span><span style="color:#000;font-weight:bold">){</span>
+                <span style="color:#000">listDir</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fs</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">file</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">name</span><span style="color:#000;font-weight:bold">(),</span> <span style="color:#000">levels</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#000;font-weight:bold">}</span>
+        <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
+            <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;  FILE: &#34;</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">file</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">name</span><span style="color:#000;font-weight:bold">());</span>
+            <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;  SIZE: &#34;</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">file</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">size</span><span style="color:#000;font-weight:bold">());</span>
+        <span style="color:#000;font-weight:bold">}</span>
+        <span style="color:#000">file</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">root</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">openNextFile</span><span style="color:#000;font-weight:bold">();</span>
+    <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">createDir</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fs</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">FS</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">fs</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">path</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Creating Dir: %s</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">path</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fs</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">mkdir</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">path</span><span style="color:#000;font-weight:bold">)){</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Dir created&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;mkdir failed&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">removeDir</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fs</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">FS</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">fs</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">path</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Removing Dir: %s</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">path</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fs</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">rmdir</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">path</span><span style="color:#000;font-weight:bold">)){</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Dir removed&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;rmdir failed&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">readFile</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fs</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">FS</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">fs</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">path</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Reading file: %s</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">path</span><span style="color:#000;font-weight:bold">);</span>
+
+    <span style="color:#000">File</span> <span style="color:#000">file</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">fs</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">open</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">path</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span><span style="color:#000">file</span><span style="color:#000;font-weight:bold">){</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Failed to open file for reading&#34;</span><span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#204a87;font-weight:bold">return</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span>
+
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Read from file: &#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#204a87;font-weight:bold">while</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">file</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">available</span><span style="color:#000;font-weight:bold">()){</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">file</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">());</span>
+    <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#000">file</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">close</span><span style="color:#000;font-weight:bold">();</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">writeFile</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fs</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">FS</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">fs</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">path</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">message</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Writing file: %s</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">path</span><span style="color:#000;font-weight:bold">);</span>
+
+    <span style="color:#000">File</span> <span style="color:#000">file</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">fs</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">open</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">path</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">FILE_WRITE</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span><span style="color:#000">file</span><span style="color:#000;font-weight:bold">){</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Failed to open file for writing&#34;</span><span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#204a87;font-weight:bold">return</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">file</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">message</span><span style="color:#000;font-weight:bold">)){</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;File written&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Write failed&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#000">file</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">close</span><span style="color:#000;font-weight:bold">();</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">appendFile</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fs</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">FS</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">fs</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">path</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">message</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Appending to file: %s</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">path</span><span style="color:#000;font-weight:bold">);</span>
+
+    <span style="color:#000">File</span> <span style="color:#000">file</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">fs</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">open</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">path</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">FILE_APPEND</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span><span style="color:#000">file</span><span style="color:#000;font-weight:bold">){</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Failed to open file for appending&#34;</span><span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#204a87;font-weight:bold">return</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">file</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">message</span><span style="color:#000;font-weight:bold">)){</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Message appended&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Append failed&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#000">file</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">close</span><span style="color:#000;font-weight:bold">();</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">renameFile</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fs</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">FS</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">fs</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">path1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">path2</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Renaming file %s to %s</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">path1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">path2</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">fs</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">rename</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">path1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">path2</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;File renamed&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Rename failed&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">deleteFile</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fs</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">FS</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">fs</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">path</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Deleting file: %s</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">path</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fs</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">remove</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">path</span><span style="color:#000;font-weight:bold">)){</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;File deleted&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Delete failed&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">testFileIO</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">fs</span><span style="color:#ce5c00;font-weight:bold">::</span><span style="color:#000">FS</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">fs</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">path</span><span style="color:#000;font-weight:bold">){</span>
+    <span style="color:#000">File</span> <span style="color:#000">file</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">fs</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">open</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">path</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#204a87;font-weight:bold">static</span> <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">buf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">512</span><span style="color:#000;font-weight:bold">];</span>
+    <span style="color:#000">size_t</span> <span style="color:#000">len</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#204a87;font-weight:bold">uint32_t</span> <span style="color:#000">start</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">millis</span><span style="color:#000;font-weight:bold">();</span>
+    <span style="color:#204a87;font-weight:bold">uint32_t</span> <span style="color:#000">end</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">start</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">file</span><span style="color:#000;font-weight:bold">){</span>
+        <span style="color:#000">len</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">file</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">size</span><span style="color:#000;font-weight:bold">();</span>
+        <span style="color:#000">size_t</span> <span style="color:#000">flen</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">len</span><span style="color:#000;font-weight:bold">;</span>
+        <span style="color:#000">start</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">millis</span><span style="color:#000;font-weight:bold">();</span>
+        <span style="color:#204a87;font-weight:bold">while</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">len</span><span style="color:#000;font-weight:bold">){</span>
+            <span style="color:#000">size_t</span> <span style="color:#000">toRead</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">len</span><span style="color:#000;font-weight:bold">;</span>
+            <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">toRead</span> <span style="color:#ce5c00;font-weight:bold">&gt;</span> <span style="color:#0000cf;font-weight:bold">512</span><span style="color:#000;font-weight:bold">){</span>
+                <span style="color:#000">toRead</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">512</span><span style="color:#000;font-weight:bold">;</span>
+            <span style="color:#000;font-weight:bold">}</span>
+            <span style="color:#000">file</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buf</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">toRead</span><span style="color:#000;font-weight:bold">);</span>
+            <span style="color:#000">len</span> <span style="color:#ce5c00;font-weight:bold">-=</span> <span style="color:#000">toRead</span><span style="color:#000;font-weight:bold">;</span>
+        <span style="color:#000;font-weight:bold">}</span>
+        <span style="color:#000">end</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">millis</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#ce5c00;font-weight:bold">-</span> <span style="color:#000">start</span><span style="color:#000;font-weight:bold">;</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;%u bytes read for %u ms</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">flen</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">end</span><span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#000">file</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">close</span><span style="color:#000;font-weight:bold">();</span>
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Failed to open file for reading&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span>
+
+
+    <span style="color:#000">file</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">fs</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">open</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">path</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">FILE_WRITE</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span><span style="color:#000">file</span><span style="color:#000;font-weight:bold">){</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Failed to open file for writing&#34;</span><span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#204a87;font-weight:bold">return</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span>
+
+    <span style="color:#000">size_t</span> <span style="color:#000">i</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">start</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">millis</span><span style="color:#000;font-weight:bold">();</span>
+    <span style="color:#204a87;font-weight:bold">for</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#0000cf;font-weight:bold">2048</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">){</span>
+        <span style="color:#000">file</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buf</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">512</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#000">end</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">millis</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#ce5c00;font-weight:bold">-</span> <span style="color:#000">start</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;%u bytes written for %u ms</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2048</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">512</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">end</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">file</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">close</span><span style="color:#000;font-weight:bold">();</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">(){</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span><span style="color:#000">SD</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">()){</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Card Mount Failed&#34;</span><span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#204a87;font-weight:bold">return</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span>
+    <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">cardType</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">SD</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">cardType</span><span style="color:#000;font-weight:bold">();</span>
+
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cardType</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#000">CARD_NONE</span><span style="color:#000;font-weight:bold">){</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;No SD card attached&#34;</span><span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#204a87;font-weight:bold">return</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span>
+
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;SD Card Type: &#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cardType</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#000">CARD_MMC</span><span style="color:#000;font-weight:bold">){</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;MMC&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cardType</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#000">CARD_SD</span><span style="color:#000;font-weight:bold">){</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;SDSC&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#204a87;font-weight:bold">if</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cardType</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#000">CARD_SDHC</span><span style="color:#000;font-weight:bold">){</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;SDHC&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;UNKNOWN&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000;font-weight:bold">}</span>
+
+    <span style="color:#204a87;font-weight:bold">uint64_t</span> <span style="color:#000">cardSize</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">SD</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">cardSize</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#ce5c00;font-weight:bold">/</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1024</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">1024</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;SD Card Size: %lluMB</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">cardSize</span><span style="color:#000;font-weight:bold">);</span>
+
+    <span style="color:#000">listDir</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SD</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;/&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">createDir</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SD</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;/mydir&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">listDir</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SD</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;/&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">removeDir</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SD</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;/mydir&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">listDir</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SD</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;/&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">writeFile</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SD</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;/hello.txt&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Hello &#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">appendFile</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SD</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;/hello.txt&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;World!</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">readFile</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SD</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;/hello.txt&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">deleteFile</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SD</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;/foo.txt&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">renameFile</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SD</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;/hello.txt&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;/foo.txt&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">readFile</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SD</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;/foo.txt&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">testFileIO</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SD</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;/test.txt&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Total space: %lluMB</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">SD</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">totalBytes</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#ce5c00;font-weight:bold">/</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1024</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">1024</span><span style="color:#000;font-weight:bold">));</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Used space: %lluMB</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">SD</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">usedBytes</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#ce5c00;font-weight:bold">/</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1024</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">1024</span><span style="color:#000;font-weight:bold">));</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">(){</span>
+
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><h2 id="実行結果">実行結果</h2>
 <p>microSD カードの情報が、パソコンのシリアルモニタに表示されます。</p>
 <p><img src="./microSD_overview.png" alt="result"></p>
 
@@ -2639,7 +2849,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 22, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 28, 2020
 </div>
 </div>
 

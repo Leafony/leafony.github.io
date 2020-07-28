@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.72.0" />
+<meta name="generator" content="Hugo 0.74.1" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -130,7 +130,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d7994d426f29cd6c12f238318ce1f5e1ca915127825d494d151db501ae22f991baff5631292e386daebf66d0a24e49f7a50360ab1145a5a56e32183133aa8ea0.json"
+  data-offline-search-index-json-src="/offline-search-index.22b51c8bf38b018f313437f9fdaa7cc1ad275e3bab57f495d924a904e845cd1bec009e487c0b3f7ae667146eb34ad127ea59048d2634cb126e7d59ad8c7d9b53.json"
   data-offline-search-base-href="/"
 >
 
@@ -160,7 +160,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d7994d426f29cd6c12f238318ce1f5e1ca915127825d494d151db501ae22f991baff5631292e386daebf66d0a24e49f7a50360ab1145a5a56e32183133aa8ea0.json"
+  data-offline-search-index-json-src="/offline-search-index.22b51c8bf38b018f313437f9fdaa7cc1ad275e3bab57f495d924a904e845cd1bec009e487c0b3f7ae667146eb34ad127ea59048d2634cb126e7d59ad8c7d9b53.json"
   data-offline-search-base-href="/"
 >
 
@@ -2403,8 +2403,8 @@ if (!doNotTrack) {
 <td align="left">1</td>
 </tr>
 <tr>
-<td align="left"><a href="/docs/leaf/processor/ap01">AP01</a></td>
-<td align="left"><a href="/docs/leaf/processor/ap01">AVR MCU</a></td>
+<td align="left"><a href="/docs/leaf/processor/ap02">AP02</a></td>
+<td align="left"><a href="/docs/leaf/processor/ap02">ESP32 MCU</a></td>
 <td align="left">1</td>
 </tr>
 <tr>
@@ -2432,13 +2432,13 @@ if (!doNotTrack) {
 <p>このスケッチを動かすためには、ライブラリのインストールが必要です。
 まだインストールしていない場合は<a href="/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">開発環境設定ページ</a>を参考にライブラリをインストールしてください。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic">//  Thermo-hygrometer
+</span><span style="color:#8f5902;font-style:italic">//  Thermo-hygrometer ESP32
 </span><span style="color:#8f5902;font-style:italic">//
 </span><span style="color:#8f5902;font-style:italic">//    (c) 2020 Trillion-Node Study Group
 </span><span style="color:#8f5902;font-style:italic">//    Released under the MIT license
 </span><span style="color:#8f5902;font-style:italic">//    https://opensource.org/licenses/MIT
 </span><span style="color:#8f5902;font-style:italic">//
-</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2020/05/05  First release
+</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2020/07/28  First release
 </span><span style="color:#8f5902;font-style:italic">//=====================================================================
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;HTS221.h&gt;</span><span style="color:#8f5902;font-style:italic">
@@ -2461,8 +2461,14 @@ if (!doNotTrack) {
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">HM1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">80.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 湿度計等測定値
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#8f5902;font-style:italic">// initialize serial communication at 115200 second per second:
+  <span style="color:#8f5902;font-style:italic">// initialize serial communication at 115200 bit per second:
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#8f5902;font-style:italic">// I2C 初期化
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">21</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">OUTPUT</span><span style="color:#000;font-weight:bold">);</span>      <span style="color:#8f5902;font-style:italic">// SDA
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">21</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">();</span>             <span style="color:#8f5902;font-style:italic">// I2C 100kHz
+</span><span style="color:#8f5902;font-style:italic"></span>
   <span style="color:#8f5902;font-style:italic">// initialize i2c communication with HTS221:
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">smeHumidity</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">();</span>
   <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">);</span>
@@ -2480,7 +2486,7 @@ if (!doNotTrack) {
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataTemp</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34;[℃], &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataHumid</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34;[%]&#34;</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/Thermo-Hygrometer">Thermo-Hygrometer.ino</a></p>
+</code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_Thermo-Hygrometer">ESP32_Thermo-Hygrometer.ino</a></p>
 <h3 id="2点間補正">2点間補正</h3>
 <p>表示させたい温度（または、湿度）と４-Sensorsの温度（または、湿度）に、ずれがあるときは、２点間補正を行います。以下は、温度を例に、補正方法を記します。</p>
 <p>まず、４-Sensorsと、基準となる計測器で、２点の温度を測定してください。次に、測定した値を、サンプルスケッチに書き込んで、実行して頂ければ、４-Sensorsの温度が、表示させたい温度に近づきます。　</p>
@@ -2682,7 +2688,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 21, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 28, 2020
 </div>
 </div>
 
