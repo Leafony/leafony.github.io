@@ -22,16 +22,16 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Basic Kit スタートガイド | Leafony</title><meta property="og:title" content="Basic Kit スタートガイド" />
-<meta property="og:description" content="Basic Kitで環境センシングを始めよう！
+<meta property="og:description" content="Bluetoothで環境センシングを始めよう！
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/getting-started/basic/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="Basic Kit スタートガイド">
-<meta itemprop="description" content="Basic Kitで環境センシングを始めよう！
+<meta itemprop="description" content="Bluetoothで環境センシングを始めよう！
 "><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Basic Kit スタートガイド"/>
-<meta name="twitter:description" content="Basic Kitで環境センシングを始めよう！
+<meta name="twitter:description" content="Bluetoothで環境センシングを始めよう！
 "/>
 
 
@@ -133,7 +133,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.635e1d8115f0c903c38dadbf56d672cadf9b4a0b5bd32369f7a2cb7f4fb6e826e4393ce138b7756bc808b4c3883444b09c79f2fae7c559319e0018682bc39eae.json"
+  data-offline-search-index-json-src="/offline-search-index.d1b68e5ccee2025c9b12be14d578791d77b74b3328e4b62cea5d47861f94f89982834d9de3d516948c8652ab2dd02609883713b7191c635d39d68532bcf69ff6.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.635e1d8115f0c903c38dadbf56d672cadf9b4a0b5bd32369f7a2cb7f4fb6e826e4393ce138b7756bc808b4c3883444b09c79f2fae7c559319e0018682bc39eae.json"
+  data-offline-search-index-json-src="/offline-search-index.d1b68e5ccee2025c9b12be14d578791d77b74b3328e4b62cea5d47861f94f89982834d9de3d516948c8652ab2dd02609883713b7191c635d39d68532bcf69ff6.json"
   data-offline-search-base-href="/"
 >
 
@@ -2260,7 +2260,7 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/license/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ライセンス・規約</a>
+    <a  href="/docs/license/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ライセンス</a>
   </li>
   <ul>
     <li class="collapse " id="docslicense">
@@ -2356,20 +2356,15 @@ if (!doNotTrack) {
             
 <div class="td-content">
 	<h1>Basic Kit スタートガイド</h1>
-        <div class="lead">Basic Kitで環境センシングを始めよう！</div>
+        <div class="lead">Bluetoothで環境センシングを始めよう！</div>
 	
 	<p><img src="Ble2.png" alt="Ble2-300x281.png"></p>
 <br>
 <p>Basic Kitは、温湿度、照度、加速度センサを搭載した4-Sensorsリーフ、AVR MCUリーフ、Bluetooth LEリーフを搭載した小型でコイン電池駆動可能な開発キットです。</p>
 <p>Bluetoothを使ってスマートフォンやパソコンにセンサの情報を送信したり、Basic Kitに搭載されたLEDをコントロールすることが簡単にできます。</p>
-<p>Basic Kitには、箱を開けたらすぐに使えるサンプルアプリが書き込まれています。</p>
-
-
-<div class="alert alert-primary" role="alert">
-<h4 class="alert-heading">Note</h4>
-Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォームを問わずインストール不要で動作します。
-</div>
-
+<p>Basic Kitには、箱を開けたらすぐに使えるこのプログラムが書き込まれています。</p>
+<p>スマートフォンやパソコン側には、「Web Bluetooth」と言うアプリを使って、プラットフォームを問わず、またインストール不要で、Basic Kitとの接続が出来ます。<br>
+<br></p>
 <img src="./Cross-platform.png" width="450">
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
@@ -2403,8 +2398,12 @@ Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 <p><a href="https://docs.leafony.com/WebBluetooth_for_Leafony_app/" target="_blank">Webアプリ</a>を開く。</p>
 </li>
 <li>
-<p>Webアプリの<code>Connect</code>ボタンを押して、<code>Leaf_A_002</code>を選択し、<code>ペア設定</code>ボタンを押す。</p>
+<p>Webアプリの<code>Connect</code>ボタンを押して、<code>Leafony_AC02</code>を選択し、<code>Pair</code>ボタンを押す。<br>
+<br></p>
 </li>
+</ol>
+<p><img src="basic_android.jpg" alt="basic_android"></p>
+<ol start="5">
 <li>
 <p>接続完了</p>
 </li>
@@ -2419,7 +2418,6 @@ Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 <a href="/docs/environment/basic">開発環境設定</a>を読んで、Basic KitにLED点滅スケッチを書き込んでみましょう。
 </div>
 
-<p><img src="basic_android.jpg" alt="basic_android"></p>
 <h3 id="iphoneまたはipadの場合">iPhoneまたはiPadの場合</h3>
 <ol>
 <li>
@@ -2435,10 +2433,18 @@ Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 </ol>
 <pre><code> https://docs.leafony.com/WebBluetooth_for_Leafony_app/
 </code></pre><ol start="4">
-<li>Webアプリの<code>Connect</code>ボタンを押して、<code>Leaf_A_002</code>を選択し、<code>ペア設定</code>ボタンを押す。</li>
-<li>接続完了<br>
-画面上に「Download CSV 」のボタンはありますが、iPhoneでは使用できません。</li>
-<li>今回使用したサンプルアプリは「<a href="/docs/examples/advanced/basic/webbluetooth_iot" target="_blank">Web Bluetoothを使ったIoTアプリ入門</a>」です。ソースコードや動作の仕組みはこちらでご覧になれます。</li>
+<li>
+<p>Webアプリの<code>Connect</code>ボタンを押して、<code>Leafony_AC02</code>を選択し、<code>Pair</code>ボタンを押す。<br>
+<br><br>
+<img src="basic_android.jpg" alt="basic_android"></p>
+</li>
+<li>
+<p>接続完了<br>
+画面上に「Download CSV 」のボタンはありますが、iPhoneでは使用できません。</p>
+</li>
+<li>
+<p>今回使用したサンプルアプリは「<a href="/docs/examples/advanced/basic/webbluetooth_iot" target="_blank">Web Bluetoothを使ったIoTアプリ入門</a>」です。ソースコードや動作の仕組みはこちらでご覧になれます。</p>
+</li>
 </ol>
 
 
@@ -2447,7 +2453,6 @@ Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 <a href="/docs/environment/basic">開発環境設定</a>を読んで、Basic KitにLED点滅スケッチを書き込んでみましょう。
 </div>
 
-<p><img src="basic_android.jpg" alt="basic_android"></p>
 <h3 id="windowsまたはmacosの場合">WindowsまたはmacOSの場合</h3>
 <ol>
 <li>
@@ -2461,7 +2466,9 @@ Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 <p><a href="https://docs.leafony.com/WebBluetooth_for_Leafony_app/" target="_blank">Webアプリ</a>を開く。</p>
 </li>
 <li>
-<p>Webアプリの<code>Connect</code>ボタンを押して、<code>Leaf_A_002</code>を選択し、<code>ペア設定</code>ボタンを押す。</p>
+<p>Webアプリの<code>Connect</code>ボタンを押して、<code>Leafony_AC02</code>を選択し、<code>Pair</code>ボタンを押す。<br>
+<br>
+<img src="basic_android.jpg" alt="basic_android"></p>
 </li>
 <li>
 <p>接続完了</p>
@@ -2477,7 +2484,6 @@ Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォ�
 <a href="/docs/environment/basic">開発環境設定</a>を読んで、LeafonyにLED点滅スケッチを書き込んでみましょう。
 </div>
 
-<p><img src="basic_android.jpg" alt="basic_android"></p>
 <p>注) Chromeがバージョン79未満の場合、標準でWeb Bluetoothが有効になっていません。<br>
 Chromeのアドレスバーに次のURLを入力し、<code>Experimental Web Platform features</code>を<code>Enable</code>にしてください。<br>
 <code>chrome://flags/#enable-experimental-web-platform-features</code></p>
@@ -2498,7 +2504,9 @@ Chromeのアドレスバーに次のURLを入力し、<code>Experimental Web Pla
 <p><a href="https://docs.leafony.com/WebBluetooth_for_Leafony_app/" target="_blank">Webアプリ</a>を開く。</p>
 </li>
 <li>
-<p>Webアプリの<code>Connect</code>ボタンを押して、<code>Leaf_A_002</code>を選択し、<code>ペア設定</code>ボタンを押す。</p>
+<p>Webアプリの<code>Connect</code>ボタンを押して、<code>Leafony_AC02</code>を選択し、<code>Pair</code>ボタンを押す。<br>
+<br> 
+<img src="basic_android.jpg" alt="basic_android"></p>
 </li>
 <li>
 <p>接続完了</p>
@@ -2514,7 +2522,6 @@ Chromeのアドレスバーに次のURLを入力し、<code>Experimental Web Pla
 <a href="/docs/environment/basic">開発環境設定</a>を読んで、Basic KitにLED点滅スケッチを書き込んでみましょう。
 </div>
 
-<p><img src="basic_android.jpg" alt="basic_android"></p>
 <br>
 <section class="footnotes" role="doc-endnotes">
 <hr>
@@ -2547,7 +2554,7 @@ Chromeのアドレスバーに次のURLを入力し、<code>Experimental Web Pla
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 27, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 28, 2020
 </div>
 </div>
 
