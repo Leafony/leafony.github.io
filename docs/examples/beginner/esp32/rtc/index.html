@@ -69,7 +69,7 @@ if (!doNotTrack) {
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
         <a class="navbar-brand" href="/">
-		<span class="navbar-logo"></span><span class="text-uppercase font-weight-bold">Leafony</span>
+		<span class="navbar-logo"></span><span class="font-weight-bold">Leafony</span>
 	</a>
 	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
@@ -130,7 +130,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.18e7f5b616b0da90bbea8c6b5c0ad57e7e91964fa40d04aace42f231b3fe24d13cfd6e45e2e17a3d4bb41c022c000e988c679ed09ffdfbeef380f78ae96f3b65.json"
+  data-offline-search-index-json-src="/offline-search-index.d7994d426f29cd6c12f238318ce1f5e1ca915127825d494d151db501ae22f991baff5631292e386daebf66d0a24e49f7a50360ab1145a5a56e32183133aa8ea0.json"
   data-offline-search-base-href="/"
 >
 
@@ -160,7 +160,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.18e7f5b616b0da90bbea8c6b5c0ad57e7e91964fa40d04aace42f231b3fe24d13cfd6e45e2e17a3d4bb41c022c000e988c679ed09ffdfbeef380f78ae96f3b65.json"
+  data-offline-search-index-json-src="/offline-search-index.d7994d426f29cd6c12f238318ce1f5e1ca915127825d494d151db501ae22f991baff5631292e386daebf66d0a24e49f7a50360ab1145a5a56e32183133aa8ea0.json"
   data-offline-search-base-href="/"
 >
 
@@ -2426,40 +2426,60 @@ if (!doNotTrack) {
 <p>Arduino IDEで、「ファイル」→「スケッチ例」→「RTClib」→「pcf8523」で、マイコンボードに書き込んでください。</p>
 </li>
 <li>
-<p>低消費電力設定のため、65行を追加してください。</p>
+<p>低消費電力設定のため、87行を追加してください。</p>
 </li>
 </ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&#34;RTClib.h&#34;</span><span style="color:#8f5902;font-style:italic">
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">// Date and time functions using a PCF8523 RTC connected via I2C and Wire lib
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&#34;RTClib.h&#34;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#000">RTC_PCF8523</span> <span style="color:#000">rtc</span><span style="color:#000;font-weight:bold">;</span>
 
 <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">daysOfTheWeek</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">][</span><span style="color:#0000cf;font-weight:bold">12</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#4e9a06">&#34;Sunday&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Monday&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Tuesday&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Wednesday&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Thursday&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Friday&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;Saturday&#34;</span><span style="color:#000;font-weight:bold">};</span>
 
-<span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic">// setup
-</span><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span> <span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span> <span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#204a87;font-weight:bold">while</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span><span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">);</span>                                            <span style="color:#8f5902;font-style:italic">// wait for serial port to connect.
+
+<span style="color:#8f5902;font-style:italic">#ifndef ESP8266
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">while</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span><span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// wait for serial port to connect. Needed for native USB
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#endif
 </span><span style="color:#8f5902;font-style:italic"></span>
   <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span> <span style="color:#000">rtc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">())</span> <span style="color:#000;font-weight:bold">{</span>
     <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Couldn&#39;t find RTC&#34;</span><span style="color:#000;font-weight:bold">);</span>
-    <span style="color:#204a87;font-weight:bold">while</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">flush</span><span style="color:#000;font-weight:bold">();</span>
+    <span style="color:#000">abort</span><span style="color:#000;font-weight:bold">();</span>
   <span style="color:#000;font-weight:bold">}</span>
 
   <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">!</span> <span style="color:#000">rtc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">initialized</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#ce5c00;font-weight:bold">||</span> <span style="color:#000">rtc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">lostPower</span><span style="color:#000;font-weight:bold">())</span> <span style="color:#000;font-weight:bold">{</span>
     <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;RTC is NOT initialized, let&#39;s set the time!&#34;</span><span style="color:#000;font-weight:bold">);</span>
-    <span style="color:#8f5902;font-style:italic">// When time needs to be set on a new device, or after a power loss
-</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">rtc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">adjust</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">DateTime</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">F</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">__DATE__</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">F</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">__TIME__</span><span style="color:#000;font-weight:bold">)));</span>           <span style="color:#8f5902;font-style:italic">// コンパイルした時刻を設定
-</span><span style="color:#8f5902;font-style:italic">//    rtc.adjust(DateTime(2020, 7, 21, 3, 15, 0));               // 2020/7/21 3:15:00 を設定する場合
+    <span style="color:#8f5902;font-style:italic">// When time needs to be set on a new device, or after a power loss, the
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// following line sets the RTC to the date &amp; time this sketch was compiled
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">rtc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">adjust</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">DateTime</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">F</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">__DATE__</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#000">F</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">__TIME__</span><span style="color:#000;font-weight:bold">)));</span>
+    <span style="color:#8f5902;font-style:italic">// This line sets the RTC with an explicit date &amp; time, for example to set
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// January 21, 2014 at 3am you would call:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// Note: allow 2 seconds after inserting battery or applying external power
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// without battery before calling adjust(). This gives the PCF8523&#39;s
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// crystal oscillator time to stabilize. If you call adjust() very quickly
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// after the RTC is powered, lostPower() may still return true.
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000;font-weight:bold">}</span>
-  <span style="color:#000">rtc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeSqwPinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PCF8523_OFF</span><span style="color:#000;font-weight:bold">);</span>                           <span style="color:#8f5902;font-style:italic">// 低消費電力化
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
 
-<span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic">// Main loop
-</span><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span> <span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#8f5902;font-style:italic">// When time needs to be re-set on a previously configured device, the
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// following line sets the RTC to the date &amp; time this sketch was compiled
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// This line sets the RTC with an explicit date &amp; time, for example to set
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// January 21, 2014 at 3am you would call:
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// rtc.adjust(DateTime(2014, 1, 21, 3, 0, 0));
+</span><span style="color:#8f5902;font-style:italic"></span>
+  <span style="color:#8f5902;font-style:italic">// When the RTC was stopped and stays connected to the battery, it has
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// to be restarted by clearing the STOP bit. Let&#39;s do this to ensure
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// the RTC is running.
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">rtc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">start</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000">rtc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">writeSqwPinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PCF8523_OFF</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 低消費電力化
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span> <span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
     <span style="color:#000">DateTime</span> <span style="color:#000">now</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">rtc</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">now</span><span style="color:#000;font-weight:bold">();</span>
 
     <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">now</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">year</span><span style="color:#000;font-weight:bold">(),</span> <span style="color:#000">DEC</span><span style="color:#000;font-weight:bold">);</span>
@@ -2475,6 +2495,29 @@ if (!doNotTrack) {
     <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">now</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">minute</span><span style="color:#000;font-weight:bold">(),</span> <span style="color:#000">DEC</span><span style="color:#000;font-weight:bold">);</span>
     <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;:&#39;</span><span style="color:#000;font-weight:bold">);</span>
     <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">now</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">second</span><span style="color:#000;font-weight:bold">(),</span> <span style="color:#000">DEC</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">();</span>
+
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34; since midnight 1/1/1970 = &#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">now</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">unixtime</span><span style="color:#000;font-weight:bold">());</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;s = &#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">now</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">unixtime</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#ce5c00;font-weight:bold">/</span> <span style="color:#0000cf;font-weight:bold">86400L</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;d&#34;</span><span style="color:#000;font-weight:bold">);</span>
+
+    <span style="color:#8f5902;font-style:italic">// calculate a date which is 7 days, 12 hours and 30 seconds into the future
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">DateTime</span> <span style="color:#000">future</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">now</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">TimeSpan</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">12</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">30</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">6</span><span style="color:#000;font-weight:bold">));</span>
+
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34; now + 7d + 12h + 30m + 6s: &#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">future</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">year</span><span style="color:#000;font-weight:bold">(),</span> <span style="color:#000">DEC</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;/&#39;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">future</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">month</span><span style="color:#000;font-weight:bold">(),</span> <span style="color:#000">DEC</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;/&#39;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">future</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">day</span><span style="color:#000;font-weight:bold">(),</span> <span style="color:#000">DEC</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39; &#39;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">future</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">hour</span><span style="color:#000;font-weight:bold">(),</span> <span style="color:#000">DEC</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;:&#39;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">future</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">minute</span><span style="color:#000;font-weight:bold">(),</span> <span style="color:#000">DEC</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;:&#39;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">future</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">second</span><span style="color:#000;font-weight:bold">(),</span> <span style="color:#000">DEC</span><span style="color:#000;font-weight:bold">);</span>
     <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">();</span>
 
     <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">();</span>
