@@ -34,7 +34,7 @@
 &lt;ul&gt;
 &lt;li&gt;Basic Kit&lt;/li&gt;
 &lt;li&gt;Windows&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;、 Mac&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;、 Linux&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;、 Chrome OSのPCまたは&lt;br&gt;Android&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;、 iPhone&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;、 iPad&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;のスマートフォンまたはタブレット&lt;/li&gt;
-&lt;li&gt;Google Chrome (バージョン70.0.3526.0以降)&lt;/li&gt;
+&lt;li&gt;Google Chrome (バージョン70.0.3526.0以降)&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;デモ動画&#34;&gt;デモ動画&lt;/h2&gt;
 &lt;div class=&#34;youtube&#34;&gt;
@@ -148,9 +148,6 @@
 &lt;a href=&#34;https://docs.leafony.com/docs/environment/basic&#34;&gt;開発環境設定&lt;/a&gt;を読んで、LeafonyにLED点滅スケッチを書き込んでみましょう。
 &lt;/div&gt;
 
-&lt;p&gt;注) Chromeがバージョン79未満の場合、標準でWeb Bluetoothが有効になっていません。&lt;br&gt;
-Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental Web Platform features&lt;/code&gt;を&lt;code&gt;Enable&lt;/code&gt;にしてください。&lt;br&gt;
-&lt;code&gt;chrome://flags/#enable-experimental-web-platform-features&lt;/code&gt;&lt;/p&gt;
 &lt;h3 id=&#34;linuxの場合&#34;&gt;Linuxの場合&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -169,7 +166,7 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leafony_AC02&lt;/code&gt;を選択し、&lt;code&gt;Pair&lt;/code&gt;ボタンを押す。&lt;br&gt;
-&lt;br&gt;
+&lt;br&gt; 
 &lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -205,6 +202,11 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 &lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;iPhoneまたはiPadの場合は &lt;a href=&#34;https://itunes.apple.com/us/app/webble/id1193531073&#34; target=&#34;_blank&#34;&gt;WebBLE&lt;/a&gt;(有料)が必要です。iPhone、iPad版のChromeではWeb Bluetoothが実装されていないためです。 &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
+&lt;li id=&#34;fn:6&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Chromeがバージョン79未満の場合、標準でWeb Bluetoothが有効になっていません。&lt;br&gt;
+Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental Web Platform features&lt;/code&gt;を&lt;code&gt;Enable&lt;/code&gt;にしてください。&lt;br&gt;
+&lt;code&gt;chrome://flags/#enable-experimental-web-platform-features&lt;/code&gt; &lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
 
@@ -223,7 +225,6 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
         &lt;p&gt;ESP32 Wi-Fi Kit は、Wi-FiとBluetooth LE内臓のESP32-WROOM-32を搭載した乾電池やリチウムバッテリーで駆動可能な開発キットです。&lt;/p&gt;
 &lt;p&gt;Wi-Fiを使ってスマートフォンやパソコンに、タッチセンサの値を送信することが簡単にできます。&lt;/p&gt;
 &lt;p&gt;ESP32 Wi-Fi  Kitは、箱を開けたらすぐに使えるこのプログラムが書き込まれています。&lt;/p&gt;
-&lt;p&gt;今回使用したサンプルアプリは&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/esp32/wifi_touchsensor/&#34;&gt;「Wi-Fi タッチセンサ」&lt;/a&gt;です。ソースコードや動作の仕組みはこちらでご覧になれます。&lt;/p&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;ESP32 Wi-Fi Kit&lt;/li&gt;
@@ -269,6 +270,10 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 &lt;p&gt;ESP32 Wi-Fi KitのNut Plate部分にマグネットが付いています。金属の壁などに設置してみましょう。&lt;/p&gt;
  &lt;img src=&#34;magnet_1.png&#34; width=&#34;400&#34;&gt;
 &lt;/li&gt;
+&lt;/ol&gt;
+&lt;br&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;今回使用したサンプルアプリは「&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/esp32/wifi_touchsensor/&#34;&gt;Wi-Fi タッチセンサ&lt;/a&gt;」です。ソースコードや動作の仕組みはこちらでご覧になれます。&lt;/li&gt;
 &lt;/ol&gt;
 
 
