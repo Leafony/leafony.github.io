@@ -55,8 +55,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 &lt;/div&gt;
 
 &lt;h2 id=&#34;pcと接続&#34;&gt;PCと接続&lt;/h2&gt;
-&lt;p&gt;図のように組み立て、USBケーブルでPCと接続しましょう。&lt;br&gt;
-プログラムを書き込むためには最低限、AVR MCUリーフとUSBリーフが必要です。&lt;/p&gt;
+&lt;p&gt;USBケーブルでPCと接続しましょう。&lt;br&gt;&lt;/p&gt;
 &lt;img src=&#34;./basic_assemble.png&#34; width=&#34;480&#34;&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;h2 id=&#34;マイコンボードの設定&#34;&gt;マイコンボードの設定&lt;/h2&gt;
@@ -248,13 +247,14 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;ESP32リーフが接続されたCOMポートを選択する。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;マイコンボードに書き込む&lt;/code&gt;ボタンを押してスケッチを書き込む。&lt;/li&gt;
-&lt;li&gt;書き込み中に下記の表示が出たら、ESP32リーフの&lt;code&gt;Bootボタン&lt;/code&gt;を長押しする。&lt;/li&gt;
+&lt;li&gt;書き込み中に下記の表示が出たら、ESP32リーフの&lt;code&gt;Bootモードスイッチ&lt;/code&gt;を長押しする。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;./esp32_write.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;シリアルモニタを開いて、通信速度を&lt;code&gt;115200bps&lt;/code&gt;にする。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Bootボタン(IO0)&lt;/code&gt;を押してボタンの入力状態が変わるのを確認する。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Bootモードスイッチ(IO0)&lt;/code&gt;を押してスイッチの入力状態が変わるのを確認する。&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;./AP02_tips.png&#34;&gt;&lt;img src=&#34;./AP02_tips.png&#34; width=&#34;450&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;困ったときは&#34;&gt;困ったときは&lt;/h2&gt;
 &lt;p&gt;「&lt;a href=&#34;../solution&#34;&gt;うまく動かないときは&lt;/a&gt;」で解決方法を探してみましょう。&lt;/p&gt;
 &lt;h2 id=&#34;サンプルスケッチで動作確認&#34;&gt;サンプルスケッチで動作確認&lt;/h2&gt;

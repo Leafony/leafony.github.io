@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.72.0" />
+<meta name="generator" content="Hugo 0.73.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -133,7 +133,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4eeadd9a3cd2b04d6c87520cc21e7a67bf08f42879147361c8cdb065a7aa8a998c0feef29792a2974975b0c20e60617ddfc90d032a8736867011b6afb7e11f53.json"
+  data-offline-search-index-json-src="/offline-search-index.21ab7afb2471adad398b787964621b3b87ed0d68178c8d01f30ac09aa16a893d8bd068e2dcb5a157ddf8575a70d463612fd94da40b80f03d7ec9e48fc2bbe538.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4eeadd9a3cd2b04d6c87520cc21e7a67bf08f42879147361c8cdb065a7aa8a998c0feef29792a2974975b0c20e60617ddfc90d032a8736867011b6afb7e11f53.json"
+  data-offline-search-index-json-src="/offline-search-index.21ab7afb2471adad398b787964621b3b87ed0d68178c8d01f30ac09aa16a893d8bd068e2dcb5a157ddf8575a70d463612fd94da40b80f03d7ec9e48fc2bbe538.json"
   data-offline-search-base-href="/"
 >
 
@@ -218,29 +218,6 @@ if (!doNotTrack) {
   <ul>
     <li class="collapse " id="docsoverview">
       
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/overview/terms/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">用語の説明</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsoverviewterms">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
       
       
     </li>
@@ -2435,13 +2412,14 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 </code></pre></div><ol start="3">
 <li>ESP32リーフが接続されたCOMポートを選択する。</li>
 <li><code>マイコンボードに書き込む</code>ボタンを押してスケッチを書き込む。</li>
-<li>書き込み中に下記の表示が出たら、ESP32リーフの<code>Bootボタン</code>を長押しする。</li>
+<li>書き込み中に下記の表示が出たら、ESP32リーフの<code>Bootモードスイッチ</code>を長押しする。</li>
 </ol>
 <p><img src="./esp32_write.png"></img></p>
 <ol start="6">
 <li>シリアルモニタを開いて、通信速度を<code>115200bps</code>にする。</li>
-<li><code>Bootボタン(IO0)</code>を押してボタンの入力状態が変わるのを確認する。</li>
+<li><code>Bootモードスイッチ(IO0)</code>を押してスイッチの入力状態が変わるのを確認する。</li>
 </ol>
+<p><a href="./AP02_tips.png"><img src="./AP02_tips.png" width="450"></a></p>
 <h2 id="困ったときは">困ったときは</h2>
 <p>「<a href="../solution">うまく動かないときは</a>」で解決方法を探してみましょう。</p>
 <h2 id="サンプルスケッチで動作確認">サンプルスケッチで動作確認</h2>
