@@ -56,7 +56,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 
 &lt;h2 id=&#34;pcと接続&#34;&gt;PCと接続&lt;/h2&gt;
 &lt;p&gt;USBケーブルでPCと接続しましょう。&lt;br&gt;&lt;/p&gt;
-&lt;img src=&#34;./basic_assemble.png&#34; width=&#34;480&#34;&gt;
+&lt;img src=&#34;./basic_assemble.png&#34; width=&#34;530&#34;&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;h2 id=&#34;マイコンボードの設定&#34;&gt;マイコンボードの設定&lt;/h2&gt;
 &lt;p&gt;Arduino IDEでLeafonyの開発を行うために、下記の手順でIDEの設定を行いましょう。&lt;/p&gt;
@@ -205,8 +205,8 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 &lt;/div&gt;
 
 &lt;h2 id=&#34;pcと接続&#34;&gt;PCと接続&lt;/h2&gt;
-&lt;p&gt;USBケーブルでPCと接続しましょう。&lt;br&gt;
-&lt;img src=&#34;./esp32_assemble.png&#34; alt=&#34;assemble&#34;&gt;&lt;/p&gt;
+&lt;p&gt;USBケーブルでPCと接続しましょう。&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./esp32_assemble.png&#34; alt=&#34;assemble&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;マイコンボードの設定&#34;&gt;マイコンボードの設定&lt;/h2&gt;
 &lt;p&gt;ESP32 MCUリーフをArduino IDEで使用するには、Arduino core for the ESP32 のインストールが必要です。&lt;/p&gt;
 &lt;ol&gt;
@@ -355,7 +355,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 &lt;/table&gt;
 &lt;h3 id=&#34;2-githubからライブラリをダウンロード&#34;&gt;2. Githubからライブラリをダウンロード&lt;/h3&gt;
 &lt;p&gt;上記表のリンクをクリックすると、ライブラリのGitHubリポジトリにアクセスします。
-&lt;code&gt;Clone or download → Download ZIP&lt;/code&gt;をクリックし、ライブラリをダウンロードしましょう。&lt;/p&gt;
+&lt;code&gt;Code → Download ZIP&lt;/code&gt;をクリックし、ライブラリをダウンロードしましょう。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./github_1.png&#34; alt=&#34;github&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;3-ライブラリのインクルード&#34;&gt;3. ライブラリのインクルード&lt;/h3&gt;
 &lt;p&gt;Arduinoを立ち上げ、&lt;code&gt;スケッチ → ライブラリをインクルード → ZIP形式のライブラリをインストール&lt;/code&gt;の順に選択して、先程ダウンロードしたZIPファイルを読み込みましょう。&lt;/p&gt;
