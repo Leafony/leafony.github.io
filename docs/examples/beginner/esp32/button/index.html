@@ -130,7 +130,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.55982dd7b99af1747108ffb71d03be36ac9b9d00ed8fbd4a71552d21e1692f0f9b94a17da1208a17e2476ae9887d029cc72acbe1194e8a5654f598fd1954c944.json"
+  data-offline-search-index-json-src="/offline-search-index.db8e60dd7479989c9c809aa7aae603e476c6b9de9e9f33cd3233ad868f0c1318c4d4ab202b7bed54768825d2f107313bcc70ae9af72e75ea6d6a89627944c45f.json"
   data-offline-search-base-href="/"
 >
 
@@ -160,7 +160,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.55982dd7b99af1747108ffb71d03be36ac9b9d00ed8fbd4a71552d21e1692f0f9b94a17da1208a17e2476ae9887d029cc72acbe1194e8a5654f598fd1954c944.json"
+  data-offline-search-index-json-src="/offline-search-index.db8e60dd7479989c9c809aa7aae603e476c6b9de9e9f33cd3233ad868f0c1318c4d4ab202b7bed54768825d2f107313bcc70ae9af72e75ea6d6a89627944c45f.json"
   data-offline-search-base-href="/"
 >
 
@@ -2370,7 +2370,8 @@ if (!doNotTrack) {
         
 	
 	<h2 id="概要">概要</h2>
-<p>ESP32 MCUリーフに搭載されたボタンスイッチの状態をシリアルモニタに表示させます。</p>
+<p>ESP32 MCUリーフに搭載されたBoot mode スイッチの状態をシリアルモニタに表示させます。<br>
+<img src="./AP02_tips.jpg" width="450"></img></p>
 <h2 id="使用するリーフ">使用するリーフ</h2>
 <p>以下のリーフを使用します</p>
 <table>
@@ -2411,12 +2412,12 @@ if (!doNotTrack) {
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">buttonState</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">digitalRead</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pushButton</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buttonState</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_Button">ESP32_Button.ino</a></p>
 <h2 id="実行結果">実行結果</h2>
-<p>シリアルモニタにボタンの入力状態が表示されます。</p>
-<p><img src="./button_serial.jpg" width="600"></img></p>
+<p>Boot mode スイッチを押すと、シリアルモニタの表示が、１から０に変わります。</p>
+<p><img src="./esp_button_serial.png" width="600"></img></p>
 
         <div class="section-index">
     
@@ -2612,7 +2613,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 28, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 30, 2020
 </div>
 </div>
 

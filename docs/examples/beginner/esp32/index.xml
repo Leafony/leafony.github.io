@@ -23,7 +23,8 @@
         
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;ESP32 MCUリーフに搭載されたボタンスイッチの状態をシリアルモニタに表示させます。&lt;/p&gt;
+&lt;p&gt;ESP32 MCUリーフに搭載されたBoot mode スイッチの状態をシリアルモニタに表示させます。&lt;br&gt;
+&lt;img src=&#34;./AP02_tips.jpg&#34; width=&#34;450&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
 &lt;p&gt;以下のリーフを使用します&lt;/p&gt;
 &lt;table&gt;
@@ -64,12 +65,12 @@
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;loop&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;buttonState&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;digitalRead&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;pushButton&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;Serial&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buttonState&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_Button&#34;&gt;ESP32_Button.ino&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
-&lt;p&gt;シリアルモニタにボタンの入力状態が表示されます。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./button_serial.jpg&#34; width=&#34;600&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;Boot mode スイッチを押すと、シリアルモニタの表示が、１から０に変わります。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./esp_button_serial.png&#34; width=&#34;600&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 
       </description>
     </item>
