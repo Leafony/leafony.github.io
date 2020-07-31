@@ -141,7 +141,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.284161bd4cf5ec5f21d5ade72dd897f7815dd4d97250eb5971cf0233773e324741ffd7df3ff5a992f2c718cf36fa43dacbb027bf162544ef953f00bae38f2936.json"
+  data-offline-search-index-json-src="/offline-search-index.2e7189cdc7b49d1763ab8295a6b5400ef3212197dc380785b8f5b6784ec99db1814070fce9342b78d841091091d8dd835f157b63270d7ff422762aa9b36e0786.json"
   data-offline-search-base-href="/"
 >
 
@@ -171,7 +171,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.284161bd4cf5ec5f21d5ade72dd897f7815dd4d97250eb5971cf0233773e324741ffd7df3ff5a992f2c718cf36fa43dacbb027bf162544ef953f00bae38f2936.json"
+  data-offline-search-index-json-src="/offline-search-index.2e7189cdc7b49d1763ab8295a6b5400ef3212197dc380785b8f5b6784ec99db1814070fce9342b78d841091091d8dd835f157b63270d7ff422762aa9b36e0786.json"
   data-offline-search-base-href="/"
 >
 
@@ -2658,16 +2658,32 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#beginner-examples">Beginner Examples</a>
+    <li><a href="#avr-mcu-examples">AVR MCU Examples</a>
       <ul>
-        <li><a href="#avr-mcu-examples">AVR MCU Examples</a></li>
-        <li><a href="#esp32-mcu-examples">ESP32 MCU Examples</a></li>
+        <li><a href="#basic-kit">Basic Kit</a></li>
+        <li><a href="#basic-kitextension-kit">Basic Kit＋Extension Kit</a></li>
       </ul>
     </li>
-    <li><a href="#advanced-examples">Advanced Examples　</a>
+    <li><a href="#esp32-mcu-examples">ESP32 MCU Examples</a>
       <ul>
-        <li><a href="#avr-mcu-examples-1">AVR MCU Examples</a></li>
-        <li><a href="#esp32-mcu-examples-1">ESP32 MCU Examples</a></li>
+        <li><a href="#esp32-wi-fi-kit">ESP32 Wi-Fi Kit</a></li>
+        <li><a href="#esp32-wi-fi-kitbasic-kit">ESP32 Wi-Fi Kit＋Basic Kit</a></li>
+        <li><a href="#esp32-wi-fi-kitextension-kit">ESP32 Wi-Fi Kit＋Extension Kit</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#avr-mcu-examples-1">AVR MCU Examples</a>
+      <ul>
+        <li><a href="#basic-kit-1">Basic Kit</a></li>
+        <li><a href="#basic-kitextension-kit-1">Basic Kit＋Extension Kit</a></li>
+        <li><a href="#basic-kitlora">Basic Kit＋LoRa</a></li>
+      </ul>
+    </li>
+    <li><a href="#esp32-mcu-examples-1">ESP32 MCU Examples</a>
+      <ul>
+        <li><a href="#esp32-wi-fi-kit-1">ESP32 Wi-Fi Kit</a></li>
       </ul>
     </li>
   </ul>
@@ -2709,11 +2725,10 @@ if (!doNotTrack) {
 	<h1>サンプルアプリ</h1>
         <div class="lead">サンプルから使い方を学ぼう</div>
 	
-	<p>各種Leafを使ったサンプルアプリを紹介します。<br>
-実際に動かして使い方を学んでいきましょう。</p>
-<h2 id="beginner-examples">Beginner Examples</h2>
-<h3 id="avr-mcu-examples">AVR MCU Examples</h3>
-<h4 id="basic-kit-だけでできるサンプルアプリ">Basic Kit だけでできるサンプルアプリ</h4>
+	<h1 id="beginner-examples">Beginner Examples</h1>
+<p>各種Leafを使ったサンプルアプリを紹介します。実際に動かして使い方を学んでいきましょう。</p>
+<h2 id="avr-mcu-examples">AVR MCU Examples</h2>
+<h3 id="basic-kit">Basic Kit</h3>
 <ul>
 <li><a href="./beginner/basic/blink">LED点滅</a></li>
 <li><a href="./beginner/basic/read_battery">バッテリ電圧読み取り</a></li>
@@ -2721,59 +2736,56 @@ if (!doNotTrack) {
 <li><a href="./beginner/basic/illum_sensor">照度センサ読み取り</a></li>
 <li><a href="./beginner/basic/accelerometer">加速度センサ読み取り</a></li>
 </ul>
-<h4 id="basic-kitとextension-kitでできるサンプルアプリ">Basic KitとExtension Kitでできるサンプルアプリ</h4>
+<h3 id="basic-kitextension-kit">Basic Kit＋Extension Kit</h3>
 <ul>
 <li><a href="./beginner/extension/speaker">スピーカ</a></li>
 <li><a href="./beginner/extension/ir_sensor">人感センサ</a></li>
 <li><a href="./beginner/extension/sound_level">サウンドレベルメータ</a></li>
 <li><a href="./beginner/extension/lcd">LCD</a></li>
 </ul>
-<h3 id="esp32-mcu-examples">ESP32 MCU Examples</h3>
-<h4 id="esp32-wi-fi-kit-だけでできるサンプルアプリ">ESP32 Wi-Fi Kit だけでできるサンプルアプリ</h4>
+<h2 id="esp32-mcu-examples">ESP32 MCU Examples</h2>
+<h3 id="esp32-wi-fi-kit">ESP32 Wi-Fi Kit</h3>
 <ul>
 <li><a href="./beginner/esp32/button">ボタン入力</a></li>
 <li><a href="./beginner/esp32/rtc">リアルタイムクロック</a></li>
 <li><a href="./beginner/esp32/microsd">microSDカード(公開予定)</a></li>
 </ul>
-<h4 id="esp32-wi-fi-kit-とbasic-kitでできるサンプルアプリ">ESP32 Wi-Fi Kit とBasic Kitでできるサンプルアプリ</h4>
+<h3 id="esp32-wi-fi-kitbasic-kit">ESP32 Wi-Fi Kit＋Basic Kit</h3>
 <ul>
 <li><a href="./beginner/esp32/temp_humid_sensors">温湿度センサ読み取り(公開予定)</a></li>
 <li><a href="./beginner/esp32/illum_sensor">照度センサ読み取り(公開予定)</a></li>
 <li><a href="./beginner/esp32/accelerometer">加速度センサ読み取り(公開予定)</a></li>
 </ul>
-<h4 id="esp32-wi-fi-kit-basic-kitとextension-kitでできるサンプルアプリ">ESP32 Wi-Fi Kit 、Basic KitとExtension Kitでできるサンプルアプリ</h4>
+<h3 id="esp32-wi-fi-kitextension-kit">ESP32 Wi-Fi Kit＋Extension Kit</h3>
 <ul>
 <li><a href="./beginner/extension/speaker">スピーカ(公開予定)</a></li>
 <li><a href="./beginner/extension/ir_sensor">人感センサ(公開予定)</a></li>
 <li><a href="./beginner/extension/sound_level">サウンドレベルメータ(公開予定)</a></li>
 <li><a href="./beginner/extension/lcd">LCD(公開予定)</a></li>
 </ul>
-<h2 id="advanced-examples">Advanced Examples　</h2>
-<h3 id="avr-mcu-examples-1">AVR MCU Examples</h3>
-<h4 id="basic-kit-だけでできるサンプルアプリ-1">Basic Kit だけでできるサンプルアプリ</h4>
+<h1 id="advanced-examples">Advanced Examples　</h1>
+<h2 id="avr-mcu-examples-1">AVR MCU Examples</h2>
+<h3 id="basic-kit-1">Basic Kit</h3>
 <ul>
 <li>Simple BLE Characteristic (公開予定)</li>
 <li>Simple BLE Advartisement (公開予定)</li>
 <li><a href="./advanced/basic/webbluetooth_iot">Web Bluetoothを使ったIoTアプリ入門</a></li>
 <li><a href="./advanced/basic/google_sheets_iot">Google sheetsを使ったIoTサービス入門</a></li>
 </ul>
-<h4 id="basic-kitとextension-kitでできるサンプルアプリ-1">Basic KitとExtension Kitでできるサンプルアプリ</h4>
+<h3 id="basic-kitextension-kit-1">Basic Kit＋Extension Kit</h3>
 <ul>
 <li><a href="./advanced/extension/4-sensors_lcd/">センサの値をLCDに表示(公開予定)</a></li>
 <li><a href="./advanced/extension/4-sensors_lcd_ble/">センサの値をLCDに表示しBLEで送信(公開予定)</a></li>
 <li><a href="./advanced/extension/pir_melody_test/">人の接近を検知しメロディをならす(公開予定)</a></li>
-</ul>
-<h4 id="basic-kitとgroveでできるサンプルアプリ">Basic KitとGroveでできるサンプルアプリ</h4>
-<ul>
 <li><a href="./advanced/grove/distance_sensor">超音波センサで距離測定</a></li>
 <li><a href="./advanced/grove/camera">カメラの撮影</a></li>
 </ul>
-<h4 id="basic-kitとloraでできるサンプルアプリ">Basic KitとLoRaでできるサンプルアプリ</h4>
+<h3 id="basic-kitlora">Basic Kit＋LoRa</h3>
 <ul>
 <li><a href="./advanced/lora/lora/">LoRaを使ってセンサの値を表示(公開予定)</a></li>
 </ul>
-<h3 id="esp32-mcu-examples-1">ESP32 MCU Examples</h3>
-<h4 id="esp32-wi-fi-kit-だけでできるサンプルアプリ-1">ESP32 Wi-Fi Kit だけでできるサンプルアプリ</h4>
+<h2 id="esp32-mcu-examples-1">ESP32 MCU Examples</h2>
+<h3 id="esp32-wi-fi-kit-1">ESP32 Wi-Fi Kit</h3>
 <ul>
 <li><a href="./advanced/esp32/wifi_touchsensor">Wi-Fi タッチセンサ</a></li>
 </ul>
@@ -2788,7 +2800,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 31, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 1, 2020
 </div>
 </div>
 
