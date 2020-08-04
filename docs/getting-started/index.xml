@@ -38,7 +38,7 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;デモ動画&#34;&gt;デモ動画&lt;/h2&gt;
 &lt;div class=&#34;youtube&#34;&gt;
-    &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/XC8G1dTXSR4&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
+    &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/XC8G1dTXSR4?rel=0&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
 &lt;/div&gt;
 &lt;br&gt;
 &lt;br&gt;
@@ -91,7 +91,7 @@
 &lt;br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;App Storeから&lt;a href=&#34;https://apps.apple.com/us/app/webble/id1193531073&#34;&gt;WebBLE&lt;/a&gt; (有償)をダウンロード&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;App Storeから&lt;a href=&#34;https://apps.apple.com/us/app/webble/id1193531073&#34; target=&#34;_blank&#34;&gt;WebBLE&lt;/a&gt; (有償)をダウンロード&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;以下のURLをコピーし、WebBLEを立ち上げてアドレスバーに貼り付けてください。&lt;/p&gt;
@@ -155,7 +155,7 @@
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Linux上でWeb Bluetoothを有効にするために、下記の記事を参考に環境を設定してください。&lt;br&gt;
-&lt;a href=&#34;https://acassis.wordpress.com/2016/06/28/how-to-get-chrome-web-bluetooth-working-on-linux/&#34;&gt;How to get Chrome Web Bluetooth working on Linux&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://acassis.wordpress.com/2016/06/28/how-to-get-chrome-web-bluetooth-working-on-linux/&#34; target=&#34;_blank&#34;&gt;How to get Chrome Web Bluetooth working on Linux&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Basic KitにCR2032コイン電池を挿入し、電源スイッチをONにする。&lt;/p&gt;
@@ -170,7 +170,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leafony_AC02&lt;/code&gt;を選択し、&lt;code&gt;Pair&lt;/code&gt;ボタンを押す。&lt;br&gt;
-&lt;br&gt; 
+&lt;br&gt;
 &lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -256,7 +256,7 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;29pin headerの7、9、22、24、26、28ピンがタッチセンサに割り当てられています。&lt;br&gt;
-ピンに触れると静電容量が減るため、値が減少します。値が閾値20以下になると”Touch detected”と表示されます。&lt;br&gt;
+ピンに触れると静電容量が増えるため、値が減少します。値が閾値20以下になると”Touch detected”と表示されます。&lt;br&gt;
 (24ピンはRTC&amp;amp;microSDと干渉しているため、サンプルスケッチでは非表示にしています。検出閾値は、スケッチで変更可能です。以下の写真では、指先で26ピンに触れています。)&lt;/p&gt;
  &lt;img src=&#34;Wi-FiTouch-Sensor-Test_1.png&#34; width=&#34;200&#34;&gt;
 &lt;/li&gt;
@@ -277,7 +277,7 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 &lt;/ol&gt;
 &lt;br&gt;
 &lt;ol start=&#34;7&#34;&gt;
-&lt;li&gt;今回使用したサンプルアプリは「&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/esp32/wifi_touchsensor/&#34;&gt;Wi-Fi タッチセンサ&lt;/a&gt;」です。ソースコードや動作の仕組みはこちらでご覧になれます。&lt;/li&gt;
+&lt;li&gt;今回使用したサンプルアプリは「&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/esp32/wifi_touchsensor/&#34; target=&#34;_blank&#34;&gt;Wi-Fi タッチセンサ&lt;/a&gt;」です。ソースコードや動作の仕組みはこちらでご覧になれます。&lt;/li&gt;
 &lt;/ol&gt;
 
 
@@ -310,12 +310,12 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 &lt;li&gt;PC (Windows、Mac OS X 、または Linux)　&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;プログラムの書き込み方&#34;&gt;プログラムの書き込み方&lt;/h2&gt;
-&lt;p&gt;PCの環境整備がまだならば、「&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic&#34;&gt;Basic Kit 開発環境設定マニュアル&lt;/a&gt;」や「&lt;a href=&#34;https://docs.leafony.com/docs/environment/esp32&#34;&gt;ESP32 Wi-Fi Kit 開発環境設定マニュアル&lt;/a&gt;」を参照して準備をしてください。&lt;/p&gt;
+&lt;p&gt;PCの環境整備がまだならば、「&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic&#34; target=&#34;_blank&#34;&gt;Basic Kit 開発環境設定マニュアル&lt;/a&gt;」や「&lt;a href=&#34;https://docs.leafony.com/docs/environment/esp32&#34; target=&#34;_blank&#34;&gt;ESP32 Wi-Fi Kit 開発環境設定マニュアル&lt;/a&gt;」を参照して準備をしてください。&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
-サンプルアプリにあるプログラムを書き込んでみましょう。
+&lt;a href=&#34;http://localhost:1313/docs/examples/&#34;&gt;サンプルアプリ&lt;/a&gt;にあるプログラムを書き込んでみましょう。
 &lt;/div&gt;
 
 &lt;br&gt;

@@ -9,7 +9,7 @@
   
   <url>
     <loc>https://docs.leafony.com/docs/environment/basic/</loc>
-    <lastmod>2020-07-30T15:27:01+09:00</lastmod>
+    <lastmod>2020-08-04T14:44:28+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -24,7 +24,7 @@
   
   <url>
     <loc>https://docs.leafony.com/docs/getting-started/basic/</loc>
-    <lastmod>2020-07-30T15:27:01+09:00</lastmod>
+    <lastmod>2020-08-04T14:44:28+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -88,8 +88,22 @@
   </url>
   
   <url>
+    <loc>https://docs.leafony.com/docs/overview/terms/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/overview/terms/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/overview/terms/"
+                />
+  </url>
+  
+  <url>
     <loc>https://docs.leafony.com/docs/environment/esp32/</loc>
-    <lastmod>2020-07-30T15:53:03+09:00</lastmod>
+    <lastmod>2020-08-04T14:44:28+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -104,7 +118,7 @@
   
   <url>
     <loc>https://docs.leafony.com/docs/getting-started/esp32/</loc>
-    <lastmod>2020-07-29T19:25:40+09:00</lastmod>
+    <lastmod>2020-08-04T14:44:28+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -114,35 +128,6 @@
                 rel="alternate"
                 hreflang="jp"
                 href="https://docs.leafony.com/docs/getting-started/esp32/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://docs.leafony.com/docs/products/extension/</loc>
-    <lastmod>2020-06-17T12:07:27+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs.leafony.com/en/docs/products/extension/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="https://docs.leafony.com/docs/products/extension/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://docs.leafony.com/docs/overview/terms/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs.leafony.com/en/docs/overview/terms/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="https://docs.leafony.com/docs/overview/terms/"
                 />
   </url>
   
@@ -163,7 +148,7 @@
   
   <url>
     <loc>https://docs.leafony.com/docs/getting-started/extension/</loc>
-    <lastmod>2020-07-29T23:53:02+09:00</lastmod>
+    <lastmod>2020-08-04T14:44:28+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -178,7 +163,7 @@
   
   <url>
     <loc>https://docs.leafony.com/docs/environment/solution/</loc>
-    <lastmod>2020-07-22T15:52:56+09:00</lastmod>
+    <lastmod>2020-08-04T14:54:25+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -207,17 +192,32 @@
   </url>
   
   <url>
-    <loc>https://docs.leafony.com/docs/getting-started/</loc>
-    <lastmod>2020-06-12T11:47:26+09:00</lastmod>
+    <loc>https://docs.leafony.com/docs/products/extension/</loc>
+    <lastmod>2020-08-04T14:44:28+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.leafony.com/en/docs/getting-started/"
+                href="https://docs.leafony.com/en/docs/products/extension/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
-                href="https://docs.leafony.com/docs/getting-started/"
+                href="https://docs.leafony.com/docs/products/extension/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://docs.leafony.com/docs/license/</loc>
+    <lastmod>2020-08-04T10:55:12+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/license/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/license/"
                 />
   </url>
   
@@ -407,21 +407,6 @@
   </url>
   
   <url>
-    <loc>https://docs.leafony.com/docs/environment/</loc>
-    <lastmod>2020-07-22T15:52:56+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs.leafony.com/en/docs/environment/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="https://docs.leafony.com/docs/environment/"
-                />
-  </url>
-  
-  <url>
     <loc>https://docs.leafony.com/docs/leaf/processor/ap02/</loc>
     <lastmod>2020-07-07T16:00:28+09:00</lastmod>
     <xhtml:link
@@ -482,21 +467,6 @@
   </url>
   
   <url>
-    <loc>https://docs.leafony.com/docs/examples/</loc>
-    <lastmod>2020-08-03T14:12:54+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs.leafony.com/en/docs/examples/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="https://docs.leafony.com/docs/examples/"
-                />
-  </url>
-  
-  <url>
     <loc>https://docs.leafony.com/docs/examples/advanced/1_p/exten/4-sensors_lcd_ble/</loc>
     <lastmod>2020-08-03T13:50:00+09:00</lastmod>
   </url>
@@ -523,21 +493,6 @@
                 rel="alternate"
                 hreflang="jp"
                 href="https://docs.leafony.com/docs/examples/beginner/extension/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://docs.leafony.com/docs/leaf/</loc>
-    <lastmod>2020-06-24T15:42:54+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs.leafony.com/en/docs/leaf/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="https://docs.leafony.com/docs/leaf/"
                 />
   </url>
   
@@ -578,6 +533,21 @@
                 rel="alternate"
                 hreflang="jp"
                 href="https://docs.leafony.com/docs/leaf/communication/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://docs.leafony.com/docs/getting-started/</loc>
+    <lastmod>2020-08-04T10:55:12+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/getting-started/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/getting-started/"
                 />
   </url>
   
@@ -652,6 +622,36 @@
   </url>
   
   <url>
+    <loc>https://docs.leafony.com/docs/environment/</loc>
+    <lastmod>2020-08-04T10:55:12+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/environment/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/environment/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://docs.leafony.com/docs/examples/</loc>
+    <lastmod>2020-08-04T10:55:12+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/examples/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/examples/"
+                />
+  </url>
+  
+  <url>
     <loc>https://docs.leafony.com/docs/examples/beginner/1_p/exten/</loc>
     <lastmod>2020-07-31T16:02:36+09:00</lastmod>
   </url>
@@ -704,21 +704,6 @@
   <url>
     <loc>https://docs.leafony.com/docs/examples/advanced/basic/webbluetooth_iot/</loc>
     <lastmod>2020-07-08T00:20:32+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.leafony.com/docs/pcb/</loc>
-    <lastmod>2020-07-14T13:24:59+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs.leafony.com/en/docs/pcb/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="https://docs.leafony.com/docs/pcb/"
-                />
   </url>
   
   <url>
@@ -847,6 +832,21 @@
   </url>
   
   <url>
+    <loc>https://docs.leafony.com/docs/leaf/</loc>
+    <lastmod>2020-08-04T10:55:12+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/leaf/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/leaf/"
+                />
+  </url>
+  
+  <url>
     <loc>https://docs.leafony.com/docs/leaf/power/av03/</loc>
     <lastmod>2020-07-07T16:00:28+09:00</lastmod>
     <xhtml:link
@@ -864,6 +864,21 @@
   <url>
     <loc>https://docs.leafony.com/docs/examples/beginner/2_p/esp32/rtc/</loc>
     <lastmod>2020-08-03T10:47:05+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://docs.leafony.com/docs/pcb/</loc>
+    <lastmod>2020-08-04T10:55:12+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/pcb/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/pcb/"
+                />
   </url>
   
   <url>
@@ -903,21 +918,6 @@
                 rel="alternate"
                 hreflang="jp"
                 href="https://docs.leafony.com/docs/leaf/extension/ax01/"
-                />
-  </url>
-  
-  <url>
-    <loc>https://docs.leafony.com/docs/license/</loc>
-    <lastmod>2020-07-29T23:58:12+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs.leafony.com/en/docs/license/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="https://docs.leafony.com/docs/license/"
                 />
   </url>
   
