@@ -74,7 +74,7 @@
 &lt;/table&gt;
 &lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
 &lt;p&gt;下図のようにリーフを組み立てましょう。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./speaker_assemble.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./ESP32_speaker&amp;amp;ir.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;p&gt;Arduinoを開き、&lt;code&gt;ファイル → スケッチ例 → 02.Digital → toneMelody&lt;/code&gt;を開いてください。&lt;/p&gt;
 &lt;p&gt;このサンプルコードでは、スピーカが8番ピンに接続されている事になっています。&lt;br&gt;
@@ -155,7 +155,7 @@
 &lt;/table&gt;
 &lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
 &lt;p&gt;下図のようにリーフを組み立てましょう。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./ir_assemble.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./ESP32_speaker&amp;amp;ir.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
 &lt;ul&gt;
@@ -397,7 +397,7 @@
 &lt;/table&gt;
 &lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
 &lt;p&gt;下図のようにリーフを組み立てましょう。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./sound_level_assemble2.png&#34; alt=&#34;assemble2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./ESP32_sound_level.png&#34; alt=&#34;assemble2&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
 &lt;p&gt;MIC&amp;amp;VR&amp;amp;LEDリーフを使うためにはライブラリのインストールが必要です。
