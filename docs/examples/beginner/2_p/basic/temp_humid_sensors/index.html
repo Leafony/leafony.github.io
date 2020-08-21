@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.74.3" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -21,14 +21,15 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>温湿度センサ読み取り(公開予定） | Leafony</title><meta property="og:title" content="温湿度センサ読み取り(公開予定）" />
+<title>温湿度センサ読み取り | Leafony</title><meta property="og:title" content="温湿度センサ読み取り" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/examples/beginner/2_p/basic/temp_humid_sensors/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="温湿度センサ読み取り(公開予定）">
-<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="温湿度センサ読み取り(公開予定）"/>
+<meta itemprop="name" content="温湿度センサ読み取り">
+<meta itemprop="description" content="A Leafony Documentation site">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="温湿度センサ読み取り"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -136,7 +137,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5103040548514b82cdc25ad3bb47a69df87b8ee5ee8fb0451c7de17e4e99cc065961e66eee279dd5817396154d250091c8a72c7cfdbf18af1f7a4926d84c6509.json"
+  data-offline-search-index-json-src="/offline-search-index.67a15f516dfebd3fe087adb27f6c4959dafbafc788e6051fb1b797543f7d075fa2538c180c80e7355cc90c47728d89af9c308fa4f770cb852adeb58dd07d0853.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +167,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5103040548514b82cdc25ad3bb47a69df87b8ee5ee8fb0451c7de17e4e99cc065961e66eee279dd5817396154d250091c8a72c7cfdbf18af1f7a4926d84c6509.json"
+  data-offline-search-index-json-src="/offline-search-index.67a15f516dfebd3fe087adb27f6c4959dafbafc788e6051fb1b797543f7d075fa2538c180c80e7355cc90c47728d89af9c308fa4f770cb852adeb58dd07d0853.json"
   data-offline-search-base-href="/"
 >
 
@@ -2640,7 +2641,7 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>温湿度センサ読み取り(公開予定）</h1>
+	<h1>温湿度センサ読み取り</h1>
         
 	
 	<h2 id="概要">概要</h2>
@@ -2775,7 +2776,7 @@ if (!doNotTrack) {
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataTemp</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34;[℃], &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataHumid</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34;[%]&#34;</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_Thermo-Hygrometer">ESP32_Thermo-Hygrometer.ino</a></p>
+</code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_Thermo-Hygrometer" target="_blank">ESP32_Thermo-Hygrometer.ino</a></p>
 <h3 id="2点間補正">2点間補正</h3>
 <p>表示させたい温度（または、湿度）と４-Sensorsの温度（または、湿度）に、ずれがあるときは、２点間補正を行います。以下は、温度を例に、補正方法を記します。</p>
 <p>まず、４-Sensorsと、基準となる計測器で、２点の温度を測定してください。次に、測定した値を、サンプルスケッチに書き込んで、実行して頂ければ、４-Sensorsの温度が、表示させたい温度に近づきます。　</p>
@@ -2999,7 +3000,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 17, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 21, 2020
 </div>
 </div>
 

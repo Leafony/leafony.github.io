@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.74.3" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -21,14 +21,15 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>人感センサ（公開予定） | Leafony</title><meta property="og:title" content="人感センサ（公開予定）" />
+<title>人感センサ | Leafony</title><meta property="og:title" content="人感センサ" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/examples/beginner/2_p/exten/ir_sensor/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="人感センサ（公開予定）">
-<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="人感センサ（公開予定）"/>
+<meta itemprop="name" content="人感センサ">
+<meta itemprop="description" content="A Leafony Documentation site">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="人感センサ"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -136,7 +137,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5103040548514b82cdc25ad3bb47a69df87b8ee5ee8fb0451c7de17e4e99cc065961e66eee279dd5817396154d250091c8a72c7cfdbf18af1f7a4926d84c6509.json"
+  data-offline-search-index-json-src="/offline-search-index.67a15f516dfebd3fe087adb27f6c4959dafbafc788e6051fb1b797543f7d075fa2538c180c80e7355cc90c47728d89af9c308fa4f770cb852adeb58dd07d0853.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +167,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5103040548514b82cdc25ad3bb47a69df87b8ee5ee8fb0451c7de17e4e99cc065961e66eee279dd5817396154d250091c8a72c7cfdbf18af1f7a4926d84c6509.json"
+  data-offline-search-index-json-src="/offline-search-index.67a15f516dfebd3fe087adb27f6c4959dafbafc788e6051fb1b797543f7d075fa2538c180c80e7355cc90c47728d89af9c308fa4f770cb852adeb58dd07d0853.json"
   data-offline-search-base-href="/"
 >
 
@@ -2636,7 +2637,7 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>人感センサ（公開予定）</h1>
+	<h1>人感センサ</h1>
         
 	
 	<h2 id="概要">概要</h2>
@@ -2719,17 +2720,71 @@ if (!doNotTrack) {
 <li>ビープ音の場合</li>
 </ul>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic">//  Human Sensing
+</span><span style="color:#8f5902;font-style:italic">// Leafony Platform sample sketch
+</span><span style="color:#8f5902;font-style:italic">//     Application  : Human_Sensing (Beep)
+</span><span style="color:#8f5902;font-style:italic">//     Processor    : ESP32-WROOM-32 (ESP32 Dev Module)
+</span><span style="color:#8f5902;font-style:italic">//     Arduino IDE  : 1.8.13
+</span><span style="color:#8f5902;font-style:italic">//     Arduino ESP32: 1.0.4
 </span><span style="color:#8f5902;font-style:italic">//
-</span><span style="color:#8f5902;font-style:italic">//    (c) 2020 Trillion-Node Study Group
-</span><span style="color:#8f5902;font-style:italic">//    Released under the MIT license
-</span><span style="color:#8f5902;font-style:italic">//    https://opensource.org/licenses/MIT
+</span><span style="color:#8f5902;font-style:italic">//     Leaf configuration
+</span><span style="color:#8f5902;font-style:italic">//       (1) AI02 SP&amp;PIR
+</span><span style="color:#8f5902;font-style:italic">//       (2) AP02 ESP32 MCU
 </span><span style="color:#8f5902;font-style:italic">//
-</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2020/05/16  First release
+</span><span style="color:#8f5902;font-style:italic">//		(c) 2020  Trillion-Node Study Group
+</span><span style="color:#8f5902;font-style:italic">//		Released under the MIT license
+</span><span style="color:#8f5902;font-style:italic">//		https://opensource.org/licenses/MIT
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2020/08/20  First release
 </span><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">//---------------------------------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// difinition
+</span><span style="color:#8f5902;font-style:italic">//---------------------------------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;                           // I2C</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#8f5902;font-style:italic">#define I2C_PIR_ADDR   0x65
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// IOピン一覧
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">//  D0  IO3   (RXD)
+</span><span style="color:#8f5902;font-style:italic">//  D1  IO1   (TXD)
+</span><span style="color:#8f5902;font-style:italic">//  D2  IO4   (INT0)
+</span><span style="color:#8f5902;font-style:italic">//  D3  IO27  (INT1)
+</span><span style="color:#8f5902;font-style:italic">//  D4  IO12  (H-MISO)
+</span><span style="color:#8f5902;font-style:italic">//  D5  IO13  (H-MOSI)
+</span><span style="color:#8f5902;font-style:italic">//  D6  IO14  (H-SCK)
+</span><span style="color:#8f5902;font-style:italic">//  D7  IO15  (H-SS)
+</span><span style="color:#8f5902;font-style:italic">//  D8  IO17  (UART_TX)
+</span><span style="color:#8f5902;font-style:italic">//  D9  IO16  (UART_RX)
+</span><span style="color:#8f5902;font-style:italic">//  D10 IO5   (SS)
+</span><span style="color:#8f5902;font-style:italic">//  D11 IO23  (MOSI)
+</span><span style="color:#8f5902;font-style:italic">//  D12 IO19  (MISO)
+</span><span style="color:#8f5902;font-style:italic">//  D13 IO18  (SCK)
+</span><span style="color:#8f5902;font-style:italic">//  D14 IO21  (SDA)
+</span><span style="color:#8f5902;font-style:italic">//  D15 IO22  (SCL)
+</span><span style="color:#8f5902;font-style:italic">//  A0  IO36
+</span><span style="color:#8f5902;font-style:italic">//  A1  IO25  (UART_TX)
+</span><span style="color:#8f5902;font-style:italic">//  A2  IO26  (UART_RX)
+</span><span style="color:#8f5902;font-style:italic">//  A3  IO39
+</span><span style="color:#8f5902;font-style:italic">//  A4  IO34
+</span><span style="color:#8f5902;font-style:italic">//  A5  IO35
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// IOピンの名前定義
+</span><span style="color:#8f5902;font-style:italic">// 接続するリーフに合わせて定義する
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define PIR_INT             4                   </span><span style="color:#8f5902;font-style:italic">// D2 IO4
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define BUZZER_OUT          13                  </span><span style="color:#8f5902;font-style:italic">// D5 IO13 buzzer output
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">//------------------------------
+</span><span style="color:#8f5902;font-style:italic">// Tone設定
+</span><span style="color:#8f5902;font-style:italic">//------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define LEDC_CHANNEL_0      0       </span><span style="color:#8f5902;font-style:italic">// use first channel of 16 channels (started from zero)
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define LEDC_TIMER_13_BIT   13      </span><span style="color:#8f5902;font-style:italic">// use 13 bit precission for LEDC timer
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define LEDC_BASE_FREQ      5000    </span><span style="color:#8f5902;font-style:italic">// use 5000 Hz as a LEDC base frequency
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// プログラム内で使用する定数定義
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define I2C_PIR_ADDR   0x65
 </span><span style="color:#8f5902;font-style:italic">#define I2C_SEND_BUF_LENGTH 10
 </span><span style="color:#8f5902;font-style:italic">#define I2C_RECV_BUF_LENGTH 10
 </span><span style="color:#8f5902;font-style:italic"></span>
@@ -2739,103 +2794,126 @@ if (!doNotTrack) {
 <span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">irData</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">tempData</span><span style="color:#000;font-weight:bold">;</span>
 
-<span style="color:#8f5902;font-style:italic">// 人を検出したら呼び出される関数
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">onHumanDetected</span><span style="color:#000;font-weight:bold">()</span>
-<span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Detect!&#34;</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">tone</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">262</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">300</span><span style="color:#000;font-weight:bold">);</span>  <span style="color:#8f5902;font-style:italic">// ビープ音を鳴らす
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+<span style="color:#204a87;font-weight:bold">volatile</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">HumanDetected</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> 
 
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// setup
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">(){</span>
   <span style="color:#8f5902;font-style:italic">// initialize serial communication at 115200 second per second:
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#8f5902;font-style:italic">// initialize i2c communication with AK9754AE:
+  <span style="color:#8f5902;font-style:italic">// initialize i2c communication:
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">();</span>
+
   <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">);</span>
 
   <span style="color:#8f5902;font-style:italic">//人感センサ設定
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x20</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0xFF</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL1  Resrt
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x20</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0xFF</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL1  Resrt 
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x2A</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0xF2</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL11 人感アルゴリズム有効/割り込み出力有効
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x25</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x0F</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL6  センサゲイン205%(最大)
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x2B</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0xFF</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL12 Mode=1 start Meas(連続測定モード)
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
+</span><span style="color:#8f5902;font-style:italic"></span>   <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
 
-  <span style="color:#8f5902;font-style:italic">//人接近検知割り込み
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">attachInterrupt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">onHumanDetected</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">FALLING</span> <span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#8f5902;font-style:italic">// Beep
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">ledcSetup</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LEDC_CHANNEL_0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LEDC_BASE_FREQ</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LEDC_TIMER_13_BIT</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">ledcAttachPin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">BUZZER_OUT</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LEDC_CHANNEL_0</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#8f5902;font-style:italic">// 人接近検知割り込み
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">attachInterrupt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PIR_INT</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">onHumanDetected</span> <span style="color:#000;font-weight:bold">,</span> <span style="color:#000">FALLING</span> <span style="color:#000;font-weight:bold">);</span>
+
 <span style="color:#000;font-weight:bold">}</span>
 
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#8f5902;font-style:italic">// バッファをクリア
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">clearI2CReadbuf</span><span style="color:#000;font-weight:bold">();</span>
+<span style="color:#8f5902;font-style:italic">//---------------------------------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// 割り込み設定
+</span><span style="color:#8f5902;font-style:italic">//---------------------------------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// 人を検出したら呼び出される関数
+</span><span style="color:#8f5902;font-style:italic">//----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">onHumanDetected</span><span style="color:#000;font-weight:bold">(){</span>
+  <span style="color:#000">HumanDetected</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// Main loop
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">(){</span>
+
   <span style="color:#8f5902;font-style:italic">// レジスタ読み出し
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_read</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x04</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">6</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">i2c_recvBuf</span><span style="color:#000;font-weight:bold">);</span>
-
-  <span style="color:#8f5902;font-style:italic">//IRセンサ
+  <span style="color:#8f5902;font-style:italic">// IRセンサ
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">irData</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">clacIR</span><span style="color:#000;font-weight:bold">();</span>
-  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;IR    = &#34;</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;IR   = &#34;</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">irData</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34; pA&#34;</span><span style="color:#000;font-weight:bold">);</span>
 
-  <span style="color:#8f5902;font-style:italic">//センサ温度
+  <span style="color:#8f5902;font-style:italic">// センサ温度
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">tempData</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">clacTemp</span><span style="color:#000;font-weight:bold">();</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;TSENS = &#34;</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">tempData</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34; deg&#34;</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;===================================&#34;</span><span style="color:#000;font-weight:bold">);</span>
 
-  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">HumanDetected</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">){</span>          <span style="color:#8f5902;font-style:italic">// 人の接近を検知
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Detect!&#34;</span><span style="color:#000;font-weight:bold">);</span>
+
+    <span style="color:#8f5902;font-style:italic">// Beep
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">ledcWriteNote</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LEDC_CHANNEL_0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_C</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">pauseBetweenNotes</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1000</span> <span style="color:#ce5c00;font-weight:bold">/</span> <span style="color:#0000cf;font-weight:bold">4</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">1.30</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pauseBetweenNotes</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#8f5902;font-style:italic">// stop the tone
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">ledcWriteTone</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LEDC_CHANNEL_0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>
+
+    <span style="color:#000">HumanDetected</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>  
 <span style="color:#000;font-weight:bold">}</span>
 
 
-<span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">clacTemp</span><span style="color:#000;font-weight:bold">()</span>
-<span style="color:#000;font-weight:bold">{</span>
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">clacTemp</span><span style="color:#000;font-weight:bold">(){</span>  
   <span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">ret</span><span style="color:#000;font-weight:bold">;</span>
   <span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">short</span> <span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">short</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#000">i2c_recvBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">|</span>  <span style="color:#000">i2c_recvBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">]);</span>
-  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0x8000</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0x8000</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000;font-weight:bold">{</span>
-     <span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">~</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0x8000</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0x8000</span><span style="color:#000;font-weight:bold">){</span>
+     <span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">~</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>     
      <span style="color:#000">ret</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#000">val</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">*</span>   <span style="color:#0000cf;font-weight:bold">0.0019837</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>
   <span style="color:#000;font-weight:bold">}</span>
-  <span style="color:#204a87;font-weight:bold">else</span>
-  <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#204a87;font-weight:bold">else</span><span style="color:#000;font-weight:bold">{</span>
     <span style="color:#000">ret</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">0.0019837</span><span style="color:#000;font-weight:bold">;</span>
   <span style="color:#000;font-weight:bold">}</span>
   <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">ret</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">25</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#000;font-weight:bold">}</span>
 
-<span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">clacIR</span><span style="color:#000;font-weight:bold">()</span>
-<span style="color:#000;font-weight:bold">{</span>
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">clacIR</span><span style="color:#000;font-weight:bold">(){</span>  
   <span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">ret</span><span style="color:#000;font-weight:bold">;</span>
   <span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">short</span> <span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">short</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#000">i2c_recvBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">|</span>  <span style="color:#000">i2c_recvBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">]);</span>
-  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0x8000</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0x8000</span><span style="color:#000;font-weight:bold">)</span>
-  <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">((</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0x8000</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0x8000</span><span style="color:#000;font-weight:bold">){</span>
     <span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">~</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>
     <span style="color:#000">ret</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)(</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">*</span>   <span style="color:#0000cf;font-weight:bold">0.4578</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>
   <span style="color:#000;font-weight:bold">}</span>
-  <span style="color:#204a87;font-weight:bold">else</span>
-  <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#204a87;font-weight:bold">else</span><span style="color:#000;font-weight:bold">{</span>
     <span style="color:#000">ret</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)(</span><span style="color:#000">val</span> <span style="color:#ce5c00;font-weight:bold">*</span>  <span style="color:#0000cf;font-weight:bold">0.4578</span> <span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#000;font-weight:bold">}</span> 
   <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">ret</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#000;font-weight:bold">}</span>
 
-
-<span style="color:#8f5902;font-style:italic">/**********************************************
-</span><span style="color:#8f5902;font-style:italic">* I2C スレーブデバイスに1バイト書き込む
-</span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">write_data</span><span style="color:#000;font-weight:bold">){</span>
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// I2C　制御関数
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// I2C スレーブデバイスに1バイト書き込む
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">write_data</span><span style="color:#000;font-weight:bold">){</span>
   <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">write_data</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">endTransmission</span><span style="color:#000;font-weight:bold">();</span>
 <span style="color:#000;font-weight:bold">}</span>
 
-
-<span style="color:#8f5902;font-style:italic">/**********************************************
-</span><span style="color:#8f5902;font-style:italic">* I2C スレーブデバイスから1バイト読み込む
-</span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
-<span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">i2c_read_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">){</span>
-
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// I2C スレーブデバイスから1バイト読み込む
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">i2c_read_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">){</span>
   <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">read_data</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
 
   <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
@@ -2848,12 +2926,10 @@ if (!doNotTrack) {
   <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">read_data</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#000;font-weight:bold">}</span>
 
-
-<span style="color:#8f5902;font-style:italic">/**********************************************
-</span><span style="color:#8f5902;font-style:italic">* I2C スレーブデバイスに複数バイト書き込む
-</span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">lengrh</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">write_byte</span><span style="color:#000;font-weight:bold">){</span>
-
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// I2C スレーブデバイスに複数バイト書き込む
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">lengrh</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">write_byte</span><span style="color:#000;font-weight:bold">){</span>
   <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#000">lengrh</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">){</span>
@@ -2862,12 +2938,10 @@ if (!doNotTrack) {
   <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">endTransmission</span><span style="color:#000;font-weight:bold">();</span>
 <span style="color:#000;font-weight:bold">}</span>
 
-
-<span style="color:#8f5902;font-style:italic">/**********************************************
-</span><span style="color:#8f5902;font-style:italic">* I2C スレーブデバイスから複数バイト読み込む
-</span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_read</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">lengrh</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">read_byte</span><span style="color:#000;font-weight:bold">){</span>
-
+<span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic">// I2C スレーブデバイスから複数バイト読み込む
+</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_read</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">lengrh</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">read_byte</span><span style="color:#000;font-weight:bold">){</span>
   <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">endTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">);</span>
@@ -2877,15 +2951,7 @@ if (!doNotTrack) {
     <span style="color:#000">read_byte</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
   <span style="color:#000;font-weight:bold">}</span>
 <span style="color:#000;font-weight:bold">}</span>
-
-
-<span style="color:#8f5902;font-style:italic">/**********************************************
-</span><span style="color:#8f5902;font-style:italic">* I2C 受信バッファクリア
-</span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">clearI2CReadbuf</span><span style="color:#000;font-weight:bold">(){</span>
-  <span style="color:#000">memcpy</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i2c_recvBuf</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x00</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">I2C_RECV_BUF_LENGTH</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/blob/master/Human_Sensing/Human_Sensing.ino">Human_Sensing.ino</a></p>
+</code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_Human_Sensing/ESP32_Human_Sensing.ino" target="_blank">ESP32_Human_Sensing.ino</a></p>
 <h2 id="実行結果">実行結果</h2>
 <p>人が近づくと音が鳴ります。</p>
 
@@ -3105,7 +3171,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 17, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 21, 2020
 </div>
 </div>
 

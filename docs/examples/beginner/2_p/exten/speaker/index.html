@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.74.3" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -21,14 +21,15 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>スピーカ（公開予定） | Leafony</title><meta property="og:title" content="スピーカ（公開予定）" />
+<title>スピーカ | Leafony</title><meta property="og:title" content="スピーカ" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/examples/beginner/2_p/exten/speaker/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="スピーカ（公開予定）">
-<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="スピーカ（公開予定）"/>
+<meta itemprop="name" content="スピーカ">
+<meta itemprop="description" content="A Leafony Documentation site">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="スピーカ"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -136,7 +137,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5103040548514b82cdc25ad3bb47a69df87b8ee5ee8fb0451c7de17e4e99cc065961e66eee279dd5817396154d250091c8a72c7cfdbf18af1f7a4926d84c6509.json"
+  data-offline-search-index-json-src="/offline-search-index.67a15f516dfebd3fe087adb27f6c4959dafbafc788e6051fb1b797543f7d075fa2538c180c80e7355cc90c47728d89af9c308fa4f770cb852adeb58dd07d0853.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +167,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5103040548514b82cdc25ad3bb47a69df87b8ee5ee8fb0451c7de17e4e99cc065961e66eee279dd5817396154d250091c8a72c7cfdbf18af1f7a4926d84c6509.json"
+  data-offline-search-index-json-src="/offline-search-index.67a15f516dfebd3fe087adb27f6c4959dafbafc788e6051fb1b797543f7d075fa2538c180c80e7355cc90c47728d89af9c308fa4f770cb852adeb58dd07d0853.json"
   data-offline-search-base-href="/"
 >
 
@@ -2636,7 +2637,7 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>スピーカ（公開予定）</h1>
+	<h1>スピーカ</h1>
         
 	
 	<h2 id="概要">概要</h2>
@@ -2713,18 +2714,64 @@ if (!doNotTrack) {
 <p>下図のようにリーフを組み立てましょう。</p>
 <p><img src="./ESP32_speaker&amp;ir.png" alt="assemble1"></p>
 <h2 id="ソースコード">ソースコード</h2>
-<p>Arduinoを開き、<code>ファイル → スケッチ例 → 02.Digital → toneMelody</code>を開いてください。</p>
-<p>このサンプルコードでは、スピーカが8番ピンに接続されている事になっています。<br>
-しかし、Leafonyではスピーカが5番ピンに接続されているので、下記の部分を修正して正しいピン接続になるようにしましょう。</p>
-<ul>
-<li>37行目の<code>8</code>を<code>5</code>に変更</li>
-</ul>
-<pre><code>tone(5, melody[thisNote], noteDuration);
-</code></pre><ul>
-<li>44行目の<code>8</code>を<code>5</code>に変更</li>
-</ul>
-<pre><code>noTone(5);
-</code></pre><h2 id="実行結果">実行結果</h2>
+<p>Arduino IDEで下記のプログラムを書きましょう。</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#define LEDC_CHANNEL_0     0      </span><span style="color:#8f5902;font-style:italic">// use first channel of 16 channels (started from zero)
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define LEDC_TIMER_13_BIT  13     </span><span style="color:#8f5902;font-style:italic">// use 13 bit precission for LEDC timer
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define LEDC_BASE_FREQ     5000   </span><span style="color:#8f5902;font-style:italic">// use 5000 Hz as a LEDC base frequency
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">//------------------------------
+</span><span style="color:#8f5902;font-style:italic">// buzzer output = 13pin
+</span><span style="color:#8f5902;font-style:italic">//------------------------------
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define BUZZER_OUT 13
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">NOTE_NONE</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">NOTE_MAX</span><span style="color:#000;font-weight:bold">;</span>
+
+<span style="color:#8f5902;font-style:italic">// notes in the melody:
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">melody</span><span style="color:#000;font-weight:bold">[]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#000">NOTE_C</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_C</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_G</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_G</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_A</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_A</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_G</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_F</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_F</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_E</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">NOTE_E</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">NOTE_D</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">NOTE_D</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">NOTE_C</span>
+<span style="color:#000;font-weight:bold">};</span>
+
+<span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">noteOctaves</span><span style="color:#000;font-weight:bold">[]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">5</span>
+<span style="color:#000;font-weight:bold">};</span>
+
+<span style="color:#8f5902;font-style:italic">// note durations: 4 = quarter note, 8 = eighth note, etc.:
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">noteDurations</span><span style="color:#000;font-weight:bold">[]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span>
+<span style="color:#000;font-weight:bold">};</span>
+
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// setup
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#000">ledcSetup</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LEDC_CHANNEL_0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LEDC_BASE_FREQ</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LEDC_TIMER_13_BIT</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">ledcAttachPin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">BUZZER_OUT</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LEDC_CHANNEL_0</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#8f5902;font-style:italic">// iterate over the notes of the melody:
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">thisNote</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">thisNote</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">14</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">thisNote</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#8f5902;font-style:italic">// to calculate the note duration, take one second divided by the note type.
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">//e.g. quarter note = 1000 / 4, eighth note = 1000/8, etc.
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">ledcWriteNote</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LEDC_CHANNEL_0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">note_t</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">melody</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">thisNote</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#000">noteOctaves</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">thisNote</span><span style="color:#000;font-weight:bold">]);</span>
+
+    <span style="color:#8f5902;font-style:italic">// to distinguish the notes, set a minimum time between them.
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// the note&#39;s duration + 30% seems to work well:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">pauseBetweenNotes</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1000</span> <span style="color:#ce5c00;font-weight:bold">/</span> <span style="color:#000">noteDurations</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">thisNote</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">1.30</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pauseBetweenNotes</span><span style="color:#000;font-weight:bold">);</span>
+
+    <span style="color:#8f5902;font-style:italic">// stop the tone playing:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">ledcWriteTone</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LEDC_CHANNEL_0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">30</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">// Main loop
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#8f5902;font-style:italic">// no need to repeat the melody.
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_toneMelody_Twinkle/ESP32_toneMelody_Twinkle.ino" target="_blank">ESP32_toneMelody_Twinkle.ino</a></p>
+<h2 id="実行結果">実行結果</h2>
 <p>スピーカーから一度だけメロディが鳴ります。</p>
 
         <div class="section-index">
@@ -2943,7 +2990,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 17, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 21, 2020
 </div>
 </div>
 

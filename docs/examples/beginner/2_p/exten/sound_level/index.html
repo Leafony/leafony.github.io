@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.74.3" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -21,14 +21,15 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>サウンドレベルメータ（公開予定） | Leafony</title><meta property="og:title" content="サウンドレベルメータ（公開予定）" />
+<title>サウンドレベルメータ | Leafony</title><meta property="og:title" content="サウンドレベルメータ" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/examples/beginner/2_p/exten/sound_level/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="サウンドレベルメータ（公開予定）">
-<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="サウンドレベルメータ（公開予定）"/>
+<meta itemprop="name" content="サウンドレベルメータ">
+<meta itemprop="description" content="A Leafony Documentation site">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="サウンドレベルメータ"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -136,7 +137,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5103040548514b82cdc25ad3bb47a69df87b8ee5ee8fb0451c7de17e4e99cc065961e66eee279dd5817396154d250091c8a72c7cfdbf18af1f7a4926d84c6509.json"
+  data-offline-search-index-json-src="/offline-search-index.67a15f516dfebd3fe087adb27f6c4959dafbafc788e6051fb1b797543f7d075fa2538c180c80e7355cc90c47728d89af9c308fa4f770cb852adeb58dd07d0853.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +167,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5103040548514b82cdc25ad3bb47a69df87b8ee5ee8fb0451c7de17e4e99cc065961e66eee279dd5817396154d250091c8a72c7cfdbf18af1f7a4926d84c6509.json"
+  data-offline-search-index-json-src="/offline-search-index.67a15f516dfebd3fe087adb27f6c4959dafbafc788e6051fb1b797543f7d075fa2538c180c80e7355cc90c47728d89af9c308fa4f770cb852adeb58dd07d0853.json"
   data-offline-search-base-href="/"
 >
 
@@ -2636,7 +2637,7 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>サウンドレベルメータ（公開予定）</h1>
+	<h1>サウンドレベルメータ</h1>
         
 	
 	<h2 id="概要">概要</h2>
@@ -2718,30 +2719,26 @@ if (!doNotTrack) {
 <p>MIC&amp;VR&amp;LEDリーフを使うためにはライブラリのインストールが必要です。
 まだインストールしていない場合は<a href="/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">開発環境設定ページ</a>を参考にライブラリをインストールしてください</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic">//  Sound level meter
+</span><span style="color:#8f5902;font-style:italic">//  ESP32 Sound level meter
 </span><span style="color:#8f5902;font-style:italic">//
 </span><span style="color:#8f5902;font-style:italic">//    (c) 2020 Trillion-Node Study Group
 </span><span style="color:#8f5902;font-style:italic">//    Released under the MIT license
 </span><span style="color:#8f5902;font-style:italic">//    https://opensource.org/licenses/MIT
 </span><span style="color:#8f5902;font-style:italic">//
-</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2020/05/17  First release
+</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2020/08/20  First release
 </span><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;MsTimer2.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;avr/wdt.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;avr/sleep.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;avr/power.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#8f5902;font-style:italic">#define AVR_LED         13
-</span><span style="color:#8f5902;font-style:italic">#define LED1             6
-</span><span style="color:#8f5902;font-style:italic">#define LED2             7
-</span><span style="color:#8f5902;font-style:italic">#define LED3             8
-</span><span style="color:#8f5902;font-style:italic">#define LED4             9
-</span><span style="color:#8f5902;font-style:italic">#define LED5            10
-</span><span style="color:#8f5902;font-style:italic">#define LED6            11
+<span style="color:#8f5902;font-style:italic">// LED4-6:VRのレベル表示
+</span><span style="color:#8f5902;font-style:italic">// LED1-3:MICの音圧レベル表示
 </span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#8f5902;font-style:italic">#define MIC         16
-</span><span style="color:#8f5902;font-style:italic">#define VR          17
+<span style="color:#8f5902;font-style:italic">#define LED1              14            </span><span style="color:#8f5902;font-style:italic">// D6  IO14
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define LED2              15            </span><span style="color:#8f5902;font-style:italic">// D7  IO15
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define LED3              17            </span><span style="color:#8f5902;font-style:italic">// D8  IO17
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define LED4              16            </span><span style="color:#8f5902;font-style:italic">// D9  IO16
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define LED5              5             </span><span style="color:#8f5902;font-style:italic">// D10 IO5
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define LED6              23            </span><span style="color:#8f5902;font-style:italic">// D11 IO23
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define MIC               26            </span><span style="color:#8f5902;font-style:italic">// A2  IO26
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define VR                39            </span><span style="color:#8f5902;font-style:italic">// A3  IO39
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">dataVR</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">dataMic</span><span style="color:#000;font-weight:bold">;</span>
@@ -2749,10 +2746,9 @@ if (!doNotTrack) {
 <span style="color:#8f5902;font-style:italic">//-----------------------------------------------
 </span><span style="color:#8f5902;font-style:italic">// VRとMICデータを取得する
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">getSensorData</span><span style="color:#000;font-weight:bold">()</span>
-<span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#000">dataVR</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">analogRead</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">A3</span><span style="color:#000;font-weight:bold">);</span>
-    <span style="color:#000">dataMic</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">analogRead</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">A2</span><span style="color:#000;font-weight:bold">);</span>
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">getSensorData</span><span style="color:#000;font-weight:bold">(){</span>
+    <span style="color:#000">dataVR</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">analogRead</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">VR</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">dataMic</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">analogRead</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">MIC</span><span style="color:#000;font-weight:bold">);</span>
 
     <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;---------------------&#34;</span><span style="color:#000;font-weight:bold">);</span>
     <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;MIC  = &#34;</span><span style="color:#000;font-weight:bold">);</span>
@@ -2764,53 +2760,44 @@ if (!doNotTrack) {
 <span style="color:#8f5902;font-style:italic">//-----------------------------------------------
 </span><span style="color:#8f5902;font-style:italic">// VRとMICの値にあわせてLEDを点灯、消灯させる
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">dispSensorData</span><span style="color:#000;font-weight:bold">()</span>
-<span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataVR</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">400</span><span style="color:#000;font-weight:bold">)</span>
-    <span style="color:#000;font-weight:bold">{</span>
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">dispSensorData</span><span style="color:#000;font-weight:bold">(){</span>
+    <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataVR</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">1500</span><span style="color:#000;font-weight:bold">){</span>
       <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED4</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>
       <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED5</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>
       <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED6</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>
     <span style="color:#000;font-weight:bold">}</span>
-    <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataVR</span> <span style="color:#ce5c00;font-weight:bold">&gt;=</span> <span style="color:#0000cf;font-weight:bold">400</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#000">dataVR</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">800</span><span style="color:#000;font-weight:bold">)</span>
-    <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataVR</span> <span style="color:#ce5c00;font-weight:bold">&gt;=</span> <span style="color:#0000cf;font-weight:bold">1500</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#000">dataVR</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">2600</span><span style="color:#000;font-weight:bold">){</span>
        <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED4</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>
        <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED5</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>
        <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED6</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>
     <span style="color:#000;font-weight:bold">}</span>
-    <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataVR</span> <span style="color:#ce5c00;font-weight:bold">&gt;=</span> <span style="color:#0000cf;font-weight:bold">800</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#000">dataVR</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">900</span><span style="color:#000;font-weight:bold">)</span>
-    <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataVR</span> <span style="color:#ce5c00;font-weight:bold">&gt;=</span> <span style="color:#0000cf;font-weight:bold">2600</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#000">dataVR</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">3600</span><span style="color:#000;font-weight:bold">){</span>
        <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED4</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>
        <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED5</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>
        <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED6</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>
     <span style="color:#000;font-weight:bold">}</span>
-    <span style="color:#204a87;font-weight:bold">else</span>
-    <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87;font-weight:bold">else</span><span style="color:#000;font-weight:bold">{</span>
        <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED4</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>
        <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED5</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>
        <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED6</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>
     <span style="color:#000;font-weight:bold">}</span>
 
-    <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataMic</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">450</span><span style="color:#000;font-weight:bold">)</span>
-    <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataMic</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">400</span><span style="color:#000;font-weight:bold">){</span>
       <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>
       <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED2</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>
       <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED3</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>
     <span style="color:#000;font-weight:bold">}</span>
-    <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataMic</span> <span style="color:#ce5c00;font-weight:bold">&gt;=</span> <span style="color:#0000cf;font-weight:bold">450</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#000">dataMic</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">550</span><span style="color:#000;font-weight:bold">)</span>
-    <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataMic</span> <span style="color:#ce5c00;font-weight:bold">&gt;=</span> <span style="color:#0000cf;font-weight:bold">400</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#000">dataMic</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">600</span><span style="color:#000;font-weight:bold">){</span>
       <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>
       <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED2</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>
       <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED3</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>
     <span style="color:#000;font-weight:bold">}</span>
-    <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataMic</span> <span style="color:#ce5c00;font-weight:bold">&gt;=</span> <span style="color:#0000cf;font-weight:bold">550</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#000">dataMic</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">650</span><span style="color:#000;font-weight:bold">)</span>
-    <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataMic</span> <span style="color:#ce5c00;font-weight:bold">&gt;=</span> <span style="color:#0000cf;font-weight:bold">600</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#000">dataMic</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#0000cf;font-weight:bold">950</span><span style="color:#000;font-weight:bold">){</span>
       <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>
       <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED2</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>
       <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED3</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>
     <span style="color:#000;font-weight:bold">}</span>
-    <span style="color:#204a87;font-weight:bold">else</span>
-    <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#204a87;font-weight:bold">else</span><span style="color:#000;font-weight:bold">{</span>
       <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED1</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>
       <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED2</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>
       <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED3</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>
@@ -2818,12 +2805,9 @@ if (!doNotTrack) {
 <span style="color:#000;font-weight:bold">}</span>
 
 
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">(){</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;start!!&#34;</span><span style="color:#000;font-weight:bold">);</span>
-
-  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">AVR_LED</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">OUTPUT</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">AVR_LED</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>
 
   <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">OUTPUT</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>
@@ -2869,7 +2853,7 @@ if (!doNotTrack) {
   <span style="color:#000">dispSensorData</span><span style="color:#000;font-weight:bold">();</span>
   <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/blob/master/Sound_Level_Meter/Sound_Level_Meter.ino">Sound_Level_Meter.ino</a></p>
+</code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/blob/master/ESP32_Sound_Level_Meter/ESP32_Sound_Level_Meter.ino" target="_blank">ESP32_Sound_Level_Meter.ino</a></p>
 <h2 id="実行結果">実行結果</h2>
 <p>ボリュームを回転させると回転量に応じた数のLEDが点灯します。マイクにより周囲の音量に応じた数のLEDが点灯します。</p>
 
@@ -3089,7 +3073,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 17, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 21, 2020
 </div>
 </div>
 
