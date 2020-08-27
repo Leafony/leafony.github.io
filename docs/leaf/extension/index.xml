@@ -158,7 +158,7 @@
 &lt;a href=&#34;./ax05a_b_large.jpg&#34;&gt;&lt;img src=&#34;./ax05a_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
 &lt;a href=&#34;./ax05a_p_large.jpg&#34;&gt;&lt;img src=&#34;./ax05a_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;p&gt;3.3VおよびVBUSの消費電流を測定することが出来るリーフです。 電流測定リーフでは3.3VとVBUSは表面と裏面のパッドが電気的に切り離されているので、下記の各々スルーホールに電流計を接続することで、電池リーフから遠い部分にある単体リーフあるいは複数リーフ群の全電源電流を測定出来ます。下の例では、センサーリーフとBLEリーフが電流測定リーフを介して、電池リーフの遠い側に配置されているので、両リーフの合計電流が測定出来ます。&lt;/p&gt;
+&lt;p&gt;3.3VおよびVBUSの消費電流を測定することが出来るリーフです。 電流測定リーフでは3.3VとVBUSは表面と裏面のパッドが電気的に切り離されているので、下記の各々スルーホールに電流計を接続することで、電池リーフから遠い部分にある単体リーフあるいは複数リーフ群の全電源電流を測定出来ます。下の例では、センサリーフとBLEリーフが電流測定リーフを介して、電池リーフの遠い側に配置されているので、両リーフの合計電流が測定出来ます。&lt;/p&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AX05_I_Meas/AX05_I_Meas_SpecSheet_JA..pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
@@ -279,10 +279,10 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;サンプルデザイン&#34;&gt;サンプルデザイン&lt;/h2&gt;
+&lt;h2 id=&#34;サンプルアプリ&#34;&gt;サンプルアプリ&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/grove/distance_sensor&#34;&gt;超音波センサで距離測定&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/grove/camera&#34;&gt;カメラの撮影&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/1_p/exten/distance_sensor&#34;&gt;超音波センサで距離測定&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/1_p/exten/camera&#34;&gt;カメラの撮影&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
