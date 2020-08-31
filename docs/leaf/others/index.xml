@@ -14,37 +14,6 @@
     
     
     <item>
-      <title>Docs: AZ61 Connector</title>
-      <link>https://docs.leafony.com/docs/leaf/others/az61/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.leafony.com/docs/leaf/others/az61/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;a href=&#34;./az61a_large.jpg&#34;&gt;&lt;img src=&#34;./az61a_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;p&gt;Leafony Platformは、ACR (Anisotropic Conductive Rubber)を採用しています。ACRは、絶縁性シリコーンゴムに、金属又は導電性エラストマの導電部材が、狭ピッチで配列されており、圧縮されることで電気的接続が実現できます。&lt;/p&gt;
-&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
-&lt;h3 id=&#34;コネクタの取り付け取り外し&#34;&gt;コネクタの取り付け・取り外し&lt;/h3&gt;
-&lt;p&gt;リーフ基板にコネクタを取り付ける、または、外す場合は下図のように行ってください。&lt;/p&gt;
-&lt;p&gt;&amp;ndash; 取り付け&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./leafony_connector_assemble.png&#34; alt=&#34;leafony_connector_assemble&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;ndash; 取り外し&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./leafony_connector_teardown.png&#34; alt=&#34;leafony_connector_teardown&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ61_Connector/AZ61_Connector_SpecSheet_JA.pdf&#34;&gt;コネクタの試験結果&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Rev A: 2019年8月初版&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: AZ01 USB</title>
       <link>https://docs.leafony.com/docs/leaf/others/az01/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -161,28 +130,6 @@
     </item>
     
     <item>
-      <title>Docs: AZ62 Connector Cover</title>
-      <link>https://docs.leafony.com/docs/leaf/others/az62/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.leafony.com/docs/leaf/others/az62/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;a href=&#34;./az62a_large.jpg&#34;&gt;&lt;img src=&#34;./az62a_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;p&gt;Connector Coverは、ACR (Anisotropic Conductive Rubber)に付着するゴミを防御することが出来ます。&lt;/p&gt;
-&lt;h2 id=&#34;外形図&#34;&gt;外形図&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./az62a_outline.png&#34;&gt;&lt;img src=&#34;./az62a_outline.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Rev A: 2019年8月初版&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: AZ02 RTC&amp;microSD</title>
       <link>https://docs.leafony.com/docs/leaf/others/az02/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -257,6 +204,59 @@
     </item>
     
     <item>
+      <title>Docs: AZ61 Connector</title>
+      <link>https://docs.leafony.com/docs/leaf/others/az61/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/leaf/others/az61/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./az61a_large.jpg&#34;&gt;&lt;img src=&#34;./az61a_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;Leafony Platformは、ACR (Anisotropic Conductive Rubber)を採用しています。ACRは、絶縁性シリコーンゴムに、金属又は導電性エラストマの導電部材が、狭ピッチで配列されており、圧縮されることで電気的接続が実現できます。&lt;/p&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+&lt;h3 id=&#34;コネクタの取り付け取り外し&#34;&gt;コネクタの取り付け・取り外し&lt;/h3&gt;
+&lt;p&gt;リーフ基板にコネクタを取り付ける、または、外す場合は下図のように行ってください。&lt;/p&gt;
+&lt;p&gt;&amp;ndash; 取り付け&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./leafony_connector_assemble.png&#34; alt=&#34;leafony_connector_assemble&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;ndash; 取り外し&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./leafony_connector_teardown.png&#34; alt=&#34;leafony_connector_teardown&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ61_Connector/AZ61_Connector_SpecSheet_JA.pdf&#34;&gt;コネクタの試験結果&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Rev A: 2019年8月初版&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: AZ62 Connector Cover</title>
+      <link>https://docs.leafony.com/docs/leaf/others/az62/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/leaf/others/az62/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./az62a_large.jpg&#34;&gt;&lt;img src=&#34;./az62a_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;Connector Coverは、ACR (Anisotropic Conductive Rubber)に付着するゴミを防御することが出来ます。&lt;/p&gt;
+&lt;h2 id=&#34;外形図&#34;&gt;外形図&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./az62a_outline.png&#34;&gt;&lt;img src=&#34;./az62a_outline.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Rev A: 2019年8月初版&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: AZ63 Nut Plate</title>
       <link>https://docs.leafony.com/docs/leaf/others/az63/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -279,26 +279,6 @@
     </item>
     
     <item>
-      <title>Docs: az66 Basic Kit Case</title>
-      <link>https://docs.leafony.com/docs/leaf/others/az64/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.leafony.com/docs/leaf/others/az64/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;a href=&#34;./AZ64A_large.jpg&#34;&gt;&lt;img src=&#34;./AZ64A_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;外形図&#34;&gt;外形図&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AZ64A_Outline.png&#34;&gt;&lt;img src=&#34;./AZ64A_Outline.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Rev A: 2019年8月初版&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: AZ66 Basic kit case</title>
       <link>https://docs.leafony.com/docs/leaf/others/az66/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -312,26 +292,6 @@
 &lt;p&gt;Basic Kitのケースです。底面に付いたマグネットで壁に固定することが可能です。&lt;/p&gt;
 &lt;h2 id=&#34;外形図&#34;&gt;外形図&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./AZ66 Basic kit case.jpg&#34;&gt;&lt;img src=&#34;./AZ66 Basic kit case.jpg&#34; width=&#34;300&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: AZ64A Lowercase</title>
-      <link>https://docs.leafony.com/docs/leaf/others/az65/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.leafony.com/docs/leaf/others/az65/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;a href=&#34;./AZ65A_large.jpg&#34;&gt;&lt;img src=&#34;./AZ65A_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;p&gt;ケース（下）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;外形図&lt;br&gt;
-&lt;a href=&#34;./AZ65A_Outline.png&#34;&gt;&lt;img src=&#34;./AZ65A_Outline.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
       </description>
     </item>
