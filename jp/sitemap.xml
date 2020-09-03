@@ -63,20 +63,6 @@
   </url>
   
   <url>
-    <loc>https://docs.leafony.com/docs/overview/terms/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs.leafony.com/en/docs/overview/terms/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="https://docs.leafony.com/docs/overview/terms/"
-                />
-  </url>
-  
-  <url>
     <loc>https://docs.leafony.com/docs/environment/esp32/</loc>
     <lastmod>2020-08-24T15:58:30+09:00</lastmod>
     <xhtml:link
@@ -103,6 +89,20 @@
                 rel="alternate"
                 hreflang="jp"
                 href="https://docs.leafony.com/docs/getting-started/esp32/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://docs.leafony.com/docs/overview/terms/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/overview/terms/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/overview/terms/"
                 />
   </url>
   
@@ -1063,7 +1063,7 @@
   
   <url>
     <loc>https://docs.leafony.com/docs/</loc>
-    <lastmod>2020-08-06T11:54:40+09:00</lastmod>
+    <lastmod>2020-09-03T14:22:41+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
