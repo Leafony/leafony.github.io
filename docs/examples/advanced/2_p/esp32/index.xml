@@ -87,7 +87,7 @@ Google Sheets上では受け取ったセンサデータをグラフ描画しま�
 &lt;img src=&#34;open_script_editor.png&#34;&gt;
 &lt;h4 id=&#34;スクリプトの記述&#34;&gt;スクリプトの記述&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;Githubのソースコードをコピー&amp;amp;ペーストしてください。
+&lt;li&gt;GitHubのソースコードをコピー&amp;amp;ペーストしてください。
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets/google_scripts_code.js&#34; target=&#34;_brank&#34;&gt;Leafony/Sample-Sketches/ESP32_GoogleSheets/google_scripts_code.js - GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -131,7 +131,7 @@ Google Sheets上では受け取ったセンサデータをグラフ描画しま�
 &lt;/ul&gt;
 &lt;img src=&#34;check_script_app.png&#34;&gt;
 &lt;h3 id=&#34;arduinoの準備&#34;&gt;&lt;strong&gt;Arduinoの準備&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;Githubのソースコードの以下の箇条書きの内容に注意して修正し，&lt;code&gt;ESP32リーフ&lt;/code&gt;に書き込んで下さい。
+&lt;p&gt;Githubのソースコードの以下の箇条書きの内容に注意して修正し，&lt;code&gt;ESP32リーフ&lt;/code&gt;に書き込んで下さい。 
 - &lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets/ESP32_GoogleSheets.ino&#34; target=&#34;_brank&#34;&gt;Leafony/Sample-Sketches/ESP32_GoogleSheets/google_scripts_code.js - GitHub&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;アクセスする&lt;code&gt;WiFi&lt;/code&gt;の情報を以下の定数に代入してください。&lt;/li&gt;

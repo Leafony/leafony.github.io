@@ -236,7 +236,8 @@
     &lt;span style=&#34;color:#000&#34;&gt;Serial&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
     &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;3000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;時刻の設定&#34;&gt;時刻の設定&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/Real_Time_Clock&#34; target=&#34;_blank&#34;&gt;Real_Time_Clock.ino&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;時刻の設定&#34;&gt;時刻の設定&lt;/h2&gt;
 &lt;p&gt;コンパイルした時間が書き込まれます。
 電源がなくなる等でRTCが初期化されると、コンパイルした時間に初期化されます。&lt;/p&gt;
 &lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
@@ -526,7 +527,8 @@
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;loop&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(){&lt;/span&gt;
 
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/microSD&#34; target=&#34;_blank&#34;&gt;microSD.ino&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
 &lt;p&gt;microSD カードの情報が、パソコンのシリアルモニタに表示されます。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./microSD_overview.png&#34; alt=&#34;result&#34;&gt;&lt;/p&gt;
 
