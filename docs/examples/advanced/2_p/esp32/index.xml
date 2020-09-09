@@ -100,7 +100,6 @@ Google Sheets上では受け取ったセンサデータをグラフ描画しま�
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;p&gt;使用するスケッチは下記のGitHubリポジトリにあります。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets&#34; target=&#34;_brank&#34;&gt;Leafony/Sample-Sketches/ESP32_GoogleSheets - GitHub&lt;/a&gt;&lt;/p&gt;
-&lt;hr&gt;
 &lt;h2 id=&#34;実行方法&#34;&gt;実行方法&lt;/h2&gt;
 &lt;h3 id=&#34;google-sheetsの準備&#34;&gt;&lt;strong&gt;Google Sheetsの準備&lt;/strong&gt;&lt;/h3&gt;
 &lt;h4 id=&#34;データ転送先google-sheetsの作成&#34;&gt;データ転送先Google Sheetsの作成&lt;/h4&gt;
@@ -129,50 +128,53 @@ Google Sheets上では受け取ったセンサデータをグラフ描画しま�
 &lt;li&gt;&lt;code&gt;sheetName&lt;/code&gt;：書き込み先のシート名（デフォルト：&lt;code&gt;シート1&lt;/code&gt;）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;この&lt;code&gt;Google Script&lt;/code&gt;にアクセスする際に，URL欄に赤枠で囲った記号列は後で&lt;code&gt;Arduino&lt;/code&gt;側で設定するために必要なので，適当にコピーしておいてください。
-&lt;ul&gt;
-&lt;li&gt;ここでは，&lt;code&gt;106DTVFa_tWzVoOts1NExNyDrA9_6ruz_CzW2stjhvSfnFvqoYncgSAN&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
 &lt;/ul&gt;
 &lt;img src=&#34;edit_script.png&#34;&gt;
 &lt;h4 id=&#34;スクリプトのデプロイ&#34;&gt;スクリプトのデプロイ&lt;/h4&gt;
 &lt;p&gt;&lt;code&gt;公開&lt;/code&gt;-&amp;gt;&lt;code&gt;ウェブアプリケーションとして導入&lt;/code&gt;をクリックします。&lt;/p&gt;
 &lt;img src=&#34;deploy_app_1.png&#34;&gt;
 &lt;p&gt;続いて開いたウィンドウで，ESP32から簡単にアクセス出来るように権限を&lt;code&gt;Anyone, even anonymous&lt;/code&gt;に変更します。&lt;/p&gt;
-&lt;img src=&#34;deploy_app_2.png&#34; width=300&gt;
-&lt;p&gt;&lt;code&gt;デプロイ&lt;/code&gt;ボタンを押すと，&lt;code&gt;Script App&lt;/code&gt;から&lt;code&gt;Google Sheets&lt;/code&gt;へのアクセス権限の確認が行なわれるので，適切に許可してください。&lt;br&gt;
-&lt;strong&gt;以上でGoogle Sheets側の設定は完了です。&lt;/strong&gt;&lt;/p&gt;
+&lt;img src=&#34;deploy_app_2.png&#34; width=500&gt;
+&lt;p&gt;&lt;code&gt;デプロイ&lt;/code&gt;ボタンを押すと，&lt;code&gt;Script App&lt;/code&gt;から&lt;code&gt;Google Sheets&lt;/code&gt;へのアクセス権限の確認が行なわれるので，&lt;code&gt;許可を確認&lt;/code&gt;をクリックします。&lt;/p&gt;
+&lt;img src=&#34;first_deploy_authorization.png&#34; width=500&gt;
+&lt;p&gt;次に警告が出るので，以下をクリックします。&lt;/p&gt;
+&lt;img src=&#34;confirmation.png&#34; width=500&gt;
+&lt;p&gt;最後にスクリプトからスプレッドシートへのアクセスリクエストを許可してください。&lt;/p&gt;
+&lt;img src=&#34;access_request.png&#34; width=500&gt;
+&lt;p&gt;以下のポップアップ画面が表示され，今回作成したウェブアプリのURLが発行されるので，URLをコピーして&lt;code&gt;はい&lt;/code&gt;をクリックしてください。&lt;br&gt;
+なお，今回の例ではURLは以下のようになっています。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh/exec
+&lt;/code&gt;&lt;/pre&gt;&lt;img src=&#34;find_url.png&#34; width=500&gt;
+&lt;p&gt;&lt;strong&gt;以上でGoogle Sheets側の設定は完了です。&lt;/strong&gt;&lt;/p&gt;
 &lt;h4 id=&#34;スクリプトを修正して再デプロイ&#34;&gt;スクリプトを修正して再デプロイ&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;公開&lt;/code&gt;-&amp;gt;&lt;code&gt;ウェブアプリケーションとして導入&lt;/code&gt;をクリックします。&lt;/li&gt;
 &lt;li&gt;最初と全く同じ設定でデプロイすると修正したコードがうまく反映されないことがあるので，再デプロイのときは&lt;code&gt;Project version&lt;/code&gt;を&lt;code&gt;New&lt;/code&gt;に設定して&lt;code&gt;更新&lt;/code&gt;をクリックします。&lt;/li&gt;
+&lt;li&gt;またその時動作しているウェブアプリのURLをここから確認出来ます&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;deploy_again.png&#34; width=300&gt;
+&lt;img src=&#34;deploy_again.png&#34; width=500&gt;
 &lt;h3 id=&#34;google-sheetsの動作確認&#34;&gt;Google Sheetsの動作確認&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;ブラウザから先ほどコピーした&lt;code&gt;Google Script&lt;/code&gt;の記号列を使ってアクセスすると&lt;code&gt;Spread Sheet&lt;/code&gt;にデータが書き込まれます&lt;/li&gt;
 &lt;li&gt;今回は試しに&lt;code&gt;111&lt;/code&gt;, &lt;code&gt;222&lt;/code&gt;, &lt;code&gt;333&lt;/code&gt;のデータを書き込んでみます&lt;/li&gt;
-&lt;li&gt;ここでは先ほど確認した&lt;code&gt;Google Script&lt;/code&gt;の&lt;code&gt;key&lt;/code&gt;が&lt;code&gt;106DTVFa_tWzVoOts1NExNyDrA9_6ruz_CzW2stjhvSfnFvqoYncgSAN&lt;/code&gt;だったので，以下のURLにアクセスすることでデータの書き込みが出来ます。
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://script.google.com/macros/s/106DTVFa_tWzVoOts1NExNyDrA9_6ruz_CzW2stjhvSfnFvqoYncgSAN/exec?temperature=111&amp;amp;humidity=222&amp;amp;brightness=333&#34;&gt;https://script.google.com/macros/s/106DTVFa_tWzVoOts1NExNyDrA9_6ruz_CzW2stjhvSfnFvqoYncgSAN/exec?temperature=111&amp;amp;humidity=222&amp;amp;brightness=333&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;ここでは先ほど確認したウェブアプリのURLにアクセスすることでデータの書き込みが出来ます。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;Spread Sheet&lt;/code&gt;に以下のようにデータが書き込まれていれば成功です。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;img src=&#34;check_script_app.png&#34;&gt;
+&lt;pre&gt;&lt;code&gt;今回の場合のアクセスするURL
+https://script.google.com/macros/s/AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh/exec?temperature=111&amp;amp;humidity=222&amp;amp;brightness=333
+&lt;/code&gt;&lt;/pre&gt;&lt;img src=&#34;check_script_app.png&#34;&gt;
 &lt;h3 id=&#34;arduinoの準備&#34;&gt;&lt;strong&gt;Arduinoの準備&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;Githubのソースコードの以下の箇条書きの内容に注意して修正し，&lt;code&gt;ESP32リーフ&lt;/code&gt;に書き込んで下さい。 
-- &lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets/ESP32_GoogleSheets.ino&#34; target=&#34;_brank&#34;&gt;Leafony/Sample-Sketches/ESP32_GoogleSheets/google_scripts_code.js - GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Githubのソースコードの以下の箇条書きの内容に注意して修正し，&lt;code&gt;ESP32リーフ&lt;/code&gt;に書き込んで下さい。&lt;br&gt;
+&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets/ESP32_GoogleSheets.ino&#34; target=&#34;_brank&#34;&gt;Leafony/Sample-Sketches/ESP32_GoogleSheets/google_scripts_code.js - GitHub&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;アクセスする&lt;code&gt;WiFi&lt;/code&gt;の情報を以下の定数に代入してください。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;pre&gt;&lt;code&gt;const char* SSID = &amp;quot;wifi_ssid&amp;quot;;    // WiFi SSID
 const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
-&lt;li&gt;先ほど作成した&lt;code&gt;Google Script&lt;/code&gt;の情報を以下の定数に代入してください。
+&lt;li&gt;先ほど作成したウェブアプリの情報を以下の定数に代入してください。
 &lt;ul&gt;
-&lt;li&gt;例：const char* KEY = &lt;code&gt;106DTVFa_tWzVoOts1NExNyDrA9_6ruz_CzW2stjhvSfnFvqoYncgSAN&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;今回の例：const char* KEY = &lt;code&gt;AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
@@ -299,6 +301,27 @@ const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
 &lt;li&gt;26ピンに触れていると、以下のようにブラウザの表示が変化します。　&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;Wi-FiTouch-Sensor-Test_2.png&#34; alt=&#34;Wi-FiTouch-Sensor-Test_2.png&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ESP32 BLE Beacon</title>
+      <link>https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_ble_beacon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_ble_beacon/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;目次&#34;&gt;目次&lt;/h2&gt;
+&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+&lt;h2 id=&#34;使用するハードウェア&#34;&gt;使用するハードウェア&lt;/h2&gt;
+&lt;h2 id=&#34;動作方法&#34;&gt;動作方法&lt;/h2&gt;
+&lt;h2 id=&#34;仕組み&#34;&gt;仕組み&lt;/h2&gt;
+&lt;h3 id=&#34;ble-beaconの仕組み&#34;&gt;BLE Beaconの仕組み&lt;/h3&gt;
+&lt;h3 id=&#34;advertising-packet&#34;&gt;Advertising Packet&lt;/h3&gt;
+&lt;h3 id=&#34;gatt&#34;&gt;GATT&lt;/h3&gt;
 
       </description>
     </item>

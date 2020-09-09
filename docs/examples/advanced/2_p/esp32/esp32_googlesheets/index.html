@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.72.0" />
+<meta name="generator" content="Hugo 0.74.3" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -27,7 +27,8 @@
 <meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="ESP32からGoogle Sheetsへのデータ転送">
-<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="A Leafony Documentation site">
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ESP32からGoogle Sheetsへのデータ転送"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
@@ -136,7 +137,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3bd48ca4e5992740f2b0b9f9021e41aad82ef09478efff43404bab5b621afbdc95d245f1cd9552a79e396bc579edf8bdd4ff1f758e55749c5429ed88ad6eb5c9.json"
+  data-offline-search-index-json-src="/offline-search-index.f25f67452c30c39d45e719c8f56dcc010294dc7d9b6be030019cabded87e2d7bbc9959a514ad9e50e96cb2440eb5eaac3565b6ccb18f2e1c5feb98b3e6e8c4ff.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +167,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3bd48ca4e5992740f2b0b9f9021e41aad82ef09478efff43404bab5b621afbdc95d245f1cd9552a79e396bc579edf8bdd4ff1f758e55749c5429ed88ad6eb5c9.json"
+  data-offline-search-index-json-src="/offline-search-index.f25f67452c30c39d45e719c8f56dcc010294dc7d9b6be030019cabded87e2d7bbc9959a514ad9e50e96cb2440eb5eaac3565b6ccb18f2e1c5feb98b3e6e8c4ff.json"
   data-offline-search-base-href="/"
 >
 
@@ -1677,6 +1678,29 @@ if (!doNotTrack) {
 
       
       
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/2_p/esp32/esp32_ble_beacon/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced2_pesp32esp32_ble_beacon">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
     </li>
   </ul>
 </ul>
@@ -2487,6 +2511,29 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/pcb/pcb-tutorial/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">開発チュートリアル</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docspcbpcb-tutorial">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/pcb/kicad/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">KiCad</a>
   </li>
   <ul>
@@ -2724,7 +2771,6 @@ Google Sheets上では受け取ったセンサデータをグラフ描画しま�
 <h2 id="ソースコード">ソースコード</h2>
 <p>使用するスケッチは下記のGitHubリポジトリにあります。</p>
 <p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets" target="_brank">Leafony/Sample-Sketches/ESP32_GoogleSheets - GitHub</a></p>
-<hr>
 <h2 id="実行方法">実行方法</h2>
 <h3 id="google-sheetsの準備"><strong>Google Sheetsの準備</strong></h3>
 <h4 id="データ転送先google-sheetsの作成">データ転送先Google Sheetsの作成</h4>
@@ -2753,50 +2799,53 @@ Google Sheets上では受け取ったセンサデータをグラフ描画しま�
 <li><code>sheetName</code>：書き込み先のシート名（デフォルト：<code>シート1</code>）</li>
 </ul>
 </li>
-<li>この<code>Google Script</code>にアクセスする際に，URL欄に赤枠で囲った記号列は後で<code>Arduino</code>側で設定するために必要なので，適当にコピーしておいてください。
-<ul>
-<li>ここでは，<code>106DTVFa_tWzVoOts1NExNyDrA9_6ruz_CzW2stjhvSfnFvqoYncgSAN</code></li>
-</ul>
-</li>
 </ul>
 <img src="edit_script.png">
 <h4 id="スクリプトのデプロイ">スクリプトのデプロイ</h4>
 <p><code>公開</code>-&gt;<code>ウェブアプリケーションとして導入</code>をクリックします。</p>
 <img src="deploy_app_1.png">
 <p>続いて開いたウィンドウで，ESP32から簡単にアクセス出来るように権限を<code>Anyone, even anonymous</code>に変更します。</p>
-<img src="deploy_app_2.png" width=300>
-<p><code>デプロイ</code>ボタンを押すと，<code>Script App</code>から<code>Google Sheets</code>へのアクセス権限の確認が行なわれるので，適切に許可してください。<br>
-<strong>以上でGoogle Sheets側の設定は完了です。</strong></p>
+<img src="deploy_app_2.png" width=500>
+<p><code>デプロイ</code>ボタンを押すと，<code>Script App</code>から<code>Google Sheets</code>へのアクセス権限の確認が行なわれるので，<code>許可を確認</code>をクリックします。</p>
+<img src="first_deploy_authorization.png" width=500>
+<p>次に警告が出るので，以下をクリックします。</p>
+<img src="confirmation.png" width=500>
+<p>最後にスクリプトからスプレッドシートへのアクセスリクエストを許可してください。</p>
+<img src="access_request.png" width=500>
+<p>以下のポップアップ画面が表示され，今回作成したウェブアプリのURLが発行されるので，URLをコピーして<code>はい</code>をクリックしてください。<br>
+なお，今回の例ではURLは以下のようになっています。</p>
+<pre><code>https://script.google.com/macros/s/AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh/exec
+</code></pre><img src="find_url.png" width=500>
+<p><strong>以上でGoogle Sheets側の設定は完了です。</strong></p>
 <h4 id="スクリプトを修正して再デプロイ">スクリプトを修正して再デプロイ</h4>
 <ul>
 <li><code>公開</code>-&gt;<code>ウェブアプリケーションとして導入</code>をクリックします。</li>
 <li>最初と全く同じ設定でデプロイすると修正したコードがうまく反映されないことがあるので，再デプロイのときは<code>Project version</code>を<code>New</code>に設定して<code>更新</code>をクリックします。</li>
+<li>またその時動作しているウェブアプリのURLをここから確認出来ます</li>
 </ul>
-<img src="deploy_again.png" width=300>
+<img src="deploy_again.png" width=500>
 <h3 id="google-sheetsの動作確認">Google Sheetsの動作確認</h3>
 <ul>
 <li>ブラウザから先ほどコピーした<code>Google Script</code>の記号列を使ってアクセスすると<code>Spread Sheet</code>にデータが書き込まれます</li>
 <li>今回は試しに<code>111</code>, <code>222</code>, <code>333</code>のデータを書き込んでみます</li>
-<li>ここでは先ほど確認した<code>Google Script</code>の<code>key</code>が<code>106DTVFa_tWzVoOts1NExNyDrA9_6ruz_CzW2stjhvSfnFvqoYncgSAN</code>だったので，以下のURLにアクセスすることでデータの書き込みが出来ます。
-<ul>
-<li><a href="https://script.google.com/macros/s/106DTVFa_tWzVoOts1NExNyDrA9_6ruz_CzW2stjhvSfnFvqoYncgSAN/exec?temperature=111&amp;humidity=222&amp;brightness=333">https://script.google.com/macros/s/106DTVFa_tWzVoOts1NExNyDrA9_6ruz_CzW2stjhvSfnFvqoYncgSAN/exec?temperature=111&amp;humidity=222&amp;brightness=333</a></li>
-</ul>
-</li>
+<li>ここでは先ほど確認したウェブアプリのURLにアクセスすることでデータの書き込みが出来ます。</li>
 <li><code>Spread Sheet</code>に以下のようにデータが書き込まれていれば成功です。</li>
 </ul>
-<img src="check_script_app.png">
+<pre><code>今回の場合のアクセスするURL
+https://script.google.com/macros/s/AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh/exec?temperature=111&amp;humidity=222&amp;brightness=333
+</code></pre><img src="check_script_app.png">
 <h3 id="arduinoの準備"><strong>Arduinoの準備</strong></h3>
-<p>Githubのソースコードの以下の箇条書きの内容に注意して修正し，<code>ESP32リーフ</code>に書き込んで下さい。 
-- <a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets/ESP32_GoogleSheets.ino" target="_brank">Leafony/Sample-Sketches/ESP32_GoogleSheets/google_scripts_code.js - GitHub</a></p>
+<p>Githubのソースコードの以下の箇条書きの内容に注意して修正し，<code>ESP32リーフ</code>に書き込んで下さい。<br>
+<a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets/ESP32_GoogleSheets.ino" target="_brank">Leafony/Sample-Sketches/ESP32_GoogleSheets/google_scripts_code.js - GitHub</a></p>
 <ul>
 <li>アクセスする<code>WiFi</code>の情報を以下の定数に代入してください。</li>
 </ul>
 <pre><code>const char* SSID = &quot;wifi_ssid&quot;;    // WiFi SSID
 const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
 </code></pre><ul>
-<li>先ほど作成した<code>Google Script</code>の情報を以下の定数に代入してください。
+<li>先ほど作成したウェブアプリの情報を以下の定数に代入してください。
 <ul>
-<li>例：const char* KEY = <code>106DTVFa_tWzVoOts1NExNyDrA9_6ruz_CzW2stjhvSfnFvqoYncgSAN</code></li>
+<li>今回の例：const char* KEY = <code>AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh</code></li>
 </ul>
 </li>
 </ul>
@@ -3028,12 +3077,16 @@ const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
         
             
         
+            
+        
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 7, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 9, 2020
 </div>
 </div>
 
