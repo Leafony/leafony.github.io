@@ -1,0 +1,3175 @@
+<!doctype html>
+<html lang="jp" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.74.3" />
+
+<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+
+<link rel="alternate" type="application/rss&#43;xml" href="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/index.xml">
+
+
+<link rel="shortcut icon" href="/favicons/favicon.ico" >
+<link rel="apple-touch-icon" href="/favicons/apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="icon" type="image/png" href="/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/favicons/android-36x36.png" sizes="36x36">
+<link rel="icon" type="image/png" href="/favicons/android-48x48.png" sizes="48x48">
+<link rel="icon" type="image/png" href="/favicons/android-72x72.png" sizes="72x72">
+<link rel="icon" type="image/png" href="/favicons/android-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
+<link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
+
+<title>ESP32からGoogle Sheetsへのデータ転送（1） | Leafony</title><meta property="og:title" content="ESP32からGoogle Sheetsへのデータ転送（1）" />
+<meta property="og:description" content="A Leafony Documentation site" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/" />
+<meta property="og:site_name" content="Leafony" />
+<meta itemprop="name" content="ESP32からGoogle Sheetsへのデータ転送（1）">
+<meta itemprop="description" content="A Leafony Documentation site">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="ESP32からGoogle Sheetsへのデータ転送（1）"/>
+<meta name="twitter:description" content="A Leafony Documentation site"/>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168974589-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+
+
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
+
+
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
+  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
+  crossorigin="anonymous"></script>
+
+
+  </head>
+  <body class="td-section">
+    <header>
+      
+<nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+        <a class="navbar-brand" href="/">
+		<span class="navbar-logo"></span><span class="font-weight-bold">Leafony</span>
+	</a>
+	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+		<ul class="navbar-nav mt-2 mt-lg-0">
+			
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link active" href="/docs/" ><span class="active">Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="https://github.com/leafony" target="_blank" ><span>GitHub</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="https://leafony.com/forum/" target="_blank" ><span>Forum</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="https://trillion-node.org/" target="_blank" ><span>Study-group</span></a>
+			</li>
+			
+			
+			
+			<li class="nav-item dropdown d-none d-lg-block">
+				
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Japanese
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/en/">English</a>
+	
+</div>
+			</li>
+			
+		</ul>
+	</div>
+	<div class="navbar-nav d-none d-lg-block">
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; サイトを検索..."
+  aria-label="サイトを検索..."
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.022e254377dba34b689ff23c5bb59875703c73e2e02da8f831a7e96b8a6fae100582f9519b6a97db7ea2180afa1166c63f9ec04d5a369f469fd78fd1bcbdb6a8.json"
+  data-offline-search-base-href="/"
+>
+
+</div>
+</nav>
+
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <div class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+
+
+
+
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; サイトを検索..."
+  aria-label="サイトを検索..."
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.022e254377dba34b689ff23c5bb59875703c73e2e02da8f831a7e96b8a6fae100582f9519b6a97db7ea2180afa1166c63f9ec04d5a369f469fd78fd1bcbdb6a8.json"
+  data-offline-search-base-href="/"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  
+  <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
+    
+    <div class="nav-item dropdown d-block d-lg-none">
+      
+
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	Japanese
+</a>
+<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+	
+	<a class="dropdown-item" href="/en/">English</a>
+	
+</div>
+    </div>
+    
+    
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Documentation</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docs">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/overview/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">はじめに</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsoverview">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/products/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">製品一覧</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsproducts">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/products/basic/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsproductsbasic">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/products/esp32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 Wi-Fi Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsproductsesp32">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/products/extension/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Extension Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsproductsextension">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/products/conn/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Connector</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsproductsconn">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/products/nut/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Nut &amp; Conn Cover</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsproductsnut">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/terms/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">用語の説明</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsterms">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/license/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ライセンス</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docslicense">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/contacts/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">お問い合わせ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docscontacts">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/getting-started/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">クイックスタート</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsgetting-started">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/getting-started/basic/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsgetting-startedbasic">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/getting-started/esp32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 Wi-Fi Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsgetting-startedesp32">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/getting-started/extension/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Extension Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsgetting-startedextension">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">サンプルアプリ・応用例</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsexamples">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Beginner</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/1_p/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">AVR MCU</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner1_p">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/1_p/basic/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner1_pbasic">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/1_p/basic/blink/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner1_pbasicblink">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/1_p/basic/read_battery/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner1_pbasicread_battery">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/1_p/basic/temp_humid_sensors/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner1_pbasictemp_humid_sensors">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/1_p/basic/illum_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner1_pbasicillum_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/1_p/basic/accelerometer/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner1_pbasicaccelerometer">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/1_p/exten/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner1_pexten">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/1_p/exten/speaker/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner1_pextenspeaker">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/1_p/exten/ir_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner1_pextenir_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/1_p/exten/sound_level/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner1_pextensound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/1_p/exten/lcd/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner1_pextenlcd">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/2_p/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 MCU</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner2_p">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/2_p/esp32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner2_pesp32">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/2_p/esp32/button/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner2_pesp32button">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/2_p/esp32/rtc/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner2_pesp32rtc">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/2_p/esp32/microsd/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner2_pesp32microsd">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/2_p/basic/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner2_pbasic">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/2_p/basic/temp_humid_sensors/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner2_pbasictemp_humid_sensors">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/2_p/basic/illum_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner2_pbasicillum_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/2_p/basic/accelerometer/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner2_pbasicaccelerometer">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/2_p/exten/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner2_pexten">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/2_p/exten/speaker/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner2_pextenspeaker">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/2_p/exten/ir_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner2_pextenir_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/2_p/exten/sound_level/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner2_pextensound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/beginner/2_p/exten/lcd/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesbeginner2_pextenlcd">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Advanced</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsexamplesadvanced">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/1_p/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">AVR MCU</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced1_p">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/1_p/basic/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced1_pbasic">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/1_p/basic/simple_ble_advertising/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced1_pbasicsimple_ble_advertising">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/1_p/basic/webbluetooth_iot/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced1_pbasicwebbluetooth_iot">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/1_p/basic/google_sheets_iot/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced1_pbasicgoogle_sheets_iot">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/1_p/exten/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced1_pexten">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/1_p/exten/4-sensors_lcd/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced1_pexten4-sensors_lcd">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/1_p/exten/4-sensors_lcd_ble/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced1_pexten4-sensors_lcd_ble">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/1_p/exten/pir_melody_test/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced1_pextenpir_melody_test">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/1_p/exten/distance_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced1_pextendistance_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/1_p/exten/camera/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced1_pextencamera">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/1_p/lora/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced1_plora">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/1_p/lora/lora/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced1_ploralora">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/2_p/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ESP32 MCU</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsexamplesadvanced2_p">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/2_p/esp32/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsexamplesadvanced2_pesp32">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/2_p/esp32/esp32_googlesheets/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced2_pesp32esp32_googlesheets">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsexamplesadvanced2_pesp32esp32_googlesheets_1">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/2_p/esp32/esp32_googlesheets_2/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced2_pesp32esp32_googlesheets_2">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/2_p/esp32/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced2_pesp32wifi_touchsensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/2_p/esp32/esp32_ble_beacon/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced2_pesp32esp32_ble_beacon">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">開発環境設定</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironment">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/basic/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironmentbasic">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/esp32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 Wi-Fi Kit</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironmentesp32">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/solution/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">うまく動かないときは</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironmentsolution">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/assembly/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Leafonyブロック組立</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsassembly">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/pcb/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">自作リーフ開発</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docspcb">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/pcb/pcb-tutorial/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">開発チュートリアル</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docspcbpcb-tutorial">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/pcb/kicad/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">KiCad</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docspcbkicad">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leafony-bus/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Leafony バス</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafony-bus">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">リーフ技術資料</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleaf">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/processor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">プロセッサ</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafprocessor">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/processor/ap01/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">AVR MCU</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafprocessorap01">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/processor/ap02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 MCU</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafprocessorap02">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/communication/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">通信</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafcommunication">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/communication/ac02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">BLE Sugar</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafcommunicationac02">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/communication/ac03/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LoRa Easy</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafcommunicationac03">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/io/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">IO</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafio">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/io/ai01/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">4-Sensors</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafioai01">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/io/ai02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">SP&amp;PIR</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafioai02">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/io/ai03/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">MIC&amp;VR&amp;LED</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafioai03">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/io/ai04/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LCD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafioai04">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/power/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">電源</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafpower">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/power/av01/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">CR2032</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafpowerav01">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/power/av02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">CR2450</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafpowerav02">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/power/av03/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">AA BAT</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafpowerav03">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/power/av04/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">2V～4.5V</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafpowerav04">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">拡張</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextension">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax01/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Shield</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax01">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">29 pin</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax02">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax03/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Leaf x2</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax03">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax04/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Spacer</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax04">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax05/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">I Meas</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax05">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax06/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Grove&amp;5V</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax06">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax07/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Back to back</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax07">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/extension/ax08/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">29pin header</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafextensionax08">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">その他</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothers">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az01/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">USB</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz01">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">RTC&amp;microSD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz02">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az61/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Connector</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz61">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az62/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Connector Cover</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz62">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az63/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Nut Plate</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz63">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/leaf/others/az66/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic kit case</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsleafothersaz66">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+  </nav>
+</div>
+
+
+
+
+          </div>
+          <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
+            
+
+
+
+
+
+
+
+
+
+
+
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#概要">概要</a></li>
+    <li><a href="#使用するリーフ">使用するリーフ</a></li>
+    <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
+    <li><a href="#ソースコード">ソースコード</a></li>
+    <li><a href="#実行方法">実行方法</a>
+      <ul>
+        <li><a href="#google-sheetsの準備"><strong>Google Sheetsの準備</strong></a></li>
+        <li><a href="#google-sheetsの動作確認">Google Sheetsの動作確認</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+          </div>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
+	<ol class="breadcrumb spb-1">
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://docs.leafony.com/docs/">Documentation</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://docs.leafony.com/docs/examples/">サンプルアプリ・応用例</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://docs.leafony.com/docs/examples/advanced/">Advanced</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://docs.leafony.com/docs/examples/advanced/2_p/">ESP32 MCU</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/"> </a>
+</li>
+
+
+
+
+<li class="breadcrumb-item active" aria-current="page">
+	<a href="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/"> </a>
+</li>
+
+	</ol>
+</nav	>
+
+            
+<div class="td-content">
+	<h1>ESP32からGoogle Sheetsへのデータ転送（1）</h1>
+        
+	
+	<h2 id="概要">概要</h2>
+<p>このサンプルアプリでは，ESP32リーフのWiFi機能を利用して，取得したセンサデータをGoogle Sheetsへ転送します。<br>
+Google Sheets上では受け取ったセンサデータをグラフ描画します。<br>
+これによりセンサデータを簡単に管理出来るようになります。</p>
+<h2 id="使用するリーフ">使用するリーフ</h2>
+<p>以下のリーフを使用します。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="/docs/leaf/others/az62">AZ62</a></td>
+<td align="left"><a href="/docs/leaf/others/az62">Connector Cover </a></td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/io/ai01">AI01</a></td>
+<td align="left"><a href="/docs/leaf/io/ai01">4-Sensors</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/extension/ax07">AX07</a></td>
+<td align="left"><a href="/docs/leaf/extension/ax07">Back to back</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/processor/ap02">AP02</a></td>
+<td align="left"><a href="/docs/leaf/processor/ap02">ESP32 MCU</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/power/av04">AV04</a></td>
+<td align="left"><a href="/docs/leaf/power/av04">2V~4.5V</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/others/az63">AZ63</a></td>
+<td align="left"><a href="/docs/leaf/others/az63">Nut Plate</a></td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">AAA battery holder</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">AAA battery</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">M2*8mm screw</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">M2*12mm screw</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">φ10x2mm magnet</td>
+<td align="left">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="リーフの組み立て">リーフの組み立て</h2>
+<p>ESP32と4-Sensorsリーフを重ねてねじ止めします。</p>
+<p><img src="./ESP32_4-Sensors.png" alt="assemble1"></p>
+<h2 id="ソースコード">ソースコード</h2>
+<p>使用するスケッチは下記のGitHubリポジトリにあります。</p>
+<p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets" target="_brank">Leafony/Sample-Sketches/ESP32_GoogleSheets - GitHub</a></p>
+<h2 id="実行方法">実行方法</h2>
+<h3 id="google-sheetsの準備"><strong>Google Sheetsの準備</strong></h3>
+<h4 id="データ転送先google-sheetsの作成">データ転送先Google Sheetsの作成</h4>
+<img src="create_new_sheet.png">
+<h4 id="スクリプトエディタを開く">スクリプトエディタを開く</h4>
+<ul>
+<li>Google Sheetsのタイトル（デフォルト：<code>無題のスプレッドシート</code>）は自由に変更して大丈夫です。</li>
+<li>また，シート番号（デフォルト：<code>シート1</code>）も自由に変更して大丈夫です。</li>
+<li>下のGoogle SheetsのURLの部分の赤枠で囲った記号列は，後でGoogle Sheetを指定するのに利用するので，適当な場所にコピーしておいてください。
+<ul>
+<li>ここでは，<code>1kuK8196yuY9n37fLHc2ScT7OJUFTyGkiyY9nIuYmNGY</code></li>
+</ul>
+</li>
+</ul>
+<img src="open_script_editor.png">
+<h4 id="スクリプトの記述">スクリプトの記述</h4>
+<ul>
+<li>Githubのソースコードをコピー&amp;ペーストしてください。
+<ul>
+<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets/google_scripts_code.js" target="_brank">Leafony/Sample-Sketches/ESP32_GoogleSheets/google_scripts_code.js - GitHub</a></li>
+</ul>
+</li>
+<li>以下の変数に，先ほど作成した<code>Google Sheet</code>の情報を入力してください。
+<ul>
+<li><code>id</code>：先ほどコピーした<code>Google Sheets</code>のURLの記号列</li>
+<li><code>sheetName</code>：書き込み先のシート名（デフォルト：<code>シート1</code>）</li>
+</ul>
+</li>
+</ul>
+<img src="edit_script.png">
+<h4 id="スクリプトのデプロイ">スクリプトのデプロイ</h4>
+<p><code>公開</code>-&gt;<code>ウェブアプリケーションとして導入</code>をクリックします。</p>
+<img src="deploy_app_1.png">
+<p>続いて開いたウィンドウで，ESP32から簡単にアクセス出来るように権限を<code>Anyone, even anonymous</code>に変更します。</p>
+<img src="deploy_app_2.png" width=500>
+<p><code>デプロイ</code>ボタンを押すと，<code>Script App</code>から<code>Google Sheets</code>へのアクセス権限の確認が行なわれるので，<code>許可を確認</code>をクリックします。</p>
+<img src="first_deploy_authorization.png" width=500>
+<p>次に警告が出るので，以下をクリックします。</p>
+<img src="confirmation.png" width=500>
+<p>最後にスクリプトからスプレッドシートへのアクセスリクエストを許可してください。</p>
+<img src="access_request.png" width=500>
+<p>以下のポップアップ画面が表示され，今回作成したウェブアプリのURLが発行されるので，URLをコピーして<code>はい</code>をクリックしてください。<br>
+なお，今回の例ではURLは以下のようになっています。</p>
+<pre><code>https://script.google.com/macros/s/AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh/exec
+</code></pre><img src="find_url.png" width=500>
+<p><strong>以上でGoogle Sheets側の設定は完了です。</strong></p>
+<h4 id="スクリプトを修正して再デプロイ">スクリプトを修正して再デプロイ</h4>
+<ul>
+<li><code>公開</code>-&gt;<code>ウェブアプリケーションとして導入</code>をクリックします。</li>
+<li>最初と全く同じ設定でデプロイすると修正したコードがうまく反映されないことがあるので，再デプロイのときは<code>Project version</code>を<code>New</code>に設定して<code>更新</code>をクリックします。</li>
+<li>またその時動作しているウェブアプリのURLをここから確認出来ます</li>
+</ul>
+<img src="deploy_again.png" width=500>
+<h3 id="google-sheetsの動作確認">Google Sheetsの動作確認</h3>
+<ul>
+<li>ブラウザから先ほどコピーした<code>Google Script</code>の記号列を使ってアクセスすると<code>Spread Sheet</code>にデータが書き込まれます</li>
+<li>今回は試しに<code>111</code>, <code>222</code>, <code>333</code>のデータを書き込んでみます</li>
+<li>ここでは先ほど確認したウェブアプリのURLにアクセスすることでデータの書き込みが出来ます。</li>
+<li><code>Spread Sheet</code>に以下のようにデータが書き込まれていれば成功です。</li>
+</ul>
+<pre><code>今回の場合のアクセスするURL
+https://script.google.com/macros/s/AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh/exec?temperature=111&amp;humidity=222&amp;brightness=333
+</code></pre><img src="check_script_app.png">
+
+        <div class="section-index">
+    
+    
+    
+    
+    <hr class="panel-line">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+    
+</div>
+
+	
+	
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 9, 2020
+</div>
+</div>
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="https://github.com/Leafony">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Contact us" aria-label="Contact us">
+    <a class="text-white" target="_blank" href="mailto:staff@lowpower.sakura.ne.jp">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2020 LEAFONY SYSTEMS Co., Ltd  </small>
+        
+	
+		
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
+
+
+
+  </body>
+</html>

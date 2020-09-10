@@ -199,6 +199,210 @@ const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
     </item>
     
     <item>
+      <title>Docs: ESP32からGoogle Sheetsへのデータ転送（1）</title>
+      <link>https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;このサンプルアプリでは，ESP32リーフのWiFi機能を利用して，取得したセンサデータをGoogle Sheetsへ転送します。&lt;br&gt;
+Google Sheets上では受け取ったセンサデータをグラフ描画します。&lt;br&gt;
+これによりセンサデータを簡単に管理出来るようになります。&lt;/p&gt;
+&lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
+&lt;p&gt;以下のリーフを使用します。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Name&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;Connector Cover &lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;AI01&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax07&#34;&gt;AX07&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax07&#34;&gt;Back to back&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02&#34;&gt;AP02&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02&#34;&gt;ESP32 MCU&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av04&#34;&gt;AV04&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av04&#34;&gt;2V~4.5V&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az63&#34;&gt;AZ63&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az63&#34;&gt;Nut Plate&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;AAA battery holder&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;AAA battery&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;M2*8mm screw&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;M2*12mm screw&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;φ10x2mm magnet&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
+&lt;p&gt;ESP32と4-Sensorsリーフを重ねてねじ止めします。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./ESP32_4-Sensors.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
+&lt;p&gt;使用するスケッチは下記のGitHubリポジトリにあります。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets&#34; target=&#34;_brank&#34;&gt;Leafony/Sample-Sketches/ESP32_GoogleSheets - GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;実行方法&#34;&gt;実行方法&lt;/h2&gt;
+&lt;h3 id=&#34;google-sheetsの準備&#34;&gt;&lt;strong&gt;Google Sheetsの準備&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;データ転送先google-sheetsの作成&#34;&gt;データ転送先Google Sheetsの作成&lt;/h4&gt;
+&lt;img src=&#34;create_new_sheet.png&#34;&gt;
+&lt;h4 id=&#34;スクリプトエディタを開く&#34;&gt;スクリプトエディタを開く&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Google Sheetsのタイトル（デフォルト：&lt;code&gt;無題のスプレッドシート&lt;/code&gt;）は自由に変更して大丈夫です。&lt;/li&gt;
+&lt;li&gt;また，シート番号（デフォルト：&lt;code&gt;シート1&lt;/code&gt;）も自由に変更して大丈夫です。&lt;/li&gt;
+&lt;li&gt;下のGoogle SheetsのURLの部分の赤枠で囲った記号列は，後でGoogle Sheetを指定するのに利用するので，適当な場所にコピーしておいてください。
+&lt;ul&gt;
+&lt;li&gt;ここでは，&lt;code&gt;1kuK8196yuY9n37fLHc2ScT7OJUFTyGkiyY9nIuYmNGY&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;open_script_editor.png&#34;&gt;
+&lt;h4 id=&#34;スクリプトの記述&#34;&gt;スクリプトの記述&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Githubのソースコードをコピー&amp;amp;ペーストしてください。
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets/google_scripts_code.js&#34; target=&#34;_brank&#34;&gt;Leafony/Sample-Sketches/ESP32_GoogleSheets/google_scripts_code.js - GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;以下の変数に，先ほど作成した&lt;code&gt;Google Sheet&lt;/code&gt;の情報を入力してください。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;id&lt;/code&gt;：先ほどコピーした&lt;code&gt;Google Sheets&lt;/code&gt;のURLの記号列&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sheetName&lt;/code&gt;：書き込み先のシート名（デフォルト：&lt;code&gt;シート1&lt;/code&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;edit_script.png&#34;&gt;
+&lt;h4 id=&#34;スクリプトのデプロイ&#34;&gt;スクリプトのデプロイ&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;公開&lt;/code&gt;-&amp;gt;&lt;code&gt;ウェブアプリケーションとして導入&lt;/code&gt;をクリックします。&lt;/p&gt;
+&lt;img src=&#34;deploy_app_1.png&#34;&gt;
+&lt;p&gt;続いて開いたウィンドウで，ESP32から簡単にアクセス出来るように権限を&lt;code&gt;Anyone, even anonymous&lt;/code&gt;に変更します。&lt;/p&gt;
+&lt;img src=&#34;deploy_app_2.png&#34; width=500&gt;
+&lt;p&gt;&lt;code&gt;デプロイ&lt;/code&gt;ボタンを押すと，&lt;code&gt;Script App&lt;/code&gt;から&lt;code&gt;Google Sheets&lt;/code&gt;へのアクセス権限の確認が行なわれるので，&lt;code&gt;許可を確認&lt;/code&gt;をクリックします。&lt;/p&gt;
+&lt;img src=&#34;first_deploy_authorization.png&#34; width=500&gt;
+&lt;p&gt;次に警告が出るので，以下をクリックします。&lt;/p&gt;
+&lt;img src=&#34;confirmation.png&#34; width=500&gt;
+&lt;p&gt;最後にスクリプトからスプレッドシートへのアクセスリクエストを許可してください。&lt;/p&gt;
+&lt;img src=&#34;access_request.png&#34; width=500&gt;
+&lt;p&gt;以下のポップアップ画面が表示され，今回作成したウェブアプリのURLが発行されるので，URLをコピーして&lt;code&gt;はい&lt;/code&gt;をクリックしてください。&lt;br&gt;
+なお，今回の例ではURLは以下のようになっています。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh/exec
+&lt;/code&gt;&lt;/pre&gt;&lt;img src=&#34;find_url.png&#34; width=500&gt;
+&lt;p&gt;&lt;strong&gt;以上でGoogle Sheets側の設定は完了です。&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;スクリプトを修正して再デプロイ&#34;&gt;スクリプトを修正して再デプロイ&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;公開&lt;/code&gt;-&amp;gt;&lt;code&gt;ウェブアプリケーションとして導入&lt;/code&gt;をクリックします。&lt;/li&gt;
+&lt;li&gt;最初と全く同じ設定でデプロイすると修正したコードがうまく反映されないことがあるので，再デプロイのときは&lt;code&gt;Project version&lt;/code&gt;を&lt;code&gt;New&lt;/code&gt;に設定して&lt;code&gt;更新&lt;/code&gt;をクリックします。&lt;/li&gt;
+&lt;li&gt;またその時動作しているウェブアプリのURLをここから確認出来ます&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;deploy_again.png&#34; width=500&gt;
+&lt;h3 id=&#34;google-sheetsの動作確認&#34;&gt;Google Sheetsの動作確認&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;ブラウザから先ほどコピーした&lt;code&gt;Google Script&lt;/code&gt;の記号列を使ってアクセスすると&lt;code&gt;Spread Sheet&lt;/code&gt;にデータが書き込まれます&lt;/li&gt;
+&lt;li&gt;今回は試しに&lt;code&gt;111&lt;/code&gt;, &lt;code&gt;222&lt;/code&gt;, &lt;code&gt;333&lt;/code&gt;のデータを書き込んでみます&lt;/li&gt;
+&lt;li&gt;ここでは先ほど確認したウェブアプリのURLにアクセスすることでデータの書き込みが出来ます。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Spread Sheet&lt;/code&gt;に以下のようにデータが書き込まれていれば成功です。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;今回の場合のアクセスするURL
+https://script.google.com/macros/s/AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh/exec?temperature=111&amp;amp;humidity=222&amp;amp;brightness=333
+&lt;/code&gt;&lt;/pre&gt;&lt;img src=&#34;check_script_app.png&#34;&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ESP32からGoogle Sheetsへのデータ転送（2）</title>
+      <link>https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_2/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;このサンプルアプリでは，ESP32リーフのWiFi機能を利用して，取得したセンサデータをGoogle Sheetsへ転送します。&lt;br&gt;
+Google Sheets上では受け取ったセンサデータをグラフ描画します。&lt;br&gt;
+これによりセンサデータを簡単に管理出来るようになります。&lt;br&gt;
+こちらでは、ESP32リーフへのArduinoの書き込みから、実行結果を説明しています。&lt;br&gt;
+必要なリーフ、Google Sheetsの設定方法については、&lt;a href=&#34;./esp32_googlesheets_1&#34;&gt;こちら&lt;/a&gt;を参照してください。&lt;/p&gt;
+&lt;h2 id=&#34;arduinoの準備&#34;&gt;Arduinoの準備&lt;/h2&gt;
+&lt;p&gt;Githubのソースコードの以下の箇条書きの内容に注意して修正し，&lt;code&gt;ESP32リーフ&lt;/code&gt;に書き込んで下さい。&lt;br&gt;
+&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets/ESP32_GoogleSheets.ino&#34; target=&#34;_brank&#34;&gt;Leafony/Sample-Sketches/ESP32_GoogleSheets/google_scripts_code.js - GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;アクセスする&lt;code&gt;WiFi&lt;/code&gt;の情報を以下の定数に代入してください。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;const char* SSID = &amp;quot;wifi_ssid&amp;quot;;    // WiFi SSID
+const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;先ほど作成したウェブアプリの情報を以下の定数に代入してください。
+&lt;ul&gt;
+&lt;li&gt;今回の例：const char* KEY = &lt;code&gt;AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;const char* KEY = &amp;quot;google_scripts_key&amp;quot;;
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;センサデータの書き込みの時間間隔を調整したいときは以下の定数に代入してください。
+&lt;ul&gt;
+&lt;li&gt;単位は秒です&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;uint64_t DEEP_SLEEP_TIME_SEC = 60;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Arduino&lt;/code&gt;を実行して，逐次センサデータがGoogle Sheetsに書き込まれます。&lt;/li&gt;
+&lt;li&gt;お好みで&lt;code&gt;Google Sheets&lt;/code&gt;に新しいシートを追加して，センサデータをグラフ描画も簡単に実装出来ます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;img src=&#34;results_1.png&#34;&gt;
+&lt;img src=&#34;results_2.png&#34;&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Wi-Fi タッチセンサ</title>
       <link>https://docs.leafony.com/docs/examples/advanced/2_p/esp32/wifi_touchsensor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -314,14 +518,72 @@ const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
       <description>
         
         
-        &lt;h2 id=&#34;目次&#34;&gt;目次&lt;/h2&gt;
-&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;h2 id=&#34;使用するハードウェア&#34;&gt;使用するハードウェア&lt;/h2&gt;
+        &lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;ESP32を使ったBLE Beacon型の環境センサアプリケーションの例です。
+GATT ServerのAttributeにセンサデータを入れることで、データをブロードキャストするBeaconとして動作するとともに、
+外部から接続要求があった場合にはサーバクライアント型の通信を行い、Characteristicでログデータのやり取りを行います。&lt;/p&gt;
+&lt;p&gt;Beacon型で発生するパケットの受信失敗によるデータの損失を、ESP32内の不揮発メモリにセンサデータを残すことで防ぎます。
+ユーザは任意のタイミングで接続してログデータを読み出す事ができ、データ転送完了後にはすぐにBeaconモードに移行することで電力の消費を大幅に抑えます。&lt;/p&gt;
+&lt;h2 id=&#34;サンプルのソースコード&#34;&gt;サンプルのソースコード&lt;/h2&gt;
+&lt;p&gt;使用するスケッチやツールのソースコードは下記のリポジトリで閲覧可能です。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_BLE_Beacon&#34; target=&#34;_blank&#34;&gt;Sample-Sketches/ESP32_BLE_Beacon at master · Leafony/Sample-Sketches&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Leafony ESP32 Wi-Fi Kit&lt;/li&gt;
+&lt;li&gt;Leafony Basic Kit&lt;/li&gt;
+&lt;li&gt;Raspberry Pi&lt;/li&gt;
+&lt;li&gt;Androidスマートフォン&lt;/li&gt;
+&lt;li&gt;USB microケーブル&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Name&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02&#34;&gt;AP02&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02&#34;&gt;ESP32 MCU&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;AI01&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;M2 screw&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h2 id=&#34;動作方法&#34;&gt;動作方法&lt;/h2&gt;
+&lt;p&gt;サンプルのプロジェクトを動かす手順について説明します。各ソースコードの動作の仕組みについて理解したい場合は、後述する&lt;a href=&#34;#%E4%BB%95%E7%B5%84%E3%81%BF&#34;&gt;仕組み&lt;/a&gt;をご覧ください。&lt;/p&gt;
+&lt;h3 id=&#34;1-esp32リーフにスケッチを書き込む&#34;&gt;1. ESP32リーフにスケッチを書き込む&lt;/h3&gt;
+&lt;p&gt;ESP32リーフとPCをUSBで接続し、Arduino IDEでinoファイルを書き込んでください。&lt;/p&gt;
+&lt;p&gt;サンプルコードには&lt;a href=&#34;https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/system/log.html&#34;&gt;ESP32 Logging Library&lt;/a&gt;が使用されています。&lt;br&gt;
+Arduino IDEの「ツール → Code Debug Level」を任意のレベルに設定することでシリアルモニタにデバッグメッセージが表示されるようになります。&lt;/p&gt;
+&lt;h3 id=&#34;2-ビーコンスキャナアプリを実行&#34;&gt;2. ビーコンスキャナアプリを実行&lt;/h3&gt;
+&lt;p&gt;AdvertisingパケットのScanningにはNode.jsで動くアプリを使用します。&lt;br&gt;
+Node.jsが動く環境であれば動作環境は問いませんが、今回は屋外に定点設置するBeacon受信機とすることを想定し、
+Raspberry Pi 4を使ってアプリの動作方法について解説します。&lt;/p&gt;
+&lt;p&gt;必要なパッケージをインストールしてアプリ実行します。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; ./tools/node-scanner
+npm install
+npm start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;3-ログ取得アプリを実行&#34;&gt;3. ログ取得アプリを実行&lt;/h3&gt;
+&lt;p&gt;ログデータの取得とグラフの表示にはWebアプリケーションを使用します。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://taltalp.github.io/leafony-esp32-thermometer-beacon/sample_app/connect_webbluetooth/&#34; target=&#34;_brank&#34;&gt;ESP32 Sensors Logger&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;仕組み&#34;&gt;仕組み&lt;/h2&gt;
 &lt;h3 id=&#34;ble-beaconの仕組み&#34;&gt;BLE Beaconの仕組み&lt;/h3&gt;
-&lt;h3 id=&#34;advertising-packet&#34;&gt;Advertising Packet&lt;/h3&gt;
 &lt;h3 id=&#34;gatt&#34;&gt;GATT&lt;/h3&gt;
+&lt;h3 id=&#34;advertising&#34;&gt;Advertising&lt;/h3&gt;
+&lt;h3 id=&#34;characteristic&#34;&gt;Characteristic&lt;/h3&gt;
 
       </description>
     </item>
