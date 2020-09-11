@@ -211,7 +211,106 @@ const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
 &lt;p&gt;このサンプルアプリでは、ESP32リーフのWiFi機能を利用して、取得したセンサデータをGoogle Sheetsへ転送します。&lt;br&gt;
 Google Sheets上では受け取ったセンサデータをグラフ描画します。&lt;br&gt;
 これによりセンサデータを簡単に管理出来るようになります。&lt;br&gt;
-こちらでは、Google Sheetsにデータを書き込むところまでを試してみましょう。&lt;/p&gt;
+こちらでは、Google Sheetsのデータを書き込みを試してみましょう。&lt;br&gt;
+必要なリーフ、ESP32リーフへのArduinoの書き込み、実行結果については、&lt;a href=&#34;./esp32_googlesheets/_2&#34;&gt;こちら&lt;/a&gt;を参照してください。&lt;/p&gt;
+&lt;h2 id=&#34;データ転送先google-sheetsの作成&#34;&gt;データ転送先Google Sheetsの作成&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;
+&lt;img src=&#34;create_new_sheet.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;スクリプトエディタを開く&#34;&gt;スクリプトエディタを開く&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Google Sheetsのタイトル（デフォルト：&lt;code&gt;無題のスプレッドシート&lt;/code&gt;）は自由に変更して大丈夫です。&lt;br&gt;
+また、シート番号（デフォルト：&lt;code&gt;シート1&lt;/code&gt;）も自由に変更して大丈夫です。&lt;/li&gt;
+&lt;li&gt;下のGoogle SheetsのURLの部分の赤枠で囲った記号列は、後でGoogle Sheetを指定するのに利用するので、適当な場所にコピーしておいてください。
+&lt;ul&gt;
+&lt;li&gt;ここでは、&lt;code&gt;1kuK8196yuY9n37fLHc2ScT7OJUFTyGkiyY9nIuYmNGY&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;open_script_editor.png&#34;&gt;
+&lt;h2 id=&#34;スクリプトの記述&#34;&gt;スクリプトの記述&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Githubのソースコードをコピー&amp;amp;ペーストしてください。
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets/google_scripts_code.js&#34; target=&#34;_brank&#34;&gt;Leafony/Sample-Sketches/ESP32_GoogleSheets/google_scripts_code.js - GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;以下の変数に、先ほど作成した&lt;code&gt;Google Sheet&lt;/code&gt;の情報を入力してください。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;id&lt;/code&gt;：先ほどコピーした&lt;code&gt;Google Sheets&lt;/code&gt;のURLの記号列&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sheetName&lt;/code&gt;：書き込み先のシート名（デフォルト：&lt;code&gt;シート1&lt;/code&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;edit_script.png&#34;&gt;
+&lt;h2 id=&#34;スクリプトのデプロイ&#34;&gt;スクリプトのデプロイ&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;公開&lt;/code&gt;-&amp;gt;&lt;code&gt;ウェブアプリケーションとして導入&lt;/code&gt;をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;deploy_app_1.png&#34;&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;続いて開いたウィンドウで、ESP32から簡単にアクセス出来るように権限を&lt;code&gt;Anyone, even anonymous&lt;/code&gt;に変更します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;deploy_app_2.png&#34; width=500&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;code&gt;デプロイ&lt;/code&gt;ボタンを押すと、&lt;code&gt;Script App&lt;/code&gt;から&lt;code&gt;Google Sheets&lt;/code&gt;へのアクセス権限の確認が行なわれるので、&lt;code&gt;許可を確認&lt;/code&gt;をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;first_deploy_authorization.png&#34; width=500&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;次に警告が出るので、以下をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;confirmation.png&#34; width=500&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;最後にスクリプトからスプレッドシートへのアクセスリクエストを許可してください。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;access_request.png&#34; width=500&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;以下のポップアップ画面が表示され、今回作成したウェブアプリのURLが発行されるので、URLをコピーして&lt;code&gt;はい&lt;/code&gt;をクリックしてください。&lt;br&gt;
+なお、今回の例ではURLは以下のようになっています。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh/exec
+&lt;/code&gt;&lt;/pre&gt;&lt;img src=&#34;find_url.png&#34; width=500&gt;
+&lt;p&gt;&lt;strong&gt;以上でGoogle Sheets側の設定は完了です。&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;スクリプトを修正して再デプロイ&#34;&gt;スクリプトを修正して再デプロイ&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;公開&lt;/code&gt;-&amp;gt;&lt;code&gt;ウェブアプリケーションとして導入&lt;/code&gt;をクリックします。&lt;/li&gt;
+&lt;li&gt;最初と全く同じ設定でデプロイすると修正したコードがうまく反映されないことがあるので、再デプロイのときは&lt;code&gt;Project version&lt;/code&gt;を&lt;code&gt;New&lt;/code&gt;に設定して&lt;code&gt;更新&lt;/code&gt;をクリックします。&lt;/li&gt;
+&lt;li&gt;またその時動作しているウェブアプリのURLをここから確認出来ます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img src=&#34;deploy_again.png&#34; width=500&gt;
+&lt;h2 id=&#34;google-sheetsの動作確認&#34;&gt;Google Sheetsの動作確認&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;ブラウザから先ほどコピーした&lt;code&gt;Google Script&lt;/code&gt;の記号列を使ってアクセスすると&lt;code&gt;Spread Sheet&lt;/code&gt;にデータが書き込まれます。&lt;/li&gt;
+&lt;li&gt;今回は試しに&lt;code&gt;111&lt;/code&gt;, &lt;code&gt;222&lt;/code&gt;, &lt;code&gt;333&lt;/code&gt;のデータを書き込んでみます。&lt;/li&gt;
+&lt;li&gt;ここでは先ほど確認したウェブアプリのURLにアクセスすることでデータの書き込みが出来ます。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Spread Sheet&lt;/code&gt;に以下のようにデータが書き込まれていれば成功です。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;今回の場合のアクセスするURL
+https://script.google.com/macros/s/AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh/exec?temperature=111&amp;amp;humidity=222&amp;amp;brightness=333
+&lt;/code&gt;&lt;/pre&gt;&lt;img src=&#34;check_script_app.png&#34;&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ESP32からGoogle Sheetsへのデータ転送（2）</title>
+      <link>https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_2/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;このサンプルアプリでは，ESP32リーフのWiFi機能を利用して，取得したセンサデータをGoogle Sheetsへ転送します。&lt;br&gt;
+Google Sheets上では受け取ったセンサデータをグラフ描画します。&lt;br&gt;
+これによりセンサデータを簡単に管理出来るようになります。&lt;br&gt;
+こちらでは、必要なリーフ、ESP32リーフへのArduinoの書き込み、実行結果までを説明しています。&lt;br&gt;
+Google Sheetsの設定方法については、&lt;a href=&#34;./esp32_googlesheets/_1&#34;&gt;こちら&lt;/a&gt;を参照してください。&lt;/p&gt;
 &lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
 &lt;p&gt;以下のリーフを使用します。&lt;/p&gt;
 &lt;table&gt;
@@ -286,133 +385,35 @@ Google Sheets上では受け取ったセンサデータをグラフ描画しま�
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;p&gt;使用するスケッチは下記のGitHubリポジトリにあります。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets&#34; target=&#34;_brank&#34;&gt;Leafony/Sample-Sketches/ESP32_GoogleSheets - GitHub&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;google-sheetsの準備&#34;&gt;Google Sheetsの準備&lt;/h2&gt;
-&lt;h3 id=&#34;データ転送先google-sheetsの作成&#34;&gt;&lt;strong&gt;データ転送先Google Sheetsの作成&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;br /&gt;
-&lt;img src=&#34;create_new_sheet.png&#34;&gt;&lt;/p&gt;
-&lt;h3 id=&#34;スクリプトエディタを開く&#34;&gt;&lt;strong&gt;スクリプトエディタを開く&lt;/strong&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Google Sheetsのタイトル（デフォルト：&lt;code&gt;無題のスプレッドシート&lt;/code&gt;）は自由に変更して大丈夫です。&lt;/li&gt;
-&lt;li&gt;また、シート番号（デフォルト：&lt;code&gt;シート1&lt;/code&gt;）も自由に変更して大丈夫です。&lt;/li&gt;
-&lt;li&gt;下のGoogle SheetsのURLの部分の赤枠で囲った記号列は、後でGoogle Sheetを指定するのに利用するので、適当な場所にコピーしておいてください。
-&lt;ul&gt;
-&lt;li&gt;ここでは、&lt;code&gt;1kuK8196yuY9n37fLHc2ScT7OJUFTyGkiyY9nIuYmNGY&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;open_script_editor.png&#34;&gt;
-&lt;h3 id=&#34;スクリプトの記述&#34;&gt;&lt;strong&gt;スクリプトの記述&lt;/strong&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Githubのソースコードをコピー&amp;amp;ペーストしてください。
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets/google_scripts_code.js&#34; target=&#34;_brank&#34;&gt;Leafony/Sample-Sketches/ESP32_GoogleSheets/google_scripts_code.js - GitHub&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;以下の変数に、先ほど作成した&lt;code&gt;Google Sheet&lt;/code&gt;の情報を入力してください。
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;id&lt;/code&gt;：先ほどコピーした&lt;code&gt;Google Sheets&lt;/code&gt;のURLの記号列&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sheetName&lt;/code&gt;：書き込み先のシート名（デフォルト：&lt;code&gt;シート1&lt;/code&gt;）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;edit_script.png&#34;&gt;
-&lt;h3 id=&#34;スクリプトのデプロイ&#34;&gt;&lt;strong&gt;スクリプトのデプロイ&lt;/strong&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;公開&lt;/code&gt;-&amp;gt;&lt;code&gt;ウェブアプリケーションとして導入&lt;/code&gt;をクリックします。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;deploy_app_1.png&#34;&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;続いて開いたウィンドウで、ESP32から簡単にアクセス出来るように権限を&lt;code&gt;Anyone, even anonymous&lt;/code&gt;に変更します。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;deploy_app_2.png&#34; width=500&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;デプロイ&lt;/code&gt;ボタンを押すと、&lt;code&gt;Script App&lt;/code&gt;から&lt;code&gt;Google Sheets&lt;/code&gt;へのアクセス権限の確認が行なわれるので、&lt;code&gt;許可を確認&lt;/code&gt;をクリックします。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;first_deploy_authorization.png&#34; width=500&gt;
-&lt;ul&gt;
-&lt;li&gt;次に警告が出るので、以下をクリックします。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;confirmation.png&#34; width=500&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;最後にスクリプトからスプレッドシートへのアクセスリクエストを許可してください。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;access_request.png&#34; width=500&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;以下のポップアップ画面が表示され、今回作成したウェブアプリのURLが発行されるので、URLをコピーして&lt;code&gt;はい&lt;/code&gt;をクリックしてください。&lt;br&gt;
-なお、今回の例ではURLは以下のようになっています。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh/exec
-&lt;/code&gt;&lt;/pre&gt;&lt;img src=&#34;find_url.png&#34; width=500&gt;
-&lt;p&gt;&lt;strong&gt;以上でGoogle Sheets側の設定は完了です。&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&#34;スクリプトを修正して再デプロイ&#34;&gt;&lt;strong&gt;スクリプトを修正して再デプロイ&lt;/strong&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;公開&lt;/code&gt;-&amp;gt;&lt;code&gt;ウェブアプリケーションとして導入&lt;/code&gt;をクリックします。&lt;/li&gt;
-&lt;li&gt;最初と全く同じ設定でデプロイすると修正したコードがうまく反映されないことがあるので、再デプロイのときは&lt;code&gt;Project version&lt;/code&gt;を&lt;code&gt;New&lt;/code&gt;に設定して&lt;code&gt;更新&lt;/code&gt;をクリックします。&lt;/li&gt;
-&lt;li&gt;またその時動作しているウェブアプリのURLをここから確認出来ます。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;img src=&#34;deploy_again.png&#34; width=500&gt;
-&lt;h2 id=&#34;google-sheetsの動作確認&#34;&gt;Google Sheetsの動作確認&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;ブラウザから先ほどコピーした&lt;code&gt;Google Script&lt;/code&gt;の記号列を使ってアクセスすると&lt;code&gt;Spread Sheet&lt;/code&gt;にデータが書き込まれます。&lt;/li&gt;
-&lt;li&gt;今回は試しに&lt;code&gt;111&lt;/code&gt;, &lt;code&gt;222&lt;/code&gt;, &lt;code&gt;333&lt;/code&gt;のデータを書き込んでみます。&lt;/li&gt;
-&lt;li&gt;ここでは先ほど確認したウェブアプリのURLにアクセスすることでデータの書き込みが出来ます。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Spread Sheet&lt;/code&gt;に以下のようにデータが書き込まれていれば成功です。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;今回の場合のアクセスするURL
-https://script.google.com/macros/s/AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh/exec?temperature=111&amp;amp;humidity=222&amp;amp;brightness=333
-&lt;/code&gt;&lt;/pre&gt;&lt;img src=&#34;check_script_app.png&#34;&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: ESP32からGoogle Sheetsへのデータ転送（2）</title>
-      <link>https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_2/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_2/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;このサンプルアプリでは，ESP32リーフのWiFi機能を利用して，取得したセンサデータをGoogle Sheetsへ転送します。&lt;br&gt;
-Google Sheets上では受け取ったセンサデータをグラフ描画します。&lt;br&gt;
-これによりセンサデータを簡単に管理出来るようになります。&lt;br&gt;
-こちらでは、ESP32リーフへのArduinoの書き込みから、実行結果を説明しています。&lt;br&gt;
-必要なリーフ、Google Sheetsの設定方法については、&lt;a href=&#34;./esp32_googlesheets_1&#34;&gt;こちら&lt;/a&gt;を参照してください。&lt;/p&gt;
 &lt;h2 id=&#34;arduinoの準備&#34;&gt;Arduinoの準備&lt;/h2&gt;
 &lt;p&gt;Githubのソースコードの以下の箇条書きの内容に注意して修正し，&lt;code&gt;ESP32リーフ&lt;/code&gt;に書き込んで下さい。&lt;br&gt;
 &lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets/ESP32_GoogleSheets.ino&#34; target=&#34;_brank&#34;&gt;Leafony/Sample-Sketches/ESP32_GoogleSheets/google_scripts_code.js - GitHub&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
+&lt;ol&gt;
 &lt;li&gt;アクセスする&lt;code&gt;WiFi&lt;/code&gt;の情報を以下の定数に代入してください。&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 &lt;pre&gt;&lt;code&gt;const char* SSID = &amp;quot;wifi_ssid&amp;quot;;    // WiFi SSID
 const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;先ほど作成したウェブアプリの情報を以下の定数に代入してください。
 &lt;ul&gt;
 &lt;li&gt;今回の例：const char* KEY = &lt;code&gt;AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 &lt;pre&gt;&lt;code&gt;const char* KEY = &amp;quot;google_scripts_key&amp;quot;;
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;センサデータの書き込みの時間間隔を調整したいときは以下の定数に代入してください。
 &lt;ul&gt;
 &lt;li&gt;単位は秒です&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 &lt;pre&gt;&lt;code&gt;uint64_t DEEP_SLEEP_TIME_SEC = 60;
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
-&lt;ul&gt;
+&lt;ol&gt;
 &lt;li&gt;&lt;code&gt;Arduino&lt;/code&gt;を実行して，逐次センサデータがGoogle Sheetsに書き込まれます。&lt;/li&gt;
 &lt;li&gt;お好みで&lt;code&gt;Google Sheets&lt;/code&gt;に新しいシートを追加して，センサデータをグラフ描画も簡単に実装出来ます。&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 &lt;img src=&#34;results_1.png&#34;&gt;
 &lt;img src=&#34;results_2.png&#34;&gt;
 

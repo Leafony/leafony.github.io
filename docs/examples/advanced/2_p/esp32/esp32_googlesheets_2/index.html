@@ -136,7 +136,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b56c377c2478752dd6d40a1baa9733c733629e8a355b5a502fd42d7c3faf22da89d8ffd265ac445a09bd9dee60748b99ddbadb017b42eb740a4ffff452672db8.json"
+  data-offline-search-index-json-src="/offline-search-index.961f549b9145b7b4201be135100f003cb340c960ace61b34454b5ca166619aeb4dec5b1273f1f7f1d72d6f8f3d5ae6623053cb24133b1269d8aa0a838c1ea990.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +166,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b56c377c2478752dd6d40a1baa9733c733629e8a355b5a502fd42d7c3faf22da89d8ffd265ac445a09bd9dee60748b99ddbadb017b42eb740a4ffff452672db8.json"
+  data-offline-search-index-json-src="/offline-search-index.961f549b9145b7b4201be135100f003cb340c960ace61b34454b5ca166619aeb4dec5b1273f1f7f1d72d6f8f3d5ae6623053cb24133b1269d8aa0a838c1ea990.json"
   data-offline-search-base-href="/"
 >
 
@@ -2648,6 +2648,9 @@ if (!doNotTrack) {
 <nav id="TableOfContents">
   <ul>
     <li><a href="#概要">概要</a></li>
+    <li><a href="#使用するリーフ">使用するリーフ</a></li>
+    <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
+    <li><a href="#ソースコード">ソースコード</a></li>
     <li><a href="#arduinoの準備">Arduinoの準備</a></li>
     <li><a href="#実行結果">実行結果</a></li>
   </ul>
@@ -2733,37 +2736,111 @@ if (!doNotTrack) {
 <p>このサンプルアプリでは，ESP32リーフのWiFi機能を利用して，取得したセンサデータをGoogle Sheetsへ転送します。<br>
 Google Sheets上では受け取ったセンサデータをグラフ描画します。<br>
 これによりセンサデータを簡単に管理出来るようになります。<br>
-こちらでは、ESP32リーフへのArduinoの書き込みから、実行結果を説明しています。<br>
-必要なリーフ、Google Sheetsの設定方法については、<a href="./esp32_googlesheets_1">こちら</a>を参照してください。</p>
+こちらでは、必要なリーフ、ESP32リーフへのArduinoの書き込み、実行結果までを説明しています。<br>
+Google Sheetsの設定方法については、<a href="./esp32_googlesheets/_1">こちら</a>を参照してください。</p>
+<h2 id="使用するリーフ">使用するリーフ</h2>
+<p>以下のリーフを使用します。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="/docs/leaf/others/az62">AZ62</a></td>
+<td align="left"><a href="/docs/leaf/others/az62">Connector Cover </a></td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/io/ai01">AI01</a></td>
+<td align="left"><a href="/docs/leaf/io/ai01">4-Sensors</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/extension/ax07">AX07</a></td>
+<td align="left"><a href="/docs/leaf/extension/ax07">Back to back</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/processor/ap02">AP02</a></td>
+<td align="left"><a href="/docs/leaf/processor/ap02">ESP32 MCU</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/power/av04">AV04</a></td>
+<td align="left"><a href="/docs/leaf/power/av04">2V~4.5V</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/others/az63">AZ63</a></td>
+<td align="left"><a href="/docs/leaf/others/az63">Nut Plate</a></td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">AAA battery holder</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">AAA battery</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">M2*8mm screw</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">M2*12mm screw</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">φ10x2mm magnet</td>
+<td align="left">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="リーフの組み立て">リーフの組み立て</h2>
+<p>ESP32と4-Sensorsリーフを重ねてねじ止めします。</p>
+<p><img src="./ESP32_4-Sensors.png" alt="assemble1"></p>
+<h2 id="ソースコード">ソースコード</h2>
+<p>使用するスケッチは下記のGitHubリポジトリにあります。</p>
+<p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets" target="_brank">Leafony/Sample-Sketches/ESP32_GoogleSheets - GitHub</a></p>
 <h2 id="arduinoの準備">Arduinoの準備</h2>
 <p>Githubのソースコードの以下の箇条書きの内容に注意して修正し，<code>ESP32リーフ</code>に書き込んで下さい。<br>
 <a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets/ESP32_GoogleSheets.ino" target="_brank">Leafony/Sample-Sketches/ESP32_GoogleSheets/google_scripts_code.js - GitHub</a></p>
-<ul>
+<ol>
 <li>アクセスする<code>WiFi</code>の情報を以下の定数に代入してください。</li>
-</ul>
+</ol>
 <pre><code>const char* SSID = &quot;wifi_ssid&quot;;    // WiFi SSID
 const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
-</code></pre><ul>
+</code></pre><ol start="2">
 <li>先ほど作成したウェブアプリの情報を以下の定数に代入してください。
 <ul>
 <li>今回の例：const char* KEY = <code>AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh</code></li>
 </ul>
 </li>
-</ul>
+</ol>
 <pre><code>const char* KEY = &quot;google_scripts_key&quot;;
-</code></pre><ul>
+</code></pre><ol start="3">
 <li>センサデータの書き込みの時間間隔を調整したいときは以下の定数に代入してください。
 <ul>
 <li>単位は秒です</li>
 </ul>
 </li>
-</ul>
+</ol>
 <pre><code>uint64_t DEEP_SLEEP_TIME_SEC = 60;
 </code></pre><h2 id="実行結果">実行結果</h2>
-<ul>
+<ol>
 <li><code>Arduino</code>を実行して，逐次センサデータがGoogle Sheetsに書き込まれます。</li>
 <li>お好みで<code>Google Sheets</code>に新しいシートを追加して，センサデータをグラフ描画も簡単に実装出来ます。</li>
-</ul>
+</ol>
 <img src="results_1.png">
 <img src="results_2.png">
 
@@ -2991,7 +3068,7 @@ const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 9, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 11, 2020
 </div>
 </div>
 
