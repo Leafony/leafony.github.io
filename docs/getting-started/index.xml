@@ -214,23 +214,18 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 &lt;/ul&gt;
 &lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;ESP32 Wi-Fi Kitに単4電池3本をセットし、電源スイッチをONにして下さい。&lt;br&gt;
-&lt;img src=&#34;./quick_esp_assemble.png&#34; alt=&#34;assemble&#34;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;PC、スマートフォン、またはタブレット等で周辺のWi-Fiを検索し、以下のSSIDのWi-Fiに接続します。&lt;/p&gt;
+&lt;li&gt;ESP32 Wi-Fi Kitに単4電池3本をセットし、電源スイッチをONにして下さい。&lt;br&gt;
+&lt;img src=&#34;./quick_esp_assemble.png&#34; alt=&#34;assemble&#34;&gt;&lt;/li&gt;
+&lt;li&gt;PC、スマートフォン、またはタブレット等で周辺のWi-Fiを検索し、以下のSSIDのWi-Fiに接続します。
 &lt;ul&gt;
 &lt;li&gt;SSID: Leafony_ESP32-AP&lt;/li&gt;
 &lt;li&gt;Password: password&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Webブラウザを起動して、以下のURLにアクセスしてください。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://192.168.4.1&#34;&gt;http://192.168.4.1&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;以下のURLをコピーし、WebBLEを立ち上げてアドレスバーに貼り付けてください。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt; http://192.168.4.1
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;29pin headerの7、9、22、24、26、28ピンがタッチセンサに割り当てられています。&lt;br&gt;
 ピンに触れると静電容量が増えるため、値が減少します。値が閾値20以下になると”Touch detected”と表示されます。&lt;br&gt;
