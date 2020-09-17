@@ -211,10 +211,10 @@ const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
 &lt;p&gt;このサンプルアプリでは、ESP32リーフのWiFi機能を利用して、取得したセンサデータをGoogle Sheetsへ転送します。&lt;br&gt;
 Google Sheets上では受け取ったセンサデータをグラフ描画します。&lt;br&gt;
 これによりセンサデータを簡単に管理出来るようになります。&lt;br&gt;
-こちらでは、Google Sheetsのデータを書き込みを試してみましょう。&lt;br&gt;
-必要なリーフ、ESP32リーフへのArduinoの書き込み、実行結果については、&lt;a href=&#34;./esp32_googlesheets/_2&#34;&gt;こちら&lt;/a&gt;を参照してください。&lt;/p&gt;
+こちらでは、Google Sheetsのデータを書き込みを試してみましょう。&lt;/p&gt;
 &lt;h2 id=&#34;データ転送先google-sheetsの作成&#34;&gt;データ転送先Google Sheetsの作成&lt;/h2&gt;
-&lt;p&gt;&lt;br /&gt;
+&lt;p&gt;Googleアカウントにログインし、新しいスプレッドシートを作成しましょう。アカウントがない場合は作成してください。
+&lt;br /&gt;
 &lt;img src=&#34;create_new_sheet.png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;スクリプトエディタを開く&#34;&gt;スクリプトエディタを開く&lt;/h2&gt;
 &lt;ol&gt;
