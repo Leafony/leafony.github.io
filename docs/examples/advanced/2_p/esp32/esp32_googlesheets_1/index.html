@@ -136,7 +136,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b86b646a09744df2b34dfbb4b35288adf6f6f41327befc865e0531f87f4c85a1e3c08e9976a11456c317bcca2f4866493d77b0c1f20cd510b14cc9ad00bcc701.json"
+  data-offline-search-index-json-src="/offline-search-index.85c15aca7d3cf21b121aacceb65e08fc1898ebd9486746b19a69d97b4409ae7f1751378590988c1b0918b833998218fa3d3371359b5ec4f97219891ce699b4cc.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +166,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b86b646a09744df2b34dfbb4b35288adf6f6f41327befc865e0531f87f4c85a1e3c08e9976a11456c317bcca2f4866493d77b0c1f20cd510b14cc9ad00bcc701.json"
+  data-offline-search-index-json-src="/offline-search-index.85c15aca7d3cf21b121aacceb65e08fc1898ebd9486746b19a69d97b4409ae7f1751378590988c1b0918b833998218fa3d3371359b5ec4f97219891ce699b4cc.json"
   data-offline-search-base-href="/"
 >
 
@@ -2652,8 +2652,13 @@ if (!doNotTrack) {
     <li><a href="#スクリプトエディタを開く">スクリプトエディタを開く</a></li>
     <li><a href="#スクリプトの記述">スクリプトの記述</a></li>
     <li><a href="#スクリプトのデプロイ">スクリプトのデプロイ</a></li>
-    <li><a href="#スクリプトを修正して再デプロイ">スクリプトを修正して再デプロイ</a></li>
     <li><a href="#google-sheetsの動作確認">Google Sheetsの動作確認</a></li>
+    <li><a href="#スクリプトを変更した場合">スクリプトを変更した場合</a></li>
+    <li><a href="#使用するリーフ">使用するリーフ</a></li>
+    <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
+    <li><a href="#ソースコード">ソースコード</a></li>
+    <li><a href="#arduinoの準備">Arduinoの準備</a></li>
+    <li><a href="#実行結果">実行結果</a></li>
   </ul>
 </nav>
 
@@ -2736,10 +2741,9 @@ if (!doNotTrack) {
 	<h2 id="概要">概要</h2>
 <p>このサンプルアプリでは、ESP32リーフのWiFi機能を利用して、取得したセンサデータをGoogle Sheetsへ転送します。<br>
 Google Sheets上では受け取ったセンサデータをグラフ描画します。<br>
-これによりセンサデータを簡単に管理出来るようになります。<br>
-こちらでは、Google Sheetsのデータを書き込みを試してみましょう。</p>
+これによりセンサデータを簡単に管理出来るようになります。</p>
 <h2 id="データ転送先google-sheetsの作成">データ転送先Google Sheetsの作成</h2>
-<p>Googleアカウントにログインし、新しいスプレッドシートを作成しましょう。アカウントがない場合は作成してください。
+<p>Googleアカウントにログインし、新しいスプレッドシートを作成しましょう。アカウントがない場合は作成してください。<br>
 <br />
 <img src="create_new_sheet.png"></p>
 <h2 id="スクリプトエディタを開く">スクリプトエディタを開く</h2>
@@ -2748,7 +2752,7 @@ Google Sheets上では受け取ったセンサデータをグラフ描画しま�
 また、シート番号（デフォルト：<code>シート1</code>）も自由に変更して大丈夫です。</li>
 <li>下のGoogle SheetsのURLの部分の赤枠で囲った記号列は、後でGoogle Sheetを指定するのに利用するので、適当な場所にコピーしておいてください。
 <ul>
-<li>ここでは、<code>1kuK8196yuY9n37fLHc2ScT7OJUFTyGkiyY9nIuYmNGY</code></li>
+<li>ここでは、<code>1o0cogc3aomAj58CRdMZARNJtoEmf8dB9ebY02jKV9tA</code></li>
 </ul>
 </li>
 </ol>
@@ -2795,29 +2799,145 @@ Google Sheets上では受け取ったセンサデータをグラフ描画しま�
 <img src="access_request.png" width=500>
 <p><br /></p>
 <ol start="6">
-<li>以下のポップアップ画面が表示され、今回作成したウェブアプリのURLが発行されるので、URLをコピーして<code>はい</code>をクリックしてください。<br>
-なお、今回の例ではURLは以下のようになっています。</li>
+<li>以下のポップアップ画面が表示され、今回作成したウェブアプリ固有のURLが発行されるので、URLをコピーして<code>OK</code>をクリックしてください。</li>
 </ol>
-<pre><code>https://script.google.com/macros/s/AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh/exec
-</code></pre><img src="find_url.png" width=500>
-<p><strong>以上でGoogle Sheets側の設定は完了です。</strong></p>
-<h2 id="スクリプトを修正して再デプロイ">スクリプトを修正して再デプロイ</h2>
+<img src="find_url.png" width=500>  
+<p><br />
+（アプリ固有のURL）</p>
+<pre><code>https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec
+</code></pre><h2 id="google-sheetsの動作確認">Google Sheetsの動作確認</h2>
+<ol>
+<li>
+<p>今回は、ESP32リーフから得た温度、湿度、照度の値をPOSTで送り、準備した<code>Spread Sheet</code>にデータを書き込みます。</p>
+</li>
+<li>
+<p>送られてくるクエリストリングの例として<br>
+UniqueID=Leafony_AP02-1&amp;temperature=100&amp;humidity=100&amp;illumination=100 を想定し、以下のURLにアクセスします。</p>
+</li>
+</ol>
+<pre><code>https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec?UniqueID=Leafony_AP02-1&amp;temperature=100&amp;humidity=100&amp;illumination=100
+</code></pre><p>※https://script.google.com/macros/s/<span style="color: red; "> →　ここに先ほど取得した（アプリ固有のURL）が入ります。← </span>/exec?UniqueID=Leafony_AP02-1&amp;temperature=100&amp;humidity=100&amp;illumination=100</p>
+<p><br /></p>
+<ol start="3">
+<li><code>Spread Sheet</code>に以下のようにデータが書き込まれていれば成功です。
+Datetime、UniqueID=Leafony_AP02-1、Temperature=100、Humidity=100、Illumination=100</li>
+</ol>
+<img src="check_script_app.png">  
+<ul>
+<li><code>Spread Sheet</code>の1行目に記載されているカラム名は自動表示されません。</li>
+</ul>
+<h2 id="スクリプトを変更した場合">スクリプトを変更した場合</h2>
 <ol>
 <li><code>公開</code>-&gt;<code>ウェブアプリケーションとして導入</code>をクリックします。</li>
 <li>最初と全く同じ設定でデプロイすると修正したコードがうまく反映されないことがあるので、再デプロイのときは<code>Project version</code>を<code>New</code>に設定して<code>更新</code>をクリックします。</li>
-<li>またその時動作しているウェブアプリのURLをここから確認出来ます。</li>
+<li>またその時動作しているウェブアプリのURLは以下で確認出来ます。</li>
 </ol>
-<img src="deploy_again.png" width=500>
-<h2 id="google-sheetsの動作確認">Google Sheetsの動作確認</h2>
+<img src="deploy_again.png" width=500>  
+<h2 id="使用するリーフ">使用するリーフ</h2>
+<p>以下のリーフを使用します。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="/docs/leaf/others/az62">AZ62</a></td>
+<td align="left"><a href="/docs/leaf/others/az62">Connector Cover </a></td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/io/ai01">AI01</a></td>
+<td align="left"><a href="/docs/leaf/io/ai01">4-Sensors</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/extension/ax07">AX07</a></td>
+<td align="left"><a href="/docs/leaf/extension/ax07">Back to back</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/processor/ap02">AP02</a></td>
+<td align="left"><a href="/docs/leaf/processor/ap02">ESP32 MCU</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/power/av04">AV04</a></td>
+<td align="left"><a href="/docs/leaf/power/av04">2V~4.5V</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/others/az63">AZ63</a></td>
+<td align="left"><a href="/docs/leaf/others/az63">Nut Plate</a></td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">AAA battery holder</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">AAA battery</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">M2*8mm screw</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">M2*12mm screw</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">φ10x2mm magnet</td>
+<td align="left">1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="リーフの組み立て">リーフの組み立て</h2>
+<p>ESP32と4-Sensorsリーフを重ねてねじ止めします。</p>
+<p><img src="./ESP32_4-Sensors.png" alt="assemble1"></p>
+<h2 id="ソースコード">ソースコード</h2>
+<p>使用するスケッチは下記のGitHubリポジトリにあります。</p>
+<p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets" target="_brank">Leafony/Sample-Sketches/ESP32_GoogleSheets - GitHub</a></p>
+<h2 id="arduinoの準備">Arduinoの準備</h2>
+<p>Githubのソースコードの以下の箇条書きの内容に注意して修正し、<code>ESP32リーフ</code>に書き込んで下さい。<br>
+<a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets/ESP32_GoogleSheets.ino" target="_brank">Leafony/Sample-Sketches/ESP32_GoogleSheets/google_scripts_code.js - GitHub</a></p>
 <ol>
-<li>ブラウザから先ほどコピーした<code>Google Script</code>の記号列を使ってアクセスすると<code>Spread Sheet</code>にデータが書き込まれます。</li>
-<li>今回は試しに<code>111</code>, <code>222</code>, <code>333</code>のデータを書き込んでみます。</li>
-<li>ここでは先ほど確認したウェブアプリのURLにアクセスすることでデータの書き込みが出来ます。</li>
-<li><code>Spread Sheet</code>に以下のようにデータが書き込まれていれば成功です。</li>
+<li>アクセスする<code>WiFi</code>の情報を以下の定数に代入してください。</li>
 </ol>
-<pre><code>今回の場合のアクセスするURL
-https://script.google.com/macros/s/AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh/exec?temperature=111&amp;humidity=222&amp;brightness=333
-</code></pre><img src="check_script_app.png">
+<pre><code>const char* SSID = &quot;wifi_ssid&quot;;    // WiFi SSID
+const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
+</code></pre><ol start="2">
+<li>先ほど作成したウェブアプリの情報を以下の定数に代入してください。
+<ul>
+<li>アプリ固有のURLより：const char* KEY = <code>AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh</code></li>
+</ul>
+</li>
+</ol>
+<pre><code>const char* KEY = &quot;google_scripts_key&quot;;
+</code></pre><ol start="3">
+<li>センサデータの書き込みの時間間隔を調整したいときは以下の定数に代入してください。
+<ul>
+<li>単位は秒です</li>
+</ul>
+</li>
+</ol>
+<pre><code>uint64_t DEEP_SLEEP_TIME_SEC = 60;
+</code></pre>  <img src="ESP32_arduino.PNG" width=500>    
+<h2 id="実行結果">実行結果</h2>
+<ol>
+<li><code>Arduino</code>を実行して、逐次センサデータがGoogle Sheetsに書き込まれます。</li>
+<li>お好みで<code>Google Sheets</code>に新しいシートを追加して、センサデータをグラフ描画も簡単に実装出来ます。</li>
+</ol>
+<img src="results_1.png">
 
         <div class="section-index">
     
