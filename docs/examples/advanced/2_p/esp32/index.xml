@@ -199,7 +199,7 @@ const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
     </item>
     
     <item>
-      <title>Docs: ESP32からGoogle Sheetsへのデータ転送（1）</title>
+      <title>Docs: Google SheetsをつかったIoTサービス その1</title>
       <link>https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -208,66 +208,72 @@ const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
         
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;このサンプルアプリでは、ESP32リーフのWiFi機能を利用して、取得したセンサデータをGoogle Sheetsへ転送します。&lt;br&gt;
-Google Sheets上では受け取ったセンサデータをグラフ描画します。&lt;br&gt;
-これによりセンサデータを簡単に管理出来るようになります。&lt;/p&gt;
-&lt;h2 id=&#34;データ転送先google-sheetsの作成&#34;&gt;データ転送先Google Sheetsの作成&lt;/h2&gt;
+&lt;p&gt;ESP32 MCUリーフと4-Sensorsリーフだけで、IoT環境センサを作り、Google スプレッドシートを使って、センサデータを可視化します。&lt;/p&gt;
+&lt;h2 id=&#34;google-sheetsの準備&#34;&gt;Google Sheetsの準備&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
 &lt;p&gt;Googleアカウントにログインし、新しいスプレッドシートを作成しましょう。アカウントがない場合は作成してください。&lt;br&gt;
 &lt;br /&gt;
 &lt;img src=&#34;create_new_sheet.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;スクリプトエディタを開く&#34;&gt;スクリプトエディタを開く&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Google Sheetsのタイトル（デフォルト：&lt;code&gt;無題のスプレッドシート&lt;/code&gt;）は自由に変更して大丈夫です。&lt;br&gt;
-また、シート番号（デフォルト：&lt;code&gt;シート1&lt;/code&gt;）も自由に変更して大丈夫です。&lt;/li&gt;
-&lt;li&gt;下のGoogle SheetsのURLの部分の赤枠で囲った記号列は、後でGoogle Sheetを指定するのに利用するので、適当な場所にコピーしておいてください。
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Google Sheetsのタイトル（デフォルト：&lt;code&gt;無題のスプレッドシート&lt;/code&gt;）は自由に変更して大丈夫です。&lt;br&gt;
+また、シート番号（デフォルト：&lt;code&gt;シート1&lt;/code&gt;）も自由に変更して大丈夫です。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;下のGoogle SheetsのURLの部分の赤枠で囲った記号列は、後でGoogle Sheetを指定するのに利用するので、適当な場所にコピーしておいてください。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;ここでは、&lt;code&gt;1o0cogc3aomAj58CRdMZARNJtoEmf8dB9ebY02jKV9tA&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;open_script_editor.png&#34;&gt;
-&lt;h2 id=&#34;スクリプトの記述&#34;&gt;スクリプトの記述&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Githubのソースコードをコピー&amp;amp;ペーストしてください。
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;ツールからスクリプトエディタを開き、Githubのソースコードをコピー&amp;amp;ペーストしてください。
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets/google_scripts_code.js&#34; target=&#34;_brank&#34;&gt;Leafony/Sample-Sketches/ESP32_GoogleSheets/google_scripts_code.js - GitHub&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
-&lt;li&gt;以下の変数に、先ほど作成した&lt;code&gt;Google Sheet&lt;/code&gt;の情報を入力してください。
+&lt;/ol&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;以下の変数に、先ほど作成した&lt;code&gt;Google Sheets&lt;/code&gt;の情報を入力してください。
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;id&lt;/code&gt;：先ほどコピーした&lt;code&gt;Google Sheets&lt;/code&gt;のURLの記号列&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sheetName&lt;/code&gt;：書き込み先のシート名（デフォルト：&lt;code&gt;シート1&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;google_sheets_id&lt;/code&gt;：先ほどコピーした&lt;code&gt;Google Sheets&lt;/code&gt;のURLの記号列&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;sheet_name&lt;/code&gt;：書き込み先のシート名（デフォルト：&lt;code&gt;シート1&lt;/code&gt;）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;edit_script.png&#34;&gt;
-&lt;h2 id=&#34;スクリプトのデプロイ&#34;&gt;スクリプトのデプロイ&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;公開&lt;/code&gt;-&amp;gt;&lt;code&gt;ウェブアプリケーションとして導入&lt;/code&gt;をクリックします。&lt;/li&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;&lt;code&gt;Google Sheets&lt;/code&gt;を公開する手順について、説明します。&lt;br&gt;
+&lt;code&gt;公開&lt;/code&gt;-&amp;gt;&lt;code&gt;ウェブアプリケーションとして導入&lt;/code&gt;をクリックします。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;deploy_app_1.png&#34;&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;続いて開いたウィンドウで、ESP32から簡単にアクセス出来るように権限を&lt;code&gt;Anyone, even anonymous&lt;/code&gt;に変更します。&lt;/li&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;続いて、アクセスの権限を&lt;code&gt;Anyone, even anonymous&lt;/code&gt;に変更し、誰でも閲覧できるようにします。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;deploy_app_2.png&#34; width=500&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
+&lt;ol start=&#34;8&#34;&gt;
 &lt;li&gt;&lt;code&gt;デプロイ&lt;/code&gt;ボタンを押すと、&lt;code&gt;Script App&lt;/code&gt;から&lt;code&gt;Google Sheets&lt;/code&gt;へのアクセス権限の確認が行なわれるので、&lt;code&gt;許可を確認&lt;/code&gt;をクリックします。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;first_deploy_authorization.png&#34; width=500&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ol start=&#34;4&#34;&gt;
+&lt;ol start=&#34;9&#34;&gt;
 &lt;li&gt;次に警告が出るので、以下をクリックします。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;confirmation.png&#34; width=500&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ol start=&#34;5&#34;&gt;
+&lt;ol start=&#34;10&#34;&gt;
 &lt;li&gt;最後にスクリプトからスプレッドシートへのアクセスリクエストを許可してください。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;access_request.png&#34; width=500&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ol start=&#34;6&#34;&gt;
+&lt;ol start=&#34;11&#34;&gt;
 &lt;li&gt;以下のポップアップ画面が表示され、今回作成したウェブアプリ固有のURLが発行されるので、URLをコピーして&lt;code&gt;OK&lt;/code&gt;をクリックしてください。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;find_url.png&#34; width=500&gt;  
@@ -277,31 +283,31 @@ Google Sheets上では受け取ったセンサデータをグラフ描画しま�
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;google-sheetsの動作確認&#34;&gt;Google Sheetsの動作確認&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;今回は、ESP32リーフから得た温度、湿度、照度の値をPOSTで送り、準備した&lt;code&gt;Spread Sheet&lt;/code&gt;にデータを書き込みます。&lt;/p&gt;
+&lt;p&gt;今回は試しに、Datetime、UniqueID=Leafony_AP02-1、Temperature=100、Humidity=100、Illumination=100  を、&lt;code&gt;Google Sheets&lt;/code&gt;に書き込んでみます。&lt;br&gt;
+&lt;br /&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;送られてくるクエリストリングの例として&lt;br&gt;
-UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100 を想定し、以下のURLにアクセスします。&lt;/p&gt;
+&lt;p&gt;アプリ固有のURLに、?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100を追加すると、以下の通りになります。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;pre&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;※https://script.google.com/macros/s/&lt;span style=&#34;color: red; &#34;&gt; →　ここに先ほど取得した（アプリ固有のURL）が入ります。← &lt;/span&gt;/exec?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100&lt;/p&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;&lt;code&gt;Spread Sheet&lt;/code&gt;に以下のようにデータが書き込まれていれば成功です。
-Datetime、UniqueID=Leafony_AP02-1、Temperature=100、Humidity=100、Illumination=100&lt;/li&gt;
+&lt;li&gt;上記のURLにアクセスすると、設定した&lt;code&gt;Google Sheets&lt;/code&gt;にデータが書き込まれます。&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;Google Sheets&lt;/code&gt;の1行目に記載されているカラム名は自動表示されないため、予めご記載ください。
+&lt;br /&gt;&lt;/p&gt;
 &lt;img src=&#34;check_script_app.png&#34;&gt;  
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Spread Sheet&lt;/code&gt;の1行目に記載されているカラム名は自動表示されません。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;スクリプトを変更した場合&#34;&gt;スクリプトを変更した場合&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;スクリプトのミスがあった場合&#34;&gt;スクリプトのミスがあった場合&lt;/h3&gt;
 &lt;ol&gt;
+&lt;li&gt;スクリプトを修正します。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;公開&lt;/code&gt;-&amp;gt;&lt;code&gt;ウェブアプリケーションとして導入&lt;/code&gt;をクリックします。&lt;/li&gt;
 &lt;li&gt;最初と全く同じ設定でデプロイすると修正したコードがうまく反映されないことがあるので、再デプロイのときは&lt;code&gt;Project version&lt;/code&gt;を&lt;code&gt;New&lt;/code&gt;に設定して&lt;code&gt;更新&lt;/code&gt;をクリックします。&lt;/li&gt;
 &lt;li&gt;またその時動作しているウェブアプリのURLは以下で確認出来ます。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;deploy_again.png&#34; width=500&gt;  
+&lt;h2 id=&#34;esp32&#34;&gt;ESP32&lt;/h2&gt;
 &lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
 &lt;p&gt;以下のリーフを使用します。&lt;/p&gt;
 &lt;table&gt;
@@ -374,11 +380,11 @@ Datetime、UniqueID=Leafony_AP02-1、Temperature=100、Humidity=100、Illuminati
 &lt;p&gt;ESP32と4-Sensorsリーフを重ねてねじ止めします。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./ESP32_4-Sensors.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
-&lt;p&gt;使用するスケッチは下記のGitHubリポジトリにあります。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets&#34; target=&#34;_brank&#34;&gt;Leafony/Sample-Sketches/ESP32_GoogleSheets - GitHub&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;arduinoの準備&#34;&gt;Arduinoの準備&lt;/h2&gt;
-&lt;p&gt;Githubのソースコードの以下の箇条書きの内容に注意して修正し、&lt;code&gt;ESP32リーフ&lt;/code&gt;に書き込んで下さい。&lt;br&gt;
-&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets/ESP32_GoogleSheets.ino&#34; target=&#34;_brank&#34;&gt;Leafony/Sample-Sketches/ESP32_GoogleSheets/google_scripts_code.js - GitHub&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;あらかじめダウンロードしてください。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets&#34;&gt;Arduino スケッチ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Githubのソースコードの以下の箇条書きの内容に注意して修正し、&lt;code&gt;ESP32リーフ&lt;/code&gt;に書き込んで下さい。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;アクセスする&lt;code&gt;WiFi&lt;/code&gt;の情報を以下の定数に代入してください。&lt;/li&gt;
 &lt;/ol&gt;
@@ -400,11 +406,29 @@ const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;pre&gt;&lt;code&gt;uint64_t DEEP_SLEEP_TIME_SEC = 60;
-&lt;/code&gt;&lt;/pre&gt;  &lt;img src=&#34;ESP32_arduino.PNG&#34; width=500&gt;    
-&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;Arduino.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;Wire.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;HTTPClient.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;HTS221.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;ClosedCube_OPT3001.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Unique ID
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;String&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;UniqueID&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Leafony_AP02&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Connecting WiFi Settings
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SSID&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;wifi_ssid&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;           &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// WiFi SSID
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;PASSWORD&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;wifi_password&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;   &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// WiFi Password
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Accessed Google Script Settings
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;APP_SERVER&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;script.google.com&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;KEY&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;google_scripts_key&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Device sleep time (sec) to reduce Joule heat
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;uint64_t&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;DEEP_SLEEP_TIME_SEC&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;60&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 省略
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;code&gt;Arduino&lt;/code&gt;を実行して、逐次センサデータがGoogle Sheetsに書き込まれます。&lt;/li&gt;
-&lt;li&gt;お好みで&lt;code&gt;Google Sheets&lt;/code&gt;に新しいシートを追加して、センサデータをグラフ描画も簡単に実装出来ます。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;results_1.png&#34;&gt;
 
