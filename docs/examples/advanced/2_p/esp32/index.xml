@@ -297,7 +297,7 @@ const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
 &lt;pre&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;上記のURLにアクセスすると、設定した&lt;code&gt;Google Sheets&lt;/code&gt;にデータが書き込まれます。&lt;/li&gt;
+&lt;li&gt;上記のURLをブラウザに貼り付け、アクセスすると、設定した&lt;code&gt;Google Sheets&lt;/code&gt;にデータが書き込まれます。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;code&gt;Google Sheets&lt;/code&gt;の1行目に記載されているカラム名は自動表示されないため、予めご記載ください。
 &lt;br /&gt;&lt;/p&gt;
