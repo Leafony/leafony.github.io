@@ -136,7 +136,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f2e2816b3cee9dc2a99893b79510ea525fa11ec55c6172fa4441b4d6b3828fed1c61c3fdfc656cce1275fc3c3a1019c459d506be449aa194b79a12c44bba8ff5.json"
+  data-offline-search-index-json-src="/offline-search-index.f3bd7462c002786d022577914bb3101d92bdf1bf416391d7d1cc1095780174f2c6178f9f5171efb44c796d1fb37ba1d35521604d55dcb994ed902774fab112d0.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +166,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f2e2816b3cee9dc2a99893b79510ea525fa11ec55c6172fa4441b4d6b3828fed1c61c3fdfc656cce1275fc3c3a1019c459d506be449aa194b79a12c44bba8ff5.json"
+  data-offline-search-index-json-src="/offline-search-index.f3bd7462c002786d022577914bb3101d92bdf1bf416391d7d1cc1095780174f2c6178f9f5171efb44c796d1fb37ba1d35521604d55dcb994ed902774fab112d0.json"
   data-offline-search-base-href="/"
 >
 
@@ -2654,11 +2654,6 @@ if (!doNotTrack) {
         <li><a href="#スクリプトのミスがあった場合">スクリプトのミスがあった場合</a></li>
       </ul>
     </li>
-    <li><a href="#esp32">ESP32</a></li>
-    <li><a href="#使用するリーフ">使用するリーフ</a></li>
-    <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
-    <li><a href="#ソースコード">ソースコード</a></li>
-    <li><a href="#実行結果">実行結果</a></li>
   </ul>
 </nav>
 
@@ -2838,130 +2833,6 @@ if (!doNotTrack) {
 <li>またその時動作しているウェブアプリのURLは以下で確認出来ます。</li>
 </ol>
 <img src="deploy_again.png" width=500>  
-<h2 id="esp32">ESP32</h2>
-<h2 id="使用するリーフ">使用するリーフ</h2>
-<p>以下のリーフを使用します。</p>
-<table>
-<thead>
-<tr>
-<th align="left">Type</th>
-<th align="left">Name</th>
-<th align="left">Q&rsquo;ty</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><a href="/docs/leaf/others/az62">AZ62</a></td>
-<td align="left"><a href="/docs/leaf/others/az62">Connector Cover </a></td>
-<td align="left">2</td>
-</tr>
-<tr>
-<td align="left"><a href="/docs/leaf/io/ai01">AI01</a></td>
-<td align="left"><a href="/docs/leaf/io/ai01">4-Sensors</a></td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left"><a href="/docs/leaf/extension/ax07">AX07</a></td>
-<td align="left"><a href="/docs/leaf/extension/ax07">Back to back</a></td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left"><a href="/docs/leaf/processor/ap02">AP02</a></td>
-<td align="left"><a href="/docs/leaf/processor/ap02">ESP32 MCU</a></td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left"><a href="/docs/leaf/power/av04">AV04</a></td>
-<td align="left"><a href="/docs/leaf/power/av04">2V~4.5V</a></td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left"><a href="/docs/leaf/others/az63">AZ63</a></td>
-<td align="left"><a href="/docs/leaf/others/az63">Nut Plate</a></td>
-<td align="left">2</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">AAA battery holder</td>
-<td align="left">1</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">AAA battery</td>
-<td align="left">3</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">M2*8mm screw</td>
-<td align="left">2</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">M2*12mm screw</td>
-<td align="left">2</td>
-</tr>
-<tr>
-<td align="left"></td>
-<td align="left">φ10x2mm magnet</td>
-<td align="left">1</td>
-</tr>
-</tbody>
-</table>
-<h2 id="リーフの組み立て">リーフの組み立て</h2>
-<p>ESP32と4-Sensorsリーフを重ねてねじ止めします。</p>
-<p><img src="./ESP32_4-Sensors.png" alt="assemble1"></p>
-<h2 id="ソースコード">ソースコード</h2>
-<p>あらかじめダウンロードしてください。</p>
-<ul>
-<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets">Arduino スケッチ</a></li>
-</ul>
-<p>Githubのソースコードの以下の箇条書きの内容に注意して修正し、<code>ESP32リーフ</code>に書き込んで下さい。</p>
-<ol>
-<li>アクセスする<code>WiFi</code>の情報を以下の定数に代入してください。</li>
-</ol>
-<pre><code>const char* SSID = &quot;wifi_ssid&quot;;    // WiFi SSID
-const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
-</code></pre><ol start="2">
-<li>先ほど作成したウェブアプリの情報を以下の定数に代入してください。
-<ul>
-<li>アプリ固有のURLより：const char* KEY = <code>AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh</code></li>
-</ul>
-</li>
-</ol>
-<pre><code>const char* KEY = &quot;google_scripts_key&quot;;
-</code></pre><ol start="3">
-<li>センサデータの書き込みの時間間隔を調整したいときは以下の定数に代入してください。
-<ul>
-<li>単位は秒です</li>
-</ul>
-</li>
-</ol>
-<pre><code>uint64_t DEEP_SLEEP_TIME_SEC = 60;
-</code></pre><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;HTTPClient.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;HTS221.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;ClosedCube_OPT3001.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#8f5902;font-style:italic">// Unique ID
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">String</span> <span style="color:#000">UniqueID</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Leafony_AP02&#34;</span><span style="color:#000;font-weight:bold">;</span>
-
-<span style="color:#8f5902;font-style:italic">// Connecting WiFi Settings
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">SSID</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;wifi_ssid&#34;</span><span style="color:#000;font-weight:bold">;</span>           <span style="color:#8f5902;font-style:italic">// WiFi SSID
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">PASSWORD</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;wifi_password&#34;</span><span style="color:#000;font-weight:bold">;</span>   <span style="color:#8f5902;font-style:italic">// WiFi Password
-</span><span style="color:#8f5902;font-style:italic">// Accessed Google Script Settings
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">APP_SERVER</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;script.google.com&#34;</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">KEY</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;google_scripts_key&#34;</span><span style="color:#000;font-weight:bold">;</span>
-
-<span style="color:#8f5902;font-style:italic">// Device sleep time (sec) to reduce Joule heat
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">uint64_t</span> <span style="color:#000">DEEP_SLEEP_TIME_SEC</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">60</span><span style="color:#000;font-weight:bold">;</span>
-
-<span style="color:#8f5902;font-style:italic">// 省略
-</span></code></pre></div><h2 id="実行結果">実行結果</h2>
-<ol>
-<li><code>Arduino</code>を実行して、逐次センサデータがGoogle Sheetsに書き込まれます。</li>
-</ol>
-<img src="results_1.png">
 
         <div class="section-index">
     
@@ -3187,7 +3058,7 @@ const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 17, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 18, 2020
 </div>
 </div>
 

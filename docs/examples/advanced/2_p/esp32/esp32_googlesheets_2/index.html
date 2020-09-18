@@ -21,14 +21,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>ESP32からGoogle Sheetsへのデータ転送（2） | Leafony</title><meta property="og:title" content="ESP32からGoogle Sheetsへのデータ転送（2）" />
+<title>Google SheetsをつかったIoTサービス その2 | Leafony</title><meta property="og:title" content="Google SheetsをつかったIoTサービス その2" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_2/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="ESP32からGoogle Sheetsへのデータ転送（2）">
+<meta itemprop="name" content="Google SheetsをつかったIoTサービス その2">
 <meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="ESP32からGoogle Sheetsへのデータ転送（2）"/>
+<meta name="twitter:title" content="Google SheetsをつかったIoTサービス その2"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -136,7 +136,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f2e2816b3cee9dc2a99893b79510ea525fa11ec55c6172fa4441b4d6b3828fed1c61c3fdfc656cce1275fc3c3a1019c459d506be449aa194b79a12c44bba8ff5.json"
+  data-offline-search-index-json-src="/offline-search-index.f3bd7462c002786d022577914bb3101d92bdf1bf416391d7d1cc1095780174f2c6178f9f5171efb44c796d1fb37ba1d35521604d55dcb994ed902774fab112d0.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +166,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f2e2816b3cee9dc2a99893b79510ea525fa11ec55c6172fa4441b4d6b3828fed1c61c3fdfc656cce1275fc3c3a1019c459d506be449aa194b79a12c44bba8ff5.json"
+  data-offline-search-index-json-src="/offline-search-index.f3bd7462c002786d022577914bb3101d92bdf1bf416391d7d1cc1095780174f2c6178f9f5171efb44c796d1fb37ba1d35521604d55dcb994ed902774fab112d0.json"
   data-offline-search-base-href="/"
 >
 
@@ -2647,11 +2647,10 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#概要">概要</a></li>
+    <li><a href="#esp32の設定">ESP32の設定</a></li>
     <li><a href="#使用するリーフ">使用するリーフ</a></li>
     <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
     <li><a href="#ソースコード">ソースコード</a></li>
-    <li><a href="#arduinoの準備">Arduinoの準備</a></li>
     <li><a href="#実行結果">実行結果</a></li>
   </ul>
 </nav>
@@ -2729,15 +2728,11 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>ESP32からGoogle Sheetsへのデータ転送（2）</h1>
+	<h1>Google SheetsをつかったIoTサービス その2</h1>
         
 	
-	<h2 id="概要">概要</h2>
-<p>このサンプルアプリでは、ESP32リーフのWiFi機能を利用して、取得したセンサデータをGoogle Sheetsへ転送します。<br>
-Google Sheets上では受け取ったセンサデータをグラフ描画します。<br>
-これによりセンサデータを簡単に管理出来るようになります。<br>
-こちらでは、必要なリーフ、ESP32リーフへのArduinoの書き込み、実行結果までを説明しています。<br>
-Google Sheetsの設定方法については、<a href="./esp32_googlesheets/_1">こちら</a>を参照してください。</p>
+	<h2 id="esp32の設定">ESP32の設定</h2>
+<p>リーフを組み立ててスケッチを書き込み、データが<code>Google Sheets</code>に書き込まれることを確認しましょう。</p>
 <h2 id="使用するリーフ">使用するリーフ</h2>
 <p>以下のリーフを使用します。</p>
 <table>
@@ -2807,14 +2802,14 @@ Google Sheetsの設定方法については、<a href="./esp32_googlesheets/_1">
 </tbody>
 </table>
 <h2 id="リーフの組み立て">リーフの組み立て</h2>
-<p>ESP32と4-Sensorsリーフを重ねてねじ止めします。</p>
+<p>ESP32 MCUリーフと4-Sensorsリーフを重ねて、下図のようにねじ止めします。</p>
 <p><img src="./ESP32_4-Sensors.png" alt="assemble1"></p>
 <h2 id="ソースコード">ソースコード</h2>
-<p>使用するスケッチは下記のGitHubリポジトリにあります。</p>
-<p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets" target="_brank">Leafony/Sample-Sketches/ESP32_GoogleSheets - GitHub</a></p>
-<h2 id="arduinoの準備">Arduinoの準備</h2>
-<p>Githubのソースコードの以下の箇条書きの内容に注意して修正し、<code>ESP32リーフ</code>に書き込んで下さい。<br>
-<a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets/ESP32_GoogleSheets.ino" target="_brank">Leafony/Sample-Sketches/ESP32_GoogleSheets/google_scripts_code.js - GitHub</a></p>
+<p>あらかじめダウンロードしてください。</p>
+<ul>
+<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets">Arduino スケッチ</a></li>
+</ul>
+<p>Githubのソースコードの以下の箇条書きの内容に注意して修正し、<code>ESP32リーフ</code>に書き込んで下さい。</p>
 <ol>
 <li>アクセスする<code>WiFi</code>の情報を以下の定数に代入してください。</li>
 </ol>
@@ -2823,7 +2818,7 @@ const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
 </code></pre><ol start="2">
 <li>先ほど作成したウェブアプリの情報を以下の定数に代入してください。
 <ul>
-<li>今回の例：const char* KEY = <code>AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh</code></li>
+<li>アプリ固有のURLより：const char* KEY = <code>AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh</code></li>
 </ul>
 </li>
 </ol>
@@ -2836,13 +2831,31 @@ const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
 </li>
 </ol>
 <pre><code>uint64_t DEEP_SLEEP_TIME_SEC = 60;
-</code></pre><h2 id="実行結果">実行結果</h2>
+</code></pre><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;HTTPClient.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;HTS221.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;ClosedCube_OPT3001.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">// Unique ID
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">String</span> <span style="color:#000">UniqueID</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Leafony_AP02&#34;</span><span style="color:#000;font-weight:bold">;</span>
+
+<span style="color:#8f5902;font-style:italic">// Connecting WiFi Settings
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">SSID</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;wifi_ssid&#34;</span><span style="color:#000;font-weight:bold">;</span>           <span style="color:#8f5902;font-style:italic">// WiFi SSID
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">PASSWORD</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;wifi_password&#34;</span><span style="color:#000;font-weight:bold">;</span>   <span style="color:#8f5902;font-style:italic">// WiFi Password
+</span><span style="color:#8f5902;font-style:italic">// Accessed Google Script Settings
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">APP_SERVER</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;script.google.com&#34;</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">KEY</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;google_scripts_key&#34;</span><span style="color:#000;font-weight:bold">;</span>
+
+<span style="color:#8f5902;font-style:italic">// Device sleep time (sec) to reduce Joule heat
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">uint64_t</span> <span style="color:#000">DEEP_SLEEP_TIME_SEC</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">60</span><span style="color:#000;font-weight:bold">;</span>
+
+<span style="color:#8f5902;font-style:italic">// 省略
+</span></code></pre></div><h2 id="実行結果">実行結果</h2>
 <ol>
-<li><code>Arduino</code>を実行して、逐次センサデータがGoogle Sheetsに書き込まれます。</li>
-<li>お好みで<code>Google Sheets</code>に新しいシートを追加して、センサデータをグラフ描画も簡単に実装出来ます。</li>
+<li><code>Arduino</code>を実行して、逐次センサデータが<code>Google Sheets</code>に書き込まれます。</li>
 </ol>
 <img src="results_1.png">
-<img src="results_2.png">
 
         <div class="section-index">
     
@@ -3068,7 +3081,7 @@ const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 11, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 18, 2020
 </div>
 </div>
 
