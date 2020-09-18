@@ -210,6 +210,10 @@ const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
 &lt;p&gt;ESP32 MCUリーフと4-Sensorsリーフだけで、IoT環境センサを作り、Google スプレッドシートを使って、センサデータを可視化します。&lt;/p&gt;
 &lt;h2 id=&#34;google-sheetsの準備&#34;&gt;Google Sheetsの準備&lt;/h2&gt;
+&lt;p&gt;ESP32 MCUリーフが送るセンサデータを&lt;code&gt;Google Sheets&lt;/code&gt;で表示する、IoTサービスを紹介します。
+ブラウザを閲覧できるPCやスマホがあれば、どこでもデータを確認できます。&lt;br&gt;
+まずは、&lt;code&gt;Google Sheets&lt;/code&gt;でデータを表示するための設定を以下の通り行いましょう。
+&lt;br /&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;Googleアカウントにログインし、新しいスプレッドシートを作成しましょう。アカウントがない場合は作成してください。&lt;br&gt;
@@ -441,9 +445,7 @@ const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
 
 &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 省略
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;Arduino&lt;/code&gt;を実行して、逐次センサデータが&lt;code&gt;Google Sheets&lt;/code&gt;に書き込まれます。&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;Arduino&lt;/code&gt;を実行して、逐次センサデータが&lt;code&gt;Google Sheets&lt;/code&gt;に書き込まれます。&lt;/p&gt;
 &lt;img src=&#34;results_1.png&#34;&gt;
 
       </description>
