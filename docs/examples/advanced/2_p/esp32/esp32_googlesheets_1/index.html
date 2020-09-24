@@ -136,7 +136,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89c37c061944ce6c05de2ac640e8f2c768f7a83a73b5eb977ea7ccd5948eab2d073ead021eb488fb6394a8db09a3ede6289473ffce0e6d28c7deb7318b09afc3.json"
+  data-offline-search-index-json-src="/offline-search-index.960f76667b6841ed703c18ade88146b64c2e9a84416df96116e988419c1e32b7347b38bd3aa1c59f96c4715ecb7252d7979ed83046d52c55fad0ad3e9772ae81.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +166,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.89c37c061944ce6c05de2ac640e8f2c768f7a83a73b5eb977ea7ccd5948eab2d073ead021eb488fb6394a8db09a3ede6289473ffce0e6d28c7deb7318b09afc3.json"
+  data-offline-search-index-json-src="/offline-search-index.960f76667b6841ed703c18ade88146b64c2e9a84416df96116e988419c1e32b7347b38bd3aa1c59f96c4715ecb7252d7979ed83046d52c55fad0ad3e9772ae81.json"
   data-offline-search-base-href="/"
 >
 
@@ -2742,23 +2742,20 @@ if (!doNotTrack) {
 まずは、<code>Google Sheets</code>でデータを表示するための設定を以下の通り行いましょう。
 <br /></p>
 <ol>
-<li>
-<p>Googleアカウントにログインし、新しいスプレッドシートを作成しましょう。アカウントがない場合は作成してください。<br>
+<li>Googleアカウントにログインし、新しいスプレッドシートを作成しましょう。アカウントがない場合は作成してください。</li>
+</ol>
+<img src="create_new_sheet_a.png" width=1200>
 <br />
-<img src="create_new_sheet.png"></p>
-</li>
-<li>
-<p>Google Sheetsのタイトル（デフォルト：<code>無題のスプレッドシート</code>）は自由に変更して大丈夫です。<br>
-また、シート番号（デフォルト：<code>シート1</code>）も自由に変更して大丈夫です。</p>
-</li>
-<li>
-<p>下のGoogle SheetsのURLの部分の赤枠で囲った記号列は、後でGoogle Sheetを指定するのに利用するので、適当な場所にコピーしておいてください。</p>
+<ol start="2">
+<li>Google Sheetsのタイトル（デフォルト：<code>無題のスプレッドシート</code>）は自由に変更して大丈夫です。<br>
+また、シート番号（デフォルト：<code>シート1</code>）も自由に変更して大丈夫です。</li>
+<li>下のGoogle SheetsのURLの部分の赤枠で囲った記号列は、後でGoogle Sheetを指定するのに利用するので、適当な場所にコピーしておいてください。
 <ul>
 <li>ここでは、<code>1o0cogc3aomAj58CRdMZARNJtoEmf8dB9ebY02jKV9tA</code></li>
 </ul>
 </li>
 </ol>
-<img src="open_script_editor.png">
+<img src="open_script_editor_a.PNG">
 <p><br /></p>
 <ol start="4">
 <li>ツールからスクリプトエディタを開き、Githubのソースコードをコピー&amp;ペーストしてください。
@@ -2776,38 +2773,38 @@ if (!doNotTrack) {
 </ul>
 </li>
 </ol>
-<img src="edit_script.png">
+<img src="edit_script_a.png">
 <p><br /></p>
 <ol start="6">
 <li><code>Google Sheets</code>を公開する手順について、説明します。<br>
 <code>公開</code>-&gt;<code>ウェブアプリケーションとして導入</code>をクリックします。</li>
 </ol>
-<img src="deploy_app_1.png">
+<img src="deploy_app_1a.png">
 <p><br /></p>
 <ol start="7">
 <li>続いて、アクセスの権限を<code>Anyone, even anonymous</code>に変更し、誰でも閲覧できるようにします。</li>
 </ol>
-<img src="deploy_app_2.png" width=500>
+<img src="deploy_app_2a.png" width=500>
 <p><br /></p>
 <ol start="8">
-<li><code>デプロイ</code>ボタンを押すと、<code>Script App</code>から<code>Google Sheets</code>へのアクセス権限の確認が行なわれるので、<code>許可を確認</code>をクリックします。</li>
+<li><code>デプロイ</code>ボタンを押すと、<code>Script App</code>から<code>Google Sheets</code>へのアクセス権限の確認が行なわれるので、<code>許可を確認</code>をクリックしてください。</li>
 </ol>
-<img src="first_deploy_authorization.png" width=500>
+<img src="first_deploy_authorization_a.png" width=500>
 <p><br /></p>
 <ol start="9">
-<li>左下の<code>詳細</code>をクリックします。</li>
+<li>左下の<code>詳細</code>をクリックしてください。</li>
 </ol>
 <img src="details.png" width=500>
 <p><br /></p>
 <ol start="10">
-<li>次に警告が出るので、以下をクリックします。</li>
+<li>次に警告が出るので、<code>（安全ではないページ）に移動</code>をクリックしてください。</li>
 </ol>
-<img src="confirmation.png" width=550>
+<img src="confirmation_a.png" width=550>
 <p><br /></p>
 <ol start="11">
-<li>最後にスクリプトからスプレッドシートへのアクセスリクエストを許可してください。</li>
+<li>最後にスクリプトからスプレッドシートへのアクセスリクエストを<code>許可</code>してください。</li>
 </ol>
-<img src="access_request.png" width=500>
+<img src="access_request_a.png" width=400>
 <p><br /></p>
 <ol start="12">
 <li>以下のポップアップ画面が表示され、今回作成したウェブアプリ固有のURLが発行されるので、URLをコピーして<code>OK</code>をクリックしてください。</li>
@@ -2842,7 +2839,7 @@ if (!doNotTrack) {
 <li>最初と全く同じ設定でデプロイすると修正したコードがうまく反映されないことがあるので、再デプロイのときは<code>Project version</code>を<code>New</code>に設定して<code>更新</code>をクリックします。</li>
 <li>またその時動作しているウェブアプリのURLは以下で確認出来ます。</li>
 </ol>
-<img src="deploy_again.png" width=500>  
+<img src="deploy_again_a.png" width=500>  
 <p><br /></p>
 <p><a href="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_2/"><strong>次へ進む</strong></a></p>
 
@@ -3070,7 +3067,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 23, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 24, 2020
 </div>
 </div>
 
