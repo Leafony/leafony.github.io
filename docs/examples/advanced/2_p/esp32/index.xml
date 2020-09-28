@@ -406,9 +406,9 @@ const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
 &lt;p&gt;ESP32 MCUリーフと4-Sensorsリーフを重ねて、下図のようにねじ止めします。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./ESP32_4-Sensors.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
-&lt;p&gt;あらかじめダウンロードしてください。&lt;/p&gt;
+&lt;p&gt;Arduino IDEでプログラムを書きましょう。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets&#34;&gt;Arduino スケッチ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets&#34;&gt;Arduino スケッチ（ESP32_GoogleSheets.ino）&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Githubのソースコードの以下の箇条書きの内容に注意して修正し、&lt;code&gt;ESP32リーフ&lt;/code&gt;に書き込んで下さい。&lt;/p&gt;
 &lt;ol&gt;
