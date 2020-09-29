@@ -199,7 +199,7 @@ const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
     </item>
     
     <item>
-      <title>Docs: Google Sheetsを使ったIoTサービス その1</title>
+      <title>Docs: Google Sheetsを使ったIoTサービス</title>
       <link>https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -209,7 +209,7 @@ const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
 &lt;p&gt;ESP32 MCUリーフと4-Sensorsリーフだけで、IoT環境センサを作り、Google スプレッドシートを使って、センサデータを可視化します。&lt;/p&gt;
-&lt;img src=&#34;ESP_googlesheet.PNG&#34; width=700&gt;
+&lt;img src=&#34;ESP_googlesheet_a.png&#34; width=800&gt;
 &lt;h2 id=&#34;google-sheetsの準備&#34;&gt;Google Sheetsの準備&lt;/h2&gt;
 &lt;p&gt;ESP32 MCUリーフが送るセンサデータを&lt;code&gt;Google Sheets&lt;/code&gt;で表示する、IoTサービスを紹介します。
 ブラウザを閲覧できるPCやスマホがあれば、どこでもデータを確認できます。&lt;br&gt;
@@ -324,7 +324,7 @@ const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
     </item>
     
     <item>
-      <title>Docs: Google SheetsをつかったIoTサービス その2</title>
+      <title>Docs: Google SheetsをつかったIoTサービス</title>
       <link>https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -408,7 +408,7 @@ const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;p&gt;Arduino IDEでプログラムを書きましょう。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets&#34;&gt;Arduino スケッチ（ESP32_GoogleSheets.ino）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/blob/master/ESP32_GoogleSheets/ESP32_GoogleSheets.ino&#34;&gt;ESP32_GoogleSheets.ino&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Githubのソースコードの以下の箇条書きの内容に注意して修正し、&lt;code&gt;ESP32リーフ&lt;/code&gt;に書き込んで下さい。&lt;/p&gt;
 &lt;ol&gt;
