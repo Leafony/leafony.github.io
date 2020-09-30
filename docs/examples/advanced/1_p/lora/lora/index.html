@@ -136,7 +136,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ee642dad5b1304d7e31c78542b470b8042b25121fd75caf36b37dac886eb4118c8ea628beff07648042dafd1bc07c6dedd4fe7c712ceca0f1a122c987202cf16.json"
+  data-offline-search-index-json-src="/offline-search-index.94b02f8aa051547e45d18cb58ff6b34773b02c110a4861c92444b4aa1235441693c9779f10acaf5257e5a54f01acbf982226061254fb3ef2e2b8ba1c2a4d279b.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +166,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ee642dad5b1304d7e31c78542b470b8042b25121fd75caf36b37dac886eb4118c8ea628beff07648042dafd1bc07c6dedd4fe7c712ceca0f1a122c987202cf16.json"
+  data-offline-search-index-json-src="/offline-search-index.94b02f8aa051547e45d18cb58ff6b34773b02c110a4861c92444b4aa1235441693c9779f10acaf5257e5a54f01acbf982226061254fb3ef2e2b8ba1c2a4d279b.json"
   data-offline-search-base-href="/"
 >
 
@@ -2648,6 +2648,7 @@ if (!doNotTrack) {
 <nav id="TableOfContents">
   <ul>
     <li><a href="#概要">概要</a></li>
+    <li><a href="#デモ動画">デモ動画</a></li>
     <li><a href="#使用するリーフ">使用するリーフ</a>
       <ul>
         <li><a href="#送信側リーフ">送信側リーフ</a></li>
@@ -2660,6 +2661,8 @@ if (!doNotTrack) {
         <li><a href="#受信側">受信側</a></li>
       </ul>
     </li>
+    <li><a href="#ソースコード">ソースコード</a></li>
+    <li><a href="#実行結果">実行結果</a></li>
   </ul>
 </nav>
 
@@ -2741,8 +2744,17 @@ if (!doNotTrack) {
 	
 	<h2 id="概要">概要</h2>
 <p><a href="/docs/leaf/communication/ac03/">LoRa Easyリーフ</a>を使って、センサデータ（温度・湿度・照度・傾き）を、遠く離れた場所に送り、パソコンのターミナルに出力します。</p>
+<img src="LoRa_receiver_sender.png" width=500>  
+<p><br /></p>
+<p>表示させたい温度（または、湿度）と４-Sensorsの温度（または、湿度）に、ずれがあるときは、２点間補正を行います。詳しくは、<a href="https://trillion-node.org/example/correction/">こちら</a>。</p>
+<h2 id="デモ動画">デモ動画</h2>
+<div class="youtube">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Iilq24AlkhM?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<br>
+<br>
 <h2 id="使用するリーフ">使用するリーフ</h2>
-<p>以下のリーフを使用します</p>
+<p>以下のリーフを使用します。</p>
 <h3 id="送信側リーフ">送信側リーフ</h3>
 <table>
 <thead>
@@ -2863,7 +2875,20 @@ if (!doNotTrack) {
 <p><img src="./LoRa_sender_assemble.png" alt="assemble1"></p>
 <h3 id="受信側">受信側</h3>
 <p><img src="./LoRa_receiver_assemble.png" alt="assemble2"></p>
-
+<h2 id="ソースコード">ソースコード</h2>
+<ul>
+<li>書き込みには、4-Sensorsと、AVR MCUライブラリ（タイマ割り込み）が必要です。予め、ライブラリをインクルードしておいてください。詳しくは、<a href="/docs/environment/basic/">こちら</a>。</li>
+<li>Arduino IDEで、下記のプログラムを書きましょう。
+<ul>
+<li>送信側 <a href="https://github.com/Leafony/Sample-Sketches/tree/master/●.ino" target="_blank">4-Sensors_LoRa_Tx.ino</a></li>
+<li>受信側 <a href="https://github.com/Leafony/Sample-Sketches/tree/master/●.ino" target="_blank">LoRa_Rx_Serial_monitor.ino</a>
+　</li>
+</ul>
+</li>
+</ul>
+<h2 id="実行結果">実行結果</h2>
+<p>Arduino IDEのシリアルモニタを開き、ボーレートを9600bpsとすると、センサデータ（温度・湿度・照度・傾き）が表示されます。</p>
+<img src="●.jpg" width="750">
         <div class="section-index">
     
     
@@ -3088,7 +3113,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 11, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 30, 2020
 </div>
 </div>
 
