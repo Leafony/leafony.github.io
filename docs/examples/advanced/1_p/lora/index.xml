@@ -160,8 +160,8 @@
 &lt;li&gt;書き込みには、4-Sensorsと、AVR MCUライブラリ（タイマ割り込み）が必要です。予め、ライブラリをインクルードしておいてください。詳しくは、&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/&#34;&gt;こちら&lt;/a&gt;。&lt;/li&gt;
 &lt;li&gt;Arduino IDEで、下記のプログラムを書きましょう。
 &lt;ul&gt;
-&lt;li&gt;送信側 &lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/●.ino&#34; target=&#34;_blank&#34;&gt;4-Sensors_LoRa_Tx.ino&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;受信側 &lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/●.ino&#34; target=&#34;_blank&#34;&gt;LoRa_Rx_Serial_monitor.ino&lt;/a&gt;
+&lt;li&gt;送信側 &lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/blob/master/LoRa/4-Sensors_LoRa_Tx.ino&#34; target=&#34;_blank&#34;&gt;4-Sensors_LoRa_Tx.ino&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;受信側 &lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/blob/master/LoRa/LoRa_Rx_Serial_monitor.ino&#34; target=&#34;_blank&#34;&gt;LoRa_Rx_Serial_monitor.ino&lt;/a&gt;
 　&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
