@@ -139,7 +139,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.11337d419118eac21f45099fb00bc7b859efb7335459776b6da5567846178d26b5de9f3f2807a3d9a93c819c697dad6010c4f52a2937934c16fb687d5ee8d00a.json"
+  data-offline-search-index-json-src="/offline-search-index.610f41b3fdff326a0b30bf1cd6186ed5e6ac81be32d697246ba255ac09e1f8115a5cce5e92bb06a2c121b800c9b374e96a74776073f9ff73c3e02825927a3c6b.json"
   data-offline-search-base-href="/"
 >
 
@@ -169,7 +169,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.11337d419118eac21f45099fb00bc7b859efb7335459776b6da5567846178d26b5de9f3f2807a3d9a93c819c697dad6010c4f52a2937934c16fb687d5ee8d00a.json"
+  data-offline-search-index-json-src="/offline-search-index.610f41b3fdff326a0b30bf1cd6186ed5e6ac81be32d697246ba255ac09e1f8115a5cce5e92bb06a2c121b800c9b374e96a74776073f9ff73c3e02825927a3c6b.json"
   data-offline-search-base-href="/"
 >
 
@@ -2712,6 +2712,7 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#ダウンロード-2">ダウンロード</a></li>
         <li><a href="#インストール-2">インストール</a></li>
+        <li><a href="#文字化け対策">文字化け対策</a></li>
       </ul>
     </li>
   </ul>
@@ -2872,6 +2873,25 @@ if (!doNotTrack) {
 <img src="./japanese6.png" width="500">
 <br>
 これでインストール完了です。</p>
+<h3 id="文字化け対策">文字化け対策</h3>
+<p>STM32CubeMXのコード生成時にUTF-8が文字化けしないようにするには(本当に必要かは不明)
+環境変数に以下を追加します。<br>
+変数名：<code>JAVA_TOOL_OPTIONS</code>
+変数値：<code>-Dfile.encoding=UTF-8</code></p>
+<p><code>コントロールパネル</code>→<code>システム</code>→<code>システムの詳細設定</code>→<code>環境変数</code>を選択します。
+<img src="./garbled1.png" width="500">
+<br>
+<br>
+<code>新規</code>をクリックします。
+<img src="./garbled2.png" width="500">
+<br>
+<br>
+変数名に<code>JAVA_TOOL_OPTIONS</code>、変数値に<code>-Dfile.encoding=UTF-8</code>を入力します。
+<img src="./garbled3.png" width="500">
+<br>
+<br>
+<code>OK</code>をクリックします。
+<img src="./garbled4.png" width="500"></p>
 
         <div class="section-index">
     

@@ -22,7 +22,84 @@
       <description>
         
         
-        
+        &lt;p&gt;以下の手順で STM32 MCU 開発環境の設定を行いましょう。&lt;/p&gt;
+&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;STM32 MCUリーフ&lt;/li&gt;
+&lt;li&gt;USBリーフ&lt;/li&gt;
+&lt;li&gt;PC (Windows、Mac OS X 、または Linux)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Arduino IDEはインストールしてある前提です。&lt;/p&gt;
+&lt;h2 id=&#34;マイコンボードの設定&#34;&gt;マイコンボードの設定&lt;/h2&gt;
+&lt;p&gt;STM32 MCUリーフをArduino IDEで使用するには、STM32 Coresのインストールが必要です。&lt;/p&gt;
+&lt;h3 id=&#34;arduino-ideのファイル--環境設定を開き追加のボードマネージャのurlに下記urlを入力してください&#34;&gt;Arduino IDEの&lt;code&gt;ファイル → 環境設定&lt;/code&gt;を開き、&lt;code&gt;追加のボードマネージャのURL:&lt;/code&gt;に、下記URLを入力してください。&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./stm32cores1.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ツールボードボードマネージャを選択しstm32-coresを検索しインストールのボタンを押しましょう&#34;&gt;&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt;を選択し、STM32 Coresを検索し、&lt;code&gt;インストール&lt;/code&gt;のボタンを押しましょう。&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;./stm32cores2.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;STM32 Coresの詳細は、&lt;a href=&#34;https://github.com/stm32duino/Arduino_Core_STM32&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;を参照してください。&lt;/p&gt;
+&lt;h3 id=&#34;stm32cubeprogrammer-software-v240をインストールすればstm32-mcuが使えるようになります&#34;&gt;STM32CubeProgrammer software V2.4.0をインストールすれば、STM32 MCUが使えるようになります。&lt;/h3&gt;
+&lt;p&gt;V2.5.0は動かないので注意してください。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Get Software&lt;/code&gt;ボタンをクリックします。
+&lt;img src=&#34;./stm32cores3.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;code&gt;Select versions&lt;/code&gt;をクリックして、&lt;code&gt;2.4.0&lt;/code&gt;を選択します。
+&lt;img src=&#34;./stm32cores4.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;code&gt;ACCEPT&lt;/code&gt;をクリックします。
+&lt;img src=&#34;./stm32cores5.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;code&gt;名&lt;/code&gt;、&lt;code&gt;姓&lt;/code&gt;、&lt;code&gt;E-mail address&lt;/code&gt;を入力し、&lt;br&gt;
+&lt;code&gt;□I have read and understood the Sales Terms &amp;amp; Conditions, Terms of Use and Privacy Policy&lt;/code&gt;&lt;br&gt;
+をチェックして、&lt;code&gt;Download&lt;/code&gt;をクリックします。
+&lt;img src=&#34;./stm32cores6.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+下記が表示されます。
+&lt;img src=&#34;./stm32cores7.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+登録したアドレスにメールが届くので&lt;code&gt;Download now&lt;/code&gt;をクリックしてダウンロードします。
+&lt;img src=&#34;./stm32cores8.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;h2 id=&#34;マイコンボードへの書き込み&#34;&gt;マイコンボードへの書き込み&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;ツール → ボード→ STM32 Boards (Selected from submenu)→ Nucleo-64&lt;/code&gt; をクリックします。
+&lt;img src=&#34;./stm32boards1.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;code&gt;ツール → Board part number: *****→ Nucleo L452RE&lt;/code&gt; をクリックします。
+&lt;img src=&#34;./stm32boards2.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;code&gt;ツール → Upload method: ***** → STM32CubeProgrammer(Serial)&lt;/code&gt; をクリックします。
+&lt;img src=&#34;./stm32boards3.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+これでSTM32 MCUリーフが使えるようになります。&lt;/p&gt;
+&lt;h2 id=&#34;マイコンボードに書き込む&#34;&gt;マイコンボードに書き込む&lt;/h2&gt;
+&lt;p&gt;STM32 MCUリーフの書き込みスイッチをOnにします。すると赤LEDが点灯します。
+Arduino IDEのマイコンボードに書き込むボタンをクリックします。
+正常に書き込まれた場合は &lt;code&gt; Start operation achieved successfully&lt;/code&gt;と表示されます。
+&lt;img src=&#34;./operation1.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;書き込みが完了したら、
+STM32 MCUリーフの書き込みスイッチをOffにしてください。すると赤LEDが消灯します。
+STM32 MCUリーフのリセットスイッチを押してください。
+&lt;br&gt;
+&lt;br&gt;
+書き込みスイッチをOnにしないで書き込みを行った場合は
+&lt;code&gt;ボードへの書き込みが完了しました&lt;/code&gt;と表示されますが、下部に&lt;code&gt; Timeout error occured&lt;/code&gt;と表示されます。
+&lt;img src=&#34;./operation2.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ピンの指定&#34;&gt;ピンの指定&lt;/h2&gt;
+&lt;p&gt;STM32 MCUのピン配置は、Nucleo L452REと異なっていますので、STM32L452REのポート名で使用するピンを指定してください。&lt;/p&gt;
+&lt;h2 id=&#34;スケッチの違い&#34;&gt;スケッチの違い&lt;/h2&gt;
+&lt;h3 id=&#34;timer&#34;&gt;Timer&lt;/h3&gt;
+&lt;p&gt;AVR MCUで使用する”MsTimer2”はSTM32 MCUでは使用できません。
+HardwareTimer等を使用してください。
+使用例を以下に記載します。
+詳細は&lt;a href=&#34;https://github.com/stm32duino/wiki/wiki/HardwareTimer-library&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt; を参照してください。&lt;/p&gt;
+
       </description>
     </item>
     
@@ -134,6 +211,25 @@
 &lt;img src=&#34;./japanese6.png&#34; width=&#34;500&#34;&gt;
 &lt;br&gt;
 これでインストール完了です。&lt;/p&gt;
+&lt;h3 id=&#34;文字化け対策&#34;&gt;文字化け対策&lt;/h3&gt;
+&lt;p&gt;STM32CubeMXのコード生成時にUTF-8が文字化けしないようにするには(本当に必要かは不明)
+環境変数に以下を追加します。&lt;br&gt;
+変数名：&lt;code&gt;JAVA_TOOL_OPTIONS&lt;/code&gt;
+変数値：&lt;code&gt;-Dfile.encoding=UTF-8&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;コントロールパネル&lt;/code&gt;→&lt;code&gt;システム&lt;/code&gt;→&lt;code&gt;システムの詳細設定&lt;/code&gt;→&lt;code&gt;環境変数&lt;/code&gt;を選択します。
+&lt;img src=&#34;./garbled1.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;code&gt;新規&lt;/code&gt;をクリックします。
+&lt;img src=&#34;./garbled2.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+変数名に&lt;code&gt;JAVA_TOOL_OPTIONS&lt;/code&gt;、変数値に&lt;code&gt;-Dfile.encoding=UTF-8&lt;/code&gt;を入力します。
+&lt;img src=&#34;./garbled3.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;code&gt;OK&lt;/code&gt;をクリックします。
+&lt;img src=&#34;./garbled4.png&#34; width=&#34;500&#34;&gt;&lt;/p&gt;
 
       </description>
     </item>

@@ -22,16 +22,16 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Arduino IDEの設定 | Leafony</title><meta property="og:title" content="Arduino IDEの設定" />
-<meta property="og:description" content="Arduino IDEの設定について
+<meta property="og:description" content="Arduino IDEにSTM32 Coresをインストール
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/environment/stm32/arduino_ide/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="Arduino IDEの設定">
-<meta itemprop="description" content="Arduino IDEの設定について
+<meta itemprop="description" content="Arduino IDEにSTM32 Coresをインストール
 "><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Arduino IDEの設定"/>
-<meta name="twitter:description" content="Arduino IDEの設定について
+<meta name="twitter:description" content="Arduino IDEにSTM32 Coresをインストール
 "/>
 
 
@@ -139,7 +139,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.11337d419118eac21f45099fb00bc7b859efb7335459776b6da5567846178d26b5de9f3f2807a3d9a93c819c697dad6010c4f52a2937934c16fb687d5ee8d00a.json"
+  data-offline-search-index-json-src="/offline-search-index.610f41b3fdff326a0b30bf1cd6186ed5e6ac81be32d697246ba255ac09e1f8115a5cce5e92bb06a2c121b800c9b374e96a74776073f9ff73c3e02825927a3c6b.json"
   data-offline-search-base-href="/"
 >
 
@@ -169,7 +169,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.11337d419118eac21f45099fb00bc7b859efb7335459776b6da5567846178d26b5de9f3f2807a3d9a93c819c697dad6010c4f52a2937934c16fb687d5ee8d00a.json"
+  data-offline-search-index-json-src="/offline-search-index.610f41b3fdff326a0b30bf1cd6186ed5e6ac81be32d697246ba255ac09e1f8115a5cce5e92bb06a2c121b800c9b374e96a74776073f9ff73c3e02825927a3c6b.json"
   data-offline-search-base-href="/"
 >
 
@@ -2694,6 +2694,27 @@ if (!doNotTrack) {
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#用意するもの">用意するもの</a></li>
+    <li><a href="#マイコンボードの設定">マイコンボードの設定</a>
+      <ul>
+        <li><a href="#arduino-ideのファイル--環境設定を開き追加のボードマネージャのurlに下記urlを入力してください">Arduino IDEの<code>ファイル → 環境設定</code>を開き、<code>追加のボードマネージャのURL:</code>に、下記URLを入力してください。</a></li>
+        <li><a href="#ツールボードボードマネージャを選択しstm32-coresを検索しインストールのボタンを押しましょう"><code>ツール→ボード→ボードマネージャ</code>を選択し、STM32 Coresを検索し、<code>インストール</code>のボタンを押しましょう。</a></li>
+        <li><a href="#stm32cubeprogrammer-software-v240をインストールすればstm32-mcuが使えるようになります">STM32CubeProgrammer software V2.4.0をインストールすれば、STM32 MCUが使えるようになります。</a></li>
+      </ul>
+    </li>
+    <li><a href="#マイコンボードへの書き込み">マイコンボードへの書き込み</a></li>
+    <li><a href="#マイコンボードに書き込む">マイコンボードに書き込む</a></li>
+    <li><a href="#ピンの指定">ピンの指定</a></li>
+    <li><a href="#スケッチの違い">スケッチの違い</a>
+      <ul>
+        <li><a href="#timer">Timer</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -2748,9 +2769,86 @@ if (!doNotTrack) {
             
 <div class="td-content">
 	<h1>Arduino IDEの設定</h1>
-        <div class="lead">Arduino IDEの設定について</div>
+        <div class="lead">Arduino IDEにSTM32 Coresをインストール</div>
 	
-	
+	<p>以下の手順で STM32 MCU 開発環境の設定を行いましょう。</p>
+<h2 id="用意するもの">用意するもの</h2>
+<ul>
+<li>STM32 MCUリーフ</li>
+<li>USBリーフ</li>
+<li>PC (Windows、Mac OS X 、または Linux)</li>
+</ul>
+<p>Arduino IDEはインストールしてある前提です。</p>
+<h2 id="マイコンボードの設定">マイコンボードの設定</h2>
+<p>STM32 MCUリーフをArduino IDEで使用するには、STM32 Coresのインストールが必要です。</p>
+<h3 id="arduino-ideのファイル--環境設定を開き追加のボードマネージャのurlに下記urlを入力してください">Arduino IDEの<code>ファイル → 環境設定</code>を開き、<code>追加のボードマネージャのURL:</code>に、下記URLを入力してください。</h3>
+<p><code>https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json</code></p>
+<p><img src="./stm32cores1.png"></img></p>
+<h3 id="ツールボードボードマネージャを選択しstm32-coresを検索しインストールのボタンを押しましょう"><code>ツール→ボード→ボードマネージャ</code>を選択し、STM32 Coresを検索し、<code>インストール</code>のボタンを押しましょう。</h3>
+<p><img src="./stm32cores2.png"></img></p>
+<p>STM32 Coresの詳細は、<a href="https://github.com/stm32duino/Arduino_Core_STM32" target="_blank">こちら</a>を参照してください。</p>
+<h3 id="stm32cubeprogrammer-software-v240をインストールすればstm32-mcuが使えるようになります">STM32CubeProgrammer software V2.4.0をインストールすれば、STM32 MCUが使えるようになります。</h3>
+<p>V2.5.0は動かないので注意してください。</p>
+<p><code>Get Software</code>ボタンをクリックします。
+<img src="./stm32cores3.png"></img>
+<br>
+<br>
+<code>Select versions</code>をクリックして、<code>2.4.0</code>を選択します。
+<img src="./stm32cores4.png"></img>
+<br>
+<br>
+<code>ACCEPT</code>をクリックします。
+<img src="./stm32cores5.png"></img>
+<br>
+<br>
+<code>名</code>、<code>姓</code>、<code>E-mail address</code>を入力し、<br>
+<code>□I have read and understood the Sales Terms &amp; Conditions, Terms of Use and Privacy Policy</code><br>
+をチェックして、<code>Download</code>をクリックします。
+<img src="./stm32cores6.png"></img>
+<br>
+<br>
+下記が表示されます。
+<img src="./stm32cores7.png"></img>
+<br>
+<br>
+登録したアドレスにメールが届くので<code>Download now</code>をクリックしてダウンロードします。
+<img src="./stm32cores8.png"></img></p>
+<h2 id="マイコンボードへの書き込み">マイコンボードへの書き込み</h2>
+<p><code>ツール → ボード→ STM32 Boards (Selected from submenu)→ Nucleo-64</code> をクリックします。
+<img src="./stm32boards1.png"></img>
+<br>
+<br>
+<code>ツール → Board part number: *****→ Nucleo L452RE</code> をクリックします。
+<img src="./stm32boards2.png"></img>
+<br>
+<br>
+<code>ツール → Upload method: ***** → STM32CubeProgrammer(Serial)</code> をクリックします。
+<img src="./stm32boards3.png"></img>
+<br>
+<br>
+これでSTM32 MCUリーフが使えるようになります。</p>
+<h2 id="マイコンボードに書き込む">マイコンボードに書き込む</h2>
+<p>STM32 MCUリーフの書き込みスイッチをOnにします。すると赤LEDが点灯します。
+Arduino IDEのマイコンボードに書き込むボタンをクリックします。
+正常に書き込まれた場合は <code> Start operation achieved successfully</code>と表示されます。
+<img src="./operation1.png"></img></p>
+<p>書き込みが完了したら、
+STM32 MCUリーフの書き込みスイッチをOffにしてください。すると赤LEDが消灯します。
+STM32 MCUリーフのリセットスイッチを押してください。
+<br>
+<br>
+書き込みスイッチをOnにしないで書き込みを行った場合は
+<code>ボードへの書き込みが完了しました</code>と表示されますが、下部に<code> Timeout error occured</code>と表示されます。
+<img src="./operation2.png"></img></p>
+<h2 id="ピンの指定">ピンの指定</h2>
+<p>STM32 MCUのピン配置は、Nucleo L452REと異なっていますので、STM32L452REのポート名で使用するピンを指定してください。</p>
+<h2 id="スケッチの違い">スケッチの違い</h2>
+<h3 id="timer">Timer</h3>
+<p>AVR MCUで使用する”MsTimer2”はSTM32 MCUでは使用できません。
+HardwareTimer等を使用してください。
+使用例を以下に記載します。
+詳細は<a href="https://github.com/stm32duino/wiki/wiki/HardwareTimer-library" target="_blank">こちら</a> を参照してください。</p>
+
         <div class="section-index">
     
     
