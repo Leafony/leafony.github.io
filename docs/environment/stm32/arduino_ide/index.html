@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.75.1" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -29,8 +29,7 @@
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="Arduino IDEの設定">
 <meta itemprop="description" content="Arduino IDEにSTM32 Coresをインストール
-">
-<meta name="twitter:card" content="summary"/>
+"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Arduino IDEの設定"/>
 <meta name="twitter:description" content="Arduino IDEにSTM32 Coresをインストール
 "/>
@@ -52,8 +51,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
-<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -148,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5c1e1d4211b30d56161940e924e8dc6b6e7cf4fce2ef3dd945c8a0d26c5bfb54e5d86744926821b6af02590925831ef3ddd5ae066bd18d181f679fa07b2f850d.json"
+  data-offline-search-index-json-src="/offline-search-index.eaeb166ce6eaef59f44a0a38d21e9ab8885f7dc9eb0ccd0da87e2359b536699a4287ef6e59c73ed3c9fe8b63be11178b4a246127619823112daf501941d5a982.json"
   data-offline-search-base-href="/"
 >
 
@@ -178,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5c1e1d4211b30d56161940e924e8dc6b6e7cf4fce2ef3dd945c8a0d26c5bfb54e5d86744926821b6af02590925831ef3ddd5ae066bd18d181f679fa07b2f850d.json"
+  data-offline-search-index-json-src="/offline-search-index.eaeb166ce6eaef59f44a0a38d21e9ab8885f7dc9eb0ccd0da87e2359b536699a4287ef6e59c73ed3c9fe8b63be11178b4a246127619823112daf501941d5a982.json"
   data-offline-search-base-href="/"
 >
 
@@ -2721,6 +2720,7 @@ if (!doNotTrack) {
         <li><a href="#timer">Timer</a></li>
       </ul>
     </li>
+    <li><a href="#swdの使用">SWDの使用</a></li>
   </ul>
 </nav>
 
@@ -2820,7 +2820,7 @@ if (!doNotTrack) {
 <img src="./stm32cores7.png"></img>
 <br>
 <br>
-登録したアドレスにメールが届くので<code>Download now</code>をクリックしてダウンロードします。
+登録したアドレスにメールが届くので<code>Download now</code>をクリックしてダウンロードします。<br>
 <img src="./stm32cores8.png"></img></p>
 <h2 id="マイコンボードへの書き込み">マイコンボードへの書き込み</h2>
 <p><code>ツール → ボード→ STM32 Boards (Selected from submenu)→ Nucleo-64</code> をクリックします。
@@ -2856,8 +2856,145 @@ STM32 MCUリーフのリセットスイッチを押してください。
 <p>AVR MCUで使用する”MsTimer2”はSTM32 MCUでは使用できません。
 HardwareTimer等を使用してください。
 使用例を以下に記載します。
-詳細は<a href="https://github.com/stm32duino/wiki/wiki/HardwareTimer-library" target="_blank">こちら</a> を参照してください。</p>
+詳細は<a href="https://github.com/stm32duino/wiki/wiki/HardwareTimer-library" target="_blank">こちら</a> を参照してください。
+<br>
+<br>
+初期設定</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">HardwareTimer</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">timer2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">HardwareTimer</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">TIM2</span><span style="color:#000;font-weight:bold">);</span>
 
+  <span style="color:#000">timer2</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">setOverflow</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LOOP_INTERVAL</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">MICROSEC_FORMAT</span><span style="color:#000;font-weight:bold">);</span>       <span style="color:#8f5902;font-style:italic">// 125ms
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">timer2</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">attachInterrupt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">intTimer</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">timer2</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">resume</span><span style="color:#000;font-weight:bold">();</span>
+</code></pre></div><br>
+<br>
+割り込みルーチン
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">intTimer</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">void</span><span style="color:#000;font-weight:bold">){</span>
+  <span style="color:#000">bInterval</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">;</span>
+　<span style="color:#a40000">：</span>
+　<span style="color:#a40000">：</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><h2 id="swdの使用">SWDの使用</h2>
+<p>AX01 Shieldを接続することにより、SWDを使用することができます。
+<br>
+<br>
+<img src="./swd_1.png" width="250"></img>
+<br>
+<br></p>
+<table>
+<thead>
+<tr>
+<th align="left">　SWDコネクタの仕様</th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">コネクタ型番</td>
+<td align="left">FTSH-105-01-L-D</td>
+</tr>
+<tr>
+<td align="left">ピン数</td>
+<td align="left">10</td>
+</tr>
+<tr>
+<td align="left">ピンピッチ</td>
+<td align="left">1.27mm</td>
+</tr>
+</tbody>
+</table>
+<p>ピン配置<br>
+<img src="./swd_2.png" width="250"></img>
+<br>
+<br>
+STLINK-V3SETにはAX01 ShieldのSWDコネクタに接続するケーブルが付属しているため、そのまま接続が可能です。
+<br>
+<img src="./swd_3.png"></img>
+<br>
+<br>
+ST-LINK-V2を持っている場合は、<a href="http://strawberry-linux.com/catalog/items?code=15079" target="_blank">変換アダプタ</a>により接続が可能です。
+変換アダプタを使用してジャンパケーブル等でNucleo のSWDに接続することも可能です。<br>
+<img src="./swd_4.png"></img>
+<br>
+<br>
+Nucleo のSWDに接続する場合、自作も可能です。<br>
+<a href="http://strawberry-linux.com/catalog/items?code=15079" target="_blank">ハーフピッチ リボンケーブル</a>
+<img src="./swd_5.png" width="100"></img><br>
+<a href="https://akizukidenshi.com/catalog/g/gC-13800/" target="_blank">ハーフピッチ　ピンヘッダ</a>
+<img src="./swd_6.png" width="100"></img><br>
+<a href="https://akizukidenshi.com/catalog/g/gP-14224/" target="_blank">ピッチ変換基板</a>
+<img src="./swd_7.png" width="100"></img><br>
+<a href="https://akizukidenshi.com/catalog/g/gC-03786/" target="_blank">ピンソケット</a>
+<img src="./swd_8.png" width="100"></img><br></p>
+<div class="row">
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_5.png" alt="Card image cap">
+    
+    <div class="card-body">
+      <h4 class="card-title">
+           
+      </h4>
+      <p class="card-text"><a href="http://strawberry-linux.com/catalog/items?code=15079" target="_blank">ハーフピッチ リボンケーブル</a></p>
+      
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_6.png" alt="Card image cap">
+    
+    <div class="card-body">
+      <h4 class="card-title">
+           
+      </h4>
+      <p class="card-text"><a href="https://akizukidenshi.com/catalog/g/gC-13800/" target="_blank">ハーフピッチ　ピンヘッダ</a></p>
+      
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_7.png" alt="Card image cap">
+    
+    <div class="card-body">
+      <h4 class="card-title">
+           
+      </h4>
+      <p class="card-text"><a href="https://akizukidenshi.com/catalog/g/gP-14224/" target="_blank">ピッチ変換基板</a></p>
+      
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_8.png" alt="Card image cap">
+    
+    <div class="card-body">
+      <h4 class="card-title">
+           
+      </h4>
+      <p class="card-text"><a href="https://akizukidenshi.com/catalog/g/gC-03786/" target="_blank">ピンソケット</a></p>
+      
+    </div>
+  </div>
+</div>
         <div class="section-index">
     
     
@@ -2868,7 +3005,7 @@ HardwareTimer等を使用してください。
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 October 5, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 October 7, 2020
 </div>
 </div>
 

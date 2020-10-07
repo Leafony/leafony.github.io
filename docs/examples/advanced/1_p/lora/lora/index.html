@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.75.1" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -21,15 +21,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>LoRaを使ってセンサの値を表示(公開予定) | Leafony</title><meta property="og:title" content="LoRaを使ってセンサの値を表示(公開予定)" />
+<title>LoRaを使ってセンサの値を表示 | Leafony</title><meta property="og:title" content="LoRaを使ってセンサの値を表示" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/1_p/lora/lora/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="LoRaを使ってセンサの値を表示(公開予定)">
-<meta itemprop="description" content="A Leafony Documentation site">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="LoRaを使ってセンサの値を表示(公開予定)"/>
+<meta itemprop="name" content="LoRaを使ってセンサの値を表示">
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="LoRaを使ってセンサの値を表示"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -49,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
-<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -145,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5c1e1d4211b30d56161940e924e8dc6b6e7cf4fce2ef3dd945c8a0d26c5bfb54e5d86744926821b6af02590925831ef3ddd5ae066bd18d181f679fa07b2f850d.json"
+  data-offline-search-index-json-src="/offline-search-index.eaeb166ce6eaef59f44a0a38d21e9ab8885f7dc9eb0ccd0da87e2359b536699a4287ef6e59c73ed3c9fe8b63be11178b4a246127619823112daf501941d5a982.json"
   data-offline-search-base-href="/"
 >
 
@@ -175,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5c1e1d4211b30d56161940e924e8dc6b6e7cf4fce2ef3dd945c8a0d26c5bfb54e5d86744926821b6af02590925831ef3ddd5ae066bd18d181f679fa07b2f850d.json"
+  data-offline-search-index-json-src="/offline-search-index.eaeb166ce6eaef59f44a0a38d21e9ab8885f7dc9eb0ccd0da87e2359b536699a4287ef6e59c73ed3c9fe8b63be11178b4a246127619823112daf501941d5a982.json"
   data-offline-search-base-href="/"
 >
 
@@ -2794,7 +2793,7 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>LoRaを使ってセンサの値を表示(公開予定)</h1>
+	<h1>LoRaを使ってセンサの値を表示</h1>
         
 	
 	<h2 id="概要">概要</h2>
@@ -2804,7 +2803,7 @@ if (!doNotTrack) {
 <p>表示させたい温度（または、湿度）と４-Sensorsの温度（または、湿度）に、ずれがあるときは、２点間補正を行います。詳しくは、<a href="https://trillion-node.org/example/correction/">こちら</a>。</p>
 <h2 id="デモ動画">デモ動画</h2>
 <div class="youtube">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Iilq24AlkhM?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/-f2uWxR2W_Y?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <br>
 <br>
@@ -2814,66 +2813,66 @@ if (!doNotTrack) {
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Q&rsquo;ty</th>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/communication/ac03">AC03</a></td>
-<td style="text-align:left"><a href="/docs/leaf/communication/ac03">LoRa Easy</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/docs/leaf/communication/ac03">AC03</a></td>
+<td align="left"><a href="/docs/leaf/communication/ac03">LoRa Easy</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/extension/ax04">AX04</a></td>
-<td style="text-align:left"><a href="/docs/leaf/extension/ax04">Spacer</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/docs/leaf/extension/ax04">AX04</a></td>
+<td align="left"><a href="/docs/leaf/extension/ax04">Spacer</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/io/ai01">AI01</a></td>
-<td style="text-align:left"><a href="/docs/leaf/io/ai01">4-Sensors</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/docs/leaf/io/ai01">AI01</a></td>
+<td align="left"><a href="/docs/leaf/io/ai01">4-Sensors</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/processor/ap01">AP01</a></td>
-<td style="text-align:left"><a href="/docs/leaf/processor/ap01">AVR MCU</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/docs/leaf/processor/ap01">AP01</a></td>
+<td align="left"><a href="/docs/leaf/processor/ap01">AVR MCU</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/power/av03">AV03</a></td>
-<td style="text-align:left"><a href="/docs/leaf/power/av03">CR2032</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/docs/leaf/power/av03">AV03</a></td>
+<td align="left"><a href="/docs/leaf/power/av03">CR2032</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/others/az01">AZ01</a></td>
-<td style="text-align:left"><a href="/docs/leaf/others/az01">USB</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/docs/leaf/others/az01">AZ01</a></td>
+<td align="left"><a href="/docs/leaf/others/az01">USB</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/others/az61">AZ61</a></td>
-<td style="text-align:left"><a href="/docs/leaf/others/az61">Connector</a></td>
-<td style="text-align:left">2</td>
+<td align="left"><a href="/docs/leaf/others/az61">AZ61</a></td>
+<td align="left"><a href="/docs/leaf/others/az61">Connector</a></td>
+<td align="left">2</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/others/az62">AZ62</a></td>
-<td style="text-align:left"><a href="/docs/leaf/others/az62">Connector Cover</a></td>
-<td style="text-align:left">3</td>
+<td align="left"><a href="/docs/leaf/others/az62">AZ62</a></td>
+<td align="left"><a href="/docs/leaf/others/az62">Connector Cover</a></td>
+<td align="left">3</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/others/az63">AZ63</a></td>
-<td style="text-align:left"><a href="/docs/leaf/others/az63">Nut Plate</a></td>
-<td style="text-align:left">2</td>
+<td align="left"><a href="/docs/leaf/others/az63">AZ63</a></td>
+<td align="left"><a href="/docs/leaf/others/az63">Nut Plate</a></td>
+<td align="left">2</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">AA battery</td>
-<td style="text-align:left">1</td>
+<td align="left"></td>
+<td align="left">AA battery</td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">M2*25mm screw</td>
-<td style="text-align:left">6</td>
+<td align="left"></td>
+<td align="left">M2*25mm screw</td>
+<td align="left">6</td>
 </tr>
 </tbody>
 </table>
@@ -2881,46 +2880,46 @@ if (!doNotTrack) {
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Q&rsquo;ty</th>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/communication/ac03">AC03</a></td>
-<td style="text-align:left"><a href="/docs/leaf/communication/ac03">LoRa Easy</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/docs/leaf/communication/ac03">AC03</a></td>
+<td align="left"><a href="/docs/leaf/communication/ac03">LoRa Easy</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/processor/ap01">AP01</a></td>
-<td style="text-align:left"><a href="/docs/leaf/processor/ap01">AVR MCU</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/docs/leaf/processor/ap01">AP01</a></td>
+<td align="left"><a href="/docs/leaf/processor/ap01">AVR MCU</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/extension/ax03">AX03</a></td>
-<td style="text-align:left"><a href="/docs/leaf/extension/ax03">Leaf x2</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/docs/leaf/extension/ax03">AX03</a></td>
+<td align="left"><a href="/docs/leaf/extension/ax03">Leaf x2</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/others/az01">AZ01</a></td>
-<td style="text-align:left"><a href="/docs/leaf/others/az01">USB</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/docs/leaf/others/az01">AZ01</a></td>
+<td align="left"><a href="/docs/leaf/others/az01">USB</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/others/az62">AZ62</a></td>
-<td style="text-align:left"><a href="/docs/leaf/others/az62">Connector Cover</a></td>
-<td style="text-align:left">2</td>
+<td align="left"><a href="/docs/leaf/others/az62">AZ62</a></td>
+<td align="left"><a href="/docs/leaf/others/az62">Connector Cover</a></td>
+<td align="left">2</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/others/az63">AZ63</a></td>
-<td style="text-align:left"><a href="/docs/leaf/others/az63">Nut Plate</a></td>
-<td style="text-align:left">2</td>
+<td align="left"><a href="/docs/leaf/others/az63">AZ63</a></td>
+<td align="left"><a href="/docs/leaf/others/az63">Nut Plate</a></td>
+<td align="left">2</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">M2*15mm screw</td>
-<td style="text-align:left">4</td>
+<td align="left"></td>
+<td align="left">M2*15mm screw</td>
+<td align="left">4</td>
 </tr>
 </tbody>
 </table>
@@ -3172,7 +3171,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 30, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 October 7, 2020
 </div>
 </div>
 
