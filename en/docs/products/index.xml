@@ -263,9 +263,9 @@
         
         
         &lt;p&gt;&lt;a href=&#34;./extension_kit_large.jpg&#34;&gt;&lt;img src=&#34;./extension_kit_small.jpg&#34; width=&#34;450&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;Basic KitやESP32 Wi-Fi Kitと組み合わせて使える、便利で使い勝手の良い色々なリーフが入っているキットで、より広範な応用を実現できます。Extension Kit には、マイコンリーフが含まれていませんので、ソフトウェアを動かすためにBasic Kitか、ESP32 Wi-Fi Kit が必要です。&lt;/p&gt;
-&lt;h2 id=&#34;内容物&#34;&gt;内容物&lt;/h2&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;The Extension Kit contains a variety of useful and easy-to-use leafs that can be used in conjunction with the Basic Kit and the ESP32 Wi-Fi Kit for a wider range of applications. It does not include a microcontroller leaf, so you will need the Basic Kit or the ESP32 Wi-Fi Kit to run the software.&lt;/p&gt;
+&lt;h2 id=&#34;contents&#34;&gt;Contents&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -327,7 +327,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;リーフ一覧&#34;&gt;リーフ一覧&lt;/h2&gt;
+&lt;h2 id=&#34;leaf-list&#34;&gt;Leaf List&lt;/h2&gt;
 &lt;div class=&#34;row&#34;&gt;
 
 
@@ -343,7 +343,7 @@
         &lt;a href=&#34;../../leaf/io/ai02&#34;&gt;AI02 SP&amp;amp;PIR&lt;/a&gt;
         
       &lt;/h4&gt;
-      &lt;p class=&#34;card-text&#34;&gt;圧電スピーカと人感センサを搭載したリーフです。人感センサは接近検知アルゴリズムを内蔵しており、簡単な設定で物体の接近を検知することが可能です。&lt;/p&gt;
+      &lt;p class=&#34;card-text&#34;&gt;The Leaf is equipped with a piezoelectric speaker and a motion sensor. The motion sensor has a built-in proximity detection algorithm and can detect the approach of an object with simple settings.&lt;/p&gt;
       
     &lt;/div&gt;
   &lt;/div&gt;
@@ -361,7 +361,7 @@
         &lt;a href=&#34;../../leaf/io/ai03&#34;&gt;AI03 MIC&amp;amp;VR&amp;amp;LED&lt;/a&gt;
         
       &lt;/h4&gt;
-      &lt;p class=&#34;card-text&#34;&gt;MEMSマイク、ボリューム、LEDを搭載したリーフです。低消費電力を実現するためI2C Expander を制御することにより電源をロードスイッチによりオフすることが可能です。&lt;/p&gt;
+      &lt;p class=&#34;card-text&#34;&gt;This leaf is equipped with a MEMS microphone, volume and LED. It can be powered off with a load switch by controlling the I2C Expander to achieve low power consumption.&lt;/p&gt;
       
     &lt;/div&gt;
   &lt;/div&gt;
@@ -379,7 +379,7 @@
         &lt;a href=&#34;../../leaf/io/ai04&#34;&gt;AI04 LCD&lt;/a&gt;
         
       &lt;/h4&gt;
-      &lt;p class=&#34;card-text&#34;&gt;キャラクタLCDユニットとユーザスイッチ2個を搭載したリーフです。低消費電力を実現するためI2C Expander を制御することにより電源をロードスイッチによりオフすることが可能です。&lt;/p&gt;
+      &lt;p class=&#34;card-text&#34;&gt;This leaf is equipped with a character LCD unit and two user switches. It can be powered off with a load switch by controlling the I2C Expander to achieve low power consumption.&lt;/p&gt;
       
     &lt;/div&gt;
   &lt;/div&gt;
@@ -397,7 +397,7 @@
         &lt;a href=&#34;../../leaf/power/av03&#34;&gt;AV03 AA BAT&lt;/a&gt;
         
       &lt;/h4&gt;
-      &lt;p class=&#34;card-text&#34;&gt;単3電池ホルダと電源スイッチ、電圧モニタ用のADコンバータ、3V→3.3V昇圧回路を搭載した電源リーフです。3つのLeafonyコネクタを搭載しより多くのリーフに電源供給が可能です。&lt;/p&gt;
+      &lt;p class=&#34;card-text&#34;&gt;This is a power supply leaf with an AA battery holder, a power switch, an AD converter for voltage monitoring, a 3 V to 3.3 V boost circuit, and three Leafony connectors to provide power to more leaves.&lt;/p&gt;
       
     &lt;/div&gt;
   &lt;/div&gt;
@@ -415,7 +415,7 @@
         &lt;a href=&#34;../../leaf/extension/ax01&#34;&gt;AX01 Shield&lt;/a&gt;
         
       &lt;/h4&gt;
-      &lt;p class=&#34;card-text&#34;&gt;Arduino Shield接続用コネクタ、SWDコネクタ、ICSPコネクタ、リーフI/F3個を実装した拡張基板です。&lt;/p&gt;
+      &lt;p class=&#34;card-text&#34;&gt;An expansion board with an Arduino Shield connector, a SWD connector, an ICSP connector, and three leaf I/Fs mounted on it.&lt;/p&gt;
       
     &lt;/div&gt;
   &lt;/div&gt;
@@ -433,7 +433,7 @@
         &lt;a href=&#34;../../leaf/extension/ax03&#34;&gt;AX03 Leaf x2&lt;/a&gt;
         
       &lt;/h4&gt;
-      &lt;p class=&#34;card-text&#34;&gt;リーフを横並びに接続するためのコネクタリーフです。&lt;/p&gt;
+      &lt;p class=&#34;card-text&#34;&gt;This connector leaf is used to connect the leafs side-by-side.&lt;/p&gt;
       
     &lt;/div&gt;
   &lt;/div&gt;
@@ -451,7 +451,7 @@
         &lt;a href=&#34;../../leaf/extension/ax04&#34;&gt;AX04 Spacer&lt;/a&gt;
         
       &lt;/h4&gt;
-      &lt;p class=&#34;card-text&#34;&gt;積み重ねた2枚のリーフの間に挟むスペーサリーフです。リーフ同士の部品が干渉する時に使えます。&lt;/p&gt;
+      &lt;p class=&#34;card-text&#34;&gt;A spacer leaf that is placed between two stacked leaves. It can be used when parts of the leafs interfere with each other.&lt;/p&gt;
       
     &lt;/div&gt;
   &lt;/div&gt;
@@ -469,7 +469,7 @@
         &lt;a href=&#34;../../leaf/extension/ax05&#34;&gt;AX05 I Meas.&lt;/a&gt;
         
       &lt;/h4&gt;
-      &lt;p class=&#34;card-text&#34;&gt;3.3VおよびVBUSに流れる電流を測定するためのリーフです。通常Leafony busは両面とも電気的に接続されていますが、このリーフでは3.3VとVBUSのみ表裏で切断され、それぞれスルーホールに接続されています。&lt;/p&gt;
+      &lt;p class=&#34;card-text&#34;&gt;This leaf is used to measure the current flowing in the 3.3V and VBUS. Normally, the Leafony bus is electrically connected on both sides, but in this leaf, only the 3.3V and VBUS are disconnected in the front and the back, and they are connected to the through-hole.&lt;/p&gt;
       
     &lt;/div&gt;
   &lt;/div&gt;
@@ -487,14 +487,14 @@
         &lt;a href=&#34;../../leaf/extension/ax06&#34;&gt;AX06 Grove&amp;amp;5V&lt;/a&gt;
         
       &lt;/h4&gt;
-      &lt;p class=&#34;card-text&#34;&gt;Seeed Studio製 Groveシリーズに準拠する5Vで動作するUART、I2C、アナログ入力、デジタル入力が可能なリーフです。3.3Vから昇圧電源回路により5Vに変換しGroveに供給します。低消費電力を実現するためI2C Expander を制御することにより5Vの電源をオフすることが可能です。&lt;/p&gt;
+      &lt;p class=&#34;card-text&#34;&gt;It is a UART, I2C, analog input and digital input leaf that operates at 3.3V and 5V in accordance with the Grove series from VBUSSeeed Studio. 3.3V is converted to 5V by a step-up power supply circuit and supplied to Grove. To achieve low power consumption, it is possible to turn off the 5V power supply by controlling the I2C Expander.&lt;/p&gt;
       
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;h2 id=&#34;revision-history&#34;&gt;Revision history&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Rev A1.0: 2019年8月初版&lt;/li&gt;
+&lt;li&gt;Rev A1.0: First edition, August 2019&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -726,9 +726,9 @@
         
         
         &lt;p&gt;&lt;a href=&#34;./az61a_large.jpg&#34;&gt;&lt;img src=&#34;./az61a_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;Leafonyプラットフォーム用のコネクタ10個セットです。&lt;/p&gt;
-&lt;h2 id=&#34;内容物&#34;&gt;内容物&lt;/h2&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;A set of ten connectors for the Leafony platform.&lt;/p&gt;
+&lt;h2 id=&#34;contents&#34;&gt;Contents&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -745,7 +745,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;一覧&#34;&gt;一覧&lt;/h2&gt;
+&lt;h2 id=&#34;list&#34;&gt;List&lt;/h2&gt;
 &lt;div class=&#34;row&#34;&gt;
 
 
@@ -761,14 +761,14 @@
         &lt;a href=&#34;../../leaf/others/az61&#34;&gt;AZ61 Connector&lt;/a&gt;
         
       &lt;/h4&gt;
-      &lt;p class=&#34;card-text&#34;&gt;Leafony Platformは、ACR (Anisotropic Conductive Rubber)を採用しています。ACRは、絶縁性シリコーンゴムに、金属又は導電性エラストマの導電部材が、狭ピッチで配列されており、圧縮されることで電気的接続が実現できます。&lt;/p&gt;
+      &lt;p class=&#34;card-text&#34;&gt;The Leafony Platform is based on ACRs (Anisotropic Conductive Rubber), which is an insulating silicone rubber with metal or conductive elastomeric conductive elements arranged at a narrow pitch, which can be compressed to create an electrical connection.&lt;/p&gt;
       
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;h2 id=&#34;revision-history&#34;&gt;Revision history&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Rev A1.0: 2019年8月初版&lt;/li&gt;
+&lt;li&gt;Rev A1.0: First edition, August 2019&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -784,9 +784,9 @@
         
         
         &lt;p&gt;&lt;a href=&#34;./nut_large.jpg&#34;&gt;&lt;img src=&#34;./nut_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;リーフをねじで固定する時に使用するNut Plate と ACR に付着するゴミを防御するコネクタカバーです。&lt;/p&gt;
-&lt;h2 id=&#34;内容物&#34;&gt;内容物&lt;/h2&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;A connector cover to protect the Nut Plate and ACR from debris when screwing the leaf in place.&lt;/p&gt;
+&lt;h2 id=&#34;contents&#34;&gt;Contents&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -808,7 +808,7 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;一覧&#34;&gt;一覧&lt;/h2&gt;
+&lt;h2 id=&#34;list&#34;&gt;List&lt;/h2&gt;
 &lt;div class=&#34;row&#34;&gt;
 
 
@@ -824,7 +824,7 @@
         &lt;a href=&#34;../../leaf/others/az63&#34;&gt;AZ63 Nut Plate&lt;/a&gt;
         
       &lt;/h4&gt;
-      &lt;p class=&#34;card-text&#34;&gt;Nut Plateは、リーフをネジで固定する時に使用します。市販の六角ナットを用いると基板の電極に触れて、ショートをおこすことがあるので要注意。&lt;/p&gt;
+      &lt;p class=&#34;card-text&#34;&gt;The Nut Plate is used to fix the leaf with a screw. Be careful not to use commercially available hex nuts as they may cause a short circuit by touching the electrodes on the board.&lt;/p&gt;
       
     &lt;/div&gt;
   &lt;/div&gt;
@@ -842,14 +842,14 @@
         &lt;a href=&#34;../../leaf/others/az62&#34;&gt;AZ62 Connector Cover&lt;/a&gt;
         
       &lt;/h4&gt;
-      &lt;p class=&#34;card-text&#34;&gt;Connector Coverは、ACR (Anisotropic Conductive Rubber)に付着するゴミを防御することが出来ます。&lt;/p&gt;
+      &lt;p class=&#34;card-text&#34;&gt;The Connector Cover protects the ACR (Anisotropic Conductive Rubber) from dust and debris.&lt;/p&gt;
       
     &lt;/div&gt;
   &lt;/div&gt;
 &lt;/div&gt;
-&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;h2 id=&#34;revision-history&#34;&gt;Revision history&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Rev A1.0: 2019年8月初版&lt;/li&gt;
+&lt;li&gt;Rev A1.0: First edition, August 2019&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
