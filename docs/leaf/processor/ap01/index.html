@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.aa434420778bedb141034eaf3c41aef9c9deee1738ee4bef6dd7804e559ce9a17f1c70301f97cb9bfe045a84cf55753a2054951def4039fd4d58dec891a4cdc4.json"
+  data-offline-search-index-json-src="/offline-search-index.5a925c42b557adb8a2f2ada5a98f518693999943386877f39c593beffdc84e624b590280e8642e2907fea480fc3ef2e9376dbbdb10c6cb9963045c409347e40e.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.aa434420778bedb141034eaf3c41aef9c9deee1738ee4bef6dd7804e559ce9a17f1c70301f97cb9bfe045a84cf55753a2054951def4039fd4d58dec891a4cdc4.json"
+  data-offline-search-index-json-src="/offline-search-index.5a925c42b557adb8a2f2ada5a98f518693999943386877f39c593beffdc84e624b590280e8642e2907fea480fc3ef2e9376dbbdb10c6cb9963045c409347e40e.json"
   data-offline-search-base-href="/"
 >
 
@@ -1795,6 +1795,29 @@ if (!doNotTrack) {
 
       
       
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/platformio/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Platformio</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironmentplatformio">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
     </li>
   </ul>
 </ul>
@@ -2713,6 +2736,14 @@ if (!doNotTrack) {
     <li><a href="#サンプルアプリ">サンプルアプリ</a></li>
     <li><a href="#arduinoでの使用方法">Arduinoでの使用方法</a></li>
     <li><a href="#ドキュメント">ドキュメント</a></li>
+    <li><a href="#省電力制御">省電力制御</a>
+      <ul>
+        <li><a href="#activeモードとsleepモード">ActiveモードとSleepモード</a></li>
+        <li><a href="#sleepモードwdtサンプルスケッチ">Sleepモード・WDTサンプルスケッチ</a></li>
+        <li><a href="#sleepモード">Sleepモード</a></li>
+        <li><a href="#wakeup">Wakeup</a></li>
+      </ul>
+    </li>
     <li><a href="#変更履歴">変更履歴</a></li>
   </ul>
 </nav>
@@ -2867,6 +2898,111 @@ if (!doNotTrack) {
 <li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AP01_AVR_MCU/AP01_AVR_MCU_PCBLayout_dxf.zip">レイアウト図(dxf)</a></li>
 <li><a href="https://github.com/arduino/ArduinoCore-avr/blob/master/bootloaders/atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex">ブートローダ</a></li>
 </ul>
+<h2 id="省電力制御">省電力制御</h2>
+<h3 id="activeモードとsleepモード">ActiveモードとSleepモード</h3>
+<p>Activeモード：動作状態。通常、大きな電源電流が流れます。<br>
+Sleepモード：低消費電力状態。スタンバイ・モードともいいます。<br>
+Wakeup：SleepモードからActiveモードへの移行。Wakeupには、典型的には次の２種類があります。<br>
+1)WDT（ウォッチドッグタイマー）：MCUが持っているタイマーで定期的（例えば数秒間ごと）にWakeupします。この機能を生かしたい場合はSleepモードに入る前に、WDTをenabledに設定する必要があります。<br>
+2)外部割り込み：センサー値の変化やリアルタイムクロックなどによる割り込みでWakeupします。WDTに比べてMCUを低消費電力に出来ます。
+<img src="./ap01_lowpower1.png" width="450"></a></p>
+<h3 id="sleepモードwdtサンプルスケッチ">Sleepモード・WDTサンプルスケッチ</h3>
+<p>Sleep関数とWDT関数のライブラリ群を使って定時間ごとにWakeupするサンプルスケッチ。Sleep時間は、8秒となります。avr/wdt.h のwdt_enable()関数を使用するとWDTによる復帰時にリセットが発生します。Wakup時にリセットをさせたくない場合は以下の様にWDTの設定をATmega328Pのレジスタに書き込んでください。</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;avr/wdt.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;avr/sleep.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">WDT_setup</span><span style="color:#000;font-weight:bold">(){</span>
+	<span style="color:#000">cli</span><span style="color:#000;font-weight:bold">();</span>				<span style="color:#8f5902;font-style:italic">// 割り込み禁止
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">wdt_reset</span><span style="color:#000;font-weight:bold">();</span>			<span style="color:#8f5902;font-style:italic">// WDT タイマーカウンタリセット
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">MCUSR</span> <span style="color:#ce5c00;font-weight:bold">&amp;=</span> <span style="color:#ce5c00;font-weight:bold">~</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">WDRF</span><span style="color:#000;font-weight:bold">);</span>　		<span style="color:#8f5902;font-style:italic">// WatchDog system Reset Flag(WDRF)リセット
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">WDTCSR</span> <span style="color:#ce5c00;font-weight:bold">|=</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">WDCE</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">WDE</span><span style="color:#000;font-weight:bold">;</span>	<span style="color:#8f5902;font-style:italic">//WDT変更有効 (WDCEとWDE を同時に1にセットでWDT変更許可)
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">WDTCSR</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">WDIE</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">0</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">WDE</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">WDP3</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">0</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">WDP2</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">0</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">WDP1</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">WDP0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#8f5902;font-style:italic">//WDT設定
+</span><span style="color:#8f5902;font-style:italic"></span>					<span style="color:#8f5902;font-style:italic">// WDE=0,WDIE=1 :WDT overflowで割り込み
+</span><span style="color:#8f5902;font-style:italic"></span>					<span style="color:#8f5902;font-style:italic">// WDP3=1,WDP2=0,WDP1=0,WDP0=1: 8s
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">sei</span><span style="color:#000;font-weight:bold">();</span>				<span style="color:#8f5902;font-style:italic">//割り込み許可
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">sleepMode</span><span style="color:#000;font-weight:bold">(){</span>
+	<span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Sleep Mode&#34;</span><span style="color:#000;font-weight:bold">);</span>
+	<span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">);</span>
+	<span style="color:#000">WDT_setup</span><span style="color:#000;font-weight:bold">();</span>
+	<span style="color:#000">set_sleep_mode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SLEEP_MODE_PWR_DOWN</span><span style="color:#000;font-weight:bold">);</span>	<span style="color:#8f5902;font-style:italic">//SLEEPモード設定
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">sleep_bod_disable</span><span style="color:#000;font-weight:bold">();</span>				<span style="color:#8f5902;font-style:italic">//低電圧検出器(BOD)禁止
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">sleep_mode</span><span style="color:#000;font-weight:bold">();</span> 				<span style="color:#8f5902;font-style:italic">//SLEEP移行
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">__asm__</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;nop</span><span style="color:#4e9a06">\n\t</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;WakeUp&#34;</span><span style="color:#000;font-weight:bold">);</span>
+ 	<span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">13</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">);</span>
+ 	<span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">13</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">(){</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span> 
+	<span style="color:#000">sleepMode</span><span style="color:#000;font-weight:bold">();</span> 
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#000">ISR</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">WDT_vect</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span> 				<span style="color:#8f5902;font-style:italic">// WDTがタイムアップした時に実行される処理
+</span><span style="color:#8f5902;font-style:italic"></span>	<span style="color:#000">wdt_disable</span><span style="color:#000;font-weight:bold">();</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+</code></pre></div><h3 id="sleepモード">Sleepモード</h3>
+<p>ATmega328PではSleepモードの一つに最も低電力状態になるPower-down modeがります。ここでは、Power-downモード関連のスケッチの書き方について説明します。
+<br>
+<br>
+Sleepモードへの移行に必要な関数<br>
+　　set_sleep_mode(パラメータ)	： Sleepモード(パラメータ)設定<br>
+　　sleep_mode()		： Sleepモードに移行<br>
+ライブラリの呼び出し<br>
+　　#include &lt;avr/sleep.h&gt;<br></p>
+<p><img src="./ap01_lowpower2.png" width="650"></a>
+<br>
+<br>
+スケッチの例</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;avr/sleep.h&gt; </span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span> <span style="color:#000;font-weight:bold">}</span> 
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">sleep</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#000">set_sleep_mode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SLEEP_MODE_PWR_DOWN</span><span style="color:#000;font-weight:bold">);</span> 
+  <span style="color:#000">ADCSRA</span> <span style="color:#ce5c00;font-weight:bold">&amp;=</span> <span style="color:#ce5c00;font-weight:bold">~</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">ADEN</span><span style="color:#000;font-weight:bold">);</span>                            <span style="color:#8f5902;font-style:italic">//ADC停止
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">sleep_enable</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000">MCUCR</span> <span style="color:#ce5c00;font-weight:bold">|=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">BODSE</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">BODS</span><span style="color:#000;font-weight:bold">);</span>              <span style="color:#8f5902;font-style:italic">// MCUCRのBODSとBODSEに1をセット
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">MCUCR</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">MCUCR</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#ce5c00;font-weight:bold">~</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">BODSE</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#000">BODS</span><span style="color:#000;font-weight:bold">);</span>  <span style="color:#8f5902;font-style:italic">// すぐに（4クロック以内）BODSSEを0, BODSを1に設定
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">asm</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;sleep&#34;</span><span style="color:#000;font-weight:bold">);</span>                                          <span style="color:#8f5902;font-style:italic">// 3クロック以内にスリープ 
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span> 
+
+</code></pre></div><p>Sleepモード設定前にWDTの設定を行います。WDTによるSleepモード復帰を行う場合はWDTを有効にし、WDTの設定を行い開始します。ここでWDTを無効にすることにより、Power-down mode(WDT disabled)に設定することが可能。
+消費電流を下げるためには、Sleepモード設定時にADCとBODを停止させる必要があります。</p>
+<h3 id="wakeup">Wakeup</h3>
+<p>Wakeupには、以下の方法があります。ここでは、Power-downモード関連のスケッチの書き方について説明します。</p>
+<ul>
+<li>WDTを使う方法(一定時間間隔で自動復帰)最大8秒</li>
+<li>外部割り込みを使う方法
+<img src="./ap01_lowpower3.png" width="650"></a></li>
+</ul>
+<p>1)WDTでのWakeup
+WDTのSleep時間は、最大８秒です。それ以上Sleepさせたい場合は、Sleepを複数回繰り返すことにより8秒の整数倍のSleep時間を得ることが出来ます。
+<br>
+<br>
+WDTの制御に必要な関数
+　wdt_reset()		： WDTの設定をリセットするための関数
+　wdt_enable(value)	：WDTを有効にする関数。valueに定数を入れて時間を設定する
+　　　　　　　　　　　　　　ただし、WDTのオーバーフロー発生時リセットが発生する
+　wdt_disable()		： WDTを無効にする関数
+ライブラリの呼び出し
+　#include &lt;avr/wdt.h&gt;
+<br>
+<br>
+2)外部割り込みでのWakeup
+外部割り込みは、通常のプログラム実行中に、センサーなどの応答値が閾値を超えたり、スイッチがON/OFF切り替わった時に割り込みが発生し処理を行います。
+8bit-MCU Leafには、pin 2またはpin 3に割り込み機能が割り当てられており、HighとLowの切り替わりで割り込みが発生します。</p>
+<p>割り込み処理関数<br>
+　attachInterrupt(割り込み番号, 関数名, 割り込みモード) <br>
+　　割り込み番号<br>
+　　　外部割り込み　pin 2の場合：割り込み番号=0<br>
+　　　　　　　　　　pin 3の場合：割り込み番号=1<br>
+　　関数名<br>
+　　　割り込み発生時に呼び出す関数<br>
+　　割り込みモード<br>
+　　　LOW　　 ：ピンがLowのとき発生<br>
+　　　CHANGE  ：ピンの状態が変化したときに発生<br>
+　　　RISING　：ピンの状態がLowからHighに変わったときに発生<br>
+　　　FALLING ：ピンの状態がHighからLowに変わったときに発生<br></p>
 <h2 id="変更履歴">変更履歴</h2>
 <ul>
 <li>Rev A: 2019年8月初版</li>
@@ -3095,12 +3231,14 @@ if (!doNotTrack) {
         
             
         
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 28, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 October 12, 2020
 </div>
 </div>
 

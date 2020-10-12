@@ -116,6 +116,111 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP01_AVR_MCU/AP01_AVR_MCU_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/arduino/ArduinoCore-avr/blob/master/bootloaders/atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex&#34;&gt;ブートローダ&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;省電力制御&#34;&gt;省電力制御&lt;/h2&gt;
+&lt;h3 id=&#34;activeモードとsleepモード&#34;&gt;ActiveモードとSleepモード&lt;/h3&gt;
+&lt;p&gt;Activeモード：動作状態。通常、大きな電源電流が流れます。&lt;br&gt;
+Sleepモード：低消費電力状態。スタンバイ・モードともいいます。&lt;br&gt;
+Wakeup：SleepモードからActiveモードへの移行。Wakeupには、典型的には次の２種類があります。&lt;br&gt;
+1)WDT（ウォッチドッグタイマー）：MCUが持っているタイマーで定期的（例えば数秒間ごと）にWakeupします。この機能を生かしたい場合はSleepモードに入る前に、WDTをenabledに設定する必要があります。&lt;br&gt;
+2)外部割り込み：センサー値の変化やリアルタイムクロックなどによる割り込みでWakeupします。WDTに比べてMCUを低消費電力に出来ます。
+&lt;img src=&#34;./ap01_lowpower1.png&#34; width=&#34;450&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;sleepモードwdtサンプルスケッチ&#34;&gt;Sleepモード・WDTサンプルスケッチ&lt;/h3&gt;
+&lt;p&gt;Sleep関数とWDT関数のライブラリ群を使って定時間ごとにWakeupするサンプルスケッチ。Sleep時間は、8秒となります。avr/wdt.h のwdt_enable()関数を使用するとWDTによる復帰時にリセットが発生します。Wakup時にリセットをさせたくない場合は以下の様にWDTの設定をATmega328Pのレジスタに書き込んでください。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;avr/wdt.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;avr/sleep.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;WDT_setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(){&lt;/span&gt;
+	&lt;span style=&#34;color:#000&#34;&gt;cli&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;				&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 割り込み禁止
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#000&#34;&gt;wdt_reset&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;			&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// WDT タイマーカウンタリセット
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#000&#34;&gt;MCUSR&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;=&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;~&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;WDRF&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;　		&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// WatchDog system Reset Flag(WDRF)リセット
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#000&#34;&gt;WDTCSR&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;WDCE&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;WDE&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//WDT変更有効 (WDCEとWDE を同時に1にセットでWDT変更許可)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#000&#34;&gt;WDTCSR&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;WDIE&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;WDE&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;WDP3&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;WDP2&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;WDP1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;WDP0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//WDT設定
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;					&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// WDE=0,WDIE=1 :WDT overflowで割り込み
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;					&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// WDP3=1,WDP2=0,WDP1=0,WDP0=1: 8s
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#000&#34;&gt;sei&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;				&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//割り込み許可
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;sleepMode&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(){&lt;/span&gt;
+	&lt;span style=&#34;color:#000&#34;&gt;Serial&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Sleep Mode&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+	&lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+	&lt;span style=&#34;color:#000&#34;&gt;WDT_setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+	&lt;span style=&#34;color:#000&#34;&gt;set_sleep_mode&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SLEEP_MODE_PWR_DOWN&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;	&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//SLEEPモード設定
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#000&#34;&gt;sleep_bod_disable&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;				&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//低電圧検出器(BOD)禁止
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#000&#34;&gt;sleep_mode&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt; 				&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//SLEEP移行
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#000&#34;&gt;__asm__&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;nop&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;\n\t&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+    &lt;span style=&#34;color:#000&#34;&gt;Serial&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;WakeUp&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+ 	&lt;span style=&#34;color:#000&#34;&gt;digitalWrite&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;13&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;HIGH&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;10&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+ 	&lt;span style=&#34;color:#000&#34;&gt;digitalWrite&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;13&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LOW&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(){&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;Serial&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;begin&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;115200&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;loop&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt; 
+	&lt;span style=&#34;color:#000&#34;&gt;sleepMode&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt; 
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;color:#000&#34;&gt;ISR&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;WDT_vect&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt; 				&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// WDTがタイムアップした時に実行される処理
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;	&lt;span style=&#34;color:#000&#34;&gt;wdt_disable&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;sleepモード&#34;&gt;Sleepモード&lt;/h3&gt;
+&lt;p&gt;ATmega328PではSleepモードの一つに最も低電力状態になるPower-down modeがります。ここでは、Power-downモード関連のスケッチの書き方について説明します。
+&lt;br&gt;
+&lt;br&gt;
+Sleepモードへの移行に必要な関数&lt;br&gt;
+　　set_sleep_mode(パラメータ)	： Sleepモード(パラメータ)設定&lt;br&gt;
+　　sleep_mode()		： Sleepモードに移行&lt;br&gt;
+ライブラリの呼び出し&lt;br&gt;
+　　#include &amp;lt;avr/sleep.h&amp;gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./ap01_lowpower2.png&#34; width=&#34;650&#34;&gt;&lt;/a&gt;
+&lt;br&gt;
+&lt;br&gt;
+スケッチの例&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;avr/sleep.h&amp;gt; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt; 
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;sleep&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;set_sleep_mode&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SLEEP_MODE_PWR_DOWN&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; 
+  &lt;span style=&#34;color:#000&#34;&gt;ADCSRA&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;=&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;~&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;ADEN&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;                            &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//ADC停止
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;sleep_enable&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;MCUCR&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;BODSE&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;BODS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;              &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// MCUCRのBODSとBODSEに1をセット
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;MCUCR&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;MCUCR&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;~&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;BODSE&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;))&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;BODS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// すぐに（4クロック以内）BODSSEを0, BODSを1に設定
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;asm&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;sleep&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;                                          &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 3クロック以内にスリープ 
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt; 
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Sleepモード設定前にWDTの設定を行います。WDTによるSleepモード復帰を行う場合はWDTを有効にし、WDTの設定を行い開始します。ここでWDTを無効にすることにより、Power-down mode(WDT disabled)に設定することが可能。
+消費電流を下げるためには、Sleepモード設定時にADCとBODを停止させる必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;wakeup&#34;&gt;Wakeup&lt;/h3&gt;
+&lt;p&gt;Wakeupには、以下の方法があります。ここでは、Power-downモード関連のスケッチの書き方について説明します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;WDTを使う方法(一定時間間隔で自動復帰)最大8秒&lt;/li&gt;
+&lt;li&gt;外部割り込みを使う方法
+&lt;img src=&#34;./ap01_lowpower3.png&#34; width=&#34;650&#34;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;1)WDTでのWakeup
+WDTのSleep時間は、最大８秒です。それ以上Sleepさせたい場合は、Sleepを複数回繰り返すことにより8秒の整数倍のSleep時間を得ることが出来ます。
+&lt;br&gt;
+&lt;br&gt;
+WDTの制御に必要な関数
+　wdt_reset()		： WDTの設定をリセットするための関数
+　wdt_enable(value)	：WDTを有効にする関数。valueに定数を入れて時間を設定する
+　　　　　　　　　　　　　　ただし、WDTのオーバーフロー発生時リセットが発生する
+　wdt_disable()		： WDTを無効にする関数
+ライブラリの呼び出し
+　#include &amp;lt;avr/wdt.h&amp;gt;
+&lt;br&gt;
+&lt;br&gt;
+2)外部割り込みでのWakeup
+外部割り込みは、通常のプログラム実行中に、センサーなどの応答値が閾値を超えたり、スイッチがON/OFF切り替わった時に割り込みが発生し処理を行います。
+8bit-MCU Leafには、pin 2またはpin 3に割り込み機能が割り当てられており、HighとLowの切り替わりで割り込みが発生します。&lt;/p&gt;
+&lt;p&gt;割り込み処理関数&lt;br&gt;
+　attachInterrupt(割り込み番号, 関数名, 割り込みモード) &lt;br&gt;
+　　割り込み番号&lt;br&gt;
+　　　外部割り込み　pin 2の場合：割り込み番号=0&lt;br&gt;
+　　　　　　　　　　pin 3の場合：割り込み番号=1&lt;br&gt;
+　　関数名&lt;br&gt;
+　　　割り込み発生時に呼び出す関数&lt;br&gt;
+　　割り込みモード&lt;br&gt;
+　　　LOW　　 ：ピンがLowのとき発生&lt;br&gt;
+　　　CHANGE  ：ピンの状態が変化したときに発生&lt;br&gt;
+　　　RISING　：ピンの状態がLowからHighに変わったときに発生&lt;br&gt;
+　　　FALLING ：ピンの状態がHighからLowに変わったときに発生&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Rev A: 2019年8月初版&lt;/li&gt;
