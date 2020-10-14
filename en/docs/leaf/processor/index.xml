@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Leafony – プロセッサリーフ</title>
+    <title>Leafony – Processor Leaves</title>
     <link>https://docs.leafony.com/en/docs/leaf/processor/</link>
-    <description>Recent content in プロセッサリーフ on Leafony</description>
+    <description>Recent content in Processor Leaves on Leafony</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	  <atom:link href="https://docs.leafony.com/en/docs/leaf/processor/index.xml" rel="self" type="application/rss+xml" />
@@ -25,9 +25,9 @@
         &lt;p&gt;&lt;a href=&#34;./ap01a_f_large.jpg&#34;&gt;&lt;img src=&#34;./ap01a_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
 &lt;a href=&#34;./ap01a_b_large.jpg&#34;&gt;&lt;img src=&#34;./ap01a_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
 &lt;a href=&#34;./ap01a_p_large.jpg&#34;&gt;&lt;img src=&#34;./ap01a_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;p&gt;ATmega328Pを使用したリーフ。14個のデジタル入出力ピン（6個はPWM出力として使用可能）、6個のアナログ入力ピン、8MHz振動子、およびリセットボタンを備えています。 USB接続する場合はUSB を接続、ICSPを使用する場合はShield を接続します。 Arduino IDE使用時は、ボードをArduino Pro or Pro Mini、プロセッサをATmega328P(3.3V,8MHz)選択。&lt;/p&gt;
-&lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;p&gt;Leaf using the ATmega328P, with 14 digital input and output pins (six of which can be used as PWM outputs), six analog input pins, an 8 MHz oscillator, and a reset button. Connect USB if you are using USB or Shield if you are using ICSP. When using the Arduino IDE, select the Arduino Pro or Pro Mini board and the ATmega328P (3.3V, 8MHz) processor.&lt;/p&gt;
+&lt;h2 id=&#34;specification&#34;&gt;Specification&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -75,36 +75,50 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;br&gt;
-&lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
+&lt;h2 id=&#34;block-diagram&#34;&gt;Block diagram&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./ap01a_block.png&#34;&gt;&lt;img src=&#34;./ap01a_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./ap01a_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ap01a_pinassign.jpg&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pinassign&#34;&gt;Pinassign&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./ap01_pinassign.png&#34;&gt;&lt;img src=&#34;./ap01_pinassign.png&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+&lt;h3 id=&#34;about-leds-and-switches&#34;&gt;About LEDs and switches&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;./ap01_tips.jpg&#34;&gt;&lt;img src=&#34;./ap01_tips.jpg&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Item&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Reset switch&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Reset microcontroller or other devices&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;LED&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Control LED by using pin 13 (Same as Arduino UNO)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;sample-app&#34;&gt;Sample App&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Reset switch&lt;br&gt;
-マイコン、および他のデバイスをリセットする。&lt;/li&gt;
-&lt;li&gt;LED DS100 &lt;br&gt;
-pin13によりLED制御する(Arduino UNOと同じ)。&lt;br&gt;
-抵抗R150(1kΩ)を外すことにより、点灯しないように出来る。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/beginner/1_p/basic/blink&#34;&gt;Blink&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;サンプルデザイン&#34;&gt;サンプルデザイン&lt;/h2&gt;
+&lt;h2 id=&#34;how-to-use-it-with-arduino&#34;&gt;How to use it with Arduino&lt;/h2&gt;
+&lt;p&gt;In order to use this leaf with Arduino, the board must be configured on the Arduino IDE.&lt;br&gt;
+Please refer to &lt;a href=&#34;en/docs/environment/basic&#34;&gt;Environment&lt;/a&gt;  for instructions.&lt;/p&gt;
+&lt;h2 id=&#34;documents&#34;&gt;Documents&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/basic/blink&#34;&gt;LED点滅&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP01_AVR_MCU/AP01_AVR_MCU_SpecSheet_EN.pdf&#34;&gt;Spec sheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP01_AVR_MCU/AP01_AVR_MCU_Schematic.pdf&#34;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP01_AVR_MCU/AP01_AVR_MCU_ComponentMarking.pdf&#34;&gt;Component marking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP01_AVR_MCU/AP01_AVR_MCU_PCBLayout.zip&#34;&gt;PCBLayout(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP01_AVR_MCU/AP01_AVR_MCU_PCBLayout_dxf.zip&#34;&gt;PCBLayout(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/arduino/ArduinoCore-avr/blob/master/bootloaders/atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex&#34;&gt;Bootloader&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h2&gt;
-&lt;p&gt;ライブラリは、予め&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/#1-%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA&#34;&gt;ここから&lt;/a&gt;インストールしておきましょう。&lt;/p&gt;
-&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;h2 id=&#34;revision-history&#34;&gt;Revision history　&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP01_AVR_MCU/AP01_AVR_MCU_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP01_AVR_MCU/AP01_AVR_MCU_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP01_AVR_MCU/AP01_AVR_MCU_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP01_AVR_MCU/AP01_AVR_MCU_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP01_AVR_MCU/AP01_AVR_MCU_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/arduino/ArduinoCore-avr/blob/master/bootloaders/atmega/ATmegaBOOT_168_atmega328_pro_8MHz.hex&#34;&gt;ブートローダ&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Rev A: 2019年8月初版&lt;/li&gt;
+&lt;li&gt;Rev A1.0: First edition, August 2019&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -122,9 +136,9 @@ pin13によりLED制御する(Arduino UNOと同じ)。&lt;br&gt;
         &lt;p&gt;&lt;a href=&#34;./ap02a_f_large.jpg&#34;&gt;&lt;img src=&#34;./ap02a_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
 &lt;a href=&#34;./ap02a_b_large.jpg&#34;&gt;&lt;img src=&#34;./ap02a_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
 &lt;a href=&#34;./ap02a_p_large.jpg&#34;&gt;&lt;img src=&#34;./ap02a_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;p&gt;Espressif SystemsのXtensa Dual-Core 32-bit LX6 マイクロプロセッサ、技的認証済みWi-FiとBLEを内蔵したESP32-WROOM-32を搭載した32bit MCUリーフである。無線の認証は、 FCC、CE-RED、IC、TELEC、KCC、SRRC、NCCを取得（Espressif Systems Data Sheet V2.9）。 USB電源を供給して、VBUS(5V)電源として使用可能。&lt;/p&gt;
-&lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;p&gt;It is a 32-bit MCU leaf with Espressif Systems&amp;rsquo; Xtensa Dual-Core 32-bit LX6 microprocessor, ESP32-WROOM-32 with built-in technically certified Wi-Fi and BLE. Radio certifications include FCC, CE-RED, IC, TELEC, KCC, SRRC, and NCC (Espressif Systems Data Sheet V2.9). Can be used as VBUS (5V) power supply with USB power supply. List of Assistants&lt;/p&gt;
+&lt;h2 id=&#34;specification&#34;&gt;Specification&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -135,7 +149,7 @@ pin13によりLED制御する(Arduino UNOと同じ)。&lt;br&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;Part number&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;ESP32-WROOM-32       　　　　&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ESP32-WROOM-32&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;SoC&lt;/td&gt;
@@ -188,42 +202,67 @@ pin13によりLED制御する(Arduino UNOと同じ)。&lt;br&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;br&gt;
-&lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
+&lt;h2 id=&#34;block-diagram&#34;&gt;Block diagram&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./ap02a_block.png&#34;&gt;&lt;img src=&#34;./ap02a_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./ap02a_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ap02a_pinassign.jpg&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pinassign&#34;&gt;Pinassign&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./ap02_pinassign.png&#34;&gt;&lt;img src=&#34;./ap02_pinassign.png&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+&lt;h3 id=&#34;about-leds-and-switches&#34;&gt;About LEDs and switches&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;./AP02_tips.jpg&#34;&gt;&lt;img src=&#34;./AP02_tips.jpg&#34; width=&#34;450&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Item&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;LED RX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FT232RQ controlled LED / Flashes on UART TX data transmission.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;LED TX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FT232RQ controlled LED / Flashes on UART RX data transmission.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Reset switch&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Resets the ESP32 and other devices.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Boot mode switch&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Switch to change to boot mode.Press and hold the boot mode switch while writing a sketch.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;micro USB&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;It is used for writing a sketch to the MCU and serial monitoring by connecting a PC.This also converts USB’s VBUS(5V) to 3.3V by using step-down power circuit and provide VBUS and 3.3V to each leaf.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Antenna&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;This is a shared antenna for Bluetooth LE and Wi-Fi.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;sample-app&#34;&gt;Sample App&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;LED DS700
-FT232RQが制御するLEDである。
-UART TX通信によるプログラム書き込み時に点滅する。&lt;/li&gt;
-&lt;li&gt;LED DS701
-FT232RQが制御するLEDである。
-UART RX通信によるプログラム書き込み時に点滅する。&lt;/li&gt;
-&lt;li&gt;Reset switch
-ESP32、および他のデバイスをリセットする。&lt;/li&gt;
-&lt;li&gt;Boot mode switch
-ブートモードを変更するためのスイッチである。&lt;/li&gt;
-&lt;li&gt;スケッチの書き込み方
-書き込み中にBoot mode switchを長押しする&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/beginner/2_p/esp32/button&#34;&gt;Button&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/2_p/esp32/wifi_touchsensor&#34;&gt;Wi-Fi touchsensor&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets&#34;&gt;ESP32_googlesheets&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;サンプルデザイン&#34;&gt;サンプルデザイン&lt;/h2&gt;
+&lt;h2 id=&#34;how-to-use-it-with-arduino&#34;&gt;How to use it with Arduino&lt;/h2&gt;
+&lt;p&gt;In order to use this leaf with Arduino, the board must be configured on the Arduino IDE.&lt;br&gt;
+Please refer to &lt;a href=&#34;en/docs/environment/basic&#34;&gt;Environment&lt;/a&gt;  for instructions.&lt;/p&gt;
+&lt;h2 id=&#34;document&#34;&gt;Document&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/esp32/wifi_touchsensor&#34;&gt;Wi-Fi タッチセンサ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP02_ESP32_MCU/AP02_ESP32_MCU_SpecSheet_EN.pdf&#34;&gt;Spec sheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP02_ESP32_MCU/AP02_ESP32_MCU_Schematic.pdf&#34;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP02_ESP32_MCU/AP02_ESP32_MCU_ComponentMarking.pdf&#34;&gt;Component marking &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP02_ESP32_MCU/AP02_ESP32_MCU_PCBLayout.zip&#34;&gt;PCBLayout(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP02_ESP32_MCU/AP02_ESP32_MCU_PCBLayout_dxf.zip&#34;&gt;PCBLayout(dxf)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h2&gt;
-&lt;p&gt;ライブラリは、予め&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/#1-%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA&#34;&gt;ここから&lt;/a&gt;インストールしておきましょう。&lt;/p&gt;
-&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;h2 id=&#34;revision-history&#34;&gt;Revision history&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP02_ESP32_MCU/AP02_ESP32_MCU_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP02_ESP32_MCU/AP02_ESP32_MCU_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP02_ESP32_MCU/AP02_ESP32_MCU_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP02_ESP32_MCU/AP02_ESP32_MCU_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP02_ESP32_MCU/AP02_ESP32_MCU_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Rev A: 2020年1月初版&lt;/li&gt;
+&lt;li&gt;Rev A1.0: First edition, January 2020&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
