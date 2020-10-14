@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Leafony – その他</title>
+    <title>Leafony – Others</title>
     <link>https://docs.leafony.com/en/docs/leaf/others/</link>
-    <description>Recent content in その他 on Leafony</description>
+    <description>Recent content in Others on Leafony</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	  <atom:link href="https://docs.leafony.com/en/docs/leaf/others/index.xml" rel="self" type="application/rss+xml" />
@@ -23,22 +23,22 @@
         
         
         &lt;p&gt;&lt;a href=&#34;./az61a_large.jpg&#34;&gt;&lt;img src=&#34;./az61a_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;p&gt;Leafony Platformは、ACR (Anisotropic Conductive Rubber)を採用しています。ACRは、絶縁性シリコーンゴムに、金属又は導電性エラストマの導電部材が、狭ピッチで配列されており、圧縮されることで電気的接続が実現できます。&lt;/p&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;p&gt;The Leafony Platform is based on ACRs (Anisotropic Conductive Rubber), which is an insulating silicone rubber with metal or conductive elastomeric conductive elements arranged at a narrow pitch, which can be compressed to create an electrical connection.&lt;/p&gt;
 &lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
-&lt;h3 id=&#34;コネクタの取り付け取り外し&#34;&gt;コネクタの取り付け・取り外し&lt;/h3&gt;
-&lt;p&gt;リーフ基板にコネクタを取り付ける、または、外す場合は下図のように行ってください。&lt;/p&gt;
-&lt;p&gt;&amp;ndash; 取り付け&lt;/p&gt;
+&lt;h3 id=&#34;installing-and-removing-connectors&#34;&gt;Installing and removing connectors&lt;/h3&gt;
+&lt;p&gt;Attach or remove the connector to the leaf board as shown below.&lt;/p&gt;
+&lt;p&gt;&amp;ndash; Installation&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./leafony_connector_assemble.png&#34; alt=&#34;leafony_connector_assemble&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;ndash; 取り外し&lt;/p&gt;
+&lt;p&gt;&amp;ndash; Dismantling&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./leafony_connector_teardown.png&#34; alt=&#34;leafony_connector_teardown&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;h2 id=&#34;document&#34;&gt;Document&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ61_Connector/AZ61_Connector_SpecSheet_JA.pdf&#34;&gt;コネクタの試験結果&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ61_Connector/AZ61_Connector_SpecSheet_JA.pdf&#34;&gt;Connector test results&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;h2 id=&#34;revision-history&#34;&gt;Revision history&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Rev A: 2019年8月初版&lt;/li&gt;
+&lt;li&gt;Rev A1.0: First edition, August 2019&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -56,10 +56,10 @@
         &lt;p&gt;&lt;a href=&#34;./az01a_f_large.jpg&#34;&gt;&lt;img src=&#34;./az01a_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
 &lt;a href=&#34;./az01a_b_large.jpg&#34;&gt;&lt;img src=&#34;./az01a_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
 &lt;a href=&#34;./az01a_p_large.jpg&#34;&gt;&lt;img src=&#34;./az01a_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;p&gt;AVR MCU へのスケッチ書き込みやシリアルモニタを使用する場合に接続するリーフです。USB-UART変換ICとしてFTDI製FT232RQを搭載しています。USBのVBUS(5V)から降圧電源回路により3.3Vに変換し、各リーフにVBUSと3.3Vを供給します。&lt;/p&gt;
-&lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
-&lt;h3 id=&#34;usb-uart変換&#34;&gt;USB-UART変換&lt;/h3&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;p&gt;A leaf to connect when writing a sketch to an AVR MCU or using a serial monitor. FTDI&amp;rsquo;s FT232RQ is mounted as a USB-UART conversion IC. It converts from USB VBUS (5V) to 3.3V with a step-down power supply circuit and supplies VBUS and 3.3V to each leaf.&lt;/p&gt;
+&lt;h2 id=&#34;specification&#34;&gt;Specification&lt;/h2&gt;
+&lt;h3 id=&#34;usb-uart-conversion&#34;&gt;USB-UART conversion&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -83,7 +83,7 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;br&gt;
-&lt;h3 id=&#34;電源&#34;&gt;電源&lt;/h3&gt;
+&lt;h3 id=&#34;power-supply&#34;&gt;Power Supply&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -115,32 +115,46 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;br&gt;
-&lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
+&lt;h2 id=&#34;block-diagram&#34;&gt;Block diagram&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./az01a_block.png&#34;&gt;&lt;img src=&#34;./az01a_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./az01a_pinassign.jpg&#34;&gt;&lt;img src=&#34;./az01a_pinassign.jpg&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pinassign&#34;&gt;Pinassign&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./az01_pinassign.png&#34;&gt;&lt;img src=&#34;./az01_pinassign.png&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+&lt;h3 id=&#34;about-micro-usb-and-led&#34;&gt;About micro USB and LED&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;./AZ01_tips.jpg&#34;&gt;&lt;img src=&#34;./AZ01_tips.jpg&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Item&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;micro USB&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;It is used for writing a sketch to the MCU and serial monitoring by connecting a PC.This also converts USB’s VBUS(5V) to 3.3V by using step-down power circuit and provide VBUS and 3.3V to each leaf.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;LED TX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;LED which controlled by FT232RQ. Blinks when program is written by UART TX communication.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;LED RX&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;LED which controlled by FT232RQ. Blinks when program is written by UART TX communication.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;document&#34;&gt;Document&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Micro USB
-USBのVBUS(5V)から降圧電源回路により3.3Vに変換し、各リーフにVBUSと3.3Vを供給する。&lt;/li&gt;
-&lt;li&gt;LED DS120&lt;br&gt;
-FT232RQが制御するLEDである。&lt;br&gt;
-UART TX通信によるプログラム書き込み時に点滅する。&lt;/li&gt;
-&lt;li&gt;LED DS121&lt;br&gt;
-FT232RQが制御するLEDである。&lt;br&gt;
-UART RX通信によるプログラム書き込み時に点滅する。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ01_USB/AZ01_USB_SpecSheet_EN.pdf&#34;&gt;Spec sheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ01_USB/AZ01_USB_Schematic.pdf&#34;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ01_USB/AZ01_USB_ComponentMarking.pdf&#34;&gt;Component marking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ01_USB/AZ01_USB_PCBLayout.zip&#34;&gt;PCBLayout(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ01_USB/AZ01_USB_PCBLayout_dxf.zip&#34;&gt;PCBLayout(dxf)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;h2 id=&#34;revision-history&#34;&gt;Revision history&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ01_USB/AZ01_USB_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ01_USB/AZ01_USB_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ01_USB/AZ01_USB_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ01_USB/AZ01_USB_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ01_USB/AZ01_USB_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Rev A: 2019年8月初版&lt;/li&gt;
+&lt;li&gt;Rev A1.0: First edition, August 2019&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -156,13 +170,13 @@ UART RX通信によるプログラム書き込み時に点滅する。&lt;/li&gt
         
         
         &lt;p&gt;&lt;a href=&#34;./az62a_large.jpg&#34;&gt;&lt;img src=&#34;./az62a_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;p&gt;Connector Coverは、ACR (Anisotropic Conductive Rubber)に付着するゴミを防御することが出来ます。&lt;/p&gt;
-&lt;h2 id=&#34;外形図&#34;&gt;外形図&lt;/h2&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;p&gt;The Connector Cover protects the ACR (Anisotropic Conductive Rubber) from dust and debris.&lt;/p&gt;
+&lt;h2 id=&#34;dimension&#34;&gt;Dimension&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./az62a_outline.png&#34;&gt;&lt;img src=&#34;./az62a_outline.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;h2 id=&#34;revision-history&#34;&gt;Revision history&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Rev A: 2019年8月初版&lt;/li&gt;
+&lt;li&gt;Rev A1.0: First edition, August 2019&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -180,9 +194,9 @@ UART RX通信によるプログラム書き込み時に点滅する。&lt;/li&gt
         &lt;p&gt;&lt;a href=&#34;./az02a_f_large.jpg&#34;&gt;&lt;img src=&#34;./az02a_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
 &lt;a href=&#34;./az02a_b_large.jpg&#34;&gt;&lt;img src=&#34;./az02a_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
 &lt;a href=&#34;./az02a_p_large.jpg&#34;&gt;&lt;img src=&#34;./az02a_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;p&gt;NXPのReal-Time Clock PCF8523TKおよびmicroSDカードスロットを搭載したリーフです。RTCはアラームやタイマによりMCUに割り込み信号を出力することが可能です。microSDカードはSPIでアクセスします。&lt;/p&gt;
-&lt;h2 id=&#34;性能&#34;&gt;性能　&lt;/h2&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;p&gt;This leaf is equipped with NXP&amp;rsquo;s Real-Time Clock PCF8523TK and a microSD card slot. The RTC can output interrupts to the MCU with alarms and timers, while the microSD card is accessible via SPI.&lt;/p&gt;
+&lt;h2 id=&#34;specification&#34;&gt;Specification&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -214,29 +228,29 @@ UART RX通信によるプログラム書き込み時に点滅する。&lt;/li&gt
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;br&gt;
-&lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
+&lt;h2 id=&#34;block-diagram&#34;&gt;Block diagram&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./az02a_block.png&#34;&gt;&lt;img src=&#34;./az02a_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./az02a_pinassign.jpg&#34;&gt;&lt;img src=&#34;./az02a_pinassign.jpg&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;サンプルデザイン&#34;&gt;サンプルデザイン&lt;/h2&gt;
+&lt;h2 id=&#34;pinassign&#34;&gt;Pinassign&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./az02_pinassign.png&#34;&gt;&lt;img src=&#34;./az02_pinassign.png&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;sample-app&#34;&gt;Sample App&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/extension/rtc&#34;&gt;リアルタイムクロック&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/extension/microsd&#34;&gt;microSD カード&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/grove/camera&#34;&gt;カメラの撮影&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/extension/rtc&#34;&gt;Real Time Clock&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/extension/microsd&#34;&gt;microSD Card&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/grove/camera&#34;&gt;Camera&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h2&gt;
-&lt;p&gt;ライブラリは、予め&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/#1-%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA&#34;&gt;ここから&lt;/a&gt;インストールしておきましょう。  　&lt;/p&gt;
-&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;h2 id=&#34;library&#34;&gt;Library&lt;/h2&gt;
+&lt;p&gt;Libraries are available for this leaf. Please install and use the necessary libraries at &lt;a href=&#34;https://docs.leafony.com/en/docs/environment/basic&#34;&gt;Environment&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;document&#34;&gt;Document&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ02_RTC%26MicroSD/AZ02_RTC%26MicroSD_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ02_RTC%26MicroSD/AZ02_RTC%26MicroSD_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ02_RTC%26MicroSD/AZ02_RTC%26MicroSD_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ02_RTC%26MicroSD/AZ02_RTC%26MicroSD_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ02_RTC%26MicroSD/AZ02_RTC%26MicroSD_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ02_RTC%26MicroSD/AZ02_RTC%26MicroSD_SpecSheet_EN.pdf&#34;&gt;Spec sheet&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ02_RTC%26MicroSD/AZ02_RTC%26MicroSD_Schematic.pdf&#34;&gt;Schematic&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ02_RTC%26MicroSD/AZ02_RTC%26MicroSD_ComponentMarking.pdf&#34;&gt;Component marking &lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ02_RTC%26MicroSD/AZ02_RTC%26MicroSD_PCBLayout.zip&#34;&gt;PCBLayout(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AZ02_RTC%26MicroSD/AZ02_RTC%26MicroSD_PCBLayout_dxf.zip&#34;&gt;PCBLayout(dxf)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;h2 id=&#34;revision-history&#34;&gt;Revision history&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Rev A: 2020年1月初版&lt;/li&gt;
+&lt;li&gt;Rev A1.0: First edition, January 2020&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -252,33 +266,13 @@ UART RX通信によるプログラム書き込み時に点滅する。&lt;/li&gt
         
         
         &lt;p&gt;&lt;a href=&#34;./az63a_large.jpg&#34;&gt;&lt;img src=&#34;./az63a_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;p&gt;Nut Plateは、リーフをネジで固定する時に使用します。市販の六角ナットを用いると基板の電極に触れて、ショートをおこすことがあるので要注意。&lt;/p&gt;
-&lt;h2 id=&#34;外形図&#34;&gt;外形図&lt;/h2&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;p&gt;The Nut Plate is used to fix the leaf with a screw. Be careful not to use commercially available hex nuts as they may cause a short circuit by touching the electrodes on the board.&lt;/p&gt;
+&lt;h2 id=&#34;dimnnsion&#34;&gt;Dimnnsion&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./az63a_outline drawing.png&#34;&gt;&lt;img src=&#34;./az63a_outline drawing.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;h2 id=&#34;revision-history&#34;&gt;Revision history&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Rev A: 2019年8月初版&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: az66 Basic Kit Case</title>
-      <link>https://docs.leafony.com/en/docs/leaf/others/az64/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.leafony.com/en/docs/leaf/others/az64/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;a href=&#34;./AZ64A_large.jpg&#34;&gt;&lt;img src=&#34;./AZ64A_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;外形図&#34;&gt;外形図&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;./AZ64A_Outline.png&#34;&gt;&lt;img src=&#34;./AZ64A_Outline.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Rev A: 2019年8月初版&lt;/li&gt;
+&lt;li&gt;Rev A1.0: First edition, August 2019&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
@@ -294,30 +288,10 @@ UART RX通信によるプログラム書き込み時に点滅する。&lt;/li&gt
         
         
         &lt;p&gt;&lt;a href=&#34;./az66a_large.jpg&#34;&gt;&lt;img src=&#34;./az66a_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;p&gt;Basic Kitのケースです。底面に付いたマグネットで壁に固定することが可能です。&lt;/p&gt;
-&lt;h2 id=&#34;外形図&#34;&gt;外形図&lt;/h2&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;p&gt;This is a case for the Basic Kit. It can be fixed to the wall with the magnets on the bottom.&lt;/p&gt;
+&lt;h2 id=&#34;dimnnsion&#34;&gt;Dimnnsion&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./AZ66 Basic kit case.jpg&#34;&gt;&lt;img src=&#34;./AZ66 Basic kit case.jpg&#34; width=&#34;300&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: AZ64A Lowercase</title>
-      <link>https://docs.leafony.com/en/docs/leaf/others/az65/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.leafony.com/en/docs/leaf/others/az65/</guid>
-      <description>
-        
-        
-        &lt;p&gt;&lt;a href=&#34;./AZ65A_large.jpg&#34;&gt;&lt;img src=&#34;./AZ65A_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;p&gt;ケース（下）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;外形図&lt;br&gt;
-&lt;a href=&#34;./AZ65A_Outline.png&#34;&gt;&lt;img src=&#34;./AZ65A_Outline.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
       </description>
     </item>
