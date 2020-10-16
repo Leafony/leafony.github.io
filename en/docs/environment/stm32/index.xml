@@ -1,0 +1,373 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Leafony – STM32 MCU Development Environment Settings Manual</title>
+    <link>https://docs.leafony.com/en/docs/environment/stm32/</link>
+    <description>Recent content in STM32 MCU Development Environment Settings Manual on Leafony</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="https://docs.leafony.com/en/docs/environment/stm32/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Configuring the Arduino IDE</title>
+      <link>https://docs.leafony.com/en/docs/environment/stm32/arduino_ide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/en/docs/environment/stm32/arduino_ide/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Follow these steps to set up your STM32 MCU development environment.&lt;/p&gt;
+&lt;h2 id=&#34;what-to-prepare&#34;&gt;What to prepare&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;STM32 MCU Leaf&lt;/li&gt;
+&lt;li&gt;USB Leaf&lt;/li&gt;
+&lt;li&gt;PC (Windows, Mac OS X or Linux)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Arduino IDE is assumed to be installed.&lt;/p&gt;
+&lt;h2 id=&#34;configuration-of-the-microcontroller-board&#34;&gt;Configuration of the microcontroller board&lt;/h2&gt;
+&lt;p&gt;To use the STM32 MCU leaf with the Arduino IDE, the STM32 Cores must be installed.&lt;/p&gt;
+&lt;h3 id=&#34;open-the-file--preferences-in-the-arduino-ide-and-enter-the-following-url-in-the-additional-board-manager-url-field&#34;&gt;Open the &lt;code&gt;File → Preferences&lt;/code&gt; in the Arduino IDE and enter the following URL in the &lt;code&gt;Additional Board Manager URL:&lt;/code&gt; field.&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./stm32cores1.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;h3 id=&#34;select-tools---board---board-manager-search-for-stm32-cores-and-press-the-install-button&#34;&gt;Select &lt;code&gt;Tools -&amp;gt; Board -&amp;gt; Board Manager&lt;/code&gt;, search for STM32 Cores and press the &lt;code&gt;Install&lt;/code&gt; button.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;./stm32cores2.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;For more information on STM32 Cores, please see &lt;a href=&#34;https://github.com/stm32duino/Arduino_Core_STM32&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;install-stm32cubeprogrammer-software-v240-and-you-will-be-able-to-use-stm32-mcus&#34;&gt;Install STM32CubeProgrammer software V2.4.0 and you will be able to use STM32 MCUs.&lt;/h3&gt;
+&lt;p&gt;Please note that V2.5.0 does not work.&lt;/p&gt;
+&lt;p&gt;Click the &lt;code&gt;Get Software&lt;/code&gt; button.
+&lt;img src=&#34;./stm32cores3.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+Click &lt;code&gt;Select versions&lt;/code&gt; and select &lt;code&gt;2.4.0&lt;/code&gt;.
+&lt;img src=&#34;./stm32cores4.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+Click &lt;code&gt;ACCEPT&lt;/code&gt;.
+&lt;img src=&#34;./stm32cores5.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+Enter the &lt;code&gt;First Name&lt;/code&gt;, &lt;code&gt;Last Name&lt;/code&gt; and &lt;code&gt;E-mail address&lt;/code&gt;, check &lt;code&gt;□I have read and understood the Sales Terms &amp;amp; Conditions, Terms of Use and Privacy Policy&lt;/code&gt; and click &lt;code&gt;Download&lt;/code&gt;.
+&lt;img src=&#34;./stm32cores6.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+You will see the following.
+&lt;img src=&#34;./stm32cores7.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+You will receive an email at the address you registered with, click &lt;code&gt;Download now&lt;/code&gt; to download it.&lt;br&gt;
+&lt;img src=&#34;./stm32cores8.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;h2 id=&#34;configuration-of-the-microcontroller-board-1&#34;&gt;Configuration of the microcontroller board&lt;/h2&gt;
+&lt;p&gt;Click &lt;code&gt;Tool&lt;/code&gt; → &lt;code&gt;Board&lt;/code&gt;→ &lt;code&gt;STM32 Boards (Selected from submenu)&lt;/code&gt;→ &lt;code&gt;Nucleo-64&lt;/code&gt; .
+&lt;img src=&#34;./stm32boards1.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+Click &lt;code&gt;Tool&lt;/code&gt; → &lt;code&gt;Board part number: *****&lt;/code&gt;→ &lt;code&gt;Nucleo L452RE&lt;/code&gt;.
+&lt;img src=&#34;./stm32boards2.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+Click &lt;code&gt;Tool&lt;/code&gt; → &lt;code&gt;Upload method: *****&lt;/code&gt; → &lt;code&gt;STM32CubeProgrammer(Serial)&lt;/code&gt;.
+&lt;img src=&#34;./stm32boards3.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+Now you can use the STM32 MCU leaf.&lt;/p&gt;
+&lt;h2 id=&#34;writing-to-the-microcontroller-board&#34;&gt;Writing to the microcontroller board&lt;/h2&gt;
+&lt;p&gt;Turn the write switch on the STM32 MCU leaf to On. The red LED will then turn on.
+Click the Write to Arduino IDE microcontroller board button.
+The message &lt;code&gt;Start operation achieved successfully&lt;/code&gt; is displayed if the writing was successful.
+&lt;img src=&#34;./operation1.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;Once the writing is complete, turn off the write switch on the STM32 MCU leaf.The red LED will turn off.
+The red LED will turn off.Then press the reset switch on the STM32 MCU leaf.
+&lt;br&gt;
+&lt;br&gt;
+If you write without setting the write switch to &lt;code&gt;On&lt;/code&gt; The message &lt;code&gt;Writing to the board is completed&lt;/code&gt; is displayed, but &lt;code&gt;Timeout error occured&lt;/code&gt; is shown at the bottom.
+&lt;img src=&#34;./operation2.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pin-specification&#34;&gt;Pin Specification&lt;/h2&gt;
+&lt;p&gt;The pin layout of the STM32 MCU differs from that of the Nucleo L452RE, so please specify the pins to be used in the STM32L452RE&amp;rsquo;s port name.&lt;/p&gt;
+&lt;h2 id=&#34;the-difference-between-sketches&#34;&gt;The difference between sketches.&lt;/h2&gt;
+&lt;h3 id=&#34;timer&#34;&gt;Timer&lt;/h3&gt;
+&lt;p&gt;”MsTimer2” for AVR MCU is not available for STM32 MCU.
+You should use HardwareTimer and so on.
+The usage example is as follows.
+Please refer to &lt;a href=&#34;https://github.com/stm32duino/wiki/wiki/HardwareTimer-library&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt; for more details.
+&lt;br&gt;
+&lt;br&gt;
+Initialization&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;HardwareTimer&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;HardwareTimer&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;TIM2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+
+  &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;setOverflow&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LOOP_INTERVAL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;MICROSEC_FORMAT&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 125ms
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;attachInterrupt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;intTimer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;resume&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;br&gt;
+Interrupt routine
+```c++
+void intTimer(void){
+  bInterval = true;
+　：
+　：
+}
+```
+&lt;h2 id=&#34;use-of-swd&#34;&gt;Use of SWD&lt;/h2&gt;
+&lt;p&gt;By connecting the AX01 Shield, you can use SWD.
+&lt;br&gt;
+&lt;br&gt;
+&lt;img src=&#34;./swd_1.png&#34; width=&#34;250&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;　SWD Connector Specifications&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Model number of the connector&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FTSH-105-01-L-D&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Number of pins&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;pin pitch&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1.27mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;pin assignment&lt;br&gt;
+&lt;img src=&#34;./swd_2.png&#34; width=&#34;250&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+STLINK-V3SET comes with a cable that connects to the SWD connector of AX01 Shield, allowing you to connect it as it is.
+&lt;br&gt;
+&lt;img src=&#34;./swd_3.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+If you have an ST-LINK-V2, you can connect it with a &lt;a href=&#34;http://strawberry-linux.com/catalog/items?code=15079&#34; target=&#34;_blank&#34;&gt;conversion adapter&lt;/a&gt;.
+You can also use a conversion adapter to connect to the Nucleo&amp;rsquo;s SWD using a jumper cable or other means.&lt;br&gt;
+&lt;img src=&#34;./swd_4.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+If you want to connect to Nucleo&amp;rsquo;s SWD, you can also build your own.&lt;br&gt;
+&lt;a href=&#34;http://strawberry-linux.com/catalog/items?code=15079&#34; target=&#34;_blank&#34;&gt;Half-pitch ribbon cable&lt;/a&gt;
+&lt;img src=&#34;./swd_5.png&#34; width=&#34;100&#34;&gt;&lt;/img&gt;&lt;br&gt;
+&lt;a href=&#34;https://akizukidenshi.com/catalog/g/gC-13800/&#34; target=&#34;_blank&#34;&gt;Half-pitch pin header&lt;/a&gt;
+&lt;img src=&#34;./swd_6.png&#34; width=&#34;100&#34;&gt;&lt;/img&gt;&lt;br&gt;
+&lt;a href=&#34;https://akizukidenshi.com/catalog/g/gP-14224/&#34; target=&#34;_blank&#34;&gt;Pitch Conversion Board&lt;/a&gt;
+&lt;img src=&#34;./swd_7.png&#34; width=&#34;100&#34;&gt;&lt;/img&gt;&lt;br&gt;
+&lt;a href=&#34;https://akizukidenshi.com/catalog/g/gC-03786/&#34; target=&#34;_blank&#34;&gt;Pin-socket&lt;/a&gt;
+&lt;img src=&#34;./swd_8.png&#34; width=&#34;100&#34;&gt;&lt;/img&gt;&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;row&#34;&gt;
+
+
+
+
+
+
+  &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
+    &lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;swd_5.png&#34; alt=&#34;Card image cap&#34;&gt;
+    
+    &lt;div class=&#34;card-body&#34;&gt;
+      &lt;h4 class=&#34;card-title&#34;&gt;
+           
+      &lt;/h4&gt;
+      &lt;p class=&#34;card-text&#34;&gt;&lt;a href=&#34;http://strawberry-linux.com/catalog/items?code=15079&#34; target=&#34;_blank&#34;&gt;Half-pitch ribbon cable&lt;/a&gt;&lt;/p&gt;
+      
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+
+
+
+
+  &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
+    &lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;swd_6.png&#34; alt=&#34;Card image cap&#34;&gt;
+    
+    &lt;div class=&#34;card-body&#34;&gt;
+      &lt;h4 class=&#34;card-title&#34;&gt;
+           
+      &lt;/h4&gt;
+      &lt;p class=&#34;card-text&#34;&gt;&lt;a href=&#34;https://akizukidenshi.com/catalog/g/gC-13800/&#34; target=&#34;_blank&#34;&gt;Half-pitch pin header&lt;/a&gt;&lt;/p&gt;
+      
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+
+
+
+
+  &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
+    &lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;swd_7.png&#34; alt=&#34;Card image cap&#34;&gt;
+    
+    &lt;div class=&#34;card-body&#34;&gt;
+      &lt;h4 class=&#34;card-title&#34;&gt;
+           
+      &lt;/h4&gt;
+      &lt;p class=&#34;card-text&#34;&gt;&lt;a href=&#34;https://akizukidenshi.com/catalog/g/gP-14224/&#34; target=&#34;_blank&#34;&gt;Pitch Conversion Board&lt;/a&gt;&lt;/p&gt;
+      
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+
+
+
+
+  &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
+    &lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;swd_8.png&#34; alt=&#34;Card image cap&#34;&gt;
+    
+    &lt;div class=&#34;card-body&#34;&gt;
+      &lt;h4 class=&#34;card-title&#34;&gt;
+           
+      &lt;/h4&gt;
+      &lt;p class=&#34;card-text&#34;&gt;&lt;a href=&#34;https://akizukidenshi.com/catalog/g/gC-03786/&#34; target=&#34;_blank&#34;&gt;Pin-socket&lt;/a&gt;&lt;/p&gt;
+      
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Installation of the STM32CubeIDE</title>
+      <link>https://docs.leafony.com/en/docs/environment/stm32/stm32cube_ide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/en/docs/environment/stm32/stm32cube_ide/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;install-the-64-bit-version-of-java&#34;&gt;Install the 64-bit version of JAVA.&lt;/h2&gt;
+&lt;p&gt;It is necessary to install the 64-bit version of JAVA before installing the STM32CubeIDE.
+Download it from &lt;a href=&#34;https://java.com/ja/download/&#34; target=&#34;_blank&#34;&gt;Java Home Page&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;download&#34;&gt;Download&lt;/h3&gt;
+&lt;p&gt;Click &lt;code&gt;Agree and start free download&lt;/code&gt;.
+&lt;img src=&#34;./java_downroad.png&#34; width=&#34;500&#34;&gt;　&lt;/p&gt;
+&lt;h3 id=&#34;install&#34;&gt;Install&lt;/h3&gt;
+&lt;p&gt;Double-click the downloaded &amp;ldquo;jxpiinstall.exe&amp;rdquo; to open it and click &lt;code&gt;Install&lt;/code&gt;. &lt;br&gt;
+&lt;img src=&#34;./java_setup.png&#34; width=&#34;500&#34;&gt;
+&lt;img src=&#34;./java_setup2.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+Click on the &lt;code&gt;Close&lt;/code&gt; button.
+&lt;img src=&#34;./java_setup3.png&#34; width=&#34;500&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;install-the-stm32cubeide&#34;&gt;Install the STM32CubeIDE&lt;/h2&gt;
+&lt;p&gt;Download the &lt;a href=&#34;https://www.st.com/ja/development-tools/stm32cubeide.html&#34; target=&#34;_blank&#34;&gt;STM32CubeIDE&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;download-1&#34;&gt;Download&lt;/h3&gt;
+&lt;p&gt;Click on the &lt;code&gt;Get Software&lt;/code&gt;.&lt;br&gt;
+&lt;img src=&#34;./stm32cubeide.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+Please click on the &amp;ldquo;Get Software&amp;rdquo; link in the STM32CubeIDE-Win line.&lt;br&gt;
+&lt;img src=&#34;./stm32cubeide2.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+Click on &lt;code&gt;Agree&lt;/code&gt;.&lt;br&gt;
+&lt;img src=&#34;./stm32cubeide3.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+Enter the &lt;code&gt;First Name&lt;/code&gt;, &lt;code&gt;Last name&lt;/code&gt;, &lt;code&gt;E-mail address&lt;/code&gt;, check&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;□I have read and understood the Sales Terms &amp;amp; Conditions, Terms of Use and Privacy Policy
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;, and click &lt;code&gt;Download&lt;/code&gt;.
+&lt;img src=&#34;./stm32cubeide4.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+The following page will be displayed.
+&lt;img src=&#34;./stm32cubeide5.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+You will receive an email at the address you registered, click &lt;code&gt;Download&lt;/code&gt; to start downloading.&lt;br&gt;
+&lt;img src=&#34;./stm32cubeide6.png&#34; width=&#34;500&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;install-1&#34;&gt;Install&lt;/h3&gt;
+&lt;p&gt;Extract the downloaded zip file.&lt;br&gt;
+Double-click the unzipped file &lt;code&gt;st-stm32cubeide_1.4.0_7511_20200720_0928_x86_64.exe&lt;/code&gt;.
+(The version may change depending on when it was downloaded and the numbers may be different.)&lt;br&gt;
+&lt;br&gt;
+Click &lt;code&gt;Next&lt;/code&gt;.&lt;br&gt;
+&lt;img src=&#34;./stm32cubeide7.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+Click &lt;code&gt;I Agree&lt;/code&gt;.&lt;br&gt;
+&lt;img src=&#34;./stm32cubeide8.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+Click &lt;code&gt;Install&lt;/code&gt;.&lt;br&gt;
+&lt;img src=&#34;./stm32cubeide9.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+Click &lt;code&gt;Next&lt;/code&gt;.&lt;br&gt;
+&lt;img src=&#34;./stm32cubeide10.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+Click &lt;code&gt;Finish&lt;/code&gt;.&lt;br&gt;
+&lt;img src=&#34;./stm32cubeide11.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+The installation is now complete.&lt;/p&gt;
+&lt;h2 id=&#34;japaneseization-of-stm32cubeide&#34;&gt;Japaneseization of STM32CubeIDE&lt;/h2&gt;
+&lt;p&gt;Download from the &lt;a href=&#34;https://mergedoc.osdn.jp/&#34; target=&#34;_blank&#34;&gt;MargeDoc Project home page&lt;/a&gt;.&lt;/p&gt;
+&lt;h3 id=&#34;download-2&#34;&gt;Download&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;Windows&lt;/code&gt;.&lt;br&gt;
+&lt;img src=&#34;./japanese1.png&#34; width=&#34;500&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;install-2&#34;&gt;Install&lt;/h3&gt;
+&lt;p&gt;Extract the zip file you downloaded.
+Double-click the unzipped &lt;code&gt;setup.exe&lt;/code&gt;.
+&lt;br&gt;
+&lt;br&gt;
+&lt;code&gt;Select&lt;/code&gt;.&lt;br&gt;
+&lt;img src=&#34;./japanese2.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+Select &lt;code&gt;C:\\StMoStM32CubeIDE_1.4.0\Stm32cubeIDE\Stm32cubeIDE.exe&lt;/code&gt; and click on &lt;code&gt;Open&lt;/code&gt;.&lt;br&gt;
+&lt;img src=&#34;./japanese3.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;code&gt;translate into Japanese&lt;/code&gt;.&lt;br&gt;
+&lt;img src=&#34;./japanese4.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;code&gt;OK&lt;/code&gt;.&lt;br&gt;
+&lt;img src=&#34;./japanese5.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;code&gt;Finish&lt;/code&gt;.&lt;br&gt;
+&lt;img src=&#34;./japanese6.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+The installation is now complete.&lt;/p&gt;
+&lt;h3 id=&#34;anti-characterization-measures&#34;&gt;Anti-characterization measures&lt;/h3&gt;
+&lt;p&gt;To make sure UTF-8 is not garbled when generating code in STM32CubeMX (not sure if this is really necessary)
+Add the following to the environment variables&lt;br&gt;
+Variable name ：&lt;code&gt;JAVA_TOOL_OPTIONS&lt;/code&gt;
+variable value：&lt;code&gt;-Dfile.encoding=UTF-8&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Select &lt;code&gt;Control Panel&lt;/code&gt;, &lt;code&gt;System&lt;/code&gt;, &lt;code&gt;System Advanced Settings&lt;/code&gt;, &lt;code&gt;Environment Variables&lt;/code&gt;.
+&lt;img src=&#34;./garbled1.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+Click the &lt;code&gt;New&lt;/code&gt; button.
+&lt;img src=&#34;./garbled2.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+Enter &lt;code&gt;JAVA_TOOL_OPTIONS&lt;/code&gt; in the variable name and &lt;code&gt;-Dfile.encoding=UTF-8&lt;/code&gt; in the variable value.
+&lt;img src=&#34;./garbled3.png&#34; width=&#34;500&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+Click &lt;code&gt;OK&lt;/code&gt;.
+&lt;img src=&#34;./garbled4.png&#34; width=&#34;500&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
