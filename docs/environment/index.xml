@@ -347,31 +347,6 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
     </item>
     
     <item>
-      <title>Docs: うまく動かないときは</title>
-      <link>https://docs.leafony.com/docs/environment/solution/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.leafony.com/docs/environment/solution/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;シリアルポートが見つからない&#34;&gt;シリアルポートが見つからない&lt;/h2&gt;
-&lt;p&gt;Arduino IDEでLeafonyのシリアルポートが見つからない場合は、USBシリアル変換IC(FT232)のドライバをインストールしてみましょう。
-&lt;a href=&#34;http://www.ftdichip.com/Drivers/VCP.htm&#34; target=&#34;_blank&#34;&gt;FTDI VCP Driver&lt;/a&gt;からデバイスドライバをダウンロードしてインストールしましょう。&lt;/p&gt;
-&lt;img src=&#34;FTDI_DL.jpg&#34; width=&#34;840&#34;&gt;
-&lt;h2 id=&#34;電源が入らない&#34;&gt;電源が入らない&lt;/h2&gt;
-&lt;p&gt;Leafonyの電源が入らない場合は以下の項目を確かめてみましょう。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ボタン電池の入れる向き&lt;/li&gt;
-&lt;li&gt;電源スイッチがONになっているか&lt;/li&gt;
-&lt;li&gt;ネジの締まり具合&lt;/li&gt;
-&lt;li&gt;電池の残量が十分にあるか&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: Platformio 開発環境</title>
       <link>https://docs.leafony.com/docs/environment/platformio/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
