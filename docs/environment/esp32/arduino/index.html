@@ -7,7 +7,7 @@
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://docs.leafony.com/docs/environment/basic/index.xml">
+<link rel="alternate" type="application/rss&#43;xml" href="https://docs.leafony.com/docs/environment/esp32/arduino/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,17 +21,17 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Basic Kit 開発環境設定マニュアル | Leafony</title><meta property="og:title" content="Basic Kit 開発環境設定マニュアル" />
-<meta property="og:description" content="Leafonyにプログラムを書き込んでみよう！
+<title>ESP32 MCU の Arduino IDE 開発環境 | Leafony</title><meta property="og:title" content="ESP32 MCU の Arduino IDE 開発環境" />
+<meta property="og:description" content="Wi-Fi搭載リーフを使ってみよう！
 " />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/docs/environment/basic/" />
+<meta property="og:url" content="https://docs.leafony.com/docs/environment/esp32/arduino/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="Basic Kit 開発環境設定マニュアル">
-<meta itemprop="description" content="Leafonyにプログラムを書き込んでみよう！
+<meta itemprop="name" content="ESP32 MCU の Arduino IDE 開発環境">
+<meta itemprop="description" content="Wi-Fi搭載リーフを使ってみよう！
 "><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Basic Kit 開発環境設定マニュアル"/>
-<meta name="twitter:description" content="Leafonyにプログラムを書き込んでみよう！
+<meta name="twitter:title" content="ESP32 MCU の Arduino IDE 開発環境"/>
+<meta name="twitter:description" content="Wi-Fi搭載リーフを使ってみよう！
 "/>
 
 
@@ -130,7 +130,7 @@ if (!doNotTrack) {
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="/en/docs/environment/basic/">English</a>
+	<a class="dropdown-item" href="/en/">English</a>
 	
 </div>
 			</li>
@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.0f40d88657f72e7ba9474ca02df4af3b8ad622d767d8442d7b96f9401fa64c6d22c226628be1467b90c38acb02dd2cb0e782e35fc856822d2940771b8ec3bc27.json"
+  data-offline-search-index-json-src="/offline-search-index.a512125275242ff933f0beb229dec74e4537f8cae93cb67afcf78ead9c4bff864d4f5c728206de385d6b13cf784e8f22ef5ef40b4a1f2763a6899b11c3905995.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.0f40d88657f72e7ba9474ca02df4af3b8ad622d767d8442d7b96f9401fa64c6d22c226628be1467b90c38acb02dd2cb0e782e35fc856822d2940771b8ec3bc27.json"
+  data-offline-search-index-json-src="/offline-search-index.a512125275242ff933f0beb229dec74e4537f8cae93cb67afcf78ead9c4bff864d4f5c728206de385d6b13cf784e8f22ef5ef40b4a1f2763a6899b11c3905995.json"
   data-offline-search-base-href="/"
 >
 
@@ -196,7 +196,7 @@ if (!doNotTrack) {
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="/en/docs/environment/basic/">English</a>
+	<a class="dropdown-item" href="/en/">English</a>
 	
 </div>
     </div>
@@ -612,10 +612,27 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/environment/basic/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Basic Kit</a>
+    <a  href="/docs/environment/avr/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">AVR MCU</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsenvironmentbasic">
+    <li class="collapse " id="docsenvironmentavr">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/avr/arduino/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Arduino IDE</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironmentavrarduino">
       
       
       
@@ -635,11 +652,86 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/environment/esp32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 Wi-Fi Kit</a>
+    <a  href="/docs/environment/avr/platformio/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">PlatformIO</a>
   </li>
   <ul>
-    <li class="collapse " id="docsenvironmentesp32">
+    <li class="collapse " id="docsenvironmentavrplatformio">
       
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/esp32/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ESP32 MCU</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsenvironmentesp32">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/esp32/arduino/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Arduino IDE</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="docsenvironmentesp32arduino">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/esp32/platformio/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">PlatformIO</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironmentesp32platformio">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
       
       
     </li>
@@ -709,29 +801,6 @@ if (!doNotTrack) {
   </ul>
 </ul>
 
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/environment/platformio/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Platformio</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsenvironmentplatformio">
-      
       
       
     </li>
@@ -2828,8 +2897,8 @@ if (!doNotTrack) {
     <li><a href="#ライブラリのインストール">ライブラリのインストール</a>
       <ul>
         <li><a href="#1-使用するライブラリ">1. 使用するライブラリ</a></li>
-        <li><a href="#2-ライブラリをダウンロード">2. ライブラリをダウンロード</a></li>
-        <li><a href="#3-ライブラリをインクルード">3. ライブラリをインクルード</a></li>
+        <li><a href="#2-githubからライブラリをダウンロード">2. Githubからライブラリをダウンロード</a></li>
+        <li><a href="#3-ライブラリのインクルード">3. ライブラリのインクルード</a></li>
       </ul>
     </li>
   </ul>
@@ -2855,6 +2924,9 @@ if (!doNotTrack) {
 
 
 
+
+
+
 <li class="breadcrumb-item" >
 	<a href="https://docs.leafony.com/docs/">Documentation</a>
 </li>
@@ -2869,8 +2941,15 @@ if (!doNotTrack) {
 
 
 
+<li class="breadcrumb-item" >
+	<a href="https://docs.leafony.com/docs/environment/esp32/">ESP32 MCU</a>
+</li>
+
+
+
+
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://docs.leafony.com/docs/environment/basic/">Basic Kit</a>
+	<a href="https://docs.leafony.com/docs/environment/esp32/arduino/">Arduino IDE</a>
 </li>
 
 	</ol>
@@ -2878,12 +2957,11 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>Basic Kit 開発環境設定マニュアル</h1>
-        <div class="lead">Leafonyにプログラムを書き込んでみよう！</div>
+	<h1>ESP32 MCU の Arduino IDE 開発環境</h1>
+        <div class="lead">Wi-Fi搭載リーフを使ってみよう！</div>
 	
-	<p>Leafonyはプログラムを書き込んで初めて動作します。<br>
-たとえば、<a href="/docs/getting-started/basic/">クイックスタート</a>では、4つのセンサを読み取って、Bluetooth LEでデータを送信するプログラムが書き込まれています。</p>
-<p>これからLeafonyを使い始める皆さんは、Leafonyにどんなことをしてもらいたいのかプログラムに記述して書き込むことで、思い通りの動作をさせることができます。</p>
+	<p>ESP32 MCU リーフはESP32Wi-Fi Kitに含まれるマイコンリーフです。
+以下の手順で ESP32 Wi-Fi Kitの Arduino IDE開発環境の設定を行いましょう。</p>
 
 
 <div class="alert alert-primary" role="alert">
@@ -2893,13 +2971,13 @@ Leafonyにプログラムを書き込むために必要なソフトウェアを�
 
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
-<li>Basic Kit</li>
+<li>ESP32 Wi-Fi Kit</li>
 <li>PC (Windows、Mac OS X 、または Linux)</li>
 </ul>
 <h2 id="arduino-ideのインストール">Arduino IDEのインストール</h2>
 <p>Arduino IDEは、オープンソースの電子工作向けハードウェアプラットフォームであるArduinoの開発環境です。<br>
 この開発環境では、プログラムを記述したり、Arduino基板にプログラムを書き込んだり、基板から送られてくるデータを表示したりすることができます。<br>
-Leafonyは、Arduino IDEを使って開発できます。</p>
+LeafonyはArduino互換の基板なので、Arduino IDEを使って開発できます。</p>
 <p>早速Arduino IDEをダウンロードしてみましょう。</p>
 <ol>
 <li><a href="https://www.arduino.cc/" target="_blank">Arduino ホームページ</a>から「SOFTWARE」 → 「DOWNLOADS」の順でページを開き、Arduino IDEのダウンロードページに飛ぶ。</li>
@@ -2915,27 +2993,57 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 
 <h2 id="pcと接続">PCと接続</h2>
 <p>USBケーブルでPCと接続しましょう。<br></p>
-<img src="./basic_assemble.png" width="530">
-<br><br>
+<img src="./esp32_assemble.png" width="500">
 <h2 id="マイコンボードの設定">マイコンボードの設定</h2>
-<p>Arduino IDEでLeafonyの開発を行うために、下記の手順でIDEの設定を行いましょう。</p>
+<p>ESP32 MCUリーフをArduino IDEで使用するには、Arduino core for the ESP32 のインストールが必要です。</p>
 <ol>
-<li><code>ツール → ボード</code>から、<code>Arduino Pro or Pro Mini</code>を選択、<code>プロセッサ</code>で<code>ATmega328P (3.3V,8MHz)</code>を選択</li>
+<li>Arduino IDEの<code>ファイル → 環境設定</code>を開き、<code>追加のボードマネージャのURL:</code>に、下記URLを入力してください。</li>
 </ol>
-<img src="./IDE_ATmega.jpg" width="640">
-<p><br><br></p>
+<p>　　<code>https://dl.espressif.com/dl/package_esp32_index.json</code></p>
+<p><img src="./ArduinoIDE_URL.png"></img></p>
+<br>
 <ol start="2">
-<li><code>ツール → シリアルポート</code>から、Leafonyが接続されているシリアルポートを選択</li>
+<li><code>ツール→ボード→ボードマネージャ</code>を選択し、<code>esp32 by Espressif Systems</code>を検索し、インストールのボタンを押しましょう。</li>
 </ol>
-<img src="./IDE_COM.jpg" width="640">
+<p><img src="./BoardManager_esp32.png"></img></p>
+<br>
+<ol start="3">
+<li><code>ツール → ボード → ESP32 Dev Module</code>を選択すれば、ESP32 MCUが使えるようになります。</li>
+</ol>
 <h2 id="マイコンボードの動作確認">マイコンボードの動作確認</h2>
+<p>サンプルスケッチを書き込んで、ESP32 Wi-Fi Kitを動かしてみましょう。</p>
 <ol>
-<li>Arduino IDEで<code>ファイル → スケッチ例 → 01.Basics → Blink</code>をクリックし、サンプルアプリを開きましょう。</li>
-<li><code>マイコンボードに書き込む</code>ボタンを押すをLeafonyにプログラムが書き込まれます。</li>
-<li>AVR MCUリーフに搭載されたLEDが点滅していることが確認できれば完了です。</li>
+<li>Arduinoを起動する。</li>
+<li>下記のサンプルコードをコードエディタに貼り付ける。</li>
 </ol>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//*****************************
+</span><span style="color:#8f5902;font-style:italic">// ボタン入力の状態をシリアルモニタに表示するサンプル
+</span><span style="color:#8f5902;font-style:italic">//*****************************
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">pushButton</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pushButton</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">INPUT</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">buttonState</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">digitalRead</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pushButton</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buttonState</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><ol start="3">
+<li>ESP32リーフが接続されたCOMポートを選択する。</li>
+<li><code>マイコンボードに書き込む</code>ボタンを押してスケッチを書き込む。</li>
+<li>書き込み中に下記の表示が出たら、ESP32リーフの<code>Bootモードスイッチ</code>を長押しする。</li>
+</ol>
+<p><img src="./esp32_write.png"></img></p>
+<ol start="6">
+<li>シリアルモニタを開いて、通信速度を<code>115200bps</code>にする。</li>
+<li><code>Bootモードスイッチ(IO0)</code>を押してスイッチの入力状態が変わるのを確認する。</li>
+</ol>
+<p><a href="./AP02_tips.png"><img src="./AP02_tips.png" width="450"></a></p>
 <h2 id="困ったときは">困ったときは</h2>
-<p>「<a href="/docs/getting-started/solution" target="_blank">うまく動かないときは</a>」で解決方法を探してみましょう。</p>
+<p>「<a href="../solution" target="_blank">うまく動かないときは</a>」で解決方法を探してみましょう。</p>
 
 
 <div class="alert alert-primary" role="alert">
@@ -2945,82 +3053,70 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 </div>
 
 <h2 id="ライブラリのインストール">ライブラリのインストール</h2>
-<p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。<br>
+<p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。
 下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきましょう。</p>
 <h3 id="1-使用するライブラリ">1. 使用するライブラリ</h3>
 <p>各Kitで使用するライブラリは以下の通りです。</p>
-<table class="table-hover">
-  <thread>
-    <tr>
-      <th>リーフ名</th>
-      <th>必要なライブラリ名</th>
-      <th>推奨バージョン</th>
-      <th>説明</th>
-    </tr>
-  </thread>
-  <tbody>
-    <tr>
-      <td>BLE</td>
-      <td><a href="https://github.com/Leafony/TBGLib" target="_blank">TBGLib</a></td>
-      <td></td>
-      <td>Bluetoothライブラリ</td>
-    </tr>
-    <tr>
-      <td rowspan=5>4-Sensors</td>
-      <td><a href="https://github.com/adafruit/Adafruit_Sensor" target="_blank">Adafruit_Sensor.h</a></td>
-      <td></td>
-      <td>ユニファイドセンサドライバ</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/adafruit/Adafruit_BusIO" target="_blank">Adafruit_BusIO_Register.h</a></td>
-      <td></td>
-      <td>Bus IOライブラリ</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/ameltech/sme-hts221-library" target="_blank">HTS221.h</a></td>
-      <td></td>
-      <td>温湿度センサライブラリ</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/closedcube/ClosedCube_OPT3001_Arduino" target="_blank">ClosedCube_OPT3001.h</a></td>
-      <td></td>
-      <td>照度センサライブラリ</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/adafruit/Adafruit_LIS3DH/tree/1.1.2" target="_blank">Adafruit_LIS3DH.h</a></td>
-      <td>1.1.2</td>
-      <td>加速度センサライブラリ</td>
-    </tr>
-    <tr>
-      <td>LCD</td>
-      <td><a href="https://github.com/tomozh/arduino_ST7032" target="_blank">ST7032.h</a></td>
-      <td></td>
-      <td>LCDライブラリ</td>
-    </tr>
-    <tr>
-      <td>AVR MCU</td>
-      <td><a href="https://github.com/PaulStoffregen/MsTimer2" target="_blank">MsTimer2.h</a></td>
-      <td></td>
-      <td>タイマ割り込みライブラリ</td>
-    </tr>
-    <tr>
-      <td>RTC&MicroSD</td>
-      <td><a href="https://github.com/adafruit/RTClib" target="_blank">RTClib.h</a></td>
-      <td></td>
-      <td>RTCライブラリ</td>
-    </tr>
-  </tbody>
+<table>
+  <tr>
+    <th>リーフ名</th>
+    <th>必要なライブラリ名</th>
+    <th>推奨バージョン</th>
+    <th>説明</th>
+  </tr>
+  <tr>
+    <td>BLE</td>
+    <td><a href="https://github.com/Leafony/TBGLib" target="_blank">TBGLib</a></td>
+    <td></td>
+    <td>Bluetoothライブラリ</td>
+  </tr>
+  <tr>
+    <td rowspan=5>4-Sensors</td>
+    <td><a href="https://github.com/adafruit/Adafruit_Sensor" target="_blank">Adafruit_Sensor.h</a></td>
+    <td></td>
+    <td>ユニファイドセンサドライバ</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/adafruit/Adafruit_BusIO" target="_blank">Adafruit_BusIO_Register.h</a></td>
+    <td></td>
+    <td>Bus IOライブラリ</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/ameltech/sme-hts221-library" target="_blank">HTS221.h</a></td>
+    <td></td>
+    <td>温湿度センサライブラリ</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/closedcube/ClosedCube_OPT3001_Arduino" target="_blank">ClosedCube_OPT3001.h</a></td>
+    <td></td>
+    <td>照度センサライブラリ</td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/adafruit/Adafruit_LIS3DH/tree/1.1.2" target="_blank">Adafruit_LIS3DH.h</a></td>
+    <td>1.1.2</td>
+    <td>加速度センサライブラリ</td>
+  </tr>
+  <tr>
+    <td>LCD</td>
+    <td><a href="https://github.com/tomozh/arduino_ST7032" target="_blank">ST7032.h</a></td>
+    <td></td>
+    <td>LCDライブラリ</td>
+  </tr>
+  <tr>
+    <td>RTC&MicroSD</td>
+    <td><a href="https://github.com/adafruit/RTClib" target="_blank">RTClib.h</a></td>
+    <td></td>
+    <td>RTCライブラリ</td>
+  </tr>
 </table>
-<h3 id="2-ライブラリをダウンロード">2. ライブラリをダウンロード</h3>
+<h3 id="2-githubからライブラリをダウンロード">2. Githubからライブラリをダウンロード</h3>
 <p>上記表のリンクをクリックすると、ライブラリのGitHubリポジトリにアクセスします。
 <code>Code → Download ZIP</code>をクリックし、ライブラリをダウンロードしましょう。</p>
-<img src="github_1.png" width="600">
-<h3 id="3-ライブラリをインクルード">3. ライブラリをインクルード</h3>
+<p><img src="./github_1.png" alt="github"></p>
+<h3 id="3-ライブラリのインクルード">3. ライブラリのインクルード</h3>
 <p>Arduinoを立ち上げ、<code>スケッチ → ライブラリをインクルード → ZIP形式のライブラリをインストール</code>の順に選択して、先程ダウンロードしたZIPファイルを読み込みましょう。</p>
-<img src="IDE_libinclude.png" width="640">  
+<p><img src="./IDE_libinclude.png" alt="include"></p>
 <br>
-<br>
-
         <div class="section-index">
     
     
@@ -3031,7 +3127,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 October 16, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 October 19, 2020
 </div>
 </div>
 
