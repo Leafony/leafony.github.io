@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Leafony – Environment Settings</title>
+    <title>Leafony – 開発環境設定</title>
     <link>https://docs.leafony.com/en/docs/environment/</link>
-    <description>Recent content in Environment Settings on Leafony</description>
+    <description>Recent content in 開発環境設定 on Leafony</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	  <atom:link href="https://docs.leafony.com/en/docs/environment/index.xml" rel="self" type="application/rss+xml" />
@@ -14,154 +14,15 @@
     
     
     <item>
-      <title>Docs: Basic Kit Development Environment Settings Manual</title>
-      <link>https://docs.leafony.com/en/docs/environment/basic/</link>
+      <title>Docs: AVR MCU Development Environment Settings Manual</title>
+      <link>https://docs.leafony.com/en/docs/environment/avr/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.leafony.com/en/docs/environment/basic/</guid>
+      <guid>https://docs.leafony.com/en/docs/environment/avr/</guid>
       <description>
         
         
-        &lt;p&gt;Leafony only works when you write a program. &lt;br&gt; 
-For example, in &lt;a href=&#34;https://docs.leafony.com/en/docs/getting-started/basic/&#34;&gt;Quick Start&lt;/a&gt;, a program has been written to read the four sensors and send data via Bluetooth LE.&lt;/p&gt;
-&lt;p&gt;If you are starting to use Leafony, you can make it work the way you want it to by writing a program that describes what you want it to do.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Next&lt;/h4&gt;
-Install the software needed to write a program in Leafony
-&lt;/div&gt;
-
-&lt;h2 id=&#34;what-to-prepare&#34;&gt;What to prepare&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Basic Kit&lt;/li&gt;
-&lt;li&gt;PC (Windows, Mac OS X or Linux)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;installing-arduino-ide&#34;&gt;Installing Arduino IDE&lt;/h2&gt;
-&lt;p&gt;The Arduino IDE is a development environment for the Arduino, an open source hardware platform for electronics. &lt;br&gt; &lt;br&gt;.
-The development environment allows you to write programs, write programs to the Arduino board, and display the data coming from the board. &lt;br&gt;.
-Leafony can be developed with the Arduino IDE.&lt;/p&gt;
-&lt;p&gt;Let&amp;rsquo;s download the Arduino IDE right away.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;From the &lt;a href=&#34;https://www.arduino.cc/&#34; target=&#34;_blank&#34;&gt;Arduino website&lt;/a&gt;, go to &amp;ldquo;SOFTWARE&amp;rdquo; and then &amp;ldquo;DOWNLOADS&amp;rdquo; to get to the Arduino IDE download page.&lt;/li&gt;
-&lt;li&gt;Download the installer for your OS at the place where it says &amp;ldquo;Download the Arduino IDE&amp;rdquo;.&lt;/li&gt;
-&lt;li&gt;Run the downloaded installer and follow the on-screen instructions to install the Arduino IDE.&lt;/li&gt;
-&lt;/ol&gt;
-
-
-&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Next&lt;/h4&gt;
-Let’s write a program in Leafony and make it work!
-&lt;/div&gt;
-
-&lt;h2 id=&#34;connecting-to-pc&#34;&gt;Connecting to PC&lt;/h2&gt;
-&lt;p&gt;Connect to your PC with a USB cable.&lt;br&gt;&lt;/p&gt;
-&lt;img src=&#34;./basic_assemble.png&#34; width=&#34;530&#34;&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;h2 id=&#34;configuration-of-the-microcontroller-board&#34;&gt;Configuration of the microcontroller board&lt;/h2&gt;
-&lt;p&gt;To develop Leafony in the Arduino IDE, let&amp;rsquo;s follow the steps below to configure the IDE.&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Go to &lt;code&gt;Tools → Board&lt;/code&gt; and select &lt;code&gt;Arduino Pro or Pro Mini&lt;/code&gt; and &lt;code&gt;ATmega328P (3.3V, 8MHz)&lt;/code&gt; for &lt;code&gt;Processor&lt;/code&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;./IDE_ATmega.jpg&#34; width=&#34;640&#34;&gt;
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Go to &lt;code&gt;Tools → Serial Port&lt;/code&gt; and select the serial port that Leafony is connected to&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;./IDE_COM.jpg&#34; width=&#34;640&#34;&gt;
-&lt;h2 id=&#34;checking-the-operation-of-the-microcontroller-board&#34;&gt;Checking the operation of the microcontroller board&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;In the Arduino IDE, click on &lt;code&gt;File → Sketch Examples → 01.Basics → Blink&lt;/code&gt; to open the sample app.&lt;/li&gt;
-&lt;li&gt;The program is written to Leafony by pressing the &lt;code&gt;write to microcontroller&lt;/code&gt; button.&lt;/li&gt;
-&lt;li&gt;If you can confirm that the LED on the AVR MCU leaf is blinking, you are done.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;when-in-doubt&#34;&gt;When in doubt.&lt;/h2&gt;
-&lt;p&gt;If it doesn&amp;rsquo;t work, go to &amp;ldquo;&lt;a href=&#34;https://docs.leafony.com/en/docs/getting-started/solution&#34; target=&#34;_blank&#34;&gt;Solution&lt;/a&gt;&amp;rdquo; to find a solution.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Next&lt;/h4&gt;
-A number of programs are available in &lt;a href=&#34;https://docs.leafony.com/docs/examples&#34;&gt;Sample App&lt;/a&gt;.
-To make development easier, install the library and get started.
-&lt;/div&gt;
-
-&lt;h2 id=&#34;installing-libraries&#34;&gt;Installing Libraries&lt;/h2&gt;
-&lt;p&gt;To use some of the leaves, you will need to install additional libraries. &lt;br&gt;
-Follow the steps below to install all libraries in advance.&lt;/p&gt;
-&lt;h3 id=&#34;1-library-to-use&#34;&gt;1. Library to use&lt;/h3&gt;
-&lt;p&gt;The libraries used in each Kit are as follows.&lt;/p&gt;
-&lt;table class=&#34;table-hover&#34;&gt;
-  &lt;thread&gt;
-    &lt;tr&gt;
-      &lt;th&gt;Leaf&lt;/th&gt;
-      &lt;th&gt;Required Library&lt;/th&gt;
-      &lt;th&gt;Recommended version&lt;/th&gt;
-      &lt;th&gt;Description&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thread&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;BLE&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/Leafony/TBGLib&#34; target=&#34;_blank&#34;&gt;TBGLib&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;Bluetooth Library&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td rowspan=5&gt;4-Sensors&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_Sensor&#34; target=&#34;_blank&#34;&gt;Adafruit_Sensor.h&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;Unified Sensor Driver&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_BusIO&#34; target=&#34;_blank&#34;&gt;Adafruit_BusIO_Register.h&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;Bus IO Library&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/ameltech/sme-hts221-library&#34; target=&#34;_blank&#34;&gt;HTS221.h&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;Temperature and humidity sensor library&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/closedcube/ClosedCube_OPT3001_Arduino&#34; target=&#34;_blank&#34;&gt;ClosedCube_OPT3001.h&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;Illuminance sensor library&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_LIS3DH/tree/1.1.2&#34; target=&#34;_blank&#34;&gt;Adafruit_LIS3DH.h&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;1.1.2&lt;/td&gt;
-      &lt;td&gt;Accelerometer Library&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;LCD&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/tomozh/arduino_ST7032&#34; target=&#34;_blank&#34;&gt;ST7032.h&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;LCD Library&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;AVR MCU&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/PaulStoffregen/MsTimer2&#34; target=&#34;_blank&#34;&gt;MsTimer2.h&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;Timer interrupt library&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;RTC&amp;MicroSD&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/RTClib&#34; target=&#34;_blank&#34;&gt;RTClib.h&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;RTC Library&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;2-download-library&#34;&gt;2. Download Library&lt;/h3&gt;
-&lt;p&gt;Clicking on the links in the table above will take you to the library&amp;rsquo;s GitHub repository.
-Click &lt;code&gt;Code → Download ZIP&lt;/code&gt; to download the library.&lt;/p&gt;
-&lt;img src=&#34;github_1.png&#34; width=&#34;600&#34;&gt;
-&lt;h3 id=&#34;3-include-library&#34;&gt;3. Include Library&lt;/h3&gt;
-&lt;p&gt;Launch the Arduino and choose &lt;code&gt;Sketch → Include Library → Install ZIP Library&lt;/code&gt; to load the zip file you just downloaded.&lt;/p&gt;
-&lt;img src=&#34;IDE_libinclude.png&#34; width=&#34;640&#34;&gt;  
-&lt;br&gt;
-&lt;br&gt;
-
+        
       </description>
     </item>
     

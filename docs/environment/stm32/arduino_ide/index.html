@@ -21,16 +21,16 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>STM32 MCU の Arduino IDE開発環境 | Leafony</title><meta property="og:title" content="STM32 MCU の Arduino IDE開発環境" />
+<title>STM32 MCU の Arduino IDE 設定 | Leafony</title><meta property="og:title" content="STM32 MCU の Arduino IDE 設定" />
 <meta property="og:description" content="Arduino IDEにSTM32 Coresをインストール
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/environment/stm32/arduino_ide/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="STM32 MCU の Arduino IDE開発環境">
+<meta itemprop="name" content="STM32 MCU の Arduino IDE 設定">
 <meta itemprop="description" content="Arduino IDEにSTM32 Coresをインストール
 "><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="STM32 MCU の Arduino IDE開発環境"/>
+<meta name="twitter:title" content="STM32 MCU の Arduino IDE 設定"/>
 <meta name="twitter:description" content="Arduino IDEにSTM32 Coresをインストール
 "/>
 
@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.626bccfd0f3c127370d376226c9b40b4faf1e8ae05dc21be9d83095a987ae3fe9120d177b9dc6815714525d6ece0b06db1ccaa88303ca84634b19fc6c4be7d23.json"
+  data-offline-search-index-json-src="/offline-search-index.d3e4cdeb2eb5920797220f611fb9eae29f952a67e5312698b55285f0413248210af597a56e100f723bd50125c8b15f938e2cb3e0dc9c5a6b04e2fa927344eff2.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.626bccfd0f3c127370d376226c9b40b4faf1e8ae05dc21be9d83095a987ae3fe9120d177b9dc6815714525d6ece0b06db1ccaa88303ca84634b19fc6c4be7d23.json"
+  data-offline-search-index-json-src="/offline-search-index.d3e4cdeb2eb5920797220f611fb9eae29f952a67e5312698b55285f0413248210af597a56e100f723bd50125c8b15f938e2cb3e0dc9c5a6b04e2fa927344eff2.json"
   data-offline-search-base-href="/"
 >
 
@@ -794,6 +794,29 @@ if (!doNotTrack) {
   </li>
   <ul>
     <li class="collapse " id="docsenvironmentstm32stm32cube_ide">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/stm32/swd/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">SWD</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironmentstm32swd">
       
       
       
@@ -2904,7 +2927,6 @@ if (!doNotTrack) {
         <li><a href="#timer">Timer</a></li>
       </ul>
     </li>
-    <li><a href="#swdの使用">SWDの使用</a></li>
   </ul>
 </nav>
 
@@ -2961,7 +2983,7 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>STM32 MCU の Arduino IDE開発環境</h1>
+	<h1>STM32 MCU の Arduino IDE 設定</h1>
         <div class="lead">Arduino IDEにSTM32 Coresをインストール</div>
 	
 	<p>以下の手順で STM32 MCU 開発環境の設定を行いましょう。</p>
@@ -3057,128 +3079,7 @@ HardwareTimer等を使用してください。
 　<span style="color:#a40000">：</span>
 　<span style="color:#a40000">：</span>
 <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><h2 id="swdの使用">SWDの使用</h2>
-<p>AX01 Shieldを接続することにより、SWDを使用することができます。
-<br>
-<br>
-<img src="./swd_1.png" width="250"></img>
-<br>
-<br></p>
-<table>
-<thead>
-<tr>
-<th align="left">　SWDコネクタの仕様</th>
-<th align="left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">コネクタ型番</td>
-<td align="left">FTSH-105-01-L-D</td>
-</tr>
-<tr>
-<td align="left">ピン数</td>
-<td align="left">10</td>
-</tr>
-<tr>
-<td align="left">ピンピッチ</td>
-<td align="left">1.27mm</td>
-</tr>
-</tbody>
-</table>
-<p>ピン配置<br>
-<img src="./swd_2.png" width="250"></img>
-<br>
-<br>
-STLINK-V3SETにはAX01 ShieldのSWDコネクタに接続するケーブルが付属しているため、そのまま接続が可能です。
-<br>
-<img src="./swd_3.png"></img>
-<br>
-<br>
-ST-LINK-V2を持っている場合は、<a href="http://strawberry-linux.com/catalog/items?code=15079" target="_blank">変換アダプタ</a>により接続が可能です。
-変換アダプタを使用してジャンパケーブル等でNucleo のSWDに接続することも可能です。<br>
-<img src="./swd_4.png"></img>
-<br>
-<br>
-Nucleo のSWDに接続する場合、自作も可能です。<br>
-<a href="http://strawberry-linux.com/catalog/items?code=15079" target="_blank">ハーフピッチ リボンケーブル</a>
-<img src="./swd_5.png" width="100"></img><br>
-<a href="https://akizukidenshi.com/catalog/g/gC-13800/" target="_blank">ハーフピッチ　ピンヘッダ</a>
-<img src="./swd_6.png" width="100"></img><br>
-<a href="https://akizukidenshi.com/catalog/g/gP-14224/" target="_blank">ピッチ変換基板</a>
-<img src="./swd_7.png" width="100"></img><br>
-<a href="https://akizukidenshi.com/catalog/g/gC-03786/" target="_blank">ピンソケット</a>
-<img src="./swd_8.png" width="100"></img><br></p>
-<div class="row">
-
-
-
-
-
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_5.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="http://strawberry-linux.com/catalog/items?code=15079" target="_blank">ハーフピッチ リボンケーブル</a></p>
-      
-    </div>
-  </div>
-
-
-
-
-
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_6.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="https://akizukidenshi.com/catalog/g/gC-13800/" target="_blank">ハーフピッチ　ピンヘッダ</a></p>
-      
-    </div>
-  </div>
-
-
-
-
-
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_7.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="https://akizukidenshi.com/catalog/g/gP-14224/" target="_blank">ピッチ変換基板</a></p>
-      
-    </div>
-  </div>
-
-
-
-
-
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_8.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="https://akizukidenshi.com/catalog/g/gC-03786/" target="_blank">ピンソケット</a></p>
-      
-    </div>
-  </div>
-</div>
+</code></pre></div>
         <div class="section-index">
     
     
