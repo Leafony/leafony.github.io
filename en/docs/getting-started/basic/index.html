@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.72.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -21,17 +21,17 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Basic Kit スタートガイド | Leafony</title><meta property="og:title" content="Basic Kit スタートガイド" />
-<meta property="og:description" content="Leafonyで環境センシングを始めよう！
+<title>Basic Kit Getting Started Guide | Leafony</title><meta property="og:title" content="Basic Kit Getting Started Guide" />
+<meta property="og:description" content="Let&#39;s get started with Bluetooth environmental sensing!
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/en/docs/getting-started/basic/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="Basic Kit スタートガイド">
-<meta itemprop="description" content="Leafonyで環境センシングを始めよう！
+<meta itemprop="name" content="Basic Kit Getting Started Guide">
+<meta itemprop="description" content="Let&#39;s get started with Bluetooth environmental sensing!
 "><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Basic Kit スタートガイド"/>
-<meta name="twitter:description" content="Leafonyで環境センシングを始めよう！
+<meta name="twitter:title" content="Basic Kit Getting Started Guide"/>
+<meta name="twitter:description" content="Let&#39;s get started with Bluetooth environmental sensing!
 "/>
 
 
@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.bb97066ad82104e514d4ad2bf6416b57117e2d27ab320e8fff3549fe9392f7ede66ccb98e84442e005c8c3fc13bd230679b309b6254af47fb113357f76d51dd1.json"
+  data-offline-search-index-json-src="/offline-search-index.0912a313cf885905df43a502483b255c6d25fba3579aee045ac2faa0ccbec5cbdbc99372098b3fe95ae58c5aa735647fea99a95c97bcd284cf75ec7281277ac2.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.bb97066ad82104e514d4ad2bf6416b57117e2d27ab320e8fff3549fe9392f7ede66ccb98e84442e005c8c3fc13bd230679b309b6254af47fb113357f76d51dd1.json"
+  data-offline-search-index-json-src="/offline-search-index.0912a313cf885905df43a502483b255c6d25fba3579aee045ac2faa0ccbec5cbdbc99372098b3fe95ae58c5aa735647fea99a95c97bcd284cf75ec7281277ac2.json"
   data-offline-search-base-href="/"
 >
 
@@ -595,7 +595,7 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/environment/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">開発環境設定</a>
+    <a  href="/en/docs/environment/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Environment</a>
   </li>
   <ul>
     <li class="collapse " id="endocsenvironment">
@@ -2865,16 +2865,17 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#用意するもの">用意するもの</a></li>
-    <li><a href="#デモ動画">デモ動画</a></li>
-    <li><a href="#使い方">使い方</a></li>
-    <li><a href="#androidの場合">Androidの場合</a></li>
-    <li><a href="#iphoneまたはipadの場合">iPhoneまたはiPadの場合</a></li>
-    <li><a href="#windowsまたはmacosの場合">WindowsまたはmacOSの場合</a></li>
-    <li><a href="#linuxの場合">Linuxの場合</a></li>
-    <li><a href="#chrome-osの場合">Chrome OSの場合</a></li>
-    <li><a href="#ピン配置">ピン配置</a></li>
-    <li><a href="#サンプルアプリのソースコード">サンプルアプリのソースコード</a></li>
+    <li><a href="#what-to-prepare">What to prepare</a></li>
+    <li><a href="#demo-video">Demo Video</a></li>
+    <li><a href="#setup">Setup</a></li>
+    <li><a href="#usage">Usage</a>
+      <ul>
+        <li><a href="#for-android">For Android</a></li>
+        <li><a href="#for-iphone-or-ipad">For iPhone or iPad</a></li>
+        <li><a href="#on-windows-or-macos">On Windows or macOS</a></li>
+        <li><a href="#on-linux">On Linux</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -2921,192 +2922,174 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>Basic Kit スタートガイド</h1>
-        <div class="lead">Leafonyで環境センシングを始めよう！</div>
+	<h1>Basic Kit Getting Started Guide</h1>
+        <div class="lead">Let&rsquo;s get started with Bluetooth environmental sensing!</div>
 	
-	<p><strong>Leafony Basic Kit</strong>には、温湿度、照度、加速度センサを搭載した4-Sensorsリーフと、AVR MCUリーフ、Bluetooth LEリーフ、CR2032コイン電池リーフを組み合わせた、2cm立方のIoTデバイスが入っています。</p>
-<p>Bluetoothを使ってスマートフォンやパソコンにセンサの情報を送信したり、Leafonyに搭載されたLEDをコントロールすることが簡単にできます。</p>
-<p>Basic Kitに含まれるLeafonyには、箱を開けたらすぐに使えるサンプルアプリが書き込まれています。</p>
-
-
-<div class="alert alert-primary" role="alert">
-<h4 class="alert-heading">Note</h4>
-Web Bluetoothを使ったWebアプリで、Bluetooth接続もプラットフォームを問わずインストール不要で動作します。
-</div>
-
-<p><img src="Ble2-300x281.png" alt="Ble2-300x281.png"></p>
-<h2 id="用意するもの">用意するもの</h2>
+	<p><img src="Ble2.png" alt="Ble2-300x281.png"></p>
+<br>
+<p>The Basic Kit is a small, coin cell powered development kit that includes a 4-Sensors leaf with temperature, humidity, illuminance and acceleration sensors, an AVR MCU leaf and a Bluetooth LE leaf.</p>
+<p>It&rsquo;s easy to send sensor information to a smartphone or computer via Bluetooth and to control the LEDs in the Basic Kit.</p>
+<p>The Basic Kit has this program written into it that you can use right out of the box.</p>
+<p>On the smartphone or computer side, an app called &ldquo;Web Bluetooth&rdquo; can be used to connect to the Basic Kit on any platform, with no installation required.<br>
+<br></p>
+<img src="./Cross-platform.png" width="450">
+<h2 id="what-to-prepare">What to prepare</h2>
 <ul>
-<li>Leafony Basic Kit</li>
-<li>Windows<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>、 Mac<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>、 Linux<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>、 Chrome OSのPCまたは<br>Android<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>、 iPhone<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>、 iPad<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>のスマートフォンまたはタブレット</li>
-<li>Google Chrome (バージョン70.0.3526.0以降)</li>
+<li>Basic Kit</li>
+<li>Windows<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, Mac<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, Linux<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>, PC with Chrome OS or Android<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>, iPhone<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>, iPad<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> smartphone or tablet</li>
+<li>Google Chrome (Since version 70.0.3526.0)<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></li>
 </ul>
-<h2 id="デモ動画">デモ動画</h2>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XC8G1dTXSR4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h2 id="demo-video">Demo Video</h2>
+<div class="youtube">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/XC8G1dTXSR4?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 <br>
 <br>
-<h2 id="使い方">使い方</h2>
+<h2 id="setup">Setup</h2>
+<ol>
+<li>Insert the CR2032 coin cell battery into the Basic Kit and turn on the power switch.
+<br> 
+<img src="quick_basic_assemble.png" width="400"></img>
+<br></li>
+</ol>
+<h2 id="usage">Usage</h2>
 <ul>
-<li><a href="#android%E3%81%AE%E5%A0%B4%E5%90%88">Androidの場合</a></li>
-<li><a href="#iphone%E3%81%BE%E3%81%9F%E3%81%AFipad%E3%81%AE%E5%A0%B4%E5%90%88">iPhoneまたはiPadの場合</a></li>
-<li><a href="#windows%E3%81%BE%E3%81%9F%E3%81%AFmacos%E3%81%AE%E5%A0%B4%E5%90%88">WindowsまたはmacOSの場合</a></li>
-<li><a href="#linux%E3%81%AE%E5%A0%B4%E5%90%88">Linuxの場合</a></li>
-<li><a href="#chrome-os%E3%81%AE%E5%A0%B4%E5%90%88">Chrome OSの場合</a></li>
-<li><a href="#%E3%83%94%E3%83%B3%E9%85%8D%E7%BD%AE">ピン配置</a></li>
-<li><a href="#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">サンプルアプリのソースコード</a></li>
+<li><a href="#for_android">For Android</a></li>
+<li><a href="#for_iphone_or_ipad">For iPhone or iPad</a></li>
+<li><a href="#windows%E3%81%BE%E3%81%9F%E3%81%AFmacos%E3%81%AE%E5%A0%B4%E5%90%88">On Windows or macOS</a></li>
+<li><a href="#linux%E3%81%AE%E5%A0%B4%E5%90%88">On Linux</a></li>
 </ul>
-<h2 id="androidの場合">Androidの場合</h2>
+<h3 id="for-android">For Android</h3>
 <ol>
-<li>Basic Kitに電池を挿入し、電源スイッチをONにする</li>
+<li>Open Google Chrome.</li>
+<li>Open <a href="https://docs.leafony.com/WebBluetooth_for_Leafony_app/" target="_blank">web app</a>.</li>
+<li>Press the <code>Connect</code> button of the web app, select <code>Leafony_AC02</code> and press the <code>Pair</code> button.<br>
+<br></li>
 </ol>
-<br>
-<p><img src="CR2032_switch.png" alt="Leaf SW"></p>
-<br>
-<ol start="2">
-<li>Google Chromeを開く</li>
-<li><a href="https://docs.leafony.com/WebBluetooth_for_Leafony_app/">サンプルWebアプリのページ</a>を開く</li>
-<li>Webアプリの<code>Connect</code>ボタンを押して、<code>Leaf_A_002」</code>を選択し、<code>ペア設定</code>ボタンを押す</li>
-<li>接続完了</li>
-<li>サンプルアプリのソースコードは<a href="#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">こちら</a></li>
-</ol>
-<br>
 <p><img src="basic_android.jpg" alt="basic_android"></p>
-
-
-<div class="alert alert-primary" role="alert">
-<h4 class="alert-heading">次のステップ</h4>
-<a href="/docs/environment/basic">開発環境設定</a>を読んで、LeafonyにLED点滅スケッチを書き込んでみましょう。
-</div>
-
-<h2 id="iphoneまたはipadの場合">iPhoneまたはiPadの場合</h2>
-<ol>
-<li>Basic Kitに電池を挿入し、電源スイッチをONにする</li>
-</ol>
-<br>
-<p><img src="CR2032_switch.png" alt="Leaf SW"></p>
-<br>
-<ol start="2">
-<li>App Storeから<a href="https://apps.apple.com/us/app/webble/id1193531073">WebBLE</a> (有償)をダウンロード<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></li>
-<li>WebBLEを立ち上げ、下記のURLにアクセス<br>
-<a href="https://docs.leafony.com/WebBluetooth_for_Leafony_app/">https://docs.leafony.com/WebBluetooth_for_Leafony_app/</a></li>
-<li>Webアプリの<code>Connect</code>ボタンを押して、<code>Leaf_A_002」</code>を選択し、<code>ペア設定</code>ボタンを押す</li>
-</ol>
-<br>
-<p><img src="basic_android.jpg" alt="basic_android"></p>
-<br>
-<p>注) 画面上に「Download CSV 」のボタンはありますが、iPhoneでは使用できません。</p>
-
-
-<div class="alert alert-primary" role="alert">
-<h4 class="alert-heading">次のステップ</h4>
-<a href="/docs/environment/basic">開発環境設定</a>を読んで、LeafonyにLED点滅スケッチを書き込んでみましょう。
-</div>
-
-<h2 id="windowsまたはmacosの場合">WindowsまたはmacOSの場合</h2>
-<ol>
-<li>Basic Kitに電池を挿入し、電源スイッチをONにする</li>
-</ol>
-<br>
-<p><img src="CR2032_switch.png" alt="Leaf SW"></p>
-<br>
-<ol start="2">
-<li>Google Chromeを開く</li>
-<li><a href="https://docs.leafony.com/WebBluetooth_for_Leafony_app/">サンプルWebアプリのページ</a>を開く</li>
-<li>Webアプリの<code>Connect</code>ボタンを押して、<code>Leaf_A_002」</code>を選択し、<code>ペア設定</code>ボタンを押す</li>
-<li>接続完了</li>
-<li>サンプルアプリのソースコードは<a href="#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">こちら</a></li>
-</ol>
-<br>
-<p><img src="basic_android.jpg" alt="basic_android"></p>
-<br>
-<p>注) Chromeがバージョン79未満の場合、標準でWeb Bluetoothが有効になっていません。
-Chromeのアドレスバーに次のURLを入力し、<code>Experimental Web Platform features</code>を<code>Enable</code>にしてください。<br>
-<code>chrome://flags/#enable-experimental-web-platform-features</code></p>
-
-
-<div class="alert alert-primary" role="alert">
-<h4 class="alert-heading">次のステップ</h4>
-<a href="/docs/environment/basic">開発環境設定</a>を読んで、LeafonyにLED点滅スケッチを書き込んでみましょう。
-</div>
-
-<h2 id="linuxの場合">Linuxの場合</h2>
-<ol>
+<ol start="4">
 <li>
-<p>Linux上でWeb Bluetoothを有効にするために、下記の記事を参考に環境を設定してください。<br>
-<a href="https://acassis.wordpress.com/2016/06/28/how-to-get-chrome-web-bluetooth-working-on-linux/">How to get Chrome Web Bluetooth working on Linux</a></p>
+<p>Connection complete.</p>
 </li>
 <li>
-<p>Basic Kitに電池を挿入し、電源スイッチをONにする</p>
+<p>The sample app used in this article is &ldquo;<a href="/docs/examples/advanced/1_p/basic/webbluetooth_iot" target="_blank">Introduction to IoT Apps using Web Bluetooth</a>&rdquo;. You can see the source code and how it works here.</p>
 </li>
 </ol>
-<br>
-<p><img src="CR2032_switch.png" alt="Leaf SW"></p>
-<br>
-<ol start="3">
-<li>Google Chromeを開く</li>
-<li><a href="https://docs.leafony.com/WebBluetooth_for_Leafony_app/">サンプルWebアプリのページ</a>を開く</li>
-<li>Webアプリの<code>Connect</code>ボタンを押して、<code>Leaf_A_002」</code>を選択し、<code>ペア設定</code>ボタンを押す</li>
-<li>接続完了</li>
-<li>サンプルアプリのソースコードは<a href="#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">こちら</a></li>
-</ol>
-<br>
-<p><img src="basic_android.jpg" alt="basic_android"></p>
-<br>
 
 
 <div class="alert alert-primary" role="alert">
-<h4 class="alert-heading">次のステップ</h4>
-<a href="/docs/environment/basic">開発環境設定</a>を読んで、LeafonyにLED点滅スケッチを書き込んでみましょう。
+<h4 class="alert-heading">Next Steps</h4>
+<a href="/docs/environment/basic">Environment Settings</a> and write the program in the Basic Kit.
 </div>
 
-<h2 id="chrome-osの場合">Chrome OSの場合</h2>
+<h3 id="for-iphone-or-ipad">For iPhone or iPad</h3>
 <ol>
-<li>Basic Kitに電池を挿入し、電源スイッチをONにする</li>
+<li>Download <a href="https://apps.apple.com/us/app/webble/id1193531073" target="_blank">WebBLE</a> (paid) from the App Store<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></li>
+<li>Copy the following URL, launch WebBLE and paste it into the address bar.</li>
 </ol>
-<br>
-<p><img src="CR2032_switch.png" alt="Leaf SW"></p>
-<br>
-<ol start="2">
-<li>Google Chromeを開く</li>
-<li><a href="https://docs.leafony.com/WebBluetooth_for_Leafony_app/">サンプルWebアプリのページ</a>を開く</li>
-<li>Webアプリの<code>Connect</code>ボタンを押して、<code>Leaf_A_002」</code>を選択し、<code>ペア設定</code>ボタンを押す</li>
-<li>接続完了</li>
-<li>サンプルアプリのソースコードは<a href="#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">こちら</a></li>
+<pre><code> https://docs.leafony.com/WebBluetooth_for_Leafony_app/
+</code></pre><ol start="3">
+<li>
+<p>Press the <code>Connect</code> button of the web app, select <code>Leafony_AC02</code> and press the <code>Pair</code> button.<br>
+<br><br>
+<img src="basic_android.jpg" alt="basic_android"></p>
+</li>
+<li>
+<p>Connection complete.<br>
+There is a &ldquo;Download CSV&rdquo; button on the screen, but it is not available on the iPhone.</p>
+</li>
+<li>
+<p>The sample app I used this time is &ldquo;<a href="/docs/examples/advanced/1_p/basic/webbluetooth_iot" target="_blank">Introduction to IoT Apps Using Web Bluetooth</a>&rdquo;. You can see the source code and how it works here.</p>
+</li>
 </ol>
-<br>
-<p><img src="basic_android.jpg" alt="basic_android"></p>
-<br>
 
 
 <div class="alert alert-primary" role="alert">
-<h4 class="alert-heading">次のステップ</h4>
-<a href="/docs/environment/basic">開発環境設定</a>を読んで、LeafonyにLED点滅スケッチを書き込んでみましょう。
+<h4 class="alert-heading">Next Steps</h4>
+<a href="/docs/environment/basic">Environment Settings</a> and write the program in the Basic Kit.
 </div>
 
-<h2 id="ピン配置">ピン配置</h2>
-<p><a href="../pinassign/basic_kit_pinassign.xlsx"><img src="../pinassign/basic_kit_pinassign.jpg" width="800"></img></a></p>
-<h2 id="サンプルアプリのソースコード">サンプルアプリのソースコード</h2>
-<ul>
-<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE">Arduino スケッチ</a></li>
-<li><a href="https://github.com/Leafony/WebBluetooth_for_Leafony_app">Web Bluetooth アプリ</a></li>
-</ul>
+<h3 id="on-windows-or-macos">On Windows or macOS</h3>
+<ol>
+<li>
+<p>Open Google Chrome.</p>
+</li>
+<li>
+<p>Open <a href="https://docs.leafony.com/WebBluetooth_for_Leafony_app/" target="_blank">web app</a>.</p>
+</li>
+<li>
+<p>Press the <code>Connect</code> button of the web app, select <code>Leafony_AC02</code> and press the <code>Pair</code> button.<br>
+<br>
+<img src="basic_android.jpg" alt="basic_android"></p>
+</li>
+<li>
+<p>Connection complete.</p>
+</li>
+<li>
+<p>The sample app used in this article is &ldquo;<a href="/docs/examples/advanced/1_p/basic/webbluetooth_iot" target="_blank">Web Bluetooth IoT</a>&rdquo;. You can see the source code and how it works here.</p>
+</li>
+</ol>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">Next Steps</h4>
+<a href="/docs/environment/basic">Environment Settings</a> and write the program in the Basic Kit.
+</div>
+
+<h3 id="on-linux">On Linux</h3>
+<ol>
+<li>
+<p>To enable Web Bluetooth on Linux, please refer to the following articles to set up your environment.<br>
+<a href="https://acassis.wordpress.com/2016/06/28/how-to-get-chrome-web-bluetooth-working-on-linux/" target="_blank">How to get Chrome Web Bluetooth working on Linux</a></p>
+</li>
+<li>
+<p>Open Google Chrome.</p>
+</li>
+<li>
+<p>Open <a href="https://docs.leafony.com/WebBluetooth_for_Leafony_app/" target="_blank">web app</a>.</p>
+</li>
+<li>
+<p>Press the <code>Connect</code> button of the web app, select <code>Leafony_AC02</code> and press the <code>Pair</code> button.<br>
+<br> 
+<img src="basic_android.jpg" alt="basic_android"></p>
+</li>
+<li>
+<p>Connection complete.</p>
+</li>
+<li>
+<p>The sample app used in this article is &ldquo;<a href="/docs/examples/advanced/1_p/basic/webbluetooth_iot" target="_blank">Web Bluetooth IoT</a>&rdquo;. You can see the source code and how it works here.</p>
+</li>
+</ol>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">Next Steps</h4>
+<a href="/docs/environment/basic">Environment Settings</a> and write the program in the Basic Kit.
+</div>
+
+<br>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Windows 10 version 1703以降 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Windows 10 version 1703 or later <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>OS X Yosemite以降 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>OS X Yosemite or later <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
 <p>Kernel 3.19+ and BlueZ 5.41+ installed. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
-<p>Android 6.0 Marshmallow以降 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Android 6.0 Marshmallow or later <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5" role="doc-endnote">
-<p>iPhoneまたはiPadの場合は <a href="https://itunes.apple.com/us/app/webble/id1193531073">WebBLE</a>(有料)が必要です。iPhone、iPad版のChromeではWeb Bluetoothが実装されていないためです。 <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>For iPhone or iPad, <a href="https://itunes.apple.com/us/app/webble/id1193531073" target="_blank">WebBLE</a> (paid) is required. This is because Web Bluetooth is not implemented in the iPhone and iPad versions of Chrome. <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6" role="doc-endnote">
+<p>If you have Chrome less than version 79, Web Bluetooth is not enabled by default.<br>
+Enter the following URL in Chrome&rsquo;s address bar and set the <code>Experimental Web Platform features</code> to <code>Enable</code>.<br>
+<code>chrome://flags/#enable-experimental-web-platform-features</code> <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -3121,7 +3104,7 @@ Chromeのアドレスバーに次のURLを入力し、<code>Experimental Web Pla
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 17.07.2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 21.10.2020
 </div>
 </div>
 
