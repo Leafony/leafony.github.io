@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.75.1" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -29,7 +29,8 @@
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="ESP32 MCU の PlatformIO 設定">
 <meta itemprop="description" content="VS CodeとPlatformIOを使った開発環境
-"><meta name="twitter:card" content="summary"/>
+">
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ESP32 MCU の PlatformIO 設定"/>
 <meta name="twitter:description" content="VS CodeとPlatformIOを使った開発環境
 "/>
@@ -51,8 +52,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
-<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
+<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -101,14 +102,6 @@ if (!doNotTrack) {
 				
 				
 				
-				<a class="nav-link" href="https://leafony.com/forum/" target="_blank" ><span>Forum</span></a>
-			</li>
-			
-			<li class="nav-item mr-4 mb-2 mb-lg-0">
-				
-				
-				
-				
 				<a class="nav-link" href="https://trillion-node.org/" target="_blank" ><span>Study-group</span></a>
 			</li>
 			
@@ -147,7 +140,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.0912a313cf885905df43a502483b255c6d25fba3579aee045ac2faa0ccbec5cbdbc99372098b3fe95ae58c5aa735647fea99a95c97bcd284cf75ec7281277ac2.json"
+  data-offline-search-index-json-src="/offline-search-index.1fab0644ea949db7135a38717caa2c73609fdb8dc4c05641e511d26fa6c963cb29d5d799cf381a3bd7145fcffb1fc504a1b607257b282b5e8b84f80b7addc785.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +170,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.0912a313cf885905df43a502483b255c6d25fba3579aee045ac2faa0ccbec5cbdbc99372098b3fe95ae58c5aa735647fea99a95c97bcd284cf75ec7281277ac2.json"
+  data-offline-search-index-json-src="/offline-search-index.1fab0644ea949db7135a38717caa2c73609fdb8dc4c05641e511d26fa6c963cb29d5d799cf381a3bd7145fcffb1fc504a1b607257b282b5e8b84f80b7addc785.json"
   data-offline-search-base-href="/"
 >
 
@@ -3004,26 +2997,37 @@ Visual Studio Codeの強力なプラグインを活用し、より快適な開�
 <ol>
 <li><code>PlatformIO Home</code>ボタンを押してPlatformIOのホームを表示する。</li>
 <li><code>New Project</code>をクリック。</li>
-<li>任意のプロジェクト名を指定し、<code>Board</code>で適切なボードを選択。</li>
+<li>任意のプロジェクト名を指定し、<code>Board</code>で<code>fm-devkit</code>を選択。</li>
 <li><code>src</code>フォルダに含まれる<code>main.cpp</code>を開き、以下のコードを貼り付け。</li>
 </ol>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//  Button
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//    (c) 2020 Trillion-Node Study Group
+</span><span style="color:#8f5902;font-style:italic">//    Released under the MIT license
+</span><span style="color:#8f5902;font-style:italic">//    https://opensource.org/licenses/MIT
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2020/07/02  First release
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">pushButton</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#8f5902;font-style:italic">// LEDピンを出力ピンに設定
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">OUTPUT</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pushButton</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">INPUT</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
 
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">// LEDを点灯
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">999</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// LEDを消灯
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">999</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+  <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">buttonState</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">digitalRead</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pushButton</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buttonState</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><ol start="5">
 <li><code>Build</code>ボタンを押してプロジェクトをビルド。</li>
 <li>LeafonyをPCに接続。</li>
 <li><code>Upload</code>ボタンを押してプロジェクトをLeafonyに書き込み。</li>
+<li><code>Serial Port Monitor</code>ボタンを押すとシリアルモニタが表示され、ボタンの入力状態が表示される。</li>
 </ol>
 <h2 id="ライブラリをインストール">ライブラリをインストール</h2>
 <ol>
@@ -3036,11 +3040,12 @@ Visual Studio Codeの強力なプラグインを活用し、より快適な開�
 <li><code>lib_deps</code>オプションに<code>closedcube/ClosedCube OPT3001 @ &lt;バージョン&gt;</code>が追加されているか確認。</li>
 <li>下記のコードを貼り付けると、上記の操作をしなくても簡単にライブラリの環境を設定することができる。</li>
 </ol>
-<pre><code>[env:pro8MHzatmega328]
-platform = atmelavr
-board = pro8MHzatmega328
+<pre><code>[env:fm-devkit]
+platform = espressif32
+board = fm-devkit
 framework = arduino
-lib_deps = 
+monitor_speed = 115200
+lib_deps =
 	closedcube/ClosedCube OPT3001 @ ^1.1.2
 	adafruit/Adafruit LIS3DH@1.1.2
 	https://github.com/ameltech/sme-hts221-library.git
@@ -3068,7 +3073,7 @@ lib_deps =
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 October 19, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 October 21, 2020
 </div>
 </div>
 
