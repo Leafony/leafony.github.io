@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.75.1" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -27,7 +27,8 @@
 <meta property="og:url" content="https://docs.leafony.com/docs/lowpower/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="システムの低消費電力化(仕掛かり中)">
-<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="A Leafony Documentation site">
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="システムの低消費電力化(仕掛かり中)"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
@@ -48,8 +49,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
-<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
+<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -136,7 +137,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8c3bf925d6047810f569f45ea3728d413dc895f0eb49efaebada66b4050513b5cdf2b2ee43de8516e4a677a54ea0376576849f6617877e3dd2d0b7626a5d87ea.json"
+  data-offline-search-index-json-src="/offline-search-index.82a60b8615c720db263b61496aafacffa10ad17df9af44815269de2d56c2691763df7b30e5b58a0463110e176cacb1e042340e69c48c165df4411b41cb29f3f1.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +167,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8c3bf925d6047810f569f45ea3728d413dc895f0eb49efaebada66b4050513b5cdf2b2ee43de8516e4a677a54ea0376576849f6617877e3dd2d0b7626a5d87ea.json"
+  data-offline-search-index-json-src="/offline-search-index.82a60b8615c720db263b61496aafacffa10ad17df9af44815269de2d56c2691763df7b30e5b58a0463110e176cacb1e042340e69c48c165df4411b41cb29f3f1.json"
   data-offline-search-base-href="/"
 >
 
@@ -2898,6 +2899,19 @@ if (!doNotTrack) {
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#概要">概要</a></li>
+    <li><a href="#1-iot機器の低消費電力化">1. IoT機器の低消費電力化</a>
+      <ul>
+        <li><a href="#11-iot機器の電池寿命">1.1 IoT機器の電池寿命</a></li>
+        <li><a href="#12-iot機器の消費電力">1.2 IoT機器の消費電力</a></li>
+        <li><a href="#13-iot機器の消費電力の成分">1.3 IoT機器の消費電力の成分</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -2934,7 +2948,93 @@ if (!doNotTrack) {
 	<h1>システムの低消費電力化(仕掛かり中)</h1>
         
 	
-	
+	<h2 id="概要">概要</h2>
+<p>Leafonyの各リーフは低消費電力化に努めたハードウェア設計を行っており、
+それらを活かしたソフトウェア開発を行えば、
+優れた低消費電力性能のIoT/CSPシステムを構築可能です。
+以下では、IoT機器の低消費電力化の考え方とソフトウェア手法をまとめます。</p>
+<h2 id="1-iot機器の低消費電力化">1. IoT機器の低消費電力化</h2>
+<p>小型で電池を使って長時間動くIoT機器は、設置場所を選ばず、様々なシーンでの活用が期待できます。
+以下では、まず、IoT機器の電池寿命を延ばす視点から、
+消費電力を小さくすることが重要であることを示します。
+次に、消費電力を小さくするためには、様々な動作モードでの低消費電力化が必要であることを説明します。
+そして、消費電力の成分を解析することで、低消費電力化を実現するためのハードウェア設計とソフトウェア開発の考え方を示します。</p>
+<h3 id="11-iot機器の電池寿命">1.1 IoT機器の電池寿命</h3>
+<p>電池駆動のIoT機器は、図1に示すように、電池、電源回路、
+そしてセンサ、処理および通信回路(ディジタル部、アナログ部)から構成されます。</p>
+<br>
+<a href="./Fig1.png"><img src="./Fig1.png" width="500"></a>
+<br>
+<p>　　　　　　　図1　電池駆動のIoT機器の構成
+<br>
+<br></p>
+<p>電池駆動のIoT機器の電池寿命は、以下の式で表されます。</p>
+<p>　　　電池寿命＝電池容量×電池公称電圧×電力変換効率／消費電力　　(1)</p>
+<p>電池寿命を長くするためには、電池の容量を大きくすること、
+電力変換効率の高い電源回路を用いること、
+センサ、処理および通信回路の消費電力を小さくすること、が有効です。
+大きな容量の電池は重く場所を取るため、
+IoT機器の利用シーンを制限してしまう懸念があります。
+よって、IoT機器では、センサ、処理および通信回路の消費電力を小さくすることが極めて重要です。</p>
+<h3 id="12-iot機器の消費電力">1.2 IoT機器の消費電力</h3>
+<p>IoT機器は、図2のように定期的に間欠動作する、
+または、必要な時にだけ起動して処理が終われば停止するアプリケーションに多く利用されます。</p>
+<br>
+<a href="./Fig2.png"><img src="./Fig2.png" width="600"></a>
+<br>
+<p>　　　　　　　図2　IoT機器の間欠動作
+<br>
+<br></p>
+<p>定期的に間欠動作する場合、平均の消費電力Pは以下の式で表されます。</p>
+<p>　　　P＝(Pactive×Tactive＋Psleep×Tsleep)／(Tactive＋Tsleep) 　　　(2)
+<br>
+　　　ここで、Pactive：アクティブ電力、Tactive：アクティブ時間、<br>
+　　　Psleep：スリープ電力、Tsleep：スリープ時間</p>
+<p>例えば、図1の例で、コイン電池(CR2032の場合、電池容量：225mAh程度、公称電圧：3V)で
+1時間に1回10秒の間欠動作(Tactive=10秒、Tsleep=3590秒)をするIoT機器で、
+IoT機器のアクティブ電力Pactiveが15mW、スリープ電力Psleepが20uW、
+電源回路の電力変換効率が90%とすると、電池寿命は1年強になります。
+(電力変換効率は負荷電流依存がありますが、ここでは一定とします。)</p>
+<p>　　　電池寿命＝(225mAh×3V)×0.9/(15mW×10s＋20uW×3590s)/3600s　　(3)
+<br>
+　　　　　　　≒9860時間≒410日≒1年強</p>
+<p>通常、Pactive＞Psleepなので、平均の消費電力Pを小さくするためには、
+Tactiveを短くし、Tsleepを長くするのが有効です。
+また、PactiveだけでなくTsleepの長いPsleepの両方を小さくする必要があります。</p>
+<p>Pactiveを小さくするために、処理性能を落としたり通信速度を下げると、
+Tactiveが長くなり、平均の消費電力が小さくならず、かえって増加する場合があります。
+平均の消費電力が小さくなるかどうかを、十分に吟味することが重要です。</p>
+<p>アクティブ状態からスリープ状態に移行する際には、
+アプリケーションに応じて、
+スリープ時に必要な機能や期待する消費電力、
+また、アクティブ状態に移行するために許容可能なウェークアップ時間を踏まえて、
+適切なスリープモードや回路の停止を選定することも重要です。</p>
+<h3 id="13-iot機器の消費電力の成分">1.3 IoT機器の消費電力の成分</h3>
+<p>センサ、処理および通信回路の消費電力Pは、ディジタル部とアナログ部の消費電力の成分に分解でき、
+以下の式で表されます。第1項がディジタル部、そして第2項がアナログ部の消費電力の成分を示します。</p>
+<p>　　　P＝αCVdd^2f＋Istd×Vdd　　　　　　　　　　　　　　　　　　　　(4)
+<br>
+　　　ここでα：動作率、C：スイッチング容量、Vdd：電源電圧、f：クロック周波数、Istd：定常電流</p>
+<p>消費電力Pを小さくするには、ディジタル部のクロック分配先を限定して
+動作率αを減らすこと、クロック周波数fを下げること、
+そして、使用しないアナログ部を停止して定常電流Istdを小さくすること、
+更に、ハードウェアとして制御可能であれば、電源電圧Vddを下げること、が有効です。</p>
+<p>その時々で必要となる機能や処理性能に応じて、
+PactiveとPsleepを小さくできるようなハードウェア設計が求められます。
+利用する機能や動作モードによりクロック分配先をきめ細かに制御できる設計、
+利用する処理性能や動作モードによりクロック周波数を制御できる設計、
+利用する機能や動作モードにより定常電流をスイッチングできる設計、
+利用する処理性能や動作モードにより電源電圧を制御できる設計、等です。
+また、それらを使いこなすライブラリ関数の提供やソフトウェア開発が期待されます。</p>
+<p>Leafonyの各リーフは低消費電力化に努めたハードウェア設計を実施しており、
+それらを活かしたソフトウェア開発を行えば、
+優れた低消費電力性能 のIoT/CSPシステムを構築可能です。</p>
+<p>以下では、各リーフの低消費電力化について説明します。</p>
+<h4 id="変更履歴">変更履歴</h4>
+<ul>
+<li>Rev A: 2020年10月初版</li>
+</ul>
+
         <div class="section-index">
     
     
@@ -2945,7 +3045,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 October 16, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 October 23, 2020
 </div>
 </div>
 
