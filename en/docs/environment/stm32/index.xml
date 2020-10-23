@@ -14,7 +14,7 @@
     
     
     <item>
-      <title>Docs: Configuring the Arduino IDE</title>
+      <title>Docs: Arduino IDE configuration for STM32 MCUs</title>
       <link>https://docs.leafony.com/en/docs/environment/stm32/arduino_ide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -123,22 +123,22 @@ void intTimer(void){
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;　SWD Connector Specifications&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;　SWD Connector Specifications&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Model number of the connector&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;FTSH-105-01-L-D&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Model number of the connector&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FTSH-105-01-L-D&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Number of pins&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;10&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Number of pins&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;pin pitch&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1.27mm&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;pin pitch&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1.27mm&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -370,7 +370,7 @@ Click &lt;code&gt;OK&lt;/code&gt;.
     </item>
     
     <item>
-      <title>Docs: </title>
+      <title>Docs: When using SWD during development</title>
       <link>https://docs.leafony.com/en/docs/environment/stm32/swd/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -378,7 +378,120 @@ Click &lt;code&gt;OK&lt;/code&gt;.
       <description>
         
         
-        
+        &lt;h2 id=&#34;use-of-swd&#34;&gt;Use of SWD&lt;/h2&gt;
+&lt;p&gt;By connecting the AX01 Shield, you can use SWD.
+&lt;br&gt;
+&lt;br&gt;
+&lt;img src=&#34;./swd_1.png&#34; width=&#34;250&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;　SWD Connector Specifications&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Model number of the connector&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FTSH-105-01-L-D&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Number of pins&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Pin pitch&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1.27mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Pin assignment&lt;br&gt;
+&lt;img src=&#34;./swd_2.png&#34; width=&#34;250&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+STLINK-V3SET comes with a cable that connects to the SWD connector of AX01 Shield, allowing you to connect it as it is.
+&lt;br&gt;
+&lt;img src=&#34;./swd_3.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+If you have the ST-LINK-V2, you can connect it with the &lt;a href=&#34;http://strawberry-linux.com/catalog/items?code=15079&#34; target=&#34;_blank&#34;&gt;conversion adapter&lt;/a&gt;.
+It is also possible to use a conversion adapter to connect to the Nucleo&amp;rsquo;s SWD using a jumper cable or other means.&lt;br&gt;
+&lt;img src=&#34;./swd_4.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+If you want to connect to Nucleo&amp;rsquo;s SWD, you can also build your own.&lt;br&gt;&lt;/p&gt;
+&lt;div class=&#34;row&#34;&gt;
+
+
+
+
+
+
+  &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
+    &lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;swd_5.png&#34; alt=&#34;Card image cap&#34;&gt;
+    
+    &lt;div class=&#34;card-body&#34;&gt;
+      &lt;h4 class=&#34;card-title&#34;&gt;
+           
+      &lt;/h4&gt;
+      &lt;p class=&#34;card-text&#34;&gt;&lt;a href=&#34;http://strawberry-linux.com/catalog/items?code=15079&#34; target=&#34;_blank&#34;&gt;Half-pitch ribbon cable&lt;/a&gt;&lt;/p&gt;
+      
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+
+
+
+
+  &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
+    &lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;swd_6.png&#34; alt=&#34;Card image cap&#34;&gt;
+    
+    &lt;div class=&#34;card-body&#34;&gt;
+      &lt;h4 class=&#34;card-title&#34;&gt;
+           
+      &lt;/h4&gt;
+      &lt;p class=&#34;card-text&#34;&gt;&lt;a href=&#34;https://akizukidenshi.com/catalog/g/gC-13800/&#34; target=&#34;_blank&#34;&gt;Half-pitch pin header&lt;/a&gt;&lt;/p&gt;
+      
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+
+
+
+
+  &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
+    &lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;swd_7.png&#34; alt=&#34;Card image cap&#34;&gt;
+    
+    &lt;div class=&#34;card-body&#34;&gt;
+      &lt;h4 class=&#34;card-title&#34;&gt;
+           
+      &lt;/h4&gt;
+      &lt;p class=&#34;card-text&#34;&gt;&lt;a href=&#34;https://akizukidenshi.com/catalog/g/gP-14224/&#34; target=&#34;_blank&#34;&gt;Pitch Conversion Board&lt;/a&gt;&lt;/p&gt;
+      
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+
+
+
+
+
+  &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
+    &lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;swd_8.png&#34; alt=&#34;Card image cap&#34;&gt;
+    
+    &lt;div class=&#34;card-body&#34;&gt;
+      &lt;h4 class=&#34;card-title&#34;&gt;
+           
+      &lt;/h4&gt;
+      &lt;p class=&#34;card-text&#34;&gt;&lt;a href=&#34;https://akizukidenshi.com/catalog/g/gC-03786/&#34; target=&#34;_blank&#34;&gt;Pin-socket&lt;/a&gt;&lt;/p&gt;
+      
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
       </description>
     </item>
     

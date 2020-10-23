@@ -3,20 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://docs.leafony.com/en/docs/environment/avr/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="https://docs.leafony.com/docs/environment/avr/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs.leafony.com/en/docs/environment/avr/"
-                />
-  </url>
-  
-  <url>
     <loc>https://docs.leafony.com/en/docs/environment/avr/arduino/</loc>
     <xhtml:link
                 rel="alternate"
@@ -27,6 +13,34 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://docs.leafony.com/en/docs/environment/avr/arduino/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://docs.leafony.com/en/docs/environment/esp32/arduino/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/environment/esp32/arduino/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/environment/esp32/arduino/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://docs.leafony.com/en/docs/environment/avr/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/environment/avr/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/environment/avr/"
                 />
   </url>
   
@@ -61,6 +75,21 @@
   </url>
   
   <url>
+    <loc>https://docs.leafony.com/en/docs/leaf/communication/ac02/</loc>
+    <lastmod>2020-10-23T13:42:14+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/leaf/communication/ac02/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/leaf/communication/ac02/"
+                />
+  </url>
+  
+  <url>
     <loc>https://docs.leafony.com/en/docs/overview/</loc>
     <lastmod>2020-10-07T15:43:52+09:00</lastmod>
     <xhtml:link
@@ -77,7 +106,7 @@
   
   <url>
     <loc>https://docs.leafony.com/en/docs/environment/esp32/</loc>
-    <lastmod>2020-10-16T15:29:41+09:00</lastmod>
+    <lastmod>2020-10-23T13:42:14+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
@@ -137,7 +166,7 @@
   
   <url>
     <loc>https://docs.leafony.com/en/docs/products/</loc>
-    <lastmod>2020-10-08T14:41:27+09:00</lastmod>
+    <lastmod>2020-10-23T12:51:26+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
@@ -195,7 +224,7 @@
   
   <url>
     <loc>https://docs.leafony.com/en/docs/getting-started/assembly/</loc>
-    <lastmod>2020-10-16T11:10:33+09:00</lastmod>
+    <lastmod>2020-10-23T12:51:26+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
@@ -239,8 +268,22 @@
   </url>
   
   <url>
+    <loc>https://docs.leafony.com/en/docs/pcb/pcb-tutorial/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/pcb/pcb-tutorial/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/pcb/pcb-tutorial/"
+                />
+  </url>
+  
+  <url>
     <loc>https://docs.leafony.com/en/docs/getting-started/solution/</loc>
-    <lastmod>2020-10-16T11:10:33+09:00</lastmod>
+    <lastmod>2020-10-23T12:51:26+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
@@ -279,7 +322,7 @@
   
   <url>
     <loc>https://docs.leafony.com/en/docs/leaf/io/ai01/</loc>
-    <lastmod>2020-10-16T15:47:51+09:00</lastmod>
+    <lastmod>2020-10-23T13:42:14+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
@@ -343,7 +386,7 @@
   
   <url>
     <loc>https://docs.leafony.com/en/docs/pcb/kicad/</loc>
-    <lastmod>2020-07-05T17:16:21+09:00</lastmod>
+    <lastmod>2020-10-23T12:51:26+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
@@ -358,7 +401,7 @@
   
   <url>
     <loc>https://docs.leafony.com/en/docs/leaf/communication/ac03/</loc>
-    <lastmod>2020-10-16T15:47:51+09:00</lastmod>
+    <lastmod>2020-10-23T13:42:14+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
@@ -386,7 +429,17 @@
   </url>
   
   <url>
-    <loc>https://docs.leafony.com/en/docs/environment/platformio/</loc>
+    <loc>https://docs.leafony.com/en/docs/environment/esp32/platformio/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/environment/esp32/platformio/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/environment/esp32/platformio/"
+                />
   </url>
   
   <url>
@@ -440,7 +493,7 @@
   
   <url>
     <loc>https://docs.leafony.com/en/docs/environment/</loc>
-    <lastmod>2020-10-21T15:02:51+09:00</lastmod>
+    <lastmod>2020-10-23T12:51:26+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
@@ -455,7 +508,7 @@
   
   <url>
     <loc>https://docs.leafony.com/en/docs/leaf/processor/ap02/</loc>
-    <lastmod>2020-10-16T15:47:51+09:00</lastmod>
+    <lastmod>2020-10-23T13:42:14+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
@@ -494,8 +547,22 @@
   </url>
   
   <url>
+    <loc>https://docs.leafony.com/en/docs/environment/stm32/swd/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/environment/stm32/swd/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/environment/stm32/swd/"
+                />
+  </url>
+  
+  <url>
     <loc>https://docs.leafony.com/en/docs/pcb/</loc>
-    <lastmod>2020-10-16T11:10:33+09:00</lastmod>
+    <lastmod>2020-10-23T13:42:14+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
@@ -538,21 +605,6 @@
   </url>
   
   <url>
-    <loc>https://docs.leafony.com/en/docs/leaf/communication/ac02/</loc>
-    <lastmod>2020-10-16T15:47:51+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="https://docs.leafony.com/docs/leaf/communication/ac02/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs.leafony.com/en/docs/leaf/communication/ac02/"
-                />
-  </url>
-  
-  <url>
     <loc>https://docs.leafony.com/en/docs/leaf/communication/</loc>
     <lastmod>2020-10-14T13:37:45+09:00</lastmod>
     <xhtml:link
@@ -569,7 +621,7 @@
   
   <url>
     <loc>https://docs.leafony.com/en/docs/leafony-bus/</loc>
-    <lastmod>2020-10-16T11:10:33+09:00</lastmod>
+    <lastmod>2020-10-23T12:51:26+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
@@ -669,7 +721,7 @@
   
   <url>
     <loc>https://docs.leafony.com/en/docs/leaf/io/ai04/</loc>
-    <lastmod>2020-10-16T15:47:51+09:00</lastmod>
+    <lastmod>2020-10-23T13:42:14+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
@@ -804,7 +856,7 @@
   
   <url>
     <loc>https://docs.leafony.com/en/docs/leaf/extension/ax01/</loc>
-    <lastmod>2020-10-14T15:08:29+09:00</lastmod>
+    <lastmod>2020-10-23T13:42:14+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
@@ -1019,7 +1071,7 @@
   
   <url>
     <loc>https://docs.leafony.com/en/docs/leaf/others/az02/</loc>
-    <lastmod>2020-10-16T15:47:51+09:00</lastmod>
+    <lastmod>2020-10-23T13:42:14+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
@@ -1165,20 +1217,6 @@
   <url>
     <loc>https://docs.leafony.com/en/docs/examples-copy/advanced/3_p/stm32/stm32_simple_ble_beacon/</loc>
     <lastmod>2020-10-16T11:23:22+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.leafony.com/en/docs/environment/stm32/swd/</loc>
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="https://docs.leafony.com/docs/environment/stm32/swd/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs.leafony.com/en/docs/environment/stm32/swd/"
-                />
   </url>
   
   <url>

@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.75.1" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://docs.leafony.com/en/docs/environment/platformio/index.xml">
+<link rel="alternate" type="application/rss&#43;xml" href="https://docs.leafony.com/en/docs/environment/esp32/arduino/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,18 +21,17 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>PlatformIO development environment | Leafony</title><meta property="og:title" content="PlatformIO development environment" />
-<meta property="og:description" content="Development environment using VS Code and PlatformIO
+<title>Arduino IDE Settings for ESP32 MCU | Leafony</title><meta property="og:title" content="Arduino IDE Settings for ESP32 MCU" />
+<meta property="og:description" content="Let&#39;s write a program in Leafony!
 " />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/en/docs/environment/platformio/" />
+<meta property="og:url" content="https://docs.leafony.com/en/docs/environment/esp32/arduino/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="PlatformIO development environment">
-<meta itemprop="description" content="Development environment using VS Code and PlatformIO
-">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="PlatformIO development environment"/>
-<meta name="twitter:description" content="Development environment using VS Code and PlatformIO
+<meta itemprop="name" content="Arduino IDE Settings for ESP32 MCU">
+<meta itemprop="description" content="Let&#39;s write a program in Leafony!
+"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Arduino IDE Settings for ESP32 MCU"/>
+<meta name="twitter:description" content="Let&#39;s write a program in Leafony!
 "/>
 
 
@@ -52,8 +51,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
-<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -123,7 +122,7 @@ if (!doNotTrack) {
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="/">Japanese</a>
+	<a class="dropdown-item" href="/docs/environment/esp32/arduino/">Japanese</a>
 	
 </div>
 			</li>
@@ -140,7 +139,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.1fab0644ea949db7135a38717caa2c73609fdb8dc4c05641e511d26fa6c963cb29d5d799cf381a3bd7145fcffb1fc504a1b607257b282b5e8b84f80b7addc785.json"
+  data-offline-search-index-json-src="/offline-search-index.8c3bf925d6047810f569f45ea3728d413dc895f0eb49efaebada66b4050513b5cdf2b2ee43de8516e4a677a54ea0376576849f6617877e3dd2d0b7626a5d87ea.json"
   data-offline-search-base-href="/"
 >
 
@@ -170,7 +169,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.1fab0644ea949db7135a38717caa2c73609fdb8dc4c05641e511d26fa6c963cb29d5d799cf381a3bd7145fcffb1fc504a1b607257b282b5e8b84f80b7addc785.json"
+  data-offline-search-index-json-src="/offline-search-index.8c3bf925d6047810f569f45ea3728d413dc895f0eb49efaebada66b4050513b5cdf2b2ee43de8516e4a677a54ea0376576849f6617877e3dd2d0b7626a5d87ea.json"
   data-offline-search-base-href="/"
 >
 
@@ -189,7 +188,7 @@ if (!doNotTrack) {
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="/">Japanese</a>
+	<a class="dropdown-item" href="/docs/environment/esp32/arduino/">Japanese</a>
 	
 </div>
     </div>
@@ -536,7 +535,7 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/getting-started/assembly/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Leafonyブロック組立</a>
+    <a  href="/en/docs/getting-started/assembly/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Leafony block assembly</a>
   </li>
   <ul>
     <li class="collapse " id="endocsgetting-startedassembly">
@@ -559,7 +558,7 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/getting-started/solution/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">うまく動かないときは</a>
+    <a  href="/en/docs/getting-started/solution/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">If it doesn&#39;t work...</a>
   </li>
   <ul>
     <li class="collapse " id="endocsgetting-startedsolution">
@@ -622,7 +621,7 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/environment/avr/arduino/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic Kit</a>
+    <a  href="/en/docs/environment/avr/arduino/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Arduino IDE </a>
   </li>
   <ul>
     <li class="collapse " id="endocsenvironmentavrarduino">
@@ -674,11 +673,57 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/environment/esp32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 Wi-Fi Kit</a>
+    <a  href="/en/docs/environment/esp32/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">ESP32 Wi-Fi Kit</a>
   </li>
   <ul>
-    <li class="collapse " id="endocsenvironmentesp32">
+    <li class="collapse show" id="endocsenvironmentesp32">
       
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/environment/esp32/arduino/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Arduino IDE </a>
+  </li>
+  <ul>
+    <li class="collapse show" id="endocsenvironmentesp32arduino">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/environment/esp32/platformio/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">PlatformIO</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsenvironmentesp32platformio">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
       
       
     </li>
@@ -760,7 +805,7 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/environment/stm32/swd/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"></a>
+    <a  href="/en/docs/environment/stm32/swd/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">SWD</a>
   </li>
   <ul>
     <li class="collapse " id="endocsenvironmentstm32swd">
@@ -771,29 +816,6 @@ if (!doNotTrack) {
   </ul>
 </ul>
 
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/environment/platformio/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">PlatformIO</a>
-  </li>
-  <ul>
-    <li class="collapse show" id="endocsenvironmentplatformio">
-      
       
       
     </li>
@@ -1991,11 +2013,34 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/pcb/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">PCB</a>
+    <a  href="/en/docs/pcb/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Home-made leaf</a>
   </li>
   <ul>
     <li class="collapse " id="endocspcb">
       
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/pcb/pcb-tutorial/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Development Tutorial</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocspcbpcb-tutorial">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
       
       
       
@@ -2186,10 +2231,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/leaf/communication/ac03/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LoRa Easy</a>
+    <a  href="/en/docs/leaf/communication/ac02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">BLE Sugar</a>
   </li>
   <ul>
-    <li class="collapse " id="endocsleafcommunicationac03">
+    <li class="collapse " id="endocsleafcommunicationac02">
       
       
       
@@ -2209,10 +2254,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/leaf/communication/ac02/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">BLE Sugar</a>
+    <a  href="/en/docs/leaf/communication/ac03/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">LoRa Easy</a>
   </li>
   <ul>
-    <li class="collapse " id="endocsleafcommunicationac02">
+    <li class="collapse " id="endocsleafcommunicationac03">
       
       
       
@@ -2858,17 +2903,19 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#advance-preparation">Advance preparation</a></li>
-    <li><a href="#platformio-installation">Platformio Installation</a></li>
-    <li><a href="#getting-started">Getting Started</a>
+    <li><a href="#what-to-prepare">What to prepare</a></li>
+    <li><a href="#installing-arduino-ide">Installing Arduino IDE</a></li>
+    <li><a href="#connecting-to-pc">Connecting to PC</a></li>
+    <li><a href="#configuration-of-the-microcontroller-board">Configuration of the microcontroller board</a></li>
+    <li><a href="#checking-the-operation-of-the-microcontroller-board">Checking the operation of the microcontroller board</a></li>
+    <li><a href="#when-in-doubt">When in doubt.</a></li>
+    <li><a href="#installing-libraries">Installing Libraries</a>
       <ul>
-        <li><a href="#create-a-new-project">Create a new project</a></li>
+        <li><a href="#1-library-to-use">1. Library to use</a></li>
+        <li><a href="#2-download-the-library-from-github">2. Download the library from Github</a></li>
+        <li><a href="#3-include-library">3. Include Library</a></li>
       </ul>
     </li>
-    <li><a href="#install-the-library">Install the library</a></li>
-    <li><a href="#write-and-serial-monitoring">Write and Serial Monitoring</a></li>
-    <li><a href="#reference">Reference</a></li>
   </ul>
 </nav>
 
@@ -2882,6 +2929,9 @@ if (!doNotTrack) {
             <nav aria-label="breadcrumb" class="d-none d-md-block d-print-none">
 	<ol class="breadcrumb spb-1">
 		
+
+
+
 
 
 
@@ -2906,8 +2956,15 @@ if (!doNotTrack) {
 
 
 
+<li class="breadcrumb-item" >
+	<a href="https://docs.leafony.com/en/docs/environment/esp32/">ESP32 Wi-Fi Kit</a>
+</li>
+
+
+
+
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://docs.leafony.com/en/docs/environment/platformio/">PlatformIO</a>
+	<a href="https://docs.leafony.com/en/docs/environment/esp32/arduino/">Arduino IDE </a>
 </li>
 
 	</ol>
@@ -2915,86 +2972,175 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>PlatformIO development environment</h1>
-        <div class="lead">Development environment using VS Code and PlatformIO</div>
+	<h1>Arduino IDE Settings for ESP32 MCU</h1>
+        <div class="lead">Let&rsquo;s write a program in Leafony!</div>
 	
-	<h2 id="introduction">Introduction</h2>
-<p>Instead of the Arduino IDE, you can also use PlatformIO as the Leafony development environment.
-PlatformIO makes it easy to manage things like library versioning, board configuration, etc., as well as to use.
-You can take advantage of the powerful plug-ins for Visual Studio Code to make your development more comfortable.</p>
-<h2 id="advance-preparation">Advance preparation</h2>
-<p>PlatformIO is a plug-in for Visual Studio Code (VSCode).
-You need to install the following software in advance.</p>
+	<p>Follow the steps below to set up the ESP32 Wi-Fi Kit development environment.</p>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">Next</h4>
+Install the software needed to write a program in Leafony
+</div>
+
+<h2 id="what-to-prepare">What to prepare</h2>
 <ul>
-<li><a href="https://code.visualstudio.com/">VSCode</a></li>
-<li><a href="https://www.python.org/downloads/">Python 3</a></li>
+<li>ESP32 Wi-Fi Kit</li>
+<li>PC (Windows, Mac OS X or Linux)</li>
 </ul>
-<h2 id="platformio-installation">Platformio Installation</h2>
+<h2 id="installing-arduino-ide">Installing Arduino IDE</h2>
+<p>The Arduino IDE is a development environment for the Arduino, an open source hardware platform for electronics. <br> <br>.
+The development environment allows you to write programs, write programs to the Arduino board, and display the data coming from the board. <br>.
+Leafony can be developed with the Arduino IDE.</p>
+<p>Let&rsquo;s download the Arduino IDE right away.</p>
 <ol>
-<li>Launch VSCode and open the <code>Extensions</code> tab.</li>
-<li>Enter <code>PlatformIO IDE</code> into the search window.</li>
-<li>Install the PlatformIO IDE.</li>
+<li>From the <a href="https://www.arduino.cc/" target="_blank">Arduino website</a>, go to &ldquo;SOFTWARE&rdquo; and then &ldquo;DOWNLOADS&rdquo; to get to the Arduino IDE download page.</li>
+<li>Download the installer for your OS at the place where it says &ldquo;Download the Arduino IDE&rdquo;.</li>
+<li>Run the downloaded installer and follow the on-screen instructions to install the Arduino IDE.</li>
 </ol>
-<img src="./001.jpg" width="300">
-<h2 id="getting-started">Getting Started</h2>
-<h3 id="create-a-new-project">Create a new project</h3>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">Next</h4>
+Let’s write a program in Leafony and make it work!
+</div>
+
+<h2 id="connecting-to-pc">Connecting to PC</h2>
+<p>Connect to your PC with a USB cable.<br></p>
+<img src="./esp32_assemble.png" width="500">
+<h2 id="configuration-of-the-microcontroller-board">Configuration of the microcontroller board</h2>
+<p>To use the ESP32 MCU leaf with the Arduino IDE, you need to install Arduino core for the ESP32.</p>
 <ol>
-<li>Press the <code>PlatformIO Home</code> button to display the PlatformIO home.</li>
-<li>Click on <code>New Project</code>.</li>
-<li>Name your project and select the appropriate board on <code>Board</code>.</li>
-<li>Open the <code>main.cpp</code> in the <code>src</code> folder and paste the following code.</li>
+<li>Open the <code>File → Preferences</code> in the Arduino IDE and enter the following URL in the <code>Additional Board Manager URL:</code> field.</li>
 </ol>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic"></span>
+<p>　　<code>https://dl.espressif.com/dl/package_esp32_index.json</code></p>
+<p><img src="./ArduinoIDE_URL.png"></img></p>
+<br>
+<ol start="2">
+<li>Select <code>Tools -&gt; Board -&gt; Board Manager</code>, search for <code>esp32 by Espressif Systems</code> and press the Install button.</li>
+</ol>
+<p><img src="./BoardManager_esp32.png"></img></p>
+<br>
+<ol start="3">
+<li>Choose <code>Tools → Board → ESP32 Dev Module</code> to get your ESP32 MCU working.</li>
+</ol>
+<h2 id="checking-the-operation-of-the-microcontroller-board">Checking the operation of the microcontroller board</h2>
+<p>Let&rsquo;s write a Sample App and get the ESP32 Wi-Fi Kit running.</p>
+<ol>
+<li>Launch the Arduino.</li>
+<li>Paste the following sample code into your code editor.</li>
+</ol>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//*****************************
+</span><span style="color:#8f5902;font-style:italic">// ボタン入力の状態をシリアルモニタに表示するサンプル
+</span><span style="color:#8f5902;font-style:italic">//*****************************
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">pushButton</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#8f5902;font-style:italic">// LEDピンを出力ピンに設定
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">OUTPUT</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pushButton</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">INPUT</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
 
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">// LEDを点灯
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">999</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// LEDを消灯
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">999</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><ol start="5">
-<li>Press the <code>Build</code> button to build the project.</li>
-<li>Connect Leafony to your PC.</li>
-<li>Press the <code>Upload</code> button to write your project to Leafony.</li>
+  <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">buttonState</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">digitalRead</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pushButton</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buttonState</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><ol start="3">
+<li>Select the COM port to which the ESP32 leaf is connected.</li>
+<li>Push the <code>write to microcomputer board</code> button to write a sketch.</li>
+<li>Press and hold the <code>Boot mode switch</code> on the ESP32 leaf when the following message appears during the writing process.</li>
 </ol>
-<h2 id="install-the-library">Install the library</h2>
-<ol>
-<li>Press the <code>PlatformIO Home</code> button to display the PlatformIO home.</li>
-<li>Open the <code>Libraries</code> tab.</li>
-<li>Type <code>OPT3001</code> in the search window to search the library for the illuminance sensor OPT3001.</li>
-<li><code>ClosedCube OPT3001</code>をクリック。</li>
-<li>Click the <code>Add to Project</code> button and add with <code>Add</code>.</li>
-<li>Open the <code>PlatformIO.ini</code>.</li>
-<li>Check that <code>closedcube/ClosedCube OPT3001 @ &lt;version&gt;</code> is added to the <code>lib_deps</code> option.</li>
-<li>If you paste the code below, you can easily set up the library environment without doing the above.</li>
+<p><img src="./esp32_write.png"></img></p>
+<ol start="6">
+<li>Open the serial monitor and set the communication speed to <code>115200bps</code>.</li>
+<li>Press the <code>Boot mode switch (IO0)</code> and see if the input state of the switch changes.</li>
 </ol>
-<pre><code>[env:pro8MHzatmega328]
-platform = atmelavr
-board = pro8MHzatmega328
-framework = arduino
-lib_deps = 
-	closedcube/ClosedCube OPT3001 @ ^1.1.2
-	adafruit/Adafruit LIS3DH@1.1.2
-	https://github.com/ameltech/sme-hts221-library.git
-	https://github.com/Leafony/TBGLib
-	tomozh/ST7032@0.0.0-alpha+sha.501bf64fe6
-	paulstoffregen/MsTimer2@^1.1
-	adafruit/RTClib@^1.11.2
-	adafruit/Adafruit Unified Sensor@^1.1.4
-	adafruit/Adafruit BusIO@^1.5.0
-</code></pre><h2 id="write-and-serial-monitoring">Write and Serial Monitoring</h2>
-<p>When you press the <code>Serial Port Monitor</code> button, the serial monitor is displayed.</p>
-<h2 id="reference">Reference</h2>
-<p>For more information on how to use PlatformIO for VSCode, please refer to the official documentation.</p>
-<ul>
-<li><a href="https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode">https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode</a></li>
-</ul>
+<p><a href="./AP02_tips.png"><img src="./AP02_tips.png" width="450"></a></p>
+<h2 id="when-in-doubt">When in doubt.</h2>
+<p>If it doesn&rsquo;t work, go to &ldquo;<a href="/en/docs/getting-started/solution" target="_blank">If it doesn&rsquo;t work&hellip;</a>&rdquo; to find a solution.</p>
 
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">Next</h4>
+A number of programs are available in <a href="/docs/examples">Sample App</a>.
+To make development easier, install the library and get started.
+</div>
+
+<h2 id="installing-libraries">Installing Libraries</h2>
+<p>To use some of the leaves, you will need to install additional libraries. <br>
+Follow the steps below to install all libraries in advance.</p>
+<h3 id="1-library-to-use">1. Library to use</h3>
+<p>The libraries used in each Kit are as follows.</p>
+<table class="table-hover">
+  <thread>
+    <tr>
+      <th>Leaf</th>
+      <th>Required Library</th>
+      <th>Recommended version</th>
+      <th>Description</th>
+    </tr>
+  </thread>
+  <tbody>
+    <tr>
+      <td>BLE</td>
+      <td><a href="https://github.com/Leafony/TBGLib" target="_blank">TBGLib</a></td>
+      <td></td>
+      <td>Bluetooth Library</td>
+    </tr>
+    <tr>
+      <td rowspan=5>4-Sensors</td>
+      <td><a href="https://github.com/adafruit/Adafruit_Sensor" target="_blank">Adafruit_Sensor.h</a></td>
+      <td></td>
+      <td>Unified Sensor Driver</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/adafruit/Adafruit_BusIO" target="_blank">Adafruit_BusIO_Register.h</a></td>
+      <td></td>
+      <td>Bus IO Library</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/ameltech/sme-hts221-library" target="_blank">HTS221.h</a></td>
+      <td></td>
+      <td>Temperature and humidity sensor library</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/closedcube/ClosedCube_OPT3001_Arduino" target="_blank">ClosedCube_OPT3001.h</a></td>
+      <td></td>
+      <td>Illuminance sensor library</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/adafruit/Adafruit_LIS3DH/tree/1.1.2" target="_blank">Adafruit_LIS3DH.h</a></td>
+      <td>1.1.2</td>
+      <td>Accelerometer Library</td>
+    </tr>
+    <tr>
+      <td>LCD</td>
+      <td><a href="https://github.com/tomozh/arduino_ST7032" target="_blank">ST7032.h</a></td>
+      <td></td>
+      <td>LCD Library</td>
+    </tr>
+    <tr>
+      <td>AVR MCU</td>
+      <td><a href="https://github.com/PaulStoffregen/MsTimer2" target="_blank">MsTimer2.h</a></td>
+      <td></td>
+      <td>Timer interrupt library</td>
+    </tr>
+    <tr>
+      <td>RTC&MicroSD</td>
+      <td><a href="https://github.com/adafruit/RTClib" target="_blank">RTClib.h</a></td>
+      <td></td>
+      <td>RTC Library</td>
+    </tr>
+  </tbody>
+</table>
+<h3 id="2-download-the-library-from-github">2. Download the library from Github</h3>
+<p>Clicking on the links in the table above will take you to the library&rsquo;s GitHub repository.
+Click <code>Code → Download ZIP</code> to download the library.</p>
+<p><img src="./github_1.png" alt="github"></p>
+<h3 id="3-include-library">3. Include Library</h3>
+<p>Launch the Arduino and choose <code>Sketch → Include Library → Install ZIP Library</code> to load the zip file you just downloaded.</p>
+<p><img src="./IDE_libinclude.png" alt="include"></p>
+<br>
         <div class="section-index">
     
     

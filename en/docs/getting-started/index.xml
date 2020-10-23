@@ -45,7 +45,7 @@
 &lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Insert the CR2032 coin cell battery into the Basic Kit and turn on the power switch.
-&lt;br&gt;
+&lt;br&gt; 
 &lt;img src=&#34;quick_basic_assemble.png&#34; width=&#34;400&#34;&gt;&lt;/img&gt;
 &lt;br&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -147,7 +147,7 @@ There is a &amp;ldquo;Download CSV&amp;rdquo; button on the screen, but it is no
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Press the &lt;code&gt;Connect&lt;/code&gt; button of the web app, select &lt;code&gt;Leafony_AC02&lt;/code&gt; and press the &lt;code&gt;Pair&lt;/code&gt; button.&lt;br&gt;
-&lt;br&gt;
+&lt;br&gt; 
 &lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -296,7 +296,7 @@ Let’s write the program in &lt;a href=&#34;https://docs.leafony.com/en/docs/ex
     </item>
     
     <item>
-      <title>Docs: Leafonyブロック組立</title>
+      <title>Docs: Leafony block assembly</title>
       <link>https://docs.leafony.com/en/docs/getting-started/assembly/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -304,25 +304,25 @@ Let’s write the program in &lt;a href=&#34;https://docs.leafony.com/en/docs/ex
       <description>
         
         
-        &lt;p&gt;Leafonyブロックを組み立てるときの注意点について、まとめています。&lt;/p&gt;
-&lt;h2 id=&#34;ネジのしめ方&#34;&gt;ネジのしめ方&lt;/h2&gt;
-&lt;p&gt;導通不良を避けるため、ネジを交互に、きちんとしめて下さい。&lt;/p&gt;
+        &lt;p&gt;This is a summary of what to expect when assembling a Leafony block.&lt;/p&gt;
+&lt;h2 id=&#34;how-to-tighten-the-screw&#34;&gt;How to tighten the screw&lt;/h2&gt;
+&lt;p&gt;To avoid poor continuity, tighten the screws alternately and properly.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;./assembly.png&#34;&gt;&lt;img src=&#34;./assembly.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;コネクタの取り付け取り外し&#34;&gt;コネクタの取り付け・取り外し&lt;/h2&gt;
-&lt;p&gt;リーフ基板にコネクタを取り付ける、または、外す場合は下図のように行ってください。&lt;/p&gt;
-&lt;p&gt;&amp;ndash; 取り付け&lt;/p&gt;
+&lt;h2 id=&#34;installing-and-removing-connectors&#34;&gt;Installing and removing connectors&lt;/h2&gt;
+&lt;p&gt;Attach or remove the connector to the leaf board as shown below.&lt;/p&gt;
+&lt;p&gt;&amp;ndash; Installing&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./leafony_connector_assemble.png&#34; alt=&#34;leafony_connector_assemble&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;ndash; 取り外し&lt;/p&gt;
+&lt;p&gt;&amp;ndash; Removing&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./leafony_connector_teardown.png&#34; alt=&#34;leafony_connector_teardown&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;コネクタが汚れたとき&#34;&gt;コネクタが汚れたとき&lt;/h2&gt;
-&lt;p&gt;コネクタや基板の接点に汚れが付着すると、接続不良が生じることがあります。その場合、無水エタノールを含ませた紙製ウエスで軽く拭いてください。それでも改善しない場合は、コネクタを交換してください。&lt;/p&gt;
+&lt;h2 id=&#34;when-the-connectors-are-dirty&#34;&gt;When the connectors are dirty&lt;/h2&gt;
+&lt;p&gt;Dirt on the contacts of the connectors and the board may result in a poor connection. In this case, wipe them lightly with a paper rag moistened with anhydrous ethanol. If the problem persists, replace the connector.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;./Connector-trouble.png&#34;&gt;&lt;img src=&#34;./Connector-trouble.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
-      <title>Docs: うまく動かないときは</title>
+      <title>Docs: If it doesn&#39;t work...</title>
       <link>https://docs.leafony.com/en/docs/getting-started/solution/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -330,17 +330,17 @@ Let’s write the program in &lt;a href=&#34;https://docs.leafony.com/en/docs/ex
       <description>
         
         
-        &lt;h2 id=&#34;シリアルポートが見つからない&#34;&gt;シリアルポートが見つからない&lt;/h2&gt;
-&lt;p&gt;Arduino IDEでLeafonyのシリアルポートが見つからない場合は、USBシリアル変換IC(FT232)のドライバをインストールしてみましょう。
-&lt;a href=&#34;http://www.ftdichip.com/Drivers/VCP.htm&#34; target=&#34;_blank&#34;&gt;FTDI VCP Driver&lt;/a&gt;からデバイスドライバをダウンロードしてインストールしましょう。&lt;/p&gt;
+        &lt;h2 id=&#34;if-you-cant-find-the-serial-port&#34;&gt;If you can&amp;rsquo;t find the serial port&amp;hellip;&lt;/h2&gt;
+&lt;p&gt;If you can&amp;rsquo;t find a Leafony serial port in the Arduino IDE, you can install a USB serial converter IC (FT232) driver.
+Download and install the device driver from &lt;a href=&#34;http://www.ftdichip.com/Drivers/VCP.htm&#34; target=&#34;_blank&#34;&gt;FTDI VCP Driver&lt;/a&gt;.&lt;/p&gt;
 &lt;img src=&#34;FTDI_DL.jpg&#34; width=&#34;840&#34;&gt;
-&lt;h2 id=&#34;電源が入らない&#34;&gt;電源が入らない&lt;/h2&gt;
-&lt;p&gt;Leafonyの電源が入らない場合は以下の項目を確かめてみましょう。&lt;/p&gt;
+&lt;h2 id=&#34;if-it-doesnt-turn-on&#34;&gt;If it doesn&amp;rsquo;t turn on&amp;hellip;&lt;/h2&gt;
+&lt;p&gt;If Leafony won&amp;rsquo;t turn on, you should check the following&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;ボタン電池の入れる向き&lt;/li&gt;
-&lt;li&gt;電源スイッチがONになっているか&lt;/li&gt;
-&lt;li&gt;ネジの締まり具合&lt;/li&gt;
-&lt;li&gt;電池の残量が十分にあるか&lt;/li&gt;
+&lt;li&gt;Direction of the button battery.&lt;/li&gt;
+&lt;li&gt;Is the power switch turned on?&lt;/li&gt;
+&lt;li&gt;Tightness of the screw.&lt;/li&gt;
+&lt;li&gt;Make sure the batteries have enough remaining power.&lt;/li&gt;
 &lt;/ul&gt;
 
       </description>
