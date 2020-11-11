@@ -282,5 +282,223 @@ lib_deps =
       </description>
     </item>
     
+    <item>
+      <title>Docs: ESP32を使用する場合の注意点</title>
+      <link>https://docs.leafony.com/docs/environment/esp32/esp32_notice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/environment/esp32/esp32_notice/</guid>
+      <description>
+        
+        
+        &lt;p&gt;ESP32を使用する場合は以下の注意点があります。&lt;/p&gt;
+&lt;h2 id=&#34;arduinoでのピンの指定&#34;&gt;Arduinoでのピンの指定&lt;/h2&gt;
+&lt;p&gt;Arduinoのピン名称ではなく、ESP32のIO番号で指定します。
+Arduinoピン名称A1、A2は、Wi-Fiを使用する場合(WiFi.hをインクルードする場合)アナログ入力として使用できません。&lt;/p&gt;
+&lt;p&gt;Arduinoピン番号A0、A3、A4、A5は出力にすることはできません。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Arduinoピン名称&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;ESP32 IO番号&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;制限事項&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;A0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO36&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;出力設定不可&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;A1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO25&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;※1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;A2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO26&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;※1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;A3&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO39&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;出力設定不可&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;A4&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO34&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;出力設定不可&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;A5&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO35&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;出力設定不可&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;※1：A1、A2は、Wi-Fiを使用する場合(WiFi.hをインクルードする場合)アナログ入力として使用できません。&lt;/p&gt;
+&lt;p&gt;以下のピンはブートストラップに使用しているため、プルアップ、プルダウンの制限があります。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Arduinoピン名称&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;ESP32 IO番号&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;制限事項&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;D4&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO12&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;プルアップ禁止&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;D7&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO15&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;プルダウン禁止&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;D10&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO5&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;プルダウン禁止&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;電池動作&#34;&gt;電池動作&lt;/h2&gt;
+&lt;p&gt;ESP32 MCUはコイン電池では動作しません。&lt;/p&gt;
+&lt;h2 id=&#34;uart&#34;&gt;UART&lt;/h2&gt;
+&lt;p&gt;ESP32ではハードウエアシリアルが3系統使用可能です。UART0とUART2は以下の通りです。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;UART番号&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;信号名&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Arduinoピン名称&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;ESP32 IO番号&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;UART0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;RXD0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;D0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;TXD0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;D1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;UART2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;TXD2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;D8&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;RXD2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;D9&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO16&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;UART1を使用する場合はピン番号を変更する必要があります。通常、Arduinoピン番号A1、A2をUART1として使用します。
+変更後のピン番号は以下の通りです。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;UART番号&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;信号名&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Arduinoピン名称&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;ESP32 IO番号&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;UART1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;TXD1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;A1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO25&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;RXD1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;A2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO26&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Arduinoスケッチの設定例&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;HardwareSerial&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Serial1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// UART1 (RX=9, TX=10)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;Serial1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;begin&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;9600&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SERIAL_8N1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;25&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// ピンを変更 (RX=26, TX=25)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;h2 id=&#34;タッチセンサ&#34;&gt;タッチセンサ&lt;/h2&gt;
+&lt;p&gt;ESP32は静電容量式タッチセンサの機能を持っています。
+配線の容量によって値が変わるので閾値の調整が必要です。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Leafonyピン番号&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Arduinoピン名称&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;ESP32 IO番号&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;タッチセンサ番号&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;備考&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;7&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;D6&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO14&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;T6&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;－&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;9&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;D7&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO15&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;T3&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;－&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;22&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;D2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO4&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;T0&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;－&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;24&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;D3&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO27&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;T7&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;ESP32 Wi-Fi Kitでは使用不可&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;26&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;D4&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO12&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;T5&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;－&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;28&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;D5&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;IO13&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;T4&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;－&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
   </channel>
 </rss>
