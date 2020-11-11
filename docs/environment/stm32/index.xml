@@ -91,6 +91,20 @@ STM32 MCUリーフのリセットスイッチを押してください。
 書き込みスイッチをOnにしないで書き込みを行った場合は
 &lt;code&gt;ボードへの書き込みが完了しました&lt;/code&gt;と表示されますが、下部に&lt;code&gt; Timeout error occured&lt;/code&gt;と表示されます。
 &lt;img src=&#34;./operation2.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: STM32をArduinoで使用する場合</title>
+      <link>https://docs.leafony.com/docs/environment/stm32/stm32_notice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/environment/stm32/stm32_notice/</guid>
+      <description>
+        
+        
+        &lt;p&gt;STM32をArduinoで使用する場合は以下の注意点があります。&lt;/p&gt;
 &lt;h2 id=&#34;ピンの指定&#34;&gt;ピンの指定&lt;/h2&gt;
 &lt;p&gt;STM32 MCUのピン配置は、Nucleo L452REと異なっていますので、STM32L452REのポート名で使用するピンを指定してください。&lt;/p&gt;
 &lt;h2 id=&#34;スケッチの違い&#34;&gt;スケッチの違い&lt;/h2&gt;
@@ -108,7 +122,6 @@ HardwareTimer等を使用してください。
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;attachInterrupt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;intTimer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;resume&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-&lt;br&gt;
 割り込みルーチン
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;intTimer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;){&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;bInterval&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
@@ -251,16 +264,19 @@ HardwareTimer等を使用してください。
     </item>
     
     <item>
-      <title>Docs: 開発時にSWDを使用する場合</title>
-      <link>https://docs.leafony.com/docs/environment/stm32/swd/</link>
+      <title>Docs: STM32のデバッグを行う場合</title>
+      <link>https://docs.leafony.com/docs/environment/stm32/stm32_debug/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.leafony.com/docs/environment/stm32/swd/</guid>
+      <guid>https://docs.leafony.com/docs/environment/stm32/stm32_debug/</guid>
       <description>
         
         
-        &lt;h2 id=&#34;swdの使用&#34;&gt;SWDの使用&lt;/h2&gt;
-&lt;p&gt;AX01 Shieldを接続することにより、SWDを使用することができます。
+        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;STM32のデバッグを行う場合はArduino IDE以外の開発環境(STM32CubeIDE等)と開発ツール(STLINK-V3SET等)が必要です。
+Leafonyとを開発ツールはSWDで接続します。&lt;/p&gt;
+&lt;h2 id=&#34;swdの使用&#34;&gt;SWDの使用&lt;/h2&gt;
+&lt;p&gt;AX01 Shieldを接続することにより、LeafonyでSWDを使用することができます。
 &lt;br&gt;
 &lt;br&gt;
 &lt;img src=&#34;./swd_1.png&#34; width=&#34;250&#34;&gt;&lt;/img&gt;
@@ -269,35 +285,37 @@ HardwareTimer等を使用してください。
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;　SWDコネクタの仕様&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;　SWDコネクタの仕様&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;コネクタ型番&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;FTSH-105-01-L-D&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;コネクタ型番&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;FTSH-105-01-L-D&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;ピン数&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;10&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;ピン数&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;10&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;ピンピッチ&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;1.27mm&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;ピンピッチ&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1.27mm&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;p&gt;ピン配置&lt;br&gt;
 &lt;img src=&#34;./swd_2.png&#34; width=&#34;250&#34;&gt;&lt;/img&gt;
 &lt;br&gt;
-&lt;br&gt;
-STLINK-V3SETにはAX01 ShieldのSWDコネクタに接続するケーブルが付属しているため、そのまま接続が可能です。
+&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;開発ツール&#34;&gt;開発ツール&lt;/h2&gt;
+&lt;p&gt;STLINK-V3SETにはAX01 ShieldのSWDコネクタに接続するケーブルが付属しているため、そのまま接続が可能です。
 &lt;br&gt;
 &lt;img src=&#34;./swd_3.png&#34;&gt;&lt;/img&gt;
 &lt;br&gt;
-&lt;br&gt;
-ST-LINK-V2を持っている場合は、&lt;a href=&#34;http://strawberry-linux.com/catalog/items?code=15079&#34; target=&#34;_blank&#34;&gt;変換アダプタ&lt;/a&gt;により接続が可能です。
+&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;その他の開発ツールの接続&#34;&gt;その他の開発ツールの接続&lt;/h2&gt;
+&lt;p&gt;ST-LINK-V2を持っている場合は、&lt;a href=&#34;http://strawberry-linux.com/catalog/items?code=15079&#34; target=&#34;_blank&#34;&gt;変換アダプタ(ARM-JTAG-20-10)&lt;/a&gt;により接続が可能です。
 変換アダプタを使用してジャンパケーブル等でNucleo のSWDに接続することも可能です。&lt;br&gt;
 &lt;img src=&#34;./swd_4.png&#34;&gt;&lt;/img&gt;
 &lt;br&gt;
