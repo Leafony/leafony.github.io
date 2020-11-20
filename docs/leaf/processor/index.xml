@@ -268,5 +268,123 @@
       </description>
     </item>
     
+    <item>
+      <title>Docs: AP03 STM32 MCU</title>
+      <link>https://docs.leafony.com/docs/leaf/processor/ap03/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/leaf/processor/ap03/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./ap03a_f_large.jpg&#34;&gt;&lt;img src=&#34;./ap03a_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ap03a_b_large.jpg&#34;&gt;&lt;img src=&#34;./ap03a_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ap03a_p_large.jpg&#34;&gt;&lt;img src=&#34;./ap03a_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;STMicroelectronics FPU付きARM Cortex-M4 32-bit RISC coreを搭載した32bit MCUリーフである。USB接続する場合はUSBリーフを接続、SWDを使用する場合はShieldリーフを接続。&lt;/p&gt;
+&lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Item&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Part number&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;STM32L452REI6&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Core&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;ARM Cortex-M4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Operating voltage&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;3.3V&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Input voltage&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;3.0-3.6V&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Flash Memory&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;512 MB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;SRAM&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;160 KB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Clock frequency&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;80MHz&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Arduino IDE Board Settings&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Board: ”Nucleo-64”&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Board Part number: &amp;ldquo;NUCLEO L452RE&amp;rdquo;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Upload method: ”STM32CubeProgrammer(Serial)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;br&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./ap03a_block.png&#34;&gt;&lt;img src=&#34;./ap03a_block.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./ap03_pinassign.png&#34;&gt;&lt;img src=&#34;./ap03_pinassign.png&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+&lt;h3 id=&#34;ledスイッチについて&#34;&gt;LED、スイッチについて&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;./ap03_tips.jpg&#34;&gt;&lt;img src=&#34;./ap03_tips.jpg&#34; width=&#34;450&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Item&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;LED&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;書き込みモード時に点灯する&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Reset switch&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Resets the STM32 and other devices.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Program switch&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Switch to change to Program mode.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;サンプルアプリ&#34;&gt;サンプルアプリ&lt;/h2&gt;
+&lt;h2 id=&#34;arduinoでの使用方法&#34;&gt;Arduinoでの使用方法&lt;/h2&gt;
+&lt;p&gt;本リーフをArduinoで使用するためには、Arduino IDE上でボードの設定等が必要です。&lt;br&gt;
+&lt;a href=&#34;https://docs.leafony.com/docs/environment/stm32/arduino&#34;&gt;開発環境設定のページ&lt;/a&gt;で設定方法をご確認下さい。&lt;/p&gt;
+&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP03_STM32_MCU/AP03_STM32_MCU_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP03_STM32_MCU/AP03_STM32_MCU_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP03_STM32_MCU/AP03_STM32_MCU_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP03_STM32_MCU/AP03_STM32_MCU_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AP03_STM32_MCU/AP03_STM32_MCU_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Rev A: 2020年11月初版&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
   </channel>
 </rss>
