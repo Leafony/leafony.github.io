@@ -14,6 +14,85 @@
     
     
     <item>
+      <title>Docs: STM32 Logger Beacon</title>
+      <link>https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_logger_ble_beacon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_logger_ble_beacon/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;STM32リーフに搭載されたFlashメモリを使って、温湿度と測定時間を記録することが可能なBLE Beaconのサンプルデザインです。&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Beaconを用いた温湿度の測定方式では現在時刻での温湿度のみを知ることができ、これまでの測定値を知るためには、別途設置した受信機で常にBeaconの電波を受信し続ける必要がありました。&lt;br&gt;
+Beaconの電波は非常に弱く、発信時間も短いため、受信時に取りこぼしが発生することも多々あり、安定した測定をするためには不十分でした。&lt;br&gt;
+しかしながら本サンプルでは、STM32に搭載された不揮発メモリに測定記録を残すことができるため、万が一Beaconの電波を受信できなかったとしても、後からLeafonyに接続して、不揮発メモリに記録されたデータを取り出すことができます。&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;また、このサンプルではBeaconの受信とSTM32 Flashメモリに書き込まれたデータの読み出しがどちらも行えるWebアプリのサンプルも含まれています。&lt;/p&gt;
+&lt;h2 id=&#34;サンプルのソースコード&#34;&gt;サンプルのソースコード&lt;/h2&gt;
+&lt;p&gt;使用するスケッチやツールのソースコードは下記のリポジトリで閲覧可能です。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/STM32_Logger_Beacon&#34; target=&#34;_blank&#34;&gt;Sample-Sketches/STM32_Logger_Beacon at master · Leafony/Sample-Sketches&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/Sample-Sketches/STM32_Logger_Beacon/sample_web_app/connect_webbluetooth/&#34; target=&#34;_blank&#34;&gt;STM32 Sensors Logger Webアプリケーション&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Leafony&lt;/li&gt;
+&lt;li&gt;Androidスマートフォン&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;AI01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03&#34;&gt;AP03&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03&#34;&gt;STM32 MCU&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac02&#34;&gt;AC02&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac02&#34;&gt;BLE Sugar&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;AV01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;CR2032&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;CR2032 coin cell battery&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;M2*18mm screw&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;動作方法&#34;&gt;動作方法&lt;/h2&gt;
+&lt;p&gt;STM32リーフにサンプルスケッチを書き込んでください。&lt;/p&gt;
+&lt;p&gt;AndroidスマートフォンでWebアプリを開き、Leafonyと一旦接続すると、スマートフォンの現在時刻が登録されます。
+その後、一度Lefaonyとの接続を切るとBeacon動作に移行します。&lt;/p&gt;
+&lt;p&gt;Webアプリ側ではBeaconの電波を受信して、現在の温度が表示されます。&lt;/p&gt;
+&lt;p&gt;Leafonyと再び接続し、ログ取得ボタンを押すと、STM32のFlashメモリが読み出され、過去の温湿度のグラフが表示されます。&lt;/p&gt;
+&lt;h2 id=&#34;動作解説&#34;&gt;動作解説&lt;/h2&gt;
+&lt;img src=&#34;logger_beacon_02.jpg&#34;&gt;
+&lt;img src=&#34;logger_beacon_01_rb.jpg&#34;&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: STM32 Simple BLE Beacon</title>
       <link>https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_simple_ble_beacon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
