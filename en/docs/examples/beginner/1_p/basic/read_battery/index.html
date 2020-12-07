@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.78.2" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -21,15 +21,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>バッテリ電圧読み取り | Leafony</title><meta property="og:title" content="バッテリ電圧読み取り" />
+<title>Read battery | Leafony</title><meta property="og:title" content="Read battery" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/en/docs/examples/beginner/1_p/basic/read_battery/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="バッテリ電圧読み取り">
-<meta itemprop="description" content="A Leafony Documentation site">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="バッテリ電圧読み取り"/>
+<meta itemprop="name" content="Read battery">
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Read battery"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -49,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
-<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -137,7 +136,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a1d382003dc241eace51c84958c85ec4dc388b0712610050a705f24a995e1e93a7c6230c9e8150dace798047cbe757959c5e53d8b3f61bc7914509b686b9fa7d.json"
+  data-offline-search-index-json-src="/offline-search-index.a319abcf52d8e7680c198ec2c2d51ad17abb18d07991d2ab62a257e99b08fd98a897bccecc9b7fb890d8fcc5295d3a0c945592ce077eda8b3cd2f51e04fd3d6f.json"
   data-offline-search-base-href="/"
 >
 
@@ -167,7 +166,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a1d382003dc241eace51c84958c85ec4dc388b0712610050a705f24a995e1e93a7c6230c9e8150dace798047cbe757959c5e53d8b3f61bc7914509b686b9fa7d.json"
+  data-offline-search-index-json-src="/offline-search-index.a319abcf52d8e7680c198ec2c2d51ad17abb18d07991d2ab62a257e99b08fd98a897bccecc9b7fb890d8fcc5295d3a0c945592ce077eda8b3cd2f51e04fd3d6f.json"
   data-offline-search-base-href="/"
 >
 
@@ -1964,6 +1963,29 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/examples/advanced/3_p/stm32/stm32_logger_ble_beacon/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsexamplesadvanced3_pstm32stm32_logger_ble_beacon">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/en/docs/examples/advanced/3_p/stm32/stm32_simple_ble_beacon/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
   </li>
   <ul>
@@ -2901,11 +2923,11 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#概要">概要</a></li>
-    <li><a href="#使用するリーフ">使用するリーフ</a></li>
-    <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
-    <li><a href="#ソースコード">ソースコード</a></li>
-    <li><a href="#実行結果">実行結果</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#leaf-to-use">Leaf to use</a></li>
+    <li><a href="#assembly">Assembly</a></li>
+    <li><a href="#source-code">Source code</a></li>
+    <li><a href="#execution-results">Execution Results</a></li>
   </ul>
 </nav>
 
@@ -2982,59 +3004,59 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>バッテリ電圧読み取り</h1>
+	<h1>Read battery</h1>
         
 	
-	<h2 id="概要">概要</h2>
-<p>CR2032コイン電池リーフに搭載されたADコンバータを使って電池の電圧を読み取りましょう。</p>
-<p>このサンプルはAA BATリーフや、2V～4.5Vリーフなどの電池リーフでも動作します。</p>
-<h2 id="使用するリーフ">使用するリーフ</h2>
-<p>以下のリーフを使用します</p>
+	<h2 id="overview">Overview</h2>
+<p>Read the battery voltage using the AD converter on the CR2032 coin cell leaf.</p>
+<p>This sample will also work with battery leaves such as the AA BAT leaf and the 2V to 4.5V leaf.</p>
+<h2 id="leaf-to-use">Leaf to use</h2>
+<p>Use the following leaves.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Q&rsquo;ty</th>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/others/az62">AZ62</a></td>
-<td style="text-align:left"><a href="/docs/leaf/others/az62">Connector Cover</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/others/az62">AZ62</a></td>
+<td align="left"><a href="/en/docs/leaf/others/az62">Connector Cover</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/others/az01">AZ01</a></td>
-<td style="text-align:left"><a href="/docs/leaf/others/az01">USB</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/others/az01">AZ01</a></td>
+<td align="left"><a href="/en/docs/leaf/others/az01">USB</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/processor/ap01">AP01</a></td>
-<td style="text-align:left"><a href="/docs/leaf/processor/ap01">AVR MCU</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/processor/ap01">AP01</a></td>
+<td align="left"><a href="/en/docs/leaf/processor/ap01">AVR MCU</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/power/av01">AV01</a></td>
-<td style="text-align:left"><a href="/docs/leaf/power/av01">CR2032</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/power/av01">AV01</a></td>
+<td align="left"><a href="/en/docs/leaf/power/av01">CR2032</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">CR2032 coin cell battery</td>
-<td style="text-align:left">1</td>
+<td align="left"></td>
+<td align="left">CR2032 coin cell battery</td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">M2*10mm screw</td>
-<td style="text-align:left">2</td>
+<td align="left"></td>
+<td align="left">M2*10mm screw</td>
+<td align="left">2</td>
 </tr>
 </tbody>
 </table>
-<h2 id="リーフの組み立て">リーフの組み立て</h2>
+<h2 id="assembly">Assembly</h2>
 <p><img src="./read_battery_1.png" alt="CR2032"></p>
-<h2 id="ソースコード">ソースコード</h2>
-<p>Arduino IDEで下記のプログラムを作成しましょう。</p>
+<h2 id="source-code">Source code</h2>
+<p>Write the following program in the Arduino IDE.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#8f5902;font-style:italic">//=====================================================================
 </span><span style="color:#8f5902;font-style:italic">//  Battery Voltage
 </span><span style="color:#8f5902;font-style:italic">//
@@ -3079,8 +3101,8 @@ if (!doNotTrack) {
   <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/Battery_Voltage/Battery_Voltage.ino" target="_blank">Battery_Voltage.ino</a></p>
-<h2 id="実行結果">実行結果</h2>
-<p>Arduino IDEのシリアルモニタを開き、ボーレートを115200bpsとすると、電池の電圧が表示されます。</p>
+<h2 id="execution-results">Execution Results</h2>
+<p>Open the serial monitor of the Arduino IDE and set the baud rate to 115200 bps and you will see the battery voltage.</p>
 <img src="read_battery_result.jpg" width="750">
         <div class="section-index">
     
@@ -3323,12 +3345,14 @@ if (!doNotTrack) {
         
             
         
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 26.10.2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 07.12.2020
 </div>
 </div>
 
