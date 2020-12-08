@@ -104,7 +104,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 &lt;/ol&gt;
 &lt;p&gt;&lt;a href=&#34;./AP02_tips.png&#34;&gt;&lt;img src=&#34;./AP02_tips.png&#34; width=&#34;450&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;困ったときは&#34;&gt;困ったときは&lt;/h2&gt;
-&lt;p&gt;「&lt;a href=&#34;../solution&#34; target=&#34;_blank&#34;&gt;うまく動かないときは&lt;/a&gt;」で解決方法を探してみましょう。&lt;/p&gt;
+&lt;p&gt;「&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/solution&#34; target=&#34;_blank&#34;&gt;うまく動かないときは&lt;/a&gt;」で解決方法を探してみましょう。&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
@@ -147,6 +147,11 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
     &lt;td&gt;&lt;/td&gt;
     &lt;td&gt;温湿度センサライブラリ&lt;/td&gt;
   &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_HTS221&#34; target=&#34;_blank&#34;&gt;Adafruit_HTS221.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;Adafruit温湿度センサライブラリ&lt;/td&gt;
+    &lt;/tr&gt;
   &lt;tr&gt;
     &lt;td&gt;&lt;a href=&#34;https://github.com/closedcube/ClosedCube_OPT3001_Arduino&#34; target=&#34;_blank&#34;&gt;ClosedCube_OPT3001.h&lt;/a&gt;&lt;/td&gt;
     &lt;td&gt;&lt;/td&gt;
