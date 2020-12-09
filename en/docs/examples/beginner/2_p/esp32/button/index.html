@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -21,15 +21,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>ボタン入力 | Leafony</title><meta property="og:title" content="ボタン入力" />
+<title>Button | Leafony</title><meta property="og:title" content="Button" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/en/docs/examples/beginner/2_p/esp32/button/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="ボタン入力">
-<meta itemprop="description" content="A Leafony Documentation site">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="ボタン入力"/>
+<meta itemprop="name" content="Button">
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Button"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -49,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
-<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -139,7 +138,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c94f3522f2687bd19ef5cc3aa23d9ad3d2711900347c2d529d7fe8168471caa8e0f4902a42098f793731f346d95ad56024a4e530fa49b679da86594a3bf790cf.json"
+  data-offline-search-index-json-src="/offline-search-index.3a56486eb6043b025c3c9c8700e70ed8ec05bd58217d7dd485cec012532d2a909c6e49fda711e9a38e224573a1b0e8da7e4d37bfec514382d29c48cbc59af7fc.json"
   data-offline-search-base-href="/"
 >
 
@@ -169,7 +168,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c94f3522f2687bd19ef5cc3aa23d9ad3d2711900347c2d529d7fe8168471caa8e0f4902a42098f793731f346d95ad56024a4e530fa49b679da86594a3bf790cf.json"
+  data-offline-search-index-json-src="/offline-search-index.3a56486eb6043b025c3c9c8700e70ed8ec05bd58217d7dd485cec012532d2a909c6e49fda711e9a38e224573a1b0e8da7e4d37bfec514382d29c48cbc59af7fc.json"
   data-offline-search-base-href="/"
 >
 
@@ -2926,10 +2925,10 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#概要">概要</a></li>
-    <li><a href="#使用するリーフ">使用するリーフ</a></li>
-    <li><a href="#ソースコード">ソースコード</a></li>
-    <li><a href="#実行結果">実行結果</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#leaf-to-use">Leaf to use</a></li>
+    <li><a href="#source-code">Source code</a></li>
+    <li><a href="#execution-results">Execution Results</a></li>
   </ul>
 </nav>
 
@@ -3006,32 +3005,32 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>ボタン入力</h1>
+	<h1>Button</h1>
         
 	
-	<h2 id="概要">概要</h2>
-<p>ESP32 MCUリーフに搭載されたBoot mode スイッチの状態をシリアルモニタに表示させます。<br>
+	<h2 id="overview">Overview</h2>
+<p>Displays the status of the boot mode switch on the ESP32 MCU leaf on the serial monitor.<br>
 <img src="./AP02_tips.jpg" width="450"></img></p>
-<h2 id="使用するリーフ">使用するリーフ</h2>
-<p>以下のリーフを使用します</p>
+<h2 id="leaf-to-use">Leaf to use</h2>
+<p>Use the following leaf.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Q&rsquo;ty</th>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/processor/ap02">AP02</a></td>
-<td style="text-align:left"><a href="/docs/leaf/processor/ap02">ESP32 MCU</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/processor/ap02">AP02</a></td>
+<td align="left"><a href="/en/docs/leaf/processor/ap02">ESP32 MCU</a></td>
+<td align="left">1</td>
 </tr>
 </tbody>
 </table>
-<h2 id="ソースコード">ソースコード</h2>
-<p>Arduino IDEで下記のプログラムを書きましょう。</p>
+<h2 id="source-code">Source code</h2>
+<p>Write the following program in the Arduino IDE.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
 </span><span style="color:#8f5902;font-style:italic">//  Button
 </span><span style="color:#8f5902;font-style:italic">//
@@ -3055,8 +3054,8 @@ if (!doNotTrack) {
   <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_Button/ESP32_Button.ino" target="_blank">ESP32_Button.ino</a></p>
-<h2 id="実行結果">実行結果</h2>
-<p>Boot mode スイッチを押すと、シリアルモニタの表示が、１から０に変わります。</p>
+<h2 id="execution-results">Execution Results</h2>
+<p>When you press the Boot mode switch, the display on the serial monitor will change from 1 to 0.</p>
 <p><img src="./esp_button_serial.png" width="600"></img></p>
 
         <div class="section-index">
@@ -3307,7 +3306,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 26.10.2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 09.12.2020
 </div>
 </div>
 

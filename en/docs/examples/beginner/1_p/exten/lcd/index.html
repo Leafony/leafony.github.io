@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -27,8 +27,7 @@
 <meta property="og:url" content="https://docs.leafony.com/en/docs/examples/beginner/1_p/exten/lcd/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="LCD">
-<meta itemprop="description" content="A Leafony Documentation site">
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="LCD"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
@@ -49,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
-<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -139,7 +138,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c94f3522f2687bd19ef5cc3aa23d9ad3d2711900347c2d529d7fe8168471caa8e0f4902a42098f793731f346d95ad56024a4e530fa49b679da86594a3bf790cf.json"
+  data-offline-search-index-json-src="/offline-search-index.3a56486eb6043b025c3c9c8700e70ed8ec05bd58217d7dd485cec012532d2a909c6e49fda711e9a38e224573a1b0e8da7e4d37bfec514382d29c48cbc59af7fc.json"
   data-offline-search-base-href="/"
 >
 
@@ -169,7 +168,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c94f3522f2687bd19ef5cc3aa23d9ad3d2711900347c2d529d7fe8168471caa8e0f4902a42098f793731f346d95ad56024a4e530fa49b679da86594a3bf790cf.json"
+  data-offline-search-index-json-src="/offline-search-index.3a56486eb6043b025c3c9c8700e70ed8ec05bd58217d7dd485cec012532d2a909c6e49fda711e9a38e224573a1b0e8da7e4d37bfec514382d29c48cbc59af7fc.json"
   data-offline-search-base-href="/"
 >
 
@@ -2926,11 +2925,11 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#概要">概要</a></li>
-    <li><a href="#使用するリーフ">使用するリーフ</a></li>
-    <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
-    <li><a href="#ソースコード">ソースコード</a></li>
-    <li><a href="#実行結果">実行結果</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#leaf-to-use">Leaf to use</a></li>
+    <li><a href="#assembly">Assembly</a></li>
+    <li><a href="#source-code">Source code</a></li>
+    <li><a href="#execution-results">Execution Results</a></li>
   </ul>
 </nav>
 
@@ -3010,63 +3009,63 @@ if (!doNotTrack) {
 	<h1>LCD</h1>
         
 	
-	<h2 id="概要">概要</h2>
-<p>LCD(液晶ディスプレイ)リーフを使用すると、文字列を簡単に画面に表示することができます。<br>
-また、ボタンスイッチが2個搭載されていて、コントローラとして使うこともできます。</p>
-<h2 id="使用するリーフ">使用するリーフ</h2>
+	<h2 id="overview">Overview</h2>
+<p>With an LCD (liquid crystal display) leaf, you can easily display strings on the screen.<br>
+It also comes with two button switches and can be used as a controller.</p>
+<h2 id="leaf-to-use">Leaf to use</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Q&rsquo;ty</th>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/others/az62">AZ62</a></td>
-<td style="text-align:left"><a href="/docs/leaf/others/az62">Connector Cover</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/others/az62">AZ62</a></td>
+<td align="left"><a href="/en/docs/leaf/others/az62">Connector Cover</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/io/ai04/">AI04</a></td>
-<td style="text-align:left"><a href="/docs/leaf/io/ai04/">LCD</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/io/ai04/">AI04</a></td>
+<td align="left"><a href="/en/docs/leaf/io/ai04/">LCD</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/processor/ap01/">AP01</a></td>
-<td style="text-align:left"><a href="/docs/leaf/processor/ap01/">AVR MCU</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/processor/ap01/">AP01</a></td>
+<td align="left"><a href="/en/docs/leaf/processor/ap01/">AVR MCU</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/others/az01/">AZ01</a></td>
-<td style="text-align:left"><a href="/docs/leaf/others/az01/">USB</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/others/az01/">AZ01</a></td>
+<td align="left"><a href="/en/docs/leaf/others/az01/">USB</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/power/av01/">AV01</a></td>
-<td style="text-align:left"><a href="/docs/leaf/power/av01/">CR2032</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/power/av01/">AV01</a></td>
+<td align="left"><a href="/en/docs/leaf/power/av01/">CR2032</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">CR2032 coin cell battery</td>
-<td style="text-align:left">1</td>
+<td align="left"></td>
+<td align="left">CR2032 coin cell battery</td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">M2*15mm screw</td>
-<td style="text-align:left">2</td>
+<td align="left"></td>
+<td align="left">M2*15mm screw</td>
+<td align="left">2</td>
 </tr>
 </tbody>
 </table>
-<h2 id="リーフの組み立て">リーフの組み立て</h2>
-<p>下図のようにリーフを組み立てましょう。</p>
+<h2 id="assembly">Assembly</h2>
+<p>Let&rsquo;s assemble leaves as shown in the figure below.</p>
 <p><img src="./LCD_assemble2.png" alt="assemble1"></p>
-<h2 id="ソースコード">ソースコード</h2>
-<p>Arduino IDEで下記のプログラムを書きましょう。</p>
-<p>このスケッチを動かすためには、ライブラリのインストールが必要です。
-まだインストールしていない場合は<a href="/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">開発環境設定ページ</a>を参考にライブラリをインストールしてください。</p>
+<h2 id="source-code">Source code</h2>
+<p>Write the following program in the Arduino IDE.</p>
+<p>In order to use MIC&amp;VR&amp;LED Leaf, you need to install the library.
+If you haven&rsquo;t installed it yet, refer to <a href="/en/docs/environment/avr/arduino/##installing_libraries">Environment</a> to install it.</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
 </span><span style="color:#8f5902;font-style:italic">//  Leafony Platform sample sketch
 </span><span style="color:#8f5902;font-style:italic">//     Application  : LCD SW test
@@ -3220,12 +3219,12 @@ if (!doNotTrack) {
   <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">read_data</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/LCD-SW_test/LCD-SW_test.ino" target="_blank">LED-SW_test.ino</a></p>
-<h2 id="実行結果">実行結果</h2>
-<p>LCDに下記の順で画面が表示されます。</p>
+<h2 id="execution-results">Execution Results</h2>
+<p>On the LCD the screens are displayed in the following order</p>
 <ol>
-<li>「Hello」の文字列</li>
-<li>カーソルの移動</li>
-<li>ボタンの入力状態表示</li>
+<li>The &ldquo;Hello&rdquo; string</li>
+<li>Moving the cursor</li>
+<li>Button input status display</li>
 </ol>
 
         <div class="section-index">
@@ -3476,7 +3475,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 26.10.2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 09.12.2020
 </div>
 </div>
 
