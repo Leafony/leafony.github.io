@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.79.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -21,15 +21,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>リアルタイムクロック | Leafony</title><meta property="og:title" content="リアルタイムクロック" />
+<title>Real time clock | Leafony</title><meta property="og:title" content="Real time clock" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/en/docs/examples/beginner/2_p/esp32/rtc/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="リアルタイムクロック">
-<meta itemprop="description" content="A Leafony Documentation site">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="リアルタイムクロック"/>
+<meta itemprop="name" content="Real time clock">
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Real time clock"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -49,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
-<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -139,7 +138,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.320cfb0f38707d82c816f1630f201276d8465af0f92d6e7011db0b6ec99280041f3eef9999a2704ac49642ec738f2c7717136d9855cc5050b38a08f8e83d4158.json"
+  data-offline-search-index-json-src="/offline-search-index.a25a7f5c87a34e4ee9082246eea17b044dbb18090242abdf12a04f23a577556a935cf43741e87795c41164d82fba88f5ecbb3bcb19f9621451b9ed436a4f862e.json"
   data-offline-search-base-href="/"
 >
 
@@ -169,7 +168,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.320cfb0f38707d82c816f1630f201276d8465af0f92d6e7011db0b6ec99280041f3eef9999a2704ac49642ec738f2c7717136d9855cc5050b38a08f8e83d4158.json"
+  data-offline-search-index-json-src="/offline-search-index.a25a7f5c87a34e4ee9082246eea17b044dbb18090242abdf12a04f23a577556a935cf43741e87795c41164d82fba88f5ecbb3bcb19f9621451b9ed436a4f862e.json"
   data-offline-search-base-href="/"
 >
 
@@ -2926,12 +2925,12 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#概要">概要</a></li>
-    <li><a href="#使用するリーフ">使用するリーフ</a></li>
-    <li><a href="#リーフの組立">リーフの組立</a></li>
-    <li><a href="#ソースコード">ソースコード</a></li>
-    <li><a href="#時刻の設定">時刻の設定</a></li>
-    <li><a href="#実行結果">実行結果</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#leaf-to-use">Leaf to use</a></li>
+    <li><a href="#assembly">Assembly</a></li>
+    <li><a href="#source-code">Source code</a></li>
+    <li><a href="#setting-the-time">Setting the Time</a></li>
+    <li><a href="#execution-results">Execution Results</a></li>
   </ul>
 </nav>
 
@@ -3008,60 +3007,61 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>リアルタイムクロック</h1>
+	<h1>Real time clock</h1>
         
 	
-	<h2 id="概要">概要</h2>
-<p>時刻がパソコンのシリアルモニタに表示されます。</p>
-<h2 id="使用するリーフ">使用するリーフ</h2>
+	<h2 id="overview">Overview</h2>
+<p>The time will be displayed on the serial monitor of the PC.</p>
+<h2 id="leaf-to-use">Leaf to use</h2>
+<p>Use the following leaf.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Q&rsquo;ty</th>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/others/az62">AZ62</a></td>
-<td style="text-align:left"><a href="/docs/leaf/others/az62">Connector Cover</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/others/az62">AZ62</a></td>
+<td align="left"><a href="/en/docs/leaf/others/az62">Connector Cover</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/processor/ap02">AP02</a></td>
-<td style="text-align:left"><a href="/docs/leaf/processor/ap02">ESP32 MCU</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/processor/ap02">AP02</a></td>
+<td align="left"><a href="/en/docs/leaf/processor/ap02">ESP32 MCU</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/others/az02">AZ02</a></td>
-<td style="text-align:left"><a href="/docs/leaf/others/az02">RTC&amp;microSD</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/others/az02">AZ02</a></td>
+<td align="left"><a href="/en/docs/leaf/others/az02">RTC&amp;microSD</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/others/az63">AZ63</a></td>
-<td style="text-align:left"><a href="/docs/leaf/others/az63">Nut Plate</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/others/az63">AZ63</a></td>
+<td align="left"><a href="/en/docs/leaf/others/az63">Nut Plate</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">M2*15mm screw</td>
-<td style="text-align:left">2</td>
+<td align="left"></td>
+<td align="left">M2*15mm screw</td>
+<td align="left">2</td>
 </tr>
 </tbody>
 </table>
-<h2 id="リーフの組立">リーフの組立</h2>
+<h2 id="assembly">Assembly</h2>
 <p><img src="./rtc_assemble.png" alt="assemble1"></p>
-<h2 id="ソースコード">ソースコード</h2>
-<p>Arduino IDEで下記のプログラムを書きましょう。</p>
-<p>このスケッチを動かすためには、ライブラリのインストールが必要です。
-まだインストールしていない場合は<a href="/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">開発環境設定ページ</a>を参考にライブラリをインストールしてください。</p>
+<h2 id="source-code">Source code</h2>
+<p>Write the following program in the Arduino IDE.</p>
+<p>In order to make this sketch work, you need to install the libraries
+If you haven&rsquo;t installed it yet, refer to <a href="/en/docs/environment/avr/arduino/##installing_libraries">Environment</a> to install it.</p>
 <ul>
 <li>
-<p>Arduino IDEで、「ファイル」→「スケッチ例」→「RTClib」→「pcf8523」で、マイコンボードに書き込んでください。</p>
+<p>In the Arduino IDE, go to &ldquo;File&rdquo; -&gt; &ldquo;Sketch Examples&rdquo; -&gt; &ldquo;RTClib&rdquo; -&gt; &ldquo;pcf8523&rdquo; and write it to the microcontroller board.</p>
 </li>
 <li>
-<p>低消費電力設定のため、87行を追加してください。</p>
+<p>Add 87 lines for low power consumption setting.</p>
 </li>
 </ul>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">// Date and time functions using a PCF8523 RTC connected via I2C and Wire lib
@@ -3158,11 +3158,11 @@ if (!doNotTrack) {
     <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">();</span>
     <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">3000</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><h2 id="時刻の設定">時刻の設定</h2>
-<p>コンパイルした時間が書き込まれます。
-電源がなくなる等でRTCが初期化されると、コンパイルした時間に初期化されます。</p>
-<h2 id="実行結果">実行結果</h2>
-<p>シリアルモニタを起動すると、時刻が表示されます。
+</code></pre></div><h2 id="setting-the-time">Setting the Time</h2>
+<p>The compiled time is written.
+When the RTC is initialized due to power loss, etc., it will be initialized to the compiled time.</p>
+<h2 id="execution-results">Execution Results</h2>
+<p>When you start the serial monitor, the time will be displayed.
 <img src="./RTC_overview.png" alt="result"></p>
 
         <div class="section-index">
@@ -3413,7 +3413,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 26.10.2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 18.12.2020
 </div>
 </div>
 

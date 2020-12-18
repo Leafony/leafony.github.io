@@ -22,12 +22,12 @@
       <description>
         
         
-        &lt;p&gt;公開予定&lt;/p&gt;
-&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;Beaconを作成するための最小構成プロジェクト&lt;/p&gt;
-&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
-&lt;h2 id=&#34;サンプルアプリのコード&#34;&gt;サンプルアプリのコード&lt;/h2&gt;
-&lt;h2 id=&#34;leafonyの構成&#34;&gt;Leafonyの構成&lt;/h2&gt;
+        &lt;p&gt;in progress&lt;/p&gt;
+&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;Minimum configuration project for creating a Beacon.&lt;/p&gt;
+&lt;h2 id=&#34;what-to-prepare&#34;&gt;What to prepare&lt;/h2&gt;
+&lt;h2 id=&#34;sample-application-code&#34;&gt;Sample application code&lt;/h2&gt;
+&lt;h2 id=&#34;leafony-configuration&#34;&gt;Leafony Configuration&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -38,33 +38,33 @@
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac02&#34;&gt;AC02&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac02&#34;&gt;BLE Sugar&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/communication/ac02&#34;&gt;AC02&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/communication/ac02&#34;&gt;BLE Sugar&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;AI01&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/io/ai01&#34;&gt;AI01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AP01&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AVR MCU&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/processor/ap01&#34;&gt;AP01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/processor/ap01&#34;&gt;AVR MCU&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;AV01&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;CR2032&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/power/av01&#34;&gt;AV01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/power/av01&#34;&gt;CR2032&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;AZ01&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;USB&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az01&#34;&gt;AZ01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az01&#34;&gt;USB&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;Connector Cover&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az62&#34;&gt;Connector Cover&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -79,13 +79,13 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;leafonyの組み立て&#34;&gt;Leafonyの組み立て&lt;/h2&gt;
+&lt;h2 id=&#34;assembly&#34;&gt;Assembly&lt;/h2&gt;
 &lt;img src=&#34;./gs_assemble.png&#34; width=&#34;350&#34;&gt;
       </description>
     </item>
     
     <item>
-      <title>Docs: Web Bluetoothを使ったIoTアプリ入門</title>
+      <title>Docs: Web Bluetooth IoT</title>
       <link>https://docs.leafony.com/en/docs/examples/advanced/1_p/basic/webbluetooth_iot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -93,49 +93,49 @@
       <description>
         
         
-        &lt;p&gt;このサンプルは&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/basic/&#34;&gt;Basic Kit スタートガイド&lt;/a&gt;で紹介したものと同様です。ソースコードを読みながら、動作を理解していきましょう。&lt;/p&gt;
+        &lt;p&gt;This sample is the same as the one introduced in &lt;a href=&#34;https://docs.leafony.com/en/docs/getting-started/basic/&#34;&gt;Basic Kit Getting Started Guide&lt;/a&gt;. Let&amp;rsquo;s read the source code to understand how it works.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;webbluetooth.png&#34; alt=&#34;webbluetooth.png&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;Leafonyは省電力で小型なIoTデバイスの開発を簡単に行えるように、それぞれのリーフが省電力な設計になっています。
-バッテリで長時間動作するため、様々な場所に設置してセンサで定点観測を行うことも可能です。&lt;/p&gt;
-&lt;p&gt;では、センサで測定した温度や湿度、照度のようなデータはどのようにして集められるのでしょうか。
-一般的にWi-FiやBluetooth、LoRaといった無線通信が用いられるでしょう。
-Leafonyでは無線通信規格の中でも省電力なBluetoothを搭載したリーフが存在します。&lt;/p&gt;
-&lt;p&gt;Basic Kitは省電力なセンサを複数搭載した4-Sensorリーフと、省電力なBluetooth規格であるBluetooth LE (以下、BLE)を搭載したBLEリーフを使った長時間バッテリ駆動のIoTセンサの開発を簡単に行えるキットです。&lt;/p&gt;
-&lt;p&gt;それでは、Leafonyが送るBLEを受信するためにはどうすれば良いでしょうか。
-PCやスマホ・タブレットには色々な環境があります。Windowsが動くPC、MacOSが動くPC、Android、iPhoneなど、身近なものでも非常に沢山の環境が存在します。
-これらの環境でBluetoothを使うためには、それぞれの環境に合わせたプログラミング言語で開発するのが普通です。PCであればC言語やPythonなどの言語を使って開発できますが、AndroidやiPhoneであれば、Android StudioやXcode等を使ってまた別のプログラミング言語でソフトを作る必要があります。&lt;/p&gt;
-&lt;p&gt;多くの人が様々な環境で使うものを簡単に開発するにはどうすれば良いでしょうか。
-今回のサンプルアプリでは一つの方法として、&lt;strong&gt;Bluetoothの通信を行いデータを画面に表示するためにWebブラウザを使う&lt;/strong&gt;ことにしました。&lt;/p&gt;
-&lt;p&gt;使用する言語はHTMLとJava Scriptです。この2つの言語で記述したプログラムが、Webブラウザ上であればどの環境においても同様に動作します。&lt;/p&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Leafony is designed to make it easy to develop small, power-saving IoT devices, and each leaf is designed to save power.
+Since it runs on battery for a long time, it can be placed in various locations to perform fixed-point observations with sensors.&lt;/p&gt;
+&lt;p&gt;So how can data such as temperature, humidity, and illumination measured by sensors be collected?
+In general, wireless communication such as Wi-Fi, Bluetooth, and LoRa is used.
+Leafony has a leaf equipped with Bluetooth, one of the most power-efficient wireless communication standards.&lt;/p&gt;
+&lt;p&gt;The Basic Kit is a kit that makes it easy to develop long battery-powered IoT sensors using the 4-Sensor Leaf, which is equipped with multiple power-saving sensors, and the BLE Leaf, which is equipped with Bluetooth LE (hereinafter referred to as BLE), a power-saving Bluetooth standard.&lt;/p&gt;
+&lt;p&gt;So what do we need to do in order to receive the BLE sent by Leafony?
+There are many different environments for PCs, smartphones, and tablets: PCs running Windows, PCs running MacOS, Android, iPhone, and so on.
+In order to use Bluetooth in these environments, it is normal to develop in a programming language tailored to each environment. For PC, you can develop using languages such as C and Python, but for Android and iPhone, you need to use Android Studio, Xcode, etc. to create software in yet another programming language.&lt;/p&gt;
+&lt;p&gt;How can we easily develop something that is used by many people in many different environments?
+In this sample application, one way to do this is to &lt;strong&gt;use a web browser&lt;/strong&gt; to communicate via Bluetooth and display the data on the screen.&lt;/p&gt;
+&lt;p&gt;The languages used are HTML and Java Script. A program written in these two languages will work equally well in any environment on a web browser.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;ポイント&lt;/h4&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Points&lt;/h4&gt;
 &lt;ul&gt;
-&lt;li&gt;Web Bluetoothライブラリを使うと、Bluetooth接続するソフトをWebアプリで記述できる。&lt;/li&gt;
-&lt;li&gt;Webアプリであればブラウザが動く機器であれば同じソースコードが動く。&lt;/li&gt;
-&lt;li&gt;表やグラフ等のGUIはHTMLとCSSでラクラク開発&lt;/li&gt;
+&lt;li&gt;The Web Bluetooth library allows you to write software for Bluetooth connection in a web application.&lt;/li&gt;
+&lt;li&gt;If it is a web application, the same source code will work on any device that runs a browser.&lt;/li&gt;
+&lt;li&gt;GUIs such as tables and graphs can be easily developed using HTML and CSS.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;/div&gt;
 
-&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
+&lt;h2 id=&#34;what-to-prepare&#34;&gt;What to prepare&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Leafony Basic Kit&lt;/li&gt;
-&lt;li&gt;Windows&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;、 Mac&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;、 Linux&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;のどれかのPC (開発用)&lt;/li&gt;
-&lt;li&gt;Android&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;、 iPhone&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;、 iPad&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;のスマートフォンまたはタブレット (テスト用 なくても良い)&lt;/li&gt;
-&lt;li&gt;Google Chrome (バージョン70.0.3526.0以降)&lt;/li&gt;
+&lt;li&gt;Windows&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, Mac&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, or Linux&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt; PC (for development)&lt;/li&gt;
+&lt;li&gt;Android&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;, iPhone&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;, iPad&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; smartphone or tablet (does not have to be for testing)&lt;/li&gt;
+&lt;li&gt;Google Chrome (Version 70.0.3526.0 or later)&lt;/li&gt;
 &lt;li&gt;Arduino IDE&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;サンプルアプリのソースコード&#34;&gt;サンプルアプリのソースコード&lt;/h2&gt;
-&lt;p&gt;あらかじめどちらもダウンロードしてください。&lt;/p&gt;
+&lt;h2 id=&#34;sample-app-source-code&#34;&gt;Sample app source code&lt;/h2&gt;
+&lt;p&gt;Please download both in advance.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE&#34;&gt;Arduino スケッチ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/WebBluetooth_for_Leafony_app&#34;&gt;Web Bluetooth アプリ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE&#34;&gt;Arduino Sketch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/WebBluetooth_for_Leafony_app&#34;&gt;Web Bluetooth App&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;leafonyの構成&#34;&gt;Leafonyの構成&lt;/h2&gt;
-&lt;p&gt;このサンプルでは下記のリーフ構成で試せます。&lt;/p&gt;
+&lt;h2 id=&#34;leafony-configuration&#34;&gt;Leafony Configuration&lt;/h2&gt;
+&lt;p&gt;In this sample, you can try the following leaf configurations.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -146,33 +146,33 @@ PCやスマホ・タブレットには色々な環境があります。Windows�
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;Connector Cover&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az62&#34;&gt;Connector Cover&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;AI01&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/io/ai01&#34;&gt;AI01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;AZ01&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;USB&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az01&#34;&gt;AZ01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az01&#34;&gt;USB&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AP01&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AVR MCU&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/processor/ap01&#34;&gt;AP01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/processor/ap01&#34;&gt;AVR MCU&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac02&#34;&gt;AC02&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac02&#34;&gt;BLE Sugar&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/communication/ac02&#34;&gt;AC02&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/communication/ac02&#34;&gt;BLE Sugar&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;AV01&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;CR2032&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/power/av01&#34;&gt;AV01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/power/av01&#34;&gt;CR2032&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -187,39 +187,39 @@ PCやスマホ・タブレットには色々な環境があります。Windows�
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
-&lt;p&gt;下図のようにリーフを組み立てましょう。&lt;/p&gt;
+&lt;h2 id=&#34;assembly&#34;&gt;Assembly&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s assemble leaves as shown in the figure below.&lt;/p&gt;
 &lt;img src=&#34;./gs_assemble.png&#34; width=&#34;350&#34;&gt;
-&lt;h2 id=&#34;ピンアサイン&#34;&gt;ピンアサイン&lt;/h2&gt;
-&lt;p&gt;各リーフのピンアサインは下図を参考&lt;/p&gt;
+&lt;h2 id=&#34;pin-assignment&#34;&gt;Pin assignment&lt;/h2&gt;
+&lt;p&gt;Refer to the figure below for the pin assignment of each leaf.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/pinassign/basic_kit_pinassign.jpg&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/getting-started/pinassign/basic_kit_pinassign.jpg&#34; width=&#34;600&#34;&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;実行方法&#34;&gt;実行方法&lt;/h2&gt;
+&lt;h2 id=&#34;execution-method&#34;&gt;Execution method&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Arduino IDEで&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE&#34;&gt;4-Sensors_BLE.ino&lt;/a&gt;を書き込む&lt;/li&gt;
-&lt;li&gt;ダウンロードした&lt;a href=&#34;https://github.com/Leafony/WebBluetooth_for_Leafony_app&#34;&gt;Web Bluetooth アプリ&lt;/a&gt;の&lt;code&gt;index.html&lt;/code&gt;をGoogle Chromeで開く&lt;br&gt;
-Webアプリの使い方の詳細は&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/basic&#34;&gt;Basic Kit クイックスタートガイド&lt;/a&gt;を参考&lt;/li&gt;
+&lt;li&gt;Write &lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE&#34;&gt;4-Sensors_BLE.ino&lt;/a&gt; in Arduino IDE.&lt;/li&gt;
+&lt;li&gt;Open the downloaded &lt;code&gt;index.html&lt;/code&gt; of &lt;a href=&#34;https://github.com/Leafony/WebBluetooth_for_Leafony_app&#34;&gt;Web Bluetooth App&lt;/a&gt; with Google Chrome.&lt;br&gt;
+For details on how to use the web app, refer to the &lt;a href=&#34;https://docs.leafony.com/en/docs/getting-started/basic&#34;&gt;Basic Kit Getting Started Guide&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;br&gt;
 &lt;p&gt;&lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;データの送信&#34;&gt;データの送信&lt;/h2&gt;
-&lt;p&gt;BLEでデータを送受信する方法を見てみましょう。&lt;/p&gt;
-&lt;h3 id=&#34;leafony側&#34;&gt;Leafony側&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;4-Sensors_BLE.ino&lt;/code&gt;の1020行目付近でBluetoothで送信するテキストデータを生成しています。
+&lt;h2 id=&#34;sending-data&#34;&gt;Sending data&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s see how to send and receive data with BLE.&lt;/p&gt;
+&lt;h3 id=&#34;leafony-side&#34;&gt;Leafony side&lt;/h3&gt;
+&lt;p&gt;In &lt;code&gt;4-Sensors_BLE.ino&lt;/code&gt;, around lAny data can be sent by changing this text.ine 1020, we generate the text data to be sent via Bluetooth.
 このテキストを変えることで任意のデータを送信可能です。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++:4-Sensors_BLE.ino&#34; data-lang=&#34;c++:4-Sensors_BLE.ino&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;sendLen&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;sprintf&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;sendData&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;%04s,%04s,%04s,%04s,%04s,%01s&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;\n&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;temp&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;humid&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;light&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;tilt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;battVolt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;pips&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上記では&lt;code&gt;&amp;lt;温度&amp;gt;,&amp;lt;湿度&amp;gt;,&amp;lt;照度&amp;gt;,&amp;lt;傾き&amp;gt;,&amp;lt;電池電圧&amp;gt;,&amp;lt;サイコロ&amp;gt;&lt;/code&gt;のようにカンマ区切りのデータを送信しています。&lt;/p&gt;
-&lt;p&gt;実際にこのテキストデータを送信しているのは下記の部分です。(1085行目付近)&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;In the above, comma-separated data like &lt;code&gt;&amp;lt;temperature&amp;gt;,&amp;lt;humidity&amp;gt;,&amp;lt;illuminance&amp;gt;,&amp;lt;slope&amp;gt;,&amp;lt;battery voltage&amp;gt;,&amp;lt;dice&amp;gt;&lt;/code&gt; is sent.&lt;/p&gt;
+&lt;p&gt;The following is the part that actually sends this text data. (Around line 1085)&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++:4-Sensors_BLE.ino&#34; data-lang=&#34;c++:4-Sensors_BLE.ino&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;ble112&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ble_cmd_gatt_server_send_characteristic_notification&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0x000C&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;sendLen&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;uint8&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;sendData&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;webアプリ側&#34;&gt;Webアプリ側&lt;/h3&gt;
-&lt;p&gt;Webアプリ側では&lt;code&gt;leafony.js&lt;/code&gt;にデータ受信時の処理が書かれています。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;leafony.js&lt;/code&gt;の75行目の記述で、データを受信した時に呼び出される関数を指定します。
-ここでは&lt;code&gt;handleData()&lt;/code&gt;という関数が呼び出されます。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;web-app-side&#34;&gt;Web app side&lt;/h3&gt;
+&lt;p&gt;On the web app side, the process for receiving data is written in &lt;code&gt;leafony.js&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In line 75 of &lt;code&gt;leafony.js&lt;/code&gt;, we specify the function to be called when data is received.
+Here, the function &lt;code&gt;handleData()&lt;/code&gt; is called.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-js:leafony.js&#34; data-lang=&#34;js:leafony.js&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;read&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;addEventListener&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;characteristicvaluechanged&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;handleData&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;handleData()&lt;/code&gt;関数も&lt;code&gt;leafony.js&lt;/code&gt;に記述されています。&lt;br&gt;
-BLEで受信したデータは&lt;code&gt;event.target.value&lt;/code&gt;に含まれています。&lt;br&gt;
-一旦&lt;code&gt;data&lt;/code&gt;という変数に値をコピーした後に、受信データをutf-8でデコードし、改行コード(&lt;code&gt;\r\n&lt;/code&gt;)を取り除いてから、カンマ&lt;code&gt;,&lt;/code&gt;で区切って配列にしています。&lt;br&gt;
-これらのデータは&lt;code&gt;state&lt;/code&gt;という変数に任意の名前をつけて保存しています。(&lt;code&gt;state.temp&lt;/code&gt;や&lt;code&gt;state.humid&lt;/code&gt;など)&lt;/p&gt;
-&lt;p&gt;Leafony側で送るデータを変更した際は、&lt;code&gt;handleData()&lt;/code&gt;関数を修正することでデコードすることが可能です。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The &lt;code&gt;handleData()&lt;/code&gt; function is also described in &lt;code&gt;leafony.js&lt;/code&gt;.&lt;br&gt;
+The data received by the BLE is contained in &lt;code&gt;event.target.value&lt;/code&gt;.&lt;br&gt;
+Once the values are copied into the variable &lt;code&gt;data&lt;/code&gt;, the received data is decoded in utf-8, the newline code (&lt;code&gt;\r\n&lt;/code&gt;) is removed, and then the data is made into an array separated by commas &lt;code&gt;,&lt;/code&gt;.&lt;br&gt;
+These data are stored in a variable called &lt;code&gt;state&lt;/code&gt; with an arbitrary name. (&lt;code&gt;state.temp&lt;/code&gt;, &lt;code&gt;state.humid&lt;/code&gt;, etc.)&lt;/p&gt;
+&lt;p&gt;If the data sent by the Leafony side is changed, it can be decoded by modifying the &lt;code&gt;handleData()&lt;/code&gt; function.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript:leafony.js&#34; data-lang=&#34;javascript:leafony.js&#34;&gt;    &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;/**
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;     * Characteristicの値が変化した時に呼び出される関数
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;     * @param {*} event
@@ -248,20 +248,20 @@ BLEで受信したデータは&lt;code&gt;event.target.value&lt;/code&gt;に含�
 
         &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 省略
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;データの受信&#34;&gt;データの受信&lt;/h2&gt;
-&lt;h3 id=&#34;webアプリ側-1&#34;&gt;Webアプリ側&lt;/h3&gt;
-&lt;p&gt;Webアプリの画面で「LED+」「LED-」ボタンを押すと、LeafonyのLEDの点滅スピードを変えることができます。&lt;br&gt;
-ボタン押された時の処理は&lt;code&gt;app.js&lt;/code&gt;の下記の部分に記述されています。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;receiving-data&#34;&gt;Receiving data&lt;/h2&gt;
+&lt;h3 id=&#34;web-app-side-1&#34;&gt;Web app side&lt;/h3&gt;
+&lt;p&gt;By pressing the &amp;ldquo;LED+&amp;rdquo; and &amp;ldquo;LED-&amp;rdquo; buttons on the web app screen, you can change the blinking speed of Leafony&amp;rsquo;s LEDs. &lt;br&gt;
+The process for when the buttons are pressed is described in the following part of &lt;code&gt;app.js&lt;/code&gt;.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript:app.js&#34; data-lang=&#34;javascript:app.js&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;buttonLedPls&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;addEventListener&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 
     &lt;span style=&#34;color:#000&#34;&gt;console&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;log&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;LED Plus Button Clicked&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
     &lt;span style=&#34;color:#000&#34;&gt;leafony&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;sendCommand&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;PLS&amp;#39;&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;leafony.sendCommand( &#39;文字列&#39; );&lt;/code&gt;で任意の文字列をLeafonyに送信しています。&lt;/p&gt;
-&lt;h3 id=&#34;leafony側-1&#34;&gt;Leafony側&lt;/h3&gt;
-&lt;p&gt;Webアプリ側から送信された文字列をLeafonyが受信したとき、&lt;code&gt;4-Sensors.ino&lt;/code&gt;の&lt;code&gt;my_evt_gatt_server_attribute_value()&lt;/code&gt;関数が呼び出されます。&lt;br&gt;
-デコードされた文字列は&lt;code&gt;rcv_data&lt;/code&gt;という変数にコピーされ、その文字列の内容に応じた処理をしています。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;leafony.sendCommand( &#39;string&#39; );&lt;/code&gt; to send an arbitrary string to Leafony.&lt;/p&gt;
+&lt;h3 id=&#34;leafony-side-1&#34;&gt;Leafony side&lt;/h3&gt;
+&lt;p&gt;When Leafony receives a string sent from the web app side, the &lt;code&gt;my_evt_gatt_server_attribute_value()&lt;/code&gt; function in &lt;code&gt;4-Sensors.ino&lt;/code&gt; will be called. &lt;br&gt;
+The decoded string is copied to a variable named &lt;code&gt;rcv_data&lt;/code&gt; and processed according to the content of the string.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++:4-Sensors.ino&#34; data-lang=&#34;c++:4-Sensors.ino&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;my_evt_gatt_server_attribute_value&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;struct&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;ble_msg_gatt_server_attribute_value_evt_t&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;msg&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
     &lt;span style=&#34;color:#000&#34;&gt;uint16&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;attribute&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;uint16&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;msg&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;attribute&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
     &lt;span style=&#34;color:#000&#34;&gt;uint16&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;offset&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
@@ -293,44 +293,44 @@ BLEで受信したデータは&lt;code&gt;event.target.value&lt;/code&gt;に含�
       &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
     &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上記の部分を修正することで簡単にデータの送受信を行うことができます。&lt;/p&gt;
-&lt;h2 id=&#34;仕組み&#34;&gt;仕組み&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can easily send and receive data by modifying the above sections.&lt;/p&gt;
+&lt;h2 id=&#34;structure&#34;&gt;Structure&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;PeripheralとCentral&lt;/li&gt;
-&lt;li&gt;アドバタイズ&lt;/li&gt;
+&lt;li&gt;Peripheral and Central&lt;/li&gt;
+&lt;li&gt;Advertisement&lt;/li&gt;
 &lt;li&gt;GATT&lt;/li&gt;
 &lt;li&gt;Characteristic&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;webアプリ側-2&#34;&gt;Webアプリ側&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;index.html&lt;/code&gt;と&lt;code&gt;app.js&lt;/code&gt;と&lt;code&gt;leafony.js&lt;/code&gt;の3つのファイルで構成されています。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;index.html&lt;/code&gt;はボタンや表の配置を行ったり、他2つのjavascriptのファイルを読み込むだけの単純なものです。&lt;br&gt;
-&lt;code&gt;app.js&lt;/code&gt;はボタンが押されたときの処理などメインの処理が記述されています。&lt;br&gt;
-&lt;code&gt;leafony.js&lt;/code&gt;はWeb Bluetoothを使ってLeafonyと接続するための具体的な処理がかかれています。&lt;br&gt;&lt;/p&gt;
-&lt;h2 id=&#34;web-bluetoothの注意点&#34;&gt;Web Bluetoothの注意点&lt;/h2&gt;
-&lt;p&gt;2020年6月時点ではWeb Bluetoothは以下の点に注意しなければいけません。&lt;/p&gt;
+&lt;h3 id=&#34;web-app-side-2&#34;&gt;Web app side&lt;/h3&gt;
+&lt;p&gt;It consists of three files: &lt;code&gt;index.html&lt;/code&gt;, &lt;code&gt;app.js&lt;/code&gt;, and &lt;code&gt;leafony.js&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;The &lt;code&gt;index.html&lt;/code&gt; is simple enough to place buttons and tables, and load two other javascript files.&lt;br&gt;
+&lt;code&gt;app.js&lt;/code&gt; contains the main processing, such as what happens when a button is pressed.&lt;br&gt;
+&lt;code&gt;leafony.js&lt;/code&gt; describes the specific process of connecting to Leafony using Web Bluetooth.&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;notes-on-web-bluetooth&#34;&gt;Notes on Web Bluetooth&lt;/h2&gt;
+&lt;p&gt;As of June 2020, Web Bluetooth will need to take the following points into account.&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;iPhoneのChromeでは動作しません。&lt;a href=&#34;https://apps.apple.com/jp/app/webble/id1193531073&#34;&gt;WebBLE&lt;/a&gt;という有料のアプリを使えば利用可能です。&lt;/li&gt;
-&lt;li&gt;Web Bluetoothの開発状況と対応ブラウザについては&lt;a href=&#34;https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md&#34;&gt;implementation-status.md&lt;/a&gt;で確認できます。&lt;/li&gt;
+&lt;li&gt;It does not work with Chrome on iPhone.It is available by using a paid application called &lt;a href=&#34;https://apps.apple.com/jp/app/webble/id1193531073&#34;&gt;WebBLE&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The development status of Web Bluetooth and supported browsers can be found at [implementation-status.md](&lt;a href=&#34;https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation&#34;&gt;https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation&lt;/a&gt; -status.md).&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+&lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://qiita.com/s_nkg/items/bdb235388eaeb567b54d&#34;&gt;https://qiita.com/s_nkg/items/bdb235388eaeb567b54d&lt;/a&gt;&lt;/p&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Windows 10 version 1703以降 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Windows 10 version 1703 or later &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;OS X Yosemite以降 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;OS X Yosemite or later &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;Kernel 3.19+ and BlueZ 5.41+ installed. &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Android 6.0 Marshmallow以降 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Android 6.0 Marshmallow or later &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;iPhoneまたはiPadの場合は &lt;a href=&#34;https://itunes.apple.com/us/app/webble/id1193531073&#34;&gt;WebBLE&lt;/a&gt;(有料)が必要です。iPhone、iPad版のChromeではWeb Bluetoothが実装されていないためです。 &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;For iPhone or iPad, &lt;a href=&#34;https://itunes.apple.com/us/app/webble/id1193531073&#34;&gt;WebBLE&lt;/a&gt;(paid) is required.This is because Web Bluetooth is not implemented in the iPhone and iPad versions of Chrome. &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
