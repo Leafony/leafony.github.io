@@ -339,7 +339,7 @@ The decoded string is copied to a variable named &lt;code&gt;rcv_data&lt;/code&g
     </item>
     
     <item>
-      <title>Docs: Google SheetsをつかったIoTサービス入門</title>
+      <title>Docs: Google Sheets IoT</title>
       <link>https://docs.leafony.com/en/docs/examples/advanced/1_p/basic/google_sheets_iot/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -347,29 +347,29 @@ The decoded string is copied to a variable named &lt;code&gt;rcv_data&lt;/code&g
       <description>
         
         
-        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;Leafony Beacon1)とRaspberry Piとを使ってIoT環境センサを作り、Google スプレッドシートを使って、センサデータを可視化します。&lt;/p&gt;
+        &lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;We will create an IoT environment sensor using Leafony Beacon1) and Raspberry Pi, and visualize the sensor data using Google Spreadsheet.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Beaconとは、地上にある電波を特定の機器で受信することで、位置をはじめとした各種情報を取得するための設備です。BluetoothのBeacon機器の場合、温度や気圧などのセンサを搭載したモジュールを任意の場所に設置して、その場所の環境を観測します。&lt;/li&gt;
+&lt;li&gt;Beacon is a facility for acquiring various information including location by receiving radio waves on the ground with a specific device. in the case of Bluetooth Beacon devices, a module equipped with sensors such as temperature and air pressure can be installed at any location to observe the environment of that location.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;gs_about.jpg&#34; alt=&#34;about&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
+&lt;h2 id=&#34;what-to-prepare&#34;&gt;What to prepare&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Leafony Basic Kit&lt;/li&gt;
-&lt;li&gt;Raspberry Pi (3, 4, zero等)&lt;/li&gt;
-&lt;li&gt;ブラウザが閲覧できるPCやスマホ&lt;/li&gt;
+&lt;li&gt;Raspberry Pi (3, 4, zero, etc.)&lt;/li&gt;
+&lt;li&gt;PC or smartphone with browser access&lt;/li&gt;
 &lt;li&gt;Arduino IDE&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;サンプルアプリのコード&#34;&gt;サンプルアプリのコード&lt;/h2&gt;
+&lt;h2 id=&#34;sample-app-code&#34;&gt;Sample app code&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/leafony-beacon&#34;&gt;Github - Leafony/leafony-beacon&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;raspberry-piの準備&#34;&gt;Raspberry Piの準備&lt;/h2&gt;
+&lt;h2 id=&#34;preparing-the-raspberry-pi&#34;&gt;Preparing the Raspberry Pi&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Raspberry Pi 初めての方は、Raspberry Pi 3 B＋ スターターキット（ &lt;a href=&#34;https://www.switch-science.com/catalog/3880/&#34;&gt;https://www.switch-science.com/catalog/3880/&lt;/a&gt; ）が便利です。Raspbian OSイメージを書き込んだmicroSDが入っていますが、ディスプレイ、キーボード、マウスは有りません。別途　ご用意してください。&lt;/li&gt;
-&lt;li&gt;Raspberry Pi は、無線LANでインターネットに接続します。こちらも事前にご用意してください。&lt;/li&gt;
+&lt;li&gt;If you are new to Raspberry Pi, the Raspberry Pi 3 B+ Starter Kit (&lt;a href=&#34;https://www.switch-science.com/catalog/3880/&#34;&gt;https://www.switch-science.com/catalog/3880/&lt;/a&gt;) is useful. The microSD containing the Raspbian OS image is included, but the display, keyboard, and mouse are not. The display, keyboard, and mouse are not included.&lt;/li&gt;
+&lt;li&gt;The Raspberry Pi will be connected to the Internet via a wireless LAN. Please prepare this in advance as well.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;leafonyの構成&#34;&gt;Leafonyの構成&lt;/h2&gt;
+&lt;h2 id=&#34;leafony-configuration&#34;&gt;Leafony Configuration&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -380,33 +380,33 @@ The decoded string is copied to a variable named &lt;code&gt;rcv_data&lt;/code&g
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;Connector Cover&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az62&#34;&gt;Connector Cover&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;AI01&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/io/ai01&#34;&gt;AI01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;AZ01&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;USB&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az01&#34;&gt;AZ01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az01&#34;&gt;USB&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AP01&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AVR MCU&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/processor/ap01&#34;&gt;AP01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/processor/ap01&#34;&gt;AVR MCU&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac02&#34;&gt;AC02&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac02&#34;&gt;BLE Sugar&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/communication/ac02&#34;&gt;AC02&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/communication/ac02&#34;&gt;BLE Sugar&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;AV01&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;CR2032&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/power/av01&#34;&gt;AV01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/power/av01&#34;&gt;CR2032&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -421,31 +421,31 @@ The decoded string is copied to a variable named &lt;code&gt;rcv_data&lt;/code&g
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;leafonyの組み立て&#34;&gt;Leafonyの組み立て&lt;/h2&gt;
+&lt;h2 id=&#34;assembly&#34;&gt;Assembly&lt;/h2&gt;
 &lt;img src=&#34;./gs_assemble.png&#34; width=&#34;350&#34;&gt;
-&lt;h2 id=&#34;スケッチの書き込み&#34;&gt;スケッチの書き込み&lt;/h2&gt;
+&lt;h2 id=&#34;writing-sketches&#34;&gt;Writing sketches&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;書き込みには、BLE、4-Sensorsライブラリが必要です。予め、ライブラリをインクルードしておいてください。詳しくは、こちら。&lt;/li&gt;
-&lt;li&gt;Arduino IDEで、以下のスケッチをマイコンボードに書き込んでください。
-・leafony_beacon.ino&lt;/li&gt;
-&lt;li&gt;Arduino IDE 1.8.9で動作を確認しています。書き込みエラーが発生したら、IDEのバージョンを確認してください。&lt;/li&gt;
+&lt;li&gt;The BLE and 4-Sensors libraries are required for writing. Please include the libraries beforehand. See &lt;a href=&#34;&#34;&gt;here&lt;/a&gt; for details.&lt;/li&gt;
+&lt;li&gt;In the Arduino IDE, write the following sketch on the microcontroller board.
+・&lt;a href=&#34;&#34;&gt;leafony_beacon.ino&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;We have confirmed that it works with Arduino IDE 1.8.9. If you get a write error, please check your IDE version.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;raspberry-piの環境構築&#34;&gt;Raspberry Piの環境構築&lt;/h2&gt;
-&lt;p&gt;BLE Beaconの受信機にはRaspberry Piを使います。今回使用するサンプルコードでは、Node.jsでnobleを使ってBLE Beaconを受信します。受信したデータはGoogle API経由でGoogle スプレッドシートに書き込んでいます。&lt;/p&gt;
-&lt;p&gt;下記のスクリプト(6項目)を実行して環境構築をします。https://github.com/Leafony/leafony-beacon/tree/master/spreadsheet-logger&lt;/p&gt;
+&lt;h2 id=&#34;building-the-raspberry-pi-environment&#34;&gt;Building the Raspberry Pi environment&lt;/h2&gt;
+&lt;p&gt;We will use a Raspberry Pi as the receiver for the BLE Beacon. In the sample code we will be using, we use Node.js to receive the BLE Beacon using noble. The received data is written to a Google spreadsheet via Google API.&lt;/p&gt;
+&lt;p&gt;Execute the following script (6 items) to build the environment. &lt;a href=&#34;https://github.com/Leafony/leafony-beacon/tree/master/spreadsheet-logger&#34;&gt;https://github.com/Leafony/leafony-beacon/tree/master/spreadsheet-logger&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;sudo apt update
 sudo apt upgrade
 sudo apt install -y bluetooth libbluetooth-dev libudev-dev git
 git clone https://github.com/Leafony/leafony-beacon
 &lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; leafony-beacon/spreadsheet-logger
 npm install
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;注意:WARNINGと表示されますが、このまま進んでください。&lt;/strong&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Note: WARNING will be displayed, but please continue.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./gs_pi_1.png&#34; alt=&#34;gs_pi_1&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;google-sheets-apiの取得&#34;&gt;Google Sheets APIの取得&lt;/h2&gt;
-&lt;p&gt;Google スプレットシートをNode.jsで操作するためにはAPIを取得する必要があります。まず、下記 Node.js Quick Start のStep.1で、  Enable the Google Sheets API をクリックし、credentials.jsonをダウンロードします。次に、credentials.jsonをleafony-beacon/spreadsheet-loggerディレクトリにコピーしてください。&lt;/p&gt;
+&lt;h2 id=&#34;getting-the-google-sheets-api&#34;&gt;Getting the Google Sheets API&lt;/h2&gt;
+&lt;p&gt;In order to manipulate Google Spreadsheets in Node.js, we need to obtain an API. First, in Step 1 of Node.js Quick Start below, click &lt;code&gt;Enable the Google Sheets API&lt;/code&gt;, and download &lt;code&gt;credentials.json&lt;/code&gt;. Next, copy the &lt;code&gt;credentials.json&lt;/code&gt; to the &lt;code&gt;leafony-beacon/spreadsheet-logger&lt;/code&gt; directory.&lt;/p&gt;
 &lt;p&gt;Node.js Quickstart | Sheets API | Google Developers : &lt;a href=&#34;https://developers.google.com/sheets/api/quickstart/nodejs&#34;&gt;https://developers.google.com/sheets/api/quickstart/nodejs&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;indexjs-へgoogle-sheetsのidとシート名の設定&#34;&gt;index.js へGoogle SheetsのIDとシート名の設定&lt;/h2&gt;
-&lt;p&gt;Google スプレッドシート を開いて、URLの赤線部分の「シートID」と「シート名」を確認します。&lt;/p&gt;
+&lt;h2 id=&#34;setting-google-sheets-id-and-sheet-name-to-indexjs&#34;&gt;Setting Google Sheets ID and sheet name to index.js&lt;/h2&gt;
+&lt;p&gt;Open the Google Spreadsheet and check the &amp;ldquo;Sheet ID&amp;rdquo; and &amp;ldquo;Sheet Name&amp;rdquo; in the red line of the URL.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./gs_pi_2.png&#34; alt=&#34;gs_pi_2&#34;&gt;
 &lt;img src=&#34;./gs_pi_3.png&#34; alt=&#34;gs_pi_3&#34;&gt;&lt;/p&gt;
 &lt;p&gt;leafony-beacon/spreadsheet-loggerディレクトリ「index.js」があります。「index.js」の18, 19行目にある「spreadsheetId」と「sheetName」に、上記の「シートID」と「シート名」を貼り付けることで、データが書き込まれます。&lt;/p&gt;
