@@ -267,7 +267,7 @@
 &lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
 &lt;p&gt;Seeed Studio Grove series compliant leafs that operate at 5 V with UART, I2C, analog and digital inputs. 3.3 V to 5 V is converted to 5 V by a step-up power supply circuit and supplied to the Grove. It is possible to turn off the 5V power supply by controlling the I2C Expander to achieve low power consumption.&lt;/p&gt;
 &lt;h2 id=&#34;specification&#34;&gt;Specification&lt;/h2&gt;
-&lt;h2 id=&#34;dimension&#34;&gt;Dimension&lt;/h2&gt;
+&lt;h3 id=&#34;dimension&#34;&gt;Dimension&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -317,7 +317,6 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;br&gt;
 &lt;h3 id=&#34;i2c-io-expander&#34;&gt;I2C I/O Expander&lt;/h3&gt;
 &lt;table&gt;
 &lt;thead&gt;
