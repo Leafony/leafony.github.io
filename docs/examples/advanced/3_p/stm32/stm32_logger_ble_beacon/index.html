@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.72.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -128,7 +128,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.df5cd4fe8f6afd47cba41b93320f52b1c88bb93ee8c602a01b4b889261120d2bddbb38fbd20274221f54dd3cdfcbe1086a64060826f3345c7fa4b9b73405db8e.json"
+  data-offline-search-index-json-src="/offline-search-index.13ad071588d783850e4014b043cd8fc161134118bb56971d8c960aa8982a6f87d3d79a1164348e14cad67527021b2b4ae5cc1ae9b776d52f6ca9363d21f66028.json"
   data-offline-search-base-href="/"
 >
 
@@ -158,7 +158,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.df5cd4fe8f6afd47cba41b93320f52b1c88bb93ee8c602a01b4b889261120d2bddbb38fbd20274221f54dd3cdfcbe1086a64060826f3345c7fa4b9b73405db8e.json"
+  data-offline-search-index-json-src="/offline-search-index.13ad071588d783850e4014b043cd8fc161134118bb56971d8c960aa8982a6f87d3d79a1164348e14cad67527021b2b4ae5cc1ae9b776d52f6ca9363d21f66028.json"
   data-offline-search-base-href="/"
 >
 
@@ -3093,19 +3093,25 @@ if (!doNotTrack) {
         
 	
 	<h2 id="はじめに">はじめに</h2>
-<p>STM32リーフに搭載されたFlashメモリを使って、温湿度と測定時間を記録することが可能なBLE Beaconのサンプルデザインです。<br></p>
+<p>STM32リーフに搭載されたFlashメモリを使って、温湿度と測定時間を記録することが可能なBLE Beaconのサンプルデザインです。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><br></p>
 <p>Beaconを用いた温湿度の測定方式では現在時刻での温湿度のみを知ることができ、これまでの測定値を知るためには、別途設置した受信機で常にBeaconの電波を受信し続ける必要がありました。<br>
 Beaconの電波は非常に弱く、発信時間も短いため、受信時に取りこぼしが発生することも多々あり、安定した測定をするためには不十分でした。<br>
 しかしながら本サンプルでは、STM32に搭載された不揮発メモリに測定記録を残すことができるため、万が一Beaconの電波を受信できなかったとしても、後からLeafonyに接続して、不揮発メモリに記録されたデータを取り出すことができます。<br></p>
 <p>また、このサンプルではBeaconの受信とSTM32 Flashメモリに書き込まれたデータの読み出しがどちらも行えるWebアプリのサンプルも含まれています。</p>
 <h2 id="サンプルのソースコード">サンプルのソースコード</h2>
 <p>使用するスケッチやツールのソースコードは下記のリポジトリで閲覧可能です。</p>
+<ul>
+<li>
 <p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_Logger_Beacon" target="_blank">Sample-Sketches/STM32_Logger_Beacon at master · Leafony/Sample-Sketches</a></p>
-<p><a href="https://docs.leafony.com/Sample-Sketches/STM32_Logger_Beacon/sample_web_app/connect_webbluetooth/" target="_blank">STM32 Sensors Logger Webアプリケーション</a></p>
+</li>
+<li>
+<p><a href="https://docs.leafony.com/Sample-Sketches/STM32_Logger_Beacon/sample_web_app/lescan/" target="_blank">STM32 Sensors Logger Webアプリケーション</a></p>
+</li>
+</ul>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
 <li>Leafony</li>
-<li>Androidスマートフォン</li>
+<li>Google ChromeがインストールされたAndroidスマートフォン または Mac<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></li>
 </ul>
 <h2 id="使用するリーフ">使用するリーフ</h2>
 <table>
@@ -3125,6 +3131,11 @@ Beaconの電波は非常に弱く、発信時間も短いため、受信時に�
 <tr>
 <td><a href="/docs/leaf/processor/ap03">AP03</a></td>
 <td><a href="/docs/leaf/processor/ap03">STM32 MCU</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/docs/leaf/others/az01">AZ01</a></td>
+<td><a href="/docs/leaf/others/az01">USB</a></td>
 <td>1</td>
 </tr>
 <tr>
@@ -3150,14 +3161,47 @@ Beaconの電波は非常に弱く、発信時間も短いため、受信時に�
 </tbody>
 </table>
 <h2 id="動作方法">動作方法</h2>
-<p>STM32リーフにサンプルスケッチを書き込んでください。</p>
-<p>AndroidスマートフォンでWebアプリを開き、Leafonyと一旦接続すると、スマートフォンの現在時刻が登録されます。
-その後、一度Lefaonyとの接続を切るとBeacon動作に移行します。</p>
-<p>Webアプリ側ではBeaconの電波を受信して、現在の温度が表示されます。</p>
-<p>Leafonyと再び接続し、ログ取得ボタンを押すと、STM32のFlashメモリが読み出され、過去の温湿度のグラフが表示されます。</p>
+<ol>
+<li>
+<p>STM32リーフにサンプルスケッチ<code>STM32_Logger_Beacon.ino</code>を書き込んでください。</p>
+</li>
+<li>
+<p>Androidスマートフォンで<a href="https://docs.leafony.com/Sample-Sketches/STM32_Logger_Beacon/sample_web_app/lescan/" target="_blank">STM32 Sensors Logger Webアプリケーション</a>を開いてださい。</p>
+</li>
+<li>
+<p><code>Start Scanning</code>ボタンを押すと、Bluetooth利用許可を求めるポップアップウィンドウ表示されます。<code>許可</code>を押すとBeaconの電波の受信を開始します。<br>
+Leafonyから発されるBeaconの電波を受信すると、画面の温度/電池電圧/受信時刻表示が更新されます。</p>
+</li>
+<li>
+<p><code>Connect</code>ボタンを押すとLeafonyに接続され、数秒ほど待つとFlashメモリに保存されていた過去の測定データを受信し、画面上のグラフが更新されます。</p>
+</li>
+<li>
+<p>受信完了後は<code>Disconnect</code>ボタンを押しLeafonyと切断すると、Leafonyは再度Beaconモードに移行し、センサ情報の記録を再開します。</p>
+</li>
+</ol>
 <h2 id="動作解説">動作解説</h2>
+<p>本サンプルの動作シーケンスは下図のとおりです。
+Webアプリ側からの接続要求が無い限り、LeafonyはBeaconモードでの動作をしたあとに一度本体電源を自ら落とし省電力化を図ります。
+その間、STM32内に含まれたリアルタイムクロックだけは動作を続けることができるため、一定時間を測定した後、STM32本体の電源を投入し、再度Beaconモードに移行します。</p>
+<p>Beaconモードで動作中にWebアプリ側から接続要求があった場合、Connectモードに移行し、スケッチの<code>loop()</code>関数に移行します。
+LeafonyはWebアプリ側からの応答を待ち、<code>get</code>コマンドを受信すると直ちにメモリに保存されたセンサデータをBluetoothで送信します。</p>
 <img src="logger_beacon_02.jpg">
+<p>STM32リーフには内部に不揮発性メモリ（Flashメモリ）が搭載されています。
+本サンプルでは、このFlashメモリをリングバッファとして扱います。
+下図のように、メモリの0番地と1番地にはリングバッファの読み出しアドレス記録しておくことにって、
+本体の電源が切れた後も、再度電源を入れ直せば測定を再開することが可能です。</p>
 <img src="logger_beacon_01_rb.jpg">
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>2021年1月現在、測定時刻を記録する機能は実装されてません。実装されるまで今しばらくお待ち下さい。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>2021年1月現在、WebbluetoothのScanning APIを利用可能なのは、Android 6.0 Marshmallow以降、または、Mac OS X Yosemite以降のみです。対応状況は<a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md#scanning-api">Webbluetooth Implementation Status</a>を御覧ください。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 
         <div class="section-index">
     
@@ -3415,7 +3459,7 @@ Beaconの電波は非常に弱く、発信時間も短いため、受信時に�
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 December 1, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 21, 2021
 </div>
 </div>
 
