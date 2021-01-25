@@ -77,7 +77,10 @@
 &lt;img src=&#34;./stm32boards3.png&#34;&gt;&lt;/img&gt;
 &lt;br&gt;
 &lt;br&gt;
-これでSTM32 MCUリーフが使えるようになります。&lt;/p&gt;
+&lt;code&gt;ツール → シリアルポート&lt;/code&gt;から、Leafonyが接続されているシリアルポートを選択&lt;/p&gt;
+&lt;img src=&#34;./stm32serial.jpg&#34; width=&#34;640&#34;&gt;
+&lt;br&gt;
+これでSTM32 MCUリーフが使えるようになります。
 &lt;h2 id=&#34;マイコンボードに書き込む&#34;&gt;マイコンボードに書き込む&lt;/h2&gt;
 &lt;p&gt;STM32 MCUリーフの書き込みスイッチをOnにします。すると赤LEDが点灯します。
 Arduino IDEのマイコンボードに書き込むボタンをクリックします。
