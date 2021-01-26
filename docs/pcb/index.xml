@@ -84,16 +84,16 @@
     </item>
     
     <item>
-      <title>Docs: Design Force テンプレート設計データ</title>
-      <link>https://docs.leafony.com/docs/pcb/design_force/</link>
+      <title>Docs: CR-8000 Design Force テンプレート設計データ</title>
+      <link>https://docs.leafony.com/docs/pcb/cr-8000_design_force/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://docs.leafony.com/docs/pcb/design_force/</guid>
+      <guid>https://docs.leafony.com/docs/pcb/cr-8000_design_force/</guid>
       <description>
         
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;Design Force向けLeafonyテンプレート設計データを使うとリーフ基板の設計を簡単に行えます。テンプレート設計データには下記の項目が設定されています。&lt;/p&gt;
+&lt;p&gt;CR-8000 Design Force向けLeafonyテンプレート設計データを使うとリーフ基板の設計を簡単に行えます。テンプレート設計データには下記の項目が設定されています。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;2cm×2cm リーフの外形&lt;/li&gt;
 &lt;li&gt;Leafony bus フットプリント&lt;/li&gt;
@@ -104,6 +104,16 @@
 &lt;h2 id=&#34;ダウンロード&#34;&gt;ダウンロード&lt;/h2&gt;
 &lt;p&gt;下記のリンクからテンプレート設計データをダウンロードできます。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/cad-template&#34;&gt;GitHub - Leafony/cad-template&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;開発環境&#34;&gt;開発環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;CR-8000 Design Force 2020 or later&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;CR-8000 Design Forceを起動&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ファイル -&amp;gt; 開く -&amp;gt; 設計データ&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ダウンロードしたテンプレート設計データを選択し &lt;code&gt;開く&lt;/code&gt; をクリック&lt;/li&gt;
+&lt;/ol&gt;
 
       </description>
     </item>
