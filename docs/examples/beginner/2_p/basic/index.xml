@@ -98,7 +98,7 @@
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
 &lt;p&gt;このスケッチを動かすためには、ライブラリのインストールが必要です。
-まだインストールしていない場合は&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください。&lt;/p&gt;
+まだインストールしていない場合は&lt;a href=&#34;https://docs.leafony.com/docs/environment/esp32/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//  Thermo-hygrometer ESP32
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//
@@ -250,7 +250,7 @@
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
 &lt;p&gt;このスケッチを動かすためには、ライブラリのインストールが必要です。
-まだインストールしていない場合は&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください。&lt;/p&gt;
+まだインストールしていない場合は&lt;a href=&#34;https://docs.leafony.com/docs/environment/esp32/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++:illum.ino&#34; data-lang=&#34;c++:illum.ino&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//  Illuminance meter
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//
@@ -398,7 +398,7 @@
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
 &lt;p&gt;このスケッチを動かすためには、ライブラリのインストールが必要です。
-まだインストールしていない場合は&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください。&lt;/p&gt;
+まだインストールしていない場合は&lt;a href=&#34;https://docs.leafony.com/docs/environment/esp32/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//  Accelerometer
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//
