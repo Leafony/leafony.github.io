@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -27,8 +27,7 @@
 <meta property="og:url" content="https://docs.leafony.com/docs/environment/esp32/esp32_notice/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="ESP32を使用する場合の注意点">
-<meta itemprop="description" content="A Leafony Documentation site">
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ESP32を使用する場合の注意点"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
@@ -49,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
-<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -129,7 +128,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8498551fe5daf4c2b391a0f8dd6f646346c6fe7314192b37bc62ec54912c9f237839aa9be476f3f4b7919a3a089aa4cc54e85d5a1c5fbe6774ccbb2099a0ff8b.json"
+  data-offline-search-index-json-src="/offline-search-index.9ee523126ad109874baed3a16d4d46e8c2a85b9491b0084524c6524bc5715232b131317002190d235b2441c6cb33df1353a62630dfe3ee26f89d1b86974284ec.json"
   data-offline-search-base-href="/"
 >
 
@@ -159,7 +158,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8498551fe5daf4c2b391a0f8dd6f646346c6fe7314192b37bc62ec54912c9f237839aa9be476f3f4b7919a3a089aa4cc54e85d5a1c5fbe6774ccbb2099a0ff8b.json"
+  data-offline-search-index-json-src="/offline-search-index.9ee523126ad109874baed3a16d4d46e8c2a85b9491b0084524c6524bc5715232b131317002190d235b2441c6cb33df1353a62630dfe3ee26f89d1b86974284ec.json"
   data-offline-search-base-href="/"
 >
 
@@ -3401,138 +3400,67 @@ Arduinoピン名称A1、A2は、Wi-Fiを使用する場合(WiFi.hをインクル
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Arduinoピン名称</th>
-<th style="text-align:left">ESP32 IO番号</th>
-<th style="text-align:left">制限事項</th>
+<th align="left">Arduinoピン名称</th>
+<th align="left">ESP32 IO番号</th>
+<th align="left">制限事項</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">A0</td>
-<td style="text-align:left">IO36</td>
-<td style="text-align:left">出力設定不可</td>
+<td align="left">A0</td>
+<td align="left">IO36</td>
+<td align="left">出力設定不可</td>
 </tr>
 <tr>
-<td style="text-align:left">A1</td>
-<td style="text-align:left">IO25</td>
-<td style="text-align:left">※1</td>
+<td align="left">A1</td>
+<td align="left">IO25</td>
+<td align="left">※1</td>
 </tr>
 <tr>
-<td style="text-align:left">A2</td>
-<td style="text-align:left">IO26</td>
-<td style="text-align:left">※1</td>
+<td align="left">A2</td>
+<td align="left">IO26</td>
+<td align="left">※1</td>
 </tr>
 <tr>
-<td style="text-align:left">A3</td>
-<td style="text-align:left">IO39</td>
-<td style="text-align:left">出力設定不可</td>
+<td align="left">A3</td>
+<td align="left">IO39</td>
+<td align="left">出力設定不可</td>
 </tr>
 <tr>
-<td style="text-align:left">A4</td>
-<td style="text-align:left">IO34</td>
-<td style="text-align:left">出力設定不可</td>
+<td align="left">A4</td>
+<td align="left">IO34</td>
+<td align="left">出力設定不可</td>
 </tr>
 <tr>
-<td style="text-align:left">A5</td>
-<td style="text-align:left">IO35</td>
-<td style="text-align:left">出力設定不可</td>
+<td align="left">A5</td>
+<td align="left">IO35</td>
+<td align="left">出力設定不可</td>
 </tr>
 </tbody>
 </table>
 <p>※1：A1、A2は、Wi-Fiを使用する場合(WiFi.hをインクルードする場合)アナログ入力として使用できません。</p>
-<p>以下のピンはブートストラップに使用しているため、プルアップ、プルダウンの制限があります。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Arduinoピン名称</th>
-<th style="text-align:left">ESP32 IO番号</th>
-<th style="text-align:left">制限事項</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">D4</td>
-<td style="text-align:left">IO12</td>
-<td style="text-align:left">プルアップ禁止</td>
-</tr>
-<tr>
-<td style="text-align:left">D7</td>
-<td style="text-align:left">IO15</td>
-<td style="text-align:left">プルダウン禁止</td>
-</tr>
-<tr>
-<td style="text-align:left">D10</td>
-<td style="text-align:left">IO5</td>
-<td style="text-align:left">プルダウン禁止</td>
-</tr>
-</tbody>
-</table>
+<p>以下のピンはブートストラップに使用しているため、プルアップ、プルダウンの制限があります。
+| Arduinoピン名称 | ESP32 IO番号 | 制限事項       |
+| :&mdash;&mdash;&mdash;&mdash;&ndash; | :&mdash;&mdash;&mdash;&ndash; | :&mdash;&mdash;&mdash;&mdash;- |
+| D4              | IO12         | プルアップ禁止 |
+| D7              | IO15         | プルダウン禁止 |
+| D10             | IO5          | プルダウン禁止 |</p>
 <h2 id="電池動作">電池動作</h2>
 <p>ESP32 MCUはコイン電池では動作しません。</p>
 <h2 id="uart">UART</h2>
-<p>ESP32ではハードウエアシリアルが3系統使用可能です。UART0とUART2は以下の通りです。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">UART番号</th>
-<th style="text-align:left">信号名</th>
-<th style="text-align:left">Arduinoピン名称</th>
-<th style="text-align:left">ESP32 IO番号</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">UART0</td>
-<td style="text-align:left">RXD0</td>
-<td style="text-align:left">D0</td>
-<td style="text-align:left">IO3</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">TXD0</td>
-<td style="text-align:left">D1</td>
-<td style="text-align:left">IO1</td>
-</tr>
-<tr>
-<td style="text-align:left">UART2</td>
-<td style="text-align:left">TXD2</td>
-<td style="text-align:left">D8</td>
-<td style="text-align:left">IO17</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">RXD2</td>
-<td style="text-align:left">D9</td>
-<td style="text-align:left">IO16</td>
-</tr>
-</tbody>
-</table>
+<p>ESP32ではハードウエアシリアルが3系統使用可能です。UART0とUART2は以下の通りです。
+| UART番号 | 信号名 | Arduinoピン名称 | ESP32 IO番号 |
+| :&mdash;&mdash;- | :&mdash;&ndash; | :&mdash;&mdash;&mdash;&mdash;&ndash; | :&mdash;&mdash;&mdash;&ndash; |
+| UART0    | RXD0   | D0              | IO3          |
+|          | TXD0   | D1              | IO1          |
+| UART2    | TXD2   | D8              | IO17         |
+|          | RXD2   | D9              | IO16         |</p>
 <p>UART1を使用する場合はピン番号を変更する必要があります。通常、Arduinoピン番号A1、A2をUART1として使用します。
-変更後のピン番号は以下の通りです。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">UART番号</th>
-<th style="text-align:left">信号名</th>
-<th style="text-align:left">Arduinoピン名称</th>
-<th style="text-align:left">ESP32 IO番号</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">UART1</td>
-<td style="text-align:left">TXD1</td>
-<td style="text-align:left">A1</td>
-<td style="text-align:left">IO25</td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">RXD1</td>
-<td style="text-align:left">A2</td>
-<td style="text-align:left">IO26</td>
-</tr>
-</tbody>
-</table>
+変更後のピン番号は以下の通りです。
+| UART番号 | 信号名 | Arduinoピン名称 | ESP32 IO番号 |
+| :&mdash;&mdash;- | :&mdash;&ndash; | :&mdash;&mdash;&mdash;&mdash;&ndash; | :&mdash;&mdash;&mdash;&ndash; |
+| UART1    | TXD1   | A1              | IO25         |
+|          | RXD1   | A2              | IO26         |</p>
 <p>Arduinoスケッチの設定例</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">HardwareSerial</span> <span style="color:#000">Serial1</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// UART1 (RX=9, TX=10)
 </span><span style="color:#8f5902;font-style:italic"></span>
@@ -3542,62 +3470,15 @@ Arduinoピン名称A1、A2は、Wi-Fiを使用する場合(WiFi.hをインクル
 </code></pre></div><br>
 <h2 id="タッチセンサ">タッチセンサ</h2>
 <p>ESP32は静電容量式タッチセンサの機能を持っています。
-配線の容量によって値が変わるので閾値の調整が必要です。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">Leafonyピン番号</th>
-<th style="text-align:left">Arduinoピン名称</th>
-<th style="text-align:left">ESP32 IO番号</th>
-<th style="text-align:left">タッチセンサ番号</th>
-<th style="text-align:left">備考</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">7</td>
-<td style="text-align:left">D6</td>
-<td style="text-align:left">IO14</td>
-<td style="text-align:left">T6</td>
-<td style="text-align:left">－</td>
-</tr>
-<tr>
-<td style="text-align:left">9</td>
-<td style="text-align:left">D7</td>
-<td style="text-align:left">IO15</td>
-<td style="text-align:left">T3</td>
-<td style="text-align:left">－</td>
-</tr>
-<tr>
-<td style="text-align:left">22</td>
-<td style="text-align:left">D2</td>
-<td style="text-align:left">IO4</td>
-<td style="text-align:left">T0</td>
-<td style="text-align:left">－</td>
-</tr>
-<tr>
-<td style="text-align:left">24</td>
-<td style="text-align:left">D3</td>
-<td style="text-align:left">IO27</td>
-<td style="text-align:left">T7</td>
-<td style="text-align:left">ESP32 Wi-Fi Kitでは使用不可</td>
-</tr>
-<tr>
-<td style="text-align:left">26</td>
-<td style="text-align:left">D4</td>
-<td style="text-align:left">IO12</td>
-<td style="text-align:left">T5</td>
-<td style="text-align:left">－</td>
-</tr>
-<tr>
-<td style="text-align:left">28</td>
-<td style="text-align:left">D5</td>
-<td style="text-align:left">IO13</td>
-<td style="text-align:left">T4</td>
-<td style="text-align:left">－</td>
-</tr>
-</tbody>
-</table>
+配線の容量によって値が変わるので閾値の調整が必要です。
+| Leafonyピン番号 | Arduinoピン名称 | ESP32 IO番号 | タッチセンサ番号 | 備考                        |
+| :&mdash;&mdash;&mdash;&mdash;&ndash; | :&mdash;&mdash;&mdash;&mdash;&ndash; | :&mdash;&mdash;&mdash;&ndash; | :&mdash;&mdash;&mdash;&mdash;&mdash; | :&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash; |
+| 7               | D6              | IO14         | T6               | －                          |
+| 9               | D7              | IO15         | T3               | －                          |
+| 22              | D2              | IO4          | T0               | －                          |
+| 24              | D3              | IO27         | T7               | ESP32 Wi-Fi Kitでは使用不可 |
+| 26              | D4              | IO12         | T5               | －                          |
+| 28              | D5              | IO13         | T4               | －                          |</p>
 
         <div class="section-index">
     
