@@ -84,7 +84,7 @@ V2.5.0は動かないので注意してください。&lt;/p&gt;
 &lt;p&gt;これでSTM32 MCUリーフが使えるようになります。
 &lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;マイコンボードに書き込む&#34;&gt;マイコンボードに書き込む&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_tips.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_tips.jpg&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_tips.jpg&#34; width=&#34;450&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;STM32 MCUリーフの書き込みスイッチをProgramにします。すると赤LEDが点灯します。
 Arduino IDEのマイコンボードに書き込むボタンをクリックします。
 正常に書き込まれた場合は &lt;code&gt;Start operation achieved successfully&lt;/code&gt;と表示されます。
