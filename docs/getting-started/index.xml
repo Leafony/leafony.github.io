@@ -45,7 +45,7 @@
 &lt;h2 id=&#34;セットアップ&#34;&gt;セットアップ&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Basic KitにCR2032コイン電池を挿入し、電源スイッチをONにする。
-&lt;br&gt; 
+&lt;br&gt;
 &lt;img src=&#34;quick_basic_assemble.png&#34; width=&#34;400&#34;&gt;&lt;/img&gt;
 &lt;br&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -147,7 +147,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leafony_AC02&lt;/code&gt;を選択し、&lt;code&gt;Pair&lt;/code&gt;ボタンを押す。&lt;br&gt;
-&lt;br&gt; 
+&lt;br&gt;
 &lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -356,6 +356,7 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
         
         &lt;p&gt;まず最初に「&lt;a href=&#34;https://docs.leafony.com/docs/environment/stm32&#34; target=&#34;_blank&#34;&gt;STM32 MCU のArduino IDE設定&lt;/a&gt;」を参照してArduino IDEの設定を行います。
 &lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Arduno IDEでSTM32 MCUリーフを使う場合の注意点は、「&lt;a href=&#34;https://docs.leafony.com/docs/environment/stm32/stm32_notice/&#34; target=&#34;_blank&#34;&gt;STM32を使用する場合の注意点&lt;/a&gt;」を参照してください。&lt;/p&gt;
 &lt;p&gt;Beginner Examplesの「&lt;a href=&#34;https://docs.leafony.com/docs/examples/#stm32-mcu-examples&#34; target=&#34;_blank&#34;&gt;STM32 MCU Examples&lt;/a&gt;」を参照して、簡単なサンプルアプリを書き込んで実行してみましょう。&lt;/p&gt;
 &lt;p&gt;なれてきたら、Advanced Examplesの「&lt;a href=&#34;https://docs.leafony.com/docs/examples/#stm32-mcu-examples-1&#34; target=&#34;_blank&#34;&gt;STM32 MCU Examples&lt;/a&gt;」を参照して、応用例のサンプルアプリを書き込んで実行してみましょう。&lt;/p&gt;
 
