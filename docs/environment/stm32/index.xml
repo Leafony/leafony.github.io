@@ -31,15 +31,32 @@
 &lt;/ul&gt;
 &lt;p&gt;Arduino IDEはインストールしてある前提です。&lt;/p&gt;
 &lt;h2 id=&#34;マイコンボードの設定&#34;&gt;マイコンボードの設定&lt;/h2&gt;
-&lt;p&gt;STM32 MCUリーフをArduino IDEで使用するには、STM32 Coresのインストールが必要です。&lt;/p&gt;
-&lt;h3 id=&#34;arduino-ideのファイル--環境設定を開き追加のボードマネージャのurlに下記urlを入力してください&#34;&gt;Arduino IDEの&lt;code&gt;ファイル → 環境設定&lt;/code&gt;を開き、&lt;code&gt;追加のボードマネージャのURL:&lt;/code&gt;に、下記URLを入力してください。&lt;/h3&gt;
+&lt;p&gt;STM32 MCUリーフをArduino IDEで使用するには、STM32 Coresのインストールが必要です。
+STM32 Coresの詳細は、&lt;a href=&#34;https://github.com/stm32duino/Arduino_Core_STM32&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;を参照してください。&lt;/p&gt;
+&lt;p&gt;Arduino IDEの&lt;code&gt;ファイル → 環境設定&lt;/code&gt;を開き、&lt;code&gt;追加のボードマネージャのURL:&lt;/code&gt;に、下記URLを入力してください。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./stm32cores1.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
-&lt;h3 id=&#34;ツールボードボードマネージャを選択しstm32-coresを検索しインストールのボタンを押しましょう&#34;&gt;&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt;を選択し、STM32 Coresを検索し、&lt;code&gt;インストール&lt;/code&gt;のボタンを押しましょう。&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt;を選択し、STM32 Coresを検索し、&lt;code&gt;インストール&lt;/code&gt;のボタンを押しましょう。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./stm32cores2.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
-&lt;p&gt;STM32 Coresの詳細は、&lt;a href=&#34;https://github.com/stm32duino/Arduino_Core_STM32&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;を参照してください。&lt;/p&gt;
-&lt;h3 id=&#34;stm32cubeprogrammer-software-v240をインストールすればstm32-mcuが使えるようになります&#34;&gt;STM32CubeProgrammer software V2.4.0をインストールすれば、STM32 MCUが使えるようになります。&lt;/h3&gt;
-&lt;p&gt;V2.5.0は動かないので注意してください。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ツール → ボード→ STM32 Boards (Selected from submenu)→ Nucleo-64&lt;/code&gt; をクリックします。
+&lt;img src=&#34;./stm32boards1.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;code&gt;ツール → Board part number: *****→ Nucleo L452RE&lt;/code&gt; をクリックします。
+&lt;img src=&#34;./stm32boards2.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;code&gt;ツール → Upload method: ***** → STM32CubeProgrammer(Serial)&lt;/code&gt; をクリックします。
+&lt;img src=&#34;./stm32boards3.png&#34;&gt;&lt;/img&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;code&gt;ツール → シリアルポート&lt;/code&gt;から、Leafonyが接続されているシリアルポートを選択&lt;/p&gt;
+&lt;img src=&#34;./stm32serial.jpg&#34; width=&#34;640&#34;&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;p&gt;STM32 MCUに書き込むためには、STM32CubeProgrammer software V2.4.0をインストールする必要があります。
+V2.5.0は動かないので注意してください。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Get Software&lt;/code&gt;ボタンをクリックします。
 &lt;img src=&#34;./stm32cores3.png&#34;&gt;&lt;/img&gt;
 &lt;br&gt;
@@ -64,36 +81,22 @@
 &lt;br&gt;
 登録したアドレスにメールが届くので&lt;code&gt;Download now&lt;/code&gt;をクリックしてダウンロードします。&lt;br&gt;
 &lt;img src=&#34;./stm32cores8.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
-&lt;h2 id=&#34;マイコンボードへの書き込み&#34;&gt;マイコンボードへの書き込み&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;ツール → ボード→ STM32 Boards (Selected from submenu)→ Nucleo-64&lt;/code&gt; をクリックします。
-&lt;img src=&#34;./stm32boards1.png&#34;&gt;&lt;/img&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;code&gt;ツール → Board part number: *****→ Nucleo L452RE&lt;/code&gt; をクリックします。
-&lt;img src=&#34;./stm32boards2.png&#34;&gt;&lt;/img&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;code&gt;ツール → Upload method: ***** → STM32CubeProgrammer(Serial)&lt;/code&gt; をクリックします。
-&lt;img src=&#34;./stm32boards3.png&#34;&gt;&lt;/img&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;code&gt;ツール → シリアルポート&lt;/code&gt;から、Leafonyが接続されているシリアルポートを選択&lt;/p&gt;
-&lt;img src=&#34;./stm32serial.jpg&#34; width=&#34;640&#34;&gt;
-&lt;br&gt;
-これでSTM32 MCUリーフが使えるようになります。
+&lt;p&gt;これでSTM32 MCUリーフが使えるようになります。
+&lt;br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;マイコンボードに書き込む&#34;&gt;マイコンボードに書き込む&lt;/h2&gt;
-&lt;p&gt;STM32 MCUリーフの書き込みスイッチをOnにします。すると赤LEDが点灯します。
+&lt;p&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_tips.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;STM32 MCUリーフの書き込みスイッチをProgramにします。すると赤LEDが点灯します。
 Arduino IDEのマイコンボードに書き込むボタンをクリックします。
 正常に書き込まれた場合は &lt;code&gt;Start operation achieved successfully&lt;/code&gt;と表示されます。
 &lt;img src=&#34;./operation1.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;p&gt;書き込みが完了したら、
-STM32 MCUリーフの書き込みスイッチをOffにしてください。すると赤LEDが消灯します。
+STM32 MCUリーフの書き込みスイッチをRunにしてください。すると赤LEDが消灯します。
 STM32 MCUリーフのリセットスイッチを押してください。
 &lt;br&gt;
 &lt;br&gt;
-書き込みスイッチをOnにしないで書き込みを行った場合は
+書き込みスイッチをProgramにしないで書き込みを行った場合は
 &lt;code&gt;ボードへの書き込みが完了しました&lt;/code&gt;と表示されますが、下部に&lt;code&gt;Timeout error occured&lt;/code&gt;と表示されます。
-書き込みスイッチをOnにしていて&lt;code&gt;Timeout error occured&lt;/code&gt;が表示された場合は、リセットスイッチを押して再度マイコンボードに書き込むボタンをクリックします。
+書き込みスイッチをProgramにしていて&lt;code&gt;Timeout error occured&lt;/code&gt;が表示された場合は、リセットスイッチを押して再度マイコンボードに書き込むボタンをクリックします。
 &lt;img src=&#34;./operation2.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ライブラリのインストール&#34;&gt;ライブラリのインストール&lt;/h2&gt;
 &lt;p&gt;一部のリーフを使用するには、追加のライブラリをインストールする必要があります。&lt;br&gt;
@@ -174,7 +177,6 @@ STM32 MCUリーフのリセットスイッチを押してください。
 &lt;h3 id=&#34;3-ライブラリをインクルード&#34;&gt;3. ライブラリをインクルード&lt;/h3&gt;
 &lt;p&gt;Arduinoを立ち上げ、&lt;code&gt;スケッチ → ライブラリをインクルード → ZIP形式のライブラリをインストール&lt;/code&gt;の順に選択して、先程ダウンロードしたZIPファイルを読み込みましょう。&lt;/p&gt;
 &lt;img src=&#34;IDE_libinclude.png&#34; width=&#34;640&#34;&gt;  
-&lt;br&gt;
 &lt;br&gt;
 
       </description>
@@ -333,22 +335,22 @@ Leafonyとを開発ツールはSWDで接続します。&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;　SWDコネクタの仕様&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;　SWDコネクタの仕様&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;コネクタ型番&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;FTSH-105-01-L-D&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;コネクタ型番&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;FTSH-105-01-L-D&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;ピン数&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;10&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;ピン数&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;10&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;ピンピッチ&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;1.27mm&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;ピンピッチ&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1.27mm&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
