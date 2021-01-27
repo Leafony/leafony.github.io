@@ -29,10 +29,15 @@
 &lt;li&gt;USBリーフ&lt;/li&gt;
 &lt;li&gt;PC (Windows、Mac OS X 、または Linux)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Arduino IDEはインストールしてある前提です。&lt;/p&gt;
-&lt;h2 id=&#34;マイコンボードの設定&#34;&gt;マイコンボードの設定&lt;/h2&gt;
-&lt;p&gt;STM32 MCUリーフをArduino IDEで使用するには、STM32 Coresのインストールが必要です。
-STM32 Coresの詳細は、&lt;a href=&#34;https://github.com/stm32duino/Arduino_Core_STM32&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;を参照してください。&lt;/p&gt;
+&lt;p&gt;Arduino IDEはインストールしてある前提です。
+&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pcと接続&#34;&gt;PCと接続&lt;/h2&gt;
+&lt;p&gt;USBケーブルでPCと接続しましょう。&lt;br&gt;&lt;/p&gt;
+&lt;img src=&#34;./stm32_assemble.jpg&#34; width=&#34;430&#34;&gt;
+&lt;br&gt;&lt;br&gt;
+## マイコンボードの設定
+STM32 MCUリーフをArduino IDEで使用するには、STM32 Coresのインストールが必要です。
+STM32 Coresの詳細は、&lt;a href=&#34;https://github.com/stm32duino/Arduino_Core_STM32&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;を参照してください。
 &lt;p&gt;Arduino IDEの&lt;code&gt;ファイル → 環境設定&lt;/code&gt;を開き、&lt;code&gt;追加のボードマネージャのURL:&lt;/code&gt;に、下記URLを入力してください。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./stm32cores1.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;

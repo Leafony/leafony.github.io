@@ -132,7 +132,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.e5b79652dcab937fed2c5fda377b8a5af583bf383842864ee1cd0b7cf0f57813bdbae75c05ea68005cdcdfb00911079222e2bd5edf9c2c52675556c13f0f9607.json"
+  data-offline-search-index-json-src="/offline-search-index.b0b97dcd602fde7c631c6c33f7d60e675e469e33097a47af674531b9ff5a20276c362504a94c5511262d6c8dd557e0a78b81d04b00a1db91f12be07d7a66abb0.json"
   data-offline-search-base-href="/"
 >
 
@@ -162,7 +162,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.e5b79652dcab937fed2c5fda377b8a5af583bf383842864ee1cd0b7cf0f57813bdbae75c05ea68005cdcdfb00911079222e2bd5edf9c2c52675556c13f0f9607.json"
+  data-offline-search-index-json-src="/offline-search-index.b0b97dcd602fde7c631c6c33f7d60e675e469e33097a47af674531b9ff5a20276c362504a94c5511262d6c8dd557e0a78b81d04b00a1db91f12be07d7a66abb0.json"
   data-offline-search-base-href="/"
 >
 
@@ -3334,7 +3334,7 @@ if (!doNotTrack) {
 <nav id="TableOfContents">
   <ul>
     <li><a href="#用意するもの">用意するもの</a></li>
-    <li><a href="#マイコンボードの設定">マイコンボードの設定</a></li>
+    <li><a href="#pcと接続">PCと接続</a></li>
     <li><a href="#マイコンボードに書き込む">マイコンボードに書き込む</a></li>
     <li><a href="#ライブラリのインストール">ライブラリのインストール</a>
       <ul>
@@ -3409,10 +3409,15 @@ if (!doNotTrack) {
 <li>USBリーフ</li>
 <li>PC (Windows、Mac OS X 、または Linux)</li>
 </ul>
-<p>Arduino IDEはインストールしてある前提です。</p>
-<h2 id="マイコンボードの設定">マイコンボードの設定</h2>
-<p>STM32 MCUリーフをArduino IDEで使用するには、STM32 Coresのインストールが必要です。
-STM32 Coresの詳細は、<a href="https://github.com/stm32duino/Arduino_Core_STM32" target="_blank">こちら</a>を参照してください。</p>
+<p>Arduino IDEはインストールしてある前提です。
+<br></p>
+<h2 id="pcと接続">PCと接続</h2>
+<p>USBケーブルでPCと接続しましょう。<br></p>
+<img src="./stm32_assemble.jpg" width="430">
+<br><br>
+## マイコンボードの設定
+STM32 MCUリーフをArduino IDEで使用するには、STM32 Coresのインストールが必要です。
+STM32 Coresの詳細は、<a href="https://github.com/stm32duino/Arduino_Core_STM32" target="_blank">こちら</a>を参照してください。
 <p>Arduino IDEの<code>ファイル → 環境設定</code>を開き、<code>追加のボードマネージャのURL:</code>に、下記URLを入力してください。</p>
 <p><code>https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json</code></p>
 <p><img src="./stm32cores1.png"></img></p>
