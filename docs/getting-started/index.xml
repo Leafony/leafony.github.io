@@ -346,7 +346,7 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
     </item>
     
     <item>
-      <title>Docs: STM32 MCU スタートガイド(仮)</title>
+      <title>Docs: STM32 MCU スタートガイド</title>
       <link>https://docs.leafony.com/docs/getting-started/stm32/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -354,13 +354,108 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
       <description>
         
         
-        &lt;p&gt;STM32 MCUリーフを使ったサンプルアプリを用意しています。以下の手順に従って、トライして下さい。&lt;/p&gt;
-&lt;h2 id=&#34;arudiono-ide設定&#34;&gt;Arudiono IDE設定&lt;/h2&gt;
-&lt;p&gt;「&lt;a href=&#34;https://docs.leafony.com/docs/environment/stm32&#34; target=&#34;_blank&#34;&gt;STM32 MCU のArduino IDE設定&lt;/a&gt;」を参照してArduino IDEの設定を行います。
-Arduno IDEでSTM32 MCUリーフを使う場合の注意点は、「&lt;a href=&#34;https://docs.leafony.com/docs/environment/stm32/stm32_notice/&#34; target=&#34;_blank&#34;&gt;STM32を使用する場合の注意点&lt;/a&gt;」を参照してください。&lt;/p&gt;
-&lt;h2 id=&#34;サンプルアプリ応用&#34;&gt;サンプルアプリ・応用&lt;/h2&gt;
-&lt;p&gt;Beginner Examplesの「&lt;a href=&#34;https://docs.leafony.com/docs/examples/#stm32-mcu-examples&#34; target=&#34;_blank&#34;&gt;STM32 MCU Examples&lt;/a&gt;」を参照して、簡単なサンプルアプリを書き込んで実行してみましょう。&lt;/p&gt;
-&lt;p&gt;次に、Advanced Examplesの「&lt;a href=&#34;https://docs.leafony.com/docs/examples/#stm32-mcu-examples-1&#34; target=&#34;_blank&#34;&gt;STM32 MCU Examples&lt;/a&gt;」を参照して、応用例のサンプルアプリを書き込んでトライしてみて下さい。&lt;/p&gt;
+        &lt;p&gt;以下の手順に従えば、AVR MCUリーフと同じ様に、Arduinoの環境で簡単に開発が出来ます。STM32 MCUリーフのサンプルアプリ・応用を用意しましたので、トライしてみて下さい。&lt;/p&gt;
+&lt;h2 id=&#34;arudiono-ideの設定&#34;&gt;Arudiono IDEの設定&lt;/h2&gt;
+&lt;p&gt;まずは、STM32 MCUリーフの&lt;a href=&#34;https://docs.leafony.com/docs/environment/stm32/arduino_ide/&#34; target=&#34;_blank&#34;&gt;Arduino のIDE設定&lt;/a&gt;を参照して、開発環境を整備して下さい。&lt;/p&gt;
+&lt;h2 id=&#34;スケッチを書き込み時の注意点&#34;&gt;スケッチを書き込み時の注意点&lt;/h2&gt;
+&lt;p&gt;AVR MCUリーフの場合と、異なる点を纏めましたので参考にして下さい。&lt;/p&gt;
+&lt;h3 id=&#34;ピンの指定&#34;&gt;ピンの指定&lt;/h3&gt;
+&lt;p&gt;STM32 MCUのピン配置は、Nucleo L452REと異なっているので、ピンを指定する時、名前(Name)は使用することは出来ません。&lt;strong&gt;STM32 MCUリーフは、ポート名(Port)でピンを指定して下さい&lt;/strong&gt;。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_pinassign.png&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_pinassign.png&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ライブラリを使用時の注意点&#34;&gt;ライブラリを使用時の注意点&lt;/h2&gt;
+&lt;p&gt;タイマ割り込みライブラリ(MsTimer2.h)を除いた以下のライブラリ全てが、そのまま使用出来ます。&lt;/br&gt;&lt;/p&gt;
+&lt;table class=&#34;table-hover&#34;&gt;
+  &lt;thread&gt;
+    &lt;tr&gt;
+      &lt;th&gt;リーフ名&lt;/th&gt;
+      &lt;th&gt;必要なライブラリ名&lt;/th&gt;
+      &lt;th&gt;推奨バージョン&lt;/th&gt;
+      &lt;th&gt;説明&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thread&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;BLE&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/Leafony/TBGLib&#34; target=&#34;_blank&#34;&gt;TBGLib&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;Bluetoothライブラリ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td rowspan=6&gt;4-Sensors&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_Sensor&#34; target=&#34;_blank&#34;&gt;Adafruit_Sensor.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;ユニファイドセンサドライバ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_BusIO&#34; target=&#34;_blank&#34;&gt;Adafruit_BusIO_Register.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;Bus IOライブラリ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/ameltech/sme-hts221-library&#34; target=&#34;_blank&#34;&gt;HTS221.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;温湿度センサライブラリ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_HTS221&#34; target=&#34;_blank&#34;&gt;Adafruit_HTS221.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;Adafruit温湿度センサライブラリ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/closedcube/ClosedCube_OPT3001_Arduino&#34; target=&#34;_blank&#34;&gt;ClosedCube_OPT3001.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;照度センサライブラリ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_LIS3DH/tree/1.1.2&#34; target=&#34;_blank&#34;&gt;Adafruit_LIS3DH.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;1.1.2&lt;/td&gt;
+      &lt;td&gt;加速度センサライブラリ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;LCD&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/tomozh/arduino_ST7032&#34; target=&#34;_blank&#34;&gt;ST7032.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;LCDライブラリ&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;strike&gt;AVR MCU &lt;/strike&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/PaulStoffregen/MsTimer2&#34; target=&#34;_blank&#34;&gt; &lt;strike&gt;MsTimer2.h &lt;/strike&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;strike&gt;タイマ割り込みライブラリ &lt;/strike&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RTC&amp;MicroSD&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/RTClib&#34; target=&#34;_blank&#34;&gt;RTClib.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;RTCライブラリ&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;タイマー割り込みの使用方法&#34;&gt;タイマー割り込みの使用方法&lt;/h3&gt;
+&lt;p&gt;HardwareTimer等を使用で出来ます。使用例を以下に、記載します。詳細は&lt;a href=&#34;https://github.com/stm32duino/wiki/wiki/HardwareTimer-library&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;
+&lt;br&gt;
+&lt;br&gt;
+初期設定&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;HardwareTimer&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;HardwareTimer&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;TIM2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+
+  &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;setOverflow&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LOOP_INTERVAL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;MICROSEC_FORMAT&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 125ms
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;attachInterrupt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;intTimer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;resume&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+割り込みルーチン
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;intTimer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;){&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;bInterval&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+　&lt;span style=&#34;color:#a40000&#34;&gt;：&lt;/span&gt;
+　&lt;span style=&#34;color:#a40000&#34;&gt;：&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
+&lt;a href=&#34;https://docs.leafony.com/docs/examples/&#34;&gt;サンプルアプリ&lt;/a&gt;にあるプログラムを書き込んでみましょう。
+&lt;/div&gt;
+
+&lt;br&gt;
 
       </description>
     </item>
