@@ -94,6 +94,7 @@ V2.5.0は動かないので注意してください。(Windows 64bitのV2.4.0と
 Arduino IDEのマイコンボードに書き込むボタンをクリックします。
 正常に書き込まれた場合は &lt;code&gt;Start operation achieved successfully&lt;/code&gt;と表示されます。
 &lt;img src=&#34;./operation1.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;コンパイルが完了して書き込みを行うときの表示全体は&lt;a href=&#34;./stm32prog.jpg&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;になります。これが表示されない場合は書き込みが行われていません。&lt;/p&gt;
 &lt;p&gt;書き込みが完了したら、
 STM32 MCUリーフの書き込みスイッチをRunにしてください。すると赤LEDが消灯します。
 STM32 MCUリーフのリセットスイッチを押してください。
