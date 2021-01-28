@@ -60,8 +60,8 @@ STM32 Coresの詳細は、&lt;a href=&#34;https://github.com/stm32duino/Arduino_
 &lt;br&gt;
 &lt;br&gt;
 &lt;br&gt;
-&lt;p&gt;STM32 MCUに書き込むためには、STM32CubeProgrammer software V2.4.0をインストールする必要があります。
-V2.5.0は動かないので注意してください。&lt;/p&gt;
+&lt;p&gt;STM32 MCUに書き込むためには、&lt;a href=&#34;https://www.st.com/ja/development-tools/stm32cubeprog.html&#34;&gt;STM32CubeProgrammer software&lt;/a&gt;をインストールする必要があります。
+V2.5.0は動かないので注意してください。(Windows 64bitのV2.4.0とV2.6.0で動作確認しています)&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;Get Software&lt;/code&gt;ボタンをクリックします。
 &lt;img src=&#34;./stm32cores3.png&#34;&gt;&lt;/img&gt;
 &lt;br&gt;
@@ -340,22 +340,22 @@ Leafonyとを開発ツールはSWDで接続します。&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;　SWDコネクタの仕様&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;　SWDコネクタの仕様&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;コネクタ型番&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;FTSH-105-01-L-D&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;コネクタ型番&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;FTSH-105-01-L-D&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;ピン数&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;10&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;ピン数&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;10&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;ピンピッチ&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;1.27mm&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;ピンピッチ&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1.27mm&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
