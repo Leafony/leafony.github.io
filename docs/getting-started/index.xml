@@ -357,12 +357,12 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
         &lt;p&gt;以下の手順に従えば、AVR MCUリーフと同じ様に、Arduinoの環境で簡単に開発が出来ます。STM32 MCUリーフのサンプルアプリ・応用を用意しましたので、トライしてみて下さい。&lt;/p&gt;
 &lt;h2 id=&#34;arudiono-ideの設定&#34;&gt;Arudiono IDEの設定&lt;/h2&gt;
 &lt;p&gt;まずは、STM32 MCUリーフの&lt;a href=&#34;https://docs.leafony.com/docs/environment/stm32/arduino_ide/&#34; target=&#34;_blank&#34;&gt;Arduino のIDE設定&lt;/a&gt;を参照して、開発環境を整備して下さい。&lt;/p&gt;
-&lt;h2 id=&#34;スケッチを書き込み時の注意点&#34;&gt;スケッチを書き込み時の注意点&lt;/h2&gt;
+&lt;h2 id=&#34;スケッチの注意点&#34;&gt;スケッチの注意点&lt;/h2&gt;
 &lt;p&gt;AVR MCUリーフの場合と、異なる点を纏めましたので参考にして下さい。&lt;/p&gt;
 &lt;h3 id=&#34;ピンの指定&#34;&gt;ピンの指定&lt;/h3&gt;
-&lt;p&gt;STM32 MCUのピン配置は、Nucleo L452REと異なっているので、ピンを指定する時、名前(Name)は使用することは出来ません。&lt;strong&gt;STM32 MCUリーフは、ポート名(Port)でピンを指定して下さい&lt;/strong&gt;。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;STM32 MCUのピン配置は、Nucleo L452REと異なっているので、ピンを指定する時、名前(Name)は使用することは出来ません。&lt;strong&gt;STM32 MCUリーフは、ポート(Port)でピンを指定して下さい&lt;/strong&gt;。&lt;/br&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_pinassign.png&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_pinassign.png&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ライブラリを使用時の注意点&#34;&gt;ライブラリを使用時の注意点&lt;/h2&gt;
+&lt;h2 id=&#34;ライブラリの注意点&#34;&gt;ライブラリの注意点&lt;/h2&gt;
 &lt;p&gt;タイマ割り込みライブラリ(MsTimer2.h)を除いた以下のライブラリ全てが、そのまま使用出来ます。&lt;/br&gt;&lt;/p&gt;
 &lt;table class=&#34;table-hover&#34;&gt;
   &lt;thread&gt;
@@ -441,8 +441,7 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
   &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;setOverflow&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LOOP_INTERVAL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;MICROSEC_FORMAT&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 125ms
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;attachInterrupt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;intTimer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;resume&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
-割り込みルーチン
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;割り込みルーチン&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;intTimer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;){&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;bInterval&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
 　&lt;span style=&#34;color:#a40000&#34;&gt;：&lt;/span&gt;
@@ -455,7 +454,6 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 &lt;a href=&#34;https://docs.leafony.com/docs/examples/&#34;&gt;サンプルアプリ&lt;/a&gt;にあるプログラムを書き込んでみましょう。
 &lt;/div&gt;
 
-&lt;br&gt;
 
       </description>
     </item>

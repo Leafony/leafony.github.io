@@ -22,168 +22,83 @@
       <description>
         
         
-        &lt;p&gt;以下の手順で STM32 MCU 開発環境の設定を行いましょう。&lt;/p&gt;
+        &lt;p&gt;以下の手順で、STM32 MCU 開発環境の設定を行いましょう。&lt;/p&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;STM32 MCUリーフ&lt;/li&gt;
 &lt;li&gt;USBリーフ&lt;/li&gt;
 &lt;li&gt;PC (Windows、Mac OS X 、または Linux)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Arduino IDEはインストールしてある前提です。
-&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;arduino-ideのインストール&#34;&gt;Arduino IDEのインストール&lt;/h2&gt;
+&lt;p&gt;Arduino IDEのインストール方法は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#arduino-ide%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;を参照してください。&lt;/p&gt;
 &lt;h2 id=&#34;pcと接続&#34;&gt;PCと接続&lt;/h2&gt;
 &lt;p&gt;USBケーブルでPCと接続しましょう。&lt;br&gt;&lt;/p&gt;
 &lt;img src=&#34;./stm32_assemble.jpg&#34; width=&#34;430&#34;&gt;
-&lt;br&gt;&lt;br&gt;
-## マイコンボードの設定
-STM32 MCUリーフをArduino IDEで使用するには、STM32 Coresのインストールが必要です。
-STM32 Coresの詳細は、&lt;a href=&#34;https://github.com/stm32duino/Arduino_Core_STM32&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;を参照してください。
-&lt;p&gt;Arduino IDEの&lt;code&gt;ファイル → 環境設定&lt;/code&gt;を開き、&lt;code&gt;追加のボードマネージャのURL:&lt;/code&gt;に、下記URLを入力してください。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./stm32cores1.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt;を選択し、STM32 Coresを検索し、&lt;code&gt;インストール&lt;/code&gt;のボタンを押しましょう。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./stm32cores2.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;ツール → ボード→ STM32 Boards (Selected from submenu)→ Nucleo-64&lt;/code&gt; をクリックします。
-&lt;img src=&#34;./stm32boards1.png&#34;&gt;&lt;/img&gt;
 &lt;br&gt;
-&lt;br&gt;
-&lt;code&gt;ツール → Board part number: *****→ Nucleo L452RE&lt;/code&gt; をクリックします。
-&lt;img src=&#34;./stm32boards2.png&#34;&gt;&lt;/img&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;code&gt;ツール → Upload method: ***** → STM32CubeProgrammer(Serial)&lt;/code&gt; をクリックします。
-&lt;img src=&#34;./stm32boards3.png&#34;&gt;&lt;/img&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;code&gt;ツール → シリアルポート&lt;/code&gt;から、Leafonyが接続されているシリアルポートを選択&lt;/p&gt;
-&lt;img src=&#34;./stm32serial.jpg&#34; width=&#34;640&#34;&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;p&gt;STM32 MCUに書き込むためには、&lt;a href=&#34;https://www.st.com/ja/development-tools/stm32cubeprog.html&#34; target=&#34;_blank&#34;&gt;STM32CubeProgrammer software&lt;/a&gt;をインストールする必要があります。
-V2.5.0は動かないので注意してください。(Windows 64bitのV2.4.0とV2.6.0で動作確認しています)&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Get Software&lt;/code&gt;ボタンをクリックします。
-&lt;img src=&#34;./stm32cores3.png&#34;&gt;&lt;/img&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;code&gt;Select versions&lt;/code&gt;をクリックして、&lt;code&gt;2.4.0&lt;/code&gt;を選択します。
-&lt;img src=&#34;./stm32cores4.png&#34;&gt;&lt;/img&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;code&gt;ACCEPT&lt;/code&gt;をクリックします。
-&lt;img src=&#34;./stm32cores5.png&#34;&gt;&lt;/img&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;code&gt;名&lt;/code&gt;、&lt;code&gt;姓&lt;/code&gt;、&lt;code&gt;E-mail address&lt;/code&gt;を入力し、&lt;br&gt;
-&lt;code&gt;□I have read and understood the Sales Terms &amp;amp; Conditions, Terms of Use and Privacy Policy&lt;/code&gt;&lt;br&gt;
-をチェックして、&lt;code&gt;Download&lt;/code&gt;をクリックします。
-&lt;img src=&#34;./stm32cores6.png&#34;&gt;&lt;/img&gt;
-&lt;br&gt;
-&lt;br&gt;
-下記が表示されます。
-&lt;img src=&#34;./stm32cores7.png&#34;&gt;&lt;/img&gt;
-&lt;br&gt;
-&lt;br&gt;
-登録したアドレスにメールが届くので&lt;code&gt;Download now&lt;/code&gt;をクリックしてダウンロードします。&lt;br&gt;
-&lt;img src=&#34;./stm32cores8.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
-&lt;p&gt;これでSTM32 MCUリーフが使えるようになります。
-&lt;br&gt;&lt;/p&gt;
-&lt;h2 id=&#34;マイコンボードに書き込む&#34;&gt;マイコンボードに書き込む&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_tips.jpg&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_tips.jpg&#34; width=&#34;450&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;STM32 MCUリーフの書き込みスイッチをProgramにします。すると赤LEDが点灯します。
-Arduino IDEのマイコンボードに書き込むボタンをクリックします。
-正常に書き込まれた場合は &lt;code&gt;Start operation achieved successfully&lt;/code&gt;と表示されます。
+&lt;h2 id=&#34;マイコンボードの設定&#34;&gt;マイコンボードの設定&lt;/h2&gt;
+&lt;p&gt;STM32 MCUリーフをArduino IDEで使用するには、STM32 Coresのインストールが必要です。以下の手順で、設定をして下さい。(STM32 Coresの詳細は、&lt;a href=&#34;https://github.com/stm32duino/Arduino_Core_STM32&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Arduino IDEの&lt;code&gt;ファイル → 環境設定&lt;/code&gt;を開き、&lt;code&gt;追加のボードマネージャのURL:&lt;/code&gt;に、下記URLを入力してください。
+&lt;/br&gt;&lt;/br&gt;
+&lt;code&gt;https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json&lt;/code&gt;
+&lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./stm32cores1.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt;を選択し、STM32 Coresを検索し、&lt;code&gt;インストール&lt;/code&gt;のボタンを押ます。&lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./stm32cores2.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ツール → ボード→ STM32 Boards (Selected from submenu)→ Nucleo-64&lt;/code&gt; をクリックします。&lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./stm32boards1.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ツール → Board part number: *****→ Nucleo L452RE&lt;/code&gt; をクリックします。&lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./stm32boards2.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ツール → Upload method: ***** → STM32CubeProgrammer(Serial)&lt;/code&gt; をクリックします。&lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./stm32boards3.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ツール → シリアルポート&lt;/code&gt;から、Leafonyが接続されているシリアルポートを選択します。&lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./stm32serial.jpg&#34; width=&#34;640&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;stm32cubeprogrammer-のインストール&#34;&gt;STM32CubeProgrammer のインストール&lt;/h2&gt;
+&lt;p&gt;STM32 MCUリーフに、プログラムを書き込めるようにするには、STM32CubeProgrammerのインストール&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;が必要です。&lt;a href=&#34;https://www.stmcu.jp/design/sw_dev/pc_soft/58442/&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;を参照してください。&lt;/p&gt;
+&lt;h2 id=&#34;マイコンボードの書き込む&#34;&gt;マイコンボードの書き込む&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;STM32 MCUリーフの&lt;code&gt;プログラムスイッチ&lt;/code&gt;を、プログラム側にするとLEDが点灯します。&lt;/br&gt;
+&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_tips.jpg&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_tips.jpg&#34; width=&#34;450&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;次にスケッチを書き込み、Arduino IDEの&lt;code&gt;マイコンボードに書き込む&lt;/code&gt;をクリックします。正常に書き込まれた場合は &lt;code&gt;Start operation achieved successfully&lt;/code&gt;と表示されます。表示がされない場合&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;は、書き込みが行われていません。(表示全体は&lt;a href=&#34;./stm32prog.jpg&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;）&lt;/br&gt;&lt;/br&gt;
 &lt;img src=&#34;./operation1.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
-&lt;p&gt;コンパイルが完了して書き込みを行うときの表示全体は&lt;a href=&#34;./stm32prog.jpg&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;になります。これが表示されない場合は書き込みが行われていません。&lt;/p&gt;
-&lt;p&gt;書き込みが完了したら、
-STM32 MCUリーフの書き込みスイッチをRunにしてください。すると赤LEDが消灯します。
-STM32 MCUリーフのリセットスイッチを押してください。
-&lt;br&gt;
-&lt;br&gt;
-書き込みスイッチをProgramにしないで書き込みを行った場合は
-&lt;code&gt;ボードへの書き込みが完了しました&lt;/code&gt;と表示されますが、下部に&lt;code&gt;Timeout error occured&lt;/code&gt;と表示されます。
-書き込みスイッチをProgramにしていて&lt;code&gt;Timeout error occured&lt;/code&gt;が表示された場合は、リセットスイッチを押して再度マイコンボードに書き込むボタンをクリックします。
-&lt;img src=&#34;./operation2.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;書き込みが完了したら、STM32 MCUリーフの&lt;code&gt;プログラムスイッチ&lt;/code&gt;を実行（Run)側にするとLEDが消灯します。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;STM32 MCUリーフの&lt;code&gt;リセットスイッチ&lt;/code&gt;を押してください。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&#34;ライブラリのインストール&#34;&gt;ライブラリのインストール&lt;/h2&gt;
-&lt;p&gt;一部のリーフを使用するには、追加のライブラリをインストールする必要があります。&lt;br&gt;
-下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきましょう。&lt;/p&gt;
-&lt;h3 id=&#34;1-使用するライブラリ&#34;&gt;1. 使用するライブラリ&lt;/h3&gt;
-&lt;p&gt;各Kitで使用するライブラリは以下の通りです。&lt;/p&gt;
-&lt;table class=&#34;table-hover&#34;&gt;
-  &lt;thread&gt;
-    &lt;tr&gt;
-      &lt;th&gt;リーフ名&lt;/th&gt;
-      &lt;th&gt;必要なライブラリ名&lt;/th&gt;
-      &lt;th&gt;推奨バージョン&lt;/th&gt;
-      &lt;th&gt;説明&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thread&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;BLE&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/Leafony/TBGLib&#34; target=&#34;_blank&#34;&gt;TBGLib&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;Bluetoothライブラリ&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td rowspan=6&gt;4-Sensors&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_Sensor&#34; target=&#34;_blank&#34;&gt;Adafruit_Sensor.h&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;ユニファイドセンサドライバ&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_BusIO&#34; target=&#34;_blank&#34;&gt;Adafruit_BusIO_Register.h&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;Bus IOライブラリ&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/ameltech/sme-hts221-library&#34; target=&#34;_blank&#34;&gt;HTS221.h&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;温湿度センサライブラリ&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_HTS221&#34; target=&#34;_blank&#34;&gt;Adafruit_HTS221.h&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;Adafruit温湿度センサライブラリ&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/closedcube/ClosedCube_OPT3001_Arduino&#34; target=&#34;_blank&#34;&gt;ClosedCube_OPT3001.h&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;照度センサライブラリ&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_LIS3DH/tree/1.1.2&#34; target=&#34;_blank&#34;&gt;Adafruit_LIS3DH.h&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;1.1.2&lt;/td&gt;
-      &lt;td&gt;加速度センサライブラリ&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;LCD&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/tomozh/arduino_ST7032&#34; target=&#34;_blank&#34;&gt;ST7032.h&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;LCDライブラリ&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;AVR MCU&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/PaulStoffregen/MsTimer2&#34; target=&#34;_blank&#34;&gt;MsTimer2.h&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;タイマ割り込みライブラリ&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;RTC&amp;MicroSD&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/RTClib&#34; target=&#34;_blank&#34;&gt;RTClib.h&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;RTCライブラリ&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h3 id=&#34;2-ライブラリをダウンロード&#34;&gt;2. ライブラリをダウンロード&lt;/h3&gt;
-&lt;p&gt;上記表のリンクをクリックすると、ライブラリのGitHubリポジトリにアクセスします。
-&lt;code&gt;Code → Download ZIP&lt;/code&gt;をクリックし、ライブラリをダウンロードしましょう。&lt;/p&gt;
-&lt;img src=&#34;github_1.png&#34; width=&#34;600&#34;&gt;
-&lt;h3 id=&#34;3-ライブラリをインクルード&#34;&gt;3. ライブラリをインクルード&lt;/h3&gt;
-&lt;p&gt;Arduinoを立ち上げ、&lt;code&gt;スケッチ → ライブラリをインクルード → ZIP形式のライブラリをインストール&lt;/code&gt;の順に選択して、先程ダウンロードしたZIPファイルを読み込みましょう。&lt;/p&gt;
-&lt;img src=&#34;IDE_libinclude.png&#34; width=&#34;640&#34;&gt;  
-&lt;br&gt;
+&lt;p&gt;ライブラリのインストールは、&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;を参照してください。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./operation2.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Windows 64bitのV2.5.0は、動作しません。V2.6.0とV2.4.0は、動作確認済み。 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;プログラムスイッチをProgram側にしないで、書き込みを行った場合も&lt;code&gt;ボードへの書き込みが完了しました&lt;/code&gt;と表示されていますが、画面の下部に&lt;code&gt;Timeout error occured&lt;/code&gt;と表示されています。&lt;/br&gt;&lt;br&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
 
       </description>
     </item>
