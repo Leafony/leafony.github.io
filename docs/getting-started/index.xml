@@ -45,7 +45,7 @@
 &lt;h2 id=&#34;セットアップ&#34;&gt;セットアップ&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Basic KitにCR2032コイン電池を挿入し、電源スイッチをONにする。
-&lt;br&gt;
+&lt;br&gt; 
 &lt;img src=&#34;quick_basic_assemble.png&#34; width=&#34;400&#34;&gt;&lt;/img&gt;
 &lt;br&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -76,7 +76,7 @@
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
-&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic&#34;&gt;開発環境設定&lt;/a&gt;を読んで、Basic Kitにプログラムを書き込んでみましょう。
+&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino&#34;&gt;開発環境設定&lt;/a&gt;を読んで、Basic Kitにプログラムを書き込んでみましょう。
 &lt;/div&gt;
 
 &lt;h3 id=&#34;iphoneまたはipadの場合&#34;&gt;iPhoneまたはiPadの場合&lt;/h3&gt;
@@ -147,7 +147,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leafony_AC02&lt;/code&gt;を選択し、&lt;code&gt;Pair&lt;/code&gt;ボタンを押す。&lt;br&gt;
-&lt;br&gt;
+&lt;br&gt; 
 &lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -295,57 +295,6 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
     </item>
     
     <item>
-      <title>Docs: Leafonyブロック組立</title>
-      <link>https://docs.leafony.com/docs/getting-started/assembly/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.leafony.com/docs/getting-started/assembly/</guid>
-      <description>
-        
-        
-        &lt;p&gt;Leafonyブロックを組み立てるときの注意点について、まとめています。&lt;/p&gt;
-&lt;h2 id=&#34;ネジのしめ方&#34;&gt;ネジのしめ方&lt;/h2&gt;
-&lt;p&gt;導通不良を避けるため、ネジを交互に、きちんとしめて下さい。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;./assembly.png&#34;&gt;&lt;img src=&#34;./assembly.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;コネクタの取り付け取り外し&#34;&gt;コネクタの取り付け・取り外し&lt;/h2&gt;
-&lt;p&gt;リーフ基板にコネクタを取り付ける、または、外す場合は下図のように行ってください。&lt;/p&gt;
-&lt;p&gt;&amp;ndash; 取り付け&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./leafony_connector_assemble.png&#34; alt=&#34;leafony_connector_assemble&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;ndash; 取り外し&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./leafony_connector_teardown.png&#34; alt=&#34;leafony_connector_teardown&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;コネクタが汚れたとき&#34;&gt;コネクタが汚れたとき&lt;/h2&gt;
-&lt;p&gt;コネクタや基板の接点に汚れが付着すると、接続不良が生じることがあります。その場合、無水エタノールを含ませた紙製ウエスで軽く拭いてください。それでも改善しない場合は、コネクタを交換してください。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;./Connector-trouble.png&#34;&gt;&lt;img src=&#34;./Connector-trouble.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: うまく動かないときは</title>
-      <link>https://docs.leafony.com/docs/getting-started/solution/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.leafony.com/docs/getting-started/solution/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;シリアルポートが見つからない&#34;&gt;シリアルポートが見つからない&lt;/h2&gt;
-&lt;p&gt;Arduino IDEでLeafonyのシリアルポートが見つからない場合は、USBシリアル変換IC(FT232)のドライバをインストールしてみましょう。
-&lt;a href=&#34;http://www.ftdichip.com/Drivers/VCP.htm&#34; target=&#34;_blank&#34;&gt;FTDI VCP Driver&lt;/a&gt;からデバイスドライバをダウンロードしてインストールしましょう。&lt;/p&gt;
-&lt;img src=&#34;FTDI_DL.jpg&#34; width=&#34;840&#34;&gt;
-&lt;h2 id=&#34;電源が入らない&#34;&gt;電源が入らない&lt;/h2&gt;
-&lt;p&gt;Leafonyの電源が入らない場合は以下の項目を確かめてみましょう。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;ボタン電池の入れる向き&lt;/li&gt;
-&lt;li&gt;電源スイッチがONになっているか&lt;/li&gt;
-&lt;li&gt;ネジの締まり具合&lt;/li&gt;
-&lt;li&gt;電池の残量が十分にあるか&lt;/li&gt;
-&lt;/ul&gt;
-
-      </description>
-    </item>
-    
-    <item>
       <title>Docs: STM32 MCU スタートガイド</title>
       <link>https://docs.leafony.com/docs/getting-started/stm32/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -431,8 +380,8 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;タイマー割り込みの使用方法&#34;&gt;タイマー割り込みの使用方法&lt;/h3&gt;
-&lt;p&gt;HardwareTimer等を使用で出来ます。使用例を以下に、記載します。詳細は&lt;a href=&#34;https://github.com/stm32duino/wiki/wiki/HardwareTimer-library&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;
+&lt;h3 id=&#34;hardwaretimer&#34;&gt;HardwareTimer&lt;/h3&gt;
+&lt;p&gt;HardwareTimer等を使用で出来ます。使用例を以下に、記載します。詳細は&lt;a href=&#34;https://github.com/stm32duino/wiki/wiki/HardwareTimer-library&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt; 
 &lt;br&gt;
 &lt;br&gt;
 初期設定&lt;/p&gt;
@@ -454,6 +403,57 @@ Chromeのアドレスバーに次のURLを入力し、&lt;code&gt;Experimental W
 &lt;a href=&#34;https://docs.leafony.com/docs/examples/&#34;&gt;サンプルアプリ&lt;/a&gt;にあるプログラムを書き込んでみましょう。
 &lt;/div&gt;
 
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Leafonyブロック組立</title>
+      <link>https://docs.leafony.com/docs/getting-started/assembly/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/getting-started/assembly/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Leafonyブロックを組み立てるときの注意点について、まとめています。&lt;/p&gt;
+&lt;h2 id=&#34;ネジのしめ方&#34;&gt;ネジのしめ方&lt;/h2&gt;
+&lt;p&gt;導通不良を避けるため、ネジを交互に、きちんとしめて下さい。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./assembly.png&#34;&gt;&lt;img src=&#34;./assembly.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;コネクタの取り付け取り外し&#34;&gt;コネクタの取り付け・取り外し&lt;/h2&gt;
+&lt;p&gt;リーフ基板にコネクタを取り付ける、または、外す場合は下図のように行ってください。&lt;/p&gt;
+&lt;p&gt;&amp;ndash; 取り付け&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./leafony_connector_assemble.png&#34; alt=&#34;leafony_connector_assemble&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&amp;ndash; 取り外し&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./leafony_connector_teardown.png&#34; alt=&#34;leafony_connector_teardown&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;コネクタが汚れたとき&#34;&gt;コネクタが汚れたとき&lt;/h2&gt;
+&lt;p&gt;コネクタや基板の接点に汚れが付着すると、接続不良が生じることがあります。その場合、無水エタノールを含ませた紙製ウエスで軽く拭いてください。それでも改善しない場合は、コネクタを交換してください。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./Connector-trouble.png&#34;&gt;&lt;img src=&#34;./Connector-trouble.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: うまく動かないときは</title>
+      <link>https://docs.leafony.com/docs/getting-started/solution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/getting-started/solution/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;シリアルポートが見つからない&#34;&gt;シリアルポートが見つからない&lt;/h2&gt;
+&lt;p&gt;Arduino IDEでLeafonyのシリアルポートが見つからない場合は、USBシリアル変換IC(FT232)のドライバをインストールしてみましょう。
+&lt;a href=&#34;http://www.ftdichip.com/Drivers/VCP.htm&#34; target=&#34;_blank&#34;&gt;FTDI VCP Driver&lt;/a&gt;からデバイスドライバをダウンロードしてインストールしましょう。&lt;/p&gt;
+&lt;img src=&#34;FTDI_DL.jpg&#34; width=&#34;840&#34;&gt;
+&lt;h2 id=&#34;電源が入らない&#34;&gt;電源が入らない&lt;/h2&gt;
+&lt;p&gt;Leafonyの電源が入らない場合は以下の項目を確かめてみましょう。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ボタン電池の入れる向き&lt;/li&gt;
+&lt;li&gt;電源スイッチがONになっているか&lt;/li&gt;
+&lt;li&gt;ネジの締まり具合&lt;/li&gt;
+&lt;li&gt;電池の残量が十分にあるか&lt;/li&gt;
+&lt;/ul&gt;
 
       </description>
     </item>

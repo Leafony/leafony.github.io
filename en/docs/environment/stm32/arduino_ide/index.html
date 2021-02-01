@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -29,8 +29,7 @@
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="Arduino IDE configuration for STM32 MCU">
 <meta itemprop="description" content="Install STM32 Cores in Arduino IDE
-">
-<meta name="twitter:card" content="summary"/>
+"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Arduino IDE configuration for STM32 MCU"/>
 <meta name="twitter:description" content="Install STM32 Cores in Arduino IDE
 "/>
@@ -52,8 +51,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
-<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -132,7 +131,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c9c82c6e572a4b54ee18299e13be0a86efb5334d265dab23a5fdccf561d3aa25747e7a37522d9b46a65ffa80c04a2a64bbec4ff3a4c319b67fdb56ff7d819c7f.json"
+  data-offline-search-index-json-src="/offline-search-index.e314b47929bcf68641f638de7a54645d1b0d4600bf0366b884343b10657797aa715dfb7c6cbe8b0aef7c8a5056fc268016baaafb58cbfa90742c56e3e003e1c7.json"
   data-offline-search-base-href="/"
 >
 
@@ -162,7 +161,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c9c82c6e572a4b54ee18299e13be0a86efb5334d265dab23a5fdccf561d3aa25747e7a37522d9b46a65ffa80c04a2a64bbec4ff3a4c319b67fdb56ff7d819c7f.json"
+  data-offline-search-index-json-src="/offline-search-index.e314b47929bcf68641f638de7a54645d1b0d4600bf0366b884343b10657797aa715dfb7c6cbe8b0aef7c8a5056fc268016baaafb58cbfa90742c56e3e003e1c7.json"
   data-offline-search-base-href="/"
 >
 
@@ -532,6 +531,29 @@ if (!doNotTrack) {
   </li>
   <ul>
     <li class="collapse " id="endocsgetting-startedassembly">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/getting-started/stm32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">STM32 MCU</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsgetting-startedstm32">
       
       
       
@@ -3012,22 +3034,15 @@ if (!doNotTrack) {
 <nav id="TableOfContents">
   <ul>
     <li><a href="#what-to-prepare">What to prepare</a></li>
+    <li><a href="#installing-the-arduino-ide">Installing the Arduino IDE</a></li>
+    <li><a href="#connect-to-pc">Connect to PC</a></li>
     <li><a href="#configuration-of-the-microcontroller-board">Configuration of the microcontroller board</a>
       <ul>
-        <li><a href="#open-the-file--preferences-in-the-arduino-ide-and-enter-the-following-url-in-the-additional-board-manager-url-field">Open the <code>File → Preferences</code> in the Arduino IDE and enter the following URL in the <code>Additional Board Manager URL:</code> field.</a></li>
-        <li><a href="#select-tools---board---board-manager-search-for-stm32-cores-and-press-the-install-button">Select <code>Tools -&gt; Board -&gt; Board Manager</code>, search for STM32 Cores and press the <code>Install</code> button.</a></li>
-        <li><a href="#install-stm32cubeprogrammer-software-v240-and-you-will-be-able-to-use-stm32-mcus">Install STM32CubeProgrammer software V2.4.0 and you will be able to use STM32 MCUs.</a></li>
+        <li><a href="#installing-the-stm32cubeprog">Installing the STM32CubeProg</a></li>
       </ul>
     </li>
-    <li><a href="#configuration-of-the-microcontroller-board-1">Configuration of the microcontroller board</a></li>
     <li><a href="#writing-to-the-microcontroller-board">Writing to the microcontroller board</a></li>
-    <li><a href="#pin-specification">Pin Specification</a></li>
-    <li><a href="#the-difference-between-sketches">The difference between sketches.</a>
-      <ul>
-        <li><a href="#timer">Timer</a></li>
-      </ul>
-    </li>
-    <li><a href="#use-of-swd">Use of SWD</a></li>
+    <li><a href="#installing-libraries">Installing libraries</a></li>
   </ul>
 </nav>
 
@@ -3094,212 +3109,75 @@ if (!doNotTrack) {
 <li>USB Leaf</li>
 <li>PC (Windows, Mac OS X or Linux)</li>
 </ul>
-<p>Arduino IDE is assumed to be installed.</p>
+<h2 id="installing-the-arduino-ide">Installing the Arduino IDE</h2>
+<p>For instructions on how to install the Arduino IDE, please <a href="https://docs.leafony.com/en/docs/environment/avr/arduino/#arduino-ide%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B 9%E3%83%88%E3%83%BC%E3%83%AB" target="_blank">here</a>.</p>
+<h2 id="connect-to-pc">Connect to PC</h2>
+<p>Connect it to your PC with a USB cable.<br></p>
+<img src="./stm32_assemble.jpg" width="430">
+<br>
 <h2 id="configuration-of-the-microcontroller-board">Configuration of the microcontroller board</h2>
-<p>To use the STM32 MCU leaf with the Arduino IDE, the STM32 Cores must be installed.</p>
-<h3 id="open-the-file--preferences-in-the-arduino-ide-and-enter-the-following-url-in-the-additional-board-manager-url-field">Open the <code>File → Preferences</code> in the Arduino IDE and enter the following URL in the <code>Additional Board Manager URL:</code> field.</h3>
-<p><code>https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json</code></p>
-<p><img src="./stm32cores1.png"></img></p>
-<h3 id="select-tools---board---board-manager-search-for-stm32-cores-and-press-the-install-button">Select <code>Tools -&gt; Board -&gt; Board Manager</code>, search for STM32 Cores and press the <code>Install</code> button.</h3>
-<p><img src="./stm32cores2.png"></img></p>
-<p>For more information on STM32 Cores, please see <a href="https://github.com/stm32duino/Arduino_Core_STM32" target="_blank">here</a>.</p>
-<h3 id="install-stm32cubeprogrammer-software-v240-and-you-will-be-able-to-use-stm32-mcus">Install STM32CubeProgrammer software V2.4.0 and you will be able to use STM32 MCUs.</h3>
-<p>Please note that V2.5.0 does not work.</p>
-<p>Click the <code>Get Software</code> button.
-<img src="./stm32cores3.png"></img>
-<br>
-<br>
-Click <code>Select versions</code> and select <code>2.4.0</code>.
-<img src="./stm32cores4.png"></img>
-<br>
-<br>
-Click <code>ACCEPT</code>.
-<img src="./stm32cores5.png"></img>
-<br>
-<br>
-Enter the <code>First Name</code>, <code>Last Name</code> and <code>E-mail address</code>, check <code>□I have read and understood the Sales Terms &amp; Conditions, Terms of Use and Privacy Policy</code> and click <code>Download</code>.
-<img src="./stm32cores6.png"></img>
-<br>
-<br>
-You will see the following.
-<img src="./stm32cores7.png"></img>
-<br>
-<br>
-You will receive an email at the address you registered with, click <code>Download now</code> to download it.<br>
-<img src="./stm32cores8.png"></img></p>
-<h2 id="configuration-of-the-microcontroller-board-1">Configuration of the microcontroller board</h2>
-<p>Click <code>Tool</code> → <code>Board</code>→ <code>STM32 Boards (Selected from submenu)</code>→ <code>Nucleo-64</code> .
-<img src="./stm32boards1.png"></img>
-<br>
-<br>
-Click <code>Tool</code> → <code>Board part number: *****</code>→ <code>Nucleo L452RE</code>.
-<img src="./stm32boards2.png"></img>
-<br>
-<br>
-Click <code>Tool</code> → <code>Upload method: *****</code> → <code>STM32CubeProgrammer(Serial)</code>.
-<img src="./stm32boards3.png"></img>
-<br>
-<br>
-Now you can use the STM32 MCU leaf.</p>
+<p>To use the STM32 MCU leaf with the Arduino IDE, the STM32 Cores must be installed.Please follow the steps below to configure the settings. (For more information about STM32 Cores, please <a href="https://github.com/stm32duino/Arduino_Core_STM32" target="_blank">here</a>)</p>
+<ol>
+<li>Open the <code>File → Preferences</code> in the Arduino IDE and enter the following URL in the <code>Additional Board Manager URL:</code> field.</li>
+</ol>
+<p><code>https://github.com/stm32duino/BoardManagerFiles/raw/master/STM32/package_stm_index.json</code>
+<img src="./stm32cores1.png"></img></p>
+<ol start="2">
+<li>
+<p>Select <code>Tools -&gt; Board -&gt; Board Manager</code>, search for STM32 Cores and press the <code>Install</code> button.
+<img src="./stm32cores2.png"></img></p>
+</li>
+<li>
+<p>Go to <code>Tools → Board→ STM32 Boards (Selected from submenu)→ Nucleo-64</code> .</br></br>
+<img src="./stm32boards1.png"></img></p>
+</li>
+<li>
+<p>Go to <code>Tools → Board part number: *****→ Nucleo L452RE</code> .</br></br>
+<img src="./stm32boards2.png"></img></p>
+</li>
+<li>
+<p>Go to <code>Tools → Upload method: ***** → STM32CubeProgrammer(Serial)</code> .</br></br>
+<img src="./stm32boards3.png"></img></p>
+</li>
+<li>
+<p>Go to <code>Tools → Serial Port</code> and select the serial port to which Leafony is connected.</br></br>
+<img src="./stm32serial.jpg" width="640"></p>
+</li>
+</ol>
+<h3 id="installing-the-stm32cubeprog">Installing the STM32CubeProg</h3>
+<p>To be able to write programs to the STM32 MCU leaf, you need to install STM32CubeProg <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.The STM32CubeProg can be downloaded and installed on your PC <a href="https://www.stmcu.jp/design/sw_dev/pc_soft/58442/" target="_blank">here</a>.</p>
 <h2 id="writing-to-the-microcontroller-board">Writing to the microcontroller board</h2>
-<p>Turn the write switch on the STM32 MCU leaf to On. The red LED will then turn on.
-Click the Write to Arduino IDE microcontroller board button.
-The message <code>Start operation achieved successfully</code> is displayed if the writing was successful.
+<ol>
+<li>
+<p>When the <code>program switch</code> on the STM32 MCU leaf is set to the program side, the LED will light up.</br>
+<a href="/docs/leaf/processor/ap03/ap03_tips.jpg"><img src="/docs/leaf/processor/ap03/ap03_tips.jpg" width="450"></a></p>
+</li>
+<li>
+<p>Next, write a sketch and click <code>write to microcontroller board</code> in the Arduino IDE.If it is written successfully, the message <code>Start operation achieved successfully</code> will be displayed.If the message is not displayed <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, no write operation has been performed.(The entire display is <a href=". /stm32prog.jpg" target="_blank">here</a>)</br></br>
 <img src="./operation1.png"></img></p>
-<p>Once the writing is complete, turn off the write switch on the STM32 MCU leaf.The red LED will turn off.
-The red LED will turn off.Then press the reset switch on the STM32 MCU leaf.
-<br>
-<br>
-If you write without setting the write switch to <code>On</code> The message <code>Writing to the board is completed</code> is displayed, but <code>Timeout error occured</code> is shown at the bottom.
-<img src="./operation2.png"></img></p>
-<h2 id="pin-specification">Pin Specification</h2>
-<p>The pin layout of the STM32 MCU differs from that of the Nucleo L452RE, so please specify the pins to be used in the STM32L452RE&rsquo;s port name.</p>
-<h2 id="the-difference-between-sketches">The difference between sketches.</h2>
-<h3 id="timer">Timer</h3>
-<p>”MsTimer2” for AVR MCU is not available for STM32 MCU.
-You should use HardwareTimer and so on.
-The usage example is as follows.
-Please refer to <a href="https://github.com/stm32duino/wiki/wiki/HardwareTimer-library" target="_blank">here</a> for more details.
-<br>
-<br>
-Initialization</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">HardwareTimer</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">timer2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">HardwareTimer</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">TIM2</span><span style="color:#000;font-weight:bold">);</span>
+</li>
+<li>
+<p>When writing is complete, turn the STM32 MCU leaf&rsquo;s <code>program switch</code> to the Run side to turn off the LED.</p>
+</li>
+<li>
+<p>Press the <code>reset switch</code> on the STM32 MCU leaf.</p>
+</li>
+</ol>
+<h2 id="installing-libraries">Installing libraries</h2>
+<p>To use some of the leaves, you will need to install additional libraries. <a href="https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3% 83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" target="_blank">Here</a> to install all libraries in advance.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>We have confirmed that V2.6.0 and V2.4.0 work on Windows 64bit. However, please note that V2.5.0 will not work. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>When writing without the program switch on the program side, the message <code>Writing to the board is complete</code> is also displayed, but the bottom of the screen shows <code>Timeout error occured while waiting for acknowledgement</code>.</br></br>
+<img src="./operation2_v1.png"></img> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 
-  <span style="color:#000">timer2</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">setOverflow</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LOOP_INTERVAL</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">MICROSEC_FORMAT</span><span style="color:#000;font-weight:bold">);</span>       <span style="color:#8f5902;font-style:italic">// 125ms
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">timer2</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">attachInterrupt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">intTimer</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">timer2</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">resume</span><span style="color:#000;font-weight:bold">();</span>
-</code></pre></div><br>
-<br>
-Interrupt routine
-```c++
-void intTimer(void){
-  bInterval = true;
-　：
-　：
-}
-```
-<h2 id="use-of-swd">Use of SWD</h2>
-<p>By connecting the AX01 Shield, you can use SWD.
-<br>
-<br>
-<img src="./swd_1.png" width="250"></img>
-<br>
-<br></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">　SWD Connector Specifications</th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Model number of the connector</td>
-<td style="text-align:left">FTSH-105-01-L-D</td>
-</tr>
-<tr>
-<td style="text-align:left">Number of pins</td>
-<td style="text-align:left">10</td>
-</tr>
-<tr>
-<td style="text-align:left">pin pitch</td>
-<td style="text-align:left">1.27mm</td>
-</tr>
-</tbody>
-</table>
-<p>pin assignment<br>
-<img src="./swd_2.png" width="250"></img>
-<br>
-<br>
-STLINK-V3SET comes with a cable that connects to the SWD connector of AX01 Shield, allowing you to connect it as it is.
-<br>
-<img src="./swd_3.png"></img>
-<br>
-<br>
-If you have an ST-LINK-V2, you can connect it with a <a href="http://strawberry-linux.com/catalog/items?code=15079" target="_blank">conversion adapter</a>.
-You can also use a conversion adapter to connect to the Nucleo&rsquo;s SWD using a jumper cable or other means.<br>
-<img src="./swd_4.png"></img>
-<br>
-<br>
-If you want to connect to Nucleo&rsquo;s SWD, you can also build your own.<br>
-<a href="http://strawberry-linux.com/catalog/items?code=15079" target="_blank">Half-pitch ribbon cable</a>
-<img src="./swd_5.png" width="100"></img><br>
-<a href="https://akizukidenshi.com/catalog/g/gC-13800/" target="_blank">Half-pitch pin header</a>
-<img src="./swd_6.png" width="100"></img><br>
-<a href="https://akizukidenshi.com/catalog/g/gP-14224/" target="_blank">Pitch Conversion Board</a>
-<img src="./swd_7.png" width="100"></img><br>
-<a href="https://akizukidenshi.com/catalog/g/gC-03786/" target="_blank">Pin-socket</a>
-<img src="./swd_8.png" width="100"></img><br></p>
-<div class="row">
-
-
-
-
-
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_5.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="http://strawberry-linux.com/catalog/items?code=15079" target="_blank">Half-pitch ribbon cable</a></p>
-      
-    </div>
-  </div>
-
-
-
-
-
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_6.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="https://akizukidenshi.com/catalog/g/gC-13800/" target="_blank">Half-pitch pin header</a></p>
-      
-    </div>
-  </div>
-
-
-
-
-
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_7.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="https://akizukidenshi.com/catalog/g/gP-14224/" target="_blank">Pitch Conversion Board</a></p>
-      
-    </div>
-  </div>
-
-
-
-
-
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_8.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="https://akizukidenshi.com/catalog/g/gC-03786/" target="_blank">Pin-socket</a></p>
-      
-    </div>
-  </div>
-</div>
         <div class="section-index">
     
     

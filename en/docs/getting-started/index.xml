@@ -45,7 +45,7 @@
 &lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Insert the CR2032 coin cell battery into the Basic Kit and turn on the power switch.
-&lt;br&gt;
+&lt;br&gt; 
 &lt;img src=&#34;quick_basic_assemble.png&#34; width=&#34;400&#34;&gt;&lt;/img&gt;
 &lt;br&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -69,14 +69,14 @@
 &lt;p&gt;Connection complete.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;The sample app used in this article is &amp;ldquo;&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/1_p/basic/webbluetooth_iot&#34; target=&#34;_blank&#34;&gt;Introduction to IoT Apps using Web Bluetooth&lt;/a&gt;&amp;rdquo;. You can see the source code and how it works here.&lt;/p&gt;
+&lt;p&gt;The sample app used in this article is &amp;ldquo;&lt;a href=&#34;https://docs.leafony.com/en/docs/examples/advanced/1_p/basic/webbluetooth_iot&#34; target=&#34;_blank&#34;&gt;Introduction to IoT Apps using Web Bluetooth&lt;/a&gt;&amp;rdquo;. You can see the source code and how it works here.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Next Steps&lt;/h4&gt;
-&lt;a href=&#34;https://docs.leafony.com/docs/environment/basic&#34;&gt;Environment Settings&lt;/a&gt; and write the program in the Basic Kit.
+&lt;a href=&#34;https://docs.leafony.com/en/docs/environment/avr/arduino&#34;&gt;Environment Settings&lt;/a&gt; and write the program in the Basic Kit.
 &lt;/div&gt;
 
 &lt;h3 id=&#34;for-iphone-or-ipad&#34;&gt;For iPhone or iPad&lt;/h3&gt;
@@ -147,7 +147,7 @@ There is a &amp;ldquo;Download CSV&amp;rdquo; button on the screen, but it is no
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Press the &lt;code&gt;Connect&lt;/code&gt; button of the web app, select &lt;code&gt;Leafony_AC02&lt;/code&gt; and press the &lt;code&gt;Pair&lt;/code&gt; button.&lt;br&gt;
-&lt;br&gt;
+&lt;br&gt; 
 &lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -249,13 +249,13 @@ Touching the pins increases the capacitance and decreases the value. If the valu
 &lt;/ol&gt;
 &lt;br&gt;
 &lt;ol start=&#34;7&#34;&gt;
-&lt;li&gt;The sample app we used this time is &amp;ldquo;&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/2_p/esp32/wifi_touchsensor/&#34; target=&#34;_blank&#34;&gt;Wi-Fi Touchsensor&lt;/a&gt;&amp;rdquo;. The source code and how it works can be found here.&lt;/li&gt;
+&lt;li&gt;The sample app we used this time is &amp;ldquo;&lt;a href=&#34;https://docs.leafony.com/en/docs/examples/advanced/2_p/esp32/wifi_touchsensor/&#34; target=&#34;_blank&#34;&gt;Wi-Fi Touchsensor&lt;/a&gt;&amp;rdquo;. The source code and how it works can be found here.&lt;/li&gt;
 &lt;/ol&gt;
 
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;Next Steps&lt;/h4&gt;
-&lt;a href=&#34;https://docs.leafony.com/docs/environment/esp32&#34;&gt;Environment Settings&lt;/a&gt; and write the program to the ESP32 Wi-Fi Kit.
+&lt;a href=&#34;https://docs.leafony.com/en/docs/environment/esp32&#34;&gt;Environment Settings&lt;/a&gt; and write the program to the ESP32 Wi-Fi Kit.
 &lt;/div&gt;
 
 
@@ -317,6 +317,119 @@ Let’s write the program in &lt;a href=&#34;https://docs.leafony.com/en/docs/ex
 &lt;h2 id=&#34;when-the-connectors-are-dirty&#34;&gt;When the connectors are dirty&lt;/h2&gt;
 &lt;p&gt;Dirt on the contacts of the connectors and the board may result in a poor connection. In this case, wipe them lightly with a paper rag moistened with anhydrous ethanol. If the problem persists, replace the connector.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;./Connector-trouble.png&#34;&gt;&lt;img src=&#34;./Connector-trouble.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: STM32 MCU Getting Started Guide</title>
+      <link>https://docs.leafony.com/en/docs/getting-started/stm32/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/en/docs/getting-started/stm32/</guid>
+      <description>
+        
+        
+        &lt;p&gt;By following the steps below, you can easily develop in the Arduino environment, just like the AVR MCU leaf.We have prepared sample applications for STM32 MCU Leaf, so you can try them out.&lt;/p&gt;
+&lt;h2 id=&#34;setting-up-the-arudiono-ide&#34;&gt;Setting up the Arudiono IDE&lt;/h2&gt;
+&lt;p&gt;First, please refer to the &lt;a href=&#34;https://docs.leafony.com/en/docs/environment/stm32/arduino_ide/&#34; target=&#34;_blank&#34;&gt;Arduino IDE setup&lt;/a&gt; on the STM32 MCU leaf to set up your development environment.&lt;/p&gt;
+&lt;h2 id=&#34;notes-on-sketching&#34;&gt;Notes on Sketching&lt;/h2&gt;
+&lt;p&gt;The following is a summary of the differences between the AVR MCU leaf case and the AVR MCU leaf case.&lt;/p&gt;
+&lt;h3 id=&#34;pin-designation&#34;&gt;Pin Designation&lt;/h3&gt;
+&lt;p&gt;Since the pin layout of the STM32 MCU is different from that of the Nucleo L452RE, it is not possible to use names when specifying pins.&lt;strong&gt;For STM32 MCU leaf, specify pins by port&lt;/strong&gt;。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_pinassign.png&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_pinassign.png&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;notes-on-the-library&#34;&gt;Notes on the library&lt;/h2&gt;
+&lt;p&gt;All of the following libraries can be used without modification, except for the timer interrupt library (MsTimer2.h).&lt;/br&gt;&lt;/p&gt;
+&lt;table class=&#34;table-hover&#34;&gt;
+  &lt;thread&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Leaf &lt;/th&gt;
+      &lt;th&gt;Required library &lt;/th&gt;
+      &lt;th&gt;Recommended version&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thread&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;BLE&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/Leafony/TBGLib&#34; target=&#34;_blank&#34;&gt;TBGLib&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;Bluetooth library&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td rowspan=6&gt;4-Sensors&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_Sensor&#34; target=&#34;_blank&#34;&gt;Adafruit_Sensor.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;Unified Sensor Driver&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_BusIO&#34; target=&#34;_blank&#34;&gt;Adafruit_BusIO_Register.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;Bus IO library&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/ameltech/sme-hts221-library&#34; target=&#34;_blank&#34;&gt;HTS221.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;Temperature and humidity sensor library&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_HTS221&#34; target=&#34;_blank&#34;&gt;Adafruit_HTS221.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;Adafruit temperature and humidity sensor library&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/closedcube/ClosedCube_OPT3001_Arduino&#34; target=&#34;_blank&#34;&gt;ClosedCube_OPT3001.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;Illuminance sensor library&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_LIS3DH/tree/1.1.2&#34; target=&#34;_blank&#34;&gt;Adafruit_LIS3DH.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;1.1.2&lt;/td&gt;
+      &lt;td&gt;Accelerometer Library&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;LCD&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/tomozh/arduino_ST7032&#34; target=&#34;_blank&#34;&gt;ST7032.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;LCD Library&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;strike&gt;AVR MCU &lt;/strike&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/PaulStoffregen/MsTimer2&#34; target=&#34;_blank&#34;&gt; &lt;strike&gt;MsTimer2.h &lt;/strike&gt;&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;strike&gt;Timer interrupt library &lt;/strike&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;RTC&amp;MicroSD&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/RTClib&#34; target=&#34;_blank&#34;&gt;RTClib.h&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;RTC library &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;hardwaretimer&#34;&gt;HardwareTimer&lt;/h3&gt;
+&lt;p&gt;You can use HardwareTimer and other tools. An example is shown below. For more information, please visit &lt;a href=&#34;https://github.com/stm32duino/wiki/wiki/HardwareTimer-library&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. 
+&lt;br&gt;
+&lt;br&gt;
+Initialization&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;HardwareTimer&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;HardwareTimer&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;TIM2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+
+  &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;setOverflow&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LOOP_INTERVAL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;MICROSEC_FORMAT&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 125ms
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;attachInterrupt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;intTimer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;resume&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Interrupt routine&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;intTimer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;){&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;bInterval&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+　&lt;span style=&#34;color:#a40000&#34;&gt;：&lt;/span&gt;
+　&lt;span style=&#34;color:#a40000&#34;&gt;：&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Next step&lt;/h4&gt;
+Let’s write the program in &lt;a href=&#34;https://docs.leafony.com/en/docs/examples/&#34;&gt;Sample app&lt;/a&gt;.
+&lt;/div&gt;
+
 
       </description>
     </item>
