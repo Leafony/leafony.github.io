@@ -336,7 +336,7 @@ Let’s write the program in &lt;a href=&#34;https://docs.leafony.com/en/docs/ex
 &lt;h2 id=&#34;notes-on-sketching&#34;&gt;Notes on Sketching&lt;/h2&gt;
 &lt;p&gt;The following is a summary of the differences between the AVR MCU leaf case and the AVR MCU leaf case.&lt;/p&gt;
 &lt;h3 id=&#34;pin-designation&#34;&gt;Pin Designation&lt;/h3&gt;
-&lt;p&gt;Since the pin layout of the STM32 MCU is different from that of the Nucleo L452RE, it is not possible to use names when specifying pins.&lt;strong&gt;For STM32 MCU leaf, specify pins by port&lt;/strong&gt;。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;Since the pin layout of the STM32 MCU is different from that of the Nucleo L452RE, it is not possible to use names when specifying pins. &lt;strong&gt;For STM32 MCU leaf, specify pins by port&lt;/strong&gt;。&lt;/br&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_pinassign.png&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_pinassign.png&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;notes-on-the-library&#34;&gt;Notes on the library&lt;/h2&gt;
 &lt;p&gt;All of the following libraries can be used without modification, except for the timer interrupt library (MsTimer2.h).&lt;/br&gt;&lt;/p&gt;

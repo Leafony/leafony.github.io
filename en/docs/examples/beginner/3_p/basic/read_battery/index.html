@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
-<link rel="alternate" type="application/rss&#43;xml" href="https://docs.leafony.com/en/docs/environment/stm32/swd/index.xml">
+<link rel="alternate" type="application/rss&#43;xml" href="https://docs.leafony.com/en/docs/examples/beginner/3_p/basic/read_battery/index.xml">
 
 
 <link rel="shortcut icon" href="/favicons/favicon.ico" >
@@ -21,19 +21,15 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>When using SWD during development | Leafony</title><meta property="og:title" content="When using SWD during development" />
-<meta property="og:description" content="Install STM32 Cores in Arduino IDE
-" />
+<title>Read battery | Leafony</title><meta property="og:title" content="Read battery" />
+<meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/en/docs/environment/stm32/swd/" />
+<meta property="og:url" content="https://docs.leafony.com/en/docs/examples/beginner/3_p/basic/read_battery/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="When using SWD during development">
-<meta itemprop="description" content="Install STM32 Cores in Arduino IDE
-">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="When using SWD during development"/>
-<meta name="twitter:description" content="Install STM32 Cores in Arduino IDE
-"/>
+<meta itemprop="name" content="Read battery">
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Read battery"/>
+<meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
 <script type="application/javascript">
@@ -52,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
-<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -115,7 +111,7 @@ if (!doNotTrack) {
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="/">Japanese</a>
+	<a class="dropdown-item" href="/docs/examples/beginner/3_p/basic/read_battery/">Japanese</a>
 	
 </div>
 			</li>
@@ -132,7 +128,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.16d8ffae238f6db58b3da5d07cda98d6129d9b946f637d4e41cb7821d6bced57865e5ac8083a752af4de231caf6a10d73ea3b0a65750e3d9414e2af81b2118c7.json"
+  data-offline-search-index-json-src="/offline-search-index.ca009948ce6ca516e227e04a1bade0ef47d928407d2d3550ed74a7d788839ca882ca1a04ddd2171c1ec3a69e3f5a00a510c752d14a5e1889eeb1ca5241abc431.json"
   data-offline-search-base-href="/"
 >
 
@@ -162,7 +158,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.16d8ffae238f6db58b3da5d07cda98d6129d9b946f637d4e41cb7821d6bced57865e5ac8083a752af4de231caf6a10d73ea3b0a65750e3d9414e2af81b2118c7.json"
+  data-offline-search-index-json-src="/offline-search-index.ca009948ce6ca516e227e04a1bade0ef47d928407d2d3550ed74a7d788839ca882ca1a04ddd2171c1ec3a69e3f5a00a510c752d14a5e1889eeb1ca5241abc431.json"
   data-offline-search-base-href="/"
 >
 
@@ -181,7 +177,7 @@ if (!doNotTrack) {
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 	
-	<a class="dropdown-item" href="/">Japanese</a>
+	<a class="dropdown-item" href="/docs/examples/beginner/3_p/basic/read_battery/">Japanese</a>
 	
 </div>
     </div>
@@ -603,10 +599,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/environment/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Environment</a>
+    <a  href="/en/docs/environment/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Environment</a>
   </li>
   <ul>
-    <li class="collapse show" id="endocsenvironment">
+    <li class="collapse " id="endocsenvironment">
       
       
       
@@ -781,10 +777,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/environment/stm32/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">STM32 MCU</a>
+    <a  href="/en/docs/environment/stm32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">STM32 MCU</a>
   </li>
   <ul>
-    <li class="collapse show" id="endocsenvironmentstm32">
+    <li class="collapse " id="endocsenvironmentstm32">
       
       
       
@@ -844,10 +840,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/environment/stm32/swd/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">SWD</a>
+    <a  href="/en/docs/environment/stm32/stm32_debug/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">STM32 Debug</a>
   </li>
   <ul>
-    <li class="collapse show" id="endocsenvironmentstm32swd">
+    <li class="collapse " id="endocsenvironmentstm32stm32_debug">
       
       
       
@@ -879,10 +875,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/examples/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Sample App</a>
+    <a  href="/en/docs/examples/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Sample App</a>
   </li>
   <ul>
-    <li class="collapse " id="endocsexamples">
+    <li class="collapse show" id="endocsexamples">
       
       
       
@@ -896,10 +892,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/examples/beginner/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Beginner</a>
+    <a  href="/en/docs/examples/beginner/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">Beginner</a>
   </li>
   <ul>
-    <li class="collapse " id="endocsexamplesbeginner">
+    <li class="collapse show" id="endocsexamplesbeginner">
       
       
       
@@ -1480,6 +1476,259 @@ if (!doNotTrack) {
   </li>
   <ul>
     <li class="collapse " id="endocsexamplesbeginner2_pextenlcd">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/examples/beginner/3_p/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section">STM32 MCU</a>
+  </li>
+  <ul>
+    <li class="collapse show" id="endocsexamplesbeginner3_p">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/examples/beginner/3_p/basic/" class="align-left pl-0 pr-2 td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse show" id="endocsexamplesbeginner3_pbasic">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/examples/beginner/3_p/basic/read_battery/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse show" id="endocsexamplesbeginner3_pbasicread_battery">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/examples/beginner/3_p/basic/temp_humid_sensors/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsexamplesbeginner3_pbasictemp_humid_sensors">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/examples/beginner/3_p/basic/illum_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsexamplesbeginner3_pbasicillum_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/examples/beginner/3_p/basic/accelerometer/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsexamplesbeginner3_pbasicaccelerometer">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/examples/beginner/3_p/exten/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsexamplesbeginner3_pexten">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/examples/beginner/3_p/exten/speaker/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsexamplesbeginner3_pextenspeaker">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/examples/beginner/3_p/exten/ir_sensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsexamplesbeginner3_pextenir_sensor">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/examples/beginner/3_p/exten/sound_level/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsexamplesbeginner3_pextensound_level">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/examples/beginner/3_p/exten/lcd/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsexamplesbeginner3_pextenlcd">
       
       
       
@@ -3032,6 +3281,16 @@ if (!doNotTrack) {
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#leaf-to-use">Leaf to use</a></li>
+    <li><a href="#assembly">Assembly</a></li>
+    <li><a href="#source-code">Source code</a></li>
+    <li><a href="#execution-results">Execution Results</a></li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -3055,6 +3314,12 @@ if (!doNotTrack) {
 
 
 
+
+
+
+
+
+
 <li class="breadcrumb-item" >
 	<a href="https://docs.leafony.com/en/docs/">Documentation</a>
 </li>
@@ -3063,21 +3328,35 @@ if (!doNotTrack) {
 
 
 <li class="breadcrumb-item" >
-	<a href="https://docs.leafony.com/en/docs/environment/">Environment</a>
+	<a href="https://docs.leafony.com/en/docs/examples/">Sample App</a>
 </li>
 
 
 
 
 <li class="breadcrumb-item" >
-	<a href="https://docs.leafony.com/en/docs/environment/stm32/">STM32 MCU</a>
+	<a href="https://docs.leafony.com/en/docs/examples/beginner/">Beginner</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://docs.leafony.com/en/docs/examples/beginner/3_p/">STM32 MCU</a>
+</li>
+
+
+
+
+<li class="breadcrumb-item" >
+	<a href="https://docs.leafony.com/en/docs/examples/beginner/3_p/basic/"> </a>
 </li>
 
 
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="https://docs.leafony.com/en/docs/environment/stm32/swd/">SWD</a>
+	<a href="https://docs.leafony.com/en/docs/examples/beginner/3_p/basic/read_battery/"> </a>
 </li>
 
 	</ol>
@@ -3085,134 +3364,396 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>When using SWD during development</h1>
-        <div class="lead">Install STM32 Cores in Arduino IDE</div>
+	<h1>Read battery</h1>
+        
 	
-	<h2 id="use-of-swd">Use of SWD</h2>
-<p>By connecting the AX01 Shield, you can use SWD.
-<br>
-<br>
-<img src="./swd_1.png" width="250"></img>
-<br>
-<br></p>
+	<h2 id="overview">Overview</h2>
+<p>Read the battery voltage using the AD converter on the CR2032 coin cell leaf.</p>
+<p>This sample will also work with battery leaves such as the AA BAT leaf and the 2V to 4.5V leaf.</p>
+<h2 id="leaf-to-use">Leaf to use</h2>
+<p>Use the following leaves.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">　SWD Connector Specifications</th>
-<th style="text-align:left"></th>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">Model number of the connector</td>
-<td style="text-align:left">FTSH-105-01-L-D</td>
+<td align="left"><a href="/docs/leaf/others/az62">AZ62</a></td>
+<td align="left"><a href="/docs/leaf/others/az62">Connector Cover</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left">Number of pins</td>
-<td style="text-align:left">10</td>
+<td align="left"><a href="/docs/leaf/others/az01">AZ01</a></td>
+<td align="left"><a href="/docs/leaf/others/az01">USB</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left">Pin pitch</td>
-<td style="text-align:left">1.27mm</td>
+<td align="left"><a href="/docs/leaf/processor/ap03">AP03</a></td>
+<td align="left"><a href="/docs/leaf/processor/ap03">STM32 MCU</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"><a href="/docs/leaf/power/av01">AV01</a></td>
+<td align="left"><a href="/docs/leaf/power/av01">CR2032</a></td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">CR2032 coin cell battery</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">M2*10mm screw</td>
+<td align="left">2</td>
 </tr>
 </tbody>
 </table>
-<p>Pin assignment<br>
-<img src="./swd_2.png" width="250"></img>
-<br>
-<br>
-STLINK-V3SET comes with a cable that connects to the SWD connector of AX01 Shield, allowing you to connect it as it is.
-<br>
-<img src="./swd_3.png"></img>
-<br>
-<br>
-If you have the ST-LINK-V2, you can connect it with the <a href="http://strawberry-linux.com/catalog/items?code=15079" target="_blank">conversion adapter</a>.
-It is also possible to use a conversion adapter to connect to the Nucleo&rsquo;s SWD using a jumper cable or other means.<br>
-<img src="./swd_4.png"></img>
-<br>
-<br>
-If you want to connect to Nucleo&rsquo;s SWD, you can also build your own.<br></p>
-<div class="row">
+<h2 id="assembly">Assembly</h2>
+<p><img src="./STM32_read_battery.png" alt="CR2032"></p>
+<h2 id="source-code">Source code</h2>
+<p>Write the following program<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> in the Arduino IDE.</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//  Battery Voltage
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//    (c) 2020 Trillion-Node Study Group
+</span><span style="color:#8f5902;font-style:italic">//    Released under the MIT license
+</span><span style="color:#8f5902;font-style:italic">//    https://opensource.org/licenses/MIT
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2020/05/05  First release
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">BATT_ADC_ADDR</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0x50</span><span style="color:#000;font-weight:bold">;</span>
 
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#8f5902;font-style:italic">// initialize serial communication at 115200 second per second:
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#8f5902;font-style:italic">// initialize I2C communication at 100kHz:
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
 
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">(){</span>
+  <span style="color:#8f5902;font-style:italic">// read ADC registers:
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">BATT_ADC_ADDR</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0x00</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">endTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">false</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">requestFrom</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">BATT_ADC_ADDR</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
+  <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">();</span>
 
+  <span style="color:#8f5902;font-style:italic">// when ADC is not connected, read values are 0xFF:
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0xff</span> <span style="color:#ce5c00;font-weight:bold">&amp;&amp;</span> <span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#0000cf;font-weight:bold">0xff</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000;font-weight:bold">}</span>
 
+  <span style="color:#8f5902;font-style:italic">// voltage mV = adcVal * Vref(3.3V) / resolution(8bit) * Vdiv(2)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">tempMillivolt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">((</span><span style="color:#204a87;font-weight:bold">double</span><span style="color:#000;font-weight:bold">)((</span><span style="color:#000">adcVal1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">adcVal2</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span> <span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">))</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">3300</span> <span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">/</span> <span style="color:#0000cf;font-weight:bold">256</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">dataBatt</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">float</span><span style="color:#000;font-weight:bold">)(</span><span style="color:#000">tempMillivolt</span> <span style="color:#ce5c00;font-weight:bold">/</span> <span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
 
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Batt[V]  = &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataBatt</span><span style="color:#000;font-weight:bold">));</span>
+  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/Battery_Voltage/Battery_Voltage.ino" target="_blank">Battery_Voltage.ino</a></p>
+<h2 id="execution-results">Execution Results</h2>
+<p>Open the serial monitor of the Arduino IDE and set the baud rate to 115200 bps and you will see the battery voltage.</p>
+<img src="read_battery_result.jpg" width="750">
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>The program is the same as AVR MCU Leaf. <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_5.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="http://strawberry-linux.com/catalog/items?code=15079" target="_blank">Half-pitch ribbon cable</a></p>
-      
-    </div>
-  </div>
-
-
-
-
-
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_6.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="https://akizukidenshi.com/catalog/g/gC-13800/" target="_blank">Half-pitch pin header</a></p>
-      
-    </div>
-  </div>
-
-
-
-
-
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_7.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="https://akizukidenshi.com/catalog/g/gP-14224/" target="_blank">Pitch Conversion Board</a></p>
-      
-    </div>
-  </div>
-
-
-
-
-
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_8.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="https://akizukidenshi.com/catalog/g/gC-03786/" target="_blank">Pin-socket</a></p>
-      
-    </div>
-  </div>
-</div>
         <div class="section-index">
     
     
     
     
+    <hr class="panel-line">
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 01.01.0001
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 03.02.2021
 </div>
 </div>
 
