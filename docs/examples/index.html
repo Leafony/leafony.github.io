@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -29,7 +29,8 @@
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="サンプルアプリ・応用例">
 <meta itemprop="description" content="サンプルアプリ・応用例から使い方を学ぼう。大きくBeginner ExamplesとAdvanced Examplesに分かれています。
-"><meta name="twitter:card" content="summary"/>
+">
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="サンプルアプリ・応用例"/>
 <meta name="twitter:description" content="サンプルアプリ・応用例から使い方を学ぼう。大きくBeginner ExamplesとAdvanced Examplesに分かれています。
 "/>
@@ -51,8 +52,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
-<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
+<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -131,7 +132,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ca009948ce6ca516e227e04a1bade0ef47d928407d2d3550ed74a7d788839ca882ca1a04ddd2171c1ec3a69e3f5a00a510c752d14a5e1889eeb1ca5241abc431.json"
+  data-offline-search-index-json-src="/offline-search-index.bcc75a5111a839ff848394f55894626d42a9d632215274b7afe5728cc267b91a44c2ccfee834662d675ec9f9686136904e59e3a6d9503c50517a04d6e61597ab.json"
   data-offline-search-base-href="/"
 >
 
@@ -161,7 +162,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ca009948ce6ca516e227e04a1bade0ef47d928407d2d3550ed74a7d788839ca882ca1a04ddd2171c1ec3a69e3f5a00a510c752d14a5e1889eeb1ca5241abc431.json"
+  data-offline-search-index-json-src="/offline-search-index.bcc75a5111a839ff848394f55894626d42a9d632215274b7afe5728cc267b91a44c2ccfee834662d675ec9f9686136904e59e3a6d9503c50517a04d6e61597ab.json"
   data-offline-search-base-href="/"
 >
 
@@ -3355,23 +3356,11 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#avr-mcu-examples">AVR MCU Examples</a>
-      <ul>
-        <li><a href="#basic-kit">Basic Kit</a></li>
-        <li><a href="#basic-kitextension-kit">Basic Kit＋Extension Kit</a></li>
-      </ul>
-    </li>
-    <li><a href="#esp32-mcu-examples">ESP32 MCU Examples</a>
-      <ul>
-        <li><a href="#esp32-wi-fi-kit">ESP32 Wi-Fi Kit</a></li>
-        <li><a href="#esp32-wi-fi-kitbasic-kit">ESP32 Wi-Fi Kit＋Basic Kit</a></li>
-        <li><a href="#esp32-wi-fi-kitextension-kit">ESP32 Wi-Fi Kit＋Extension Kit</a></li>
-      </ul>
-    </li>
+    <li><a href="#avr-mcu-examples">AVR MCU Examples</a></li>
+    <li><a href="#esp32-mcu-examples">ESP32 MCU Examples</a></li>
     <li><a href="#stm32-mcu-examples">STM32 MCU Examples</a>
       <ul>
         <li><a href="#stm32-mcubasic-kit">STM32 MCU＋Basic Kit</a></li>
-        <li><a href="#stm32-mcubasic-kitextension-kit">STM32 MCU＋Basic Kit＋Extension Kit</a></li>
       </ul>
     </li>
   </ul>
@@ -3379,14 +3368,14 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#avr-mcu-examples-1">AVR MCU Examples</a>
       <ul>
-        <li><a href="#basic-kit-1">Basic Kit</a></li>
-        <li><a href="#basic-kitextension-kit-1">Basic Kit＋Extension Kit</a></li>
+        <li><a href="#basic-kit">Basic Kit</a></li>
+        <li><a href="#basic-kitextension-kit">Basic Kit＋Extension Kit</a></li>
         <li><a href="#basic-kitlora">Basic Kit＋LoRa</a></li>
       </ul>
     </li>
     <li><a href="#esp32-mcu-examples-1">ESP32 MCU Examples</a>
       <ul>
-        <li><a href="#esp32-wi-fi-kit-1">ESP32 Wi-Fi Kit</a></li>
+        <li><a href="#esp32-wi-fi-kit">ESP32 Wi-Fi Kit</a></li>
       </ul>
     </li>
     <li><a href="#stm32-mcu-examples-1">STM32 MCU Examples</a></li>
@@ -3432,68 +3421,219 @@ if (!doNotTrack) {
 	<h1 id="beginner-examples">Beginner Examples</h1>
 <p>各種リーフを使った初心者向けのサンプルアプリを紹介します。実際に動かして使い方を学んでいきましょう。</p>
 <h2 id="avr-mcu-examples">AVR MCU Examples</h2>
-<h3 id="basic-kit">Basic Kit</h3>
-<ul>
-<li><a href="./beginner/1_p/basic/blink">LED点滅</a></li>
-<li><a href="./beginner/1_p/basic/read_battery">バッテリ電圧読み取り</a></li>
-<li><a href="./beginner/1_p/basic/temp_humid_sensors">温湿度センサ読み取り</a></li>
-<li><a href="./beginner/1_p/basic/illum_sensor">照度センサ読み取り</a></li>
-<li><a href="./beginner/1_p/basic/accelerometer">加速度センサ読み取り</a></li>
-</ul>
-<h3 id="basic-kitextension-kit">Basic Kit＋Extension Kit</h3>
-<ul>
-<li><a href="./beginner/1_p/exten/speaker">スピーカ</a></li>
-<li><a href="./beginner/1_p/exten/ir_sensor">人感センサ</a></li>
-<li><a href="./beginner/1_p/exten/sound_level">サウンドレベルメータ</a></li>
-<li><a href="./beginner/1_p/exten/lcd">LCD</a></li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th style="text-align:center">Basic</th>
+<th style="text-align:center">Extenson</th>
+<th style="text-align:center">ESP32 Wi-Fi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="./beginner/1_p/basic/blink">LED点滅</a></td>
+<td style="text-align:center">○</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="./beginner/1_p/basic/read_battery">バッテリ電圧読み取り</a></td>
+<td style="text-align:center">○</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="./beginner/1_p/basic/temp_humid_sensors">温湿度センサ読み取り</a></td>
+<td style="text-align:center">○</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="./beginner/1_p/basic/illum_sensor">照度センサ読み取り</a></td>
+<td style="text-align:center">○</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="./beginner/1_p/basic/accelerometer">加速度センサ読み取り</a></td>
+<td style="text-align:center">○</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="./beginner/1_p/exten/speaker">スピーカ</a></td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="./beginner/1_p/exten/ir_sensor">人感センサ</a></td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="./beginner/1_p/exten/sound_level">サウンドレベルメータ</a></td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="./beginner/1_p/exten/lcd">LCD</a>　</td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="esp32-mcu-examples">ESP32 MCU Examples</h2>
-<h3 id="esp32-wi-fi-kit">ESP32 Wi-Fi Kit</h3>
-<ul>
-<li><a href="./beginner/2_p/esp32/button">ボタン入力</a></li>
-<li><a href="./beginner/2_p/esp32/rtc">リアルタイムクロック</a></li>
-<li><a href="./beginner/2_p/esp32/microsd">microSDカード</a></li>
-</ul>
-<h3 id="esp32-wi-fi-kitbasic-kit">ESP32 Wi-Fi Kit＋Basic Kit</h3>
-<ul>
-<li><a href="./beginner/2_p/basic/temp_humid_sensors">温湿度センサ読み取り</a></li>
-<li><a href="./beginner/2_p/basic/illum_sensor">照度センサ読み取り</a></li>
-<li><a href="./beginner/2_p/basic/accelerometer">加速度センサ読み取り</a></li>
-</ul>
-<h3 id="esp32-wi-fi-kitextension-kit">ESP32 Wi-Fi Kit＋Extension Kit</h3>
-<ul>
-<li><a href="./beginner/2_p/exten/speaker">スピーカ</a></li>
-<li><a href="./beginner/2_p/exten/ir_sensor">人感センサ</a></li>
-<li><a href="./beginner/2_p/exten/sound_level">サウンドレベルメータ</a></li>
-<li><a href="./beginner/2_p/exten/lcd">LCD</a></li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th style="text-align:center">Basic</th>
+<th style="text-align:center">Extenson</th>
+<th style="text-align:center">ESP32 Wi-Fi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="./beginner/2_p/esp32/button">ボタン入力</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">○</td>
+</tr>
+<tr>
+<td><a href="./beginner/2_p/esp32/rtc">リアルタイムクロック</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">○</td>
+</tr>
+<tr>
+<td><a href="./beginner/2_p/esp32/microsd">microSDカード</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">○</td>
+</tr>
+<tr>
+<td><a href="./beginner/2_p/basic/temp_humid_sensors">温湿度センサ読み取り</a></td>
+<td style="text-align:center">○</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">○</td>
+</tr>
+<tr>
+<td><a href="./beginner/2_p/basic/illum_sensor">照度センサ読み取り</a></td>
+<td style="text-align:center">○</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">○</td>
+</tr>
+<tr>
+<td><a href="./beginner/2_p/basic/accelerometer">加速度センサ読み取り</a></td>
+<td style="text-align:center">○</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">○</td>
+</tr>
+<tr>
+<td><a href="./beginner/2_p/exten/speaker">スピーカ</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+</tr>
+<tr>
+<td><a href="./beginner/2_p/exten/ir_sensor">人感センサ</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+</tr>
+<tr>
+<td><a href="./beginner/2_p/exten/sound_level">サウンドレベルメータ</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+</tr>
+<tr>
+<td><a href="./beginner/2_p/exten/lcd">LCD</a></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+</tr>
+</tbody>
+</table>
 <h2 id="stm32-mcu-examples">STM32 MCU Examples</h2>
 <h3 id="stm32-mcubasic-kit">STM32 MCU＋Basic Kit</h3>
-<ul>
-<li><a href="./beginner/3_p/basic/read_battery">バッテリ電圧読み取り</a></li>
-<li><a href="./beginner/3_p/basic/temp_humid_sensors">温湿度センサ読み取り</a></li>
-<li><a href="./beginner/3_p/basic/illum_sensor">照度センサ読み取り</a></li>
-<li><a href="./beginner/3_p/basic/accelerometer">加速度センサ読み取り</a></li>
-</ul>
-<h3 id="stm32-mcubasic-kitextension-kit">STM32 MCU＋Basic Kit＋Extension Kit</h3>
-<ul>
-<li><a href="./beginner/3_p/exten/speaker">スピーカ</a></li>
-<li><a href="./beginner/3_p/exten/ir_sensor">人感センサ</a></li>
-<li><a href="./beginner/3_p/exten/sound_level">サウンドレベルメータ</a></li>
-<li><a href="./beginner/3_p/exten/lcd">LCD</a></li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th style="text-align:center">Basic</th>
+<th style="text-align:center">Extenson</th>
+<th style="text-align:center">ESP32 Wi-Fi</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="./beginner/3_p/basic/read_battery">バッテリ電圧読み取り</a></td>
+<td style="text-align:center">○</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="./beginner/3_p/basic/temp_humid_sensors">温湿度センサ読み取り</a></td>
+<td style="text-align:center">○</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="./beginner/3_p/basic/illum_sensor">照度センサ読み取り</a></td>
+<td style="text-align:center">　○</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="./beginner/3_p/basic/accelerometer">加速度センサ読み取り</a></td>
+<td style="text-align:center">○</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="./beginner/3_p/exten/speaker">スピーカ</a></td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="./beginner/3_p/exten/ir_sensor">人感センサ</a></td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="./beginner/3_p/exten/sound_level">サウンドレベルメータ</a></td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="./beginner/3_p/exten/lcd">LCD</a></td>
+<td style="text-align:center">○</td>
+<td style="text-align:center">○</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <br>
 <h1 id="advanced-examples">Advanced Examples　</h1>
 <p>各種リーフを使った上級者向けサンプルアプリを紹介します。サンプルアプリを参考に、身近なものをIoT化しましょう。</p>
 <h2 id="avr-mcu-examples-1">AVR MCU Examples</h2>
-<h3 id="basic-kit-1">Basic Kit</h3>
+<h3 id="basic-kit">Basic Kit</h3>
 <ul>
 <li>Simple BLE Characteristic (公開予定)</li>
 <li><a href="./advanced/1_p/basic/simple_ble_advertising">Simple BLE Advertising (公開予定)</a></li>
 <li><a href="./advanced/1_p/basic/webbluetooth_iot">Web Bluetoothを使ったIoTアプリ入門</a></li>
 <li><a href="./advanced/1_p/basic/google_sheets_iot">Google sheetsを使ったIoTサービス入門</a></li>
 </ul>
-<h3 id="basic-kitextension-kit-1">Basic Kit＋Extension Kit</h3>
+<h3 id="basic-kitextension-kit">Basic Kit＋Extension Kit</h3>
 <ul>
 <li><a href="./advanced/1_p/exten/4-sensors_lcd/">センサの値をLCDに表示</a></li>
 <li><a href="./advanced/1_p/exten/4-sensors_lcd_ble/">センサの値をLCDに表示しBLEで送信(公開予定)</a></li>
@@ -3506,7 +3646,7 @@ if (!doNotTrack) {
 <li><a href="./advanced/1_p/lora/lora/">LoRaを使ってセンサの値を表示</a></li>
 </ul>
 <h2 id="esp32-mcu-examples-1">ESP32 MCU Examples</h2>
-<h3 id="esp32-wi-fi-kit-1">ESP32 Wi-Fi Kit</h3>
+<h3 id="esp32-wi-fi-kit">ESP32 Wi-Fi Kit</h3>
 <ul>
 <li><a href="./advanced/2_p/esp32/wifi_touchsensor">Wi-Fi タッチセンサ</a></li>
 <li><a href="./advanced/2_p/esp32/esp32_googlesheets_1">Google Sheetsを使ったIoTサービス</a></li>
@@ -3530,7 +3670,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 31, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 3, 2021
 </div>
 </div>
 

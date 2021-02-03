@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -21,14 +21,15 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>STM32のデバッグを行う場合 | Leafony</title><meta property="og:title" content="STM32のデバッグを行う場合" />
+<title>デバッガの接続方法 | Leafony</title><meta property="og:title" content="デバッガの接続方法" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/environment/stm32/stm32_debug/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="STM32のデバッグを行う場合">
-<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="STM32のデバッグを行う場合"/>
+<meta itemprop="name" content="デバッガの接続方法">
+<meta itemprop="description" content="A Leafony Documentation site">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="デバッガの接続方法"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -48,8 +49,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
-<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
+<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -128,7 +129,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ca009948ce6ca516e227e04a1bade0ef47d928407d2d3550ed74a7d788839ca882ca1a04ddd2171c1ec3a69e3f5a00a510c752d14a5e1889eeb1ca5241abc431.json"
+  data-offline-search-index-json-src="/offline-search-index.bcc75a5111a839ff848394f55894626d42a9d632215274b7afe5728cc267b91a44c2ccfee834662d675ec9f9686136904e59e3a6d9503c50517a04d6e61597ab.json"
   data-offline-search-base-href="/"
 >
 
@@ -158,7 +159,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ca009948ce6ca516e227e04a1bade0ef47d928407d2d3550ed74a7d788839ca882ca1a04ddd2171c1ec3a69e3f5a00a510c752d14a5e1889eeb1ca5241abc431.json"
+  data-offline-search-index-json-src="/offline-search-index.bcc75a5111a839ff848394f55894626d42a9d632215274b7afe5728cc267b91a44c2ccfee834662d675ec9f9686136904e59e3a6d9503c50517a04d6e61597ab.json"
   data-offline-search-base-href="/"
 >
 
@@ -3355,12 +3356,13 @@ if (!doNotTrack) {
     <li><a href="#概要">概要</a></li>
     <li><a href="#stlink-v3setの場合">STLINK-V3SETの場合</a>
       <ul>
-        <li><a href="#用意するも">用意するも</a></li>
+        <li><a href="#用意するもの">用意するもの</a></li>
+        <li><a href="#接続方法">接続方法</a></li>
       </ul>
     </li>
     <li><a href="#st-linkv2の場合">ST-LINK/V2の場合</a>
       <ul>
-        <li><a href="#用意するもの">用意するもの</a></li>
+        <li><a href="#用意するもの-1">用意するもの</a></li>
         <li><a href="#接続方法-1">接続方法</a></li>
       </ul>
     </li>
@@ -3424,36 +3426,37 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>STM32のデバッグを行う場合</h1>
+	<h1>デバッガの接続方法</h1>
         
 	
 	<h2 id="概要">概要</h2>
-<p>STM32 MCUリーフは、STマイクロエレクトロニクス社のSTLINK-V3SETとST-LINK/V2のデバッガを使用出来ます。ここでは、これらのデバッガとの接続方法に関して説明します。</br></p>
+<p>STM32 MCUリーフは、STマイクロエレクトロニクス社のSTLINK-V3SETとST-LINK/V2のデバッガを使用出来ます。ここでは、これらのデバッガとの接続方法を説明します。</br></p>
 <ul>
-<li><a href="https://www.stmcu.jp/design/hwdevelop/debugger/" target="_blank"> STM32 HW開発環境(デバッガ)</a></li>
+<li><a href="https://www.stmcu.jp/design/hwdevelop/debugger/" target="_blank"> STM32 デバッガ</a></li>
 </ul>
 <h2 id="stlink-v3setの場合">STLINK-V3SETの場合</h2>
-<h3 id="用意するも">用意するも</h3>
+<h3 id="用意するもの">用意するもの</h3>
 <ul>
-<li>STM32 MCU、USB、Shield、Nut plate、Screww</li>
+<li>STM32 MCU、Shield、Nut plate、Screww</li>
 <li><a href="https://www.stmcu.jp/design/hwdevelop/debugger/62359/" target="_blank"> STLINK-V3SET</a></li>
 <li>USBケーブル</li>
 <li>PC (Windows)</li>
 </ul>
-<h4 id="接続方法">接続方法</h4>
+<h3 id="接続方法">接続方法</h3>
+<p>Shieldリーフに1.27mmピッチのSWDコネクタ(FTSH-105-01-L-D）が実装されているので、STM32 MCUリーフを装着し、デバッガと接続する。</p>
 <h2 id="st-linkv2の場合">ST-LINK/V2の場合</h2>
-<h3 id="用意するもの">用意するもの</h3>
+<h3 id="用意するもの-1">用意するもの</h3>
 <ul>
-<li>STM32 MCU、USB、Shield、Nut plate、Screww</li>
+<li>STM32 MCU、Shield、Nut plate、Screww</li>
 <li><a href="https://www.stmcu.jp/design/hwdevelop/debugger/52828/" target="_blank"> ST-LINK/V2</a></li>
 <li><a href="https://www.olimex.com/Products/ARM/JTAG/ARM-JTAG-20-10/" target="_blank"> ARM-JTAG-20-10</a></li>
 <li>USBケーブル</li>
 <li>PC (Windows)</li>
 </ul>
 <h3 id="接続方法-1">接続方法</h3>
+<p>Shieldリーフに1.27mmピッチのSWDコネクタ(FTSH-105-01-L-D）が実装されているので、STM32 MCUリーフを装着し、デバッガと接続する。</p>
 <h2 id="概要-1">概要</h2>
-<p>2222222
-STM32のデバッグを行う場合はArduino IDE以外の開発環境(STM32CubeIDE等)と開発ツール(STLINK-V3SET等)が必要です。
+<p>STM32のデバッグを行う場合はArduino IDE以外の開発環境(STM32CubeIDE等)と開発ツール(STLINK-V3SET等)が必要です。
 Leafonyとを開発ツールはSWDで接続します。</p>
 <h2 id="swdの使用">SWDの使用</h2>
 <p>AX01 Shieldを接続することにより、LeafonyでSWDを使用することができます。
@@ -3465,22 +3468,22 @@ Leafonyとを開発ツールはSWDで接続します。</p>
 <table>
 <thead>
 <tr>
-<th align="left">　SWDコネクタの仕様</th>
-<th align="left"></th>
+<th style="text-align:left">　SWDコネクタの仕様</th>
+<th style="text-align:left"></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">コネクタ型番</td>
-<td align="left">FTSH-105-01-L-D</td>
+<td style="text-align:left">コネクタ型番</td>
+<td style="text-align:left">FTSH-105-01-L-D</td>
 </tr>
 <tr>
-<td align="left">ピン数</td>
-<td align="left">10</td>
+<td style="text-align:left">ピン数</td>
+<td style="text-align:left">10</td>
 </tr>
 <tr>
-<td align="left">ピンピッチ</td>
-<td align="left">1.27mm</td>
+<td style="text-align:left">ピンピッチ</td>
+<td style="text-align:left">1.27mm</td>
 </tr>
 </tbody>
 </table>
