@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.72.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -27,7 +27,8 @@
 <meta property="og:url" content="https://docs.leafony.com/docs/environment/stm32/stm32_debug/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="デバッガの接続方法">
-<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="A Leafony Documentation site">
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="デバッガの接続方法"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
@@ -48,8 +49,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
-<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
+<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -128,7 +129,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.afb6765e22f392076ed653f2b19b188f8cd9f24fba00ae52baa1e39e7a8f03d5b1231e50ed7563bb0f6dc9248e5a78e973b3117fbb34a275331dd0585b818dd4.json"
+  data-offline-search-index-json-src="/offline-search-index.9ded2f6717d68889a77091a7c28dac37a483b275447363522488465351c4cc9b9e2f68906a26cbbaf24cc94d6b83582d5682d85d7e269223ab00aa8b91fb6a53.json"
   data-offline-search-base-href="/"
 >
 
@@ -158,7 +159,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.afb6765e22f392076ed653f2b19b188f8cd9f24fba00ae52baa1e39e7a8f03d5b1231e50ed7563bb0f6dc9248e5a78e973b3117fbb34a275331dd0585b818dd4.json"
+  data-offline-search-index-json-src="/offline-search-index.9ded2f6717d68889a77091a7c28dac37a483b275447363522488465351c4cc9b9e2f68906a26cbbaf24cc94d6b83582d5682d85d7e269223ab00aa8b91fb6a53.json"
   data-offline-search-base-href="/"
 >
 
@@ -3353,16 +3354,11 @@ if (!doNotTrack) {
 <nav id="TableOfContents">
   <ul>
     <li><a href="#概要">概要</a></li>
-    <li><a href="#stlink-v3setの場合">STLINK-V3SETの場合</a>
+    <li><a href="#用意するもの">用意するもの</a></li>
+    <li><a href="#接続方法">接続方法</a>
       <ul>
-        <li><a href="#用意するもの">用意するもの</a></li>
-        <li><a href="#接続方法">接続方法</a></li>
-      </ul>
-    </li>
-    <li><a href="#st-linkv2の場合">ST-LINK/V2の場合</a>
-      <ul>
-        <li><a href="#用意するもの-1">用意するもの</a></li>
-        <li><a href="#接続方法-1">接続方法</a></li>
+        <li><a href="#stlink-v3setの場合">STLINK-V3SETの場合</a></li>
+        <li><a href="#st-linkv2arm-jtag-20-10の場合">ST-LINK/V2＋ARM-JTAG-20-10の場合</a></li>
       </ul>
     </li>
     <li><a href="#概要-1">概要</a></li>
@@ -3433,27 +3429,20 @@ if (!doNotTrack) {
 <ul>
 <li><a href="https://www.stmcu.jp/design/hwdevelop/debugger/" target="_blank"> STM32 デバッガ</a></li>
 </ul>
-<h2 id="stlink-v3setの場合">STLINK-V3SETの場合</h2>
-<h3 id="用意するもの">用意するもの</h3>
+<h2 id="用意するもの">用意するもの</h2>
 <ul>
-<li>STM32 MCU、Shield、Nut plate、Screww</li>
-<li><a href="https://www.stmcu.jp/design/hwdevelop/debugger/62359/" target="_blank"> STLINK-V3SET</a></li>
+<li>STM32 MCU、Shield、Screw</li>
+<li><a href="https://www.stmcu.jp/design/hwdevelop/debugger/62359/" target="_blank"> STLINK-V3SET</a>の場合 /<a href="https://www.stmcu.jp/design/hwdevelop/debugger/52828/" target="_blank"> ST-LINK/V2</a>＋<a href="https://www.olimex.com/Products/ARM/JTAG/ARM-JTAG-20-10/" target="_blank"> ARM-JTAG-20-10</a>の場合</li>
 <li>USBケーブル</li>
 <li>PC (Windows)</li>
 </ul>
-<h3 id="接続方法">接続方法</h3>
+<h2 id="接続方法">接続方法</h2>
 <p>Shieldリーフに1.27mmピッチのSWDコネクタ(FTSH-105-01-L-D）が実装されているので、STM32 MCUリーフを装着し、デバッガと接続する。</p>
-<h2 id="st-linkv2の場合">ST-LINK/V2の場合</h2>
-<h3 id="用意するもの-1">用意するもの</h3>
-<ul>
-<li>STM32 MCU、Shield、Nut plate、Screww</li>
-<li><a href="https://www.stmcu.jp/design/hwdevelop/debugger/52828/" target="_blank"> ST-LINK/V2</a></li>
-<li><a href="https://www.olimex.com/Products/ARM/JTAG/ARM-JTAG-20-10/" target="_blank"> ARM-JTAG-20-10</a></li>
-<li>USBケーブル</li>
-<li>PC (Windows)</li>
-</ul>
-<h3 id="接続方法-1">接続方法</h3>
-<p>Shieldリーフに1.27mmピッチのSWDコネクタ(FTSH-105-01-L-D）が実装されているので、STM32 MCUリーフを装着し、デバッガと接続する。</p>
+<h3 id="stlink-v3setの場合">STLINK-V3SETの場合</h3>
+<p><img src="./STLINKV3SET.jpg"></img></p>
+<h3 id="st-linkv2arm-jtag-20-10の場合">ST-LINK/V2＋ARM-JTAG-20-10の場合</h3>
+<p><img src="./STLINKV2.jpg"></img></p>
+<p></br></br></br></br></p>
 <h2 id="概要-1">概要</h2>
 <p>STM32のデバッグを行う場合はArduino IDE以外の開発環境(STM32CubeIDE等)と開発ツール(STLINK-V3SET等)が必要です。
 Leafonyとを開発ツールはSWDで接続します。</p>
@@ -3467,22 +3456,22 @@ Leafonyとを開発ツールはSWDで接続します。</p>
 <table>
 <thead>
 <tr>
-<th align="left">　SWDコネクタの仕様</th>
-<th align="left"></th>
+<th style="text-align:left">　SWDコネクタの仕様</th>
+<th style="text-align:left"></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">コネクタ型番</td>
-<td align="left">FTSH-105-01-L-D</td>
+<td style="text-align:left">コネクタ型番</td>
+<td style="text-align:left">FTSH-105-01-L-D</td>
 </tr>
 <tr>
-<td align="left">ピン数</td>
-<td align="left">10</td>
+<td style="text-align:left">ピン数</td>
+<td style="text-align:left">10</td>
 </tr>
 <tr>
-<td align="left">ピンピッチ</td>
-<td align="left">1.27mm</td>
+<td style="text-align:left">ピンピッチ</td>
+<td style="text-align:left">1.27mm</td>
 </tr>
 </tbody>
 </table>
@@ -3583,7 +3572,7 @@ Nucleo のSWDに接続する場合、自作も可能です。<br></p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 3, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 7, 2021
 </div>
 </div>
 
