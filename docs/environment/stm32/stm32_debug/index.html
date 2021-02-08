@@ -129,7 +129,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9ded2f6717d68889a77091a7c28dac37a483b275447363522488465351c4cc9b9e2f68906a26cbbaf24cc94d6b83582d5682d85d7e269223ab00aa8b91fb6a53.json"
+  data-offline-search-index-json-src="/offline-search-index.3f63fda5423bb8a7586ab5741feccf23654a27ce478599d75b708d68604c3bcf85dba9613b635dbb63c6a7205f47049ebd428a02901bf7c14f9a55ca8939552c.json"
   data-offline-search-base-href="/"
 >
 
@@ -159,7 +159,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9ded2f6717d68889a77091a7c28dac37a483b275447363522488465351c4cc9b9e2f68906a26cbbaf24cc94d6b83582d5682d85d7e269223ab00aa8b91fb6a53.json"
+  data-offline-search-index-json-src="/offline-search-index.3f63fda5423bb8a7586ab5741feccf23654a27ce478599d75b708d68604c3bcf85dba9613b635dbb63c6a7205f47049ebd428a02901bf7c14f9a55ca8939552c.json"
   data-offline-search-base-href="/"
 >
 
@@ -3361,10 +3361,6 @@ if (!doNotTrack) {
         <li><a href="#st-linkv2arm-jtag-20-10の場合">ST-LINK/V2＋ARM-JTAG-20-10の場合</a></li>
       </ul>
     </li>
-    <li><a href="#概要-1">概要</a></li>
-    <li><a href="#swdの使用">SWDの使用</a></li>
-    <li><a href="#開発ツール">開発ツール</a></li>
-    <li><a href="#その他の開発ツールの接続">その他の開発ツールの接続</a></li>
   </ul>
 </nav>
 
@@ -3442,126 +3438,7 @@ if (!doNotTrack) {
 <p><img src="./STLINKV3SET.jpg"></img></p>
 <h3 id="st-linkv2arm-jtag-20-10の場合">ST-LINK/V2＋ARM-JTAG-20-10の場合</h3>
 <p><img src="./STLINKV2.jpg"></img></p>
-<p></br></br></br></br></p>
-<h2 id="概要-1">概要</h2>
-<p>STM32のデバッグを行う場合はArduino IDE以外の開発環境(STM32CubeIDE等)と開発ツール(STLINK-V3SET等)が必要です。
-Leafonyとを開発ツールはSWDで接続します。</p>
-<h2 id="swdの使用">SWDの使用</h2>
-<p>AX01 Shieldを接続することにより、LeafonyでSWDを使用することができます。
-<br>
-<br>
-<img src="./swd_1.png" width="250"></img>
-<br>
-<br></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">　SWDコネクタの仕様</th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">コネクタ型番</td>
-<td style="text-align:left">FTSH-105-01-L-D</td>
-</tr>
-<tr>
-<td style="text-align:left">ピン数</td>
-<td style="text-align:left">10</td>
-</tr>
-<tr>
-<td style="text-align:left">ピンピッチ</td>
-<td style="text-align:left">1.27mm</td>
-</tr>
-</tbody>
-</table>
-<p>ピン配置<br>
-<img src="./swd_2.png" width="250"></img>
-<br>
-<br></p>
-<h2 id="開発ツール">開発ツール</h2>
-<p>STLINK-V3SETにはAX01 ShieldのSWDコネクタに接続するケーブルが付属しているため、そのまま接続が可能です。
-<br>
-<img src="./swd_3.png"></img>
-<br>
-<br></p>
-<h2 id="その他の開発ツールの接続">その他の開発ツールの接続</h2>
-<p>ST-LINK-V2を持っている場合は、<a href="http://strawberry-linux.com/catalog/items?code=15079" target="_blank">変換アダプタ(ARM-JTAG-20-10)</a>により接続が可能です。
-変換アダプタを使用してジャンパケーブル等でNucleo のSWDに接続することも可能です。<br>
-<img src="./swd_4.png"></img>
-<br>
-<br>
-Nucleo のSWDに接続する場合、自作も可能です。<br></p>
-<div class="row">
 
-
-
-
-
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_5.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="http://strawberry-linux.com/catalog/items?code=15079" target="_blank">ハーフピッチ リボンケーブル</a></p>
-      
-    </div>
-  </div>
-
-
-
-
-
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_6.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="https://akizukidenshi.com/catalog/g/gC-13800/" target="_blank">ハーフピッチ　ピンヘッダ</a></p>
-      
-    </div>
-  </div>
-
-
-
-
-
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_7.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="https://akizukidenshi.com/catalog/g/gP-14224/" target="_blank">ピッチ変換基板</a></p>
-      
-    </div>
-  </div>
-
-
-
-
-
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_8.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="https://akizukidenshi.com/catalog/g/gC-03786/" target="_blank">ピンソケット</a></p>
-      
-    </div>
-  </div>
-</div>
         <div class="section-index">
     
     
@@ -3572,7 +3449,7 @@ Nucleo のSWDに接続する場合、自作も可能です。<br></p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 7, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 8, 2021
 </div>
 </div>
 
