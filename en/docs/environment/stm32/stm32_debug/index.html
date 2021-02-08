@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -21,15 +21,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>STM32のデバッグを行う場合 | Leafony</title><meta property="og:title" content="STM32のデバッグを行う場合" />
+<title>How to connect the debugger | Leafony</title><meta property="og:title" content="How to connect the debugger" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/en/docs/environment/stm32/stm32_debug/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="STM32のデバッグを行う場合">
-<meta itemprop="description" content="A Leafony Documentation site">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="STM32のデバッグを行う場合"/>
+<meta itemprop="name" content="How to connect the debugger">
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="How to connect the debugger"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -49,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
-<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -129,7 +128,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3f63fda5423bb8a7586ab5741feccf23654a27ce478599d75b708d68604c3bcf85dba9613b635dbb63c6a7205f47049ebd428a02901bf7c14f9a55ca8939552c.json"
+  data-offline-search-index-json-src="/offline-search-index.4d59374fb7624adda7baa27181f9166fd7783a389fc4e0c6cb4d0b1c4d15765f834cd225c1d413530b8ce9adb599ac287770a7c63f146e126cebba3501616626.json"
   data-offline-search-base-href="/"
 >
 
@@ -159,7 +158,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3f63fda5423bb8a7586ab5741feccf23654a27ce478599d75b708d68604c3bcf85dba9613b635dbb63c6a7205f47049ebd428a02901bf7c14f9a55ca8939552c.json"
+  data-offline-search-index-json-src="/offline-search-index.4d59374fb7624adda7baa27181f9166fd7783a389fc4e0c6cb4d0b1c4d15765f834cd225c1d413530b8ce9adb599ac287770a7c63f146e126cebba3501616626.json"
   data-offline-search-base-href="/"
 >
 
@@ -3284,10 +3283,14 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#概要">概要</a></li>
-    <li><a href="#swdの使用">SWDの使用</a></li>
-    <li><a href="#開発ツール">開発ツール</a></li>
-    <li><a href="#その他の開発ツールの接続">その他の開発ツールの接続</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#what-to-prepare">What to prepare</a></li>
+    <li><a href="#connection-method">Connection method</a>
+      <ul>
+        <li><a href="#in-the-case-of-stlink-v3set">In the case of STLINK-V3SET</a></li>
+        <li><a href="#in-the-case-of-st-linkv2--arm-jtag-20-10">In the case of ST-LINK/V2 + ARM-JTAG-20-10</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -3344,129 +3347,28 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>STM32のデバッグを行う場合</h1>
+	<h1>How to connect the debugger</h1>
         
 	
-	<h2 id="概要">概要</h2>
-<p>2222222
-STM32のデバッグを行う場合はArduino IDE以外の開発環境(STM32CubeIDE等)と開発ツール(STLINK-V3SET等)が必要です。
-Leafonyとを開発ツールはSWDで接続します。</p>
-<h2 id="swdの使用">SWDの使用</h2>
-<p>AX01 Shieldを接続することにより、LeafonyでSWDを使用することができます。
-<br>
-<br>
-<img src="./swd_1.png" width="250"></img>
-<br>
-<br></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">　SWDコネクタの仕様</th>
-<th style="text-align:left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">コネクタ型番</td>
-<td style="text-align:left">FTSH-105-01-L-D</td>
-</tr>
-<tr>
-<td style="text-align:left">ピン数</td>
-<td style="text-align:left">10</td>
-</tr>
-<tr>
-<td style="text-align:left">ピンピッチ</td>
-<td style="text-align:left">1.27mm</td>
-</tr>
-</tbody>
-</table>
-<p>ピン配置<br>
-<img src="./swd_2.png" width="250"></img>
-<br>
-<br></p>
-<h2 id="開発ツール">開発ツール</h2>
-<p>STLINK-V3SETにはAX01 ShieldのSWDコネクタに接続するケーブルが付属しているため、そのまま接続が可能です。
-<br>
-<img src="./swd_3.png"></img>
-<br>
-<br></p>
-<h2 id="その他の開発ツールの接続">その他の開発ツールの接続</h2>
-<p>ST-LINK-V2を持っている場合は、<a href="http://strawberry-linux.com/catalog/items?code=15079" target="_blank">変換アダプタ(ARM-JTAG-20-10)</a>により接続が可能です。
-変換アダプタを使用してジャンパケーブル等でNucleo のSWDに接続することも可能です。<br>
-<img src="./swd_4.png"></img>
-<br>
-<br>
-Nucleo のSWDに接続する場合、自作も可能です。<br></p>
-<div class="row">
+	<h2 id="overview">Overview</h2>
+<p>The STM32 MCU leaf can be used with STMicroelectronics&rsquo; STLINK-V3SET and ST-LINK/V2 debuggers. This page explains how to connect to these debuggers.</br></p>
+<ul>
+<li><a href="https://www.stmcu.jp/design/hwdevelop/debugger/" target="_blank"> STM32 debugger</a></li>
+</ul>
+<h2 id="what-to-prepare">What to prepare</h2>
+<ul>
+<li>STM32 MCU、Shield、Screw</li>
+<li><a href="https://www.stmcu.jp/design/hwdevelop/debugger/62359/" target="_blank"> STLINK-V3SET</a> /<a href="https://www.stmcu.jp/design/hwdevelop/debugger/52828/" target="_blank"> ST-LINK/V2</a>＋<a href="https://www.olimex.com/Products/ARM/JTAG/ARM-JTAG-20-10/" target="_blank"> ARM-JTAG-20-10</a></li>
+<li>USB cable</li>
+<li>PC (Windows)</li>
+</ul>
+<h2 id="connection-method">Connection method</h2>
+<p>A 1.27mm pitch SWD connector (FTSH-105-01-L-D) is mounted on the Shield leaf, so you can attach an STM32 MCU leaf and connect it to the debugger.</p>
+<h3 id="in-the-case-of-stlink-v3set">In the case of STLINK-V3SET</h3>
+<p><img src="./STLINKV3SET.jpg"></img></p>
+<h3 id="in-the-case-of-st-linkv2--arm-jtag-20-10">In the case of ST-LINK/V2 + ARM-JTAG-20-10</h3>
+<p><img src="./STLINKV2.jpg"></img></p>
 
-
-
-
-
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_5.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="http://strawberry-linux.com/catalog/items?code=15079" target="_blank">ハーフピッチ リボンケーブル</a></p>
-      
-    </div>
-  </div>
-
-
-
-
-
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_6.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="https://akizukidenshi.com/catalog/g/gC-13800/" target="_blank">ハーフピッチ　ピンヘッダ</a></p>
-      
-    </div>
-  </div>
-
-
-
-
-
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_7.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="https://akizukidenshi.com/catalog/g/gP-14224/" target="_blank">ピッチ変換基板</a></p>
-      
-    </div>
-  </div>
-
-
-
-
-
-
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" style="object-fit: cover; width: 100%; height: 15rem;" src="swd_8.png" alt="Card image cap">
-    
-    <div class="card-body">
-      <h4 class="card-title">
-           
-      </h4>
-      <p class="card-text"><a href="https://akizukidenshi.com/catalog/g/gC-03786/" target="_blank">ピンソケット</a></p>
-      
-    </div>
-  </div>
-</div>
         <div class="section-index">
     
     

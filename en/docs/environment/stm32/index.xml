@@ -233,7 +233,7 @@ Click &lt;code&gt;OK&lt;/code&gt;.
     </item>
     
     <item>
-      <title>Docs: STM32のデバッグを行う場合</title>
+      <title>Docs: How to connect the debugger</title>
       <link>https://docs.leafony.com/en/docs/environment/stm32/stm32_debug/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -241,126 +241,25 @@ Click &lt;code&gt;OK&lt;/code&gt;.
       <description>
         
         
-        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;2222222
-STM32のデバッグを行う場合はArduino IDE以外の開発環境(STM32CubeIDE等)と開発ツール(STLINK-V3SET等)が必要です。
-Leafonyとを開発ツールはSWDで接続します。&lt;/p&gt;
-&lt;h2 id=&#34;swdの使用&#34;&gt;SWDの使用&lt;/h2&gt;
-&lt;p&gt;AX01 Shieldを接続することにより、LeafonyでSWDを使用することができます。
-&lt;br&gt;
-&lt;br&gt;
-&lt;img src=&#34;./swd_1.png&#34; width=&#34;250&#34;&gt;&lt;/img&gt;
-&lt;br&gt;
-&lt;br&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;　SWDコネクタの仕様&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;コネクタ型番&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;FTSH-105-01-L-D&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;ピン数&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;ピンピッチ&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1.27mm&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;ピン配置&lt;br&gt;
-&lt;img src=&#34;./swd_2.png&#34; width=&#34;250&#34;&gt;&lt;/img&gt;
-&lt;br&gt;
-&lt;br&gt;&lt;/p&gt;
-&lt;h2 id=&#34;開発ツール&#34;&gt;開発ツール&lt;/h2&gt;
-&lt;p&gt;STLINK-V3SETにはAX01 ShieldのSWDコネクタに接続するケーブルが付属しているため、そのまま接続が可能です。
-&lt;br&gt;
-&lt;img src=&#34;./swd_3.png&#34;&gt;&lt;/img&gt;
-&lt;br&gt;
-&lt;br&gt;&lt;/p&gt;
-&lt;h2 id=&#34;その他の開発ツールの接続&#34;&gt;その他の開発ツールの接続&lt;/h2&gt;
-&lt;p&gt;ST-LINK-V2を持っている場合は、&lt;a href=&#34;http://strawberry-linux.com/catalog/items?code=15079&#34; target=&#34;_blank&#34;&gt;変換アダプタ(ARM-JTAG-20-10)&lt;/a&gt;により接続が可能です。
-変換アダプタを使用してジャンパケーブル等でNucleo のSWDに接続することも可能です。&lt;br&gt;
-&lt;img src=&#34;./swd_4.png&#34;&gt;&lt;/img&gt;
-&lt;br&gt;
-&lt;br&gt;
-Nucleo のSWDに接続する場合、自作も可能です。&lt;br&gt;&lt;/p&gt;
-&lt;div class=&#34;row&#34;&gt;
+        &lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;The STM32 MCU leaf can be used with STMicroelectronics&amp;rsquo; STLINK-V3SET and ST-LINK/V2 debuggers. This page explains how to connect to these debuggers.&lt;/br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.stmcu.jp/design/hwdevelop/debugger/&#34; target=&#34;_blank&#34;&gt; STM32 debugger&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;what-to-prepare&#34;&gt;What to prepare&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;STM32 MCU、Shield、Screw&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.stmcu.jp/design/hwdevelop/debugger/62359/&#34; target=&#34;_blank&#34;&gt; STLINK-V3SET&lt;/a&gt; /&lt;a href=&#34;https://www.stmcu.jp/design/hwdevelop/debugger/52828/&#34; target=&#34;_blank&#34;&gt; ST-LINK/V2&lt;/a&gt;＋&lt;a href=&#34;https://www.olimex.com/Products/ARM/JTAG/ARM-JTAG-20-10/&#34; target=&#34;_blank&#34;&gt; ARM-JTAG-20-10&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;USB cable&lt;/li&gt;
+&lt;li&gt;PC (Windows)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;connection-method&#34;&gt;Connection method&lt;/h2&gt;
+&lt;p&gt;A 1.27mm pitch SWD connector (FTSH-105-01-L-D) is mounted on the Shield leaf, so you can attach an STM32 MCU leaf and connect it to the debugger.&lt;/p&gt;
+&lt;h3 id=&#34;in-the-case-of-stlink-v3set&#34;&gt;In the case of STLINK-V3SET&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;./STLINKV3SET.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;h3 id=&#34;in-the-case-of-st-linkv2--arm-jtag-20-10&#34;&gt;In the case of ST-LINK/V2 + ARM-JTAG-20-10&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;./STLINKV2.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 
-
-
-
-
-
-  &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
-    &lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;swd_5.png&#34; alt=&#34;Card image cap&#34;&gt;
-    
-    &lt;div class=&#34;card-body&#34;&gt;
-      &lt;h4 class=&#34;card-title&#34;&gt;
-           
-      &lt;/h4&gt;
-      &lt;p class=&#34;card-text&#34;&gt;&lt;a href=&#34;http://strawberry-linux.com/catalog/items?code=15079&#34; target=&#34;_blank&#34;&gt;ハーフピッチ リボンケーブル&lt;/a&gt;&lt;/p&gt;
-      
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-
-
-
-
-
-  &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
-    &lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;swd_6.png&#34; alt=&#34;Card image cap&#34;&gt;
-    
-    &lt;div class=&#34;card-body&#34;&gt;
-      &lt;h4 class=&#34;card-title&#34;&gt;
-           
-      &lt;/h4&gt;
-      &lt;p class=&#34;card-text&#34;&gt;&lt;a href=&#34;https://akizukidenshi.com/catalog/g/gC-13800/&#34; target=&#34;_blank&#34;&gt;ハーフピッチ　ピンヘッダ&lt;/a&gt;&lt;/p&gt;
-      
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-
-
-
-
-
-  &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
-    &lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;swd_7.png&#34; alt=&#34;Card image cap&#34;&gt;
-    
-    &lt;div class=&#34;card-body&#34;&gt;
-      &lt;h4 class=&#34;card-title&#34;&gt;
-           
-      &lt;/h4&gt;
-      &lt;p class=&#34;card-text&#34;&gt;&lt;a href=&#34;https://akizukidenshi.com/catalog/g/gP-14224/&#34; target=&#34;_blank&#34;&gt;ピッチ変換基板&lt;/a&gt;&lt;/p&gt;
-      
-    &lt;/div&gt;
-  &lt;/div&gt;
-
-
-
-
-
-
-  &lt;div class=&#34;card&#34; style=&#34;width: 18rem;&#34;&gt;
-    &lt;img class=&#34;card-img-top&#34; style=&#34;object-fit: cover; width: 100%; height: 15rem;&#34; src=&#34;swd_8.png&#34; alt=&#34;Card image cap&#34;&gt;
-    
-    &lt;div class=&#34;card-body&#34;&gt;
-      &lt;h4 class=&#34;card-title&#34;&gt;
-           
-      &lt;/h4&gt;
-      &lt;p class=&#34;card-text&#34;&gt;&lt;a href=&#34;https://akizukidenshi.com/catalog/g/gC-03786/&#34; target=&#34;_blank&#34;&gt;ピンソケット&lt;/a&gt;&lt;/p&gt;
-      
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
       </description>
     </item>
     
