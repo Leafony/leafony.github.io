@@ -132,7 +132,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8406fed86ffdedeaf36973be610eca977929faba037167dee2ece7862de20670b149421dcd7b48356dd8546b7cf1627ba1f26eaedc8319f0463166ebf904972d.json"
+  data-offline-search-index-json-src="/offline-search-index.7765da39617e507ba7a4335faa2829c14c8091b683a8d9512cb6d7d2c4c3c745a97064fbcfcf4d8c7cc5480f4793a515acf27f17945e6ba1a76e8bb918337749.json"
   data-offline-search-base-href="/"
 >
 
@@ -162,7 +162,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8406fed86ffdedeaf36973be610eca977929faba037167dee2ece7862de20670b149421dcd7b48356dd8546b7cf1627ba1f26eaedc8319f0463166ebf904972d.json"
+  data-offline-search-index-json-src="/offline-search-index.7765da39617e507ba7a4335faa2829c14c8091b683a8d9512cb6d7d2c4c3c745a97064fbcfcf4d8c7cc5480f4793a515acf27f17945e6ba1a76e8bb918337749.json"
   data-offline-search-base-href="/"
 >
 
@@ -3356,17 +3356,8 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#arudiono-ideの設定">Arudiono IDEの設定</a></li>
-    <li><a href="#スケッチの注意点">スケッチの注意点</a>
-      <ul>
-        <li><a href="#ピンの指定">ピンの指定</a></li>
-      </ul>
-    </li>
-    <li><a href="#ライブラリの注意点">ライブラリの注意点</a>
-      <ul>
-        <li><a href="#hardwaretimer">HardwareTimer</a></li>
-      </ul>
-    </li>
+    <li><a href="#用意するもの">用意するもの</a></li>
+    <li><a href="#プログラムの書き込み方">プログラムの書き込み方</a></li>
   </ul>
 </nav>
 
@@ -3416,106 +3407,23 @@ if (!doNotTrack) {
 	<h1>STM32 MCU スタートガイド</h1>
         <div class="lead">Arduno IDEでSTM32 MCUリーフを使ってみよう！</div>
 	
-	<p>以下の手順に従えば、AVR MCUリーフと同じ様に、Arduinoの環境で簡単に開発が出来ます。STM32 MCUリーフのサンプルアプリ・応用を用意しましたので、トライしてみて下さい。</p>
-<h2 id="arudiono-ideの設定">Arudiono IDEの設定</h2>
-<p>まずは、STM32 MCUリーフの<a href="/docs/environment/stm32/arduino_ide/" target="_blank">Arduino のIDE設定</a>を参照して、開発環境を整備して下さい。</p>
-<h2 id="スケッチの注意点">スケッチの注意点</h2>
-<p>AVR MCUリーフの場合と、異なる点を纏めましたので参考にして下さい。</p>
-<h3 id="ピンの指定">ピンの指定</h3>
-<p>STM32 MCUのピン配置は、Nucleo L452REと異なっているので、ピンを指定する時、名前(Name)は使用することは出来ません。<strong>STM32 MCUリーフは、ポート(Port)でピンを指定して下さい</strong>。</br></p>
-<p><a href="/docs/leaf/processor/ap03/ap03_pinassign.png"><img src="/docs/leaf/processor/ap03/ap03_pinassign.png" width="750"></a></p>
-<h2 id="ライブラリの注意点">ライブラリの注意点</h2>
-<p>タイマ割り込みライブラリ(MsTimer2.h)を除いた以下のライブラリ全てが、そのまま使用出来ます。</br></p>
-<table class="table-hover">
-  <thread>
-    <tr>
-      <th>リーフ名</th>
-      <th>必要なライブラリ名</th>
-      <th>推奨バージョン</th>
-      <th>説明</th>
-    </tr>
-  </thread>
-  <tbody>
-    <tr>
-      <td>BLE</td>
-      <td><a href="https://github.com/Leafony/TBGLib" target="_blank">TBGLib</a></td>
-      <td></td>
-      <td>Bluetoothライブラリ</td>
-    </tr>
-    <tr>
-      <td rowspan=6>4-Sensors</td>
-      <td><a href="https://github.com/adafruit/Adafruit_Sensor" target="_blank">Adafruit_Sensor.h</a></td>
-      <td></td>
-      <td>ユニファイドセンサドライバ</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/adafruit/Adafruit_BusIO" target="_blank">Adafruit_BusIO_Register.h</a></td>
-      <td></td>
-      <td>Bus IOライブラリ</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/ameltech/sme-hts221-library" target="_blank">HTS221.h</a></td>
-      <td></td>
-      <td>温湿度センサライブラリ</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/adafruit/Adafruit_HTS221" target="_blank">Adafruit_HTS221.h</a></td>
-      <td></td>
-      <td>Adafruit温湿度センサライブラリ</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/closedcube/ClosedCube_OPT3001_Arduino" target="_blank">ClosedCube_OPT3001.h</a></td>
-      <td></td>
-      <td>照度センサライブラリ</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/adafruit/Adafruit_LIS3DH/tree/1.1.2" target="_blank">Adafruit_LIS3DH.h</a></td>
-      <td>1.1.2</td>
-      <td>加速度センサライブラリ</td>
-    </tr>
-    <tr>
-      <td>LCD</td>
-      <td><a href="https://github.com/tomozh/arduino_ST7032" target="_blank">ST7032.h</a></td>
-      <td></td>
-      <td>LCDライブラリ</td>
-    </tr>
-    <tr>
-      <td> <strike>AVR MCU </strike></td>
-      <td><a href="https://github.com/PaulStoffregen/MsTimer2" target="_blank"> <strike>MsTimer2.h </strike></a></td>
-      <td></td>
-      <td> <strike>タイマ割り込みライブラリ </strike></td>
-    </tr>
-    <tr>
-      <td>RTC&MicroSD</td>
-      <td><a href="https://github.com/adafruit/RTClib" target="_blank">RTClib.h</a></td>
-      <td></td>
-      <td>RTCライブラリ</td>
-    </tr>
-  </tbody>
-</table>
-<h3 id="hardwaretimer">HardwareTimer</h3>
-<p>HardwareTimer等を使用で出来ます。使用例を以下に、記載します。詳細は<a href="https://github.com/stm32duino/wiki/wiki/HardwareTimer-library" target="_blank">こちら</a> 
-<br>
-<br>
-初期設定</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">HardwareTimer</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">timer2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">HardwareTimer</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">TIM2</span><span style="color:#000;font-weight:bold">);</span>
+	<p>AVR MCUリーフと同じ様に、Arduinoの環境で簡単に開発が出来ます。STM32 MCUリーフのサンプルアプリ・応用を用意しましたので、トライしてみて下さい。</p>
+<h2 id="用意するもの">用意するもの</h2>
+<ul>
+<li>STM32 MCU</li>
+<li>Basic Kit 、Extenston KitまたはESP32 Wi-Fi Kit</li>
+<li>PC (Windows、Mac OS X 、または Linux)　</li>
+</ul>
+<h2 id="プログラムの書き込み方">プログラムの書き込み方</h2>
+<p>PCの環境整備がまだならば、「<a href="/docs/environment/stm32/arduino_ide/" target="_blank">STM32 MCU の Arduino IDE 設定マニュアル</a>」を参照して準備をしてください。
 
-  <span style="color:#000">timer2</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">setOverflow</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LOOP_INTERVAL</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">MICROSEC_FORMAT</span><span style="color:#000;font-weight:bold">);</span>       <span style="color:#8f5902;font-style:italic">// 125ms
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">timer2</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">attachInterrupt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">intTimer</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">timer2</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">resume</span><span style="color:#000;font-weight:bold">();</span>
-</code></pre></div><p>割り込みルーチン</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">intTimer</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">void</span><span style="color:#000;font-weight:bold">){</span>
-  <span style="color:#000">bInterval</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">;</span>
-　<span style="color:#a40000">：</span>
-　<span style="color:#a40000">：</span>
-<span style="color:#000;font-weight:bold">}</span>
-</code></pre></div>
 
 <div class="alert alert-primary" role="alert">
 <h4 class="alert-heading">次のステップ</h4>
 <a href="/docs/examples/">サンプルアプリ</a>にあるプログラムを書き込んでみましょう。
 </div>
-
+</p>
+<br>
 
         <div class="section-index">
     
@@ -3527,7 +3435,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 1, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 9, 2021
 </div>
 </div>
 

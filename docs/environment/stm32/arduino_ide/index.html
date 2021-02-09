@@ -132,7 +132,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8406fed86ffdedeaf36973be610eca977929faba037167dee2ece7862de20670b149421dcd7b48356dd8546b7cf1627ba1f26eaedc8319f0463166ebf904972d.json"
+  data-offline-search-index-json-src="/offline-search-index.7765da39617e507ba7a4335faa2829c14c8091b683a8d9512cb6d7d2c4c3c745a97064fbcfcf4d8c7cc5480f4793a515acf27f17945e6ba1a76e8bb918337749.json"
   data-offline-search-base-href="/"
 >
 
@@ -162,7 +162,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8406fed86ffdedeaf36973be610eca977929faba037167dee2ece7862de20670b149421dcd7b48356dd8546b7cf1627ba1f26eaedc8319f0463166ebf904972d.json"
+  data-offline-search-index-json-src="/offline-search-index.7765da39617e507ba7a4335faa2829c14c8091b683a8d9512cb6d7d2c4c3c745a97064fbcfcf4d8c7cc5480f4793a515acf27f17945e6ba1a76e8bb918337749.json"
   data-offline-search-base-href="/"
 >
 
@@ -3362,7 +3362,17 @@ if (!doNotTrack) {
     <li><a href="#マイコンボードの設定">マイコンボードの設定</a></li>
     <li><a href="#stm32cubeprog-のインストール">STM32CubeProg のインストール</a></li>
     <li><a href="#マイコンボードの書き込み">マイコンボードの書き込み</a></li>
-    <li><a href="#ライブラリのインストール">ライブラリのインストール</a></li>
+    <li><a href="#スケッチの注意点">スケッチの注意点</a>
+      <ul>
+        <li><a href="#ピンの指定">ピンの指定</a></li>
+      </ul>
+    </li>
+    <li><a href="#ライブラリのインストール">ライブラリのインストール</a>
+      <ul>
+        <li><a href="#hardwaretimer">HardwareTimer</a></li>
+      </ul>
+    </li>
+    <li><a href="#困ったときは">困ったときは</a></li>
   </ul>
 </nav>
 
@@ -3482,11 +3492,41 @@ if (!doNotTrack) {
 <p>書き込みが完了したら、STM32 MCUリーフの<code>プログラムスイッチ</code>を実行（Run)側にするとLEDが消灯します。</p>
 </li>
 <li>
-<p>STM32 MCUリーフの<code>リセットスイッチ</code>を押してください。</p>
+<p>STM32 MCUリーフの<code>リセットスイッチ</code>を押して、マイコンをリセットして下さい。</p>
 </li>
 </ol>
+<h2 id="スケッチの注意点">スケッチの注意点</h2>
+<h3 id="ピンの指定">ピンの指定</h3>
+<p>STM32 MCUのピン配置は、Nucleo L452REと異なっているので、ピンを指定する時、名前(Name)は使用することは出来ません。<strong>STM32 MCUリーフは、ポート(Port)でピンを指定して下さい</strong>。</br></p>
+<p><a href="/docs/leaf/processor/ap03/ap03_pinassign.png"><img src="/docs/leaf/processor/ap03/ap03_pinassign.png" width="750"></a></p>
 <h2 id="ライブラリのインストール">ライブラリのインストール</h2>
-<p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。<a href="https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" target="_blank">こちら</a>を参照して、あらかじめ全てののライブラリをインストールしておきましょう。</p>
+<p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。<a href="https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" target="_blank">こちら</a>を参照して、あらかじめ全てののライブラリをインストールしておきましょう。ただし、タイマ割り込みライブラリ(MsTimer2.h)は、AVR MCUのライブラリなので、使用出来ません。以下のHardwareTimerを参考にして下さい。</p>
+<h3 id="hardwaretimer">HardwareTimer</h3>
+<p>使用例を以下に、記載します。詳細は<a href="https://github.com/stm32duino/wiki/wiki/HardwareTimer-library" target="_blank">こちら</a> 
+<br>
+<br>
+初期設定</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">HardwareTimer</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">timer2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">HardwareTimer</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">TIM2</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#000">timer2</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">setOverflow</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LOOP_INTERVAL</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">MICROSEC_FORMAT</span><span style="color:#000;font-weight:bold">);</span>       <span style="color:#8f5902;font-style:italic">// 125ms
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">timer2</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">attachInterrupt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">intTimer</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">timer2</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">resume</span><span style="color:#000;font-weight:bold">();</span>
+</code></pre></div><p>割り込みルーチン</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">intTimer</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">void</span><span style="color:#000;font-weight:bold">){</span>
+  <span style="color:#000">bInterval</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">;</span>
+　<span style="color:#a40000">：</span>
+　<span style="color:#a40000">：</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><h2 id="困ったときは">困ったときは</h2>
+<p>「<a href="/docs/getting-started/solution" target="_blank">うまく動かないときは</a>」で解決方法を探してみましょう。</p>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">次のステップ</h4>
+<a href="/docs/examples">サンプルアプリ</a>には、幾つものプログラムを用意しています。<br>
+開発を簡単にするため、ライブラリをインストールしてから、始めてください。
+</div>
+
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
@@ -3510,7 +3550,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 8, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 9, 2021
 </div>
 </div>
 

@@ -132,7 +132,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8406fed86ffdedeaf36973be610eca977929faba037167dee2ece7862de20670b149421dcd7b48356dd8546b7cf1627ba1f26eaedc8319f0463166ebf904972d.json"
+  data-offline-search-index-json-src="/offline-search-index.7765da39617e507ba7a4335faa2829c14c8091b683a8d9512cb6d7d2c4c3c745a97064fbcfcf4d8c7cc5480f4793a515acf27f17945e6ba1a76e8bb918337749.json"
   data-offline-search-base-href="/"
 >
 
@@ -162,7 +162,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8406fed86ffdedeaf36973be610eca977929faba037167dee2ece7862de20670b149421dcd7b48356dd8546b7cf1627ba1f26eaedc8319f0463166ebf904972d.json"
+  data-offline-search-index-json-src="/offline-search-index.7765da39617e507ba7a4335faa2829c14c8091b683a8d9512cb6d7d2c4c3c745a97064fbcfcf4d8c7cc5480f4793a515acf27f17945e6ba1a76e8bb918337749.json"
   data-offline-search-base-href="/"
 >
 
@@ -3362,13 +3362,7 @@ if (!doNotTrack) {
     <li><a href="#マイコンボードの設定">マイコンボードの設定</a></li>
     <li><a href="#マイコンボードの動作確認">マイコンボードの動作確認</a></li>
     <li><a href="#困ったときは">困ったときは</a></li>
-    <li><a href="#ライブラリのインストール">ライブラリのインストール</a>
-      <ul>
-        <li><a href="#1-使用するライブラリ">1. 使用するライブラリ</a></li>
-        <li><a href="#2-githubからライブラリをダウンロード">2. Githubからライブラリをダウンロード</a></li>
-        <li><a href="#3-ライブラリのインクルード">3. ライブラリのインクルード</a></li>
-      </ul>
-    </li>
+    <li><a href="#ライブラリのインストール">ライブラリのインストール</a></li>
   </ul>
 </nav>
 
@@ -3520,75 +3514,9 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 </div>
 
 <h2 id="ライブラリのインストール">ライブラリのインストール</h2>
-<p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。
-下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきましょう。</p>
-<h3 id="1-使用するライブラリ">1. 使用するライブラリ</h3>
-<p>各Kitで使用するライブラリは以下の通りです。</p>
-<table>
-  <tr>
-    <th>リーフ名</th>
-    <th>必要なライブラリ名</th>
-    <th>推奨バージョン</th>
-    <th>説明</th>
-  </tr>
-  <tr>
-    <td>BLE</td>
-    <td><a href="https://github.com/Leafony/TBGLib" target="_blank">TBGLib</a></td>
-    <td></td>
-    <td>Bluetoothライブラリ</td>
-  </tr>
-  <tr>
-    <td rowspan=6>4-Sensors</td>
-    <td><a href="https://github.com/adafruit/Adafruit_Sensor" target="_blank">Adafruit_Sensor.h</a></td>
-    <td></td>
-    <td>ユニファイドセンサドライバ</td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/adafruit/Adafruit_BusIO" target="_blank">Adafruit_BusIO_Register.h</a></td>
-    <td></td>
-    <td>Bus IOライブラリ</td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/ameltech/sme-hts221-library" target="_blank">HTS221.h</a></td>
-    <td></td>
-    <td>温湿度センサライブラリ</td>
-  </tr>
-    <tr>
-      <td><a href="https://github.com/adafruit/Adafruit_HTS221" target="_blank">Adafruit_HTS221.h</a></td>
-      <td></td>
-      <td>Adafruit温湿度センサライブラリ</td>
-    </tr>
-  <tr>
-    <td><a href="https://github.com/closedcube/ClosedCube_OPT3001_Arduino" target="_blank">ClosedCube_OPT3001.h</a></td>
-    <td></td>
-    <td>照度センサライブラリ</td>
-  </tr>
-  <tr>
-    <td><a href="https://github.com/adafruit/Adafruit_LIS3DH/tree/1.1.2" target="_blank">Adafruit_LIS3DH.h</a></td>
-    <td>1.1.2</td>
-    <td>加速度センサライブラリ</td>
-  </tr>
-  <tr>
-    <td>LCD</td>
-    <td><a href="https://github.com/tomozh/arduino_ST7032" target="_blank">ST7032.h</a></td>
-    <td></td>
-    <td>LCDライブラリ</td>
-  </tr>
-  <tr>
-    <td>RTC&MicroSD</td>
-    <td><a href="https://github.com/adafruit/RTClib" target="_blank">RTClib.h</a></td>
-    <td></td>
-    <td>RTCライブラリ</td>
-  </tr>
-</table>
-<h3 id="2-githubからライブラリをダウンロード">2. Githubからライブラリをダウンロード</h3>
-<p>上記表のリンクをクリックすると、ライブラリのGitHubリポジトリにアクセスします。
-<code>Code → Download ZIP</code>をクリックし、ライブラリをダウンロードしましょう。</p>
-<p><img src="./github_1.png" alt="github"></p>
-<h3 id="3-ライブラリのインクルード">3. ライブラリのインクルード</h3>
-<p>Arduinoを立ち上げ、<code>スケッチ → ライブラリをインクルード → ZIP形式のライブラリをインストール</code>の順に選択して、先程ダウンロードしたZIPファイルを読み込みましょう。</p>
-<p><img src="./IDE_libinclude.png" alt="include"></p>
-<br>
+<p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。</br>
+<a href="https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" target="_blank">こちら</a>を参照して、あらかじめ全てののライブラリをインストールしておきましょう。</p>
+
         <div class="section-index">
     
     
@@ -3599,7 +3527,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 December 8, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 9, 2021
 </div>
 </div>
 
