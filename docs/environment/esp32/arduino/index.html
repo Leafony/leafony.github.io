@@ -132,7 +132,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.543de6e7288975dd69762fe3d37050ffb32554f7c94fcca4f1ec0aceec11804b30ff670662cac67e09130ef12bdca152a15bbda983ec04be8e2a49086b4c3b33.json"
+  data-offline-search-index-json-src="/offline-search-index.55d159aac394c68f89f7c5fafe52a89dd27df602ee7d5a1d965edeb9f7cf50bf0432183586a05f4ced7b9ef337f101a3bfab98d3b9fc1380643e1a51da6833c8.json"
   data-offline-search-base-href="/"
 >
 
@@ -162,7 +162,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.543de6e7288975dd69762fe3d37050ffb32554f7c94fcca4f1ec0aceec11804b30ff670662cac67e09130ef12bdca152a15bbda983ec04be8e2a49086b4c3b33.json"
+  data-offline-search-index-json-src="/offline-search-index.55d159aac394c68f89f7c5fafe52a89dd27df602ee7d5a1d965edeb9f7cf50bf0432183586a05f4ced7b9ef337f101a3bfab98d3b9fc1380643e1a51da6833c8.json"
   data-offline-search-base-href="/"
 >
 
@@ -3361,8 +3361,13 @@ if (!doNotTrack) {
     <li><a href="#pcと接続">PCと接続</a></li>
     <li><a href="#マイコンボードの設定">マイコンボードの設定</a></li>
     <li><a href="#マイコンボードの動作確認">マイコンボードの動作確認</a></li>
-    <li><a href="#困ったときは">困ったときは</a></li>
+    <li><a href="#ピンの指定">ピンの指定</a>
+      <ul>
+        <li><a href="#制限事項">制限事項</a></li>
+      </ul>
+    </li>
     <li><a href="#ライブラリのインストール">ライブラリのインストール</a></li>
+    <li><a href="#困ったときは">困ったときは</a></li>
   </ul>
 </nav>
 
@@ -3503,8 +3508,24 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 <li><code>Bootモードスイッチ(IO0)</code>を押してスイッチの入力状態が変わるのを確認する。</li>
 </ol>
 <p><a href="./AP02_tips.png"><img src="./AP02_tips.png" width="450"></a></p>
+<h2 id="ピンの指定">ピンの指定</h2>
+<p>ピンの指定は、名前(Name)ではなく、<strong>ポート(Port)でピンを指定して下さい</strong>。</br></br>
+<a href="https://docs.leafony.com/docs/leaf/processor/ap02/ap02_pinassign_v1.png"><img src="https://docs.leafony.com/docs/leaf/processor/ap02/ap02_pinassign_v1.png" width="750"></a></p>
+<h3 id="制限事項">制限事項</h3>
+<p>※1：出力の設定不可</br>
+※2：①UART1は、ピン番号をRX=26、TX=25に設定。UART0、2に関しては、ピン番号の指定無し。UART1の設定例を記す。</br></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">HardwareSerial</span> <span style="color:#000">Serial1</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// UART1 (RX=9, TX=10)
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#000">Serial1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">9600</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">SERIAL_8N1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">26</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">25</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// ピンを変更 (RX=26, TX=25)
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><p>　　②WiFi.hをインクルードする場合は、アナログ入力として使用不可</br></p>
+<p>※3:ブートストラップに使用しているため、プルアップ禁止</p>
+<h2 id="ライブラリのインストール">ライブラリのインストール</h2>
+<p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。</br>
+<a href="https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" target="_blank">こちら</a>を参照して、あらかじめ全てののライブラリをインストールしておきましょう。</p>
 <h2 id="困ったときは">困ったときは</h2>
-<p>「<a href="/docs/getting-started/solution" target="_blank">うまく動かないときは</a>」で解決方法を探してみましょう。</p>
+<p>「<a href="/docs/getting-started/solution" target="_blank">うまく動かないときは</a>」で解決方法を探してみましょう。<br>
 
 
 <div class="alert alert-primary" role="alert">
@@ -3512,10 +3533,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 <a href="/docs/examples">サンプルアプリ</a>には、幾つものプログラムを用意しています。<br>
 開発を簡単にするため、ライブラリをインストールしてから、始めてください。
 </div>
-
-<h2 id="ライブラリのインストール">ライブラリのインストール</h2>
-<p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。</br>
-<a href="https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" target="_blank">こちら</a>を参照して、あらかじめ全てののライブラリをインストールしておきましょう。</p>
+</p>
 
         <div class="section-index">
     
@@ -3527,7 +3545,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 9, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 10, 2021
 </div>
 </div>
 

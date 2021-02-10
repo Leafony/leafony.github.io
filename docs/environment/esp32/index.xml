@@ -103,8 +103,24 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 &lt;li&gt;&lt;code&gt;Bootモードスイッチ(IO0)&lt;/code&gt;を押してスイッチの入力状態が変わるのを確認する。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;a href=&#34;./AP02_tips.png&#34;&gt;&lt;img src=&#34;./AP02_tips.png&#34; width=&#34;450&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ピンの指定&#34;&gt;ピンの指定&lt;/h2&gt;
+&lt;p&gt;ピンの指定は、名前(Name)ではなく、&lt;strong&gt;ポート(Port)でピンを指定して下さい&lt;/strong&gt;。&lt;/br&gt;&lt;/br&gt;
+&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02/ap02_pinassign_v1.png&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap02/ap02_pinassign_v1.png&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;制限事項&#34;&gt;制限事項&lt;/h3&gt;
+&lt;p&gt;※1：出力の設定不可&lt;/br&gt;
+※2：①UART1は、ピン番号をRX=26、TX=25に設定。UART0、2に関しては、ピン番号の指定無し。UART1の設定例を記す。&lt;/br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;HardwareSerial&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Serial1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// UART1 (RX=9, TX=10)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;Serial1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;begin&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;9600&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SERIAL_8N1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;25&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// ピンを変更 (RX=26, TX=25)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;　　②WiFi.hをインクルードする場合は、アナログ入力として使用不可&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;※3:ブートストラップに使用しているため、プルアップ禁止&lt;/p&gt;
+&lt;h2 id=&#34;ライブラリのインストール&#34;&gt;ライブラリのインストール&lt;/h2&gt;
+&lt;p&gt;一部のリーフを使用するには、追加のライブラリをインストールする必要があります。&lt;/br&gt;
+&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;を参照して、あらかじめ全てののライブラリをインストールしておきましょう。&lt;/p&gt;
 &lt;h2 id=&#34;困ったときは&#34;&gt;困ったときは&lt;/h2&gt;
-&lt;p&gt;「&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/solution&#34; target=&#34;_blank&#34;&gt;うまく動かないときは&lt;/a&gt;」で解決方法を探してみましょう。&lt;/p&gt;
+&lt;p&gt;「&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/solution&#34; target=&#34;_blank&#34;&gt;うまく動かないときは&lt;/a&gt;」で解決方法を探してみましょう。&lt;br&gt;
 
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
@@ -112,10 +128,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 &lt;a href=&#34;https://docs.leafony.com/docs/examples&#34;&gt;サンプルアプリ&lt;/a&gt;には、幾つものプログラムを用意しています。&lt;br&gt;
 開発を簡単にするため、ライブラリをインストールしてから、始めてください。
 &lt;/div&gt;
-
-&lt;h2 id=&#34;ライブラリのインストール&#34;&gt;ライブラリのインストール&lt;/h2&gt;
-&lt;p&gt;一部のリーフを使用するには、追加のライブラリをインストールする必要があります。&lt;/br&gt;
-&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;を参照して、あらかじめ全てののライブラリをインストールしておきましょう。&lt;/p&gt;
+&lt;/p&gt;
 
       </description>
     </item>
