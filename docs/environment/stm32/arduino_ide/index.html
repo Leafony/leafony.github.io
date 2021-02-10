@@ -132,7 +132,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f9c80ebc0de7608fc7601264d6b5be19abde9d404282bedbcb7910bb9d6efa0589095d10069df3bbaf3d8bc8d521035cd6ff50ea8ae840ba6c9b01ee11b49141.json"
+  data-offline-search-index-json-src="/offline-search-index.0353285704a3aa894b01f5aa08d42c2ff73e224d1dd5866c5c0e944de11ff98b5a5c15d80ccd55565e594a8e1b56e12e5908523b586758a27778968fbd43d8a0.json"
   data-offline-search-base-href="/"
 >
 
@@ -162,7 +162,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f9c80ebc0de7608fc7601264d6b5be19abde9d404282bedbcb7910bb9d6efa0589095d10069df3bbaf3d8bc8d521035cd6ff50ea8ae840ba6c9b01ee11b49141.json"
+  data-offline-search-index-json-src="/offline-search-index.0353285704a3aa894b01f5aa08d42c2ff73e224d1dd5866c5c0e944de11ff98b5a5c15d80ccd55565e594a8e1b56e12e5908523b586758a27778968fbd43d8a0.json"
   data-offline-search-base-href="/"
 >
 
@@ -3338,8 +3338,11 @@ if (!doNotTrack) {
     <li><a href="#pcと接続">PCと接続</a></li>
     <li><a href="#マイコンボードの設定">マイコンボードの設定</a></li>
     <li><a href="#stm32cubeprog-のインストール">STM32CubeProg のインストール</a></li>
-    <li><a href="#マイコンボードの書き込み">マイコンボードの書き込み</a></li>
-    <li><a href="#スケッチのピンの指定">スケッチのピンの指定</a></li>
+    <li><a href="#マイコンボードの動作確認">マイコンボードの動作確認</a>
+      <ul>
+        <li><a href="#スケッチのピンの指定">スケッチのピンの指定</a></li>
+      </ul>
+    </li>
     <li><a href="#ライブラリのインストール">ライブラリのインストール</a>
       <ul>
         <li><a href="#hardwaretimer">HardwareTimer</a></li>
@@ -3430,7 +3433,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 
 <h2 id="pcと接続">PCと接続</h2>
 <p>USBケーブルでPCと接続しましょう。<br></p>
-<img src="./stm32_assemble.jpg">
+<img src="./stm32_assemble.jpg" width="750">
 <br>
 <h2 id="マイコンボードの設定">マイコンボードの設定</h2>
 <p>STM32 MCUリーフをArduino IDEで使用するには、STM32 Coresのインストールが必要です。以下の手順で、設定をして下さい。(STM32 Coresの詳細は、<a href="https://github.com/stm32duino/Arduino_Core_STM32" target="_blank">こちら</a>)</p>
@@ -3465,25 +3468,28 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 </ol>
 <h2 id="stm32cubeprog-のインストール">STM32CubeProg のインストール</h2>
 <p>STM32 MCUリーフに、プログラムを書き込めるようにするには、STM32CubeProgのインストール<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>が必要です。STM32CubeProgは、<a href="https://www.stmcu.jp/design/sw_dev/pc_soft/58442/" target="_blank">ここから</a>PCにダウンロードしてインストールして下さい。</p>
-<h2 id="マイコンボードの書き込み">マイコンボードの書き込み</h2>
+<h2 id="マイコンボードの動作確認">マイコンボードの動作確認</h2>
 <ol>
 <li>
 <p>STM32 MCUリーフの<code>プログラムスイッチ</code>を、プログラム側にするとLEDが点灯します。</br>
 <a href="/docs/leaf/processor/ap03/ap03_tips.jpg"><img src="/docs/leaf/processor/ap03/ap03_tips.jpg" width="450"></a></p>
 </li>
 <li>
-<p>次にスケッチを書き込み、Arduino IDEの<code>マイコンボードに書き込む</code>をクリックします。正常に書き込まれた場合は <code>Start operation achieved successfully</code>と表示されます。表示がされない場合<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>は、書き込みが行われていません。(表示全体は<a href="./stm32prog.jpg" target="_blank">こちら</a>）</br></br>
+<p>次に、Arduino IDEで<code>ファイル → スケッチ例 → 01.Basics → Blink</code>をクリックし、サンプルアプリを開きます。STM32 MCUには、13pinにLEDが無いので、点滅はしませんが、画面下の表示で正常に書き込まれたかを確認します。</p>
+</li>
+<li>
+<p>スケッチを書き込み、Arduino IDEの<code>マイコンボードに書き込む</code>をクリックします。正常に書き込まれた場合は <code>Start operation achieved successfully</code>と表示されます。表示がされない場合<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>は、書き込みが行われていません。(表示全体は<a href="./stm32prog.jpg" target="_blank">こちら</a>）</br></br>
 <img src="./operation1_v1.png"></img></p>
 </li>
 <li>
 <p>書き込みが完了したら、STM32 MCUリーフの<code>プログラムスイッチ</code>を実行（Run)側にするとLEDが消灯します。</p>
 </li>
 <li>
-<p>STM32 MCUリーフの<code>リセットスイッチ</code>を押して、マイコンをリセットして下さい。</p>
+<p>STM32 MCUリーフの<code>リセットスイッチ</code>を押して、マイコンをリセットすれば、完了です。</p>
 </li>
 </ol>
-<h2 id="スケッチのピンの指定">スケッチのピンの指定</h2>
-<p>STM32 MCUのピン配置は、Nucleo L452REと異なっていいます。ピンは、名前(Name)ではなく、<strong>ポート(Port)で指定して下さい</strong>。</br></p>
+<h3 id="スケッチのピンの指定">スケッチのピンの指定</h3>
+<p>STM32 MCUのピン配置は、Nucleo L452REと異なっていいます。<strong>ピンは、名前(Name)ではなく、ポート(Port)で指定して下さい</strong>。</br></p>
 <p><a href="/docs/leaf/processor/ap03/ap03_pinassign.png"><img src="/docs/leaf/processor/ap03/ap03_pinassign.png" width="750"></a></p>
 <h2 id="ライブラリのインストール">ライブラリのインストール</h2>
 <p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。<a href="https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" target="_blank">こちら</a>を参照して、あらかじめ全てののライブラリをインストールしておきましょう。ただし、タイマ割り込みライブラリ(MsTimer2.h)は、AVR MCUのライブラリなので、使用出来ません。以下のHardwareTimerを参考にして下さい。</p>

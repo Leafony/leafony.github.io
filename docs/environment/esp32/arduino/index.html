@@ -132,7 +132,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f9c80ebc0de7608fc7601264d6b5be19abde9d404282bedbcb7910bb9d6efa0589095d10069df3bbaf3d8bc8d521035cd6ff50ea8ae840ba6c9b01ee11b49141.json"
+  data-offline-search-index-json-src="/offline-search-index.0353285704a3aa894b01f5aa08d42c2ff73e224d1dd5866c5c0e944de11ff98b5a5c15d80ccd55565e594a8e1b56e12e5908523b586758a27778968fbd43d8a0.json"
   data-offline-search-base-href="/"
 >
 
@@ -162,7 +162,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f9c80ebc0de7608fc7601264d6b5be19abde9d404282bedbcb7910bb9d6efa0589095d10069df3bbaf3d8bc8d521035cd6ff50ea8ae840ba6c9b01ee11b49141.json"
+  data-offline-search-index-json-src="/offline-search-index.0353285704a3aa894b01f5aa08d42c2ff73e224d1dd5866c5c0e944de11ff98b5a5c15d80ccd55565e594a8e1b56e12e5908523b586758a27778968fbd43d8a0.json"
   data-offline-search-base-href="/"
 >
 
@@ -3337,10 +3337,9 @@ if (!doNotTrack) {
     <li><a href="#arduino-ideのインストール">Arduino IDEのインストール</a></li>
     <li><a href="#pcと接続">PCと接続</a></li>
     <li><a href="#マイコンボードの設定">マイコンボードの設定</a></li>
-    <li><a href="#マイコンボードの動作確認">マイコンボードの動作確認</a></li>
-    <li><a href="#スケッチのピンの指定">スケッチのピンの指定</a>
+    <li><a href="#マイコンボードの動作確認">マイコンボードの動作確認</a>
       <ul>
-        <li><a href="#制限事項">制限事項</a></li>
+        <li><a href="#スケッチのピンの指定">スケッチのピンの指定</a></li>
       </ul>
     </li>
     <li><a href="#ライブラリのインストール">ライブラリのインストール</a></li>
@@ -3415,18 +3414,11 @@ Leafonyにプログラムを書き込むために必要なソフトウェアを�
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
 <li>ESP32 Wi-Fi Kit</li>
+<li>USBケーブル</li>
 <li>PC (Windows、Mac OS X 、または Linux)</li>
 </ul>
 <h2 id="arduino-ideのインストール">Arduino IDEのインストール</h2>
-<p>Arduino IDEは、オープンソースの電子工作向けハードウェアプラットフォームであるArduinoの開発環境です。<br>
-この開発環境では、プログラムを記述したり、Arduino基板にプログラムを書き込んだり、基板から送られてくるデータを表示したりすることができます。<br>
-LeafonyはArduino互換の基板なので、Arduino IDEを使って開発できます。</p>
-<p>早速Arduino IDEをダウンロードしてみましょう。</p>
-<ol>
-<li><a href="https://www.arduino.cc/" target="_blank">Arduino ホームページ</a>から「SOFTWARE」 → 「DOWNLOADS」の順でページを開き、Arduino IDEのダウンロードページに飛ぶ。</li>
-<li>「Download the Arduino IDE」と書いてある場所で、使用しているOSにあったインストーラをダウンロード。</li>
-<li>ダウンロードしたインストーラを実行して、画面の指示に従ってArduino IDEをインストール。</li>
-</ol>
+<p>Arduino IDEのインストール方法は、<a href="https://docs.leafony.com/docs/environment/avr/arduino/#arduino-ide%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" target="_blank">こちら</a>を参照してください。</p>
 
 
 <div class="alert alert-primary" role="alert">
@@ -3485,10 +3477,10 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 <li><code>Bootモードスイッチ(IO0)</code>を押してスイッチの入力状態が変わるのを確認する。</li>
 </ol>
 <p><a href="./AP02_tips.png"><img src="./AP02_tips.png" width="450"></a></p>
-<h2 id="スケッチのピンの指定">スケッチのピンの指定</h2>
-<p>ピンは、名前(Name)ではなく、<strong>ポート(Port)で指定して下さい</strong>。</br></br>
+<h3 id="スケッチのピンの指定">スケッチのピンの指定</h3>
+<p><strong>ピンは、名前(Name)ではなく、ポート(Port)で指定して下さい</strong>。</br></br>
 <a href="https://docs.leafony.com/docs/leaf/processor/ap02/ap02_pinassign_v1.png"><img src="https://docs.leafony.com/docs/leaf/processor/ap02/ap02_pinassign_v1.png" width="750"></a></p>
-<h3 id="制限事項">制限事項</h3>
+<h4 id="制限事項">制限事項</h4>
 <p>※1：出力の設定不可</br>
 ※2：①UART1は、ピン番号をRX=26、TX=25に設定。UART0、2に関しては、ピン番号の指定無し。UART1の設定例を記す。</br></p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">HardwareSerial</span> <span style="color:#000">Serial1</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// UART1 (RX=9, TX=10)

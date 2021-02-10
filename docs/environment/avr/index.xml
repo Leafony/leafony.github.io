@@ -35,6 +35,7 @@ Leafonyにプログラムを書き込むために必要なソフトウェアを�
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Basic Kit&lt;/li&gt;
+&lt;li&gt;USBケーブル&lt;/li&gt;
 &lt;li&gt;PC (Windows、Mac OS X 、または Linux)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;arduino-ideのインストール&#34;&gt;Arduino IDEのインストール&lt;/h2&gt;
@@ -75,7 +76,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 &lt;li&gt;&lt;code&gt;マイコンボードに書き込む&lt;/code&gt;ボタンを押すをLeafonyにプログラムが書き込まれます。&lt;/li&gt;
 &lt;li&gt;AVR MCUリーフに搭載されたLEDが点滅していることが確認できれば完了です。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;スケッチのピンの指定&#34;&gt;スケッチのピンの指定&lt;/h2&gt;
+&lt;h3 id=&#34;スケッチのピンの指定&#34;&gt;スケッチのピンの指定&lt;/h3&gt;
 &lt;p&gt;ピンは、名前(Name)で指定して下さい。&lt;/br&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01/ap01_pinassign.png&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap01/ap01_pinassign.png&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ライブラリのインストール&#34;&gt;ライブラリのインストール&lt;/h2&gt;
