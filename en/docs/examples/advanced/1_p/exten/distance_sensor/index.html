@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -21,15 +21,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>超音波センサで距離測定 | Leafony</title><meta property="og:title" content="超音波センサで距離測定" />
+<title>Distance sensor | Leafony</title><meta property="og:title" content="Distance sensor" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/en/docs/examples/advanced/1_p/exten/distance_sensor/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="超音波センサで距離測定">
-<meta itemprop="description" content="A Leafony Documentation site">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="超音波センサで距離測定"/>
+<meta itemprop="name" content="Distance sensor">
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Distance sensor"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -49,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
-<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -129,7 +128,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7765da39617e507ba7a4335faa2829c14c8091b683a8d9512cb6d7d2c4c3c745a97064fbcfcf4d8c7cc5480f4793a515acf27f17945e6ba1a76e8bb918337749.json"
+  data-offline-search-index-json-src="/offline-search-index.b967369230053d188574c9dece527386e97f3afab5d8af55e7a63d76c73dc2ff26249227287d27293505530d19613c6560e4e3b91b01bebe1aae91cd4a27c89d.json"
   data-offline-search-base-href="/"
 >
 
@@ -159,7 +158,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7765da39617e507ba7a4335faa2829c14c8091b683a8d9512cb6d7d2c4c3c745a97064fbcfcf4d8c7cc5480f4793a515acf27f17945e6ba1a76e8bb918337749.json"
+  data-offline-search-index-json-src="/offline-search-index.b967369230053d188574c9dece527386e97f3afab5d8af55e7a63d76c73dc2ff26249227287d27293505530d19613c6560e4e3b91b01bebe1aae91cd4a27c89d.json"
   data-offline-search-base-href="/"
 >
 
@@ -393,52 +392,6 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/license/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">License</a>
-  </li>
-  <ul>
-    <li class="collapse " id="endocslicense">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/contacts/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Contacts</a>
-  </li>
-  <ul>
-    <li class="collapse " id="endocscontacts">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
     <a  href="/en/docs/getting-started/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Getting Started</a>
   </li>
   <ul>
@@ -525,10 +478,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/getting-started/assembly/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Leafony block assembly</a>
+    <a  href="/en/docs/getting-started/stm32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">STM32 MCU</a>
   </li>
   <ul>
-    <li class="collapse " id="endocsgetting-startedassembly">
+    <li class="collapse " id="endocsgetting-startedstm32">
       
       
       
@@ -548,10 +501,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/getting-started/stm32/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">STM32 MCU</a>
+    <a  href="/en/docs/getting-started/assembly/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Leafony block assembly</a>
   </li>
   <ul>
-    <li class="collapse " id="endocsgetting-startedstm32">
+    <li class="collapse " id="endocsgetting-startedassembly">
       
       
       
@@ -582,6 +535,52 @@ if (!doNotTrack) {
   </ul>
 </ul>
 
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/license/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">License</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocslicense">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/contacts/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Contacts</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocscontacts">
+      
       
       
     </li>
@@ -2067,6 +2066,52 @@ if (!doNotTrack) {
 
       
       
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/examples/advanced/1_p/motor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsexamplesadvanced1_pmotor">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/examples/advanced/1_p/motor/motor_demo/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsexamplesadvanced1_pmotormotor_demo">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
     </li>
   </ul>
 </ul>
@@ -2369,6 +2414,29 @@ if (!doNotTrack) {
   </li>
   <ul>
     <li class="collapse " id="endocspcbkicad">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/pcb/cr-8000_design_force/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">CR-8000 Design Force</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocspcbcr-8000_design_force">
       
       
       
@@ -3284,10 +3352,10 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#概要">概要</a></li>
-    <li><a href="#使用するリーフ">使用するリーフ</a></li>
-    <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
-    <li><a href="#ソースコード">ソースコード</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#leaf-to-use">Leaf to use</a></li>
+    <li><a href="#assembly">Assembly</a></li>
+    <li><a href="#source-code">Source code</a></li>
   </ul>
 </nav>
 
@@ -3364,85 +3432,85 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>超音波センサで距離測定</h1>
+	<h1>Distance sensor</h1>
         
 	
-	<h2 id="概要">概要</h2>
-<p>Seeed Studio の Grove シリーズのセンサを利用した例。超音波センサで測定した距離をLCDに表示させます。超音波センサは、通常、デジタルピンに入力するが、LCDのスイッチ1とGrove&amp;5VのDin1が同じピンを使用しているため、UARTピンに接続しUARTピンをデジタルピンとして使用します。</p>
+	<h2 id="overview">Overview</h2>
+<p>An example of using Seeed Studio&rsquo;s Grove series of sensors. The distance measured by the ultrasonic sensor is displayed on the LCD. Ultrasonic sensors are usually input to digital pins, but since LCD&rsquo;s Switch1 and Grove&amp;5V&rsquo;s Din1 use the same pins, they are connected to UART pins and UART pins are used as digital pins.</p>
 <p><img src="./Distance_sensor_overview1.png" alt="overview1"></p>
 <p><img src="./Distance_sensor_overview2.png" alt="overview2"></p>
 <div class="youtube">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/vXeyy4N4da4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<h2 id="使用するリーフ">使用するリーフ</h2>
+<h2 id="leaf-to-use">Leaf to use</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Q&rsquo;ty</th>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/others/az62">AZ62</a></td>
-<td style="text-align:left"><a href="/docs/leaf/others/az62">Connector Cover</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/docs/leaf/others/az62">AZ62</a></td>
+<td align="left"><a href="/docs/leaf/others/az62">Connector Cover</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/io/ai04">AI04</a></td>
-<td style="text-align:left"><a href="/docs/leaf/io/ai04">LCD</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/docs/leaf/io/ai04">AI04</a></td>
+<td align="left"><a href="/docs/leaf/io/ai04">LCD</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/extension/ax04">AX04</a></td>
-<td style="text-align:left"><a href="/docs/leaf/extension/ax04">Spacer</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/docs/leaf/extension/ax04">AX04</a></td>
+<td align="left"><a href="/docs/leaf/extension/ax04">Spacer</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/extension/ax06">AX06</a></td>
-<td style="text-align:left"><a href="/docs/leaf/extension/ax06">Grove&amp;5V</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/docs/leaf/extension/ax06">AX06</a></td>
+<td align="left"><a href="/docs/leaf/extension/ax06">Grove&amp;5V</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/processor/ap01">AP01</a></td>
-<td style="text-align:left"><a href="/docs/leaf/processor/ap01">AVR MCU</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/docs/leaf/processor/ap01">AP01</a></td>
+<td align="left"><a href="/docs/leaf/processor/ap01">AVR MCU</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/others/az01">AZ01</a></td>
-<td style="text-align:left"><a href="/docs/leaf/others/az01">USB</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/docs/leaf/others/az01">AZ01</a></td>
+<td align="left"><a href="/docs/leaf/others/az01">USB</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/power/av01">AV01</a></td>
-<td style="text-align:left"><a href="/docs/leaf/power/av01">CR2032</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/docs/leaf/power/av01">AV01</a></td>
+<td align="left"><a href="/docs/leaf/power/av01">CR2032</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html">Grove – Ultrasonic Distance Sensor</a></td>
-<td style="text-align:left">1</td>
+<td align="left"></td>
+<td align="left"><a href="https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html">Grove – Ultrasonic Distance Sensor</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">CR2032 coin cell battery</td>
-<td style="text-align:left">1</td>
+<td align="left"></td>
+<td align="left">CR2032 coin cell battery</td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">M2*18mm screw</td>
-<td style="text-align:left">2</td>
+<td align="left"></td>
+<td align="left">M2*18mm screw</td>
+<td align="left">2</td>
 </tr>
 </tbody>
 </table>
-<h2 id="リーフの組み立て">リーフの組み立て</h2>
-<p>下図のようにリーフを組み立てましょう。</p>
+<h2 id="assembly">Assembly</h2>
+<p>Assemble the leaf as shown in the figure below.</p>
 <p><img src="./Distance_sensor_assemble.png" alt="assemble1"></p>
-<h2 id="ソースコード">ソースコード</h2>
+<h2 id="source-code">Source code</h2>
 <ul>
-<li>書き込みには、LCDライブラリ、超音波制御 ライブラリ（ <a href="https://github.com/Seeed-Studio/Grove_Ultrasonic_Ranger/">Ultrasonic.h</a> ）が必要です。予め、ライブラリをインクルードしておいてください。詳しくは、<a href="/docs/environment/basic/">こちら</a>。</li>
-<li>Arduino IDEで下記のプログラムを書きましょう。</li>
+<li>The LCD library and ultrasonic control library &ldquo;<a href="https://github.com/Seeed-Studio/Grove_Ultrasonic_Ranger/">Ultrasonic.h</a>&rdquo; are required for writing. Please include them beforehand. For more information, see <a href="/en/docs/environment/avr/arduino/">here</a>.</li>
+<li>Write the following program in the Arduino IDE.</li>
 </ul>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
 </span><span style="color:#8f5902;font-style:italic">//  Leafony Platform sample sketch
@@ -3813,12 +3881,18 @@ if (!doNotTrack) {
         
             
         
+            
+        
+            
+        
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 26.10.2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 10.02.2021
 </div>
 </div>
 

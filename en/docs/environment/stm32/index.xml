@@ -33,10 +33,10 @@
 &lt;p&gt;For instructions on how to install the Arduino IDE, please &lt;a href=&#34;https://docs.leafony.com/en/docs/environment/avr/arduino/#arduino-ide%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B 9%E3%83%88%E3%83%BC%E3%83%AB&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;connect-to-pc&#34;&gt;Connect to PC&lt;/h2&gt;
 &lt;p&gt;Connect it to your PC with a USB cable.&lt;br&gt;&lt;/p&gt;
-&lt;img src=&#34;./stm32_assemble.jpg&#34; width=&#34;430&#34;&gt;
+&lt;img src=&#34;./stm32_assemble.jpg&#34;&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;configuration-of-the-microcontroller-board&#34;&gt;Configuration of the microcontroller board&lt;/h2&gt;
-&lt;p&gt;To use the STM32 MCU leaf with the Arduino IDE, the STM32 Cores must be installed.Please follow the steps below to configure the settings. (For more information about STM32 Cores, please &lt;a href=&#34;https://github.com/stm32duino/Arduino_Core_STM32&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;To use the STM32 MCU leaf with the Arduino IDE, the STM32 Cores must be installed. Please follow the steps below to configure the settings. (For more information about STM32 Cores, see &lt;a href=&#34;https://github.com/stm32duino/Arduino_Core_STM32&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;).&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Open the &lt;code&gt;File → Preferences&lt;/code&gt; in the Arduino IDE and enter the following URL in the &lt;code&gt;Additional Board Manager URL:&lt;/code&gt; field.&lt;/li&gt;
 &lt;/ol&gt;
@@ -73,18 +73,48 @@
 &lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_tips.jpg&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_tips.jpg&#34; width=&#34;450&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Next, write a sketch and click &lt;code&gt;write to microcontroller board&lt;/code&gt; in the Arduino IDE.If it is written successfully, the message &lt;code&gt;Start operation achieved successfully&lt;/code&gt; will be displayed.If the message is not displayed &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, no write operation has been performed.(The entire display is &lt;a href=&#34;. /stm32prog.jpg&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;)&lt;/br&gt;&lt;/br&gt;
-&lt;img src=&#34;./operation1.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;Next, write a sketch and click &lt;code&gt;write to microcontroller board&lt;/code&gt; in the Arduino IDE. If it is written successfully, the message &lt;code&gt;Start operation achieved successfully&lt;/code&gt; will be displayed.If the message is not displayed &lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, no write operation has been performed. (The entire display is &lt;a href=&#34;./stm32prog.jpg&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.)&lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./operation1_v1.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;When writing is complete, turn the STM32 MCU leaf&amp;rsquo;s &lt;code&gt;program switch&lt;/code&gt; to the Run side to turn off the LED.&lt;/p&gt;
+&lt;p&gt;When writing is complete, turn the STM32 MCU leaf&amp;rsquo;s &lt;code&gt;Program switch&lt;/code&gt; to the Run side to turn off the LED.&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Press the &lt;code&gt;reset switch&lt;/code&gt; on the STM32 MCU leaf.&lt;/p&gt;
+&lt;p&gt;Press the &lt;code&gt;Reset switch&lt;/code&gt; on the STM32 MCU leaf.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;h2 id=&#34;notes-on-sketches&#34;&gt;Notes on Sketches&lt;/h2&gt;
+&lt;h3 id=&#34;pin-designation&#34;&gt;Pin Designation&lt;/h3&gt;
+&lt;p&gt;Since the pin layout of the STM32 MCU is different from that of the Nucleo L452RE, it is not possible to use names when specifying pins.&lt;strong&gt;For STM32 MCU leaf, specify pins by port (Port)&lt;/strong&gt;。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_pinassign.png&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_pinassign.png&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;installing-libraries&#34;&gt;Installing libraries&lt;/h2&gt;
-&lt;p&gt;To use some of the leaves, you will need to install additional libraries. &lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3% 83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34; target=&#34;_blank&#34;&gt;Here&lt;/a&gt; to install all libraries in advance.&lt;/p&gt;
+&lt;p&gt;To use some of the leaves, you will need to install additional libraries. &lt;a href=&#34;https://docs.leafony.com/en/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3% 83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34; target=&#34;_blank&#34;&gt;Here&lt;/a&gt; to install all libraries in advance. However, you cannot use the timer interrupt library (MsTimer2.h) because it is an AVR MCU library. Please refer to the following HardwareTimer.&lt;/p&gt;
+&lt;h3 id=&#34;hardwaretimer&#34;&gt;HardwareTimer&lt;/h3&gt;
+&lt;p&gt;An example of use is given below. For more information &lt;a href=&#34;https://github.com/stm32duino/wiki/wiki/HardwareTimer-library&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. 
+&lt;br&gt;
+&lt;br&gt;
+Initialization&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;HardwareTimer&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;HardwareTimer&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;TIM2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+
+  &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;setOverflow&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LOOP_INTERVAL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;MICROSEC_FORMAT&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 125ms
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;attachInterrupt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;intTimer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;resume&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Interrupt routine&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;intTimer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;){&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;bInterval&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+　&lt;span style=&#34;color:#a40000&#34;&gt;：&lt;/span&gt;
+　&lt;span style=&#34;color:#a40000&#34;&gt;：&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;when-in-doubt&#34;&gt;When in doubt&lt;/h2&gt;
+&lt;p&gt;You can find the solution in &amp;ldquo;&lt;a href=&#34;https://docs.leafony.com/en/docs/getting-started/solution&#34; target=&#34;_blank&#34;&gt;If it doesn&amp;rsquo;t work&amp;hellip;&lt;/a&gt;&amp;rdquo;.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Next step&lt;/h4&gt;
+&lt;a href=&#34;https://docs.leafony.com/en/docs/examples&#34;&gt;Sample app&lt;/a&gt; has several programs.&lt;br&gt;
+To make development easier, please install the library before you begin.
+&lt;/div&gt;
+
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
@@ -242,7 +272,7 @@ Click &lt;code&gt;OK&lt;/code&gt;.
         
         
         &lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-&lt;p&gt;The STM32 MCU leaf can be used with STMicroelectronics&#39; STLINK-V3SET and ST-LINK/V2 debuggers. This page explains how to connect to these debuggers.&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;The STM32 MCU leaf can be used with STMicroelectronics&amp;rsquo; STLINK-V3SET and ST-LINK/V2 debuggers. This page explains how to connect to these debuggers.&lt;/br&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.stmcu.jp/design/hwdevelop/debugger/&#34; target=&#34;_blank&#34;&gt; STM32 debugger&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
