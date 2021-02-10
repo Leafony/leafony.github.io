@@ -132,7 +132,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.55d159aac394c68f89f7c5fafe52a89dd27df602ee7d5a1d965edeb9f7cf50bf0432183586a05f4ced7b9ef337f101a3bfab98d3b9fc1380643e1a51da6833c8.json"
+  data-offline-search-index-json-src="/offline-search-index.f9c80ebc0de7608fc7601264d6b5be19abde9d404282bedbcb7910bb9d6efa0589095d10069df3bbaf3d8bc8d521035cd6ff50ea8ae840ba6c9b01ee11b49141.json"
   data-offline-search-base-href="/"
 >
 
@@ -162,7 +162,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.55d159aac394c68f89f7c5fafe52a89dd27df602ee7d5a1d965edeb9f7cf50bf0432183586a05f4ced7b9ef337f101a3bfab98d3b9fc1380643e1a51da6833c8.json"
+  data-offline-search-index-json-src="/offline-search-index.f9c80ebc0de7608fc7601264d6b5be19abde9d404282bedbcb7910bb9d6efa0589095d10069df3bbaf3d8bc8d521035cd6ff50ea8ae840ba6c9b01ee11b49141.json"
   data-offline-search-base-href="/"
 >
 
@@ -733,29 +733,6 @@ if (!doNotTrack) {
   </li>
   <ul>
     <li class="collapse " id="docsenvironmentesp32platformio">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/environment/esp32/esp32_notice/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 notice</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsenvironmentesp32esp32_notice">
       
       
       
@@ -3361,7 +3338,7 @@ if (!doNotTrack) {
     <li><a href="#pcと接続">PCと接続</a></li>
     <li><a href="#マイコンボードの設定">マイコンボードの設定</a></li>
     <li><a href="#マイコンボードの動作確認">マイコンボードの動作確認</a></li>
-    <li><a href="#困ったときは">困ったときは</a></li>
+    <li><a href="#スケッチのピンの指定">スケッチのピンの指定</a></li>
     <li><a href="#ライブラリのインストール">ライブラリのインストール</a>
       <ul>
         <li><a href="#1-使用するライブラリ">1. 使用するライブラリ</a></li>
@@ -3369,6 +3346,7 @@ if (!doNotTrack) {
         <li><a href="#3-ライブラリをインクルード">3. ライブラリをインクルード</a></li>
       </ul>
     </li>
+    <li><a href="#困ったときは">困ったときは</a></li>
   </ul>
 </nav>
 
@@ -3481,16 +3459,9 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 <li><code>マイコンボードに書き込む</code>ボタンを押すをLeafonyにプログラムが書き込まれます。</li>
 <li>AVR MCUリーフに搭載されたLEDが点滅していることが確認できれば完了です。</li>
 </ol>
-<h2 id="困ったときは">困ったときは</h2>
-<p>「<a href="/docs/getting-started/solution" target="_blank">うまく動かないときは</a>」で解決方法を探してみましょう。</p>
-
-
-<div class="alert alert-primary" role="alert">
-<h4 class="alert-heading">次のステップ</h4>
-<a href="/docs/examples">サンプルアプリ</a>には、幾つものプログラムを用意しています。<br>
-開発を簡単にするため、ライブラリをインストールしてから、始めてください。
-</div>
-
+<h2 id="スケッチのピンの指定">スケッチのピンの指定</h2>
+<p>ピンは、名前(Name)で指定して下さい。</br></p>
+<p><a href="https://docs.leafony.com/docs/leaf/processor/ap01/ap01_pinassign.png"><img src="https://docs.leafony.com/docs/leaf/processor/ap01/ap01_pinassign.png" width="750"></a></p>
 <h2 id="ライブラリのインストール">ライブラリのインストール</h2>
 <p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。<br>
 下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきましょう。</p>
@@ -3570,7 +3541,16 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 <h3 id="3-ライブラリをインクルード">3. ライブラリをインクルード</h3>
 <p>Arduinoを立ち上げ、<code>スケッチ → ライブラリをインクルード → ZIP形式のライブラリをインストール</code>の順に選択して、先程ダウンロードしたZIPファイルを読み込みましょう。</p>
 <img src="IDE_libinclude.png" width="640">  
-<br>
+<h2 id="困ったときは">困ったときは</h2>
+<p>「<a href="/docs/getting-started/solution" target="_blank">うまく動かないときは</a>」で解決方法を探してみましょう。</p>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">次のステップ</h4>
+<a href="/docs/examples">サンプルアプリ</a>には、幾つものプログラムを用意しています。<br>
+開発を簡単にするため、ライブラリをインストールしてから、始めてください。
+</div>
+
 <br>
 
         <div class="section-index">
@@ -3583,7 +3563,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 December 8, 2020
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 10, 2021
 </div>
 </div>
 

@@ -129,7 +129,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.55d159aac394c68f89f7c5fafe52a89dd27df602ee7d5a1d965edeb9f7cf50bf0432183586a05f4ced7b9ef337f101a3bfab98d3b9fc1380643e1a51da6833c8.json"
+  data-offline-search-index-json-src="/offline-search-index.f9c80ebc0de7608fc7601264d6b5be19abde9d404282bedbcb7910bb9d6efa0589095d10069df3bbaf3d8bc8d521035cd6ff50ea8ae840ba6c9b01ee11b49141.json"
   data-offline-search-base-href="/"
 >
 
@@ -159,7 +159,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.55d159aac394c68f89f7c5fafe52a89dd27df602ee7d5a1d965edeb9f7cf50bf0432183586a05f4ced7b9ef337f101a3bfab98d3b9fc1380643e1a51da6833c8.json"
+  data-offline-search-index-json-src="/offline-search-index.f9c80ebc0de7608fc7601264d6b5be19abde9d404282bedbcb7910bb9d6efa0589095d10069df3bbaf3d8bc8d521035cd6ff50ea8ae840ba6c9b01ee11b49141.json"
   data-offline-search-base-href="/"
 >
 
@@ -730,29 +730,6 @@ if (!doNotTrack) {
   </li>
   <ul>
     <li class="collapse " id="docsenvironmentesp32platformio">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/environment/esp32/esp32_notice/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 notice</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsenvironmentesp32esp32_notice">
       
       
       
@@ -3364,6 +3341,8 @@ if (!doNotTrack) {
     <li><a href="#tips">Tips</a>
       <ul>
         <li><a href="#ledスイッチについて">LED、スイッチについて</a></li>
+        <li><a href="#電池動作">電池動作</a></li>
+        <li><a href="#タッチセンサ">タッチセンサ</a></li>
       </ul>
     </li>
     <li><a href="#サンプルアプリ">サンプルアプリ</a></li>
@@ -3553,6 +3532,65 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
+<h3 id="電池動作">電池動作</h3>
+<p>ESP32 MCUは、コイン電池では動作しません。</p>
+<h3 id="タッチセンサ">タッチセンサ</h3>
+<p>ESP32は静電容量式タッチセンサの機能を持っています。配線の容量によって値が変わるので閾値の調整が必要です。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Leafonyピン番号</th>
+<th style="text-align:left">Arduinoピン名称</th>
+<th style="text-align:left">ESP32 IO番号</th>
+<th style="text-align:left">タッチセンサ番号</th>
+<th style="text-align:left">備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:left">D6</td>
+<td style="text-align:left">IO14</td>
+<td style="text-align:left">T6</td>
+<td style="text-align:left">－</td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:left">D7</td>
+<td style="text-align:left">IO15</td>
+<td style="text-align:left">T3</td>
+<td style="text-align:left">－</td>
+</tr>
+<tr>
+<td style="text-align:left">22</td>
+<td style="text-align:left">D2</td>
+<td style="text-align:left">IO4</td>
+<td style="text-align:left">T0</td>
+<td style="text-align:left">－</td>
+</tr>
+<tr>
+<td style="text-align:left">24</td>
+<td style="text-align:left">D3</td>
+<td style="text-align:left">IO27</td>
+<td style="text-align:left">T7</td>
+<td style="text-align:left">ESP32 Wi-Fi Kitでは使用不可</td>
+</tr>
+<tr>
+<td style="text-align:left">26</td>
+<td style="text-align:left">D4</td>
+<td style="text-align:left">IO12</td>
+<td style="text-align:left">T5</td>
+<td style="text-align:left">－</td>
+</tr>
+<tr>
+<td style="text-align:left">28</td>
+<td style="text-align:left">D5</td>
+<td style="text-align:left">IO13</td>
+<td style="text-align:left">T4</td>
+<td style="text-align:left">－</td>
+</tr>
+</tbody>
+</table>
 <h2 id="サンプルアプリ">サンプルアプリ</h2>
 <ul>
 <li><a href="/docs/examples/beginner/2_p/esp32/button">ボタン入力</a></li>
@@ -3581,8 +3619,6 @@ if (!doNotTrack) {
     
     
     <hr class="panel-line">
-        
-            
         
             
         

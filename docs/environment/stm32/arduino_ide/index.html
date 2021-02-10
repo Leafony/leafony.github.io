@@ -132,7 +132,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.55d159aac394c68f89f7c5fafe52a89dd27df602ee7d5a1d965edeb9f7cf50bf0432183586a05f4ced7b9ef337f101a3bfab98d3b9fc1380643e1a51da6833c8.json"
+  data-offline-search-index-json-src="/offline-search-index.f9c80ebc0de7608fc7601264d6b5be19abde9d404282bedbcb7910bb9d6efa0589095d10069df3bbaf3d8bc8d521035cd6ff50ea8ae840ba6c9b01ee11b49141.json"
   data-offline-search-base-href="/"
 >
 
@@ -162,7 +162,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.55d159aac394c68f89f7c5fafe52a89dd27df602ee7d5a1d965edeb9f7cf50bf0432183586a05f4ced7b9ef337f101a3bfab98d3b9fc1380643e1a51da6833c8.json"
+  data-offline-search-index-json-src="/offline-search-index.f9c80ebc0de7608fc7601264d6b5be19abde9d404282bedbcb7910bb9d6efa0589095d10069df3bbaf3d8bc8d521035cd6ff50ea8ae840ba6c9b01ee11b49141.json"
   data-offline-search-base-href="/"
 >
 
@@ -733,29 +733,6 @@ if (!doNotTrack) {
   </li>
   <ul>
     <li class="collapse " id="docsenvironmentesp32platformio">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/environment/esp32/esp32_notice/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 notice</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsenvironmentesp32esp32_notice">
       
       
       
@@ -3362,11 +3339,7 @@ if (!doNotTrack) {
     <li><a href="#マイコンボードの設定">マイコンボードの設定</a></li>
     <li><a href="#stm32cubeprog-のインストール">STM32CubeProg のインストール</a></li>
     <li><a href="#マイコンボードの書き込み">マイコンボードの書き込み</a></li>
-    <li><a href="#スケッチの注意点">スケッチの注意点</a>
-      <ul>
-        <li><a href="#ピンの指定">ピンの指定</a></li>
-      </ul>
-    </li>
+    <li><a href="#スケッチのピンの指定">スケッチのピンの指定</a></li>
     <li><a href="#ライブラリのインストール">ライブラリのインストール</a>
       <ul>
         <li><a href="#hardwaretimer">HardwareTimer</a></li>
@@ -3433,6 +3406,13 @@ if (!doNotTrack) {
         <div class="lead">Arduino IDEにSTM32 Coresをインストール</div>
 	
 	<p>以下の手順で、STM32 MCU 開発環境の設定を行いましょう。</p>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">次のステップ</h4>
+Leafonyにプログラムを書き込むために必要なソフトウェアをインストール
+</div>
+
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
 <li>STM32 MCUリーフ</li>
@@ -3441,6 +3421,13 @@ if (!doNotTrack) {
 </ul>
 <h2 id="arduino-ideのインストール">Arduino IDEのインストール</h2>
 <p>Arduino IDEのインストール方法は、<a href="https://docs.leafony.com/docs/environment/avr/arduino/#arduino-ide%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" target="_blank">こちら</a>を参照してください。</p>
+
+
+<div class="alert alert-primary" role="alert">
+<h4 class="alert-heading">次のステップ</h4>
+Leafonyにプログラムを書き込んで動かしてみましょう！
+</div>
+
 <h2 id="pcと接続">PCと接続</h2>
 <p>USBケーブルでPCと接続しましょう。<br></p>
 <img src="./stm32_assemble.jpg">
@@ -3495,9 +3482,8 @@ if (!doNotTrack) {
 <p>STM32 MCUリーフの<code>リセットスイッチ</code>を押して、マイコンをリセットして下さい。</p>
 </li>
 </ol>
-<h2 id="スケッチの注意点">スケッチの注意点</h2>
-<h3 id="ピンの指定">ピンの指定</h3>
-<p>STM32 MCUのピン配置は、Nucleo L452REと異なっているので、ピンを指定する時、名前(Name)は使用することは出来ません。<strong>STM32 MCUリーフは、ポート(Port)でピンを指定して下さい</strong>。</br></p>
+<h2 id="スケッチのピンの指定">スケッチのピンの指定</h2>
+<p>STM32 MCUのピン配置は、Nucleo L452REと異なっていいます。ピンは、名前(Name)ではなく、<strong>ポート(Port)で指定して下さい</strong>。</br></p>
 <p><a href="/docs/leaf/processor/ap03/ap03_pinassign.png"><img src="/docs/leaf/processor/ap03/ap03_pinassign.png" width="750"></a></p>
 <h2 id="ライブラリのインストール">ライブラリのインストール</h2>
 <p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。<a href="https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" target="_blank">こちら</a>を参照して、あらかじめ全てののライブラリをインストールしておきましょう。ただし、タイマ割り込みライブラリ(MsTimer2.h)は、AVR MCUのライブラリなので、使用出来ません。以下のHardwareTimerを参考にして下さい。</p>
@@ -3550,7 +3536,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 9, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 10, 2021
 </div>
 </div>
 
