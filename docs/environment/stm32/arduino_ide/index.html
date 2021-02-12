@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -29,7 +29,8 @@
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="STM32 MCU の Arduino IDE 設定">
 <meta itemprop="description" content="Arduino IDEにSTM32 Coresをインストール
-"><meta name="twitter:card" content="summary"/>
+">
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STM32 MCU の Arduino IDE 設定"/>
 <meta name="twitter:description" content="Arduino IDEにSTM32 Coresをインストール
 "/>
@@ -51,8 +52,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
-<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
+<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -131,7 +132,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.af8ee5b2d6e8dc84f85ac20e2ae21a55d1d05457c39aa104e2bab9780a768741c64f8f22c46f24c49a68fc8f74a06b9ede260c6a683cc92ebe08203c241fe430.json"
+  data-offline-search-index-json-src="/offline-search-index.3bb4fde667be325a23f08c788081247af8c575234a037eea7543f29391195341e96cebefda6dc734cfc859707eb654b182a40284035534ef3353566efc6d84d3.json"
   data-offline-search-base-href="/"
 >
 
@@ -161,7 +162,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.af8ee5b2d6e8dc84f85ac20e2ae21a55d1d05457c39aa104e2bab9780a768741c64f8f22c46f24c49a68fc8f74a06b9ede260c6a683cc92ebe08203c241fe430.json"
+  data-offline-search-index-json-src="/offline-search-index.3bb4fde667be325a23f08c788081247af8c575234a037eea7543f29391195341e96cebefda6dc734cfc859707eb654b182a40284035534ef3353566efc6d84d3.json"
   data-offline-search-base-href="/"
 >
 
@@ -3432,7 +3433,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 
 <h2 id="pcと接続">PCと接続</h2>
 <p>USBケーブルでPCと接続しましょう。<br></p>
-<img src="./stm32_b-kit_assemble.png" width="550">
+<img src="./stm32_b-kit_assemble.png" width="500">
 <br>
 <h2 id="マイコンボードの設定">マイコンボードの設定</h2>
 <p>STM32 MCUリーフをArduino IDEで使用するには、STM32 Coresのインストールが必要です。以下の手順で、設定をして下さい。(STM32 Coresの詳細は、<a href="https://github.com/stm32duino/Arduino_Core_STM32" target="_blank">こちら</a>)</p>
@@ -3474,20 +3475,14 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 <a href="/docs/leaf/processor/ap03/ap03_tips.jpg"><img src="/docs/leaf/processor/ap03/ap03_tips.jpg" width="450"></a></p>
 </li>
 <li>
-<p>次に、にサンプルアプリ「<a href="/docs/examples/beginner/3_p/basic/temp_humid_sensors" target="_blank">温湿度センサ読み取り</a>」のページからソースコードをコピーし、Arduino IDEの<code>ファイル→新規ファイル</code>の画面上に貼ります。</p>
-</li>
-<li>
-<p>Arduino IDEの<code>マイコンボードに書き込む</code>をクリックします。正常に書き込まれた場合は <code>Start operation achieved successfully</code>と表示されます。表示がされない場合<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>は、書き込みが行われていません。(表示全体は<a href="./stm32prog.jpg" target="_blank">こちら</a>）</br></br>
+<p>次に、サンプルアプリ「<a href="/docs/examples/beginner/3_p/basic/temp_humid_sensors" target="_blank">温湿度センサ読み取り</a>」を参照し、プログラムを書き込みます。正常に書き込まれた場合は <code>Start operation achieved successfully</code>と表示されます。表示がされない場合<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>は、要注意。</br></br>
 <img src="./operation1_v1.png"></img></p>
 </li>
 <li>
 <p>書き込みが完了したら、STM32 MCUリーフの<code>プログラムスイッチ</code>を実行（Run)側にするとLEDが消灯します。</p>
 </li>
 <li>
-<p>STM32 MCUリーフの<code>リセットスイッチ</code>を押して、マイコンをリセットすれば、完了です。</p>
-</li>
-<li>
-<p>Arduino IDEのシリアルモニタを開き、ボーレートを115200bpsに設定し、温度と湿度が表示されていることが確認できれば完了です。詳しくは「<a href="/docs/examples/beginner/3_p/basic/temp_humid_sensors" target="_blank">温湿度センサ読み取り</a>」をご参照ください。</p>
+<p>STM32 MCUリーフの<code>リセットスイッチ</code>を押してプログラムを動作させ、温度と湿度が表示されていれば完了です。詳しくは、<a href="/docs/examples/beginner/3_p/basic/temp_humid_sensors" target="_blank">こちら</a>。</p>
 </li>
 </ol>
 <h3 id="スケッチのピンの指定">スケッチのピンの指定</h3>

@@ -47,7 +47,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 
 &lt;h2 id=&#34;pcと接続&#34;&gt;PCと接続&lt;/h2&gt;
 &lt;p&gt;USBケーブルでPCと接続しましょう。&lt;br&gt;&lt;/p&gt;
-&lt;img src=&#34;./stm32_b-kit_assemble.png&#34; width=&#34;550&#34;&gt;
+&lt;img src=&#34;./stm32_b-kit_assemble.png&#34; width=&#34;500&#34;&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;マイコンボードの設定&#34;&gt;マイコンボードの設定&lt;/h2&gt;
 &lt;p&gt;STM32 MCUリーフをArduino IDEで使用するには、STM32 Coresのインストールが必要です。以下の手順で、設定をして下さい。(STM32 Coresの詳細は、&lt;a href=&#34;https://github.com/stm32duino/Arduino_Core_STM32&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;)&lt;/p&gt;
@@ -89,20 +89,14 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 &lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_tips.jpg&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_tips.jpg&#34; width=&#34;450&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;次に、にサンプルアプリ「&lt;a href=&#34;https://docs.leafony.com/docs/examples/beginner/3_p/basic/temp_humid_sensors&#34; target=&#34;_blank&#34;&gt;温湿度センサ読み取り&lt;/a&gt;」のページからソースコードをコピーし、Arduino IDEの&lt;code&gt;ファイル→新規ファイル&lt;/code&gt;の画面上に貼ります。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Arduino IDEの&lt;code&gt;マイコンボードに書き込む&lt;/code&gt;をクリックします。正常に書き込まれた場合は &lt;code&gt;Start operation achieved successfully&lt;/code&gt;と表示されます。表示がされない場合&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;は、書き込みが行われていません。(表示全体は&lt;a href=&#34;./stm32prog.jpg&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;）&lt;/br&gt;&lt;/br&gt;
+&lt;p&gt;次に、サンプルアプリ「&lt;a href=&#34;https://docs.leafony.com/docs/examples/beginner/3_p/basic/temp_humid_sensors&#34; target=&#34;_blank&#34;&gt;温湿度センサ読み取り&lt;/a&gt;」を参照し、プログラムを書き込みます。正常に書き込まれた場合は &lt;code&gt;Start operation achieved successfully&lt;/code&gt;と表示されます。表示がされない場合&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;は、要注意。&lt;/br&gt;&lt;/br&gt;
 &lt;img src=&#34;./operation1_v1.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;書き込みが完了したら、STM32 MCUリーフの&lt;code&gt;プログラムスイッチ&lt;/code&gt;を実行（Run)側にするとLEDが消灯します。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;STM32 MCUリーフの&lt;code&gt;リセットスイッチ&lt;/code&gt;を押して、マイコンをリセットすれば、完了です。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Arduino IDEのシリアルモニタを開き、ボーレートを115200bpsに設定し、温度と湿度が表示されていることが確認できれば完了です。詳しくは「&lt;a href=&#34;https://docs.leafony.com/docs/examples/beginner/3_p/basic/temp_humid_sensors&#34; target=&#34;_blank&#34;&gt;温湿度センサ読み取り&lt;/a&gt;」をご参照ください。&lt;/p&gt;
+&lt;p&gt;STM32 MCUリーフの&lt;code&gt;リセットスイッチ&lt;/code&gt;を押してプログラムを動作させ、温度と湿度が表示されていれば完了です。詳しくは、&lt;a href=&#34;https://docs.leafony.com/docs/examples/beginner/3_p/basic/temp_humid_sensors&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;スケッチのピンの指定&#34;&gt;スケッチのピンの指定&lt;/h3&gt;
