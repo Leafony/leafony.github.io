@@ -26,14 +26,14 @@
 &lt;h2 id=&#34;what-to-prepare&#34;&gt;What to prepare&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;STM32 MCU Leaf&lt;/li&gt;
-&lt;li&gt;USB Leaf&lt;/li&gt;
+&lt;li&gt;Basic Kit&lt;/li&gt;
 &lt;li&gt;PC (Windows, Mac OS X or Linux)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;installing-the-arduino-ide&#34;&gt;Installing the Arduino IDE&lt;/h2&gt;
 &lt;p&gt;For instructions on how to install the Arduino IDE, please &lt;a href=&#34;https://docs.leafony.com/en/docs/environment/avr/arduino/#arduino-ide%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B 9%E3%83%88%E3%83%BC%E3%83%AB&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;connect-to-pc&#34;&gt;Connect to PC&lt;/h2&gt;
 &lt;p&gt;Connect it to your PC with a USB cable.&lt;br&gt;&lt;/p&gt;
-&lt;img src=&#34;./stm32_assemble.jpg&#34;&gt;
+&lt;img src=&#34;./stm32_b-kit_assemble.png&#34; width=&#34;550&#34;&gt;
 &lt;br&gt;
 &lt;h2 id=&#34;configuration-of-the-microcontroller-board&#34;&gt;Configuration of the microcontroller board&lt;/h2&gt;
 &lt;p&gt;To use the STM32 MCU leaf with the Arduino IDE, the STM32 Cores must be installed. Please follow the steps below to configure the settings. (For more information about STM32 Cores, see &lt;a href=&#34;https://github.com/stm32duino/Arduino_Core_STM32&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;).&lt;/p&gt;
@@ -272,7 +272,7 @@ Click &lt;code&gt;OK&lt;/code&gt;.
         
         
         &lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-&lt;p&gt;The STM32 MCU leaf can be used with STMicroelectronics&#39; STLINK-V3SET and ST-LINK/V2 debuggers. This page explains how to connect to these debuggers.&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;The STM32 MCU leaf can be used with STMicroelectronics&amp;rsquo; STLINK-V3SET and ST-LINK/V2 debuggers. This page explains how to connect to these debuggers.&lt;/br&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.stmcu.jp/design/hwdevelop/debugger/&#34; target=&#34;_blank&#34;&gt; STM32 debugger&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
