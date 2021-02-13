@@ -132,7 +132,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3bb4fde667be325a23f08c788081247af8c575234a037eea7543f29391195341e96cebefda6dc734cfc859707eb654b182a40284035534ef3353566efc6d84d3.json"
+  data-offline-search-index-json-src="/offline-search-index.51d3061dece1447b83ebb0853f5d24de881e9a3a7b8fea83361661c12252a74a1f8ec4562630fe234e1ddef5188ac5f9c0dd55f34f7cc3fac2d8ab191424fe97.json"
   data-offline-search-base-href="/"
 >
 
@@ -162,7 +162,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3bb4fde667be325a23f08c788081247af8c575234a037eea7543f29391195341e96cebefda6dc734cfc859707eb654b182a40284035534ef3353566efc6d84d3.json"
+  data-offline-search-index-json-src="/offline-search-index.51d3061dece1447b83ebb0853f5d24de881e9a3a7b8fea83361661c12252a74a1f8ec4562630fe234e1ddef5188ac5f9c0dd55f34f7cc3fac2d8ab191424fe97.json"
   data-offline-search-base-href="/"
 >
 
@@ -3385,16 +3385,20 @@ if (!doNotTrack) {
         <div class="lead">Leafonyがうまく動かないときはこちらを参考に</div>
 	
 	<h2 id="シリアルポートが見つからない">シリアルポートが見つからない</h2>
-<p>Arduino IDEでLeafonyのシリアルポートが見つからない場合は、USBシリアル変換IC(FT232)のドライバをインストールしてみましょう。
-<a href="http://www.ftdichip.com/Drivers/VCP.htm" target="_blank">FTDI VCP Driver</a>からデバイスドライバをダウンロードしてインストールしましょう。</p>
-<img src="FTDI_DL.jpg" width="840">
+<ul>
+<li>Arduino IDEでLeafonyのシリアルポートが見つからない場合は、USBシリアル変換IC(FT232)のドライバをインストールしてみましょう。詳しくは、<a href="https://www.monoxit.com/tecmat/windowsftdiusb/" target="_blank">こちら</a>。</li>
+</ul>
 <h2 id="電源が入らない">電源が入らない</h2>
 <p>Leafonyの電源が入らない場合は以下の項目を確かめてみましょう。</p>
 <ul>
-<li>ボタン電池の入れる向き</li>
-<li>電源スイッチがONになっているか</li>
-<li>ネジの締まり具合</li>
 <li>電池の残量が十分にあるか</li>
+<li>ボタン電池の入れる向きは正しいか</li>
+<li>電源スイッチがONになっているか</li>
+<li>コネクタが汚れていないか</br>
+汚れていたら、無水エタノールを含ませた紙製ウエスで軽く拭いてください。それでも改善しない場合は、コネクタを交換してください。詳しくは、<a href="https://docs.leafony.com/docs/leaf/others/az61/#%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF%E3%81%AE%E5%8F%96%E3%82%8A%E4%BB%98%E3%81%91%E5%8F%96%E3%82%8A%E5%A4%96%E3%81%97" target="_blank">こちら</a>。</li>
+<li>ネジの締めは問題ないか</br>
+ネジを交互に、きちんとしめて下さい。</br><br>
+<a href="./assembly.png"><img src="./assembly.png" width="200"></a></li>
 </ul>
 
         <div class="section-index">
@@ -3407,7 +3411,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 1, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 13, 2021
 </div>
 </div>
 
