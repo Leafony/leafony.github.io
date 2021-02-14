@@ -96,7 +96,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 &lt;p&gt;書き込みが完了したら、STM32 MCUリーフの&lt;code&gt;プログラムスイッチ&lt;/code&gt;を実行（Run)側にするとLEDが消灯します。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;STM32 MCUリーフの&lt;code&gt;リセットスイッチ&lt;/code&gt;を押してプログラムを動作させ、温度と湿度が表示されていれば完了です。詳しくは、&lt;a href=&#34;https://docs.leafony.com/docs/examples/beginner/3_p/basic/temp_humid_sensors&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;STM32 MCUリーフの&lt;code&gt;リセットスイッチ&lt;/code&gt;を押してプログラムを動作させます。温度と湿度が表示されていれば完了です。詳しくは、&lt;a href=&#34;https://docs.leafony.com/docs/examples/beginner/3_p/basic/temp_humid_sensors&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;スケッチのピンの指定&#34;&gt;スケッチのピンの指定&lt;/h3&gt;
