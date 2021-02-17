@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -27,8 +27,7 @@
 <meta property="og:url" content="https://docs.leafony.com/en/docs/examples/advanced/1_p/motor/motor_demo/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="Watering plants with a motor">
-<meta itemprop="description" content="A Leafony Documentation site">
-<meta name="twitter:card" content="summary"/>
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Watering plants with a motor"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
@@ -49,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
-<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -129,7 +128,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c9187d7d8ab8b96511175233bd40c4d470b4128badcbea956f25cc3a3363782601c71270af7e9f09539607a3e6aae8b3cd5d686d91053b246f33d81eb0b2c85f.json"
+  data-offline-search-index-json-src="/offline-search-index.8b9a8087ae191ef8f6376aba37726da082ab9340fb774018ecdf575ab26b8df8a5a0a81a29f0c01fa95354e2f859ce9a6245f99374e2dbb7a59fc8053a855951.json"
   data-offline-search-base-href="/"
 >
 
@@ -159,7 +158,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c9187d7d8ab8b96511175233bd40c4d470b4128badcbea956f25cc3a3363782601c71270af7e9f09539607a3e6aae8b3cd5d686d91053b246f33d81eb0b2c85f.json"
+  data-offline-search-index-json-src="/offline-search-index.8b9a8087ae191ef8f6376aba37726da082ab9340fb774018ecdf575ab26b8df8a5a0a81a29f0c01fa95354e2f859ce9a6245f99374e2dbb7a59fc8053a855951.json"
   data-offline-search-base-href="/"
 >
 
@@ -3353,12 +3352,12 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#用意するもの">用意するもの</a></li>
-    <li><a href="#サンプルアプリのソースコード">サンプルアプリのソースコード</a></li>
-    <li><a href="#leafonyの構成">Leafonyの構成</a></li>
-    <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
-    <li><a href="#ピンアサイン">ピンアサイン</a></li>
-    <li><a href="#実行方法">実行方法</a></li>
+    <li><a href="#what-to-prepare">What to prepare</a></li>
+    <li><a href="#sample-app-source-code">Sample app source code</a></li>
+    <li><a href="#leafony-configuration">Leafony Configuration</a></li>
+    <li><a href="#assembly">Assembly</a></li>
+    <li><a href="#pin-assignment">Pin assignment</a></li>
+    <li><a href="#execution-result">Execution result</a></li>
   </ul>
 </nav>
 
@@ -3438,25 +3437,25 @@ if (!doNotTrack) {
 	<h1>Watering plants with a motor</h1>
         
 	
-	<p>このサンプルはBasic Kitの<a href="/docs/examples/advanced/1_p/basic/webbluetooth_iot/">Web Bluetoothを使ったIoTアプリ入門</a>で紹介したものとMotorリーフを組み合わせたものです。Bluetoothを使って電動ポンプのオン/オフを制御し植木に水やりをしたり、スマートフォンやパソコンにセンサの情報を送信する事ができます。
-詳細はBasic Kitの<a href="/docs/examples/advanced/1_p/basic/webbluetooth_iot/">Web Bluetoothを使ったIoTアプリ入門</a>をご覧ください。</p>
+	<p>This sample app is a combination of the one introduced in the Basic Kit <a href="/en/docs/examples/advanced/1_p/basic/webbluetooth_iot/">Web Bluetooth IoT</a> and Motorleaf. Using Bluetooth, you can control the electric pump to turn on and off, water plants, and send sensor information to a smartphone or PC.
+For details, please refer to <a href="/en/docs/examples/advanced/1_p/basic/webbluetooth_iot/">Web Bluetooth IoT</a> in Basic Kit.</p>
 <p><img src="webbluetooth.jpg" alt="webbluetooth.jpg"></p>
-<h2 id="用意するもの">用意するもの</h2>
+<h2 id="what-to-prepare">What to prepare</h2>
 <ul>
-<li>STM32 MCU、BLE Sugar、4-Sensors、CR2032、USB</li>
-<li>Windows<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>、 Mac<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>、 Linux<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>のどれかのPC (開発用)</li>
-<li>Android<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>、 iPhone<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>、 iPad<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>のスマートフォンまたはタブレット</li>
-<li>Google Chrome (バージョン70.0.3526.0以降)</li>
-<li>Arduino IDE、STM32CubeProgrammer software V2.4.0</li>
+<li>STM32 MCU, BLE Sugar, 4-Sensors, CR2032, and USB</li>
+<li>A Windows<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, Mac<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, or Linux<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> PC (for development)</li>
+<li>Android<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>, iPhone<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>, iPad<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> smartphone or tablet</li>
+<li>Google Chrome (Version 70.0.3526.0 or later)</li>
+<li>Arduino IDE, STM32CubeProgrammer software V2.4.0</li>
 </ul>
-<h2 id="サンプルアプリのソースコード">サンプルアプリのソースコード</h2>
-<p>あらかじめどちらもダウンロードしてください。</p>
+<h2 id="sample-app-source-code">Sample app source code</h2>
+<p>Please download both in advance.</p>
 <ul>
-<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/Motor_BLE_demo">Arduino スケッチ</a></li>
-<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/Motor_BLE_demo">Web Bluetooth アプリ</a></li>
+<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/Motor_BLE_demo">Arduino Sketching</a></li>
+<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/Motor_BLE_demo">Web Bluetooth App</a></li>
 </ul>
-<h2 id="leafonyの構成">Leafonyの構成</h2>
-<p>このサンプルでは下記のリーフ構成で試せます。</p>
+<h2 id="leafony-configuration">Leafony Configuration</h2>
+<p>In this sample, you can try the following leaf configurations.</p>
 <table>
 <thead>
 <tr>
@@ -3467,38 +3466,38 @@ if (!doNotTrack) {
 </thead>
 <tbody>
 <tr>
-<td><a href="/docs/leaf/others/az62">AZ62</a></td>
-<td><a href="/docs/leaf/others/az62">Connector Cover</a></td>
+<td><a href="/en/docs/leaf/others/az62">AZ62</a></td>
+<td><a href="/en/docs/leaf/others/az62">Connector Cover</a></td>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/docs/leaf/io/ai01">AI01</a></td>
-<td><a href="/docs/leaf/io/ai01">4-Sensors</a></td>
+<td><a href="/en/docs/leaf/io/ai01">AI01</a></td>
+<td><a href="/en/docs/leaf/io/ai01">4-Sensors</a></td>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/docs/leaf/io/aix1">AI  </a></td>
-<td><a href="/docs/leaf/io/aix1">Motor</a></td>
+<td><a href="/en/docs/leaf/io/aix1">AI  </a></td>
+<td><a href="/en/docs/leaf/io/aix1">Motor</a></td>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/docs/leaf/processor/ap01">AP01</a></td>
-<td><a href="/docs/leaf/processor/ap01">AVR MCU</a></td>
+<td><a href="/en/docs/leaf/processor/ap01">AP01</a></td>
+<td><a href="/en/docs/leaf/processor/ap01">AVR MCU</a></td>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/docs/leaf/communication/ac02">AC02</a></td>
-<td><a href="/docs/leaf/communication/ac02">BLE Sugar</a></td>
+<td><a href="/en/docs/leaf/communication/ac02">AC02</a></td>
+<td><a href="/en/docs/leaf/communication/ac02">BLE Sugar</a></td>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/docs/leaf/others/az01">AZ01</a></td>
-<td><a href="/docs/leaf/others/az01">USB</a></td>
+<td><a href="/en/docs/leaf/others/az01">AZ01</a></td>
+<td><a href="/en/docs/leaf/others/az01">USB</a></td>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/docs/leaf/power/av01">AV01</a></td>
-<td><a href="/docs/leaf/power/av01">CR2032</a></td>
+<td><a href="/en/docs/leaf/power/av01">AV01</a></td>
+<td><a href="/en/docs/leaf/power/av01">CR2032</a></td>
 <td>1</td>
 </tr>
 <tr>
@@ -3513,36 +3512,36 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
-<h2 id="リーフの組み立て">リーフの組み立て</h2>
-<p>下図のようにリーフを組み立てましょう。</p>
+<h2 id="assembly">Assembly</h2>
+<p>Assemble the leaves as shown in the figure below.</p>
 <img src="./STM32_gs.jpg" width="350">
-<h2 id="ピンアサイン">ピンアサイン</h2>
-<p>各リーフのピンアサインは下図を参考</p>
+<h2 id="pin-assignment">Pin assignment</h2>
+<p>Refer to the figure below for the pin assignment of each leaf.</p>
 <p><a href="motor_demo_pinassign.jpg"><img src="motor_demo_pinassign.jpg" width="600"></img></a></p>
-<h2 id="実行方法">実行方法</h2>
+<h2 id="execution-result">Execution result</h2>
 <ol>
-<li>Arduino IDEで<a href="https://github.com/Leafony/Sample-Sketches/tree/master/Motor_BLE_demo">Motor_BLE_demo.ino</a>を書き込む</li>
-<li>ダウンロードした<a href="https://github.com/Leafony/Sample-Sketches/tree/master/Motor_BLE_demo">Web Bluetooth アプリ</a>の<code>index.html</code>をGoogle Chromeで開く<br>
-Webアプリの使い方の詳細は<a href="/docs/getting-started/basic">Basic Kit クイックスタートガイド</a>を参考</li>
+<li>Write <a href="https://github.com/Leafony/Sample-Sketches/tree/master/Motor_BLE_demo">Motor_BLE_demo.ino</a> in Arduino IDE.</li>
+<li>Open the downloaded <code>index.html</code> of <a href="https://github.com/Leafony/Sample-Sketches/tree/master/Motor_BLE_demo">Web Bluetooth App</a> with Google Chrome.<br>
+For details on how to use the web app, refer to the <a href="/en/docs/getting-started/basic">Basic Kit Getting Started Guide</a>.</li>
 </ol>
 <br>
 <section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Windows 10 version 1703以降 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Windows 10 version 1703 or later <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>OS X Yosemite以降 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>OS X Yosemite or later <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
 <p>Kernel 3.19+ and BlueZ 5.41+ installed. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
-<p>Android 6.0 Marshmallow以降 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Android 6.0 Marshmallow or later <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5" role="doc-endnote">
-<p>iPhoneまたはiPadの場合は <a href="https://itunes.apple.com/us/app/webble/id1193531073">WebBLE</a>(有料)が必要です。iPhone、iPad版のChromeではWeb Bluetoothが実装されていないためです。 <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>For iPhone or iPad, <a href="https://itunes.apple.com/us/app/webble/id1193531073">WebBLE</a>(paid) is required because Web Bluetooth is not implemented in Chrome for iPhone and iPad. <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -3833,7 +3832,7 @@ Webアプリの使い方の詳細は<a href="/docs/getting-started/basic">Basic 
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 10.02.2021
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 17.02.2021
 </div>
 </div>
 

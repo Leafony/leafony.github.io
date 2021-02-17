@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.80.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -21,15 +21,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>カメラの撮影 | Leafony</title><meta property="og:title" content="カメラの撮影" />
+<title>Camera | Leafony</title><meta property="og:title" content="Camera" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/en/docs/examples/advanced/1_p/exten/camera/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="カメラの撮影">
-<meta itemprop="description" content="A Leafony Documentation site">
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="カメラの撮影"/>
+<meta itemprop="name" content="Camera">
+<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Camera"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -49,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
-<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -129,7 +128,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c9187d7d8ab8b96511175233bd40c4d470b4128badcbea956f25cc3a3363782601c71270af7e9f09539607a3e6aae8b3cd5d686d91053b246f33d81eb0b2c85f.json"
+  data-offline-search-index-json-src="/offline-search-index.8b9a8087ae191ef8f6376aba37726da082ab9340fb774018ecdf575ab26b8df8a5a0a81a29f0c01fa95354e2f859ce9a6245f99374e2dbb7a59fc8053a855951.json"
   data-offline-search-base-href="/"
 >
 
@@ -159,7 +158,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c9187d7d8ab8b96511175233bd40c4d470b4128badcbea956f25cc3a3363782601c71270af7e9f09539607a3e6aae8b3cd5d686d91053b246f33d81eb0b2c85f.json"
+  data-offline-search-index-json-src="/offline-search-index.8b9a8087ae191ef8f6376aba37726da082ab9340fb774018ecdf575ab26b8df8a5a0a81a29f0c01fa95354e2f859ce9a6245f99374e2dbb7a59fc8053a855951.json"
   data-offline-search-base-href="/"
 >
 
@@ -3353,10 +3352,10 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#概要">概要</a></li>
-    <li><a href="#使用するリーフ">使用するリーフ</a></li>
-    <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
-    <li><a href="#ソースコード">ソースコード</a></li>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#leaf-to-use">Leaf to use</a></li>
+    <li><a href="#assembly">Assembly</a></li>
+    <li><a href="#source-code">Source code</a></li>
   </ul>
 </nav>
 
@@ -3433,88 +3432,88 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>カメラの撮影</h1>
+	<h1>Camera</h1>
         
 	
-	<h2 id="概要">概要</h2>
-<p>Seeed Studio の Grove シリーズのセンサを利用した例。定点観測用カメラ。1分に一回カメラで撮影した画像をmicroSDカードに保存してみよう。
+	<h2 id="overview">Overview</h2>
+<p>An example of using Seeed Studio&rsquo;s Grove series sensors. Let&rsquo;s try to save an image taken by the camera once a minute to a microSD card.
 <img src="./camera_overview.png" alt="overview1"></p>
 <div class="youtube">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/LsaxA3F4KMY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
-<h2 id="使用するリーフ">使用するリーフ</h2>
+<h2 id="leaf-to-use">Leaf to use</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Type</th>
-<th style="text-align:left">Name</th>
-<th style="text-align:left">Q&rsquo;ty</th>
+<th align="left">Type</th>
+<th align="left">Name</th>
+<th align="left">Q&rsquo;ty</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/others/az62">AZ62</a></td>
-<td style="text-align:left"><a href="/docs/leaf/others/az62">Connector Cover</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/others/az62">AZ62</a></td>
+<td align="left"><a href="/en/docs/leaf/others/az62">Connector Cover</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/others/az02">AZ02</a></td>
-<td style="text-align:left"><a href="/docs/leaf/others/az02">RTC&amp;microSD</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/others/az02">AZ02</a></td>
+<td align="left"><a href="/en/docs/leaf/others/az02">RTC&amp;microSD</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/extension/ax04">AX04</a></td>
-<td style="text-align:left"><a href="/docs/leaf/extension/ax04">Spacer</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/extension/ax04">AX04</a></td>
+<td align="left"><a href="/en/docs/leaf/extension/ax04">Spacer</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/extension/ax06">AX06</a></td>
-<td style="text-align:left"><a href="/docs/leaf/extension/ax06">Grove&amp;5V</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/extension/ax06">AX06</a></td>
+<td align="left"><a href="/en/docs/leaf/extension/ax06">Grove&amp;5V</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/processor/ap01">AP01</a></td>
-<td style="text-align:left"><a href="/docs/leaf/processor/ap01">AVR MCU</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/processor/ap01">AP01</a></td>
+<td align="left"><a href="/en/docs/leaf/processor/ap01">AVR MCU</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/others/az01">AZ01</a></td>
-<td style="text-align:left"><a href="/docs/leaf/others/az01">USB</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/others/az01">AZ01</a></td>
+<td align="left"><a href="/en/docs/leaf/others/az01">USB</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="/docs/leaf/power/av01">AV01</a></td>
-<td style="text-align:left"><a href="/docs/leaf/power/av01">CR2032</a></td>
-<td style="text-align:left">1</td>
+<td align="left"><a href="/en/docs/leaf/power/av01">AV01</a></td>
+<td align="left"><a href="/en/docs/leaf/power/av01">CR2032</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">CR2032 coin cell battery</td>
-<td style="text-align:left">1</td>
+<td align="left"></td>
+<td align="left">CR2032 coin cell battery</td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://www.seeedstudio.com/Grove-Serial-Camera-Kit.html">Grove-Serial Camera Kit</a></td>
-<td style="text-align:left">1</td>
+<td align="left"></td>
+<td align="left"><a href="https://www.seeedstudio.com/Grove-Serial-Camera-Kit.html">Grove-Serial Camera Kit</a></td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">microSD card 　　　   　　</td>
-<td style="text-align:left">1</td>
+<td align="left"></td>
+<td align="left">microSD card 　　　   　　</td>
+<td align="left">1</td>
 </tr>
 <tr>
-<td style="text-align:left"></td>
-<td style="text-align:left">M2*18mm screw</td>
-<td style="text-align:left">2</td>
+<td align="left"></td>
+<td align="left">M2*18mm screw</td>
+<td align="left">2</td>
 </tr>
 </tbody>
 </table>
-<h2 id="リーフの組み立て">リーフの組み立て</h2>
+<h2 id="assembly">Assembly</h2>
 <p><img src="./camera_assemble.png" alt="assemble1"></p>
-<h2 id="ソースコード">ソースコード</h2>
+<h2 id="source-code">Source code</h2>
 <ul>
-<li>書き込みには、4-Sensors、AVR MCUライブラリ（タイマ割り込み）が必要です。予め、ライブラリをインクルードしておいてください。詳しくは、<a href="/docs/environment/basic/">こちら</a>。</li>
-<li>Arduino IDEで下記のプログラムを書きましょう。</li>
+<li>4-Sensors and AVR MCU library (timer interrupt) are required for writing. Please include the library beforehand. For details, see <a href="/en/docs/environment/avr/arduino/">here</a>.</li>
+<li>Write the following program in the Arduino IDE.</li>
 </ul>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
 </span><span style="color:#8f5902;font-style:italic">//  Leafony Platform sample sketch
@@ -4317,7 +4316,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 26.10.2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 17.02.2021
 </div>
 </div>
 
