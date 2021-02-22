@@ -88,7 +88,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
   &lt;thread&gt;
     &lt;tr&gt;
       &lt;th&gt;リーフ名&lt;/th&gt;
-      &lt;th&gt;必要なライブラリ名&lt;/th&gt;
+      &lt;th&gt;インクルードファイル&lt;/th&gt;
       &lt;th&gt;推奨バージョン&lt;/th&gt;
       &lt;th&gt;説明&lt;/th&gt;
     &lt;/tr&gt;
@@ -96,7 +96,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
   &lt;tbody&gt;
     &lt;tr&gt;
       &lt;td&gt;BLE&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/Leafony/TBGLib&#34; target=&#34;_blank&#34;&gt;TBGLib&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/Leafony/TBGLib&#34; target=&#34;_blank&#34;&gt;TBGLib.h&lt;/a&gt;&lt;/td&gt;
       &lt;td&gt;&lt;/td&gt;
       &lt;td&gt;Bluetoothライブラリ&lt;/td&gt;
     &lt;/tr&gt;
@@ -151,14 +151,14 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td rowspan=2&gt;STM32 MCU&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/stm32duino/STM32RTC&#34; target=&#34;_blank&#34;&gt;-&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/stm32duino/STM32RTC&#34; target=&#34;_blank&#34;&gt;インクルードファイルなし&lt;/a&gt;&lt;/td&gt;
       &lt;td&gt;&lt;/td&gt;
       &lt;td&gt;STM32RTCライブラリ&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;a href=&#34;https://github.com/stm32duino/STM32LowPower&#34; target=&#34;_blank&#34;&gt;STM32LowPower.h&lt;/a&gt;&lt;/td&gt;
       &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;STM32LowPower&lt;/td&gt;
+      &lt;td&gt;STM32LowPowerライブラリ&lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
