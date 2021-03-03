@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -24,8 +24,8 @@
 <title>STM32 Logger Beacon | Leafony</title><meta property="og:title" content="STM32 Logger Beacon" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/en/docs/examples/advanced/3_p/stm32/stm32_logger_ble_beacon/" /><meta property="og:site_name" content="Leafony" />
-
+<meta property="og:url" content="https://docs.leafony.com/en/docs/examples/advanced/3_p/stm32/stm32_logger_ble_beacon/" />
+<meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="STM32 Logger Beacon">
 <meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STM32 Logger Beacon"/>
@@ -48,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.be2a2020b6fa81c71e444d2a500c2722c53e2d3901cd8af272616fa17f4f2fdc.css" as="style">
-<link href="/scss/main.min.be2a2020b6fa81c71e444d2a500c2722c53e2d3901cd8af272616fa17f4f2fdc.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -136,7 +136,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.1f1daf554a74716d3fce9f7e9749a7ec304837c9b559ab12e701b8b50608a366e7a33e39bf022ceba1e2355718fbada869bb1f394b85df9dc8d21c313c52a9ef.json"
+  data-offline-search-index-json-src="/offline-search-index.105e38de720108ef32969858fc5d1006f4f827112546ce0c7a2805d9ab31583ccad29a238c7cba131a7b41885e80f4c68495dd4872f94cd50bc8ff520896d4fb.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +166,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.1f1daf554a74716d3fce9f7e9749a7ec304837c9b559ab12e701b8b50608a366e7a33e39bf022ceba1e2355718fbada869bb1f394b85df9dc8d21c313c52a9ef.json"
+  data-offline-search-index-json-src="/offline-search-index.105e38de720108ef32969858fc5d1006f4f827112546ce0c7a2805d9ab31583ccad29a238c7cba131a7b41885e80f4c68495dd4872f94cd50bc8ff520896d4fb.json"
   data-offline-search-base-href="/"
 >
 
@@ -2308,6 +2308,29 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/examples/advanced/3_p/stm32/stm32_webbluetooth_iot/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsexamplesadvanced3_pstm32stm32_webbluetooth_iot">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/en/docs/examples/advanced/3_p/stm32/stm32_logger_ble_beacon/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"> </a>
   </li>
   <ul>
@@ -3360,12 +3383,12 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#はじめに">はじめに</a></li>
-    <li><a href="#サンプルのソースコード">サンプルのソースコード</a></li>
-    <li><a href="#用意するもの">用意するもの</a></li>
-    <li><a href="#使用するリーフ">使用するリーフ</a></li>
-    <li><a href="#動作方法">動作方法</a></li>
-    <li><a href="#動作解説">動作解説</a></li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#sample-source-code">Sample source code</a></li>
+    <li><a href="#what-to-prepare">What to prepare</a></li>
+    <li><a href="#laef-to-use">Laef to use</a></li>
+    <li><a href="#how-it-works">How it works</a></li>
+    <li><a href="#operation-description">Operation Description</a></li>
   </ul>
 </nav>
 
@@ -3445,22 +3468,22 @@ if (!doNotTrack) {
 	<h1>STM32 Logger Beacon</h1>
         
 	
-	<h2 id="はじめに">はじめに</h2>
-<p>STM32リーフに搭載されたFlashメモリを使って、温湿度と測定時間を記録することが可能なBLE Beaconのサンプルデザインです。<br></p>
-<p>Beaconを用いた温湿度の測定方式では現在時刻での温湿度のみを知ることができ、これまでの測定値を知るためには、別途設置した受信機で常にBeaconの電波を受信し続ける必要がありました。<br>
-Beaconの電波は非常に弱く、発信時間も短いため、受信時に取りこぼしが発生することも多々あり、安定した測定をするためには不十分でした。<br>
-しかしながら本サンプルでは、STM32に搭載された不揮発メモリに測定記録を残すことができるため、万が一Beaconの電波を受信できなかったとしても、後からLeafonyに接続して、不揮発メモリに記録されたデータを取り出すことができます。<br></p>
-<p>また、このサンプルではBeaconの受信とSTM32 Flashメモリに書き込まれたデータの読み出しがどちらも行えるWebアプリのサンプルも含まれています。</p>
-<h2 id="サンプルのソースコード">サンプルのソースコード</h2>
-<p>使用するスケッチやツールのソースコードは下記のリポジトリで閲覧可能です。</p>
+	<h2 id="introduction">Introduction</h2>
+<p>This is a sample design of a BLE Beacon that can record temperature, humidity and measurement time using the Flash memory in the STM32 leaf.<br></p>
+<p>The temperature/humidity measurement method using Beacon can only provide the temperature/humidity at the current time, and in order to know the measured values up to now, it was necessary to constantly receive Beacon radio waves with a separately installed receiver.<br>
+Since Beacon&rsquo;s radio wave is very weak and its transmission time is short, it is often missed during reception, which is insufficient for stable measurement.<br>
+However, in this sample, the measurement record can be kept in the non-volatile memory installed in the STM32, so even if the Beacon signal is not received, the data recorded in the non-volatile memory can be retrieved later by connecting to Leafony.<br></p>
+<p>This sample also includes a web application sample that can both receive Beacon and read data written to STM32 Flash memory.</p>
+<h2 id="sample-source-code">Sample source code</h2>
+<p>The source code for the sketches and tools used can be viewed in the repository below.</p>
 <p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_Logger_Beacon" target="_blank">Sample-Sketches/STM32_Logger_Beacon at master · Leafony/Sample-Sketches</a></p>
-<p><a href="https://docs.leafony.com/Sample-Sketches/STM32_Logger_Beacon/sample_web_app/connect_webbluetooth/" target="_blank">STM32 Sensors Logger Webアプリケーション</a></p>
-<h2 id="用意するもの">用意するもの</h2>
+<p><a href="https://docs.leafony.com/Sample-Sketches/STM32_Logger_Beacon/sample_web_app/connect_webbluetooth/" target="_blank">STM32 Sensors Logger Web Application</a></p>
+<h2 id="what-to-prepare">What to prepare</h2>
 <ul>
 <li>Leafony</li>
-<li>Androidスマートフォン</li>
+<li>Android smartphone</li>
 </ul>
-<h2 id="使用するリーフ">使用するリーフ</h2>
+<h2 id="laef-to-use">Laef to use</h2>
 <table>
 <thead>
 <tr>
@@ -3471,23 +3494,23 @@ Beaconの電波は非常に弱く、発信時間も短いため、受信時に�
 </thead>
 <tbody>
 <tr>
-<td><a href="/docs/leaf/io/ai01">AI01</a></td>
-<td><a href="/docs/leaf/io/ai01">4-Sensors</a></td>
+<td><a href="/en/docs/leaf/io/ai01">AI01</a></td>
+<td><a href="/en/docs/leaf/io/ai01">4-Sensors</a></td>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/docs/leaf/processor/ap03">AP03</a></td>
-<td><a href="/docs/leaf/processor/ap03">STM32 MCU</a></td>
+<td><a href="/en/docs/leaf/processor/ap03">AP03</a></td>
+<td><a href="/en/docs/leaf/processor/ap03">STM32 MCU</a></td>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/docs/leaf/communication/ac02">AC02</a></td>
-<td><a href="/docs/leaf/communication/ac02">BLE Sugar</a></td>
+<td><a href="/en/docs/leaf/communication/ac02">AC02</a></td>
+<td><a href="/en/docs/leaf/communication/ac02">BLE Sugar</a></td>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/docs/leaf/power/av01">AV01</a></td>
-<td><a href="/docs/leaf/power/av01">CR2032</a></td>
+<td><a href="/en/docs/leaf/power/av01">AV01</a></td>
+<td><a href="/en/docs/leaf/power/av01">CR2032</a></td>
 <td>1</td>
 </tr>
 <tr>
@@ -3502,13 +3525,13 @@ Beaconの電波は非常に弱く、発信時間も短いため、受信時に�
 </tr>
 </tbody>
 </table>
-<h2 id="動作方法">動作方法</h2>
-<p>STM32リーフにサンプルスケッチを書き込んでください。</p>
-<p>AndroidスマートフォンでWebアプリを開き、Leafonyと一旦接続すると、スマートフォンの現在時刻が登録されます。
-その後、一度Lefaonyとの接続を切るとBeacon動作に移行します。</p>
-<p>Webアプリ側ではBeaconの電波を受信して、現在の温度が表示されます。</p>
-<p>Leafonyと再び接続し、ログ取得ボタンを押すと、STM32のFlashメモリが読み出され、過去の温湿度のグラフが表示されます。</p>
-<h2 id="動作解説">動作解説</h2>
+<h2 id="how-it-works">How it works</h2>
+<p>Write a sample sketch on the STM32 leaf.</p>
+<p>Open the web app on your Android smartphone, and once it is connected to Leafony, the current time on your smartphone will be registered.
+After that, once the connection with Lefaony is disconnected, it will shift to Beacon operation.</p>
+<p>The web app side receives the Beacon signal and displays the current temperature.</p>
+<p>When you connect Leafony again and press the Log button, the STM32&rsquo;s Flash memory will be read out and a graph of the past temperature and humidity will be displayed.</p>
+<h2 id="operation-description">Operation Description</h2>
 <img src="logger_beacon_02.jpg">
 <img src="logger_beacon_01_rb.jpg">
 
@@ -3793,12 +3816,14 @@ Beaconの電波は非常に弱く、発信時間も短いため、受信時に�
         
             
         
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 07.12.2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 03.03.2021
 </div>
 </div>
 
@@ -3862,7 +3887,7 @@ Beaconの電波は非常に弱く、発信時間も短いため、受信時に�
 
 
 
-<script src="/js/main.min.f70926ca86f7153429e54b0705f11c420ceac8da5cb4027087319447696e4a5f.js" integrity="sha256-9wkmyob3FTQp5UsHBfEcQgzqyNpctAJwhzGUR2luSl8=" crossorigin="anonymous"></script>
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
 
 
 
