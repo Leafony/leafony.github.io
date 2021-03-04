@@ -291,7 +291,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
         
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;STM32 MCUリーフは、STマイクロエレクトロニクス社のSTLINK-V3SETとST-LINK/V2のデバッガを使用出来ます。ここでは、これらのデバッガとの接続方法を説明します。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;STM32 MCUリーフは、STマイクロエレクトロニクス社のSTM32CubeIDEとSTLINK-V3SETまたはST-LINK/V2のデバッガを使用してデバッグを行うことができます。Arduino IDEを使用する場合はデバッガを使用したデバッグはできません。ここでは、これらのデバッガとの接続方法を説明します。&lt;/br&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.stmcu.jp/design/hwdevelop/debugger/&#34; target=&#34;_blank&#34;&gt; STM32 デバッガ&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
