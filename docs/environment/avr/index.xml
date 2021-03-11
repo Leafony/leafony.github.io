@@ -186,6 +186,29 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
     </item>
     
     <item>
+      <title>Docs: Arduino IDE のバージョン</title>
+      <link>https://docs.leafony.com/docs/environment/avr/arduino_ver/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/environment/avr/arduino_ver/</guid>
+      <description>
+        
+        
+        &lt;p&gt;スケッチは、Arduino IDE のバージョンによって動作しないことがあります。
+バージョンの異なるArduino IDE は下記よりダウンロードする事ができます。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.arduino.cc/en/Main/OldSoftwareReleases#previous&#34;&gt;Previous IDE Releases&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;通常はインストールした Arduino IDE のバージョンに対応するバージョンの Arduino AVR Boards がインストールされますが、環境により異なるバージョンの Arduino AVR Boards が指定されている場合があります。
+そのため Arduino IDE の&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt; を開いて Arduino AVR Boards のバージョンを確認してください。
+&lt;img src=&#34;./ardunoide_boards.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p&gt;もし想定と異なるバージョンの場合は&lt;code&gt;バージョンの選択&lt;/code&gt;から必要なバージョンを選択して&lt;code&gt;インストール&lt;/code&gt;してください。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./ardunoide_boardmanager.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
+&lt;/p&gt;
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: AVR MCU の PlatformIO 設定</title>
       <link>https://docs.leafony.com/docs/environment/avr/platformio/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
