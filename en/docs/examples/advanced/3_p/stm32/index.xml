@@ -104,7 +104,9 @@
 For details on how to use the web app, refer to &lt;a href=&#34;https://docs.leafony.com/docs/getting-started/basic&#34;&gt;Basic Kit Getting Started Guide&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;br&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;Back to previous page&lt;/A&gt;
+&lt;/p&gt;&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
@@ -203,7 +205,9 @@ After that, once the connection with Lefaony is disconnected, it will shift to B
 &lt;h2 id=&#34;operation-description&#34;&gt;Operation Description&lt;/h2&gt;
 &lt;img src=&#34;logger_beacon_02.jpg&#34;&gt;
 &lt;img src=&#34;logger_beacon_01_rb.jpg&#34;&gt;
-
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;Back to previous page&lt;/A&gt;
+&lt;/p&gt;
       </description>
     </item>
     
@@ -287,12 +291,14 @@ Send the string &amp;ldquo;HELLO BEACON&amp;rdquo; for a period of time, then re
 &lt;p&gt;For example, in the above code, &lt;code&gt;AD Structure 2&lt;/code&gt; has a &lt;code&gt;Length&lt;/code&gt; of 7, the &lt;code&gt;AD Type&lt;/code&gt; is &lt;code&gt;BGLIB_GAP_AD_TYPE_LOCALNAME_COMPLETE (0x09)&lt;/code&gt; which is the local name of the device, and &lt;code&gt;Leaf_A&lt;/code&gt; is registered in &lt;code&gt;Data&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;The &lt;code&gt;AD Type&lt;/code&gt; of &lt;code&gt;AD Structure 3&lt;/code&gt; is 0xff, and any data can be registered in this &lt;code&gt;AD Structure&lt;/code&gt;. The &lt;code&gt;Data&lt;/code&gt; is the text &amp;ldquo;HELLO BEACON&amp;rdquo;, and you can broadcast any data on Advertising data by changing this data.&lt;/p&gt;
 &lt;img src=&#34;advertising_data_format.svg&#34;&gt;
-&lt;h3 id=&#34;bleリーフの動作&#34;&gt;BLEリーフの動作&lt;/h3&gt;
+&lt;h3 id=&#34;ble-leafs-motion&#34;&gt;BLE leaf&amp;rsquo;s motion&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Various settings&lt;/li&gt;
 &lt;li&gt;Event handler&lt;/li&gt;
 &lt;/ul&gt;
-
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;Back to previous page&lt;/A&gt;
+&lt;/p&gt;
       </description>
     </item>
     
