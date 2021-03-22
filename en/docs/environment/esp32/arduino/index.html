@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.81.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -25,8 +25,8 @@
 <meta property="og:description" content="Let&#39;s use the Wi-Fi equipped Leaf!
 " />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/en/docs/environment/esp32/arduino/" /><meta property="og:site_name" content="Leafony" />
-
+<meta property="og:url" content="https://docs.leafony.com/en/docs/environment/esp32/arduino/" />
+<meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="Arduino IDE Settings for ESP32 MCU">
 <meta itemprop="description" content="Let&#39;s use the Wi-Fi equipped Leaf!
 "><meta name="twitter:card" content="summary"/>
@@ -51,8 +51,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.be2a2020b6fa81c71e444d2a500c2722c53e2d3901cd8af272616fa17f4f2fdc.css" as="style">
-<link href="/scss/main.min.be2a2020b6fa81c71e444d2a500c2722c53e2d3901cd8af272616fa17f4f2fdc.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.36b7c324f3afe5b4b203946288c72129bf673ddb263f8566f7b4a9d3c992addf92cf289bf1e020941afe93ccf9b0468299d599410f9933743029cea5ca57b184.json"
+  data-offline-search-index-json-src="/offline-search-index.9b2bbf0951bb5de945df068467c249339b98fefe3df89202249f44322f0a23ff0316ce907e581e0ed807ab5892518687b19b31068574cd4aef5ef248998f473d.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.36b7c324f3afe5b4b203946288c72129bf673ddb263f8566f7b4a9d3c992addf92cf289bf1e020941afe93ccf9b0468299d599410f9933743029cea5ca57b184.json"
+  data-offline-search-index-json-src="/offline-search-index.9b2bbf0951bb5de945df068467c249339b98fefe3df89202249f44322f0a23ff0316ce907e581e0ed807ab5892518687b19b31068574cd4aef5ef248998f473d.json"
   data-offline-search-base-href="/"
 >
 
@@ -734,29 +734,6 @@ if (!doNotTrack) {
 
       
       
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/environment/esp32/esp32_notice/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 notice</a>
-  </li>
-  <ul>
-    <li class="collapse " id="endocsenvironmentesp32esp32_notice">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
     </li>
   </ul>
 </ul>
@@ -790,7 +767,7 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/environment/stm32/arduino_ide/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Arduino IDE</a>
+    <a  href="/en/docs/environment/stm32/arduino_ide/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">STM32 Arduino</a>
   </li>
   <ul>
     <li class="collapse " id="endocsenvironmentstm32arduino_ide">
@@ -3398,9 +3375,13 @@ if (!doNotTrack) {
     <li><a href="#installing-arduino-ide">Installing Arduino IDE</a></li>
     <li><a href="#connecting-to-pc">Connecting to PC</a></li>
     <li><a href="#configuration-of-the-microcontroller-board">Configuration of the microcontroller board</a></li>
-    <li><a href="#checking-the-operation-of-the-microcontroller-board">Checking the operation of the microcontroller board</a></li>
-    <li><a href="#when-in-doubt">When in doubt.</a></li>
+    <li><a href="#checking-the-operation-of-the-microcontroller-board">Checking the operation of the microcontroller board</a>
+      <ul>
+        <li><a href="#specifying-pins-for-a-sketch">Specifying pins for a sketch</a></li>
+      </ul>
+    </li>
     <li><a href="#installing-libraries">Installing Libraries</a></li>
+    <li><a href="#when-in-doubt">When in doubt.</a></li>
   </ul>
 </nav>
 
@@ -3471,18 +3452,11 @@ Install the software needed to write a program in Leafony.
 <h2 id="what-to-prepare">What to prepare</h2>
 <ul>
 <li>ESP32 Wi-Fi Kit</li>
+<li>USB cable</li>
 <li>PC (Windows, Mac OS X or Linux)</li>
 </ul>
 <h2 id="installing-arduino-ide">Installing Arduino IDE</h2>
-<p>The Arduino IDE is a development environment for the Arduino, an open source hardware platform for electronics. <br> <br>
-The development environment allows you to write programs, write programs to the Arduino board, and display the data coming from the board. <br>
-Leafony can be developed with the Arduino IDE.</p>
-<p>Let&rsquo;s download the Arduino IDE right away.</p>
-<ol>
-<li>From the <a href="https://www.arduino.cc/" target="_blank">Arduino website</a>, go to <code>SOFTWARE</code> and then <code>DOWNLOADS</code> to get to the Arduino IDE download page.</li>
-<li>Download the installer for your OS at the place where it says <code>Download the Arduino IDE</code>.</li>
-<li>Run the downloaded installer and follow the on-screen instructions to install the Arduino IDE.</li>
-</ol>
+<p>For instructions on how to install the Arduino IDE, please see <a href="https://docs.leafony.com/en/docs/environment/avr/arduino/#arduino-ide%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B 9%E3%83%88%E3%83%BC%E3%83%AB" target="_blank">here</a>.</p>
 
 
 <div class="alert alert-primary" role="alert">
@@ -3541,6 +3515,22 @@ Let’s write a program in Leafony and make it work!
 <li>Press the <code>Boot mode switch (IO0)</code> and see if the input state of the switch changes.</li>
 </ol>
 <p><a href="./AP02_tips.png"><img src="./AP02_tips.png" width="450"></a></p>
+<h3 id="specifying-pins-for-a-sketch">Specifying pins for a sketch</h3>
+<p>**Pin should be specified by Port, not Name.**</br></br>
+<a href="https://docs.leafony.com/docs/leaf/processor/ap02/ap02_pinassign_v1.png"><img src="https://docs.leafony.com/docs/leaf/processor/ap02/ap02_pinassign_v1.png" width="750"></a></p>
+<h4 id="制限事項">制限事項</h4>
+<p>※1：Output cannot be set</br>
+※2：①For UART1, the pin number is set to RX=26 and TX=25. For UART0 and UART2, the pin number is not specified.</br></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">HardwareSerial</span> <span style="color:#000">Serial1</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// UART1 (RX=9, TX=10)
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#000">Serial1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">9600</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">SERIAL_8N1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">26</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">25</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// ピンを変更 (RX=26, TX=25)
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><p>　　②Cannot be used as analog input if WiFi.h is included</br></p>
+<p>※3: Pull-up prohibited because it is used for bootstrapping</p>
+<h2 id="installing-libraries">Installing Libraries</h2>
+<p>To use some of the leaves, you will need to install additional libraries. <br>
+<a href="https://docs.leafony.com/en/docs/environment/avr/arduino/#installing_libraries" target="_blank">Here</a> to install all libraries in advance.</p>
 <h2 id="when-in-doubt">When in doubt.</h2>
 <p>If it doesn&rsquo;t work, go to &ldquo;<a href="/en/docs/getting-started/solution" target="_blank">If it doesn&rsquo;t work&hellip;</a>&rdquo; to find a solution.</p>
 
@@ -3551,9 +3541,9 @@ A number of programs are available in <a href="/en/docs/examples">Sample App</a>
 To make development easier, install the library and get started.
 </div>
 
-<h2 id="installing-libraries">Installing Libraries</h2>
-<p>To use some of the leaves, you will need to install additional libraries. <br>
-<a href="https://docs.leafony.com/en/docs/environment/avr/arduino/#installing_libraries" target="_blank">Here</a> to install all libraries in advance.</p>
+<p style="text-align: right">
+<A HREF="javascript:history.back()">Back to previous page</A>
+</p>
 
         <div class="section-index">
     
@@ -3629,7 +3619,7 @@ To make development easier, install the library and get started.
 
 
 
-<script src="/js/main.min.f70926ca86f7153429e54b0705f11c420ceac8da5cb4027087319447696e4a5f.js" integrity="sha256-9wkmyob3FTQp5UsHBfEcQgzqyNpctAJwhzGUR2luSl8=" crossorigin="anonymous"></script>
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
 
 
 
