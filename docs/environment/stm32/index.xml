@@ -105,7 +105,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 &lt;h2 id=&#34;ライブラリのインストール&#34;&gt;ライブラリのインストール&lt;/h2&gt;
 &lt;p&gt;一部のリーフを使用するには、追加のライブラリをインストールする必要があります。&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;を参照して、あらかじめ全てののライブラリをインストールしておきましょう。ただし、タイマ割り込みライブラリ(MsTimer2.h)は、AVR MCUのライブラリなので、使用出来ません。以下のHardwareTimerを参考にして下さい。&lt;/p&gt;
 &lt;h3 id=&#34;hardwaretimer&#34;&gt;HardwareTimer&lt;/h3&gt;
-&lt;p&gt;使用例を以下に、記載します。詳細は&lt;a href=&#34;https://github.com/stm32duino/wiki/wiki/HardwareTimer-library&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt; 
+&lt;p&gt;使用例を以下に、記載します。詳細は&lt;a href=&#34;https://github.com/stm32duino/wiki/wiki/HardwareTimer-library&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;
 &lt;br&gt;
 &lt;br&gt;
 初期設定&lt;/p&gt;
