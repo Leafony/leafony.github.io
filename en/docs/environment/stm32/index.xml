@@ -96,7 +96,7 @@ Install the software needed to write programs to Leafony
 &lt;h2 id=&#34;installing-libraries&#34;&gt;Installing libraries&lt;/h2&gt;
 &lt;p&gt;To use some of the leaves, you will need to install additional libraries. &lt;a href=&#34;https://docs.leafony.com/en/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3% 83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34; target=&#34;_blank&#34;&gt;Here&lt;/a&gt; to install all libraries in advance. However, you cannot use the timer interrupt library (MsTimer2.h) because it is an AVR MCU library. Please refer to the following HardwareTimer.&lt;/p&gt;
 &lt;h3 id=&#34;hardwaretimer&#34;&gt;HardwareTimer&lt;/h3&gt;
-&lt;p&gt;An example of use is given below. For more information &lt;a href=&#34;https://github.com/stm32duino/wiki/wiki/HardwareTimer-library&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.
+&lt;p&gt;An example of use is given below. For more information &lt;a href=&#34;https://github.com/stm32duino/wiki/wiki/HardwareTimer-library&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;. 
 &lt;br&gt;
 &lt;br&gt;
 Initialization&lt;/p&gt;
