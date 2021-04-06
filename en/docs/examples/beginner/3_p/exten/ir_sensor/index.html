@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d45ed79fab06daa01fb05c3fe72cbd3e0644bc0f40a8550aaf6eb3a7b3295f5cb5605c1c4ee554443780338ea2ba7cdc9020a05f4ed412340aa13d27b0481083.json"
+  data-offline-search-index-json-src="/offline-search-index.fc46f0560cb9b701900830bebabe175dd907aab374ef7e3caedf53a67e333440c84cb2b19106c2d238e7e2c450a0f48a31c87ff5eca5cc85dfefe6d132a7e99a.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d45ed79fab06daa01fb05c3fe72cbd3e0644bc0f40a8550aaf6eb3a7b3295f5cb5605c1c4ee554443780338ea2ba7cdc9020a05f4ed412340aa13d27b0481083.json"
+  data-offline-search-index-json-src="/offline-search-index.fc46f0560cb9b701900830bebabe175dd907aab374ef7e3caedf53a67e333440c84cb2b19106c2d238e7e2c450a0f48a31c87ff5eca5cc85dfefe6d132a7e99a.json"
   data-offline-search-base-href="/"
 >
 
@@ -3529,11 +3529,11 @@ if (!doNotTrack) {
 <span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">irData</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#204a87;font-weight:bold">double</span> <span style="color:#000">tempData</span><span style="color:#000;font-weight:bold">;</span>
 
-<span style="color:#8f5902;font-style:italic">// 人を検出したら呼び出される関数
+<span style="color:#8f5902;font-style:italic">// Function to be called when a person is detected
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">onHumanDetected</span><span style="color:#000;font-weight:bold">()</span>
 <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Detect!&#34;</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">tone</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PB4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">262</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">300</span><span style="color:#000;font-weight:bold">);</span>  <span style="color:#8f5902;font-style:italic">// ビープ音を鳴らす
+  <span style="color:#000">tone</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PB4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">262</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">300</span><span style="color:#000;font-weight:bold">);</span>  <span style="color:#8f5902;font-style:italic">// Make a beep sound
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
 
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
@@ -3545,28 +3545,28 @@ if (!doNotTrack) {
 
   <span style="color:#8f5902;font-style:italic">//人感センサ設定
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x20</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0xFF</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL1  Resrt
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x2A</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0xF2</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL11 人感アルゴリズム有効/割り込み出力有効
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x25</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x0F</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL6  センサゲイン205%(最大)
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x2B</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0xFF</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL12 Mode=1 start Meas(連続測定モード)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x2A</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0xF2</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL11 Human detection algorithm enabled / Interrupt output enabled
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x25</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x0F</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL6  Sensor gain 205% (maximum)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x2B</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0xFF</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL12 Mode=1 start Meas(Continuous measurement mode)
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
 
-  <span style="color:#8f5902;font-style:italic">//人接近検知割り込み
+  <span style="color:#8f5902;font-style:italic">// Human proximity detection interrupt
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">attachInterrupt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PC7</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">onHumanDetected</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">FALLING</span> <span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
 
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#8f5902;font-style:italic">// バッファをクリア
+  <span style="color:#8f5902;font-style:italic">// Clear buffer
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">clearI2CReadbuf</span><span style="color:#000;font-weight:bold">();</span>
-  <span style="color:#8f5902;font-style:italic">// レジスタ読み出し
+  <span style="color:#8f5902;font-style:italic">// Register read
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_read</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x04</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">6</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">i2c_recvBuf</span><span style="color:#000;font-weight:bold">);</span>
 
-  <span style="color:#8f5902;font-style:italic">//IRセンサ
+  <span style="color:#8f5902;font-style:italic">// IR Sensor
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">irData</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">clacIR</span><span style="color:#000;font-weight:bold">();</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;IR    = &#34;</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">irData</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34; pA&#34;</span><span style="color:#000;font-weight:bold">);</span>
 
-  <span style="color:#8f5902;font-style:italic">//センサ温度
+  <span style="color:#8f5902;font-style:italic">// Sensor temperature
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">tempData</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">clacTemp</span><span style="color:#000;font-weight:bold">();</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;TSENS = &#34;</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">tempData</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>
@@ -3611,7 +3611,7 @@ if (!doNotTrack) {
 
 
 <span style="color:#8f5902;font-style:italic">/**********************************************
-</span><span style="color:#8f5902;font-style:italic">* I2C スレーブデバイスに1バイト書き込む
+</span><span style="color:#8f5902;font-style:italic">* I2C Write 1 byte to the slave device
 </span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">write_data</span><span style="color:#000;font-weight:bold">){</span>
   <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
@@ -3622,7 +3622,7 @@ if (!doNotTrack) {
 
 
 <span style="color:#8f5902;font-style:italic">/**********************************************
-</span><span style="color:#8f5902;font-style:italic">* I2C スレーブデバイスから1バイト読み込む
+</span><span style="color:#8f5902;font-style:italic">* I2C Read 1 byte from the slave device
 </span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
 <span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">i2c_read_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">){</span>
 
@@ -3640,7 +3640,7 @@ if (!doNotTrack) {
 
 
 <span style="color:#8f5902;font-style:italic">/**********************************************
-</span><span style="color:#8f5902;font-style:italic">* I2C スレーブデバイスに複数バイト書き込む
+</span><span style="color:#8f5902;font-style:italic">* I2C Write multiple bytes to the slave device
 </span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">lengrh</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">write_byte</span><span style="color:#000;font-weight:bold">){</span>
 
@@ -3654,7 +3654,7 @@ if (!doNotTrack) {
 
 
 <span style="color:#8f5902;font-style:italic">/**********************************************
-</span><span style="color:#8f5902;font-style:italic">* I2C スレーブデバイスから複数バイト読み込む
+</span><span style="color:#8f5902;font-style:italic">* I2C Read multiple bytes from the slave device
 </span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_read</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">lengrh</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">read_byte</span><span style="color:#000;font-weight:bold">){</span>
 
@@ -3670,7 +3670,7 @@ if (!doNotTrack) {
 
 
 <span style="color:#8f5902;font-style:italic">/**********************************************
-</span><span style="color:#8f5902;font-style:italic">* I2C 受信バッファクリア
+</span><span style="color:#8f5902;font-style:italic">* I2C Receive buffer clear
 </span><span style="color:#8f5902;font-style:italic">**********************************************/</span>
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">clearI2CReadbuf</span><span style="color:#000;font-weight:bold">(){</span>
   <span style="color:#000">memset</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">i2c_recvBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#0000cf;font-weight:bold">0x00</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">sizeof</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i2c_recvBuf</span><span style="color:#000;font-weight:bold">));</span>
@@ -3975,7 +3975,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 15.03.2021
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 06.04.2021
 </div>
 </div>
 

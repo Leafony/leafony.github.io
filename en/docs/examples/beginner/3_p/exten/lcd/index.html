@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d45ed79fab06daa01fb05c3fe72cbd3e0644bc0f40a8550aaf6eb3a7b3295f5cb5605c1c4ee554443780338ea2ba7cdc9020a05f4ed412340aa13d27b0481083.json"
+  data-offline-search-index-json-src="/offline-search-index.fc46f0560cb9b701900830bebabe175dd907aab374ef7e3caedf53a67e333440c84cb2b19106c2d238e7e2c450a0f48a31c87ff5eca5cc85dfefe6d132a7e99a.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d45ed79fab06daa01fb05c3fe72cbd3e0644bc0f40a8550aaf6eb3a7b3295f5cb5605c1c4ee554443780338ea2ba7cdc9020a05f4ed412340aa13d27b0481083.json"
+  data-offline-search-index-json-src="/offline-search-index.fc46f0560cb9b701900830bebabe175dd907aab374ef7e3caedf53a67e333440c84cb2b19106c2d238e7e2c450a0f48a31c87ff5eca5cc85dfefe6d132a7e99a.json"
   data-offline-search-base-href="/"
 >
 
@@ -3537,13 +3537,13 @@ If you haven&rsquo;t installed it yet, refer to <a href="/en/docs/environment/st
 </span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;ST7032.h&gt;                 // LCD</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic">// IOピンの名前定義
-</span><span style="color:#8f5902;font-style:italic">// 接続するリーフに合わせて定義する
+</span><span style="color:#8f5902;font-style:italic">// IO pin name definition
+</span><span style="color:#8f5902;font-style:italic">// Define it according to the leaf to be connected.
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define SW1         PC7             </span><span style="color:#8f5902;font-style:italic">// D2  (INT0)
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic">// プログラム内で使用する定数定義
+</span><span style="color:#8f5902;font-style:italic">// Define constants to be used in the program
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define I2C_EXPANDER_ADDR   0x1A
 </span><span style="color:#8f5902;font-style:italic"></span>
@@ -3633,10 +3633,10 @@ If you haven&rsquo;t installed it yet, refer to <a href="/en/docs/environment/st
 <span style="color:#000;font-weight:bold">}</span>
 
 <span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic">// I2C　制御関数
+</span><span style="color:#8f5902;font-style:italic">// I2C control function
 </span><span style="color:#8f5902;font-style:italic">//=====================================================================
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic">//I2C スレーブデバイスに1バイト書き込む
+</span><span style="color:#8f5902;font-style:italic">// I2C Write 1 byte to the slave device
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">write_data</span><span style="color:#000;font-weight:bold">){</span>
   <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
@@ -3646,7 +3646,7 @@ If you haven&rsquo;t installed it yet, refer to <a href="/en/docs/environment/st
 <span style="color:#000;font-weight:bold">}</span>
 
 <span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic">//I2C スレーブデバイスから1バイト読み込む
+</span><span style="color:#8f5902;font-style:italic">// I2C Read 1 byte from the slave device
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">i2c_read_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">){</span>
 
@@ -3958,7 +3958,7 @@ If you haven&rsquo;t installed it yet, refer to <a href="/en/docs/environment/st
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 15.03.2021
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 06.04.2021
 </div>
 </div>
 

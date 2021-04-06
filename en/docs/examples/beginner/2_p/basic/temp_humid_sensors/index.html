@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d45ed79fab06daa01fb05c3fe72cbd3e0644bc0f40a8550aaf6eb3a7b3295f5cb5605c1c4ee554443780338ea2ba7cdc9020a05f4ed412340aa13d27b0481083.json"
+  data-offline-search-index-json-src="/offline-search-index.fc46f0560cb9b701900830bebabe175dd907aab374ef7e3caedf53a67e333440c84cb2b19106c2d238e7e2c450a0f48a31c87ff5eca5cc85dfefe6d132a7e99a.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d45ed79fab06daa01fb05c3fe72cbd3e0644bc0f40a8550aaf6eb3a7b3295f5cb5605c1c4ee554443780338ea2ba7cdc9020a05f4ed412340aa13d27b0481083.json"
+  data-offline-search-index-json-src="/offline-search-index.fc46f0560cb9b701900830bebabe175dd907aab374ef7e3caedf53a67e333440c84cb2b19106c2d238e7e2c450a0f48a31c87ff5eca5cc85dfefe6d132a7e99a.json"
   data-offline-search-base-href="/"
 >
 
@@ -3546,21 +3546,21 @@ If you haven&rsquo;t installed it yet, refer to <a href="/en/docs/environment/es
 </span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;HTS221.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#8f5902;font-style:italic">//---------------------------
-</span><span style="color:#8f5902;font-style:italic">// 2点補正用データ
+</span><span style="color:#8f5902;font-style:italic">// Data for two-point correction
 </span><span style="color:#8f5902;font-style:italic">//---------------------------
-</span><span style="color:#8f5902;font-style:italic">// 温度補正用データ0
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">TL0</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">25.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 4-Sensors温度測定値
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">TM0</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">25.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 温度計等測定値
-</span><span style="color:#8f5902;font-style:italic">// 温度補正用データ1
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">TL1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">40.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 4-Sensors温度測定値
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">TM1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">40.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 温度計等測定値
+</span><span style="color:#8f5902;font-style:italic">// Temperature correction data 0
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">TL0</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">25.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 4-Sensors Temperature measurement value
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">TM0</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">25.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// Thermometer and other measurements value
+</span><span style="color:#8f5902;font-style:italic">// Temperature correction data 1
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">TL1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">40.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 4-Sensors Temperature measurement value
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">TM1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">40.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// Thermometer and other measurements value
 </span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#8f5902;font-style:italic">// 湿度補正用データ0
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">HL0</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">60.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 4-Sensors湿度測定値
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">HM0</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">60.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 湿度計等測定値
-</span><span style="color:#8f5902;font-style:italic">// 湿度補正用データ1
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">HL1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">80.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 4-Sensors湿度測定値
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">HM1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">80.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 湿度計等測定値
+<span style="color:#8f5902;font-style:italic">// Humidity correction data 0
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">HL0</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">60.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 4-Sensors Humidity measurement value
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">HM0</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">60.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// Hygrometer and other measurements value
+</span><span style="color:#8f5902;font-style:italic">// Humidity correction data 1
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">HL1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">80.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// 4-Sensors Humidity measurement value
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">float</span> <span style="color:#000">HM1</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">80.0</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// Hygrometer and other measurements value
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#8f5902;font-style:italic">// initialize serial communication at 115200 bit per second:
@@ -3885,7 +3885,7 @@ If you haven&rsquo;t installed it yet, refer to <a href="/en/docs/environment/es
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 15.03.2021
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 06.04.2021
 </div>
 </div>
 

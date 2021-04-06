@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d45ed79fab06daa01fb05c3fe72cbd3e0644bc0f40a8550aaf6eb3a7b3295f5cb5605c1c4ee554443780338ea2ba7cdc9020a05f4ed412340aa13d27b0481083.json"
+  data-offline-search-index-json-src="/offline-search-index.fc46f0560cb9b701900830bebabe175dd907aab374ef7e3caedf53a67e333440c84cb2b19106c2d238e7e2c450a0f48a31c87ff5eca5cc85dfefe6d132a7e99a.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d45ed79fab06daa01fb05c3fe72cbd3e0644bc0f40a8550aaf6eb3a7b3295f5cb5605c1c4ee554443780338ea2ba7cdc9020a05f4ed412340aa13d27b0481083.json"
+  data-offline-search-index-json-src="/offline-search-index.fc46f0560cb9b701900830bebabe175dd907aab374ef7e3caedf53a67e333440c84cb2b19106c2d238e7e2c450a0f48a31c87ff5eca5cc85dfefe6d132a7e99a.json"
   data-offline-search-base-href="/"
 >
 
@@ -3628,39 +3628,13 @@ if (!doNotTrack) {
 </span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;ST7032.h&gt;                 // LCD</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic">// IOピン一覧
-</span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic">//  D0  IO3   (RXD)
-</span><span style="color:#8f5902;font-style:italic">//  D1  IO1   (TXD)
-</span><span style="color:#8f5902;font-style:italic">//  D2  IO4   (INT0)
-</span><span style="color:#8f5902;font-style:italic">//  D3  IO27  (INT1)
-</span><span style="color:#8f5902;font-style:italic">//  D4  IO12  (H-MISO)
-</span><span style="color:#8f5902;font-style:italic">//  D5  IO13  (H-MOSI)
-</span><span style="color:#8f5902;font-style:italic">//  D6  IO14  (H-SCK)
-</span><span style="color:#8f5902;font-style:italic">//  D7  IO15  (H-SS)
-</span><span style="color:#8f5902;font-style:italic">//  D8  IO17  (UART_TX)
-</span><span style="color:#8f5902;font-style:italic">//  D9  IO16  (UART_RX)
-</span><span style="color:#8f5902;font-style:italic">//  D10 IO5   (SS)
-</span><span style="color:#8f5902;font-style:italic">//  D11 IO23  (MOSI)
-</span><span style="color:#8f5902;font-style:italic">//  D12 IO19  (MISO)
-</span><span style="color:#8f5902;font-style:italic">//  D13 IO18  (SCK)
-</span><span style="color:#8f5902;font-style:italic">//  D14 IO21  (SDA)
-</span><span style="color:#8f5902;font-style:italic">//  D15 IO22  (SCL)
-</span><span style="color:#8f5902;font-style:italic">//  A0  IO36
-</span><span style="color:#8f5902;font-style:italic">//  A1  IO25  (UART_TX)
-</span><span style="color:#8f5902;font-style:italic">//  A2  IO26  (UART_RX)
-</span><span style="color:#8f5902;font-style:italic">//  A3  IO39
-</span><span style="color:#8f5902;font-style:italic">//  A4  IO34
-</span><span style="color:#8f5902;font-style:italic">//  A5  IO35
-</span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic">// IOピンの名前定義
-</span><span style="color:#8f5902;font-style:italic">// 接続するリーフに合わせて定義する
+</span><span style="color:#8f5902;font-style:italic">// IO pin name definition
+</span><span style="color:#8f5902;font-style:italic">// Define it according to the leaf to be connected.
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define SW1   4                   </span><span style="color:#8f5902;font-style:italic">// D2 IO4
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic">// プログラム内で使用する定数定義
+</span><span style="color:#8f5902;font-style:italic">// Define constants to be used in the program
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define I2C_EXPANDER_ADDR   0x1A
 </span><span style="color:#8f5902;font-style:italic"></span>
@@ -3685,7 +3659,7 @@ if (!doNotTrack) {
   <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_EXPANDER_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x01</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x01</span><span style="color:#000;font-weight:bold">);</span>      <span style="color:#8f5902;font-style:italic">// LCD Power on
 </span><span style="color:#8f5902;font-style:italic"></span>  
   <span style="color:#8f5902;font-style:italic">//LCD Initialize
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>                      <span style="color:#8f5902;font-style:italic">// 8文字, 2行
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>                      <span style="color:#8f5902;font-style:italic">// 8 characters, 2 lines
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setContrast</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">30</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">clear</span><span style="color:#000;font-weight:bold">();</span>
 
@@ -3699,7 +3673,7 @@ if (!doNotTrack) {
   <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_EXPANDER_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x01</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x01</span><span style="color:#000;font-weight:bold">);</span>      <span style="color:#8f5902;font-style:italic">// LCD Power on
 </span><span style="color:#8f5902;font-style:italic"></span>
   <span style="color:#8f5902;font-style:italic">// LCD Initialize
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>                      <span style="color:#8f5902;font-style:italic">// 8文字, 2行
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>                      <span style="color:#8f5902;font-style:italic">// 8 characters, 2 lines
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setContrast</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">30</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">clear</span><span style="color:#000;font-weight:bold">();</span>
 
@@ -3751,10 +3725,10 @@ if (!doNotTrack) {
 <span style="color:#000;font-weight:bold">}</span>
 
 <span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic">// I2C　制御関数
+</span><span style="color:#8f5902;font-style:italic">// I2C control function
 </span><span style="color:#8f5902;font-style:italic">//=====================================================================
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic">//I2C スレーブデバイスに1バイト書き込む
+</span><span style="color:#8f5902;font-style:italic">// I2C Write 1 byte to the slave device
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">write_data</span><span style="color:#000;font-weight:bold">){</span>
   <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
@@ -3764,7 +3738,7 @@ if (!doNotTrack) {
 <span style="color:#000;font-weight:bold">}</span>
 
 <span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic">//I2C スレーブデバイスから1バイト読み込む
+</span><span style="color:#8f5902;font-style:italic">// I2C Read 1 byte from the slave device
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">i2c_read_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">){</span>
 
@@ -4082,7 +4056,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 3, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 6, 2021
 </div>
 </div>
 
