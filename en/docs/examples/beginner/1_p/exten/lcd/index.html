@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.396e6fdc0de5c356e5258aa236da31a548f1504f085ca32800e5bda6d564e8128296f91cf41e27e72fa2d16f222d0852c78b44558dcabb484dee6a7db86d17a0.json"
+  data-offline-search-index-json-src="/offline-search-index.d45ed79fab06daa01fb05c3fe72cbd3e0644bc0f40a8550aaf6eb3a7b3295f5cb5605c1c4ee554443780338ea2ba7cdc9020a05f4ed412340aa13d27b0481083.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.396e6fdc0de5c356e5258aa236da31a548f1504f085ca32800e5bda6d564e8128296f91cf41e27e72fa2d16f222d0852c78b44558dcabb484dee6a7db86d17a0.json"
+  data-offline-search-index-json-src="/offline-search-index.d45ed79fab06daa01fb05c3fe72cbd3e0644bc0f40a8550aaf6eb3a7b3295f5cb5605c1c4ee554443780338ea2ba7cdc9020a05f4ed412340aa13d27b0481083.json"
   data-offline-search-base-href="/"
 >
 
@@ -3538,13 +3538,13 @@ If you haven&rsquo;t installed it yet, refer to <a href="/en/docs/environment/av
 </span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;ST7032.h&gt;                 // LCD</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic">// IOピンの名前定義
-</span><span style="color:#8f5902;font-style:italic">// 接続するリーフに合わせて定義する
+</span><span style="color:#8f5902;font-style:italic">// IO pin name definition
+</span><span style="color:#8f5902;font-style:italic">// Define it according to the leaf to be connected.
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define SW1         2                   </span><span style="color:#8f5902;font-style:italic">// PD2  (INT0)
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic">// プログラム内で使用する定数定義
+</span><span style="color:#8f5902;font-style:italic">// Define constants to be used in the program
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define I2C_EXPANDER_ADDR   0x1A
 </span><span style="color:#8f5902;font-style:italic"></span>
@@ -3568,7 +3568,7 @@ If you haven&rsquo;t installed it yet, refer to <a href="/en/docs/environment/av
   <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_EXPANDER_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x01</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x01</span><span style="color:#000;font-weight:bold">);</span>      <span style="color:#8f5902;font-style:italic">// LCD Power on
 </span><span style="color:#8f5902;font-style:italic"></span>  
   <span style="color:#8f5902;font-style:italic">//LCD Initialize
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>                                    <span style="color:#8f5902;font-style:italic">// 8文字, 2行
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>                                    <span style="color:#8f5902;font-style:italic">// 8 characters, 2 lines
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setContrast</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">30</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">clear</span><span style="color:#000;font-weight:bold">();</span>
 
@@ -3582,7 +3582,7 @@ If you haven&rsquo;t installed it yet, refer to <a href="/en/docs/environment/av
   <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_EXPANDER_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x01</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x01</span><span style="color:#000;font-weight:bold">);</span>      <span style="color:#8f5902;font-style:italic">// LCD Power on
 </span><span style="color:#8f5902;font-style:italic"></span>
   <span style="color:#8f5902;font-style:italic">// LCD Initialize
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>                                    <span style="color:#8f5902;font-style:italic">// 8文字, 2行
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>                                    <span style="color:#8f5902;font-style:italic">// 8 characters, 2 lines
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setContrast</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">30</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">lcd</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">clear</span><span style="color:#000;font-weight:bold">();</span>
 
@@ -3634,10 +3634,10 @@ If you haven&rsquo;t installed it yet, refer to <a href="/en/docs/environment/av
 <span style="color:#000;font-weight:bold">}</span>
 
 <span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic">// I2C　制御関数
+</span><span style="color:#8f5902;font-style:italic">// I2C control function
 </span><span style="color:#8f5902;font-style:italic">//=====================================================================
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic">//I2C スレーブデバイスに1バイト書き込む
+</span><span style="color:#8f5902;font-style:italic">//I2C Write 1 byte to the slave device
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">write_data</span><span style="color:#000;font-weight:bold">){</span>
   <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
@@ -3647,7 +3647,7 @@ If you haven&rsquo;t installed it yet, refer to <a href="/en/docs/environment/av
 <span style="color:#000;font-weight:bold">}</span>
 
 <span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic">//I2C スレーブデバイスから1バイト読み込む
+</span><span style="color:#8f5902;font-style:italic">//I2C Read 1 byte from the slave device
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">i2c_read_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">){</span>
 
@@ -3662,7 +3662,7 @@ If you haven&rsquo;t installed it yet, refer to <a href="/en/docs/environment/av
 
   <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">read_data</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/LCD-SW_test/LCD-SW_test.ino" target="_blank">LED-SW_test.ino</a></p>
+</code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/LCD-SW_test/LCD-SW_test.ino" target="_blank">LCD-SW_test.ino</a></p>
 <h2 id="execution-results">Execution Results</h2>
 <p>On the LCD the screens are displayed in the following order</p>
 <ol>
@@ -3959,7 +3959,7 @@ If you haven&rsquo;t installed it yet, refer to <a href="/en/docs/environment/av
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 15.03.2021
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 06.04.2021
 </div>
 </div>
 
