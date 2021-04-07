@@ -22,17 +22,17 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>ESP32 Wi-Fi Kit スタートガイド | Leafony</title><meta property="og:title" content="ESP32 Wi-Fi Kit スタートガイド" />
-<meta property="og:description" content="Wi-Fi搭載のリーフを使ってみよう！
+<meta property="og:description" content="Wi-Fiでパソコンやスマートフォンにタッチセンサの値を送信
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/getting-started/esp32/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="ESP32 Wi-Fi Kit スタートガイド">
-<meta itemprop="description" content="Wi-Fi搭載のリーフを使ってみよう！
+<meta itemprop="description" content="Wi-Fiでパソコンやスマートフォンにタッチセンサの値を送信
 ">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ESP32 Wi-Fi Kit スタートガイド"/>
-<meta name="twitter:description" content="Wi-Fi搭載のリーフを使ってみよう！
+<meta name="twitter:description" content="Wi-Fiでパソコンやスマートフォンにタッチセンサの値を送信
 "/>
 
 
@@ -148,7 +148,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a97af2f46e7debe4e870ad70de7674e9e71b960b57168c65005ebdf4afdb4247770c4c501b28b154296e218e9d1cf0e6915c94bf550d68d39b7ee7821172658c.json"
+  data-offline-search-index-json-src="/offline-search-index.51b745dbc35b2bab6a1102d34e03d2ea7cfddbfaa5e49b2fa3c4a0cb87dd6a2c8d5506b8e9e347556d8a75abba058e773823527887b538b0fa37bcf5780b1458.json"
   data-offline-search-base-href="/"
 >
 
@@ -178,7 +178,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a97af2f46e7debe4e870ad70de7674e9e71b960b57168c65005ebdf4afdb4247770c4c501b28b154296e218e9d1cf0e6915c94bf550d68d39b7ee7821172658c.json"
+  data-offline-search-index-json-src="/offline-search-index.51b745dbc35b2bab6a1102d34e03d2ea7cfddbfaa5e49b2fa3c4a0cb87dd6a2c8d5506b8e9e347556d8a75abba058e773823527887b538b0fa37bcf5780b1458.json"
   data-offline-search-base-href="/"
 >
 
@@ -3483,28 +3483,25 @@ if (!doNotTrack) {
             
 <div class="td-content">
 	<h1>ESP32 Wi-Fi Kit スタートガイド</h1>
-        <div class="lead">Wi-Fi搭載のリーフを使ってみよう！</div>
+        <div class="lead">Wi-Fiでパソコンやスマートフォンにタッチセンサの値を送信</div>
 	
-	<p>ESP32 Wi-Fi Kit は、Wi-FiとBluetooth LE内蔵のESP32-WROOM-32を搭載した乾電池やリチウムバッテリーで駆動可能な開発キットです。</p>
-<p>Wi-Fiを使ってスマートフォンやパソコンに、タッチセンサの値を送信することが簡単にできます。</p>
-<p>ESP32 Wi-Fi  Kitは、箱を開けたらすぐに使えるこのプログラムが書き込まれています。</p>
+	<p>ESP32 Wi-Fi Kit は、Wi-FiとBluetooth内蔵のESP32-WROOM-32を搭載した乾電池やリチウムバッテリーで駆動可能な開発キットです。Wi-Fiでパソコンやスマートフォンにタッチセンサの値を送信することができるプログラムが、プレインストールされています。</p>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
 <li>ESP32 Wi-Fi Kit</li>
-<li>Wi-Fi機能を搭載したPC、スマートフォン、またはタブレット</li>
-<li>お好みのWebブラウザ</li>
+<li>パソコンやスマートフォン</li>
 </ul>
 <h2 id="使い方">使い方</h2>
 <ol>
-<li>ESP32 Wi-Fi Kitに単4電池3本をセットし、電源スイッチをONにして下さい。<br>
+<li>ESP32 Wi-Fi Kitに単4電池3本入れ、電源スイッチをONにして下さい。<br>
 <img src="./quick_esp_assemble.png" alt="assemble"></li>
-<li>PC、スマートフォン、またはタブレット等で周辺のWi-Fiを検索し、以下のSSIDのWi-Fiに接続します。
+<li>パソコンやスマートフォンで周辺のWi-Fiを検索し、以下のSSIDのWi-Fiに接続します。
 <ul>
 <li>SSID: Leafony_ESP32-AP</li>
 <li>Password: password</li>
 </ul>
 </li>
-<li>以下のURLをコピーし、WebBLEを立ち上げてアドレスバーに貼り付けてください。</li>
+<li>Webブラウザを立ち上げて、以下のURLをアドレスバーに貼り付けてください。</li>
 </ol>
 <pre><code> http://192.168.4.1
 </code></pre><ol start="4">
@@ -3518,26 +3515,24 @@ if (!doNotTrack) {
 <br>
 <ol start="5">
 <li>
-<p>26ピンに触れていると、以下のようにWebブラウザの表示が変化します。　</p>
+<p>26ピンに触れると、以下のようにWebブラウザの表示が変化します。　</p>
  <img src="Wi-FiTouch-Sensor-Test_2.png" width="600">
 </li>
 </ol>
 <br>
 <ol start="6">
 <li>
-<p>ESP32 Wi-Fi KitのNut Plate部分にマグネットが付いています。金属の壁などに設置してみましょう。</p>
+<p>ESP32 Wi-Fi KitのNut Plate部分にマグネットが付いているので、金属の壁などに取付られます。</p>
  <img src="magnet_1.png" width="400">
 </li>
 </ol>
 <br>
-<ol start="7">
-<li>今回使用したサンプルアプリは「<a href="/docs/examples/advanced/2_p/esp32/wifi_touchsensor/" target="_blank">Wi-Fi タッチセンサ</a>」です。ソースコードや動作の仕組みはこちらでご覧になれます。</li>
-</ol>
+<p>7.ソースコードや動作の仕組みは、 <a href="/docs/examples/advanced/2_p/esp32/wifi_touchsensor/" target="_blank">Wi-Fi タッチセンサ</a>に記載されています。</p>
 
 
 <div class="alert alert-primary" role="alert">
 <h4 class="alert-heading">次のステップ</h4>
-<a href="/docs/environment/esp32">開発環境設定</a>を読んで、ESP32 Wi-Fi Kitにプログラムを書き込んでみましょう。
+プログラミングのためのパソコンの設定の仕方は、<a href="/docs/environment/">開発環境設定</a>に記載されています。
 </div>
 
 <p style="text-align: right">
@@ -3553,7 +3548,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 3, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 7, 2021
 </div>
 </div>
 
