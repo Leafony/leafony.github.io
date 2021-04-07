@@ -68,7 +68,7 @@
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
-プログラミングのためのパソコンの設定の仕方は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/&#34;&gt;開発環境設定&lt;/a&gt;に記載されています。
+プログラミングのためのパソコンの設定の仕方は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/&#34;&gt;開発環境設定&lt;/a&gt;に記載しています。
 &lt;/div&gt;
 
 &lt;h3 id=&#34;iphoneまたはipadの場合&#34;&gt;iPhoneまたはiPadの場合&lt;/h3&gt;
@@ -94,7 +94,7 @@
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
-プログラミングのためのパソコンの設定の仕方は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/&#34;&gt;開発環境設定&lt;/a&gt;に記載されています。
+プログラミングのためのパソコンの設定の仕方は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/&#34;&gt;開発環境設定&lt;/a&gt;に記載しています。
 &lt;/div&gt;
 
 &lt;h3 id=&#34;linuxの場合&#34;&gt;Linuxの場合&lt;/h3&gt;
@@ -124,7 +124,7 @@
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
-プログラミングのためのパソコンの設定の仕方は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/&#34;&gt;開発環境設定&lt;/a&gt;に記載されています。
+プログラミングのためのパソコンの設定の仕方は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/&#34;&gt;開発環境設定&lt;/a&gt;に記載しています。
 &lt;/div&gt;
 
 &lt;p style=&#34;text-align: right&#34;&gt;
@@ -183,9 +183,7 @@
 &lt;pre&gt;&lt;code&gt; http://192.168.4.1
 &lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;29pin headerの7、9、22、24、26、28ピンがタッチセンサに割り当てられています。&lt;br&gt;
-ピンに触れると静電容量が増えるため、値が減少します。値が閾値20以下になると”Touch detected”と表示されます。&lt;br&gt;
-(24ピンはRTC&amp;amp;microSDと干渉しているため、サンプルスケッチでは非表示にしています。検出閾値は、スケッチで変更可能です。以下の写真では、指先で26ピンに触れています。)&lt;/p&gt;
+&lt;p&gt;29pin headerの7、9、22、24、26、28ピンがタッチセンサに割り当てられています。ただし、24ピンは、RTC&amp;amp;microSDと干渉しているため、サンプルスケッチでは非表示にしています。ピンに触れると静電容量が増えるため、値が減少します。閾値20以下になると”Touch detected”と表示される設定にしています。検出閾値は、スケッチで変更することが出来ます。&lt;/p&gt;
  &lt;img src=&#34;Wi-FiTouch-Sensor-Test_1.png&#34; width=&#34;200&#34;&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -209,7 +207,7 @@
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
 &lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
-プログラミングのためのパソコンの設定の仕方は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/&#34;&gt;開発環境設定&lt;/a&gt;に記載されています。
+プログラミングのためのパソコンの設定の仕方は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/&#34;&gt;開発環境設定&lt;/a&gt;に記載しています。
 &lt;/div&gt;
 
 &lt;p style=&#34;text-align: right&#34;&gt;
@@ -236,7 +234,7 @@
 &lt;li&gt;パソコン　&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;プログラムの書き込み方&#34;&gt;プログラムの書き込み方&lt;/h2&gt;
-&lt;p&gt;プログラミングのためのパソコンの設定の仕方は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/&#34;&gt;開発環境設定&lt;/a&gt;に記載されています。&lt;/p&gt;
+&lt;p&gt;プログラミングのためのパソコンの設定の仕方は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/&#34;&gt;開発環境設定&lt;/a&gt;に記載しています。&lt;/p&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
 &lt;/p&gt;
@@ -260,7 +258,7 @@
 &lt;li&gt;パソコン&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;プログラムの書き込み方&#34;&gt;プログラムの書き込み方&lt;/h2&gt;
-&lt;p&gt;プログラミングのためのパソコンの設定の仕方は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/&#34;&gt;開発環境設定&lt;/a&gt;に記載されています。&lt;/p&gt;
+&lt;p&gt;プログラミングのためのパソコンの設定の仕方は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/&#34;&gt;開発環境設定&lt;/a&gt;に記載しています。&lt;/p&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
 &lt;/p&gt;
@@ -268,7 +266,7 @@
     </item>
     
     <item>
-      <title>Docs: うまく動かないときは</title>
+      <title>Docs: 困ったときには</title>
       <link>https://docs.leafony.com/docs/getting-started/solution/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -276,21 +274,21 @@
       <description>
         
         
-        &lt;h2 id=&#34;シリアルポートが見つからない&#34;&gt;シリアルポートが見つからない&lt;/h2&gt;
+        &lt;h2 id=&#34;電源が入らない&#34;&gt;電源が入らない&lt;/h2&gt;
+&lt;p&gt;Leafonyの電源が入らない場合は、以下の項目をチェックしてください。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Arduino IDEでLeafonyのシリアルポートが見つからない場合は、USBシリアル変換IC(FT232)のドライバをインストールしてみましょう。詳しくは、&lt;a href=&#34;https://www.monoxit.com/tecmat/windowsftdiusb/&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;電源が入らない&#34;&gt;電源が入らない&lt;/h2&gt;
-&lt;p&gt;Leafonyの電源が入らない場合は以下の項目を確かめてみましょう。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;電池の残量が十分にあるか&lt;/li&gt;
-&lt;li&gt;ボタン電池の入れる向きは正しいか&lt;/li&gt;
-&lt;li&gt;電源スイッチがONになっているか&lt;/li&gt;
-&lt;li&gt;コネクタが汚れていないか&lt;/br&gt;
-汚れていたら、無水エタノールを含ませた紙製ウエスで軽く拭いてください。それでも改善しない場合は、コネクタを交換してください。詳しくは、&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az61/#%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF%E3%81%AE%E5%8F%96%E3%82%8A%E4%BB%98%E3%81%91%E5%8F%96%E3%82%8A%E5%A4%96%E3%81%97&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;。&lt;/li&gt;
-&lt;li&gt;ネジの締めは問題ないか&lt;/br&gt;
-ネジを交互に、きちんとしめて下さい。&lt;/br&gt;&lt;br&gt;
+&lt;li&gt;電池の残量が十分にあるか。&lt;/li&gt;
+&lt;li&gt;ボタン電池の入れる向きは正しいか。&lt;/li&gt;
+&lt;li&gt;電源スイッチがONになっているか。&lt;/li&gt;
+&lt;li&gt;コネクタが汚れていないか。汚れていたら、無水エタノールを含ませた紙製ウエスで軽く拭いてください。それでも改善しない場合は、コネクタを交換してください。詳しくは、&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az61/#%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF%E3%81%AE%E5%8F%96%E3%82%8A%E4%BB%98%E3%81%91%E5%8F%96%E3%82%8A%E5%A4%96%E3%81%97&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;。&lt;/li&gt;
+&lt;li&gt;ネジの締めは問題ないか。緩みがあるならば、ネジを交互に締めてください。&lt;/br&gt;&lt;br&gt;
 &lt;a href=&#34;./assembly.png&#34;&gt;&lt;img src=&#34;./assembly.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;シリアルポートが見つからない&#34;&gt;シリアルポートが見つからない&lt;/h2&gt;
+&lt;p&gt;Arduino IDEでLeafonyのシリアルポートが見つからない場合は、以下の項目をチェックしてください。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;USBケーブルが故障していないか。&lt;/li&gt;
+&lt;li&gt;USBシリアル変換IC(FT232)のドライバがインストールされているか。最新のWindowsやMacのOSには、USBシリアル変換IC(FT232)のドライバがインストールされています。無い場合は、手動で&lt;a href=&#34;https://ftdichip.com/drivers/vcp-drivers/&#34; target=&#34;_blank&#34;&gt;FTDI社のドライバ&lt;/a&gt;をインストールしてください。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
