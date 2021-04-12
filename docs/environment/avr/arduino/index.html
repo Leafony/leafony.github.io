@@ -22,17 +22,17 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>AVR MCU の Arduino IDE 設定 | Leafony</title><meta property="og:title" content="AVR MCU の Arduino IDE 設定" />
-<meta property="og:description" content="Leafonyにプログラムを書き込んでみよう！
+<meta property="og:description" content="Leafonyにプログラムを書き込む
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/environment/avr/arduino/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="AVR MCU の Arduino IDE 設定">
-<meta itemprop="description" content="Leafonyにプログラムを書き込んでみよう！
+<meta itemprop="description" content="Leafonyにプログラムを書き込む
 ">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AVR MCU の Arduino IDE 設定"/>
-<meta name="twitter:description" content="Leafonyにプログラムを書き込んでみよう！
+<meta name="twitter:description" content="Leafonyにプログラムを書き込む
 "/>
 
 
@@ -148,7 +148,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.be24ded5b28a13410146f27c5731cc8cafc6c02b7441abaa3ae7dfb929afb527db566149183676c24c30f46441e08b5f8ac637eb39b06f0a10b67b942ba7e8a4.json"
+  data-offline-search-index-json-src="/offline-search-index.a086aa3d70825e220ead40b4af542d02a628d7a81adeb3db13acf35d7c4d26560e53797acf7ef717f24e134a6fac3ba69e55c6b2a1325ff7de3433a86fadc9c8.json"
   data-offline-search-base-href="/"
 >
 
@@ -178,7 +178,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.be24ded5b28a13410146f27c5731cc8cafc6c02b7441abaa3ae7dfb929afb527db566149183676c24c30f46441e08b5f8ac637eb39b06f0a10b67b942ba7e8a4.json"
+  data-offline-search-index-json-src="/offline-search-index.a086aa3d70825e220ead40b4af542d02a628d7a81adeb3db13acf35d7c4d26560e53797acf7ef717f24e134a6fac3ba69e55c6b2a1325ff7de3433a86fadc9c8.json"
   data-offline-search-base-href="/"
 >
 
@@ -3444,10 +3444,10 @@ if (!doNotTrack) {
     <li><a href="#用意するもの">用意するもの</a></li>
     <li><a href="#arduino-ideのインストール">Arduino IDEのインストール</a>
       <ul>
-        <li><a href="#古いバージョンのarduino-ideダウンロードとarduino-avr-boardsの確認と変更方法">古いバージョンのArduino IDEダウンロードとArduino AVR Boardsの確認と変更方法</a></li>
+        <li><a href="#旧バージョンのarduino-ideのダウンロードとarduino-avr-boardsのバージョンの変更方法">旧バージョンのArduino IDEのダウンロードとArduino AVR Boardsのバージョンの変更方法</a></li>
       </ul>
     </li>
-    <li><a href="#pcと接続">PCと接続</a></li>
+    <li><a href="#パソコンと接続">パソコンと接続</a></li>
     <li><a href="#マイコンボードの設定">マイコンボードの設定</a></li>
     <li><a href="#マイコンボードの動作確認">マイコンボードの動作確認</a>
       <ul>
@@ -3519,61 +3519,57 @@ if (!doNotTrack) {
             
 <div class="td-content">
 	<h1>AVR MCU の Arduino IDE 設定</h1>
-        <div class="lead">Leafonyにプログラムを書き込んでみよう！</div>
+        <div class="lead">Leafonyにプログラムを書き込む</div>
 	
-	<p>Leafonyはプログラムを書き込んで初めて動作します。<br>
-たとえば、<a href="/docs/getting-started/basic/">クイックスタート</a>では、4つのセンサを読み取って、Bluetooth LEでデータを送信するプログラムが書き込まれています。</p>
-<p>これからLeafonyを使い始める皆さんは、Leafonyにどんなことをしてもらいたいのかプログラムに記述して書き込むことで、思い通りの動作をさせることができます。</p>
+	<p>Leafonyを動作させるには、プログラムを書き込む必要があります。Basic Kitは、センサの値を読んでBluetoothでデータを送信するプログラムが、工場出荷時に書き込まれています。</p>
 
 
 <div class="alert alert-primary" role="alert">
 <h4 class="alert-heading">次のステップ</h4>
-Leafonyにプログラムを書き込むために必要なソフトウェアをインストール
+Leafonyにプログラムを書き込むために、必要なソフトウェアのインストール
 </div>
 
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
 <li>Basic Kit</li>
 <li>USBケーブル</li>
-<li>PC (Windows、Mac OS X 、または Linux)</li>
+<li>パソコン (Windows、Mac OS X 、または Linux)</li>
 </ul>
 <h2 id="arduino-ideのインストール">Arduino IDEのインストール</h2>
-<p>Arduino IDEは、オープンソースの電子工作向けハードウェアプラットフォームであるArduinoの開発環境です。<br>
-この開発環境では、プログラムを記述したり、Arduino基板にプログラムを書き込んだり、基板から送られてくるデータを表示したりすることができます。<br>
-Leafonyは、Arduino IDEを使って開発できます。</p>
-<p>早速Arduino IDEをダウンロードしてみましょう。</p>
+<p>Arduino IDEは、オープンソースの電子工作向け開発環境で、プログラムを記述して書き込んだり、データを表示したりすることができます。以下の手順で、Arduino IDEをインストールを行います。</p>
 <ol>
-<li><a href="https://www.arduino.cc/" target="_blank">Arduino ホームページ</a>から「SOFTWARE」 → 「DOWNLOADS」の順でページを開き、Arduino IDEのダウンロードページに飛ぶ。</li>
-<li>「Download the Arduino IDE」と書いてある場所で、使用しているOSにあったインストーラをダウンロード。</li>
-<li>ダウンロードしたインストーラを実行して、画面の指示に従ってArduino IDEをインストール。</li>
+<li><a href="https://www.arduino.cc/" target="_blank">Arduinoのホームページ</a> 
+から<code>SOFTWARE</code>のページを開きます。</li>
+<li><code>Download</code>で、インストーラをダウンロードします。</li>
+<li>画面の指示に従って、インストールします。</li>
 </ol>
-<h3 id="古いバージョンのarduino-ideダウンロードとarduino-avr-boardsの確認と変更方法">古いバージョンのArduino IDEダウンロードとArduino AVR Boardsの確認と変更方法</h3>
-<p><a href="../arduino_ver" target=" blank">Arduino IDE のバージョン</a>参照。</p>
+<h3 id="旧バージョンのarduino-ideのダウンロードとarduino-avr-boardsのバージョンの変更方法">旧バージョンのArduino IDEのダウンロードとArduino AVR Boardsのバージョンの変更方法</h3>
+<p><a href="../arduino_ver" target=" blank">旧バージョンのArduino IDE </a>参照。</p>
 
 
 <div class="alert alert-primary" role="alert">
 <h4 class="alert-heading">次のステップ</h4>
-Leafonyにプログラムを書き込んで動かしてみましょう！
+Leafonyにプログラムを書き込んで動かす
 </div>
 
-<h2 id="pcと接続">PCと接続</h2>
-<p>USBケーブルでPCと接続しましょう。<br></p>
+<h2 id="パソコンと接続">パソコンと接続</h2>
+<p>USBケーブルでパソコンを接続します。<br></p>
 <img src="./basic_assemble.png" width="530">
 <br><br>
 <h2 id="マイコンボードの設定">マイコンボードの設定</h2>
-<p>Arduino IDEでLeafonyの開発を行うために、下記の手順でIDEの設定を行いましょう。</p>
+<p>Arduino IDEでLeafonyの開発を行うために、下記の手順でIDEの設定を行います。</p>
 <ol>
-<li><code>ツール → ボード</code>から、<code>Arduino Pro or Pro Mini</code>を選択、<code>プロセッサ</code>で<code>ATmega328P (3.3V,8MHz)</code>を選択</li>
+<li><code>ツール → ボード</code>から、<code>Arduino Pro or Pro Mini</code>を選択、<code>プロセッサ</code>で<code>ATmega328P (3.3V,8MHz)</code>を選択します。</li>
 </ol>
 <img src="./IDE_ATmega.jpg" width="640">
 <p><br><br></p>
 <ol start="2">
-<li><code>ツール → シリアルポート</code>から、Leafonyが接続されているシリアルポートを選択</li>
+<li><code>ツール → シリアルポート</code>から、Leafonyが接続されているシリアルポートを選択します。</li>
 </ol>
 <img src="./IDE_COM.jpg" width="640">
 <h2 id="マイコンボードの動作確認">マイコンボードの動作確認</h2>
 <ol>
-<li>Arduino IDEで<code>ファイル → スケッチ例 → 01.Basics → Blink</code>をクリックし、サンプルアプリを開きましょう。</li>
+<li>Arduino IDEで<code>ファイル → スケッチ例 → 01.Basics → Blink</code>をクリックし、サンプルアプリを開きます。</li>
 <li><code>マイコンボードに書き込む</code>ボタンを押すをLeafonyにプログラムが書き込まれます。</li>
 <li>AVR MCUリーフに搭載されたLEDが点滅していることが確認できれば完了です。</li>
 </ol>
@@ -3581,8 +3577,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 <p>ピンは、名前(Name)で指定して下さい。</br></p>
 <p><a href="https://docs.leafony.com/docs/leaf/processor/ap01/ap01_pinassign.png"><img src="https://docs.leafony.com/docs/leaf/processor/ap01/ap01_pinassign.png" width="750"></a></p>
 <h2 id="ライブラリのインストール">ライブラリのインストール</h2>
-<p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。<br>
-下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきましょう。</p>
+<p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきます。</p>
 <h3 id="1-使用するライブラリ">1. 使用するライブラリ</h3>
 <p>各Kitで使用するライブラリは以下の通りです。</p>
 <table class="table-hover">
@@ -3664,20 +3659,19 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
   </tbody>
 </table>
 <h3 id="2-ライブラリをダウンロード">2. ライブラリをダウンロード</h3>
-<p>上記表のリンクをクリックすると、ライブラリのGitHubリポジトリにアクセスします。
-<code>Code → Download ZIP</code>をクリックし、ライブラリをダウンロードしましょう。</p>
+<p>上記表のリンクをクリックすると、ライブラリのGitHubリポジトリにアクセスします。<code>Code → Download ZIP</code>をクリックし、ライブラリをダウンロードします。</p>
 <img src="github_1.png" width="600">
 <h3 id="3-ライブラリをインクルード">3. ライブラリをインクルード</h3>
-<p>Arduinoを立ち上げ、<code>スケッチ → ライブラリをインクルード → ZIP形式のライブラリをインストール</code>の順に選択して、先程ダウンロードしたZIPファイルを読み込みましょう。</p>
+<p>Arduinoを立ち上げ、<code>スケッチ → ライブラリをインクルード → ZIP形式のライブラリをインストール</code>の順に選択して、先程ダウンロードしたZIPファイルを読み込みます。</p>
 <img src="IDE_libinclude.png" width="640">  
 <h2 id="困ったときは">困ったときは</h2>
-<p>「<a href="/docs/getting-started/solution" target="_blank">うまく動かないときは</a>」で解決方法を探してみましょう。</p>
+<p>「<a href="/docs/getting-started/solution" target="_blank">うまく動かないときは</a>」で解決方法を探してみます。</p>
 
 
 <div class="alert alert-primary" role="alert">
 <h4 class="alert-heading">次のステップ</h4>
-<a href="/docs/examples">サンプルアプリ</a>には、幾つものプログラムを用意しています。<br>
-開発を簡単にするため、ライブラリをインストールしてから、始めてください。
+<a href="/docs/examples">サンプルアプリ</a>には、いくつものプログラムを用意しています。<br>
+開発を簡単にするため、ライブラリをインストールしてから、はじめてください。
 </div>
 
 <p style="text-align: right">
@@ -3693,7 +3687,7 @@ Leafonyにプログラムを書き込んで動かしてみましょう！
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 17, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 12, 2021
 </div>
 </div>
 
