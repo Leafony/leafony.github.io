@@ -148,7 +148,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a8afb2e5e10df7252cec9f92ec15330b05ca67c21d92bbf84691413837df2b0934af9e7b75bf24e3f2a559bf739591b25ef8d01980d53247ffddd1892a044219.json"
+  data-offline-search-index-json-src="/offline-search-index.e8bfecb55bba0f895402030f931cc16f643b7e80e2b4ad834d1df2ffb8a6eed4ceb5e4daa59319ef2ec638d5a59a3345acab7f9928dc58b5ce0744d90bef8d54.json"
   data-offline-search-base-href="/"
 >
 
@@ -178,7 +178,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a8afb2e5e10df7252cec9f92ec15330b05ca67c21d92bbf84691413837df2b0934af9e7b75bf24e3f2a559bf739591b25ef8d01980d53247ffddd1892a044219.json"
+  data-offline-search-index-json-src="/offline-search-index.e8bfecb55bba0f895402030f931cc16f643b7e80e2b4ad834d1df2ffb8a6eed4ceb5e4daa59319ef2ec638d5a59a3345acab7f9928dc58b5ce0744d90bef8d54.json"
   data-offline-search-base-href="/"
 >
 
@@ -3445,7 +3445,6 @@ if (!doNotTrack) {
     <li><a href="#arduino-ideのインストール">Arduino IDEのインストール</a>
       <ul>
         <li><a href="#previous-ide-ダウンロード">Previous IDE ダウンロード</a></li>
-        <li><a href="#arduino-avr-boards">Arduino AVR Boards</a></li>
       </ul>
     </li>
     <li><a href="#パソコンと接続">パソコンと接続</a></li>
@@ -3538,12 +3537,8 @@ if (!doNotTrack) {
 <li>画面の指示に従って、インストールします。</li>
 </ol>
 <h3 id="previous-ide-ダウンロード">Previous IDE ダウンロード</h3>
-<p>最新のIDE にアップデートすると動作しないことがあります。その場合は、動作検証済みのバージョンをインストールしなおしてください。下記より、Previous IDEのダウンロードが出来ます。</p>
+<p>下記より、Previous IDEのダウンロードが出来ます。</p>
 <p><a href="https://www.arduino.cc/en/Main/OldSoftwareReleases#previous">Previous IDE Releases</a></p>
-<h3 id="arduino-avr-boards">Arduino AVR Boards</h3>
-<p>Arduino AVR Boardsは、Arduino IDEをインストールするとき、一緒に設定されます。Arduino AVR Boardsも最新にアップデートすると動作しないことがあります。
-その場合は、IDEの<code>ツール→ボード→ボードマネージャ</code> を選択し、<code>Arduino AVR Boards</code> のバージョンを確認し、<code>バージョンの選択</code>から動作検証済みのバージョンを選択して<code>インストール</code>をクリックしてください。</p>
-<p><img src="./ardunoide_boardmanager.jpg" width="640"></img></p>
 <h2 id="パソコンと接続">パソコンと接続</h2>
 <p>USBケーブルでパソコンを接続します。<br></p>
 <img src="./basic_assemble.png" width="530">
@@ -3551,11 +3546,17 @@ if (!doNotTrack) {
 <h2 id="マイコンボードの設定">マイコンボードの設定</h2>
 <p>Arduino IDEでLeafonyの開発を行うために、下記の手順でIDEの設定を行います。</p>
 <ol>
-<li><code>ツール → ボード</code>から、<code>Arduino Pro or Pro Mini</code>を選択、<code>プロセッサ</code>で<code>ATmega328P (3.3V,8MHz)</code>を選択します。</li>
+<li>
+<p><code>Arduino AVR Boards</code>は、IDEと一緒にインストールされます。<code>Arduino AVR Boards</code> のバージョンは、<code>ツール→ボード→ボードマネージャ</code> で確認をすることが出来ます。また、<code>バージョンを選択</code>をすれば、以前のものをインストールすることが出来ます。<br><br>
+<img src="./ardunoide_boardmanager.jpg" width="640"></img></p>
+</li>
+<li>
+<p><code>ツール → ボード</code>から、<code>Arduino Pro or Pro Mini</code>を選択、<code>プロセッサ</code>で<code>ATmega328P (3.3V,8MHz)</code>を選択します。</p>
+</li>
 </ol>
 <img src="./IDE_ATmega.jpg" width="640">
 <p><br><br></p>
-<ol start="2">
+<ol start="3">
 <li><code>ツール → シリアルポート</code>から、Leafonyが接続されているシリアルポートを選択します。</li>
 </ol>
 <img src="./IDE_COM.jpg" width="640">

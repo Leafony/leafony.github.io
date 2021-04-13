@@ -38,12 +38,8 @@
 &lt;li&gt;画面の指示に従って、インストールします。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;previous-ide-ダウンロード&#34;&gt;Previous IDE ダウンロード&lt;/h3&gt;
-&lt;p&gt;最新のIDE にアップデートすると動作しないことがあります。その場合は、動作検証済みのバージョンをインストールしなおしてください。下記より、Previous IDEのダウンロードが出来ます。&lt;/p&gt;
+&lt;p&gt;下記より、Previous IDEのダウンロードが出来ます。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.arduino.cc/en/Main/OldSoftwareReleases#previous&#34;&gt;Previous IDE Releases&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;arduino-avr-boards&#34;&gt;Arduino AVR Boards&lt;/h3&gt;
-&lt;p&gt;Arduino AVR Boardsは、Arduino IDEをインストールするとき、一緒に設定されます。Arduino AVR Boardsも最新にアップデートすると動作しないことがあります。
-その場合は、IDEの&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt; を選択し、&lt;code&gt;Arduino AVR Boards&lt;/code&gt; のバージョンを確認し、&lt;code&gt;バージョンの選択&lt;/code&gt;から動作検証済みのバージョンを選択して&lt;code&gt;インストール&lt;/code&gt;をクリックしてください。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./ardunoide_boardmanager.jpg&#34; width=&#34;640&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;h2 id=&#34;パソコンと接続&#34;&gt;パソコンと接続&lt;/h2&gt;
 &lt;p&gt;USBケーブルでパソコンを接続します。&lt;br&gt;&lt;/p&gt;
 &lt;img src=&#34;./basic_assemble.png&#34; width=&#34;530&#34;&gt;
@@ -51,11 +47,17 @@
 &lt;h2 id=&#34;マイコンボードの設定&#34;&gt;マイコンボードの設定&lt;/h2&gt;
 &lt;p&gt;Arduino IDEでLeafonyの開発を行うために、下記の手順でIDEの設定を行います。&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;code&gt;ツール → ボード&lt;/code&gt;から、&lt;code&gt;Arduino Pro or Pro Mini&lt;/code&gt;を選択、&lt;code&gt;プロセッサ&lt;/code&gt;で&lt;code&gt;ATmega328P (3.3V,8MHz)&lt;/code&gt;を選択します。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Arduino AVR Boards&lt;/code&gt;は、IDEと一緒にインストールされます。&lt;code&gt;Arduino AVR Boards&lt;/code&gt; のバージョンは、&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt; で確認をすることが出来ます。また、&lt;code&gt;バージョンを選択&lt;/code&gt;をすれば、以前のものをインストールすることが出来ます。&lt;br&gt;&lt;br&gt;
+&lt;img src=&#34;./ardunoide_boardmanager.jpg&#34; width=&#34;640&#34;&gt;&lt;/img&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;ツール → ボード&lt;/code&gt;から、&lt;code&gt;Arduino Pro or Pro Mini&lt;/code&gt;を選択、&lt;code&gt;プロセッサ&lt;/code&gt;で&lt;code&gt;ATmega328P (3.3V,8MHz)&lt;/code&gt;を選択します。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;./IDE_ATmega.jpg&#34; width=&#34;640&#34;&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
+&lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;&lt;code&gt;ツール → シリアルポート&lt;/code&gt;から、Leafonyが接続されているシリアルポートを選択します。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;./IDE_COM.jpg&#34; width=&#34;640&#34;&gt;

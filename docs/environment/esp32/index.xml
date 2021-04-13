@@ -38,15 +38,15 @@
 &lt;li&gt;画面の指示に従って、インストールします。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;previous-ide-ダウンロード&#34;&gt;Previous IDE ダウンロード&lt;/h3&gt;
-&lt;p&gt;最新のIDE にアップデートすると動作しないことがあります。その場合は、動作検証済みのバージョンをインストールしなおしてください。下記より、Previous IDEのダウンロードが出来ます。&lt;/p&gt;
+&lt;p&gt;下記より、Previous IDEのダウンロードが出来ます。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.arduino.cc/en/Main/OldSoftwareReleases#previous&#34;&gt;Previous IDE Releases&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;パソコンと接続&#34;&gt;パソコンと接続&lt;/h2&gt;
 &lt;p&gt;USBケーブルでPCと接続します。&lt;br&gt;&lt;/p&gt;
 &lt;img src=&#34;./esp32_assemble.png&#34; width=&#34;500&#34;&gt;
 &lt;h2 id=&#34;マイコンボードの設定&#34;&gt;マイコンボードの設定&lt;/h2&gt;
-&lt;p&gt;ESP32 MCUリーフをIDEで使用するには、ボードのインストールが必要です。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;esp32&lt;/code&gt;のボードは、webサイトからインストールします。Arduino IDEでLeafonyの開発を行うために、下記の手順でIDEの設定を行います。&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;IDEの&lt;code&gt;ファイル → 環境設定&lt;/code&gt;を開き、&lt;code&gt;追加のボードマネージャのURL:&lt;/code&gt;に、下記URLを入力してください。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ファイル → 環境設定&lt;/code&gt;を開き、&lt;code&gt;追加のボードマネージャのURL:&lt;/code&gt;に、下記URLを入力してください。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;　　&lt;code&gt;https://dl.espressif.com/dl/package_esp32_index.json&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./ArduinoIDE_URL.png&#34; width=&#34;600&#34;&gt;&lt;/img&gt;&lt;/p&gt;
@@ -103,22 +103,18 @@
 &lt;/ol&gt;
 &lt;p&gt;&lt;a href=&#34;./AP02_tips.png&#34;&gt;&lt;img src=&#34;./AP02_tips.png&#34; width=&#34;450&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&#34;スケッチのピンの指定&#34;&gt;スケッチのピンの指定&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;ピンは、名前(Name)ではなく、ポート(Port)で指定して下さい&lt;/strong&gt;。&lt;/br&gt;&lt;/br&gt;
+&lt;p&gt;ピンは、名前(Name)ではなく、ポート(Port)で指定して下さい。
 &lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02/ap02_pinassign_v1.png&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap02/ap02_pinassign_v1.png&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;制限事項&#34;&gt;制限事項&lt;/h4&gt;
 &lt;p&gt;※1：出力の設定は出来ません。&lt;/br&gt;
-※2：①UART1は、ピン番号をRX=26、TX=25に設定です。UART0、2に関しては、ピン番号の指定はありません。下記に、UART1の設定例を記します。&lt;/br&gt;&lt;/p&gt;
+※2：WiFi.hをインクルードする場合は、アナログ入力として使用出来ません。UART1は、ピン番号をRX=26、TX=25に設定です。UART0、2に関しては、ピン番号の指定はありません。下記に、UART1の設定例を記します。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;HardwareSerial&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Serial1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// UART1 (RX=9, TX=10)
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;Serial1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;begin&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;9600&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SERIAL_8N1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;25&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// ピンを変更 (RX=26, TX=25)
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;　　②WiFi.hをインクルードする場合は、アナログ入力として使用出来ません。　
-&lt;/br&gt;&lt;/p&gt;
-&lt;p&gt;※3:ブートストラップに使用しているため、プルアップ禁止です。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;※3:ブートストラップに使用しているため、プルアップ禁止です。&lt;/p&gt;
 &lt;h2 id=&#34;ライブラリのインストール&#34;&gt;ライブラリのインストール&lt;/h2&gt;
-&lt;p&gt;一部のリーフを使用するには、追加のライブラリをインストールする必要があります。&lt;/br&gt;
-&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;を参照して、あらかじめ全てののライブラリをインストールしておきましょう。&lt;/p&gt;
+&lt;p&gt;一部のリーフを使用するには、追加のライブラリをインストールする必要があります。&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;を参照して、あらかじめ全てののライブラリをインストールしてください。&lt;/p&gt;
 &lt;h2 id=&#34;困ったときには&#34;&gt;困ったときには&lt;/h2&gt;
 &lt;p&gt;お問い合わせをする前に、&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/solution&#34; target=&#34;_blank&#34;&gt;困ったときには&lt;/a&gt;を読んでみてください。&lt;/p&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;

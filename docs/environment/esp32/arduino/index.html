@@ -148,7 +148,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a8afb2e5e10df7252cec9f92ec15330b05ca67c21d92bbf84691413837df2b0934af9e7b75bf24e3f2a559bf739591b25ef8d01980d53247ffddd1892a044219.json"
+  data-offline-search-index-json-src="/offline-search-index.e8bfecb55bba0f895402030f931cc16f643b7e80e2b4ad834d1df2ffb8a6eed4ceb5e4daa59319ef2ec638d5a59a3345acab7f9928dc58b5ce0744d90bef8d54.json"
   data-offline-search-base-href="/"
 >
 
@@ -178,7 +178,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a8afb2e5e10df7252cec9f92ec15330b05ca67c21d92bbf84691413837df2b0934af9e7b75bf24e3f2a559bf739591b25ef8d01980d53247ffddd1892a044219.json"
+  data-offline-search-index-json-src="/offline-search-index.e8bfecb55bba0f895402030f931cc16f643b7e80e2b4ad834d1df2ffb8a6eed4ceb5e4daa59319ef2ec638d5a59a3345acab7f9928dc58b5ce0744d90bef8d54.json"
   data-offline-search-base-href="/"
 >
 
@@ -3531,15 +3531,15 @@ if (!doNotTrack) {
 <li>画面の指示に従って、インストールします。</li>
 </ol>
 <h3 id="previous-ide-ダウンロード">Previous IDE ダウンロード</h3>
-<p>最新のIDE にアップデートすると動作しないことがあります。その場合は、動作検証済みのバージョンをインストールしなおしてください。下記より、Previous IDEのダウンロードが出来ます。</p>
+<p>下記より、Previous IDEのダウンロードが出来ます。</p>
 <p><a href="https://www.arduino.cc/en/Main/OldSoftwareReleases#previous">Previous IDE Releases</a></p>
 <h2 id="パソコンと接続">パソコンと接続</h2>
 <p>USBケーブルでPCと接続します。<br></p>
 <img src="./esp32_assemble.png" width="500">
 <h2 id="マイコンボードの設定">マイコンボードの設定</h2>
-<p>ESP32 MCUリーフをIDEで使用するには、ボードのインストールが必要です。</p>
+<p><code>esp32</code>のボードは、webサイトからインストールします。Arduino IDEでLeafonyの開発を行うために、下記の手順でIDEの設定を行います。</p>
 <ol>
-<li>IDEの<code>ファイル → 環境設定</code>を開き、<code>追加のボードマネージャのURL:</code>に、下記URLを入力してください。</li>
+<li><code>ファイル → 環境設定</code>を開き、<code>追加のボードマネージャのURL:</code>に、下記URLを入力してください。</li>
 </ol>
 <p>　　<code>https://dl.espressif.com/dl/package_esp32_index.json</code></p>
 <p><img src="./ArduinoIDE_URL.png" width="600"></img></p>
@@ -3596,22 +3596,18 @@ if (!doNotTrack) {
 </ol>
 <p><a href="./AP02_tips.png"><img src="./AP02_tips.png" width="450"></a></p>
 <h3 id="スケッチのピンの指定">スケッチのピンの指定</h3>
-<p><strong>ピンは、名前(Name)ではなく、ポート(Port)で指定して下さい</strong>。</br></br>
+<p>ピンは、名前(Name)ではなく、ポート(Port)で指定して下さい。
 <a href="https://docs.leafony.com/docs/leaf/processor/ap02/ap02_pinassign_v1.png"><img src="https://docs.leafony.com/docs/leaf/processor/ap02/ap02_pinassign_v1.png" width="750"></a></p>
-<h4 id="制限事項">制限事項</h4>
 <p>※1：出力の設定は出来ません。</br>
-※2：①UART1は、ピン番号をRX=26、TX=25に設定です。UART0、2に関しては、ピン番号の指定はありません。下記に、UART1の設定例を記します。</br></p>
+※2：WiFi.hをインクルードする場合は、アナログ入力として使用出来ません。UART1は、ピン番号をRX=26、TX=25に設定です。UART0、2に関しては、ピン番号の指定はありません。下記に、UART1の設定例を記します。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">HardwareSerial</span> <span style="color:#000">Serial1</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// UART1 (RX=9, TX=10)
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#000">Serial1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">9600</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">SERIAL_8N1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">26</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">25</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// ピンを変更 (RX=26, TX=25)
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><p>　　②WiFi.hをインクルードする場合は、アナログ入力として使用出来ません。　
-</br></p>
-<p>※3:ブートストラップに使用しているため、プルアップ禁止です。</p>
+</code></pre></div><p>※3:ブートストラップに使用しているため、プルアップ禁止です。</p>
 <h2 id="ライブラリのインストール">ライブラリのインストール</h2>
-<p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。</br>
-<a href="https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" target="_blank">こちら</a>を参照して、あらかじめ全てののライブラリをインストールしておきましょう。</p>
+<p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。<a href="https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" target="_blank">こちら</a>を参照して、あらかじめ全てののライブラリをインストールしてください。</p>
 <h2 id="困ったときには">困ったときには</h2>
 <p>お問い合わせをする前に、<a href="/docs/getting-started/solution" target="_blank">困ったときには</a>を読んでみてください。</p>
 <p style="text-align: right">
