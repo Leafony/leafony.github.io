@@ -37,12 +37,13 @@
 &lt;li&gt;&lt;code&gt;Download&lt;/code&gt;で、インストーラをダウンロードします。&lt;/li&gt;
 &lt;li&gt;画面の指示に従って、インストールします。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;arduino-avr-boards&#34;&gt;Arduino AVR Boards&lt;/h3&gt;
-&lt;p&gt;通常はインストールした Arduino IDE のバージョンに対応するバージョンの Arduino AVR Boards がインストールされますが、環境により異なるバージョンの Arduino AVR Boards が指定されている場合があります。 そのため Arduino IDE のツール→ボード→ボードマネージャ を開いて Arduino AVR Boards のバージョンを確認してください。
-&lt;a href=&#34;../arduino_ver&#34; target=&#34; blank&#34;&gt;旧バージョンのArduino IDE &lt;/a&gt;参照。&lt;/p&gt;
-&lt;h2 id=&#34;旧バージョンのide&#34;&gt;旧バージョンのIDE&lt;/h2&gt;
-&lt;p&gt;最新のIDE にアップデートすると動作しないことがあります。その場合は動作検証済みのバージョンをインストールしなおしてください。下記より、旧バージョンのIDEをダウンロードできます。&lt;/p&gt;
+&lt;h3 id=&#34;previous-ide-ダウンロード&#34;&gt;Previous IDE ダウンロード&lt;/h3&gt;
+&lt;p&gt;最新のIDE にアップデートすると動作しないことがあります。その場合は、動作検証済みのバージョンをインストールしなおしてください。下記より、Previous IDEのダウンロードが出来ます。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.arduino.cc/en/Main/OldSoftwareReleases#previous&#34;&gt;Previous IDE Releases&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;arduino-avr-boards&#34;&gt;Arduino AVR Boards&lt;/h3&gt;
+&lt;p&gt;Arduino AVR Boardsは、Arduino IDEをインストールするとき、一緒に設定されます。Arduino AVR Boardsも最新にアップデートすると動作しないことがあります。
+その場合は、IDEの&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt; を選択し、&lt;code&gt;Arduino AVR Boards&lt;/code&gt; のバージョンを確認し、&lt;code&gt;バージョンの選択&lt;/code&gt;から動作検証済みのバージョンを選択して&lt;code&gt;インストール&lt;/code&gt;をクリックしてください。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./ardunoide_boardmanager.jpg&#34; width=&#34;640&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;h2 id=&#34;パソコンと接続&#34;&gt;パソコンと接続&lt;/h2&gt;
 &lt;p&gt;USBケーブルでパソコンを接続します。&lt;br&gt;&lt;/p&gt;
 &lt;img src=&#34;./basic_assemble.png&#34; width=&#34;530&#34;&gt;
@@ -155,15 +156,8 @@
 &lt;h3 id=&#34;3-ライブラリをインクルード&#34;&gt;3. ライブラリをインクルード&lt;/h3&gt;
 &lt;p&gt;Arduinoを立ち上げ、&lt;code&gt;スケッチ → ライブラリをインクルード → ZIP形式のライブラリをインストール&lt;/code&gt;の順に選択して、先程ダウンロードしたZIPファイルを読み込みます。&lt;/p&gt;
 &lt;img src=&#34;IDE_libinclude.png&#34; width=&#34;640&#34;&gt;  
-
-
-&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
-&lt;a href=&#34;https://docs.leafony.com/docs/examples&#34;&gt;サンプルアプリ&lt;/a&gt;には、いくつものプログラムを用意しています。
-&lt;/div&gt;
-
 &lt;h2 id=&#34;困ったときには&#34;&gt;困ったときには&lt;/h2&gt;
-&lt;p&gt;お問い合わせをする前に、「&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/solution&#34; target=&#34;_blank&#34;&gt;困ったときには&lt;/a&gt;」を読んでみてください。&lt;/p&gt;
+&lt;p&gt;お問い合わせをする前に、&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/solution&#34; target=&#34;_blank&#34;&gt;困ったときには&lt;/a&gt;を読んでみてください。&lt;/p&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
 &lt;/p&gt;
@@ -171,7 +165,7 @@
     </item>
     
     <item>
-      <title>Docs: Arduino AVR Boards</title>
+      <title>Docs: 旧バージョンArduino IDE</title>
       <link>https://docs.leafony.com/docs/environment/avr/arduino_ver/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -179,7 +173,10 @@
       <description>
         
         
-        &lt;h2 id=&#34;arduino-avr-boardsのバージョン&#34;&gt;Arduino AVR Boardsのバージョン&lt;/h2&gt;
+        &lt;h2 id=&#34;旧バージョンのarduino-ide-インストール方法&#34;&gt;旧バージョンのArduino IDE インストール方法&lt;/h2&gt;
+&lt;p&gt;Arduino IDE のバージョンによって、動作しないことがあります。その場合、動作検証済みのバージョンを使います。下記より、旧バージョンをダウンロードすることができます。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.arduino.cc/en/Main/OldSoftwareReleases#previous&#34;&gt;Previous IDE Releases&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;arduino-avr-boardsの確認と変更&#34;&gt;Arduino AVR Boardsの確認と変更&lt;/h2&gt;
 &lt;p&gt;通常はインストールした Arduino IDE のバージョンに対応するバージョンの Arduino AVR Boards がインストールされますが、環境により異なるバージョンの Arduino AVR Boards が指定されている場合があります。
 そのため Arduino IDE の&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt; を開いて Arduino AVR Boards のバージョンを確認してください。
 &lt;img src=&#34;./ardunoide_boards.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
