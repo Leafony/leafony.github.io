@@ -148,7 +148,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a086aa3d70825e220ead40b4af542d02a628d7a81adeb3db13acf35d7c4d26560e53797acf7ef717f24e134a6fac3ba69e55c6b2a1325ff7de3433a86fadc9c8.json"
+  data-offline-search-index-json-src="/offline-search-index.a487c49186f18ae3ac79dc78103846b2617e98fbba829e7105f0a5b818e9d0a0b26c24e089c422608770c65ccf8c1cd6150e3cc1855fde8ed6bb63049871106e.json"
   data-offline-search-base-href="/"
 >
 
@@ -178,7 +178,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a086aa3d70825e220ead40b4af542d02a628d7a81adeb3db13acf35d7c4d26560e53797acf7ef717f24e134a6fac3ba69e55c6b2a1325ff7de3433a86fadc9c8.json"
+  data-offline-search-index-json-src="/offline-search-index.a487c49186f18ae3ac79dc78103846b2617e98fbba829e7105f0a5b818e9d0a0b26c24e089c422608770c65ccf8c1cd6150e3cc1855fde8ed6bb63049871106e.json"
   data-offline-search-base-href="/"
 >
 
@@ -653,7 +653,7 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/environment/avr/arduino_ver/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Arduino IDE Ver</a>
+    <a  href="/docs/environment/avr/arduino_ver/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Arduino AVR Boards</a>
   </li>
   <ul>
     <li class="collapse " id="docsenvironmentavrarduino_ver">
@@ -3444,9 +3444,10 @@ if (!doNotTrack) {
     <li><a href="#用意するもの">用意するもの</a></li>
     <li><a href="#arduino-ideのインストール">Arduino IDEのインストール</a>
       <ul>
-        <li><a href="#旧バージョンのarduino-ideのダウンロードとarduino-avr-boardsのバージョンの変更方法">旧バージョンのArduino IDEのダウンロードとArduino AVR Boardsのバージョンの変更方法</a></li>
+        <li><a href="#arduino-avr-boards">Arduino AVR Boards</a></li>
       </ul>
     </li>
+    <li><a href="#旧バージョンのide">旧バージョンのIDE</a></li>
     <li><a href="#パソコンと接続">パソコンと接続</a></li>
     <li><a href="#マイコンボードの設定">マイコンボードの設定</a></li>
     <li><a href="#マイコンボードの動作確認">マイコンボードの動作確認</a>
@@ -3461,7 +3462,7 @@ if (!doNotTrack) {
         <li><a href="#3-ライブラリをインクルード">3. ライブラリをインクルード</a></li>
       </ul>
     </li>
-    <li><a href="#困ったときは">困ったときは</a></li>
+    <li><a href="#困ったときには">困ったときには</a></li>
   </ul>
 </nav>
 
@@ -3522,13 +3523,6 @@ if (!doNotTrack) {
         <div class="lead">Leafonyにプログラムを書き込む</div>
 	
 	<p>Leafonyを動作させるには、プログラムを書き込む必要があります。Basic Kitは、センサの値を読んでBluetoothでデータを送信するプログラムが、工場出荷時に書き込まれています。</p>
-
-
-<div class="alert alert-primary" role="alert">
-<h4 class="alert-heading">次のステップ</h4>
-Leafonyにプログラムを書き込むために、必要なソフトウェアのインストール
-</div>
-
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
 <li>Basic Kit</li>
@@ -3543,15 +3537,12 @@ Leafonyにプログラムを書き込むために、必要なソフトウェア�
 <li><code>Download</code>で、インストーラをダウンロードします。</li>
 <li>画面の指示に従って、インストールします。</li>
 </ol>
-<h3 id="旧バージョンのarduino-ideのダウンロードとarduino-avr-boardsのバージョンの変更方法">旧バージョンのArduino IDEのダウンロードとArduino AVR Boardsのバージョンの変更方法</h3>
-<p><a href="../arduino_ver" target=" blank">旧バージョンのArduino IDE </a>参照。</p>
-
-
-<div class="alert alert-primary" role="alert">
-<h4 class="alert-heading">次のステップ</h4>
-Leafonyにプログラムを書き込んで動かす
-</div>
-
+<h3 id="arduino-avr-boards">Arduino AVR Boards</h3>
+<p>通常はインストールした Arduino IDE のバージョンに対応するバージョンの Arduino AVR Boards がインストールされますが、環境により異なるバージョンの Arduino AVR Boards が指定されている場合があります。 そのため Arduino IDE のツール→ボード→ボードマネージャ を開いて Arduino AVR Boards のバージョンを確認してください。
+<a href="../arduino_ver" target=" blank">旧バージョンのArduino IDE </a>参照。</p>
+<h2 id="旧バージョンのide">旧バージョンのIDE</h2>
+<p>最新のIDE にアップデートすると動作しないことがあります。その場合は動作検証済みのバージョンをインストールしなおしてください。下記より、旧バージョンのIDEをダウンロードできます。</p>
+<p><a href="https://www.arduino.cc/en/Main/OldSoftwareReleases#previous">Previous IDE Releases</a></p>
 <h2 id="パソコンと接続">パソコンと接続</h2>
 <p>USBケーブルでパソコンを接続します。<br></p>
 <img src="./basic_assemble.png" width="530">
@@ -3664,16 +3655,15 @@ Leafonyにプログラムを書き込んで動かす
 <h3 id="3-ライブラリをインクルード">3. ライブラリをインクルード</h3>
 <p>Arduinoを立ち上げ、<code>スケッチ → ライブラリをインクルード → ZIP形式のライブラリをインストール</code>の順に選択して、先程ダウンロードしたZIPファイルを読み込みます。</p>
 <img src="IDE_libinclude.png" width="640">  
-<h2 id="困ったときは">困ったときは</h2>
-<p>「<a href="/docs/getting-started/solution" target="_blank">うまく動かないときは</a>」で解決方法を探してみます。</p>
 
 
 <div class="alert alert-primary" role="alert">
 <h4 class="alert-heading">次のステップ</h4>
-<a href="/docs/examples">サンプルアプリ</a>には、いくつものプログラムを用意しています。<br>
-開発を簡単にするため、ライブラリをインストールしてから、はじめてください。
+<a href="/docs/examples">サンプルアプリ</a>には、いくつものプログラムを用意しています。
 </div>
 
+<h2 id="困ったときには">困ったときには</h2>
+<p>お問い合わせをする前に、「<a href="/docs/getting-started/solution" target="_blank">困ったときには</a>」を読んでみてください。</p>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
 </p>
@@ -3687,7 +3677,7 @@ Leafonyにプログラムを書き込んで動かす
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 12, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 13, 2021
 </div>
 </div>
 
