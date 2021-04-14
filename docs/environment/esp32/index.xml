@@ -22,15 +22,14 @@
       <description>
         
         
-        &lt;p&gt;Leafonyを動作させるには、プログラムを書き込む必要があります。ESP32 Wi-Fi Kitは、パソコンやスマートフォンにタッチセンサの値を送信するプログラムが、工場出荷時に書き込まれています。&lt;/p&gt;
-&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
+        &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;ESP32 Wi-Fi Kit&lt;/li&gt;
 &lt;li&gt;USBケーブル&lt;/li&gt;
 &lt;li&gt;パソコン (Windows、Mac OS X 、または Linux)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;arduino-ideのインストール&#34;&gt;Arduino IDEのインストール&lt;/h2&gt;
-&lt;p&gt;Arduino IDEは、オープンソースの電子工作向け開発環境で、プログラムを記述して書き込んだり、データを表示したりすることができます。以下の手順で、Arduino IDEをインストールを行います。&lt;/p&gt;
+&lt;p&gt;以下の手順で、Arduino IDEをインストールを行います。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.arduino.cc/&#34; target=&#34;_blank&#34;&gt;Arduinoのホームページ&lt;/a&gt; 
 から&lt;code&gt;SOFTWARE&lt;/code&gt;のページを開きます。&lt;/li&gt;
@@ -44,9 +43,8 @@
 &lt;p&gt;USBケーブルでPCと接続します。&lt;br&gt;&lt;/p&gt;
 &lt;img src=&#34;./esp32_assemble.png&#34; width=&#34;500&#34;&gt;
 &lt;h2 id=&#34;マイコンボードの設定&#34;&gt;マイコンボードの設定&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;esp32&lt;/code&gt;のボードは、webサイトからインストールします。Arduino IDEでLeafonyの開発を行うために、下記の手順でIDEの設定を行います。&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;code&gt;ファイル → 環境設定&lt;/code&gt;を開き、&lt;code&gt;追加のボードマネージャのURL:&lt;/code&gt;に、下記URLを入力してください。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;esp32&lt;/code&gt;のボードは、webサイトからインストールします。&lt;code&gt;ファイル → 環境設定&lt;/code&gt;を開き、&lt;code&gt;追加のボードマネージャのURL:&lt;/code&gt;に、下記URLを入力してください。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;　　&lt;code&gt;https://dl.espressif.com/dl/package_esp32_index.json&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./ArduinoIDE_URL.png&#34; width=&#34;600&#34;&gt;&lt;/img&gt;&lt;/p&gt;
@@ -56,7 +54,7 @@
 &lt;p&gt;&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt;を選択します。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;ボードマネージャーの検索ボックスに&lt;code&gt;esp32&lt;/code&gt;を入力し、&lt;code&gt;バージョンを選択&lt;/code&gt;してインストールします。
+&lt;p&gt;ボードマネージャの検索ボックスに&lt;code&gt;esp32&lt;/code&gt;を入力してインストールします。&lt;code&gt;バージョンを選択&lt;/code&gt;が出来ます。
 &lt;br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -64,17 +62,15 @@
 &lt;br&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;ツール → ボード → ESP32 Dev Module&lt;/code&gt;を選択します。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ツール → ボード → ESP32 Dev Module&lt;/code&gt;をクリックします。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;ツール → シリアルポート&lt;/code&gt;から、Leafonyが接続されているシリアルポートを選択します。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;マイコンボードの動作確認&#34;&gt;マイコンボードの動作確認&lt;/h2&gt;
-&lt;p&gt;サンプルスケッチを書き込んで、ESP32 Wi-Fi Kitを動かします。&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Arduinoを起動します。&lt;/li&gt;
-&lt;li&gt;下記のサンプルコードをコードエディタに貼り付けます。&lt;/li&gt;
+&lt;li&gt;Arduino IDEを起動し、下記のサンプルコードをコードエディタに貼り付けます。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//*****************************
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// ボタン入力の状態をシリアルモニタに表示するサンプル
@@ -91,13 +87,13 @@
   &lt;span style=&#34;color:#000&#34;&gt;Serial&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;buttonState&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;ESP32リーフが接続されたCOMポートを選択します。&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;ESP32 MCUリーフが接続されているシリアルポートを選択します。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;マイコンボードに書き込む&lt;/code&gt;ボタンを押して、スケッチを書き込みます。&lt;/li&gt;
 &lt;li&gt;書き込み中に下記の表示が出たら、ESP32リーフの&lt;code&gt;Bootモードスイッチ&lt;/code&gt;を長押しします。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;./esp32_write.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
-&lt;ol start=&#34;6&#34;&gt;
+&lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;シリアルモニタを開いて、通信速度を&lt;code&gt;115200bps&lt;/code&gt;にします。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;Bootモードスイッチ(IO0)&lt;/code&gt;を押してスイッチの入力状態が変わるのを確認します。&lt;/li&gt;
 &lt;/ol&gt;
@@ -114,7 +110,8 @@
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;※3:ブートストラップに使用しているため、プルアップ禁止です。&lt;/p&gt;
 &lt;h2 id=&#34;ライブラリのインストール&#34;&gt;ライブラリのインストール&lt;/h2&gt;
-&lt;p&gt;一部のリーフを使用するには、追加のライブラリをインストールする必要があります。&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;を参照して、あらかじめ全てののライブラリをインストールしてください。&lt;/p&gt;
+&lt;p&gt;プログラムを書き込むには、ライブラリのインストールが必要なリーフがあります。下記より、インストールしてください。&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;ライブラリのインストール&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;困ったときには&#34;&gt;困ったときには&lt;/h2&gt;
 &lt;p&gt;お問い合わせをする前に、&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/solution&#34; target=&#34;_blank&#34;&gt;困ったときには&lt;/a&gt;を読んでみてください。&lt;/p&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;

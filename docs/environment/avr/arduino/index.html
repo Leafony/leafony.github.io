@@ -22,17 +22,17 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>AVR MCU の Arduino IDE 設定 | Leafony</title><meta property="og:title" content="AVR MCU の Arduino IDE 設定" />
-<meta property="og:description" content="Leafonyにプログラムを書き込む
+<meta property="og:description" content="Arduino IDEでLeafonyにプログラムを書き込む
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/environment/avr/arduino/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="AVR MCU の Arduino IDE 設定">
-<meta itemprop="description" content="Leafonyにプログラムを書き込む
+<meta itemprop="description" content="Arduino IDEでLeafonyにプログラムを書き込む
 ">
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="AVR MCU の Arduino IDE 設定"/>
-<meta name="twitter:description" content="Leafonyにプログラムを書き込む
+<meta name="twitter:description" content="Arduino IDEでLeafonyにプログラムを書き込む
 "/>
 
 
@@ -148,7 +148,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5f97293bc81bac3154ebdecb7536bd9366daec993258d87995eaa528f7e5094489c66a7f16026f193ef477b73d8d8ed86d1fc9e1b338a739bd72a3ff87462c3b.json"
+  data-offline-search-index-json-src="/offline-search-index.a09aef3ea1c88e1310b07bce96f1c6dbe7c83f71f305559ea62c91425c12673b58f2d61ae8a104fb52f91c05d2e5ea8c69584184b3f0f6dc618272336f8de211.json"
   data-offline-search-base-href="/"
 >
 
@@ -178,7 +178,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5f97293bc81bac3154ebdecb7536bd9366daec993258d87995eaa528f7e5094489c66a7f16026f193ef477b73d8d8ed86d1fc9e1b338a739bd72a3ff87462c3b.json"
+  data-offline-search-index-json-src="/offline-search-index.a09aef3ea1c88e1310b07bce96f1c6dbe7c83f71f305559ea62c91425c12673b58f2d61ae8a104fb52f91c05d2e5ea8c69584184b3f0f6dc618272336f8de211.json"
   data-offline-search-base-href="/"
 >
 
@@ -3444,7 +3444,7 @@ if (!doNotTrack) {
     <li><a href="#用意するもの">用意するもの</a></li>
     <li><a href="#arduino-ideのインストール">Arduino IDEのインストール</a>
       <ul>
-        <li><a href="#previous-ide-ダウンロード">Previous IDE ダウンロード</a></li>
+        <li><a href="#previous-ide-インストール">Previous IDE インストール</a></li>
       </ul>
     </li>
     <li><a href="#パソコンと接続">パソコンと接続</a></li>
@@ -3519,35 +3519,33 @@ if (!doNotTrack) {
             
 <div class="td-content">
 	<h1>AVR MCU の Arduino IDE 設定</h1>
-        <div class="lead">Leafonyにプログラムを書き込む</div>
+        <div class="lead">Arduino IDEでLeafonyにプログラムを書き込む</div>
 	
-	<p>Leafonyを動作させるには、プログラムを書き込む必要があります。Basic Kitは、センサの値を読んでBluetoothでデータを送信するプログラムが、工場出荷時に書き込まれています。</p>
-<h2 id="用意するもの">用意するもの</h2>
+	<h2 id="用意するもの">用意するもの</h2>
 <ul>
 <li>Basic Kit</li>
 <li>USBケーブル</li>
 <li>パソコン (Windows、Mac OS X 、または Linux)</li>
 </ul>
 <h2 id="arduino-ideのインストール">Arduino IDEのインストール</h2>
-<p>Arduino IDEは、オープンソースの電子工作向け開発環境で、プログラムを記述して書き込んだり、データを表示したりすることができます。以下の手順で、Arduino IDEをインストールを行います。</p>
+<p>以下の手順で、Arduino IDEをインストールを行います。</p>
 <ol>
 <li><a href="https://www.arduino.cc/" target="_blank">Arduinoのホームページ</a> 
 から<code>SOFTWARE</code>のページを開きます。</li>
 <li><code>Download</code>で、インストーラをダウンロードします。</li>
 <li>画面の指示に従って、インストールします。</li>
 </ol>
-<h3 id="previous-ide-ダウンロード">Previous IDE ダウンロード</h3>
-<p>下記より、Previous IDEのダウンロードが出来ます。</p>
+<h3 id="previous-ide-インストール">Previous IDE インストール</h3>
+<p>下記より、Previous IDEのインストールが出来ます。</p>
 <p><a href="https://www.arduino.cc/en/Main/OldSoftwareReleases#previous">Previous IDE Releases</a></p>
 <h2 id="パソコンと接続">パソコンと接続</h2>
 <p>USBケーブルでパソコンを接続します。<br></p>
 <img src="./basic_assemble.png" width="530">
 <br><br>
 <h2 id="マイコンボードの設定">マイコンボードの設定</h2>
-<p>Arduino IDEでLeafonyの開発を行うために、下記の手順でIDEの設定を行います。</p>
 <ol>
 <li>
-<p><code>Arduino AVR Boards</code>は、IDEと一緒にインストールされます。<code>Arduino AVR Boards</code> のバージョンは、<code>ツール→ボード→ボードマネージャ</code> で確認をすることが出来ます。また、<code>バージョンを選択</code>をすれば、以前のものをインストールすることが出来ます。<br><br>
+<p><code>Arduino AVR Boards</code>は、IDEと一緒にインストールされます。<code>Arduino AVR Boards</code> のバージョンは、<code>ツール→ボード→ボードマネージャ</code> で確認をすることが出来ます。<code>バージョンを選択</code>をすれば、以前のものをインストールすることが出来ます。<br><br>
 <img src="./ardunoide_boardmanager.jpg" width="640"></img></p>
 </li>
 <li>
@@ -3562,15 +3560,15 @@ if (!doNotTrack) {
 <img src="./IDE_COM.jpg" width="640">
 <h2 id="マイコンボードの動作確認">マイコンボードの動作確認</h2>
 <ol>
-<li>Arduino IDEで<code>ファイル → スケッチ例 → 01.Basics → Blink</code>をクリックし、サンプルアプリを開きます。</li>
-<li><code>マイコンボードに書き込む</code>ボタンを押すをLeafonyにプログラムが書き込まれます。</li>
+<li>Arduino IDEを起動し、<code>ファイル → スケッチ例 → 01.Basics → Blink</code>をクリックし、サンプルアプリを開きます。</li>
+<li><code>マイコンボードに書き込む</code>ボタンを押すをAVR MCUリーフにプログラムが書き込まれます。</li>
 <li>AVR MCUリーフに搭載されたLEDが点滅していることが確認できれば完了です。</li>
 </ol>
 <h3 id="スケッチのピンの指定">スケッチのピンの指定</h3>
 <p>ピンは、名前(Name)で指定して下さい。</br></p>
 <p><a href="https://docs.leafony.com/docs/leaf/processor/ap01/ap01_pinassign.png"><img src="https://docs.leafony.com/docs/leaf/processor/ap01/ap01_pinassign.png" width="750"></a></p>
 <h2 id="ライブラリのインストール">ライブラリのインストール</h2>
-<p>一部のリーフを使用するには、追加のライブラリをインストールする必要があります。下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきます。</p>
+<p>プログラムを書き込むには、ライブラリのインストールが必要なリーフがあります。下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきます。</p>
 <h3 id="1-使用するライブラリ">1. 使用するライブラリ</h3>
 <p>各Kitで使用するライブラリは以下の通りです。</p>
 <table class="table-hover">
@@ -3672,7 +3670,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 13, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 14, 2021
 </div>
 </div>
 

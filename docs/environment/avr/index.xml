@@ -22,33 +22,31 @@
       <description>
         
         
-        &lt;p&gt;Leafonyを動作させるには、プログラムを書き込む必要があります。Basic Kitは、センサの値を読んでBluetoothでデータを送信するプログラムが、工場出荷時に書き込まれています。&lt;/p&gt;
-&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
+        &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Basic Kit&lt;/li&gt;
 &lt;li&gt;USBケーブル&lt;/li&gt;
 &lt;li&gt;パソコン (Windows、Mac OS X 、または Linux)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;arduino-ideのインストール&#34;&gt;Arduino IDEのインストール&lt;/h2&gt;
-&lt;p&gt;Arduino IDEは、オープンソースの電子工作向け開発環境で、プログラムを記述して書き込んだり、データを表示したりすることができます。以下の手順で、Arduino IDEをインストールを行います。&lt;/p&gt;
+&lt;p&gt;以下の手順で、Arduino IDEをインストールを行います。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.arduino.cc/&#34; target=&#34;_blank&#34;&gt;Arduinoのホームページ&lt;/a&gt; 
 から&lt;code&gt;SOFTWARE&lt;/code&gt;のページを開きます。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;Download&lt;/code&gt;で、インストーラをダウンロードします。&lt;/li&gt;
 &lt;li&gt;画面の指示に従って、インストールします。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;previous-ide-ダウンロード&#34;&gt;Previous IDE ダウンロード&lt;/h3&gt;
-&lt;p&gt;下記より、Previous IDEのダウンロードが出来ます。&lt;/p&gt;
+&lt;h3 id=&#34;previous-ide-インストール&#34;&gt;Previous IDE インストール&lt;/h3&gt;
+&lt;p&gt;下記より、Previous IDEのインストールが出来ます。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://www.arduino.cc/en/Main/OldSoftwareReleases#previous&#34;&gt;Previous IDE Releases&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;パソコンと接続&#34;&gt;パソコンと接続&lt;/h2&gt;
 &lt;p&gt;USBケーブルでパソコンを接続します。&lt;br&gt;&lt;/p&gt;
 &lt;img src=&#34;./basic_assemble.png&#34; width=&#34;530&#34;&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;h2 id=&#34;マイコンボードの設定&#34;&gt;マイコンボードの設定&lt;/h2&gt;
-&lt;p&gt;Arduino IDEでLeafonyの開発を行うために、下記の手順でIDEの設定を行います。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;Arduino AVR Boards&lt;/code&gt;は、IDEと一緒にインストールされます。&lt;code&gt;Arduino AVR Boards&lt;/code&gt; のバージョンは、&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt; で確認をすることが出来ます。また、&lt;code&gt;バージョンを選択&lt;/code&gt;をすれば、以前のものをインストールすることが出来ます。&lt;br&gt;&lt;br&gt;
+&lt;p&gt;&lt;code&gt;Arduino AVR Boards&lt;/code&gt;は、IDEと一緒にインストールされます。&lt;code&gt;Arduino AVR Boards&lt;/code&gt; のバージョンは、&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt; で確認をすることが出来ます。&lt;code&gt;バージョンを選択&lt;/code&gt;をすれば、以前のものをインストールすることが出来ます。&lt;br&gt;&lt;br&gt;
 &lt;img src=&#34;./ardunoide_boardmanager.jpg&#34; width=&#34;640&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -63,15 +61,15 @@
 &lt;img src=&#34;./IDE_COM.jpg&#34; width=&#34;640&#34;&gt;
 &lt;h2 id=&#34;マイコンボードの動作確認&#34;&gt;マイコンボードの動作確認&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Arduino IDEで&lt;code&gt;ファイル → スケッチ例 → 01.Basics → Blink&lt;/code&gt;をクリックし、サンプルアプリを開きます。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;マイコンボードに書き込む&lt;/code&gt;ボタンを押すをLeafonyにプログラムが書き込まれます。&lt;/li&gt;
+&lt;li&gt;Arduino IDEを起動し、&lt;code&gt;ファイル → スケッチ例 → 01.Basics → Blink&lt;/code&gt;をクリックし、サンプルアプリを開きます。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;マイコンボードに書き込む&lt;/code&gt;ボタンを押すをAVR MCUリーフにプログラムが書き込まれます。&lt;/li&gt;
 &lt;li&gt;AVR MCUリーフに搭載されたLEDが点滅していることが確認できれば完了です。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;スケッチのピンの指定&#34;&gt;スケッチのピンの指定&lt;/h3&gt;
 &lt;p&gt;ピンは、名前(Name)で指定して下さい。&lt;/br&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01/ap01_pinassign.png&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap01/ap01_pinassign.png&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ライブラリのインストール&#34;&gt;ライブラリのインストール&lt;/h2&gt;
-&lt;p&gt;一部のリーフを使用するには、追加のライブラリをインストールする必要があります。下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきます。&lt;/p&gt;
+&lt;p&gt;プログラムを書き込むには、ライブラリのインストールが必要なリーフがあります。下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきます。&lt;/p&gt;
 &lt;h3 id=&#34;1-使用するライブラリ&#34;&gt;1. 使用するライブラリ&lt;/h3&gt;
 &lt;p&gt;各Kitで使用するライブラリは以下の通りです。&lt;/p&gt;
 &lt;table class=&#34;table-hover&#34;&gt;
