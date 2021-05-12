@@ -94,7 +94,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;スケッチのピンの指定&#34;&gt;スケッチのピンの指定&lt;/h3&gt;
-&lt;p&gt;STM32 MCUのピン配置は、Nucleo L452REと異なっていいます。ピンは、名前(Name)ではなく、ポート(Port)で指定して下さい。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;ピンは、名前(Name)で指定して下さい。&lt;/br&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_pinassign.png&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_pinassign.png&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ライブラリのインストール&#34;&gt;ライブラリのインストール&lt;/h2&gt;
 &lt;p&gt;プログラムを書き込むには、ライブラリのインストールが必要なリーフがあります。下記より、インストールしてください。&lt;br&gt;&lt;/p&gt;
