@@ -33,11 +33,18 @@ Install the software needed to write a program in Leafony.
 &lt;h2 id=&#34;what-to-prepare&#34;&gt;What to prepare&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;ESP32 Wi-Fi Kit&lt;/li&gt;
-&lt;li&gt;USB cable&lt;/li&gt;
 &lt;li&gt;PC (Windows, Mac OS X or Linux)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;installing-arduino-ide&#34;&gt;Installing Arduino IDE&lt;/h2&gt;
-&lt;p&gt;For instructions on how to install the Arduino IDE, please see &lt;a href=&#34;https://docs.leafony.com/en/docs/environment/avr/arduino/#arduino-ide%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B 9%E3%83%88%E3%83%BC%E3%83%AB&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The Arduino IDE is a development environment for the Arduino, an open source hardware platform for electronics. &lt;br&gt; &lt;br&gt;
+The development environment allows you to write programs, write programs to the Arduino board, and display the data coming from the board. &lt;br&gt;
+Leafony can be developed with the Arduino IDE.&lt;/p&gt;
+&lt;p&gt;Let&amp;rsquo;s download the Arduino IDE right away.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;From the &lt;a href=&#34;https://www.arduino.cc/&#34; target=&#34;_blank&#34;&gt;Arduino website&lt;/a&gt;, go to &lt;code&gt;SOFTWARE&lt;/code&gt; and then &lt;code&gt;DOWNLOADS&lt;/code&gt; to get to the Arduino IDE download page.&lt;/li&gt;
+&lt;li&gt;Download the installer for your OS at the place where it says &lt;code&gt;Download the Arduino IDE&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Run the downloaded installer and follow the on-screen instructions to install the Arduino IDE.&lt;/li&gt;
+&lt;/ol&gt;
 
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
@@ -96,22 +103,6 @@ Let’s write a program in Leafony and make it work!
 &lt;li&gt;Press the &lt;code&gt;Boot mode switch (IO0)&lt;/code&gt; and see if the input state of the switch changes.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;a href=&#34;./AP02_tips.png&#34;&gt;&lt;img src=&#34;./AP02_tips.png&#34; width=&#34;450&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;specifying-pins-for-a-sketch&#34;&gt;Specifying pins for a sketch&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Pin should be specified by Port, not Name.&lt;/strong&gt;&lt;/br&gt;&lt;/br&gt;
-&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02/ap02_pinassign_v1.png&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap02/ap02_pinassign_v1.png&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h4 id=&#34;制限事項&#34;&gt;制限事項&lt;/h4&gt;
-&lt;p&gt;※1：Output cannot be set&lt;/br&gt;
-※2：①For UART1, the pin number is set to RX=26 and TX=25. For UART0 and UART2, the pin number is not specified.&lt;/br&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;HardwareSerial&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Serial1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// UART1 (RX=9, TX=10)
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;Serial1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;begin&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;9600&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SERIAL_8N1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;25&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// ピンを変更 (RX=26, TX=25)
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;　　②Cannot be used as analog input if WiFi.h is included&lt;/br&gt;&lt;/p&gt;
-&lt;p&gt;※3: Pull-up prohibited because it is used for bootstrapping&lt;/p&gt;
-&lt;h2 id=&#34;installing-libraries&#34;&gt;Installing Libraries&lt;/h2&gt;
-&lt;p&gt;To use some of the leaves, you will need to install additional libraries. &lt;br&gt;
-&lt;a href=&#34;https://docs.leafony.com/en/docs/environment/avr/arduino/#installing_libraries&#34; target=&#34;_blank&#34;&gt;Here&lt;/a&gt; to install all libraries in advance.&lt;/p&gt;
 &lt;h2 id=&#34;when-in-doubt&#34;&gt;When in doubt.&lt;/h2&gt;
 &lt;p&gt;If it doesn&amp;rsquo;t work, go to &amp;ldquo;&lt;a href=&#34;https://docs.leafony.com/en/docs/getting-started/solution&#34; target=&#34;_blank&#34;&gt;If it doesn&amp;rsquo;t work&amp;hellip;&lt;/a&gt;&amp;rdquo; to find a solution.&lt;/p&gt;
 
@@ -122,15 +113,15 @@ A number of programs are available in &lt;a href=&#34;https://docs.leafony.com/e
 To make development easier, install the library and get started.
 &lt;/div&gt;
 
-&lt;p style=&#34;text-align: right&#34;&gt;
-&lt;A HREF=&#34;javascript:history.back()&#34;&gt;Back to previous page&lt;/A&gt;
-&lt;/p&gt;
+&lt;h2 id=&#34;installing-libraries&#34;&gt;Installing Libraries&lt;/h2&gt;
+&lt;p&gt;To use some of the leaves, you will need to install additional libraries. &lt;br&gt;
+&lt;a href=&#34;https://docs.leafony.com/en/docs/environment/avr/arduino/#installing_libraries&#34; target=&#34;_blank&#34;&gt;Here&lt;/a&gt; to install all libraries in advance.&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
-      <title>Docs: PlatformIO settings for ESP32 MCU</title>
+      <title>Docs: PlatformIO development environment</title>
       <link>https://docs.leafony.com/en/docs/environment/esp32/platformio/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -215,9 +206,224 @@ lib_deps =
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode&#34;&gt;https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p style=&#34;text-align: right&#34;&gt;
-&lt;A HREF=&#34;javascript:history.back()&#34;&gt;Back to previous page&lt;/A&gt;
-&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Points to note when using ESP32</title>
+      <link>https://docs.leafony.com/en/docs/environment/esp32/esp32_notice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/en/docs/environment/esp32/esp32_notice/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The following cautions apply when using ESP32.&lt;/p&gt;
+&lt;h2 id=&#34;designating-pins-on-the-arduino&#34;&gt;Designating pins on the Arduino&lt;/h2&gt;
+&lt;p&gt;Specify by the ESP32 IO number, not the Arduino pin name.
+The Arduino pin names A1 and A2 cannot be used as analog inputs when using Wi-Fi (when including WiFi.h).&lt;/p&gt;
+&lt;p&gt;Arduino pin numbers A0, A3, A4, and A5 cannot be used as outputs.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Arduino pin names&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;ESP32 IO number&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Restrictions&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;A0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO36&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Effort setting is not possible&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;A1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO25&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;※1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;A2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO26&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;※1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;A3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO39&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Effort setting is not possible&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;A4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO34&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Effort setting is not possible&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;A5&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO35&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Effort setting is not possible&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;※1：A1 and A2 cannot be used as analog inputs when Wi-Fi is used (when WiFi.h is included).&lt;/p&gt;
+&lt;p&gt;The following pins are used for bootstrapping and have pull-up and pull-down limitations.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Arduino pin names&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;ESP32 IO number&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Restrictions&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;D4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO12&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Pull-up prohibition&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;D7&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO15&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;pulldown prohibition&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;D10&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO5&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;pulldown prohibition&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;battery-operation&#34;&gt;Battery operation&lt;/h2&gt;
+&lt;p&gt;The ESP32 MCU does not operate on coin cell batteries.&lt;/p&gt;
+&lt;h2 id=&#34;uart&#34;&gt;UART&lt;/h2&gt;
+&lt;p&gt;The ESP32 can use three hardware serial systems: UART0 and UART2 are shown below.&lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;UART number&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Signal name&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Arduino pin names&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;ESP32 IO number&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;UART0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;RXD0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;D0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;TXD0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;D1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;UART2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;TXD2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;D8&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO17&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;RXD2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;D9&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO16&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;If you want to use UART1, you need to change the pin number. Usually, Arduino pin numbers A1 and A2 are used as UART1.
+The pin numbers after the change are as follows&lt;br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;UART number&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Signal name&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Arduino pin names&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;ESP32 IO number&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;UART1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;TXD1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO25&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;RXD1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;A2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO26&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Example of an Arduino sketch setup&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;HardwareSerial&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Serial1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// UART1 (RX=9, TX=10)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;Serial1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;begin&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;9600&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SERIAL_8N1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;25&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// ピンを変更 (RX=26, TX=25)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
+&lt;h2 id=&#34;touch-sensor&#34;&gt;Touch sensor&lt;/h2&gt;
+&lt;p&gt;ESP32 has the function of a capacitive touch sensor.
+Since the value changes depending on the capacitance of the wiring, it is necessary to adjust the threshold value.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Leafony pin number&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Arduino pin names&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;ESP32 IO number&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Touch sensor number&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Remarks&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;7&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;D6&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO14&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;T6&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;－&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;9&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;D7&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO15&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;T3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;－&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;22&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;D2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;T0&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;－&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;24&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;D3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO27&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;T7&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Cannot be used with ESP32 Wi-Fi Kit&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;26&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;D4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO12&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;T5&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;－&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;28&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;D5&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;IO13&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;T4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;－&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
       </description>
     </item>
