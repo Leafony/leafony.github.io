@@ -15,9 +15,6 @@
                 href="https://docs.leafony.com/docs/environment/avr/"
                 />
   </url><url>
-    <loc>https://docs.leafony.com/docs/getting-started/basic2/</loc>
-    <lastmod>2021-05-12T13:59:35+09:00</lastmod>
-  </url><url>
     <loc>https://docs.leafony.com/docs/getting-started/basic/</loc>
     <lastmod>2021-04-07T12:56:33+09:00</lastmod>
     <xhtml:link
@@ -30,9 +27,6 @@
                 hreflang="jp"
                 href="https://docs.leafony.com/docs/getting-started/basic/"
                 />
-  </url><url>
-    <loc>https://docs.leafony.com/docs/products/basic2/</loc>
-    <lastmod>2021-05-12T13:59:35+09:00</lastmod>
   </url><url>
     <loc>https://docs.leafony.com/docs/products/basic/</loc>
     <lastmod>2021-03-03T14:27:21+09:00</lastmod>
@@ -60,6 +54,12 @@
                 href="https://docs.leafony.com/docs/overview/"
                 />
   </url><url>
+    <loc>https://docs.leafony.com/docs/getting-started/basic2/</loc>
+    <lastmod>2021-05-12T14:11:22+09:00</lastmod>
+  </url><url>
+    <loc>https://docs.leafony.com/docs/products/basic2/</loc>
+    <lastmod>2021-05-12T14:11:22+09:00</lastmod>
+  </url><url>
     <loc>https://docs.leafony.com/docs/environment/esp32/</loc>
     <lastmod>2020-10-19T12:04:11+09:00</lastmod>
     <xhtml:link
@@ -73,19 +73,6 @@
                 href="https://docs.leafony.com/docs/environment/esp32/"
                 />
   </url><url>
-    <loc>https://docs.leafony.com/docs/getting-started/esp32/</loc>
-    <lastmod>2021-04-14T17:36:38+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs.leafony.com/en/docs/getting-started/esp32/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="https://docs.leafony.com/docs/getting-started/esp32/"
-                />
-  </url><url>
     <loc>https://docs.leafony.com/docs/products/</loc>
     <lastmod>2021-03-03T14:27:21+09:00</lastmod>
     <xhtml:link
@@ -97,32 +84,6 @@
                 rel="alternate"
                 hreflang="jp"
                 href="https://docs.leafony.com/docs/products/"
-                />
-  </url><url>
-    <loc>https://docs.leafony.com/docs/products/esp32/</loc>
-    <lastmod>2021-03-03T14:27:21+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs.leafony.com/en/docs/products/esp32/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="https://docs.leafony.com/docs/products/esp32/"
-                />
-  </url><url>
-    <loc>https://docs.leafony.com/docs/getting-started/extension/</loc>
-    <lastmod>2021-04-07T12:56:33+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs.leafony.com/en/docs/getting-started/extension/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="https://docs.leafony.com/docs/getting-started/extension/"
                 />
   </url><url>
     <loc>https://docs.leafony.com/docs/environment/stm32/</loc>
@@ -151,19 +112,6 @@
                 href="https://docs.leafony.com/docs/terms/"
                 />
   </url><url>
-    <loc>https://docs.leafony.com/docs/getting-started/stm32/</loc>
-    <lastmod>2021-04-07T12:56:33+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs.leafony.com/en/docs/getting-started/stm32/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="https://docs.leafony.com/docs/getting-started/stm32/"
-                />
-  </url><url>
     <loc>https://docs.leafony.com/docs/license/</loc>
     <lastmod>2021-03-03T14:08:05+09:00</lastmod>
     <xhtml:link
@@ -177,17 +125,30 @@
                 href="https://docs.leafony.com/docs/license/"
                 />
   </url><url>
-    <loc>https://docs.leafony.com/docs/products/extension/</loc>
-    <lastmod>2021-03-03T14:27:21+09:00</lastmod>
+    <loc>https://docs.leafony.com/docs/getting-started/esp32/</loc>
+    <lastmod>2021-05-12T14:11:22+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.leafony.com/en/docs/products/extension/"
+                href="https://docs.leafony.com/en/docs/getting-started/esp32/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
-                href="https://docs.leafony.com/docs/products/extension/"
+                href="https://docs.leafony.com/docs/getting-started/esp32/"
+                />
+  </url><url>
+    <loc>https://docs.leafony.com/docs/products/esp32/</loc>
+    <lastmod>2021-05-12T14:11:22+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/products/esp32/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/products/esp32/"
                 />
   </url><url>
     <loc>https://docs.leafony.com/docs/contacts/</loc>
@@ -214,19 +175,6 @@
                 rel="alternate"
                 hreflang="jp"
                 href="https://docs.leafony.com/docs/pcb/pcb-tutorial/"
-                />
-  </url><url>
-    <loc>https://docs.leafony.com/docs/getting-started/solution/</loc>
-    <lastmod>2021-04-15T18:36:02+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs.leafony.com/en/docs/getting-started/solution/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="https://docs.leafony.com/docs/getting-started/solution/"
                 />
   </url><url>
     <loc>https://docs.leafony.com/docs/examples/advanced/1_p/exten/4-sensors_lcd/</loc>
@@ -320,17 +268,17 @@
                 href="https://docs.leafony.com/docs/leaf/communication/ac02/"
                 />
   </url><url>
-    <loc>https://docs.leafony.com/docs/products/conn/</loc>
-    <lastmod>2021-03-03T14:27:21+09:00</lastmod>
+    <loc>https://docs.leafony.com/docs/getting-started/extension/</loc>
+    <lastmod>2021-05-12T14:11:22+09:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.leafony.com/en/docs/products/conn/"
+                href="https://docs.leafony.com/en/docs/getting-started/extension/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="jp"
-                href="https://docs.leafony.com/docs/products/conn/"
+                href="https://docs.leafony.com/docs/getting-started/extension/"
                 />
   </url><url>
     <loc>https://docs.leafony.com/docs/pcb/kicad/</loc>
@@ -435,19 +383,6 @@
                 rel="alternate"
                 hreflang="jp"
                 href="https://docs.leafony.com/docs/leaf/processor/ap02/"
-                />
-  </url><url>
-    <loc>https://docs.leafony.com/docs/products/nut/</loc>
-    <lastmod>2021-03-03T14:27:21+09:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://docs.leafony.com/en/docs/products/nut/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="jp"
-                href="https://docs.leafony.com/docs/products/nut/"
                 />
   </url><url>
     <loc>https://docs.leafony.com/docs/environment/</loc>
@@ -625,6 +560,32 @@
                 href="https://docs.leafony.com/docs/examples/beginner/3_p/basic/temp_humid_sensors/"
                 />
   </url><url>
+    <loc>https://docs.leafony.com/docs/products/conn/</loc>
+    <lastmod>2021-05-12T14:11:22+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/products/conn/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/products/conn/"
+                />
+  </url><url>
+    <loc>https://docs.leafony.com/docs/products/extension/</loc>
+    <lastmod>2021-05-12T14:11:22+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/products/extension/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/products/extension/"
+                />
+  </url><url>
     <loc>https://docs.leafony.com/docs/leafony-bus/</loc>
     <lastmod>2021-03-03T14:08:05+09:00</lastmod>
     <xhtml:link
@@ -636,6 +597,19 @@
                 rel="alternate"
                 hreflang="jp"
                 href="https://docs.leafony.com/docs/leafony-bus/"
+                />
+  </url><url>
+    <loc>https://docs.leafony.com/docs/getting-started/stm32/</loc>
+    <lastmod>2021-05-12T14:11:22+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/getting-started/stm32/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/getting-started/stm32/"
                 />
   </url><url>
     <loc>https://docs.leafony.com/docs/leaf/communication/</loc>
@@ -688,6 +662,19 @@
                 rel="alternate"
                 hreflang="jp"
                 href="https://docs.leafony.com/docs/environment/esp32/arduino/"
+                />
+  </url><url>
+    <loc>https://docs.leafony.com/docs/products/nut/</loc>
+    <lastmod>2021-05-12T14:11:22+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/products/nut/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/products/nut/"
                 />
   </url><url>
     <loc>https://docs.leafony.com/docs/leaf/</loc>
@@ -1656,6 +1643,19 @@
                 rel="alternate"
                 hreflang="jp"
                 href="https://docs.leafony.com/docs/examples/advanced/1_p/lora/"
+                />
+  </url><url>
+    <loc>https://docs.leafony.com/docs/getting-started/solution/</loc>
+    <lastmod>2021-05-12T14:11:22+09:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://docs.leafony.com/en/docs/getting-started/solution/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="jp"
+                href="https://docs.leafony.com/docs/getting-started/solution/"
                 />
   </url><url>
     <loc>https://docs.leafony.com/docs/examples/advanced/1_p/motor/</loc>
