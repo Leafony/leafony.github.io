@@ -145,7 +145,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d943e3b4ecf992085a0df765a94998f4cc03cc332e9cbfe839eec5daf0e149b5ee828747dbdf19acc31775453feadf9b2cbf0681e0f64441d29bbf3e49c3405b.json"
+  data-offline-search-index-json-src="/offline-search-index.0f8628bb3da960afe402218aaf6117e8b2dc98d038f6f54ddad48eaf0304bb0980facf855a9520a1197ba2c045519516f0db6c493df007cf054662d6bdc1140c.json"
   data-offline-search-base-href="/"
 >
 
@@ -175,7 +175,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d943e3b4ecf992085a0df765a94998f4cc03cc332e9cbfe839eec5daf0e149b5ee828747dbdf19acc31775453feadf9b2cbf0681e0f64441d29bbf3e49c3405b.json"
+  data-offline-search-index-json-src="/offline-search-index.0f8628bb3da960afe402218aaf6117e8b2dc98d038f6f54ddad48eaf0304bb0980facf855a9520a1197ba2c045519516f0db6c493df007cf054662d6bdc1140c.json"
   data-offline-search-base-href="/"
 >
 
@@ -3623,15 +3623,15 @@ if (!doNotTrack) {
 <p>下図のようにリーフを組み立てましょう。</p>
 <p><img src="./STM32_speaker&amp;ir.png" alt="assemble1"></p>
 <h2 id="ソースコード">ソースコード</h2>
-<p>Arduino IDEで下記のプログラム<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>を書きましょう。</p>
+<p>Arduino IDEで下記のプログラムを書きましょう。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic">//  STM32 Human Sensing
+</span><span style="color:#8f5902;font-style:italic">//  Human Sensing
 </span><span style="color:#8f5902;font-style:italic">//
-</span><span style="color:#8f5902;font-style:italic">//    (c) 2021 Trillion-Node Study Group
+</span><span style="color:#8f5902;font-style:italic">//    (c) 2020 Trillion-Node Study Group
 </span><span style="color:#8f5902;font-style:italic">//    Released under the MIT license
 </span><span style="color:#8f5902;font-style:italic">//    https://opensource.org/licenses/MIT
 </span><span style="color:#8f5902;font-style:italic">//
-</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2021/01/26  First release
+</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2020/05/16  First release
 </span><span style="color:#8f5902;font-style:italic">//=====================================================================
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
@@ -3649,7 +3649,7 @@ if (!doNotTrack) {
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">onHumanDetected</span><span style="color:#000;font-weight:bold">()</span>
 <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Detect!&#34;</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">tone</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PB4</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">262</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">300</span><span style="color:#000;font-weight:bold">);</span>  <span style="color:#8f5902;font-style:italic">// Make a beep sound
+  <span style="color:#000">tone</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">262</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">300</span><span style="color:#000;font-weight:bold">);</span>  <span style="color:#8f5902;font-style:italic">// Make a beep sound
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
 
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
@@ -3659,7 +3659,7 @@ if (!doNotTrack) {
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">();</span>
   <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">);</span>
 
-  <span style="color:#8f5902;font-style:italic">//人感センサ設定
+  <span style="color:#8f5902;font-style:italic">// Human sensor setting
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x20</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0xFF</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL1  Resrt
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x2A</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0xF2</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL11 Human detection algorithm enabled / Interrupt output enabled
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">I2C_PIR_ADDR</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x25</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x0F</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">//CNTL6  Sensor gain 205% (maximum)
@@ -3667,7 +3667,7 @@ if (!doNotTrack) {
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
 
   <span style="color:#8f5902;font-style:italic">// Human proximity detection interrupt
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">attachInterrupt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PC7</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">onHumanDetected</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">FALLING</span> <span style="color:#000;font-weight:bold">);</span>
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">attachInterrupt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">onHumanDetected</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">FALLING</span> <span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
 
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
@@ -3791,20 +3791,12 @@ if (!doNotTrack) {
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">clearI2CReadbuf</span><span style="color:#000;font-weight:bold">(){</span>
   <span style="color:#000">memset</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">i2c_recvBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#0000cf;font-weight:bold">0x00</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">sizeof</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i2c_recvBuf</span><span style="color:#000;font-weight:bold">));</span>
 <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_Human_Sensing" target="_blank">STM32_Human_Sensing.ino</a></p>
+</code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/blob/master/Human_Sensing/Human_Sensing.ino" target="_blank">Human_Sensing.ino</a></p>
 <h2 id="実行結果">実行結果</h2>
 <p>人が近づくと音が鳴ります。</p>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
-</p><section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>プログラムは、AVR MUCリーフとピンの指定のみが異なります。詳しくは、<a href="/docs/getting-started/stm32/#スケッチの注意点" target="_blank">こちら</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
-
+</p>
         <div class="section-index">
     
     
@@ -4101,7 +4093,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 6, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 12, 2021
 </div>
 </div>
 

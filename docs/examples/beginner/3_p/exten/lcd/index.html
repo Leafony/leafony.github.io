@@ -145,7 +145,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d943e3b4ecf992085a0df765a94998f4cc03cc332e9cbfe839eec5daf0e149b5ee828747dbdf19acc31775453feadf9b2cbf0681e0f64441d29bbf3e49c3405b.json"
+  data-offline-search-index-json-src="/offline-search-index.0f8628bb3da960afe402218aaf6117e8b2dc98d038f6f54ddad48eaf0304bb0980facf855a9520a1197ba2c045519516f0db6c493df007cf054662d6bdc1140c.json"
   data-offline-search-base-href="/"
 >
 
@@ -175,7 +175,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d943e3b4ecf992085a0df765a94998f4cc03cc332e9cbfe839eec5daf0e149b5ee828747dbdf19acc31775453feadf9b2cbf0681e0f64441d29bbf3e49c3405b.json"
+  data-offline-search-index-json-src="/offline-search-index.0f8628bb3da960afe402218aaf6117e8b2dc98d038f6f54ddad48eaf0304bb0980facf855a9520a1197ba2c045519516f0db6c493df007cf054662d6bdc1140c.json"
   data-offline-search-base-href="/"
 >
 
@@ -3487,7 +3487,9 @@ if (!doNotTrack) {
     <li><a href="#概要">概要</a></li>
     <li><a href="#使用するリーフ">使用するリーフ</a></li>
     <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
-    <li><a href="#ソースコード">ソースコード</a></li>
+  </ul>
+
+  <ul>
     <li><a href="#実行結果">実行結果</a></li>
   </ul>
 </nav>
@@ -3621,25 +3623,25 @@ if (!doNotTrack) {
 <h2 id="リーフの組み立て">リーフの組み立て</h2>
 <p>下図のようにリーフを組み立てましょう。</p>
 <p><img src="./STM32_LCD.png" alt="assemble1"></p>
-<h2 id="ソースコード">ソースコード</h2>
-<p>Arduino IDEで下記のプログラムを書きましょう。Basic Kit とピンの指定のみが異なります。</p>
+<h1 id="ソースコード">ソースコード</h1>
+<p>Arduino IDEで下記のプログラムを書きましょう。</p>
 <p>このスケッチを動かすためには、ライブラリのインストールが必要です。
-まだインストールしていない場合は<a href="/docs/environment/stm32/arduino_ide/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">開発環境設定ページ</a>を参考にライブラリをインストールしてください。</p>
+まだインストールしていない場合は<a href="/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">開発環境設定ページ</a>を参考にライブラリをインストールしてください。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
 </span><span style="color:#8f5902;font-style:italic">//  Leafony Platform sample sketch
 </span><span style="color:#8f5902;font-style:italic">//     Application  : LCD SW test
-</span><span style="color:#8f5902;font-style:italic">//     Processor    : STM32L452RE (Nucleo-64/Nucleo L452RE)
+</span><span style="color:#8f5902;font-style:italic">//     Processor    : ATmega328P (3.3V /8MHz)
 </span><span style="color:#8f5902;font-style:italic">//
 </span><span style="color:#8f5902;font-style:italic">//     Leaf configuration
 </span><span style="color:#8f5902;font-style:italic">//       (1) AI04 LCD
-</span><span style="color:#8f5902;font-style:italic">//       (2) AP03 STM32 MCU
+</span><span style="color:#8f5902;font-style:italic">//       (2) AP01 AVR MCU
 </span><span style="color:#8f5902;font-style:italic">//       (3) AZ01 USB
 </span><span style="color:#8f5902;font-style:italic">//
 </span><span style="color:#8f5902;font-style:italic">//		(c) 2020  Trillion-Node Study Group
 </span><span style="color:#8f5902;font-style:italic">//		Released under the MIT license
 </span><span style="color:#8f5902;font-style:italic">//		https://opensource.org/licenses/MIT
 </span><span style="color:#8f5902;font-style:italic">//
-</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2021/01/26  First release
+</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2019/08/01  First release
 </span><span style="color:#8f5902;font-style:italic">//=====================================================================
 </span><span style="color:#8f5902;font-style:italic">// use libraries
 </span><span style="color:#8f5902;font-style:italic">//  ST7032 - Arduino LiquidCrystal compatible library
@@ -3656,7 +3658,7 @@ if (!doNotTrack) {
 </span><span style="color:#8f5902;font-style:italic">// IO pin name definition
 </span><span style="color:#8f5902;font-style:italic">// Define it according to the leaf to be connected.
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define SW1         PC7             </span><span style="color:#8f5902;font-style:italic">// D2  (INT0)
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define SW1         2                   </span><span style="color:#8f5902;font-style:italic">// PD2  (INT0)
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#8f5902;font-style:italic">//-----------------------------------------------
 </span><span style="color:#8f5902;font-style:italic">// Define constants to be used in the program
@@ -3752,7 +3754,7 @@ if (!doNotTrack) {
 </span><span style="color:#8f5902;font-style:italic">// I2C control function
 </span><span style="color:#8f5902;font-style:italic">//=====================================================================
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic">// I2C Write 1 byte to the slave device
+</span><span style="color:#8f5902;font-style:italic">//I2C Write 1 byte to the slave device
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">i2c_write_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">write_data</span><span style="color:#000;font-weight:bold">){</span>
   <span style="color:#000">Wire</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">beginTransmission</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">);</span>
@@ -3762,7 +3764,7 @@ if (!doNotTrack) {
 <span style="color:#000;font-weight:bold">}</span>
 
 <span style="color:#8f5902;font-style:italic">//-----------------------------------------------
-</span><span style="color:#8f5902;font-style:italic">// I2C Read 1 byte from the slave device
+</span><span style="color:#8f5902;font-style:italic">//I2C Read 1 byte from the slave device
 </span><span style="color:#8f5902;font-style:italic">//-----------------------------------------------
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">unsigned</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#000">i2c_read_byte</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">device_address</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">reg_address</span><span style="color:#000;font-weight:bold">){</span>
 
@@ -3777,7 +3779,7 @@ if (!doNotTrack) {
 
   <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">read_data</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LCD-SW_test" target="_blank">STM32_LCD-SW_test.ino</a></p>
+</code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/LCD-SW_test/LCD-SW_test.ino" target="_blank">LCD-SW_test.ino</a></p>
 <h2 id="実行結果">実行結果</h2>
 <p>LCDに下記の順で画面が表示されます。</p>
 <ol>
@@ -4084,7 +4086,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 6, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 12, 2021
 </div>
 </div>
 

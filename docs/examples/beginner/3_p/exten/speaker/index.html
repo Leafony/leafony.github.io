@@ -145,7 +145,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d943e3b4ecf992085a0df765a94998f4cc03cc332e9cbfe839eec5daf0e149b5ee828747dbdf19acc31775453feadf9b2cbf0681e0f64441d29bbf3e49c3405b.json"
+  data-offline-search-index-json-src="/offline-search-index.0f8628bb3da960afe402218aaf6117e8b2dc98d038f6f54ddad48eaf0304bb0980facf855a9520a1197ba2c045519516f0db6c493df007cf054662d6bdc1140c.json"
   data-offline-search-base-href="/"
 >
 
@@ -175,7 +175,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d943e3b4ecf992085a0df765a94998f4cc03cc332e9cbfe839eec5daf0e149b5ee828747dbdf19acc31775453feadf9b2cbf0681e0f64441d29bbf3e49c3405b.json"
+  data-offline-search-index-json-src="/offline-search-index.0f8628bb3da960afe402218aaf6117e8b2dc98d038f6f54ddad48eaf0304bb0980facf855a9520a1197ba2c045519516f0db6c493df007cf054662d6bdc1140c.json"
   data-offline-search-base-href="/"
 >
 
@@ -3624,28 +3624,20 @@ if (!doNotTrack) {
 <h2 id="ソースコード">ソースコード</h2>
 <p>Arduinoを開き、<code>ファイル → スケッチ例 → 02.Digital → toneMelody</code>を開いてください。</p>
 <p>このサンプルコードでは、スピーカが8番ピンに接続されている事になっています。<br>
-しかし、Leafonyではスピーカが5番ピンに接続されているので、下記の部分を修正して正しいピン接続になるようにしましょう。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+しかし、Leafonyではスピーカが5番ピンに接続されているので、下記の部分を修正して正しいピン接続になるようにしましょう。</p>
 <ul>
-<li>37行目の<code>8</code>を<code>PB4</code>に変更</li>
+<li>37行目の<code>8</code>を<code>5</code>に変更</li>
 </ul>
-<pre><code>tone(PB4, melody[thisNote], noteDuration);
+<pre><code>tone(5, melody[thisNote], noteDuration);
 </code></pre><ul>
-<li>44行目の<code>8</code>を<code>PB4</code>に変更</li>
+<li>44行目の<code>8</code>を<code>5</code>に変更</li>
 </ul>
-<pre><code>noTone(PB4);
+<pre><code>noTone(5);
 </code></pre><h2 id="実行結果">実行結果</h2>
 <p>スピーカーから一度だけメロディが鳴ります。</p>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
-</p><section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>プログラムは、AVR MUCリーフとピンの指定のみが異なります。詳しくは、<a href="/docs/getting-started/stm32/#スケッチの注意点" target="_blank">こちら</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
-
+</p>
         <div class="section-index">
     
     
@@ -3942,7 +3934,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 3, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 12, 2021
 </div>
 </div>
 
