@@ -35,18 +35,21 @@ Install the software needed to write a program in Leafony
 &lt;h2 id=&#34;what-to-prepare&#34;&gt;What to prepare&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Basic Kit&lt;/li&gt;
+&lt;li&gt;USB cable&lt;/li&gt;
 &lt;li&gt;PC (Windows, Mac OS X or Linux)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;installing-arduino-ide&#34;&gt;Installing Arduino IDE&lt;/h2&gt;
-&lt;p&gt;The Arduino IDE is a development environment for the Arduino, an open source hardware platform for electronics. &lt;br&gt; &lt;br&gt;.
-The development environment allows you to write programs, write programs to the Arduino board, and display the data coming from the board. &lt;br&gt;.
+&lt;p&gt;The Arduino IDE is a development environment for the Arduino, an open source hardware platform for electronics. &lt;br&gt; &lt;br&gt;
+The development environment allows you to write programs, write programs to the Arduino board, and display the data coming from the board. &lt;br&gt;
 Leafony can be developed with the Arduino IDE.&lt;/p&gt;
 &lt;p&gt;Let&amp;rsquo;s download the Arduino IDE right away.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;From the &lt;a href=&#34;https://www.arduino.cc/&#34; target=&#34;_blank&#34;&gt;Arduino website&lt;/a&gt;, go to &amp;ldquo;SOFTWARE&amp;rdquo; and then &amp;ldquo;DOWNLOADS&amp;rdquo; to get to the Arduino IDE download page.&lt;/li&gt;
-&lt;li&gt;Download the installer for your OS at the place where it says &amp;ldquo;Download the Arduino IDE&amp;rdquo;.&lt;/li&gt;
+&lt;li&gt;From the &lt;a href=&#34;https://www.arduino.cc/&#34; target=&#34;_blank&#34;&gt;Arduino website&lt;/a&gt;, go to &lt;code&gt;SOFTWARE&lt;/code&gt; and then &lt;code&gt;DOWNLOADS&lt;/code&gt; to get to the Arduino IDE download page.&lt;/li&gt;
+&lt;li&gt;Download the installer for your OS at the place where it says &lt;code&gt;Download the Arduino IDE&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Run the downloaded installer and follow the on-screen instructions to install the Arduino IDE.&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h3 id=&#34;how-to-download-old-versions-of-arduino-ide-and-check-and-change-arduino-avr-boards&#34;&gt;How to download old versions of Arduino IDE and check and change Arduino AVR Boards&lt;/h3&gt;
+&lt;p&gt;Refer to &lt;a href=&#34;../arduino_ver&#34; target=&#34; blank&#34;&gt;Version of the Arduino IDE&lt;/a&gt;.&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
@@ -75,16 +78,9 @@ Let’s write a program in Leafony and make it work!
 &lt;li&gt;The program is written to Leafony by pressing the &lt;code&gt;write to microcontroller&lt;/code&gt; button.&lt;/li&gt;
 &lt;li&gt;If you can confirm that the LED on the AVR MCU leaf is blinking, you are done.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;when-in-doubt&#34;&gt;When in doubt.&lt;/h2&gt;
-&lt;p&gt;If it doesn&amp;rsquo;t work, go to &amp;ldquo;&lt;a href=&#34;https://docs.leafony.com/en/docs/getting-started/solution&#34; target=&#34;_blank&#34;&gt;Solution&lt;/a&gt;&amp;rdquo; to find a solution.&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;Next&lt;/h4&gt;
-A number of programs are available in &lt;a href=&#34;https://docs.leafony.com/docs/examples&#34;&gt;Sample App&lt;/a&gt;.
-To make development easier, install the library and get started.
-&lt;/div&gt;
-
+&lt;h3 id=&#34;specifying-pins-for-a-sketch&#34;&gt;Specifying pins for a sketch&lt;/h3&gt;
+&lt;p&gt;The pin should be specified by its name.&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01/ap01_pinassign.png&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap01/ap01_pinassign.png&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;installing-libraries&#34;&gt;Installing Libraries&lt;/h2&gt;
 &lt;p&gt;To use some of the leaves, you will need to install additional libraries. &lt;br&gt;
 Follow the steps below to install all libraries in advance.&lt;/p&gt;
@@ -161,12 +157,25 @@ Click &lt;code&gt;Code → Download ZIP&lt;/code&gt; to download the library.&lt
 &lt;img src=&#34;IDE_libinclude.png&#34; width=&#34;640&#34;&gt;  
 &lt;br&gt;
 &lt;br&gt;
+&lt;h2 id=&#34;when-in-doubt&#34;&gt;When in doubt.&lt;/h2&gt;
+&lt;p&gt;If it doesn&amp;rsquo;t work, go to &amp;ldquo;&lt;a href=&#34;https://docs.leafony.com/en/docs/getting-started/solution&#34; target=&#34;_blank&#34;&gt;If it doesn&amp;rsquo;t work&amp;hellip;&lt;/a&gt;&amp;rdquo; to find a solution.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
+&lt;h4 class=&#34;alert-heading&#34;&gt;Next&lt;/h4&gt;
+A number of programs are available in &lt;a href=&#34;https://docs.leafony.com/docs/examples&#34;&gt;Sample App&lt;/a&gt;.
+To make development easier, install the library and get started.
+&lt;/div&gt;
+
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;Back to previous page&lt;/A&gt;
+&lt;/p&gt;
 
       </description>
     </item>
     
     <item>
-      <title>Docs: PlatformIO development environment</title>
+      <title>Docs: PlatformIO settings for AVR MCU</title>
       <link>https://docs.leafony.com/en/docs/environment/avr/platformio/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -185,7 +194,7 @@ You need to install the following software in advance.&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VSCode&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.python.org/downloads/&#34;&gt;Python 3&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;platformio-installation&#34;&gt;Platformio Installation&lt;/h2&gt;
+&lt;h2 id=&#34;platformio-installation&#34;&gt;PlatformIO Installation&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Launch VSCode and open the &lt;code&gt;Extensions&lt;/code&gt; tab.&lt;/li&gt;
 &lt;li&gt;Enter &lt;code&gt;PlatformIO IDE&lt;/code&gt; into the search window.&lt;/li&gt;
@@ -243,13 +252,16 @@ lib_deps =
 	adafruit/RTClib@^1.11.2
 	adafruit/Adafruit Unified Sensor@^1.1.4
 	adafruit/Adafruit BusIO@^1.5.0
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;write-and-serial-monitoring&#34;&gt;Write and Serial Monitoring&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;writing-and-serial-monitor&#34;&gt;Writing and Serial Monitor&lt;/h2&gt;
 &lt;p&gt;When you press the &lt;code&gt;Serial Port Monitor&lt;/code&gt; button, the serial monitor is displayed.&lt;/p&gt;
 &lt;h2 id=&#34;reference&#34;&gt;Reference&lt;/h2&gt;
 &lt;p&gt;For more information on how to use PlatformIO for VSCode, please refer to the official documentation.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode&#34;&gt;https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;Back to previous page&lt;/A&gt;
+&lt;/p&gt;
 
       </description>
     </item>

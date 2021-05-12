@@ -137,7 +137,7 @@ There is a &amp;ldquo;Download CSV&amp;rdquo; button on the screen, but it is no
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;To enable Web Bluetooth on Linux, please refer to the following articles to set up your environment.&lt;br&gt;
-&lt;a href=&#34;https://acassis.wordpress.com/2016/06/28/how-to-get-chrome-web-bluetooth-working-on-linux/&#34; target=&#34;_blank&#34;&gt;&amp;quot;How to get Chrome Web Bluetooth working on Linux&amp;quot;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://acassis.wordpress.com/2016/06/28/how-to-get-chrome-web-bluetooth-working-on-linux/&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;How to get Chrome Web Bluetooth working on Linux&amp;rdquo;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Open Google Chrome.&lt;/p&gt;
@@ -165,6 +165,9 @@ There is a &amp;ldquo;Download CSV&amp;rdquo; button on the screen, but it is no
 &lt;/div&gt;
 
 &lt;br&gt;
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;Back to previous page&lt;/A&gt;
+&lt;/p&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
@@ -258,7 +261,9 @@ Touching the pins increases the capacitance and decreases the value. If the valu
 &lt;a href=&#34;https://docs.leafony.com/en/docs/environment/esp32&#34;&gt;Environment Settings&lt;/a&gt; and write the program to the ESP32 Wi-Fi Kit.
 &lt;/div&gt;
 
-
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;Back to previous page&lt;/A&gt;
+&lt;/p&gt;
       </description>
     </item>
     
@@ -292,6 +297,9 @@ Let’s write the program in &lt;a href=&#34;https://docs.leafony.com/en/docs/ex
 &lt;/div&gt;
 
 &lt;br&gt;
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;Back to previous page&lt;/A&gt;
+&lt;/p&gt;
       </description>
     </item>
     
@@ -321,33 +329,9 @@ Let’s write the program in &lt;a href=&#34;https://docs.leafony.com/en/docs/ex
 &lt;/div&gt;
 &lt;/p&gt;
 &lt;br&gt;
-
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: Leafony block assembly</title>
-      <link>https://docs.leafony.com/en/docs/getting-started/assembly/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.leafony.com/en/docs/getting-started/assembly/</guid>
-      <description>
-        
-        
-        &lt;p&gt;This is a summary of what to expect when assembling a Leafony block.&lt;/p&gt;
-&lt;h2 id=&#34;how-to-tighten-the-screw&#34;&gt;How to tighten the screw&lt;/h2&gt;
-&lt;p&gt;To avoid poor continuity, tighten the screws alternately and properly.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;./assembly.png&#34;&gt;&lt;img src=&#34;./assembly.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;installing-and-removing-connectors&#34;&gt;Installing and removing connectors&lt;/h2&gt;
-&lt;p&gt;Attach or remove the connector to the leaf board as shown below.&lt;/p&gt;
-&lt;p&gt;&amp;ndash; Installing&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./leafony_connector_assemble.png&#34; alt=&#34;leafony_connector_assemble&#34;&gt;&lt;/p&gt;
-&lt;p&gt;&amp;ndash; Removing&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./leafony_connector_teardown.png&#34; alt=&#34;leafony_connector_teardown&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;when-the-connectors-are-dirty&#34;&gt;When the connectors are dirty&lt;/h2&gt;
-&lt;p&gt;Dirt on the contacts of the connectors and the board may result in a poor connection. In this case, wipe them lightly with a paper rag moistened with anhydrous ethanol. If the problem persists, replace the connector.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;./Connector-trouble.png&#34;&gt;&lt;img src=&#34;./Connector-trouble.png&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
-
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;Back to previous page&lt;/A&gt;
+&lt;/p&gt;
       </description>
     </item>
     
@@ -362,16 +346,22 @@ Let’s write the program in &lt;a href=&#34;https://docs.leafony.com/en/docs/ex
         
         &lt;h2 id=&#34;if-you-cant-find-the-serial-port&#34;&gt;If you can&amp;rsquo;t find the serial port&amp;hellip;&lt;/h2&gt;
 &lt;p&gt;If you can&amp;rsquo;t find a Leafony serial port in the Arduino IDE, you can install a USB serial converter IC (FT232) driver.
-Download and install the device driver from &lt;a href=&#34;http://www.ftdichip.com/Drivers/VCP.htm&#34; target=&#34;_blank&#34;&gt;FTDI VCP Driver&lt;/a&gt;.&lt;/p&gt;
-&lt;img src=&#34;FTDI_DL.jpg&#34; width=&#34;840&#34;&gt;
+For more information, &lt;a href=&#34;https://www.monoxit.com/tecmat/windowsftdiusb/&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;if-it-doesnt-turn-on&#34;&gt;If it doesn&amp;rsquo;t turn on&amp;hellip;&lt;/h2&gt;
 &lt;p&gt;If Leafony won&amp;rsquo;t turn on, you should check the following&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Direction of the button battery.&lt;/li&gt;
+&lt;li&gt;Is there enough remaining battery power?&lt;/li&gt;
+&lt;li&gt;Is the button battery inserted in the correct direction?&lt;/li&gt;
 &lt;li&gt;Is the power switch turned on?&lt;/li&gt;
-&lt;li&gt;Tightness of the screw.&lt;/li&gt;
-&lt;li&gt;Make sure the batteries have enough remaining power.&lt;/li&gt;
+&lt;li&gt;Are the connectors clean?&lt;/br&gt;
+If it is dirty, wipe it lightly with a paper rag moistened with anhydrous ethanol. If the problem persists, replace the connector. For more information, please visit &lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az61/#%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF%E3%81%AE%E5%8F%96%E3%82%8A%E4%BB %98%E3%81%91%E5%8F%96%E3%82%8A%E5%A4%96%E3%81%97&#34; target=&#34;_blank&#34;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Are the screws tight enough?&lt;/br&gt;
+Tighten the screws properly, alternately.&lt;/br&gt;&lt;br&gt;
+&lt;a href=&#34;./assembly.png&#34;&gt;&lt;img src=&#34;./assembly.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;Back to previous page&lt;/A&gt;
+&lt;/p&gt;
 
       </description>
     </item>

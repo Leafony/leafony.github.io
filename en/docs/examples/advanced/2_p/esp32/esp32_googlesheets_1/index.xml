@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Leafony – Google Sheetsを使ったIoTサービス</title>
+    <title>Leafony – Google Sheets with ESP32</title>
     <link>https://docs.leafony.com/en/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/</link>
-    <description>Recent content in Google Sheetsを使ったIoTサービス on Leafony</description>
+    <description>Recent content in Google Sheets with ESP32 on Leafony</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	  <atom:link href="https://docs.leafony.com/en/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/index.xml" rel="self" type="application/rss+xml" />
@@ -22,103 +22,103 @@
       <description>
         
         
-        &lt;h1 id=&#34;google-sheetsを使ったiotサービス&#34;&gt;Google Sheetsを使ったIoTサービス&lt;/h1&gt;
-&lt;h2 id=&#34;esp32の設定&#34;&gt;ESP32の設定&lt;/h2&gt;
-&lt;p&gt;リーフを組み立ててスケッチを書き込み、データが&lt;code&gt;Google Sheets&lt;/code&gt;に書き込まれることを確認しましょう。&lt;/p&gt;
-&lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
-&lt;p&gt;以下のリーフを使用します。&lt;/p&gt;
+        &lt;h1 id=&#34;iot-services-using-google-sheets&#34;&gt;IoT services using Google Sheets&lt;/h1&gt;
+&lt;h2 id=&#34;esp32-configuration&#34;&gt;ESP32 configuration&lt;/h2&gt;
+&lt;p&gt;Assemble the leaves, write a sketch, and make sure the data is written to &lt;code&gt;Google Sheets&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;leaf-to-use&#34;&gt;Leaf to use&lt;/h2&gt;
+&lt;p&gt;Use the following leaves.&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th align=&#34;left&#34;&gt;Type&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Name&lt;/th&gt;
-&lt;th align=&#34;left&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Type&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Name&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;Connector Cover &lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az62&#34;&gt;Connector Cover &lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;AI01&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/io/ai01&#34;&gt;AI01&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax07&#34;&gt;AX07&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax07&#34;&gt;Back to back&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/extension/ax07&#34;&gt;AX07&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/extension/ax07&#34;&gt;Back to back&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02&#34;&gt;AP02&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02&#34;&gt;ESP32 MCU&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/processor/ap02&#34;&gt;AP02&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/processor/ap02&#34;&gt;ESP32 MCU&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av04&#34;&gt;AV04&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av04&#34;&gt;2V~4.5V&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/power/av04&#34;&gt;AV04&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/power/av04&#34;&gt;2V~4.5V&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az63&#34;&gt;AZ63&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az63&#34;&gt;Nut Plate&lt;/a&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az63&#34;&gt;AZ63&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az63&#34;&gt;Nut Plate&lt;/a&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;AAA battery holder&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;AAA battery holder&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;AAA battery&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;3&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;AAA battery&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;3&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;M2*8mm screw&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;M2*8mm screw&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;M2*12mm screw&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;M2*12mm screw&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;φ10x2mm magnet&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;φ10x2mm magnet&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
-&lt;p&gt;ESP32 MCUリーフと4-Sensorsリーフを重ねて、下図のようにねじ止めします。&lt;/p&gt;
+&lt;h2 id=&#34;assembly&#34;&gt;Assembly&lt;/h2&gt;
+&lt;p&gt;Stack the ESP32 MCU leaf and the 4-Sensors leaf on top of each other and screw them together as shown below.&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./ESP32_4-Sensors.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
-&lt;p&gt;Arduino IDEでプログラムを書きましょう。&lt;/p&gt;
+&lt;h2 id=&#34;source-code&#34;&gt;Source code&lt;/h2&gt;
+&lt;p&gt;Write the program in the Arduino IDE.&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/blob/master/ESP32_GoogleSheets/ESP32_GoogleSheets.ino&#34;&gt;ESP32_GoogleSheets.ino&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Githubのソースコードの以下の箇条書きの内容に注意して修正し、&lt;code&gt;ESP32リーフ&lt;/code&gt;に書き込んで下さい。&lt;/p&gt;
+&lt;p&gt;Note the following bullets in the Github source code, modify it, and write it to &lt;code&gt;ESP32 leaf&lt;/code&gt;.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;アクセスする&lt;code&gt;WiFi&lt;/code&gt;の情報を以下の定数に代入してください。&lt;/li&gt;
+&lt;li&gt;Substitute the following constants for the information of the &lt;code&gt;WiFi&lt;/code&gt; to be accessed.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;pre&gt;&lt;code&gt;const char* SSID = &amp;quot;wifi_ssid&amp;quot;;    // WiFi SSID
 const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
 &lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;先ほど作成したウェブアプリの情報を以下の定数に代入してください。
+&lt;li&gt;Substitute the following constants for the web app information you just created.
 &lt;ul&gt;
-&lt;li&gt;アプリ固有のURLより：const char* KEY = &lt;code&gt;AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;From the app-specific URL：const char* KEY = &lt;code&gt;AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;pre&gt;&lt;code&gt;const char* KEY = &amp;quot;google_scripts_key&amp;quot;;
 &lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;センサデータの書き込みの時間間隔を調整したいときは以下の定数に代入してください。
+&lt;li&gt;If you want to adjust the time interval for writing sensor data, substitute the following constants.
 &lt;ul&gt;
-&lt;li&gt;単位は秒です&lt;/li&gt;
+&lt;li&gt;Units are in seconds.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -143,8 +143,8 @@ const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;uint64_t&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;DEEP_SLEEP_TIME_SEC&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;60&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
 
 &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 省略
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Arduino&lt;/code&gt;を実行して、逐次センサデータが&lt;code&gt;Google Sheets&lt;/code&gt;に書き込まれます。&lt;/p&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;execution-result&#34;&gt;Execution result&lt;/h2&gt;
+&lt;p&gt;Run &lt;code&gt;Arduino&lt;/code&gt; and sequential sensor data will be written to &lt;code&gt;Google Sheets&lt;/code&gt;.&lt;/p&gt;
 &lt;img src=&#34;results_1.png&#34;&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;a-hrefhttpsdocsleafonycomdocsexamplesadvanced2_pesp32esp32_googlesheets_1前のページに戻るa&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/&#34;&gt;&lt;strong&gt;前のページに戻る&lt;/strong&gt;&lt;/a&gt;&lt;/h3&gt;

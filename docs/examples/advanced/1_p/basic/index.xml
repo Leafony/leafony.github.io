@@ -81,6 +81,9 @@
 &lt;/table&gt;
 &lt;h2 id=&#34;leafonyの組み立て&#34;&gt;Leafonyの組み立て&lt;/h2&gt;
 &lt;img src=&#34;./gs_assemble.png&#34; width=&#34;350&#34;&gt;
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
+&lt;/p&gt;
       </description>
     </item>
     
@@ -131,8 +134,8 @@ PCやスマホ・タブレットには色々な環境があります。Windows�
 &lt;h2 id=&#34;サンプルアプリのソースコード&#34;&gt;サンプルアプリのソースコード&lt;/h2&gt;
 &lt;p&gt;あらかじめどちらもダウンロードしてください。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE&#34;&gt;Arduino スケッチ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/WebBluetooth_for_Leafony_app&#34;&gt;Web Bluetooth アプリ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE&#34; target=&#34; blank&#34;&gt;Arduino スケッチ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/WebBluetooth_for_Leafony_app&#34; target=&#34; blank&#34;&gt;Web Bluetooth アプリ&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;leafonyの構成&#34;&gt;Leafonyの構成&lt;/h2&gt;
 &lt;p&gt;このサンプルでは下記のリーフ構成で試せます。&lt;/p&gt;
@@ -195,8 +198,8 @@ PCやスマホ・タブレットには色々な環境があります。Windows�
 &lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/pinassign/basic_kit_pinassign.jpg&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/getting-started/pinassign/basic_kit_pinassign.jpg&#34; width=&#34;600&#34;&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;実行方法&#34;&gt;実行方法&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Arduino IDEで&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE&#34;&gt;4-Sensors_BLE.ino&lt;/a&gt;を書き込む&lt;/li&gt;
-&lt;li&gt;ダウンロードした&lt;a href=&#34;https://github.com/Leafony/WebBluetooth_for_Leafony_app&#34;&gt;Web Bluetooth アプリ&lt;/a&gt;の&lt;code&gt;index.html&lt;/code&gt;をGoogle Chromeで開く&lt;br&gt;
+&lt;li&gt;Arduino IDEで&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_BLE&#34; target=&#34; blank&#34;&gt;4-Sensors_BLE.ino&lt;/a&gt;を書き込む&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;ダウンロードした&lt;a href=&#34;https://github.com/Leafony/WebBluetooth_for_Leafony_app&#34; target=&#34; blank&#34;&gt;Web Bluetooth アプリ&lt;/a&gt;の&lt;code&gt;index.html&lt;/code&gt;をGoogle Chromeで開く&lt;br&gt;
 Webアプリの使い方の詳細は&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/basic&#34;&gt;Basic Kit クイックスタートガイド&lt;/a&gt;を参考&lt;/li&gt;
 &lt;/ol&gt;
 &lt;br&gt;
@@ -309,12 +312,14 @@ BLEで受信したデータは&lt;code&gt;event.target.value&lt;/code&gt;に含�
 &lt;h2 id=&#34;web-bluetoothの注意点&#34;&gt;Web Bluetoothの注意点&lt;/h2&gt;
 &lt;p&gt;2020年6月時点ではWeb Bluetoothは以下の点に注意しなければいけません。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;iPhoneのChromeでは動作しません。&lt;a href=&#34;https://apps.apple.com/jp/app/webble/id1193531073&#34;&gt;WebBLE&lt;/a&gt;という有料のアプリを使えば利用可能です。&lt;/li&gt;
-&lt;li&gt;Web Bluetoothの開発状況と対応ブラウザについては&lt;a href=&#34;https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md&#34;&gt;implementation-status.md&lt;/a&gt;で確認できます。&lt;/li&gt;
+&lt;li&gt;iPhoneのChromeでは動作しません。&lt;a href=&#34;https://apps.apple.com/jp/app/webble/id1193531073&#34; target=&#34; blank&#34;&gt;WebBLE&lt;/a&gt;という有料のアプリを使えば利用可能です。&lt;/li&gt;
+&lt;li&gt;Web Bluetoothの開発状況と対応ブラウザについては&lt;a href=&#34;https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md&#34; target=&#34; blank&#34;&gt;implementation-status.md&lt;/a&gt;で確認できます。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://qiita.com/s_nkg/items/bdb235388eaeb567b54d&#34;&gt;https://qiita.com/s_nkg/items/bdb235388eaeb567b54d&lt;/a&gt;&lt;/p&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;p&gt;&lt;a href=&#34;https://qiita.com/s_nkg/items/bdb235388eaeb567b54d&#34; target=&#34; blank&#34;&gt;LeafonyとWeb Bluetoothでラクラク！クロスプラットフォームIoT開発入門&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
+&lt;/p&gt;&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
@@ -330,7 +335,11 @@ BLEで受信したデータは&lt;code&gt;event.target.value&lt;/code&gt;に含�
 &lt;p&gt;Android 6.0 Marshmallow以降 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;iPhoneまたはiPadの場合は &lt;a href=&#34;https://itunes.apple.com/us/app/webble/id1193531073&#34;&gt;WebBLE&lt;/a&gt;(有料)が必要です。iPhone、iPad版のChromeではWeb Bluetoothが実装されていないためです。 &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;iPhoneまたはiPadの場合は &lt;a href=&#34;https://apps.apple.com/jp/app/webble/id1193531073&#34; target=&#34; blank&#34;&gt;WebBLE&lt;/a&gt;(有料)が必要です。iPhone、iPad版のChromeではWeb Bluetoothが実装されていないためです。 &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:6&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;動作しない場合はArduino IDE 1.8.7、Arduino AVR Boards 1.6.23で書き込みを行ってください。古いバージョンのArduino IDEダウンロードとArduino AVR Boardsの確認と変更方法については
+&lt;a href=&#34;../../../../../environment/avr/arduino_ver&#34; target=&#34; blank&#34;&gt;Arduino IDE のバージョン&lt;/a&gt;参照。 &lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
@@ -362,11 +371,11 @@ BLEで受信したデータは&lt;code&gt;event.target.value&lt;/code&gt;に含�
 &lt;/ul&gt;
 &lt;h2 id=&#34;サンプルアプリのコード&#34;&gt;サンプルアプリのコード&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/leafony-beacon&#34;&gt;Github - Leafony/leafony-beacon&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/leafony-beacon&#34; target=&#34;blank&#34;&gt;Github - Leafony/leafony-beacon&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;raspberry-piの準備&#34;&gt;Raspberry Piの準備&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Raspberry Pi 初めての方は、Raspberry Pi 3 B＋ スターターキット（ &lt;a href=&#34;https://www.switch-science.com/catalog/3880/&#34;&gt;https://www.switch-science.com/catalog/3880/&lt;/a&gt; ）が便利です。Raspbian OSイメージを書き込んだmicroSDが入っていますが、ディスプレイ、キーボード、マウスは有りません。別途　ご用意してください。&lt;/li&gt;
+&lt;li&gt;Raspberry Pi 初めての方は、&lt;a href=&#34;https://www.switch-science.com/catalog/3880/&#34; target=&#34;blank&#34;&gt;Raspberry Pi 3 B＋ スターターキット&lt;/a&gt; が便利です。Raspbian OSイメージを書き込んだmicroSDが入っていますが、ディスプレイ、キーボード、マウスは有りません。別途　ご用意してください。&lt;/li&gt;
 &lt;li&gt;Raspberry Pi は、無線LANでインターネットに接続します。こちらも事前にご用意してください。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;leafonyの構成&#34;&gt;Leafonyの構成&lt;/h2&gt;
@@ -432,7 +441,7 @@ BLEで受信したデータは&lt;code&gt;event.target.value&lt;/code&gt;に含�
 &lt;/ul&gt;
 &lt;h2 id=&#34;raspberry-piの環境構築&#34;&gt;Raspberry Piの環境構築&lt;/h2&gt;
 &lt;p&gt;BLE Beaconの受信機にはRaspberry Piを使います。今回使用するサンプルコードでは、Node.jsでnobleを使ってBLE Beaconを受信します。受信したデータはGoogle API経由でGoogle スプレッドシートに書き込んでいます。&lt;/p&gt;
-&lt;p&gt;下記のスクリプト(6項目)を実行して環境構築をします。https://github.com/Leafony/leafony-beacon/tree/master/spreadsheet-logger&lt;/p&gt;
+&lt;p&gt;下記のスクリプト(6項目)を実行して環境構築をします。&lt;a href=&#34;https://github.com/Leafony/leafony-beacon/tree/master/spreadsheet-logger&#34; target=&#34;blank&#34;&gt;&lt;a href=&#34;https://github.com/Leafony/leafony-beacon/tree/master/spreadsheet-logger&#34;&gt;https://github.com/Leafony/leafony-beacon/tree/master/spreadsheet-logger&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;sudo apt update
 sudo apt upgrade
 sudo apt install -y bluetooth libbluetooth-dev libudev-dev git
@@ -443,7 +452,7 @@ npm install
 &lt;p&gt;&lt;img src=&#34;./gs_pi_1.png&#34; alt=&#34;gs_pi_1&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;google-sheets-apiの取得&#34;&gt;Google Sheets APIの取得&lt;/h2&gt;
 &lt;p&gt;Google スプレットシートをNode.jsで操作するためにはAPIを取得する必要があります。まず、下記 Node.js Quick Start のStep.1で、  Enable the Google Sheets API をクリックし、credentials.jsonをダウンロードします。次に、credentials.jsonをleafony-beacon/spreadsheet-loggerディレクトリにコピーしてください。&lt;/p&gt;
-&lt;p&gt;Node.js Quickstart | Sheets API | Google Developers : &lt;a href=&#34;https://developers.google.com/sheets/api/quickstart/nodejs&#34;&gt;https://developers.google.com/sheets/api/quickstart/nodejs&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Node.js Quickstart | Sheets API | Google Developers : &lt;a href=&#34;https://developers.google.com/sheets/api/quickstart/nodejs&#34; target=&#34; blank&#34;&gt;&lt;a href=&#34;https://developers.google.com/sheets/api/quickstart/nodejs&#34;&gt;https://developers.google.com/sheets/api/quickstart/nodejs&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;indexjs-へgoogle-sheetsのidとシート名の設定&#34;&gt;index.js へGoogle SheetsのIDとシート名の設定&lt;/h2&gt;
 &lt;p&gt;Google スプレッドシート を開いて、URLの赤線部分の「シートID」と「シート名」を確認します。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./gs_pi_2.png&#34; alt=&#34;gs_pi_2&#34;&gt;
@@ -467,6 +476,214 @@ npm install
 &lt;p&gt;&lt;img src=&#34;./gs_pi_11.png&#34; alt=&#34;gs_pi_11&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Beaconが見つかるとログが表示されると同時に、スプレッドシートに同じ内容が追記されるので、スプレッドシートを開いてデータを確認してください。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./gs_pi_12.png&#34; alt=&#34;gs_pi_12&#34;&gt;&lt;/p&gt;
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
+&lt;/p&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 自動測定監視システム(抵抗と温度を測定してGoogle Sheetsに保存)</title>
+      <link>https://docs.leafony.com/docs/examples/advanced/1_p/basic/resistance_measurement/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/examples/advanced/1_p/basic/resistance_measurement/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;このサンプルは&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/1_p/basic/google_sheets_iot/&#34;&gt;Google SheetsをつかったIoTサービス入門&lt;/a&gt;で紹介したものと抵抗測定を組み合わせたものです。
+Leafony で恒温槽内複数の被測定基板の抵抗と温度を測定してBeaconで送信しRaspberry Piを使ってGoogle スプレッドシートに測定データを保存します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./image.jpg&#34; alt=&#34;イメージ図&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./chamber.jpg&#34; alt=&#34;恒温槽&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Leafony Basic Kit&lt;/li&gt;
+&lt;li&gt;ユニバーサル基板(回路は&lt;a href=&#34;#%E6%8E%A5%E7%B6%9A%E5%9B%B3&#34;&gt;接続図&lt;/a&gt;参照)&lt;/li&gt;
+&lt;li&gt;Raspberry Pi (3, 4等)&lt;/li&gt;
+&lt;li&gt;ブラウザが閲覧できるPCやスマホ&lt;/li&gt;
+&lt;li&gt;Arduino IDE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;サンプルアプリのコード&#34;&gt;サンプルアプリのコード&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/&#34; target=&#34;blank&#34;&gt;Github - Leafony/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;raspberry-piの準備&#34;&gt;Raspberry Piの準備&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/1_p/basic/google_sheets_iot/&#34; target=&#34;blank&#34;&gt;Google SheetsをつかったIoTサービス入門&lt;/a&gt; 参照。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;leafonyの構成&#34;&gt;Leafonyの構成&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;Connector Cover&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;AI01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;AZ01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;USB&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax02&#34;&gt;AX02&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax02&#34;&gt;29pin&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AP01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AVR MCU&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac02&#34;&gt;AC02&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac02&#34;&gt;BLE Sugar&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;M2*18mm screw&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;接続図&#34;&gt;接続図&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;./diagram.jpg&#34; alt=&#34;接続図&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;回路検討&#34;&gt;回路検討&lt;/h2&gt;
+&lt;p&gt;被測定基板の抵抗値が約2.8Ωで3.0Ωに変化したことを検知したい。
+簡単な回路で測定するのでプルアップ抵抗で分圧する方式とします。
+測定する抵抗値とプルアップ抵抗を同じくらいの抵抗値にすると分解能が十分に取れますが、抵抗値が小さいため抵抗に流れる電流が大きくなります。そのため、測定する抵抗の10倍程度のプルアップ抵抗とします。
+また、消費電流を減らし分解能を上げるため、プルアップする電源電圧を小さくします。AVR MCUリーフのADCのリファレンス電圧を外部から供給することを検討しましたが、うまく動作しなかったため、内部リファレンス(1.1V)を使用することとしました。プルアップする電源電圧も同じ1.1Vにします。&lt;/p&gt;
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
+&lt;/p&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 体重計</title>
+      <link>https://docs.leafony.com/docs/examples/advanced/1_p/basic/bathroom_scales/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/examples/advanced/1_p/basic/bathroom_scales/</guid>
+      <description>
+        
+        
+        &lt;p&gt;このサンプルは&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/1_p/basic/webbluetooth_iot/&#34;&gt;Web Bluetoothを使ったIoTアプリ入門&lt;/a&gt;で紹介したものと歪センサーを組み合わせたものです。Bluetoothを使って体重をスマートフォンやパソコンに表示する事ができます。&lt;/p&gt;
+&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;AVR MCU、BLE Sugar、29pin、CR2032、USB&lt;/li&gt;
+&lt;li&gt;歪センサー(3線式で50kg/個程度測定できるもの)x4個&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://ja.aliexpress.com/item/32968926628.html?aff_fcid=2e87df3392cd457cb860b9f2de6d1a99-1616479291090-01731-_APJxBa&amp;amp;aff_fsk=_APJxBa&amp;amp;aff_platform=portals-tool&amp;amp;sk=_APJxBa&amp;amp;aff_trace_key=2e87df3392cd457cb860b9f2de6d1a99-1616479291090-01731-_APJxBa&amp;amp;terminal_id=3fcbe1d33faf4e98b27c9bc1d21d6ded&amp;amp;tmLog=new_Detail&#34;&gt;HX711基板&lt;/a&gt;(ライブラリ&lt;a href=&#34;https://github.com/olkal/HX711_ADC&#34; target=&#34;_blank&#34;&gt;HX711_ADC&lt;/a&gt;が必要です)&lt;/li&gt;
+&lt;li&gt;Windows&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;、 Mac&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;、 Linux&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;いずれかのPC、Android&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;、 iPhone&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;、 iPad&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;のスマートフォンまたはタブレット&lt;/li&gt;
+&lt;li&gt;Google Chrome (バージョン70.0.3526.0以降)&lt;/li&gt;
+&lt;li&gt;Arduino IDE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;サンプルアプリのソースコード&#34;&gt;サンプルアプリのソースコード&lt;/h2&gt;
+&lt;p&gt;あらかじめどちらもダウンロードしてください。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/BathroomScales_BLE&#34; target=&#34;_blank&#34;&gt;Arduino スケッチ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/BathroomScales_BLE&#34; target=&#34;_blank&#34;&gt;Web Bluetooth アプリ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;leafonyの構成&#34;&gt;Leafonyの構成&lt;/h2&gt;
+&lt;p&gt;このサンプルでは下記のリーフ構成で試せます。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;Connector Cover&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax02&#34;&gt;AX02&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax02&#34;&gt;29pin&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AP01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap01&#34;&gt;AVR MCU&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac02&#34;&gt;AC02&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac02&#34;&gt;BLE Sugar&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;AZ01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;USB&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;AV01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av01&#34;&gt;CR2032&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;CR2032 coin cell battery&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;M2*18mm screw&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;接続図&#34;&gt;接続図&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;./diagram.jpg&#34; alt=&#34;接続図&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;実行方法&#34;&gt;実行方法&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;ライブラリ&lt;a href=&#34;https://github.com/olkal/HX711_ADC&#34; target=&#34;_blank&#34;&gt;HX711_ADC&lt;/a&gt;をダウンロードしてインストールします&lt;/li&gt;
+&lt;li&gt;Arduino IDEのスケッチ例からCalibration.ino開き実行しキャリブレーションします&lt;/li&gt;
+&lt;li&gt;キャリブレーションした値を記録しておき、Arduino IDEで&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/BathroomScales_BLE&#34; target=&#34;_blank&#34;&gt;BathroomScales_BLE.ino&lt;/a&gt;を開きます&lt;/li&gt;
+&lt;li&gt;値録したキャリブレーション値を128行のnewCalibrationValueに設定し書き込みます&lt;/li&gt;
+&lt;li&gt;体重計の上には何も置かずに起動します&lt;/li&gt;
+&lt;li&gt;ダウンロードした&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/BathroomScales_BLE&#34; target=&#34;_blank&#34;&gt;Web Bluetooth アプリ&lt;/a&gt;の&lt;code&gt;index.html&lt;/code&gt;をGoogle Chromeで開きます&lt;br&gt;
+Webアプリの使い方の詳細は&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/basic&#34;&gt;Basic Kit クイックスタートガイド&lt;/a&gt;を参考にしてください&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
+&lt;/p&gt;&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Windows 10 version 1703以降 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;OS X Yosemite以降 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Kernel 3.19+ and BlueZ 5.41+ installed. &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Android 6.0 Marshmallow以降 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;iPhoneまたはiPadの場合は &lt;a href=&#34;https://itunes.apple.com/us/app/webble/id1193531073&#34; target=&#34;_blank&#34;&gt;WebBLE&lt;/a&gt;(有料)が必要です。iPhone、iPad版のChromeではWeb Bluetoothが実装されていないためです。 &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
 
       </description>
     </item>

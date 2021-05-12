@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.72.0" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -21,14 +21,15 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Google Sheetsを使ったIoTサービス | Leafony</title><meta property="og:title" content="Google Sheetsを使ったIoTサービス" />
+<title>Google Sheets with ESP32 | Leafony</title><meta property="og:title" content="Google Sheets with ESP32" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/en/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="Google Sheetsを使ったIoTサービス">
-<meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Google Sheetsを使ったIoTサービス"/>
+<meta itemprop="name" content="Google Sheets with ESP32">
+<meta itemprop="description" content="A Leafony Documentation site">
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Google Sheets with ESP32"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -48,8 +49,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
-<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" as="style">
+<link href="/scss/main.min.deffd5f93f22875fbba6eb02aae34a9162e966d1b832fb0cbd3b6d58554b9a11.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -98,7 +99,23 @@ if (!doNotTrack) {
 				
 				
 				
+				<a class="nav-link" href="https://trillion-node.org/" target="_blank" ><span>Trillion-Node</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
 				<a class="nav-link" href="https://trillion-node.org/forum/" target="_blank" ><span>Forum</span></a>
+			</li>
+			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				<a class="nav-link" href="/shop/" ><span>Shop</span></a>
 			</li>
 			
 			
@@ -128,7 +145,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c59499ea2aae59ea487ab300f6fd5eb6b3d16caba7717be1f03a6196adb7f00b28a2ae5448e1fbcbdbeaa72ea082fe1b923b4ea72a4616744655a0f144ecab71.json"
+  data-offline-search-index-json-src="/offline-search-index.af2e8c8ef48eb949482e9cf0e8d5887dcce12250758ed2144fb34708a2443ec406d3c19bb21fdabbc9fe0887cddd9b88804d84c863fc2d07829f0324f169ca31.json"
   data-offline-search-base-href="/"
 >
 
@@ -158,7 +175,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c59499ea2aae59ea487ab300f6fd5eb6b3d16caba7717be1f03a6196adb7f00b28a2ae5448e1fbcbdbeaa72ea082fe1b923b4ea72a4616744655a0f144ecab71.json"
+  data-offline-search-index-json-src="/offline-search-index.af2e8c8ef48eb949482e9cf0e8d5887dcce12250758ed2144fb34708a2443ec406d3c19bb21fdabbc9fe0887cddd9b88804d84c863fc2d07829f0324f169ca31.json"
   data-offline-search-base-href="/"
 >
 
@@ -501,29 +518,6 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/getting-started/assembly/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Leafony block assembly</a>
-  </li>
-  <ul>
-    <li class="collapse " id="endocsgetting-startedassembly">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
     <a  href="/en/docs/getting-started/solution/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">If it doesn&#39;t work...</a>
   </li>
   <ul>
@@ -738,29 +732,6 @@ if (!doNotTrack) {
 
       
       
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/environment/esp32/esp32_notice/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 notice</a>
-  </li>
-  <ul>
-    <li class="collapse " id="endocsenvironmentesp32esp32_notice">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
     </li>
   </ul>
 </ul>
@@ -794,7 +765,7 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/environment/stm32/arduino_ide/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Arduino IDE</a>
+    <a  href="/en/docs/environment/stm32/arduino_ide/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">STM32 Arduino</a>
   </li>
   <ul>
     <li class="collapse " id="endocsenvironmentstm32arduino_ide">
@@ -2300,6 +2271,29 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/examples/advanced/3_p/stm32/stm32_webbluetooth_iot/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsexamplesadvanced3_pstm32stm32_webbluetooth_iot">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/en/docs/examples/advanced/3_p/stm32/stm32_logger_ble_beacon/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
   </li>
   <ul>
@@ -3153,6 +3147,29 @@ if (!doNotTrack) {
 
       
       
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/en/docs/leaf/extension/ax09/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Terminal</a>
+  </li>
+  <ul>
+    <li class="collapse " id="endocsleafextensionax09">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
     </li>
   </ul>
 </ul>
@@ -3352,12 +3369,12 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#概要">概要</a></li>
-    <li><a href="#google-sheetsの準備">Google Sheetsの準備</a></li>
-    <li><a href="#google-sheetsの動作確認">Google Sheetsの動作確認</a>
+    <li><a href="#overview">Overview</a></li>
+    <li><a href="#preparing-google-sheets">Preparing Google Sheets</a></li>
+    <li><a href="#checking-the-operation-of-google-sheets">Checking the operation of Google Sheets</a>
       <ul>
-        <li><a href="#スクリプトのミスがあった場合">スクリプトのミスがあった場合</a></li>
-        <li><a href="#a-hrefhttpsdocsleafonycomdocsexamplesadvanced2_pesp32esp32_googlesheets_1esp32_googlesheets_2次へ進むa"><a href="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/esp32_googlesheets_2/"><strong>次へ進む</strong></a></a></li>
+        <li><a href="#if-there-is-a-mistake-in-the-script">If there is a mistake in the script</a></li>
+        <li><a href="#a-hrefhttpsdocsleafonycomendocsexamplesadvanced2_pesp32esp32_googlesheets_1esp32_googlesheets_2nexta"><a href="https://docs.leafony.com/en/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/esp32_googlesheets_2/"><strong>Next</strong></a></a></li>
       </ul>
     </li>
   </ul>
@@ -3436,38 +3453,39 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>Google Sheetsを使ったIoTサービス</h1>
+	<h1>Google Sheets with ESP32</h1>
         
 	
-	<h2 id="概要">概要</h2>
-<p>ESP32 MCUリーフと4-Sensorsリーフだけで、IoT環境センサを作り、Google スプレッドシートを使って、センサデータを可視化します。</p>
+	<h2 id="overview">Overview</h2>
+<p>Using only an ESP32 MCU leaf and 4-Sensors leaf, you can build an IoT environmental sensor and visualize the sensor data using Google Spreadsheet.</p>
 <img src="ESP_googlesheet_a.png" width=800>
-<h2 id="google-sheetsの準備">Google Sheetsの準備</h2>
-<p>ESP32 MCUリーフが送るセンサデータを<code>Google Sheets</code>で表示する、IoTサービスを紹介します。
-ブラウザを閲覧できるPCやスマホがあれば、どこでもデータを確認できます。<br>
-まずは、<code>Google Sheets</code>でデータを表示するための設定を以下の通り行いましょう。
+<h2 id="preparing-google-sheets">Preparing Google Sheets</h2>
+<p>Introducing an IoT service that displays sensor data sent by the ESP32 MCU Leaf in <code>Google Sheets</code>.
+You can check the data anywhere, if you have a PC or smartphone with browser access.<br>
+First, let&rsquo;s configure the settings for displaying data in <code>Google Sheets</code> as follows.
 <br /></p>
 <ol>
-<li>Googleアカウントにログインし、新しいスプレッドシートを作成しましょう。アカウントがない場合は作成してください。</li>
+<li>Sign in to your Google account and create a new spreadsheet. If you do not have an account, please create one.</li>
 </ol>
 <img src="create_new_sheet_a.png" width=1200>
 <p><br /></p>
 <ol start="2">
 <li>
-<p>Google Sheetsのタイトル（デフォルト：<code>無題のスプレッドシート</code>）は自由に変更して大丈夫です。<br>
-また、シート番号（デフォルト：<code>シート1</code>）も自由に変更して大丈夫です。</p>
+<p>You can change the title of Google Sheets (default: <code>Untitled Spreadsheet</code>) as you like.  <br>
+You can also change the sheet number (default: <code>sheet 1</code>) as you like also.</p>
 </li>
 <li>
-<p>下のGoogle SheetsのURLの部分の赤枠で囲った記号列は、後でGoogle Sheetを指定するのに利用するので、適当な場所にコピーしておいてください。</p>
+<p>The symbol sequence in the red frame in the Google Sheets URL section below will be used later to specify the Google Sheet, so please copy it to an appropriate location.</p>
 <ul>
-<li>ここでは、<code>1o0cogc3aomAj58CRdMZARNJtoEmf8dB9ebY02jKV9tA</code></li>
+<li>Here, <code>1o0cogc3aomAj58CRdMZARNJtoEmf8dB9ebY02jKV9tA</code>.</li>
 </ul>
 </li>
 </ol>
 <img src="open_script_editor_a.PNG">
 <p><br /></p>
 <ol start="4">
-<li>ツールからスクリプトエディタを開き、Githubのソースコードをコピー&amp;ペーストしてください。
+<li>
+<p>Open the Script Editor from Tools and copy and paste the source code from Github.</p>
 <ul>
 <li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets/google_scripts_code.js" target="_brank">Leafony/Sample-Sketches/ESP32_GoogleSheets/google_scripts_code.js - GitHub</a></li>
 </ul>
@@ -3475,82 +3493,82 @@ if (!doNotTrack) {
 </ol>
 <p><br /></p>
 <ol start="5">
-<li>以下の変数に、先ほど作成した<code>Google Sheets</code>の情報を入力してください。
+<li>Enter the information of the <code>Google Sheets</code> that you just created in the following variables.
 <ul>
-<li><code>google_sheets_id</code>：先ほどコピーした<code>Google Sheets</code>のURLの記号列</li>
-<li><code>sheet_name</code>：書き込み先のシート名（デフォルト：<code>シート1</code>）</li>
+<li><code>google_sheets_id</code>：The symbol string of the URL of <code>Google Sheets</code> that you just copied.</li>
+<li><code>sheet_name</code>：Name of the sheet to write to (default: <code>Sheet 1</code>)</li>
 </ul>
 </li>
 </ol>
 <img src="edit_script_a.png">
 <p><br /></p>
 <ol start="6">
-<li><code>Google Sheets</code>を公開する手順について、説明します。<br>
-<code>公開</code>-&gt;<code>ウェブアプリケーションとして導入</code>をクリックします。</li>
+<li>This section describes the procedure for publishing <code>Google Sheets</code>.<br>
+Click <code>Publish</code>-&gt;<code>Deploy as a web application</code>.</li>
 </ol>
 <img src="deploy_app_1a.png">
 <p><br /></p>
 <ol start="7">
-<li>続いて、アクセスの権限を<code>Anyone, even anonymous</code>に変更し、誰でも閲覧できるようにします。</li>
+<li>Then, change the access permissions to <code>Anyone, even anonymous</code>, so that anyone can view it.</li>
 </ol>
 <img src="deploy_app_2a.png" width=500>
 <p><br /></p>
 <ol start="8">
-<li><code>デプロイ</code>ボタンを押すと、<code>Script App</code>から<code>Google Sheets</code>へのアクセス権限の確認が行なわれるので、<code>許可を確認</code>をクリックしてください。</li>
+<li>Click the <code>Deploy</code> button to confirm the access permission from <code>Script App</code> to <code>Google Sheets</code>.  Click <code>Confirm Permissions</code>.</li>
 </ol>
 <img src="first_deploy_authorization_a.png" width=500>
 <p><br /></p>
 <ol start="9">
-<li>左下の<code>詳細</code>をクリックしてください。</li>
+<li>Click on <code>Details</code> at the bottom left.</li>
 </ol>
 <img src="details.png" width=500>
 <p><br /></p>
 <ol start="10">
-<li>次に警告が出るので、<code>（安全ではないページ）に移動</code>をクリックしてください。</li>
+<li>Next you will get a warning, click on <code>Go to (insecure page)</code>.</li>
 </ol>
 <img src="confirmation_a.png" width=550>
 <p><br /></p>
 <ol start="11">
-<li>最後にスクリプトからスプレッドシートへのアクセスリクエストを<code>許可</code>してください。</li>
+<li>Finally, <code>allow</code> the script to request access to the spreadsheet.</li>
 </ol>
 <img src="access_request_a.png" width=400>
 <p><br /></p>
 <ol start="12">
-<li>以下のポップアップ画面が表示され、今回作成したウェブアプリ固有のURLが発行されるので、URLをコピーして<code>OK</code>をクリックしてください。</li>
+<li>The following pop-up window will appear, and a URL specific to the web app you have created will be issued, so copy the URL and click <code>OK</code>.</li>
 </ol>
 <img src="find_url.png" width=500>  
 <p><br />
-（アプリ固有のURL）</p>
+（App-specific URLs ）</p>
 <pre><code>https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec
-</code></pre><h2 id="google-sheetsの動作確認">Google Sheetsの動作確認</h2>
+</code></pre><h2 id="checking-the-operation-of-google-sheets">Checking the operation of Google Sheets</h2>
 <ol>
 <li>
-<p>今回は試しに、Datetime、UniqueID=Leafony_AP02-1、Temperature=100、Humidity=100、Illumination=100  を、<code>Google Sheets</code>に書き込んでみます。<br>
+<p>This time, we will try to write Datetime, UniqueID=Leafony_AP02-1, Temperature=100, Humidity=100, Illumination=100 in <code>Google Sheets</code>.<br>
 <br /></p>
 </li>
 <li>
-<p>アプリ固有のURLに、?UniqueID=Leafony_AP02-1&amp;temperature=100&amp;humidity=100&amp;illumination=100を追加すると、以下の通りになります。</p>
+<p>If you add ?UniqueID=Leafony_AP02-1&amp;temperature=100&amp;humidity=100&amp;illumination=100 to the app-specific URL, you will get the following</p>
 </li>
 </ol>
 <pre><code>https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec?UniqueID=Leafony_AP02-1&amp;temperature=100&amp;humidity=100&amp;illumination=100
 </code></pre><p><br /></p>
 <ol start="3">
-<li>上記のURLをブラウザに貼り付け、アクセスすると、設定した<code>Google Sheets</code>にデータが書き込まれます。</li>
+<li>Paste the above URL into your browser and access it, and the data will be written to the configured <code>Google Sheets</code>.</li>
 </ol>
-<p><code>Google Sheets</code>の1行目に記載されているカラム名は自動表示されないため、予めご記載ください。
+<p>The column names listed in the first line of <code>Google Sheets</code> are not automatically displayed, so please provide them in advance.
 <br /></p>
 <img src="check_script_app.png">  
 <p><br /></p>
-<h3 id="スクリプトのミスがあった場合">スクリプトのミスがあった場合</h3>
+<h3 id="if-there-is-a-mistake-in-the-script">If there is a mistake in the script</h3>
 <ol>
-<li>スクリプトを修正します。</li>
-<li><code>公開</code>-&gt;<code>ウェブアプリケーションとして導入</code>をクリックします。</li>
-<li>最初と全く同じ設定でデプロイすると修正したコードがうまく反映されないことがあるので、再デプロイのときは<code>Project version</code>を<code>New</code>に設定して<code>更新</code>をクリックします。</li>
-<li>またその時動作しているウェブアプリのURLは以下で確認出来ます。</li>
+<li>Modify the script.</li>
+<li>Click <code>Publish</code>-&gt;`Deploy as a web application``.</li>
+<li>If you deploy with the exact same settings as the first time, the modified code may not be reflected properly, so when you deploy again, set <code>Project version</code> to <code>New</code> and click <code>Update</code>.</li>
+<li>The URL of the web app running at that time can be found below.</li>
 </ol>
 <img src="deploy_again_a.png" width=500>  
 <p><br /></p>
-<h3 id="a-hrefhttpsdocsleafonycomdocsexamplesadvanced2_pesp32esp32_googlesheets_1esp32_googlesheets_2次へ進むa"><a href="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/esp32_googlesheets_2/"><strong>次へ進む</strong></a></h3>
+<h3 id="a-hrefhttpsdocsleafonycomendocsexamplesadvanced2_pesp32esp32_googlesheets_1esp32_googlesheets_2nexta"><a href="https://docs.leafony.com/en/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/esp32_googlesheets_2/"><strong>Next</strong></a></h3>
 
         <div class="section-index">
     
@@ -3845,7 +3863,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 26.10.2020
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 03.03.2021
 </div>
 </div>
 
