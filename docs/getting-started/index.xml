@@ -79,12 +79,15 @@
 &lt;pre&gt;&lt;code&gt; https://docs.leafony.com/WebBluetooth_for_Leafony_app/
 &lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;
+&lt;p&gt;iPhoneまたはipadの&lt;code&gt;位置情報を共有&lt;/code&gt;をオンにします。位置情報共有設定は、&lt;code&gt;設定 → 自分の名前 → 探す&lt;/code&gt;と選択して変更します。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leafony_AC02&lt;/code&gt;を選択し、&lt;code&gt;Pair&lt;/code&gt;ボタンを押します。&lt;br&gt;
 &lt;br&gt;&lt;br&gt;
 &lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;接続が完了です。 画面上に「Download CSV 」のボタンはありますが使用で出来ません。&lt;/p&gt;
+&lt;p&gt;接続が完了です。 画面上に「Download CSV」のボタンはありますが使用で出来ません。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;ソースコードや動作の仕組みは、&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/1_p/basic/webbluetooth_iot&#34; target=&#34;_blank&#34;&gt;Web Bluetoothを使ったIoTアプリ入門&lt;/a&gt;に記載しています。&lt;/p&gt;
