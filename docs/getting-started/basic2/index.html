@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8cf12372184f058f0e9ab6292dbc49d35d38c766b5d678ddfa85fdf4844cce2470d18512ea5ab1cb2091efd57983f725034941ce904ae5e4757a48e23d4ca5a1.json"
+  data-offline-search-index-json-src="/offline-search-index.28e49b080e94d44f055f470606d516b7e7c92b676782ea8a7f75b0e36dc53fe36a0d0ef74850574c50ecb01fbfdc7e1e9af8641cf35e5e4807d15fb82e3a982b.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8cf12372184f058f0e9ab6292dbc49d35d38c766b5d678ddfa85fdf4844cce2470d18512ea5ab1cb2091efd57983f725034941ce904ae5e4757a48e23d4ca5a1.json"
+  data-offline-search-index-json-src="/offline-search-index.28e49b080e94d44f055f470606d516b7e7c92b676782ea8a7f75b0e36dc53fe36a0d0ef74850574c50ecb01fbfdc7e1e9af8641cf35e5e4807d15fb82e3a982b.json"
   data-offline-search-base-href="/"
 >
 
@@ -3486,16 +3486,14 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#用意するもの">用意するもの</a></li>
-    <li><a href="#デモ動画">デモ動画</a></li>
-    <li><a href="#セットアップ">セットアップ</a></li>
-    <li><a href="#使い方">使い方</a>
+    <li>
       <ul>
-        <li><a href="#androidmacwindowsの場合">Android、Mac、Windowsの場合</a></li>
-        <li><a href="#iphoneまたはipadの場合">iPhoneまたはiPadの場合</a></li>
-        <li><a href="#linuxの場合">Linuxの場合</a></li>
+        <li><a href="#web-bluetoothの注意点">Web Bluetoothの注意点</a></li>
       </ul>
     </li>
+    <li><a href="#用意するもの">用意するもの</a></li>
+    <li><a href="#セットアップ">セットアップ</a></li>
+    <li><a href="#使い方">使い方</a></li>
   </ul>
 </nav>
 
@@ -3545,103 +3543,47 @@ if (!doNotTrack) {
 	<h1>Basic Kit 2 スタートガイド</h1>
         <div class="lead">Bluetoothで環境センシング</div>
 	
-	<p><img src="Example_Keio_v3_1.png" alt="Example_Keio_v3_1-300x281.png"></p>
-<p>Basic Kitは、温湿度、照度、加速度センサを搭載した4-Sensorsリーフ、AVR MCUリーフ、Bluetoothリーフを搭載した小型でコイン電池で駆動可能な開発キットです。スマートフォンやパソコンに、Bluetoothを使って、センサの情報を送信出来るアプリが、インストールされています。</p>
+	<p><img src="Example_Keio_v4_4.png" alt="Example_Keio_v4_4.png">
+Basic Kit 2は、Basic Kitに<a href="/docs/leaf/processor/ap03/">STM32 MCUリーフ</a>を追加したキットです。STM32 MCUリーフには、センシングしたデータをクラウドにアップしたり、メモリにデータを保存(最大169サンプル)出来るソフトウェアをプレインストールしてあります。また、保存したデータは、Web Applicationで、グラフを作成することができます。</p>
+<h1 id="web-application">Web Application</h1>
+<p>Web Applicationは、Leafony blockのデータ(最大169サンプル)をグラフにしたり、センシングしたデータを表示させることが出来ます。web Applicationは、web bluetoothを使っていますので対応のブラウザに制限があります。</p>
+<h3 id="web-bluetoothの注意点">Web Bluetoothの注意点</h3>
+<p>2021年8月時点ではWeb Bluetoothは以下の点に注意しなければいけません。</p>
+<ul>
+<li>iPhoneのChromeでは動作しません。<a href="https://apps.apple.com/jp/app/webble/id1193531073" target=" blank">WebBLE</a>という有料のアプリは利用出来ません。</li>
+<li>センシングデータを表示出来るのは、Andoroid のみです。</li>
+<li>Web Bluetoothの開発状況と対応ブラウザについては<a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md" target=" blank">implementation-status.md</a>で確認できます。</li>
+</ul>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
 <li>Basic Kit</li>
-<li>Android<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>、Mac<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>、Windows<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>、iPhoneまたはiPad<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>、Linux<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>のスマートフォンやパソコン</li>
+<li>Android<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>、Mac<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>、Windows<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>、Linux<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>のスマートフォンやパソコン</li>
 <li>Google Chrome (バージョン70.0.3526.0以降)</li>
 </ul>
-<h2 id="デモ動画">デモ動画</h2>
-<div class="youtube">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/XC8G1dTXSR4?rel=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-<br>
 <h2 id="セットアップ">セットアップ</h2>
 <ol>
-<li>Basic Kitに、CR2032コイン電池を入れ、電源スイッチをONにします。
+<li>Leafomny blockのAVC MCUをSTM32 MCUに交換します。
+</br></li>
+</ol>
+<p><img src="STM32_4-Sensors.png" alt="STM32_4-Sensors.png">
+<br></p>
+<ol start="2">
+<li>
+<p>Leafony blockに、CR2032コイン電池を入れ、電源スイッチをONにします。
 <br> 
 <img src="quick_basic_assemble.png" width="400"></img>
-<br></li>
+<br></p>
+</li>
+<li>
+<p>STM32 MCUリーフの<code>プログラムスイッチ</code>を、Run側します。</br>
+<a href="/docs/leaf/processor/ap03/ap03_tips.jpg"><img src="/docs/leaf/processor/ap03/ap03_tips.jpg" width="450"></a></p>
+</li>
 </ol>
 <h2 id="使い方">使い方</h2>
-<ul>
-<li><a href="#androidmacwindows%E3%81%AE%E5%A0%B4%E5%90%88">Android、Mac、Windowの場合</a></li>
-<li><a href="#iphone%E3%81%BE%E3%81%9F%E3%81%AFipad%E3%81%AE%E5%A0%B4%E5%90%88">iPhoneまたはiPadの場合</a></li>
-<li><a href="#linux%E3%81%AE%E5%A0%B4%E5%90%88">Linuxの場合</a></li>
-</ul>
-<h3 id="androidmacwindowsの場合">Android、Mac、Windowsの場合</h3>
 <ol>
 <li>Google Chromeを開きます。</li>
-<li><a href="https://docs.leafony.com/WebBluetooth_for_Leafony_app/" target="_blank">Webアプリ</a>を開きます。</li>
-<li>Webアプリの<code>Connect</code>ボタンを押して、<code>Leafony_AC02</code>を選択し、<code>Pair</code>ボタンを押します。<br>
-<br></li>
-</ol>
-<p><img src="basic_android.jpg" alt="basic_android"></p>
-<ol start="4">
-<li>
-<p>接続が完了です。</p>
-</li>
-<li>
-<p>ソースコードや動作の仕組みは、<a href="/docs/examples/advanced/1_p/basic/webbluetooth_iot" target="_blank">Web Bluetoothを使ったIoTアプリ入門</a>に記載しています。</p>
-</li>
-</ol>
-
-
-<div class="alert alert-primary" role="alert">
-<h4 class="alert-heading">次のステップ</h4>
-プログラミングのためのパソコンの設定の仕方は、<a href="/docs/environment/">開発環境設定</a>に記載しています。
-</div>
-
-<h3 id="iphoneまたはipadの場合">iPhoneまたはiPadの場合</h3>
-<ol>
-<li>App Storeから<a href="https://apps.apple.com/us/app/webble/id1193531073" target="_blank">WebBLE</a> をダウンロードします。<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></li>
-<li>WebBLEを立ち上げて、以下のURLをアドレスバーに貼り付けてください。</li>
-</ol>
-<pre><code> https://docs.leafony.com/WebBluetooth_for_Leafony_app/
-</code></pre><ol start="3">
-<li>
-<p>Webアプリの<code>Connect</code>ボタンを押して、<code>Leafony_AC02</code>を選択し、<code>Pair</code>ボタンを押します。<br>
-<br><br>
-<img src="basic_android.jpg" alt="basic_android"></p>
-</li>
-<li>
-<p>接続が完了です。 画面上に「Download CSV 」のボタンはありますが使用で出来ません。</p>
-</li>
-<li>
-<p>ソースコードや動作の仕組みは、<a href="/docs/examples/advanced/1_p/basic/webbluetooth_iot" target="_blank">Web Bluetoothを使ったIoTアプリ入門</a>に記載しています。</p>
-</li>
-</ol>
-
-
-<div class="alert alert-primary" role="alert">
-<h4 class="alert-heading">次のステップ</h4>
-プログラミングのためのパソコンの設定の仕方は、<a href="/docs/environment/">開発環境設定</a>に記載しています。
-</div>
-
-<h3 id="linuxの場合">Linuxの場合</h3>
-<ol>
-<li>
-<p>Linux上でWeb Bluetoothを有効にするために、<a href="https://acassis.wordpress.com/2016/06/28/how-to-get-chrome-web-bluetooth-working-on-linux/" target="_blank">How to get Chrome Web Bluetooth working on Linux</a>を参考に環境設定してください。<br></p>
-</li>
-<li>
-<p>Google Chromeを開きます。</p>
-</li>
-<li>
-<p><a href="https://docs.leafony.com/WebBluetooth_for_Leafony_app/" target="_blank">Webアプリ</a>を開きます。</p>
-</li>
-<li>
-<p>Webアプリの<code>Connect</code>ボタンを押して、<code>Leafony_AC02</code>を選択し、<code>Pair</code>ボタンを押します。<br>
-<br> 
-<img src="basic_android.jpg" alt="basic_android"></p>
-</li>
-<li>
-<p>接続が完了です。</p>
-</li>
-<li>
-<p>ソースコードや動作の仕組みは、<a href="/docs/examples/advanced/1_p/basic/webbluetooth_iot" target="_blank">Web Bluetoothを使ったIoTアプリ入門</a>に記載しています。</p>
-</li>
+<li>Webアプリを開きます。</li>
+<li>ソースコードや動作の仕組みは、Web Bluetoothを使ったIoTアプリ入門に記載しています。</li>
 </ol>
 
 
@@ -3665,10 +3607,7 @@ if (!doNotTrack) {
 <p>Windows 10 version 1703以降&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
-<p>iPhone、またはiPadは、<a href="https://itunes.apple.com/us/app/webble/id1193531073" target="_blank">WebBLE</a>のアプリが必要です。&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:5" role="doc-endnote">
-<p>Kernel 3.19+ and BlueZ 5.41+ installed.&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Kernel 3.19+ and BlueZ 5.41+ installed.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -3683,7 +3622,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 13, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 8, 2021
 </div>
 </div>
 

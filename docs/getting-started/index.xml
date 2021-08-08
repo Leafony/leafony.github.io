@@ -165,103 +165,47 @@
       <description>
         
         
-        &lt;p&gt;&lt;img src=&#34;Example_Keio_v3_1.png&#34; alt=&#34;Example_Keio_v3_1-300x281.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Basic Kitは、温湿度、照度、加速度センサを搭載した4-Sensorsリーフ、AVR MCUリーフ、Bluetoothリーフを搭載した小型でコイン電池で駆動可能な開発キットです。スマートフォンやパソコンに、Bluetoothを使って、センサの情報を送信出来るアプリが、インストールされています。&lt;/p&gt;
+        &lt;p&gt;&lt;img src=&#34;Example_Keio_v4_4.png&#34; alt=&#34;Example_Keio_v4_4.png&#34;&gt;
+Basic Kit 2は、Basic Kitに&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/&#34;&gt;STM32 MCUリーフ&lt;/a&gt;を追加したキットです。STM32 MCUリーフには、センシングしたデータをクラウドにアップしたり、メモリにデータを保存(最大169サンプル)出来るソフトウェアをプレインストールしてあります。また、保存したデータは、Web Applicationで、グラフを作成することができます。&lt;/p&gt;
+&lt;h1 id=&#34;web-application&#34;&gt;Web Application&lt;/h1&gt;
+&lt;p&gt;Web Applicationは、Leafony blockのデータ(最大169サンプル)をグラフにしたり、センシングしたデータを表示させることが出来ます。web Applicationは、web bluetoothを使っていますので対応のブラウザに制限があります。&lt;/p&gt;
+&lt;h3 id=&#34;web-bluetoothの注意点&#34;&gt;Web Bluetoothの注意点&lt;/h3&gt;
+&lt;p&gt;2021年8月時点ではWeb Bluetoothは以下の点に注意しなければいけません。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;iPhoneのChromeでは動作しません。&lt;a href=&#34;https://apps.apple.com/jp/app/webble/id1193531073&#34; target=&#34; blank&#34;&gt;WebBLE&lt;/a&gt;という有料のアプリは利用出来ません。&lt;/li&gt;
+&lt;li&gt;センシングデータを表示出来るのは、Andoroid のみです。&lt;/li&gt;
+&lt;li&gt;Web Bluetoothの開発状況と対応ブラウザについては&lt;a href=&#34;https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md&#34; target=&#34; blank&#34;&gt;implementation-status.md&lt;/a&gt;で確認できます。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Basic Kit&lt;/li&gt;
-&lt;li&gt;Android&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;、Mac&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;、Windows&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;、iPhoneまたはiPad&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;、Linux&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;のスマートフォンやパソコン&lt;/li&gt;
+&lt;li&gt;Android&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;、Mac&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;、Windows&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;、Linux&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;のスマートフォンやパソコン&lt;/li&gt;
 &lt;li&gt;Google Chrome (バージョン70.0.3526.0以降)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;デモ動画&#34;&gt;デモ動画&lt;/h2&gt;
-&lt;div class=&#34;youtube&#34;&gt;
-    &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/XC8G1dTXSR4?rel=0&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture&#34; allowfullscreen&gt;&lt;/iframe&gt;
-&lt;/div&gt;
-&lt;br&gt;
 &lt;h2 id=&#34;セットアップ&#34;&gt;セットアップ&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Basic Kitに、CR2032コイン電池を入れ、電源スイッチをONにします。
+&lt;li&gt;Leafomny blockのAVC MCUをSTM32 MCUに交換します。
+&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;STM32_4-Sensors.png&#34; alt=&#34;STM32_4-Sensors.png&#34;&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;Leafony blockに、CR2032コイン電池を入れ、電源スイッチをONにします。
 &lt;br&gt; 
 &lt;img src=&#34;quick_basic_assemble.png&#34; width=&#34;400&#34;&gt;&lt;/img&gt;
-&lt;br&gt;&lt;/li&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;STM32 MCUリーフの&lt;code&gt;プログラムスイッチ&lt;/code&gt;を、Run側します。&lt;/br&gt;
+&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_tips.jpg&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_tips.jpg&#34; width=&#34;450&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;#androidmacwindows%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;Android、Mac、Windowの場合&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#iphone%E3%81%BE%E3%81%9F%E3%81%AFipad%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;iPhoneまたはiPadの場合&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;#linux%E3%81%AE%E5%A0%B4%E5%90%88&#34;&gt;Linuxの場合&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;androidmacwindowsの場合&#34;&gt;Android、Mac、Windowsの場合&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Google Chromeを開きます。&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34; target=&#34;_blank&#34;&gt;Webアプリ&lt;/a&gt;を開きます。&lt;/li&gt;
-&lt;li&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leafony_AC02&lt;/code&gt;を選択し、&lt;code&gt;Pair&lt;/code&gt;ボタンを押します。&lt;br&gt;
-&lt;br&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
-&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;接続が完了です。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;ソースコードや動作の仕組みは、&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/1_p/basic/webbluetooth_iot&#34; target=&#34;_blank&#34;&gt;Web Bluetoothを使ったIoTアプリ入門&lt;/a&gt;に記載しています。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-
-
-&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
-プログラミングのためのパソコンの設定の仕方は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/&#34;&gt;開発環境設定&lt;/a&gt;に記載しています。
-&lt;/div&gt;
-
-&lt;h3 id=&#34;iphoneまたはipadの場合&#34;&gt;iPhoneまたはiPadの場合&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;App Storeから&lt;a href=&#34;https://apps.apple.com/us/app/webble/id1193531073&#34; target=&#34;_blank&#34;&gt;WebBLE&lt;/a&gt; をダウンロードします。&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;li&gt;WebBLEを立ち上げて、以下のURLをアドレスバーに貼り付けてください。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt; https://docs.leafony.com/WebBluetooth_for_Leafony_app/
-&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leafony_AC02&lt;/code&gt;を選択し、&lt;code&gt;Pair&lt;/code&gt;ボタンを押します。&lt;br&gt;
-&lt;br&gt;&lt;br&gt;
-&lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;接続が完了です。 画面上に「Download CSV 」のボタンはありますが使用で出来ません。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;ソースコードや動作の仕組みは、&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/1_p/basic/webbluetooth_iot&#34; target=&#34;_blank&#34;&gt;Web Bluetoothを使ったIoTアプリ入門&lt;/a&gt;に記載しています。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-
-
-&lt;div class=&#34;alert alert-primary&#34; role=&#34;alert&#34;&gt;
-&lt;h4 class=&#34;alert-heading&#34;&gt;次のステップ&lt;/h4&gt;
-プログラミングのためのパソコンの設定の仕方は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/&#34;&gt;開発環境設定&lt;/a&gt;に記載しています。
-&lt;/div&gt;
-
-&lt;h3 id=&#34;linuxの場合&#34;&gt;Linuxの場合&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Linux上でWeb Bluetoothを有効にするために、&lt;a href=&#34;https://acassis.wordpress.com/2016/06/28/how-to-get-chrome-web-bluetooth-working-on-linux/&#34; target=&#34;_blank&#34;&gt;How to get Chrome Web Bluetooth working on Linux&lt;/a&gt;を参考に環境設定してください。&lt;br&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Google Chromeを開きます。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/WebBluetooth_for_Leafony_app/&#34; target=&#34;_blank&#34;&gt;Webアプリ&lt;/a&gt;を開きます。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Webアプリの&lt;code&gt;Connect&lt;/code&gt;ボタンを押して、&lt;code&gt;Leafony_AC02&lt;/code&gt;を選択し、&lt;code&gt;Pair&lt;/code&gt;ボタンを押します。&lt;br&gt;
-&lt;br&gt; 
-&lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;接続が完了です。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;ソースコードや動作の仕組みは、&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/1_p/basic/webbluetooth_iot&#34; target=&#34;_blank&#34;&gt;Web Bluetoothを使ったIoTアプリ入門&lt;/a&gt;に記載しています。&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;Webアプリを開きます。&lt;/li&gt;
+&lt;li&gt;ソースコードや動作の仕組みは、Web Bluetoothを使ったIoTアプリ入門に記載しています。&lt;/li&gt;
 &lt;/ol&gt;
 
 
@@ -285,10 +229,7 @@
 &lt;p&gt;Windows 10 version 1703以降&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;iPhone、またはiPadは、&lt;a href=&#34;https://itunes.apple.com/us/app/webble/id1193531073&#34; target=&#34;_blank&#34;&gt;WebBLE&lt;/a&gt;のアプリが必要です。&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Kernel 3.19+ and BlueZ 5.41+ installed.&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Kernel 3.19+ and BlueZ 5.41+ installed.&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
