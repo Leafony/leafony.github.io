@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.28e49b080e94d44f055f470606d516b7e7c92b676782ea8a7f75b0e36dc53fe36a0d0ef74850574c50ecb01fbfdc7e1e9af8641cf35e5e4807d15fb82e3a982b.json"
+  data-offline-search-index-json-src="/offline-search-index.bfe2d611e33b3654e7064b8cb854310eea907a5ecd11bc2388d94ae1c30449b097343cd275c4a14d67652989ee5bb1a719327efa89fd6c0ed84f4a1bc9b5a8d5.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.28e49b080e94d44f055f470606d516b7e7c92b676782ea8a7f75b0e36dc53fe36a0d0ef74850574c50ecb01fbfdc7e1e9af8641cf35e5e4807d15fb82e3a982b.json"
+  data-offline-search-index-json-src="/offline-search-index.bfe2d611e33b3654e7064b8cb854310eea907a5ecd11bc2388d94ae1c30449b097343cd275c4a14d67652989ee5bb1a719327efa89fd6c0ed84f4a1bc9b5a8d5.json"
   data-offline-search-base-href="/"
 >
 
@@ -3543,10 +3543,10 @@ if (!doNotTrack) {
 	<h1>Basic Kit 2 スタートガイド</h1>
         <div class="lead">Bluetoothで環境センシング</div>
 	
-	<p><img src="Example_Keio_v4_4.png" alt="Example_Keio_v4_4.png">
-Basic Kit 2は、Basic Kitに<a href="/docs/leaf/processor/ap03/">STM32 MCUリーフ</a>を追加したキットです。STM32 MCUリーフには、センシングしたデータをクラウドにアップしたり、メモリにデータを保存(最大169サンプル)出来るソフトウェアをプレインストールしてあります。また、保存したデータは、Web Applicationで、グラフを作成することができます。</p>
+	<p><img src="Example_Keio_v4_5.png" alt="Example_Keio_v4_5.png">
+Basic Kit 2は、Basic Kitに<a href="/docs/leaf/processor/ap03/">STM32 MCUリーフ</a>を追加したキットです。STM32 MCUリーフには、センシングしたデータをクラウドにアップしたり、メモリにデータを保存出来るソフトウェアをプレインストールしてあります。また、保存したデータは、Web Applicationで、グラフを作成したり、データを表示させたりすることができます。</p>
 <h1 id="web-application">Web Application</h1>
-<p>Web Applicationは、Leafony blockのデータ(最大169サンプル)をグラフにしたり、センシングしたデータを表示させることが出来ます。web Applicationは、web bluetoothを使っていますので対応のブラウザに制限があります。</p>
+<p>Web Applicationは、Leafony blockのデータ(最大169サンプル)をグラフにしたり、センシングしたデータを表示させること(Android のみ)が出来ます。web Applicationは、web bluetoothを使っていますので対応のブラウザに制限があります。</p>
 <h3 id="web-bluetoothの注意点">Web Bluetoothの注意点</h3>
 <p>2021年8月時点ではWeb Bluetoothは以下の点に注意しなければいけません。</p>
 <ul>
@@ -3562,12 +3562,12 @@ Basic Kit 2は、Basic Kitに<a href="/docs/leaf/processor/ap03/">STM32 MCUリ�
 </ul>
 <h2 id="セットアップ">セットアップ</h2>
 <ol>
-<li>Leafomny blockのAVC MCUをSTM32 MCUに交換します。
-</br></li>
-</ol>
-<p><img src="STM32_4-Sensors.png" alt="STM32_4-Sensors.png">
+<li>
+<p>Leafomny blockのAVC MCUをSTM32 MCUに交換します。
+</br>
+<img src="STM32_4-Sensors.png" alt="STM32_4-Sensors.png">
 <br></p>
-<ol start="2">
+</li>
 <li>
 <p>Leafony blockに、CR2032コイン電池を入れ、電源スイッチをONにします。
 <br> 
@@ -3575,15 +3575,21 @@ Basic Kit 2は、Basic Kitに<a href="/docs/leaf/processor/ap03/">STM32 MCUリ�
 <br></p>
 </li>
 <li>
-<p>STM32 MCUリーフの<code>プログラムスイッチ</code>を、Run側します。</br>
+<p>STM32 MCUリーフの<code>プログラムスイッチ</code>を、Runにします。</br>
 <a href="/docs/leaf/processor/ap03/ap03_tips.jpg"><img src="/docs/leaf/processor/ap03/ap03_tips.jpg" width="450"></a></p>
 </li>
 </ol>
 <h2 id="使い方">使い方</h2>
 <ol>
-<li>Google Chromeを開きます。</li>
-<li>Webアプリを開きます。</li>
-<li>ソースコードや動作の仕組みは、Web Bluetoothを使ったIoTアプリ入門に記載しています。</li>
+<li>
+<p>Google Chromeを開きます。</p>
+</li>
+<li>
+<p><a href="https://docs.leafony.com/Sample-Sketches/STM32_Logger_Beacon/sample_web_app/lescan/" target="_blank">Webアプリ</a>を開きます。</p>
+</li>
+<li>
+<p>ソースコードや動作の仕組みは、<a href="https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_logger_ble_beacon/" target="_blank">STM32 Logger Beacon</a>に記載しています。</p>
+</li>
 </ol>
 
 
@@ -3622,7 +3628,7 @@ Basic Kit 2は、Basic Kitに<a href="/docs/leaf/processor/ap03/">STM32 MCUリ�
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 8, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 9, 2021
 </div>
 </div>
 
