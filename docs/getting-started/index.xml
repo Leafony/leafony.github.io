@@ -173,7 +173,11 @@ Basic Kit 2は、Basic Kitに&lt;a href=&#34;https://docs.leafony.com/docs/leaf/
 &lt;p&gt;2021年8月時点ではWeb Bluetoothは以下の点に注意しなければいけません。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;iPhoneのChromeでは動作しません。&lt;a href=&#34;https://apps.apple.com/jp/app/webble/id1193531073&#34; target=&#34; blank&#34;&gt;WebBLE&lt;/a&gt;という有料のアプリは利用出来ません。&lt;/li&gt;
-&lt;li&gt;センシングデータを表示出来るのは、Andoroid のみです。&lt;/li&gt;
+&lt;li&gt;センシングデータを表示出来るのは、Andoroid のみです。Google Chromeを開き、
+&lt;code&gt;アドレスバー&lt;/code&gt;に、下記URLを入力し、Enabledにして下さい。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;　　&lt;code&gt;chrome://flags/#enable-experimental-web-platform-features&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
 &lt;li&gt;Web Bluetoothの開発状況と対応ブラウザについては&lt;a href=&#34;https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md&#34; target=&#34; blank&#34;&gt;implementation-status.md&lt;/a&gt;で確認できます。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
