@@ -68,7 +68,7 @@
 &lt;img src=&#34;./stm32boards1.png&#34; width=&#34;640&#34;&gt;&lt;/img&gt;&lt;/br&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;ツール → Board part number→ Leafony STM32 MCU&lt;/code&gt; をクリックします。&lt;/br&gt;&lt;/br&gt;
+&lt;p&gt;&lt;code&gt;ツール → Board part number→ Leafony STM32 MCU&lt;/code&gt; をクリックします。Arduino IDEのデフォルトは、80MHzですが、低消費電力でご使用頂くため、クロックを16MHzに落としたボードも用意しています。&lt;/br&gt;&lt;/br&gt;
 &lt;img src=&#34;./stm32boards2.png&#34; width=&#34;640&#34;&gt;&lt;/img&gt;&lt;/br&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -76,14 +76,14 @@
 &lt;img src=&#34;./stm32boards3.png&#34; width=&#34;640&#34;&gt;&lt;/img&gt;&lt;/br&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;ツール → シリアルポート&lt;/code&gt;から、Leafonyが接続されているシリアルポートを選択します。&lt;/br&gt;&lt;/br&gt;
+&lt;p&gt;&lt;code&gt;ツール → シリアルポート&lt;/code&gt;から、Leafonyが接続されているシリアルポートを選択します。シリアルポートが選択出来ない場合は、&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/solution/#シリアルポートが見つからない&#34; target=&#34;_blank&#34;&gt;シリアルポートが見つからない&lt;/a&gt;を参照して下さい。&lt;/br&gt;&lt;/br&gt;
 &lt;img src=&#34;./stm32serial.jpg&#34; width=&#34;640&#34;&gt;&lt;/br&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;マイコンボードの動作確認&#34;&gt;マイコンボードの動作確認&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;STM32 MCUリーフの&lt;code&gt;プログラムスイッチ&lt;/code&gt;を、プログラム側にするとLEDが点灯します。&lt;/br&gt;
+&lt;p&gt;STM32 MCUリーフの&lt;code&gt;プログラムスイッチ&lt;/code&gt;を、プログラム側LED消灯)にして、次に&lt;code&gt;リセットスイッチ&lt;/code&gt;を押します。&lt;/br&gt;
 &lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_tips.jpg&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_tips.jpg&#34; width=&#34;450&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;

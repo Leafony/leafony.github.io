@@ -56,9 +56,9 @@
 &lt;img src=&#34;./IDE_ATmega.jpg&#34; width=&#34;640&#34;&gt;
 &lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;&lt;code&gt;ツール → シリアルポート&lt;/code&gt;から、Leafonyが接続されているシリアルポートを選択します。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ツール → シリアルポート&lt;/code&gt;から、Leafonyが接続されているシリアルポートを選択します。シリアルポートが選択出来ない場合は、&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/solution/#シリアルポートが見つからない&#34; target=&#34;_blank&#34;&gt;シリアルポートが見つからない&lt;/a&gt;を参照して下さい。&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;./IDE_COM.jpg&#34; width=&#34;640&#34;&gt;
+&lt;p&gt;&lt;img src=&#34;./IDE_COM.jpg&#34; width=&#34;640&#34;&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;マイコンボードの動作確認&#34;&gt;マイコンボードの動作確認&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Arduino IDEを起動し、&lt;code&gt;ファイル → スケッチ例 → 01.Basics → Blink&lt;/code&gt;をクリックし、サンプルアプリを開きます。&lt;/li&gt;

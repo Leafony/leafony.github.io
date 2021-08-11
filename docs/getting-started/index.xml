@@ -166,9 +166,9 @@
         
         
         &lt;p&gt;&lt;img src=&#34;Example_Keio_v4_5.png&#34; alt=&#34;Example_Keio_v4_5.png&#34;&gt;
-Basic Kit 2は、Basic Kitに&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/&#34;&gt;STM32 MCUリーフ&lt;/a&gt;を追加したキットです。STM32 MCUリーフには、センシングしたデータをクラウドにアップしたり、メモリにデータを保存出来るソフトウェアをプレインストールしてあります。また、保存したデータは、Web Applicationで、グラフを作成したり、データを表示させたりすることができます。&lt;/p&gt;
-&lt;h1 id=&#34;web-application&#34;&gt;Web Application&lt;/h1&gt;
-&lt;p&gt;Web Applicationは、Leafony blockのデータ(最大169サンプル)をグラフにしたり、センシングしたデータを表示させること(Android のみ)が出来ます。web Applicationは、web bluetoothを使っていますので対応のブラウザに制限があります。&lt;/p&gt;
+Basic Kit 2は、Basic Kitに&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/&#34;&gt;STM32 MCUリーフ&lt;/a&gt;を追加したキットです。STM32 MCUリーフには、センシングしたデータをクラウドにアップしたり、メモリにデータを保存出来るソフトウェアをプレインストールしてあります。また、保存したデータは、Web Bluetoothで、グラフを作成したり、データを表示させたりすることができます。&lt;/p&gt;
+&lt;h1 id=&#34;web-bluetooth&#34;&gt;Web Bluetooth&lt;/h1&gt;
+&lt;p&gt;Web Bluetoothは、Leafony blockのデータ(最大169サンプル)をグラフにしたり、センシングしたデータを表示させること(Android のみ)が出来ます。ただし、対応のブラウザに制限がありますので、注意して下さい。&lt;/p&gt;
 &lt;h3 id=&#34;web-bluetoothの注意点&#34;&gt;Web Bluetoothの注意点&lt;/h3&gt;
 &lt;p&gt;2021年8月時点ではWeb Bluetoothは以下の点に注意しなければいけません。&lt;/p&gt;
 &lt;ul&gt;
@@ -381,17 +381,18 @@ Basic Kit 2は、Basic Kitに&lt;a href=&#34;https://docs.leafony.com/docs/leaf/
 &lt;a href=&#34;./assembly.png&#34;&gt;&lt;img src=&#34;./assembly.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;シリアルポートが見つからない&#34;&gt;シリアルポートが見つからない&lt;/h2&gt;
-&lt;p&gt;Arduino IDEでLeafonyのシリアルポートが見つからない場合は、以下の項目をチェックしてください。&lt;/p&gt;
+&lt;p&gt;Leafonyのシリアルポートが見つからない場合は、以下の項目をチェックしてください。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;USBケーブルが故障していないか。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;USBシリアル変換IC(FT232)のドライバがインストールされているか。最新のWindowsやMacのOSには、USBシリアル変換IC(FT232)のドライバがインストールされています。無い場合は、以下のマニュアルに参照して、インストールしてください。&lt;/p&gt;
+&lt;p&gt;USBシリアル変換IC(FT232)のドライバがインストールされていないと、シリアルポートは見つかりません。最新のMac OSの場合は、問題ありませんが、Windowsの場合、自動インストールされないことがあります。インストールの仕方は、以下のFTDI社のマニュアル等を参照して下さい。&lt;/br&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://ftdichip.com/drivers/vcp-drivers/&#34;&gt;VCP Drivers&lt;/a&gt;&lt;br&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://ftdichip.com/document/installation-guides/&#34;&gt;Installation Guides&lt;/a&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.monoxit.com/tecmat/windowsftdiusb/&#34;&gt;WindowsパソコンにFTDI社製USBシリアルドライバを手動インストールする手順&lt;/a&gt;&lt;/br&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;USB2芯 電源ケーブルは、使用出来ません。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
