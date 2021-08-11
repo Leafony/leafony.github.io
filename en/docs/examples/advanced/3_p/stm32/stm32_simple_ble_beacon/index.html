@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.87.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.cfe8a2da0ff6f443316d36378cbaa96fca68bf818864a81455a69594df62d354055ae5601020be2743521c09e76aa81da4e23e9b3cc6a152c2c0be547c880ac3.json"
+  data-offline-search-index-json-src="/offline-search-index.2e42e8e8dfff3582b099fc41c3282d303fd9d65d31dad7170507d7589a24e47d8c53556d70965f61bca3b660029fb6f895a9f0b3db84f6d7128e8c018017861f.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.cfe8a2da0ff6f443316d36378cbaa96fca68bf818864a81455a69594df62d354055ae5601020be2743521c09e76aa81da4e23e9b3cc6a152c2c0be547c880ac3.json"
+  data-offline-search-index-json-src="/offline-search-index.2e42e8e8dfff3582b099fc41c3282d303fd9d65d31dad7170507d7589a24e47d8c53556d70965f61bca3b660029fb6f895a9f0b3db84f6d7128e8c018017861f.json"
   data-offline-search-base-href="/"
 >
 
@@ -3481,7 +3481,7 @@ Send the string &ldquo;HELLO BEACON&rdquo; for a period of time, then repeat the
 <p>The <code>adv_data[]</code> array is the Advertising data. As described in the comments, this array is the data that connects the chunks of data <code>AD Structure 1</code> to <code>AD Structure 3</code>. The contents of these data will be described later.</p>
 <p>Register <code>adv_data</code> to the BLE leaf with <code>ble112.ble_cmd_le_gap_set_adv_data()</code> and run <code>ble112.checkActivity()</code> to wait for the signal from the BLE leaf side that the registration is completed.</p>
 <p>By running <code>ble112.ble_cmd_le_gap_start_advertising()</code>, BLE will start Advertising and start broadcasting the Advertising data that you just set. By setting <code>LE_GA_SCANNABLE_NON_CONNECTALBE</code>, the BLE Client side can scan the Advertising data, but it is not allowed to establish a connection with this device. This setting is to save power by reducing the processing of the events that occur when a connection request comes in.</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">StartAdvData</span><span style="color:#000;font-weight:bold">()</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">StartAdvData</span><span style="color:#000;font-weight:bold">()</span>
 <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#8f5902;font-style:italic">// Advertising data; 25byte MAX
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.87.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.cfe8a2da0ff6f443316d36378cbaa96fca68bf818864a81455a69594df62d354055ae5601020be2743521c09e76aa81da4e23e9b3cc6a152c2c0be547c880ac3.json"
+  data-offline-search-index-json-src="/offline-search-index.2e42e8e8dfff3582b099fc41c3282d303fd9d65d31dad7170507d7589a24e47d8c53556d70965f61bca3b660029fb6f895a9f0b3db84f6d7128e8c018017861f.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.cfe8a2da0ff6f443316d36378cbaa96fca68bf818864a81455a69594df62d354055ae5601020be2743521c09e76aa81da4e23e9b3cc6a152c2c0be547c880ac3.json"
+  data-offline-search-index-json-src="/offline-search-index.2e42e8e8dfff3582b099fc41c3282d303fd9d65d31dad7170507d7589a24e47d8c53556d70965f61bca3b660029fb6f895a9f0b3db84f6d7128e8c018017861f.json"
   data-offline-search-base-href="/"
 >
 
@@ -2385,10 +2385,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/advanced/3_p/stm32/stm32_person_detection/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+    <a  href="/docs/examples/advanced/3_p/stm32/stm32_webbluetooth_iot/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
   </li>
   <ul>
-    <li class="collapse " id="docsexamplesadvanced3_pstm32stm32_person_detection">
+    <li class="collapse " id="docsexamplesadvanced3_pstm32stm32_webbluetooth_iot">
       
       
       
@@ -2408,10 +2408,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/advanced/3_p/stm32/stm32_webbluetooth_iot/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+    <a  href="/docs/examples/advanced/3_p/stm32/stm32_simple_ble_beacon/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"> </a>
   </li>
   <ul>
-    <li class="collapse " id="docsexamplesadvanced3_pstm32stm32_webbluetooth_iot">
+    <li class="collapse show" id="docsexamplesadvanced3_pstm32stm32_simple_ble_beacon">
       
       
       
@@ -2454,10 +2454,33 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/advanced/3_p/stm32/stm32_simple_ble_beacon/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"> </a>
+    <a  href="/docs/examples/advanced/3_p/stm32/stm32_google_sheets_iot/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
   </li>
   <ul>
-    <li class="collapse show" id="docsexamplesadvanced3_pstm32stm32_simple_ble_beacon">
+    <li class="collapse " id="docsexamplesadvanced3_pstm32stm32_google_sheets_iot">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/3_p/stm32/stm32_person_detection/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced3_pstm32stm32_person_detection">
       
       
       
@@ -3596,7 +3619,7 @@ if (!doNotTrack) {
 <p><code>adv_data[]</code>配列がAdvertising dataです。この配列はコメントに記載されているように、<code>AD Structure 1</code>～<code>AD Structure 3</code>というデータの塊を繋げたデータとなっています。これらのデータの内容については後述します。</p>
 <p><code>ble112.ble_cmd_le_gap_set_adv_data()</code>で<code>adv_data</code>をBLEリーフに登録し、BLEリーフ側から登録完了の信号が来るのを待つために、<code>ble112.checkActivity()</code>を実行しています。</p>
 <p><code>ble112.ble_cmd_le_gap_start_advertising()</code>を実行することで、BLEがAdvertisingを開始して、先程設定したAdvertising dataをブロードキャストし始めます。<code>LE_GA_SCANNABLE_NON_CONNECTALBE</code>を設定したことで、BLE Client側はAdvertising dataをスキャンすることはできますが、このデバイスと接続を確立することは禁止しています。これは、接続要求が来た場合に発生するイベントの処理を減らして電力を削減するための設定です。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">StartAdvData</span><span style="color:#000;font-weight:bold">()</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">StartAdvData</span><span style="color:#000;font-weight:bold">()</span>
 <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#8f5902;font-style:italic">// Advertising data; 25byte MAX
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
@@ -3944,12 +3967,14 @@ if (!doNotTrack) {
         
             
         
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 3, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 11, 2021
 </div>
 </div>
 
