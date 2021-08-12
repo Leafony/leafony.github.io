@@ -223,7 +223,7 @@ Visual Studio Codeの強力なプラグインを活用し、より快適な開�
 &lt;li&gt;任意のプロジェクト名を指定し、&lt;code&gt;Board&lt;/code&gt;で適切なボードを選択。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;src&lt;/code&gt;フォルダに含まれる&lt;code&gt;main.cpp&lt;/code&gt;を開き、以下のコードを貼り付け。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;Arduino.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;Arduino.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
   &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// LEDピンを出力ピンに設定

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.87.0" />
+<meta name="generator" content="Hugo 0.85.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8144d384c82deb749effa2f9ba5f7f50a3e4cad2025db0a793e5a7d684bdcd9494e5dcc33715ed5785a8cd29db91ddee0deb97fdac5a9372a45e1aceb123c8d6.json"
+  data-offline-search-index-json-src="/offline-search-index.768e2df379fd0a8b3c3b29e98309ba9df2d69952d720b390a7a7c5f9c2f4012187f075ce126127a4058c6af15c5cd2bbb145d29e9671dd45834d672c2334c699.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8144d384c82deb749effa2f9ba5f7f50a3e4cad2025db0a793e5a7d684bdcd9494e5dcc33715ed5785a8cd29db91ddee0deb97fdac5a9372a45e1aceb123c8d6.json"
+  data-offline-search-index-json-src="/offline-search-index.768e2df379fd0a8b3c3b29e98309ba9df2d69952d720b390a7a7c5f9c2f4012187f075ce126127a4058c6af15c5cd2bbb145d29e9671dd45834d672c2334c699.json"
   data-offline-search-base-href="/"
 >
 
@@ -3489,7 +3489,7 @@ Let’s write a program in Leafony and make it work!
 <li>Launch the Arduino.</li>
 <li>Paste the following sample code into your code editor.</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//*****************************
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//*****************************
 </span><span style="color:#8f5902;font-style:italic">// ボタン入力の状態をシリアルモニタに表示するサンプル
 </span><span style="color:#8f5902;font-style:italic">//*****************************
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">pushButton</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
@@ -3521,7 +3521,7 @@ Let’s write a program in Leafony and make it work!
 <h4 id="制限事項">制限事項</h4>
 <p>※1：Output cannot be set</br>
 ※2：①For UART1, the pin number is set to RX=26 and TX=25. For UART0 and UART2, the pin number is not specified.</br></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">HardwareSerial</span> <span style="color:#000">Serial1</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// UART1 (RX=9, TX=10)
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">HardwareSerial</span> <span style="color:#000">Serial1</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// UART1 (RX=9, TX=10)
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#000">Serial1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">9600</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">SERIAL_8N1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">26</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">25</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// ピンを変更 (RX=26, TX=25)
