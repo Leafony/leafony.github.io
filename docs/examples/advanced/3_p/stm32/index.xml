@@ -355,24 +355,19 @@ LeafonyはWebアプリ側からの応答を待ち、&lt;code&gt;get&lt;/code&gt;
         
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;Leafony blockは、センシングデータをBeacon&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;の電波で飛ばします。Raspberry Piがbeaconの電波を受け、インターネット経由でGoogle スプレッドシートに書かせます。&lt;/p&gt;
+&lt;p&gt;Leafony blockは、センシングデータをBeacon&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;の電波で飛ばします。beaconの電波をRaspberry Piが受け、インターネット経由でGoogle スプレッドシートに書かせて、データの可視化が出来ます。&lt;/p&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Basic Kit 2&lt;/li&gt;
 &lt;li&gt;Raspberry Pi 3B等&lt;/li&gt;
-&lt;li&gt;ブラウザが閲覧できるPCやスマホ&lt;/li&gt;
+&lt;li&gt;ブラウザが閲覧できるパソコンやスマホ&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;システム構成&#34;&gt;システム構成&lt;/h2&gt;
-&lt;p&gt;Leafony block、Raspbery Pi、インターネット、そして、Google スプレットシートだけで、センシングしたデータを可視化出来ます。システム構成図を以下に記します。また、Leafony blockは、Basic Kit 2 スタートガイドで使用したものとスケッチ含め全く一緒です。&lt;/p&gt;
+&lt;p&gt;Leafony block、Raspbery Pi、インターネット、そして、Google スプレットシートだけで、センシングしたデータを可視化出来ます。システム構成図を以下に記します。また、Leafony blockは、Basic Kit 2 スタートガイドで使用したものとスケッチ含め一緒です。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./gs_about.jpg&#34; alt=&#34;gs_about&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;raspberry-pi&#34;&gt;Raspberry Pi&lt;/h2&gt;
-&lt;h3 id=&#34;準備&#34;&gt;準備&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Raspberry Pi 初めての方は、&lt;a href=&#34;https://www.switch-science.com/catalog/3880/&#34; target=&#34;blank&#34;&gt;Raspberry Pi 3 B＋ スターターキット2&lt;/a&gt; が便利です。Raspbian OSイメージを書き込んだmicroSDが入っていますが、ディスプレイ、キーボード、マウスは有りません。別途　ご用意してください。&lt;/li&gt;
-&lt;li&gt;Raspberry Pi は、無線LANでインターネットに接続します。こちらも事前にご用意してください。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;環境構築&#34;&gt;環境構築&lt;/h2&gt;
-&lt;p&gt;BLE Beaconの受信機にはRaspberry Piを使います。今回使用するサンプルコードでは、Node.jsでnobleを使ってBLE Beaconを受信します。受信したデータはGoogle API経由でGoogle スプレッドシートに書き込んでいます。&lt;/p&gt;
+&lt;h2 id=&#34;raspberry-piの環境構築&#34;&gt;Raspberry Piの環境構築&lt;/h2&gt;
+&lt;p&gt;初めてRaspberry Piをご使用になる方は、&lt;a href=&#34;https://www.switch-science.com/catalog/3880/&#34; target=&#34;blank&#34;&gt;Raspberry Pi 3 B＋ スターターキット&lt;/a&gt; が便利です。Raspbian OSイメージを書き込んだmicroSDが入っています。Raspberry Pi は、無線LANでインターネットに接続して使用します。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;今回使用するサンプルコードでは、Node.jsでnobleを使ってBLE Beaconを受信します。受信したデータはGoogle API経由でGoogle スプレッドシートに書き込みます。&lt;/p&gt;
 &lt;p&gt;下記のスクリプト(6項目)を実行して環境構築をします。&lt;a href=&#34;https://github.com/Leafony/leafony-beacon/tree/master/spreadsheet-logger&#34; target=&#34;blank&#34;&gt;&lt;a href=&#34;https://github.com/Leafony/leafony-beacon/tree/master/spreadsheet-logger&#34;&gt;https://github.com/Leafony/leafony-beacon/tree/master/spreadsheet-logger&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;sudo apt update
 sudo apt upgrade
@@ -382,16 +377,26 @@ git clone https://github.com/Leafony/leafony-beacon
 npm install
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;注意:WARNINGと表示されますが、このまま進んでください。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./gs_pi_1.png&#34; alt=&#34;gs_pi_1&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;google-sheets-apiの取得&#34;&gt;Google Sheets APIの取得&lt;/h2&gt;
-&lt;p&gt;Google スプレットシートをNode.jsで操作するためにはAPIを取得する必要があります。まず、下記 Node.js Quick Start のStep.1で、  Enable the Google Sheets API をクリックし、credentials.jsonをダウンロードします。次に、credentials.jsonをleafony-beacon/spreadsheet-loggerディレクトリにコピーしてください。&lt;/p&gt;
+&lt;h2 id=&#34;google-スプレットシートのapiの取得&#34;&gt;Google スプレットシートのAPIの取得&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Google スプレットシートをNode.jsで操作するためには、APIを取得する必要があります。下記 Node.js Quick Start のStep.1で、  Enable the Google Sheets API をクリックし、credentials.jsonをダウンロードします。&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;Node.js Quickstart | Sheets API | Google Developers : &lt;a href=&#34;https://developers.google.com/sheets/api/quickstart/nodejs&#34; target=&#34; blank&#34;&gt;&lt;a href=&#34;https://developers.google.com/sheets/api/quickstart/nodejs&#34;&gt;https://developers.google.com/sheets/api/quickstart/nodejs&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;indexjs-へgoogle-sheetsのidとシート名の設定&#34;&gt;index.js へGoogle SheetsのIDとシート名の設定&lt;/h2&gt;
-&lt;p&gt;Google スプレッドシート を開いて、URLの赤線部分の「シートID」と「シート名」を確認します。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Raspberry Piのleafony-beacon/spreadsheet-loggerディレクトリに、credentials.jsonをコピーしてください。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;google-スプレッドシートのidと名前の設定&#34;&gt;Google スプレッドシートのIDと名前の設定&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Google スプレッドシート を開いて、URLの赤線部分の&lt;code&gt;spredsheetID&lt;/code&gt;と&lt;code&gt;sheetName&lt;/code&gt;を確認します。&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;./gs_pi_2.png&#34; alt=&#34;gs_pi_2&#34;&gt;
 &lt;img src=&#34;./gs_pi_3.png&#34; alt=&#34;gs_pi_3&#34;&gt;&lt;/p&gt;
-&lt;p&gt;leafony-beacon/spreadsheet-loggerディレクトリ「index.js」があります。「index.js」の18, 19行目にある「spreadsheetId」と「sheetName」に、上記の「シートID」と「シート名」を貼り付けることで、データが書き込まれます。&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Raspberry Piのleafony-beacon/spreadsheet-loggerディレクトリの「index.js」のファイルに、スプレッドシートのIDと名前を書き込みます。
+「index.js」の18, 19行目に上記の&lt;code&gt;spredsheetID&lt;/code&gt;と&lt;code&gt;sheetName&lt;/code&gt;を貼り付けて下さい。&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;./gs_pi_4.png&#34; alt=&#34;gs_pi_4&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;アプリの実行&#34;&gt;アプリの実行&lt;/h2&gt;
+&lt;h2 id=&#34;raspberry-pi-でbeaconの受信&#34;&gt;Raspberry Pi でBeaconの受信&lt;/h2&gt;
 &lt;p&gt;Raspberry piのターミナルに「sudo node .」と入力してEnterをクリックしてください。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./gs_pi_5.png&#34; alt=&#34;gs_pi_5&#34;&gt;&lt;/p&gt;
 &lt;p&gt;上記URLにブラウザでアクセスすると、Googleアカウントに移動し、ご自身のアカウントを選択します。&lt;/p&gt;
