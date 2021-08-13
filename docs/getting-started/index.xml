@@ -165,8 +165,8 @@
       <description>
         
         
-        &lt;p&gt;&lt;img src=&#34;Example_Keio_v4_5.png&#34; alt=&#34;Example_Keio_v4_5.png&#34;&gt;
-Basic Kit 2は、Basic Kitに&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/&#34;&gt;STM32 MCUリーフ&lt;/a&gt;を追加したキットです。STM32 MCUリーフには、センシングしたデータをクラウドにアップしたり、メモリにデータを保存出来るソフトウェアをプレインストールしてあります。また、保存したデータは、Web Bluetoothで、グラフを作成したり、データを表示させたりすることができます。&lt;/p&gt;
+        &lt;p&gt;&lt;img src=&#34;STM32_sakurai.png&#34; alt=&#34;STM32_sakurai.png&#34;&gt;&lt;/br&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;Basic Kit 2は、Basic Kitに&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/&#34;&gt;STM32 MCUリーフ&lt;/a&gt;を追加したキットです。STM32 MCUリーフには、センシングしたデータをクラウドにアップしたり、メモリにデータを保存出来るソフトウェアをプレインストールしてあります。また、保存したデータは、Web Bluetoothで、グラフを作成したり、データを表示させたりすることができます。&lt;/p&gt;
 &lt;h1 id=&#34;web-bluetooth&#34;&gt;Web Bluetooth&lt;/h1&gt;
 &lt;p&gt;Web Bluetoothは、Leafony blockのデータ(最大169サンプル)をグラフにしたり、センシングしたデータを表示させること(Android のみ)が出来ます。ただし、対応のブラウザに制限がありますので、注意して下さい。&lt;/p&gt;
 &lt;h3 id=&#34;web-bluetoothの注意点&#34;&gt;Web Bluetoothの注意点&lt;/h3&gt;
