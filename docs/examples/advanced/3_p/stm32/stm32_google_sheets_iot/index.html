@@ -21,14 +21,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>STM32でGoogle SheetsをつかったIoTサービス入門 | Leafony</title><meta property="og:title" content="STM32でGoogle SheetsをつかったIoTサービス入門" />
+<title>Google Sheetsを使ったIoTサービス | Leafony</title><meta property="og:title" content="Google Sheetsを使ったIoTサービス" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_google_sheets_iot/" /><meta property="og:site_name" content="Leafony" />
 
-<meta itemprop="name" content="STM32でGoogle SheetsをつかったIoTサービス入門">
+<meta itemprop="name" content="Google Sheetsを使ったIoTサービス">
 <meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="STM32でGoogle SheetsをつかったIoTサービス入門"/>
+<meta name="twitter:title" content="Google Sheetsを使ったIoTサービス"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a35b40946844e01c5544dd24e45d8ffa552279f730b8f6e4454889573c71326e879d8efebd2c4f943e69dfba8152e969464e35a41e235575221c894e51927a37.json"
+  data-offline-search-index-json-src="/offline-search-index.d50625f338a9f5d7e6ddd2b31efca6fd6d6e486ef4ef65a0a6ceda86890576276c506a229da7480649d05de53fcc9700077bb9c42c3818652105490a0643c5e7.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a35b40946844e01c5544dd24e45d8ffa552279f730b8f6e4454889573c71326e879d8efebd2c4f943e69dfba8152e969464e35a41e235575221c894e51927a37.json"
+  data-offline-search-index-json-src="/offline-search-index.d50625f338a9f5d7e6ddd2b31efca6fd6d6e486ef4ef65a0a6ceda86890576276c506a229da7480649d05de53fcc9700077bb9c42c3818652105490a0643c5e7.json"
   data-offline-search-base-href="/"
 >
 
@@ -3508,12 +3508,13 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#概要">概要</a></li>
     <li><a href="#用意するもの">用意するもの</a></li>
-    <li><a href="#サンプルアプリのコード">サンプルアプリのコード</a></li>
-    <li><a href="#raspberry-piの準備">Raspberry Piの準備</a></li>
-    <li><a href="#leafonyの構成">Leafonyの構成</a></li>
-    <li><a href="#leafonyの組み立て">Leafonyの組み立て</a></li>
-    <li><a href="#スケッチの書き込み">スケッチの書き込み</a></li>
-    <li><a href="#raspberry-piの環境構築">Raspberry Piの環境構築</a></li>
+    <li><a href="#システム構成">システム構成</a></li>
+    <li><a href="#raspberry-pi">Raspberry Pi</a>
+      <ul>
+        <li><a href="#準備">準備</a></li>
+      </ul>
+    </li>
+    <li><a href="#環境構築">環境構築</a></li>
     <li><a href="#google-sheets-apiの取得">Google Sheets APIの取得</a></li>
     <li><a href="#indexjs-へgoogle-sheetsのidとシート名の設定">index.js へGoogle SheetsのIDとシート名の設定</a></li>
     <li><a href="#アプリの実行">アプリの実行</a></li>
@@ -3593,93 +3594,27 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>STM32でGoogle SheetsをつかったIoTサービス入門</h1>
+	<h1>Google Sheetsを使ったIoTサービス</h1>
         
 	
 	<h2 id="概要">概要</h2>
-<p>Leafony Beacon1)とRaspberry Piとを使ってIoT環境センサを作り、Google スプレッドシートを使って、センサデータを可視化します。</p>
-<ol>
-<li>Beaconとは、地上にある電波を特定の機器で受信することで、位置をはじめとした各種情報を取得するための設備です。BluetoothのBeacon機器の場合、温度や気圧などのセンサを搭載したモジュールを任意の場所に設置して、その場所の環境を観測します。</li>
-</ol>
-<p><img src="gs_about.jpg" alt="about"></p>
+<p>Leafony blockは、センシングデータをBeacon<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>の電波で飛ばします。Raspberry Piがbeaconの電波を受け、インターネット経由でGoogle スプレッドシートに書かせます。</p>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
-<li>Leafony Basic Kit 2</li>
-<li>Raspberry Pi (3, 4, zero等)</li>
+<li>Basic Kit 2</li>
+<li>Raspberry Pi 3B等</li>
 <li>ブラウザが閲覧できるPCやスマホ</li>
-<li>Arduino IDE</li>
 </ul>
-<h2 id="サンプルアプリのコード">サンプルアプリのコード</h2>
-<ul>
-<li><a href="https://github.com/Leafony/leafony-beacon" target="blank">Github - Leafony/leafony-beacon</a></li>
-</ul>
-<h2 id="raspberry-piの準備">Raspberry Piの準備</h2>
+<h2 id="システム構成">システム構成</h2>
+<p>Leafony block、Raspbery Pi、インターネット、そして、Google スプレットシートだけで、センシングしたデータを可視化出来ます。システム構成図を以下に記します。また、Leafony blockは、Basic Kit 2 スタートガイドで使用したものとスケッチ含め全く一緒です。</p>
+<p><img src="./gs_about.jpg" alt="gs_about"></p>
+<h2 id="raspberry-pi">Raspberry Pi</h2>
+<h3 id="準備">準備</h3>
 <ul>
 <li>Raspberry Pi 初めての方は、<a href="https://www.switch-science.com/catalog/3880/" target="blank">Raspberry Pi 3 B＋ スターターキット2</a> が便利です。Raspbian OSイメージを書き込んだmicroSDが入っていますが、ディスプレイ、キーボード、マウスは有りません。別途　ご用意してください。</li>
 <li>Raspberry Pi は、無線LANでインターネットに接続します。こちらも事前にご用意してください。</li>
 </ul>
-<h2 id="leafonyの構成">Leafonyの構成</h2>
-<table>
-<thead>
-<tr>
-<th>Type</th>
-<th>Name</th>
-<th>Q&rsquo;ty</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="/docs/leaf/others/az62">AZ62</a></td>
-<td><a href="/docs/leaf/others/az62">Connector Cover</a></td>
-<td>1</td>
-</tr>
-<tr>
-<td><a href="/docs/leaf/io/ai01">AI01</a></td>
-<td><a href="/docs/leaf/io/ai01">4-Sensors</a></td>
-<td>1</td>
-</tr>
-<tr>
-<td><a href="/docs/leaf/others/az01">AZ01</a></td>
-<td><a href="/docs/leaf/others/az01">USB</a></td>
-<td>1</td>
-</tr>
-<tr>
-<td><a href="/docs/leaf/processor/ap03">AP03</a></td>
-<td><a href="/docs/leaf/processor/ap03">STM32 MCU</a></td>
-<td>1</td>
-</tr>
-<tr>
-<td><a href="/docs/leaf/communication/ac02">AC02</a></td>
-<td><a href="/docs/leaf/communication/ac02">BLE Sugar</a></td>
-<td>1</td>
-</tr>
-<tr>
-<td><a href="/docs/leaf/power/av01">AV01</a></td>
-<td><a href="/docs/leaf/power/av01">CR2032</a></td>
-<td>1</td>
-</tr>
-<tr>
-<td>-</td>
-<td>CR2032 coin cell battery</td>
-<td>1</td>
-</tr>
-<tr>
-<td>-</td>
-<td>M2*18mm screw</td>
-<td>2</td>
-</tr>
-</tbody>
-</table>
-<h2 id="leafonyの組み立て">Leafonyの組み立て</h2>
-<img src="./gs_assemble.png" width="350">
-<h2 id="スケッチの書き込み">スケッチの書き込み</h2>
-<ul>
-<li>書き込みには、BLE、4-Sensorsライブラリが必要です。予め、ライブラリをインクルードしておいてください。詳しくは、こちら。</li>
-<li>Arduino IDEで、以下のスケッチをマイコンボードに書き込んでください。
-・leafony_beacon.ino</li>
-<li>Arduino IDE 1.8.9で動作を確認しています。書き込みエラーが発生したら、IDEのバージョンを確認してください。</li>
-</ul>
-<h2 id="raspberry-piの環境構築">Raspberry Piの環境構築</h2>
+<h2 id="環境構築">環境構築</h2>
 <p>BLE Beaconの受信機にはRaspberry Piを使います。今回使用するサンプルコードでは、Node.jsでnobleを使ってBLE Beaconを受信します。受信したデータはGoogle API経由でGoogle スプレッドシートに書き込んでいます。</p>
 <p>下記のスクリプト(6項目)を実行して環境構築をします。<a href="https://github.com/Leafony/leafony-beacon/tree/master/spreadsheet-logger" target="blank"><a href="https://github.com/Leafony/leafony-beacon/tree/master/spreadsheet-logger">https://github.com/Leafony/leafony-beacon/tree/master/spreadsheet-logger</a></a></p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo apt update
@@ -3718,7 +3653,15 @@ npm install
 <p><img src="./gs_pi_12.png" alt="gs_pi_12"></p>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
-</p>
+</p><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>　Beaconとは、地上にある電波を特定の機器で受信することで、位置をはじめとした各種情報を取得するための設備です。BluetoothのBeacon機器の場合、温度や気圧などのセンサを搭載したモジュールを任意の場所に設置して、その場所の環境を観測します。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
         <div class="section-index">
     
     
@@ -4017,7 +3960,7 @@ npm install
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 11, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 13, 2021
 </div>
 </div>
 
