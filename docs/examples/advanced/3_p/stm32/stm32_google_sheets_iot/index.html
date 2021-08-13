@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4288c67c30e5cbd94322b8d994865d61a46df66c521787c685ed61ac8b05e35f63f286271805c83567e304de4702f4e23f136f7263537bed6c490d8d722c65aa.json"
+  data-offline-search-index-json-src="/offline-search-index.16b22c6ce3bc6d04d9073894e17580a4c401d44d897cfcb47b65958eafcca3d388f1fdd6833a08d5aeb76bcb718c35dc1ae0b18cfa9230873863e27e2896352d.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4288c67c30e5cbd94322b8d994865d61a46df66c521787c685ed61ac8b05e35f63f286271805c83567e304de4702f4e23f136f7263537bed6c490d8d722c65aa.json"
+  data-offline-search-index-json-src="/offline-search-index.16b22c6ce3bc6d04d9073894e17580a4c401d44d897cfcb47b65958eafcca3d388f1fdd6833a08d5aeb76bcb718c35dc1ae0b18cfa9230873863e27e2896352d.json"
   data-offline-search-base-href="/"
 >
 
@@ -3510,12 +3510,9 @@ if (!doNotTrack) {
     <li><a href="#用意するもの">用意するもの</a></li>
     <li><a href="#システム構成">システム構成</a></li>
     <li><a href="#raspberry-piの環境構築">Raspberry Piの環境構築</a></li>
-    <li><a href="#google-スプレットシートのapiの取得">Google スプレットシートのAPIの取得</a>
-      <ul>
-        <li><a href="#google-スプレッドシートのidと名前の設定">Google スプレッドシートのIDと名前の設定</a></li>
-      </ul>
-    </li>
-    <li><a href="#raspberry-pi-でbeaconの受信">Raspberry Pi でBeaconの受信</a></li>
+    <li><a href="#google-スプレットシートのapiの取得">Google スプレットシートのAPIの取得</a></li>
+    <li><a href="#google-スプレッドシートのidと名前の設定">Google スプレッドシートのIDと名前の設定</a></li>
+    <li><a href="#raspberry-pi-でbeaconの受信の仕方">Raspberry Pi でBeaconの受信の仕方</a></li>
   </ul>
 </nav>
 
@@ -3626,7 +3623,7 @@ npm install
 <ol start="2">
 <li>Raspberry Piのleafony-beacon/spreadsheet-loggerディレクトリに、credentials.jsonをコピーしてください。</li>
 </ol>
-<h3 id="google-スプレッドシートのidと名前の設定">Google スプレッドシートのIDと名前の設定</h3>
+<h2 id="google-スプレッドシートのidと名前の設定">Google スプレッドシートのIDと名前の設定</h2>
 <ol>
 <li>Google スプレッドシート を開いて、URLの赤線部分の<code>spredsheetID</code>と<code>sheetName</code>を確認します。</li>
 </ol>
@@ -3637,23 +3634,41 @@ npm install
 「index.js」の18, 19行目に上記の<code>spredsheetID</code>と<code>sheetName</code>を貼り付けて下さい。</li>
 </ol>
 <p><img src="./gs_pi_4.png" alt="gs_pi_4"></p>
-<h2 id="raspberry-pi-でbeaconの受信">Raspberry Pi でBeaconの受信</h2>
-<p>Raspberry piのターミナルに「sudo node .」と入力してEnterをクリックしてください。</p>
-<p><img src="./gs_pi_5.png" alt="gs_pi_5"></p>
-<p>上記URLにブラウザでアクセスすると、Googleアカウントに移動し、ご自身のアカウントを選択します。</p>
-<p><img src="./gs_pi_6.png" alt="gs_pi_6"></p>
-<p>「詳細」をクリックしてください。</p>
-<p><img src="./gs_pi_7.png" alt="gs_pi_7"></p>
-<p>「Leafony Beacon Logger「安全ではないページ」に移動」をクリックしてください。</p>
-<p><img src="./gs_pi_8.png" alt="gs_pi_8"></p>
-<p>「詳細」をクリックしてください。</p>
-<p><img src="./gs_pi_9.png" alt="gs_pi_9"></p>
-<p>「Leafony Beacon Logger「安全ではないページ」に移動」をクリックしてください。</p>
-<p><img src="./gs_pi_10.png" alt="gs_pi_10"></p>
-<p>「許可」をクリックしてください。以下のコードをコピーしてください。ターミナル内に貼り付けると、「token.json」というファイルが生成されたあとに、beaconのスキャンが始まります。</p>
-<p><img src="./gs_pi_11.png" alt="gs_pi_11"></p>
-<p>Beaconが見つかるとログが表示されると同時に、スプレッドシートに同じ内容が追記されるので、スプレッドシートを開いてデータを確認してください。</p>
-<p><img src="./gs_pi_12.png" alt="gs_pi_12"></p>
+<h2 id="raspberry-pi-でbeaconの受信の仕方">Raspberry Pi でBeaconの受信の仕方</h2>
+<ol>
+<li>
+<p>Raspberry piのターミナルに「sudo node .」と入力してEnterをクリックしてください。
+<img src="./gs_pi_5.png" alt="gs_pi_5"></p>
+</li>
+<li>
+<p>上記URLにブラウザでアクセスすると、Googleアカウントに移動し、ご自身のアカウントを選択します。
+<img src="./gs_pi_6.png" alt="gs_pi_6"></p>
+</li>
+<li>
+<p>「詳細」をクリックしてください。
+<img src="./gs_pi_7.png" alt="gs_pi_7"></p>
+</li>
+<li>
+<p>「Leafony Beacon Logger「安全ではないページ」に移動」をクリックしてください。
+<img src="./gs_pi_8.png" alt="gs_pi_8"></p>
+</li>
+<li>
+<p>「詳細」をクリックしてください。
+<img src="./gs_pi_9.png" alt="gs_pi_9"></p>
+</li>
+<li>
+<p>「Leafony Beacon Logger「安全ではないページ」に移動」をクリックしてください。
+<img src="./gs_pi_10.png" alt="gs_pi_10"></p>
+</li>
+<li>
+<p>「許可」をクリックしてください。以下のコードをコピーしてください。ターミナル内に貼り付けると、「token.json」というファイルが生成されたあとに、beaconのスキャンが始まります。
+<img src="./gs_pi_11.png" alt="gs_pi_11"></p>
+</li>
+<li>
+<p>Beaconが見つかるとログが表示されると同時に、スプレッドシートに同じ内容が追記されるので、スプレッドシートを開いてデータを確認してください。
+<img src="./gs_pi_12.png" alt="gs_pi_12"></p>
+</li>
+</ol>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
 </p><section class="footnotes" role="doc-endnotes">

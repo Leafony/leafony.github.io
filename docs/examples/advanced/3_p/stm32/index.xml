@@ -385,7 +385,7 @@ npm install
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;Raspberry Piのleafony-beacon/spreadsheet-loggerディレクトリに、credentials.jsonをコピーしてください。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;google-スプレッドシートのidと名前の設定&#34;&gt;Google スプレッドシートのIDと名前の設定&lt;/h3&gt;
+&lt;h2 id=&#34;google-スプレッドシートのidと名前の設定&#34;&gt;Google スプレッドシートのIDと名前の設定&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Google スプレッドシート を開いて、URLの赤線部分の&lt;code&gt;spredsheetID&lt;/code&gt;と&lt;code&gt;sheetName&lt;/code&gt;を確認します。&lt;/li&gt;
 &lt;/ol&gt;
@@ -396,23 +396,41 @@ npm install
 「index.js」の18, 19行目に上記の&lt;code&gt;spredsheetID&lt;/code&gt;と&lt;code&gt;sheetName&lt;/code&gt;を貼り付けて下さい。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;./gs_pi_4.png&#34; alt=&#34;gs_pi_4&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;raspberry-pi-でbeaconの受信&#34;&gt;Raspberry Pi でBeaconの受信&lt;/h2&gt;
-&lt;p&gt;Raspberry piのターミナルに「sudo node .」と入力してEnterをクリックしてください。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./gs_pi_5.png&#34; alt=&#34;gs_pi_5&#34;&gt;&lt;/p&gt;
-&lt;p&gt;上記URLにブラウザでアクセスすると、Googleアカウントに移動し、ご自身のアカウントを選択します。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./gs_pi_6.png&#34; alt=&#34;gs_pi_6&#34;&gt;&lt;/p&gt;
-&lt;p&gt;「詳細」をクリックしてください。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./gs_pi_7.png&#34; alt=&#34;gs_pi_7&#34;&gt;&lt;/p&gt;
-&lt;p&gt;「Leafony Beacon Logger「安全ではないページ」に移動」をクリックしてください。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./gs_pi_8.png&#34; alt=&#34;gs_pi_8&#34;&gt;&lt;/p&gt;
-&lt;p&gt;「詳細」をクリックしてください。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./gs_pi_9.png&#34; alt=&#34;gs_pi_9&#34;&gt;&lt;/p&gt;
-&lt;p&gt;「Leafony Beacon Logger「安全ではないページ」に移動」をクリックしてください。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./gs_pi_10.png&#34; alt=&#34;gs_pi_10&#34;&gt;&lt;/p&gt;
-&lt;p&gt;「許可」をクリックしてください。以下のコードをコピーしてください。ターミナル内に貼り付けると、「token.json」というファイルが生成されたあとに、beaconのスキャンが始まります。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./gs_pi_11.png&#34; alt=&#34;gs_pi_11&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Beaconが見つかるとログが表示されると同時に、スプレッドシートに同じ内容が追記されるので、スプレッドシートを開いてデータを確認してください。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./gs_pi_12.png&#34; alt=&#34;gs_pi_12&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;raspberry-pi-でbeaconの受信の仕方&#34;&gt;Raspberry Pi でBeaconの受信の仕方&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Raspberry piのターミナルに「sudo node .」と入力してEnterをクリックしてください。
+&lt;img src=&#34;./gs_pi_5.png&#34; alt=&#34;gs_pi_5&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;上記URLにブラウザでアクセスすると、Googleアカウントに移動し、ご自身のアカウントを選択します。
+&lt;img src=&#34;./gs_pi_6.png&#34; alt=&#34;gs_pi_6&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;「詳細」をクリックしてください。
+&lt;img src=&#34;./gs_pi_7.png&#34; alt=&#34;gs_pi_7&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;「Leafony Beacon Logger「安全ではないページ」に移動」をクリックしてください。
+&lt;img src=&#34;./gs_pi_8.png&#34; alt=&#34;gs_pi_8&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;「詳細」をクリックしてください。
+&lt;img src=&#34;./gs_pi_9.png&#34; alt=&#34;gs_pi_9&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;「Leafony Beacon Logger「安全ではないページ」に移動」をクリックしてください。
+&lt;img src=&#34;./gs_pi_10.png&#34; alt=&#34;gs_pi_10&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;「許可」をクリックしてください。以下のコードをコピーしてください。ターミナル内に貼り付けると、「token.json」というファイルが生成されたあとに、beaconのスキャンが始まります。
+&lt;img src=&#34;./gs_pi_11.png&#34; alt=&#34;gs_pi_11&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Beaconが見つかるとログが表示されると同時に、スプレッドシートに同じ内容が追記されるので、スプレッドシートを開いてデータを確認してください。
+&lt;img src=&#34;./gs_pi_12.png&#34; alt=&#34;gs_pi_12&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
 &lt;/p&gt;&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
