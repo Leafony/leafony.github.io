@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.04ba7769ec01cad776bd1fb630f9fd8cdf92f491199393ec9a9b985a51b6358455081dc4ce061e1d3e0cc08b446c534756ed03d77a729ba3d83b8475c7508065.json"
+  data-offline-search-index-json-src="/offline-search-index.da4b4735b922571f031d90fb5ff0642e882492864b45fd0d9df289ff466fc0c3aa013f51136bd99cc7a5413471635adddf3b923a1bc7831acceedc0fa78a5894.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.04ba7769ec01cad776bd1fb630f9fd8cdf92f491199393ec9a9b985a51b6358455081dc4ce061e1d3e0cc08b446c534756ed03d77a729ba3d83b8475c7508065.json"
+  data-offline-search-index-json-src="/offline-search-index.da4b4735b922571f031d90fb5ff0642e882492864b45fd0d9df289ff466fc0c3aa013f51136bd99cc7a5413471635adddf3b923a1bc7831acceedc0fa78a5894.json"
   data-offline-search-base-href="/"
 >
 
@@ -3518,6 +3518,7 @@ if (!doNotTrack) {
     <li><a href="#デモ動画">デモ動画</a></li>
     <li><a href="#セットアップ">セットアップ</a></li>
     <li><a href="#使い方">使い方</a></li>
+    <li><a href="#最後に">最後に</a></li>
   </ul>
 </nav>
 
@@ -3575,7 +3576,7 @@ STM32リーフにあらかじめ書き込まれているスケッチでは、IoT
 <li>そのデータをSTM32のマイコン内部のEEPROMに書き込むとともに、</li>
 <li>Bluetooth無線通信でデータを送信する</li>
 </ul>
-<p>これらの動作を超低電力で行えるように、下図のように双方向通信ができるconnection modeと超低電力なbeacon modeの2つのモードを使っています。一定時間間隔（デフォールト10秒、変更可能）でセンサデータを取得し、EEPROMにデータを蓄積するとともに、beacon modeでデータを一方的に送信します。Connection mode を使ってEEPROM内のセンサ蓄積データをPCやAndroidスマホに一括ダウンロードすることもできます。
+<p>これらの動作を超低電力で行えるように、上図のように双方向通信ができるconnection modeと超低電力なbeacon modeの2つのモードを使っています。一定時間間隔（デフォルト10秒、変更可能）でセンサデータを取得し、EEPROMにデータを蓄積するとともに、beacon modeでデータを一方的に送信します。Connection mode を使ってEEPROM内のセンサ蓄積データをPCやAndroidスマホに一括ダウンロードすることもできます。
 それでは、ビデオとwebを見ながら、新しいSTM32リーフをお試しください。</p>
 <h1 id="web-bluetooth">Web Bluetooth</h1>
 <p>Web Bluetoothは、Leafony blockのデータ(最大169サンプル)をグラフにしたり、センシングしたデータを表示させること(Android のみ)が出来ます。ただし、対応のブラウザに制限がありますので、注意して下さい。</p>
@@ -3627,10 +3628,10 @@ STM32リーフにあらかじめ書き込まれているスケッチでは、IoT
 <li>
 <p><a href="https://docs.leafony.com/Sample-Sketches/STM32_Logger_Beacon/sample_web_app/lescan/" target="_blank">Webアプリ</a>を開き、画面に従って操作を進めて頂くと、センサが測定開始し、センシングデータをグラフにしたり、データをスマホ(Androidのみ)で確認することが出来ます。</p>
 </li>
-<li>
-<p>ソースコードや動作の仕組みは、<a href="https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_logger_ble_beacon/" target="_blank">STM32 Logger Beacon</a>に記載しています。</p>
-</li>
 </ol>
+<h2 id="最後に">最後に</h2>
+<p>センサデータの取得間隔の変更は次の<code>初期設定の変更</code>を押して、行ってください。デフォルトは10秒になっています。計算値ではありますが、データ取得の時間間隔が数分以上であれば、CR2032コイン電池でも電力的には数か月動作すると考えられます。
+センサデータがダウンロードできれば、正常動作しています。Quickstartはここまでです。 詳しくは、<a href="https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_logger_ble_beacon/" target="_blank">STM32 Logger Beacon</a>に記載しています。</p>
 
 
 <div class="alert alert-primary" role="alert">
