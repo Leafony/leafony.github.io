@@ -109,19 +109,19 @@ Webアプリの使い方の詳細は&lt;a href=&#34;https://docs.leafony.com/doc
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Windows 10 version 1703以降&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Windows 10 version 1703以降 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;OS X Yosemite以降&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;OS X Yosemite以降 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Kernel 3.19+ and BlueZ 5.41+ installed.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Kernel 3.19+ and BlueZ 5.41+ installed. &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Android 6.0 Marshmallow以降&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Android 6.0 Marshmallow以降 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;iPhoneまたはiPadの場合は &lt;a href=&#34;https://itunes.apple.com/us/app/webble/id1193531073&#34; target=&#34;_brank&#34;&gt;WebBLE&lt;/a&gt;(有料)が必要です。iPhone、iPad版のChromeではWeb Bluetoothが実装されていないためです。&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;iPhoneまたはiPadの場合は &lt;a href=&#34;https://itunes.apple.com/us/app/webble/id1193531073&#34; target=&#34;_brank&#34;&gt;WebBLE&lt;/a&gt;(有料)が必要です。iPhone、iPad版のChromeではWeb Bluetoothが実装されていないためです。 &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
@@ -230,11 +230,19 @@ Webアプリの使い方の詳細は&lt;a href=&#34;https://docs.leafony.com/doc
         
         
         &lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;STM32リーフに搭載されたFlashメモリを使って、温湿度と測定時間を記録することが可能なBLE Beaconのサンプルデザインです。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;Beaconを用いた温湿度の測定方式では現在時刻での温湿度のみを知ることができ、これまでの測定値を知るためには、別途設置した受信機で常にBeaconの電波を受信し続ける必要がありました。&lt;br&gt;
-Beaconの電波は非常に弱く、発信時間も短いため、受信時に取りこぼしが発生することも多々あり、安定した測定をするためには不十分でした。&lt;br&gt;
-しかしながら本サンプルでは、STM32に搭載された不揮発メモリに測定記録を残すことができるため、万が一Beaconの電波を受信できなかったとしても、後からLeafonyに接続して、不揮発メモリに記録されたデータを取り出すことができます。&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;また、このサンプルではBeaconの受信とSTM32 Flashメモリに書き込まれたデータの読み出しがどちらも行えるWebアプリのサンプルも含まれています。&lt;/p&gt;
+&lt;p&gt;STM32リーフに搭載されたFlashメモリを使って、温湿度と測定時間を記録することが可能なBLE Beaconのサンプルデザインです。&lt;br&gt;
+STM32リーフとBLEリーフを使った、センサデータのログ機能付きの実用的なIoTシステムのサンプルデザインです。&lt;br&gt;
+このサンプルには下記の機能が実装されています。&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;温度、湿度、照度の観測&lt;/li&gt;
+&lt;li&gt;測定データをBLEのBeacon機能で送信&lt;/li&gt;
+&lt;li&gt;オンチップFlashに測定データを保存&lt;/li&gt;
+&lt;li&gt;リアルタイムクロックを使った測定時刻の保存&lt;/li&gt;
+&lt;li&gt;ブラウザアプリでデバイスの設定変更&lt;/li&gt;
+&lt;li&gt;ブラウザアプリで測定データの吸い出しとグラフ化&lt;/li&gt;
+&lt;li&gt;加速度センサを使った振動検知機能によるBLE送信モードの変更&lt;/li&gt;
+&lt;li&gt;低電力動作モードで半年以上の連続駆動&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;サンプルのソースコード&#34;&gt;サンプルのソースコード&lt;/h2&gt;
 &lt;p&gt;使用するスケッチやツールのソースコードは下記のリポジトリで閲覧可能です。&lt;/p&gt;
 &lt;ul&gt;
@@ -245,10 +253,22 @@ Beaconの電波は非常に弱く、発信時間も短いため、受信時に�
 &lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/Sample-Sketches/STM32_Logger_Beacon/sample_web_app/lescan/&#34; target=&#34;_blank&#34;&gt;STM32 Sensors Logger Webアプリケーション&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;対応環境&#34;&gt;対応環境&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows 10 Version 1703以降
+&lt;ul&gt;
+&lt;li&gt;Beacon機能は利用不可&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Mac OS X Yosemite以降&lt;/li&gt;
+&lt;li&gt;Android 6.0 Marshmallow以降&lt;/li&gt;
+&lt;li&gt;Linux Kernel 3.19+ 以降
+対応状況詳細は&lt;a href=&#34;https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md#scanning-api&#34; target=&#34;_brank&#34;&gt;Webbluetooth Implementation Status&lt;/a&gt;を御覧ください。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Leafony&lt;/li&gt;
-&lt;li&gt;Google ChromeがインストールされたAndroidスマートフォン または Mac&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Google Chrome&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
 &lt;table&gt;
@@ -303,7 +323,7 @@ Beaconの電波は非常に弱く、発信時間も短いため、受信時に�
 &lt;p&gt;STM32リーフにサンプルスケッチ&lt;code&gt;STM32_Logger_Beacon.ino&lt;/code&gt;を書き込んでください。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Androidスマートフォンで&lt;a href=&#34;https://docs.leafony.com/Sample-Sketches/STM32_Logger_Beacon/sample_web_app/lescan/&#34; target=&#34;_blank&#34;&gt;STM32 Sensors Logger Webアプリケーション&lt;/a&gt;を開いてださい。&lt;/p&gt;
+&lt;p&gt;Google Chromeで&lt;a href=&#34;https://docs.leafony.com/Sample-Sketches/STM32_Logger_Beacon/sample_web_app/lescan/&#34; target=&#34;_blank&#34;&gt;STM32 Sensors Logger Webアプリケーション&lt;/a&gt;を開いてださい。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;Start Scanning&lt;/code&gt;ボタンを押すと、Bluetooth利用許可を求めるポップアップウィンドウ表示されます。&lt;code&gt;許可&lt;/code&gt;を押すとBeaconの電波の受信を開始します。&lt;br&gt;
@@ -317,31 +337,105 @@ Leafonyから発されるBeaconの電波を受信すると、画面の温度/電
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;動作解説&#34;&gt;動作解説&lt;/h2&gt;
-&lt;p&gt;本サンプルの動作シーケンスは下図のとおりです。
-Webアプリ側からの接続要求が無い限り、LeafonyはBeaconモードでの動作をしたあとに一度本体電源を自ら落とし省電力化を図ります。
-その間、STM32内に含まれたリアルタイムクロックだけは動作を続けることができるため、一定時間を測定した後、STM32本体の電源を投入し、再度Beaconモードに移行します。&lt;/p&gt;
-&lt;p&gt;Beaconモードで動作中にWebアプリ側から接続要求があった場合、Connectモードに移行し、スケッチの&lt;code&gt;loop()&lt;/code&gt;関数に移行します。
-LeafonyはWebアプリ側からの応答を待ち、&lt;code&gt;get&lt;/code&gt;コマンドを受信すると直ちにメモリに保存されたセンサデータをBluetoothで送信します。&lt;/p&gt;
-&lt;img src=&#34;logger_beacon_02.jpg&#34;&gt;
-&lt;p&gt;STM32リーフには内部に不揮発性メモリ（Flashメモリ）が搭載されています。
-本サンプルでは、このFlashメモリをリングバッファとして扱います。
-下図のように、メモリの0番地と1番地にはリングバッファの読み出しアドレス記録しておくことにって、
-本体の電源が切れた後も、再度電源を入れ直せば測定を再開することが可能です。&lt;/p&gt;
-&lt;img src=&#34;logger_beacon_01_rb.jpg&#34;&gt;
+&lt;h3 id=&#34;回路全体のブロック図&#34;&gt;回路全体のブロック図&lt;/h3&gt;
+&lt;p&gt;本サンプルコードで利用する回路は下図のとおりです。&lt;/p&gt;
+&lt;p&gt;主にBLE、センサ、STM32リーフで構成され、特にSTM32リーフでは内部のRTC(リアルタイムクロック)とFlashを利用しています。&lt;/p&gt;
+&lt;p&gt;RTCは、BLEを経由してPCやスマートフォンから時刻を設定して使います。&lt;/p&gt;
+&lt;p&gt;Flashはプログラムメモリの保存以外に、末尾2kBをユーザがデータを保存できる領域として使うことができます。本サンプルでは、この領域にセンサデータと測定時刻を保存し、本体の電源が切れた後もデータを保持できる仕組みとなっています。&lt;/p&gt;
+&lt;p&gt;センサリーフからは温度、湿度、照度センサがSTM32によって読み出され、BLEでデータが送信されます。加速度センサは振動によって割り込み信号を発生し、STM32をスリープから復帰させる役割があります。&lt;/p&gt;
+&lt;img src=&#34;block.jpg&#34;&gt;
+&lt;h3 id=&#34;動作の流れ&#34;&gt;動作の流れ&lt;/h3&gt;
+&lt;p&gt;このサンプルコードでは主に以下の2つの動作モードが存在します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Beaconモード&lt;/li&gt;
+&lt;li&gt;Connectionモード&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Leafonyに電源を入れると、まず初めに本体の初期化を行なった後に&lt;strong&gt;Beaconモード&lt;/strong&gt;に入ります。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Beaconモード&lt;/strong&gt;では、通常は本体が長時間のスリープ状態に入り、一定時間が経過すると本体がスリープから復帰します。（このスリープ時間はユーザが任意に設定できます。)&lt;br&gt;
+本体がスリープから復帰すると、まずSTM32が起動し、センサを起動させ、温度、湿度、照度を測定します。&lt;br&gt;
+このとき、STM32に搭載されたリアルタイムクロックに時刻が設定されている場合、測定されたデータはSTM32に搭載されたFlashに保存されます。&lt;br&gt;
+その後、BLEリーフを起動し、Advertisingパケットにセンサデータを設定し、BLEリーフが一定期間Advertisingを開始します。&lt;br&gt;
+このAdvertisingパケットをウェブアプリで受信することで、温度、湿度、照度のデータをPCやスマートフォンで見ることができます。&lt;br&gt;
+一定期間のAdvertising後は即座に本体がスリープし、消費電力を最小に抑えます。&lt;br&gt;
+Beaconモードでの動作時間が長いほど、電池消費を抑えることが可能です。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Connectionモード&lt;/strong&gt;では、主にPCやスマートフォンでと双方向で通信して、スリープ時間やAdvertising時間を設定したり、Flashに保存されたデータの吸い出しを行い、ウェブアプリでグラフ化するための通信を行います。&lt;br&gt;
+このモードでは通信中、またはPCやスマートフォンと接続を確立するためのAdvertising期間、常に本体がアクティブ状態にあり、電池消費が大きくなります。&lt;br&gt;
+Connectionモードは、本体の時刻を設定するなどの初回起動時や、ある程度ログデータが溜まった後にデータを吸い出すといったような、利用シーンが限られてくるため、特定の条件でのみこのモードに入るよう設定されています。&lt;br&gt;
+このサンプルではConnectionモードに入るためには、&lt;strong&gt;Leafony本体を左右に強く振る&lt;/strong&gt;ことでConnectionモードに入ることができます。&lt;br&gt;
+これは、4-Sensorsリーフに搭載された加速度センサが、常に振動を観測し、振動を検知すると即座にSTM32リーフに割り込み信号を送信することで実現されています。&lt;/p&gt;
+&lt;img style=&#34;width: 100%;&#34; src=&#34;timediagram.jpg&#34;&gt;
+&lt;h3 id=&#34;動作モードの切り替え&#34;&gt;動作モードの切り替え&lt;/h3&gt;
+&lt;p&gt;BeaconモードとConnectionモードの切り替えには加速度センサによる割り込みを使います。&lt;br&gt;
+ウェブアプリでBluetoothデバイスを検出するためには、LeafonyがConnectionモードに切り替わり、最低でも数秒から数十秒程度の長い間BLEがAdvertisingする必要があります。&lt;br&gt;
+これを毎スリープからの復帰後に行なっていると電池消費が非常に大きくなってしまうため、BLEで接続したい時だけConnectionモードに入り長時間Advertisingさせたくなります。&lt;br&gt;
+今回はこれを加速度センサを使った振動検出割り込みで実現しました。&lt;/p&gt;
+&lt;p&gt;4-Sensorsに搭載された加速度センサは、振動(指で本体をタップする動作)を検出すると、STM32の&lt;code&gt;INT1ピン&lt;/code&gt;に割り込み信号を出します。&lt;br&gt;
+下記の記述で加速度センサのタップ検出を有効化し、その割り込みによってSTM32がスリープから復帰する仕組みを実現しています。&lt;br&gt;
+か速度センサの割り込みによって起動した場合のみConnectモードとして起動させることで、必要な時だけBLEで接続可能な仕組みを実現しました。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;accel&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;setClick&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;DOUBLETAP&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;CLICKTHRESHHOLD&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// enable click interrupt
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
+&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// enable interrupt from accelerometer click event
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LowPower&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;attachInterruptWakeup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;INT_1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;onClicked&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;RISING&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;DEEP_SLEEP_MODE&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;不揮発メモリのアドレスマップ&#34;&gt;不揮発メモリのアドレスマップ&lt;/h3&gt;
+&lt;p&gt;STM32リーフには内部に不揮発性メモリ（Flashメモリ）が搭載されています。&lt;br&gt;
+本サンプルでは、このFlashメモリを、ユーザ設定の保存と、測定データ保存用のリングバッファとして扱います。&lt;br&gt;
+下図のように、メモリの先頭からいくつかの番地には、スリープ時間や起動時間などのユーザ設定を保存する領域があります。&lt;br&gt;
+それらを除いた部分を、時刻とセンサのデータを保持するリングバッファとして扱います。&lt;br&gt;
+また、Flashに書き込まれているデータが、本サンプルスケッチによって書き込まれたものなのかを確かめるため、先頭2バイトに&lt;code&gt;0xAA&lt;/code&gt;という値を保存しています。&lt;br&gt;
+本サンプルではこの&lt;code&gt;0xAA&lt;/code&gt;が書き込まれていればいれば、保存されている設定を読み込み、書き込まれていなければ新規に初期値をFlashに保存するという動作をします。&lt;/p&gt;
+&lt;img src=&#34;ringbuffer.jpg&#34;&gt;
+&lt;h3 id=&#34;beacon送信データ&#34;&gt;Beacon送信データ&lt;/h3&gt;
+&lt;p&gt;Beaconモードで動作している場合、BLEはセンサのデータを含むAdvertisingパケットを送信しています。&lt;br&gt;
+Advertisingパケットの構造は次の図のように、&lt;code&gt;AD Structure&lt;/code&gt;というデータの塊が連なった形式となっています。&lt;br&gt;
+AD Structureはさらに細かく見ると、&lt;code&gt;Length&lt;/code&gt;:データの長さ、&lt;code&gt;AD Type&lt;/code&gt;:データの種類・意味、&lt;code&gt;AD Data&lt;/code&gt;:送信したいデータで構成されています。&lt;/p&gt;
+&lt;img src=&#34;adstructure.jpg&#34;&gt;
+&lt;p&gt;実際に本サンプルでは下記のコードのように、&lt;code&gt;AD Structure 1&lt;/code&gt;にAdvertisingのモード設定、&lt;code&gt;AD Structure 2&lt;/code&gt;にデバイス名、&lt;code&gt;AD Structure 3&lt;/code&gt;にセンサのデータを保存して送信しています。&lt;br&gt;
+Beaconで送信するデータを変更したい場合は&lt;code&gt;AD Structure 3&lt;/code&gt;を任意に変更してください。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L272-L302&#34;&gt;https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L272-L302&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//-------------------------
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Advertising Packet
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//-------------------------
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// AD Structure 1 (Flags)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;adv_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;index&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;++&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0x02&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;                    &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// field length
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;adv_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;index&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;++&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;BGLIB_GAP_AD_TYPE_FLAGS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// AD Type (Flags)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;adv_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;index&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;++&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;|&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;     &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// LE General Discover Mode | BR/EDR Not Supported
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// AD Structure 2 (Complete Local Name)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;adv_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;index&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;++&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;strDeviceName&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;           &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// field length
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;adv_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;index&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;++&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;BGLIB_GAP_AD_TYPE_LOCALNAME_COMPLETE&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// AD Type (Complete Local Name)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;for&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;uint8_t&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;i&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;strDeviceName&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;++&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+    &lt;span style=&#34;color:#000&#34;&gt;adv_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;index&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;++&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;strDeviceName&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;charAt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Local Name
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// AD Structure 3 (Manufacturer Specific Data)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;adv_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;index&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;++&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;9&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;    &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// field lengh
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;adv_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;index&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;++&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0xff&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// AD Type (Manufacturer Specific Data)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;adv_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;index&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;++&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;illum&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0xFF&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;    &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Illuminance (Upper)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;adv_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;index&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;++&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;illum&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0xFF&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;           &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Illuminance (Lower)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;adv_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;index&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;++&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;temp&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0xFF&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;     &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Temperature (Upper)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;adv_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;index&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;++&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;temp&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0xFF&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;            &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Temperature (Lower)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;adv_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;index&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;++&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;humid&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0xFF&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;    &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Humidity (Upper)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;adv_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;index&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;++&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;humid&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0xFF&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;           &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Humidity (Lower)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;adv_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;index&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;++&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;battVolt&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;8&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0xFF&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Battery Voltage (Upper)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;adv_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;index&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;++&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;battVolt&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0xFF&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;        &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Battery Boltage (Lower)
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
+  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// register advertising packet
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;stLen&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;index&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+  &lt;span style=&#34;color:#000&#34;&gt;ble112&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ble_cmd_le_gap_set_adv_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SCAN_RSP_ADVERTISING_PACKETS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;stLen&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;adv_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+  &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;while&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;ble112&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;checkActivity&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;));&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;センサの変更方法&#34;&gt;センサの変更方法&lt;/h3&gt;
+&lt;p&gt;本サンプルでは4-Sensorsリーフに搭載された、温度・湿度・照度センサ、バッテリーリーフに搭載されたADCを読み出す仕組みとなっています。&lt;br&gt;
+これらのセンサは、&lt;code&gt;setup()&lt;/code&gt;関数内の&lt;code&gt;setupSensors()&lt;/code&gt;関数で初期化し、&lt;code&gt;loop()&lt;/code&gt;関数内の&lt;code&gt;wakeupSensors()&lt;/code&gt;でスリープから復帰、&lt;code&gt;getSensors()&lt;/code&gt;でデータを取得、&lt;code&gt;sleepSensors()&lt;/code&gt;でスリープを行なっています。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L767-L771&#34;&gt;https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L767-L771&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;任意のセンサを追加したい場合はこれらの関数内に必要な処理を記述してください。&lt;/p&gt;
+&lt;h3 id=&#34;bleコマンドの変更方法&#34;&gt;BLEコマンドの変更方法&lt;/h3&gt;
+&lt;p&gt;BLEで接続したPCやスマートフォンからコマンドを送信してLeafony側の設定を変更したり、データの転送を開始したりすることができます。&lt;br&gt;
+下記のソースコードの部分でそのコマンドと処理を記述しています。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L934-L1107&#34;&gt;https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L934-L1107&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;任意のコマンドを追加する場合は上記部分を修正してください。&lt;/p&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
-&lt;/p&gt;&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;2021年1月現在、測定時刻を記録する機能は実装されてません。実装されるまで今しばらくお待ち下さい。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;2021年1月現在、WebbluetoothのScanning APIを利用可能なのは、Android 6.0 Marshmallow以降、または、Mac OS X Yosemite以降のみです。対応状況は&lt;a href=&#34;https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md#scanning-api&#34; target=&#34;_brank&#34;&gt;Webbluetooth Implementation Status&lt;/a&gt;を御覧ください。&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;
-
+&lt;/p&gt;
       </description>
     </item>
     
@@ -437,7 +531,7 @@ npm install
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;　Beaconとは、地上にある電波を特定の機器で受信することで、位置をはじめとした各種情報を取得するための設備です。BluetoothのBeacon機器の場合、温度や気圧などのセンサを搭載したモジュールを任意の場所に設置して、その場所の環境を観測します。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;　Beaconとは、地上にある電波を特定の機器で受信することで、位置をはじめとした各種情報を取得するための設備です。BluetoothのBeacon機器の場合、温度や気圧などのセンサを搭載したモジュールを任意の場所に設置して、その場所の環境を観測します。 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
@@ -463,46 +557,46 @@ npm install
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Type&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Name&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Name&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;Connector Cover&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;Connector Cover&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;AZ01&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;USB&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;AZ01&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;USB&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap04&#34;&gt;AP04&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap04&#34;&gt;STM32 MCU 2Bus&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap04&#34;&gt;AP04&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap04&#34;&gt;STM32 MCU 2Bus&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai02&#34;&gt;AI02&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai02&#34;&gt;SP&amp;amp;PIR&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai02&#34;&gt;AI02&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai02&#34;&gt;SP&amp;amp;PIR&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax08&#34;&gt;AX08&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax08&#34;&gt;29pin header&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax08&#34;&gt;AX08&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax08&#34;&gt;29pin header&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az63&#34;&gt;AZ63&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az63&#34;&gt;Nut Plate&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az63&#34;&gt;AZ63&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az63&#34;&gt;Nut Plate&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;M2*10mm screw&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;M2*10mm screw&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;

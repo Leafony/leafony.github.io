@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -24,8 +24,8 @@
 <title>STM32 Logger Beacon | Leafony</title><meta property="og:title" content="STM32 Logger Beacon" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_logger_ble_beacon/" /><meta property="og:site_name" content="Leafony" />
-
+<meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_logger_ble_beacon/" />
+<meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="STM32 Logger Beacon">
 <meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STM32 Logger Beacon"/>
@@ -48,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" as="style">
-<link href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3d1566d910d89e8d3aa5adf293514802295797c4287f702515035c9fdf20249676c35560ec1ec6b7aa026530a67c482226740bf483097408406a536d3e0f01ec.json"
+  data-offline-search-index-json-src="/offline-search-index.a05780d5b6f80d3b5ab1a0e8e771cb4b15a5eb5787efc3efdb4b85572edeec6fa0414105c4ec23f09c263b083cc959222a528788ee7d5986a7a22c0dc33c7716.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3d1566d910d89e8d3aa5adf293514802295797c4287f702515035c9fdf20249676c35560ec1ec6b7aa026530a67c482226740bf483097408406a536d3e0f01ec.json"
+  data-offline-search-index-json-src="/offline-search-index.a05780d5b6f80d3b5ab1a0e8e771cb4b15a5eb5787efc3efdb4b85572edeec6fa0414105c4ec23f09c263b083cc959222a528788ee7d5986a7a22c0dc33c7716.json"
   data-offline-search-base-href="/"
 >
 
@@ -2293,6 +2293,29 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/2_p/esp32/esp32_post_notify/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced2_pesp32esp32_post_notify">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/advanced/2_p/esp32/wifi_touchsensor/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
   </li>
   <ul>
@@ -3508,10 +3531,21 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#はじめに">はじめに</a></li>
     <li><a href="#サンプルのソースコード">サンプルのソースコード</a></li>
+    <li><a href="#対応環境">対応環境</a></li>
     <li><a href="#用意するもの">用意するもの</a></li>
     <li><a href="#使用するリーフ">使用するリーフ</a></li>
     <li><a href="#動作方法">動作方法</a></li>
-    <li><a href="#動作解説">動作解説</a></li>
+    <li><a href="#動作解説">動作解説</a>
+      <ul>
+        <li><a href="#回路全体のブロック図">回路全体のブロック図</a></li>
+        <li><a href="#動作の流れ">動作の流れ</a></li>
+        <li><a href="#動作モードの切り替え">動作モードの切り替え</a></li>
+        <li><a href="#不揮発メモリのアドレスマップ">不揮発メモリのアドレスマップ</a></li>
+        <li><a href="#beacon送信データ">Beacon送信データ</a></li>
+        <li><a href="#センサの変更方法">センサの変更方法</a></li>
+        <li><a href="#bleコマンドの変更方法">BLEコマンドの変更方法</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -3592,11 +3626,19 @@ if (!doNotTrack) {
         
 	
 	<h2 id="はじめに">はじめに</h2>
-<p>STM32リーフに搭載されたFlashメモリを使って、温湿度と測定時間を記録することが可能なBLE Beaconのサンプルデザインです。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup><br></p>
-<p>Beaconを用いた温湿度の測定方式では現在時刻での温湿度のみを知ることができ、これまでの測定値を知るためには、別途設置した受信機で常にBeaconの電波を受信し続ける必要がありました。<br>
-Beaconの電波は非常に弱く、発信時間も短いため、受信時に取りこぼしが発生することも多々あり、安定した測定をするためには不十分でした。<br>
-しかしながら本サンプルでは、STM32に搭載された不揮発メモリに測定記録を残すことができるため、万が一Beaconの電波を受信できなかったとしても、後からLeafonyに接続して、不揮発メモリに記録されたデータを取り出すことができます。<br></p>
-<p>また、このサンプルではBeaconの受信とSTM32 Flashメモリに書き込まれたデータの読み出しがどちらも行えるWebアプリのサンプルも含まれています。</p>
+<p>STM32リーフに搭載されたFlashメモリを使って、温湿度と測定時間を記録することが可能なBLE Beaconのサンプルデザインです。<br>
+STM32リーフとBLEリーフを使った、センサデータのログ機能付きの実用的なIoTシステムのサンプルデザインです。<br>
+このサンプルには下記の機能が実装されています。<br></p>
+<ul>
+<li>温度、湿度、照度の観測</li>
+<li>測定データをBLEのBeacon機能で送信</li>
+<li>オンチップFlashに測定データを保存</li>
+<li>リアルタイムクロックを使った測定時刻の保存</li>
+<li>ブラウザアプリでデバイスの設定変更</li>
+<li>ブラウザアプリで測定データの吸い出しとグラフ化</li>
+<li>加速度センサを使った振動検知機能によるBLE送信モードの変更</li>
+<li>低電力動作モードで半年以上の連続駆動</li>
+</ul>
 <h2 id="サンプルのソースコード">サンプルのソースコード</h2>
 <p>使用するスケッチやツールのソースコードは下記のリポジトリで閲覧可能です。</p>
 <ul>
@@ -3607,10 +3649,22 @@ Beaconの電波は非常に弱く、発信時間も短いため、受信時に�
 <p><a href="https://docs.leafony.com/Sample-Sketches/STM32_Logger_Beacon/sample_web_app/lescan/" target="_blank">STM32 Sensors Logger Webアプリケーション</a></p>
 </li>
 </ul>
+<h2 id="対応環境">対応環境</h2>
+<ul>
+<li>Windows 10 Version 1703以降
+<ul>
+<li>Beacon機能は利用不可</li>
+</ul>
+</li>
+<li>Mac OS X Yosemite以降</li>
+<li>Android 6.0 Marshmallow以降</li>
+<li>Linux Kernel 3.19+ 以降
+対応状況詳細は<a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md#scanning-api" target="_brank">Webbluetooth Implementation Status</a>を御覧ください。</li>
+</ul>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
 <li>Leafony</li>
-<li>Google ChromeがインストールされたAndroidスマートフォン または Mac<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></li>
+<li>Google Chrome</li>
 </ul>
 <h2 id="使用するリーフ">使用するリーフ</h2>
 <table>
@@ -3665,7 +3719,7 @@ Beaconの電波は非常に弱く、発信時間も短いため、受信時に�
 <p>STM32リーフにサンプルスケッチ<code>STM32_Logger_Beacon.ino</code>を書き込んでください。</p>
 </li>
 <li>
-<p>Androidスマートフォンで<a href="https://docs.leafony.com/Sample-Sketches/STM32_Logger_Beacon/sample_web_app/lescan/" target="_blank">STM32 Sensors Logger Webアプリケーション</a>を開いてださい。</p>
+<p>Google Chromeで<a href="https://docs.leafony.com/Sample-Sketches/STM32_Logger_Beacon/sample_web_app/lescan/" target="_blank">STM32 Sensors Logger Webアプリケーション</a>を開いてださい。</p>
 </li>
 <li>
 <p><code>Start Scanning</code>ボタンを押すと、Bluetooth利用許可を求めるポップアップウィンドウ表示されます。<code>許可</code>を押すとBeaconの電波の受信を開始します。<br>
@@ -3679,31 +3733,105 @@ Leafonyから発されるBeaconの電波を受信すると、画面の温度/電
 </li>
 </ol>
 <h2 id="動作解説">動作解説</h2>
-<p>本サンプルの動作シーケンスは下図のとおりです。
-Webアプリ側からの接続要求が無い限り、LeafonyはBeaconモードでの動作をしたあとに一度本体電源を自ら落とし省電力化を図ります。
-その間、STM32内に含まれたリアルタイムクロックだけは動作を続けることができるため、一定時間を測定した後、STM32本体の電源を投入し、再度Beaconモードに移行します。</p>
-<p>Beaconモードで動作中にWebアプリ側から接続要求があった場合、Connectモードに移行し、スケッチの<code>loop()</code>関数に移行します。
-LeafonyはWebアプリ側からの応答を待ち、<code>get</code>コマンドを受信すると直ちにメモリに保存されたセンサデータをBluetoothで送信します。</p>
-<img src="logger_beacon_02.jpg">
-<p>STM32リーフには内部に不揮発性メモリ（Flashメモリ）が搭載されています。
-本サンプルでは、このFlashメモリをリングバッファとして扱います。
-下図のように、メモリの0番地と1番地にはリングバッファの読み出しアドレス記録しておくことにって、
-本体の電源が切れた後も、再度電源を入れ直せば測定を再開することが可能です。</p>
-<img src="logger_beacon_01_rb.jpg">
+<h3 id="回路全体のブロック図">回路全体のブロック図</h3>
+<p>本サンプルコードで利用する回路は下図のとおりです。</p>
+<p>主にBLE、センサ、STM32リーフで構成され、特にSTM32リーフでは内部のRTC(リアルタイムクロック)とFlashを利用しています。</p>
+<p>RTCは、BLEを経由してPCやスマートフォンから時刻を設定して使います。</p>
+<p>Flashはプログラムメモリの保存以外に、末尾2kBをユーザがデータを保存できる領域として使うことができます。本サンプルでは、この領域にセンサデータと測定時刻を保存し、本体の電源が切れた後もデータを保持できる仕組みとなっています。</p>
+<p>センサリーフからは温度、湿度、照度センサがSTM32によって読み出され、BLEでデータが送信されます。加速度センサは振動によって割り込み信号を発生し、STM32をスリープから復帰させる役割があります。</p>
+<img src="block.jpg">
+<h3 id="動作の流れ">動作の流れ</h3>
+<p>このサンプルコードでは主に以下の2つの動作モードが存在します。</p>
+<ul>
+<li>Beaconモード</li>
+<li>Connectionモード</li>
+</ul>
+<p>Leafonyに電源を入れると、まず初めに本体の初期化を行なった後に<strong>Beaconモード</strong>に入ります。</p>
+<p><strong>Beaconモード</strong>では、通常は本体が長時間のスリープ状態に入り、一定時間が経過すると本体がスリープから復帰します。（このスリープ時間はユーザが任意に設定できます。)<br>
+本体がスリープから復帰すると、まずSTM32が起動し、センサを起動させ、温度、湿度、照度を測定します。<br>
+このとき、STM32に搭載されたリアルタイムクロックに時刻が設定されている場合、測定されたデータはSTM32に搭載されたFlashに保存されます。<br>
+その後、BLEリーフを起動し、Advertisingパケットにセンサデータを設定し、BLEリーフが一定期間Advertisingを開始します。<br>
+このAdvertisingパケットをウェブアプリで受信することで、温度、湿度、照度のデータをPCやスマートフォンで見ることができます。<br>
+一定期間のAdvertising後は即座に本体がスリープし、消費電力を最小に抑えます。<br>
+Beaconモードでの動作時間が長いほど、電池消費を抑えることが可能です。</p>
+<p><strong>Connectionモード</strong>では、主にPCやスマートフォンでと双方向で通信して、スリープ時間やAdvertising時間を設定したり、Flashに保存されたデータの吸い出しを行い、ウェブアプリでグラフ化するための通信を行います。<br>
+このモードでは通信中、またはPCやスマートフォンと接続を確立するためのAdvertising期間、常に本体がアクティブ状態にあり、電池消費が大きくなります。<br>
+Connectionモードは、本体の時刻を設定するなどの初回起動時や、ある程度ログデータが溜まった後にデータを吸い出すといったような、利用シーンが限られてくるため、特定の条件でのみこのモードに入るよう設定されています。<br>
+このサンプルではConnectionモードに入るためには、<strong>Leafony本体を左右に強く振る</strong>ことでConnectionモードに入ることができます。<br>
+これは、4-Sensorsリーフに搭載された加速度センサが、常に振動を観測し、振動を検知すると即座にSTM32リーフに割り込み信号を送信することで実現されています。</p>
+<img style="width: 100%;" src="timediagram.jpg">
+<h3 id="動作モードの切り替え">動作モードの切り替え</h3>
+<p>BeaconモードとConnectionモードの切り替えには加速度センサによる割り込みを使います。<br>
+ウェブアプリでBluetoothデバイスを検出するためには、LeafonyがConnectionモードに切り替わり、最低でも数秒から数十秒程度の長い間BLEがAdvertisingする必要があります。<br>
+これを毎スリープからの復帰後に行なっていると電池消費が非常に大きくなってしまうため、BLEで接続したい時だけConnectionモードに入り長時間Advertisingさせたくなります。<br>
+今回はこれを加速度センサを使った振動検出割り込みで実現しました。</p>
+<p>4-Sensorsに搭載された加速度センサは、振動(指で本体をタップする動作)を検出すると、STM32の<code>INT1ピン</code>に割り込み信号を出します。<br>
+下記の記述で加速度センサのタップ検出を有効化し、その割り込みによってSTM32がスリープから復帰する仕組みを実現しています。<br>
+か速度センサの割り込みによって起動した場合のみConnectモードとして起動させることで、必要な時だけBLEで接続可能な仕組みを実現しました。</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setClick</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">DOUBLETAP</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">CLICKTHRESHHOLD</span><span style="color:#000;font-weight:bold">);</span>  <span style="color:#8f5902;font-style:italic">// enable click interrupt
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">// enable interrupt from accelerometer click event
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">LowPower</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">attachInterruptWakeup</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">INT_1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">onClicked</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">RISING</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">DEEP_SLEEP_MODE</span><span style="color:#000;font-weight:bold">);</span>
+</code></pre></div><h3 id="不揮発メモリのアドレスマップ">不揮発メモリのアドレスマップ</h3>
+<p>STM32リーフには内部に不揮発性メモリ（Flashメモリ）が搭載されています。<br>
+本サンプルでは、このFlashメモリを、ユーザ設定の保存と、測定データ保存用のリングバッファとして扱います。<br>
+下図のように、メモリの先頭からいくつかの番地には、スリープ時間や起動時間などのユーザ設定を保存する領域があります。<br>
+それらを除いた部分を、時刻とセンサのデータを保持するリングバッファとして扱います。<br>
+また、Flashに書き込まれているデータが、本サンプルスケッチによって書き込まれたものなのかを確かめるため、先頭2バイトに<code>0xAA</code>という値を保存しています。<br>
+本サンプルではこの<code>0xAA</code>が書き込まれていればいれば、保存されている設定を読み込み、書き込まれていなければ新規に初期値をFlashに保存するという動作をします。</p>
+<img src="ringbuffer.jpg">
+<h3 id="beacon送信データ">Beacon送信データ</h3>
+<p>Beaconモードで動作している場合、BLEはセンサのデータを含むAdvertisingパケットを送信しています。<br>
+Advertisingパケットの構造は次の図のように、<code>AD Structure</code>というデータの塊が連なった形式となっています。<br>
+AD Structureはさらに細かく見ると、<code>Length</code>:データの長さ、<code>AD Type</code>:データの種類・意味、<code>AD Data</code>:送信したいデータで構成されています。</p>
+<img src="adstructure.jpg">
+<p>実際に本サンプルでは下記のコードのように、<code>AD Structure 1</code>にAdvertisingのモード設定、<code>AD Structure 2</code>にデバイス名、<code>AD Structure 3</code>にセンサのデータを保存して送信しています。<br>
+Beaconで送信するデータを変更したい場合は<code>AD Structure 3</code>を任意に変更してください。</p>
+<p><a href="https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L272-L302">https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L272-L302</a></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// Advertising Packet
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-------------------------
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// AD Structure 1 (Flags)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">index</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0x02</span><span style="color:#000;font-weight:bold">;</span>                    <span style="color:#8f5902;font-style:italic">// field length
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">index</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">BGLIB_GAP_AD_TYPE_FLAGS</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#8f5902;font-style:italic">// AD Type (Flags)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">index</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">|</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#ce5c00;font-weight:bold">&lt;&lt;</span> <span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">);</span>     <span style="color:#8f5902;font-style:italic">// LE General Discover Mode | BR/EDR Not Supported
+</span><span style="color:#8f5902;font-style:italic"></span>
+  <span style="color:#8f5902;font-style:italic">// AD Structure 2 (Complete Local Name)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">index</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">strDeviceName</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">length</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>           <span style="color:#8f5902;font-style:italic">// field length
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">index</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">BGLIB_GAP_AD_TYPE_LOCALNAME_COMPLETE</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#8f5902;font-style:italic">// AD Type (Complete Local Name)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">i</span> <span style="color:#ce5c00;font-weight:bold">&lt;</span> <span style="color:#000">strDeviceName</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">length</span><span style="color:#000;font-weight:bold">();</span> <span style="color:#000">i</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">index</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">strDeviceName</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">charAt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// Local Name
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000;font-weight:bold">}</span>
+
+  <span style="color:#8f5902;font-style:italic">// AD Structure 3 (Manufacturer Specific Data)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">index</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">9</span><span style="color:#000;font-weight:bold">;</span>    <span style="color:#8f5902;font-style:italic">// field lengh
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">index</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0xff</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#8f5902;font-style:italic">// AD Type (Manufacturer Specific Data)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">index</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">illum</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span> <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0xFF</span><span style="color:#000;font-weight:bold">;</span>    <span style="color:#8f5902;font-style:italic">// Illuminance (Upper)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">index</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">illum</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0xFF</span><span style="color:#000;font-weight:bold">;</span>           <span style="color:#8f5902;font-style:italic">// Illuminance (Lower)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">index</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">temp</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span> <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0xFF</span><span style="color:#000;font-weight:bold">;</span>     <span style="color:#8f5902;font-style:italic">// Temperature (Upper)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">index</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">temp</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0xFF</span><span style="color:#000;font-weight:bold">;</span>            <span style="color:#8f5902;font-style:italic">// Temperature (Lower)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">index</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">humid</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span> <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0xFF</span><span style="color:#000;font-weight:bold">;</span>    <span style="color:#8f5902;font-style:italic">// Humidity (Upper)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">index</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">humid</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0xFF</span><span style="color:#000;font-weight:bold">;</span>           <span style="color:#8f5902;font-style:italic">// Humidity (Lower)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">index</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">battVolt</span> <span style="color:#ce5c00;font-weight:bold">&gt;&gt;</span> <span style="color:#0000cf;font-weight:bold">8</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0xFF</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#8f5902;font-style:italic">// Battery Voltage (Upper)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[</span><span style="color:#000">index</span><span style="color:#ce5c00;font-weight:bold">++</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">battVolt</span> <span style="color:#ce5c00;font-weight:bold">&amp;</span> <span style="color:#0000cf;font-weight:bold">0xFF</span><span style="color:#000;font-weight:bold">;</span>        <span style="color:#8f5902;font-style:italic">// Battery Boltage (Lower)
+</span><span style="color:#8f5902;font-style:italic"></span>
+  <span style="color:#8f5902;font-style:italic">// register advertising packet
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">stLen</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">index</span><span style="color:#000;font-weight:bold">;</span>
+  <span style="color:#000">ble112</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ble_cmd_le_gap_set_adv_data</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SCAN_RSP_ADVERTISING_PACKETS</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">stLen</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#204a87;font-weight:bold">while</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">ble112</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">checkActivity</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">));</span>
+</code></pre></div><h3 id="センサの変更方法">センサの変更方法</h3>
+<p>本サンプルでは4-Sensorsリーフに搭載された、温度・湿度・照度センサ、バッテリーリーフに搭載されたADCを読み出す仕組みとなっています。<br>
+これらのセンサは、<code>setup()</code>関数内の<code>setupSensors()</code>関数で初期化し、<code>loop()</code>関数内の<code>wakeupSensors()</code>でスリープから復帰、<code>getSensors()</code>でデータを取得、<code>sleepSensors()</code>でスリープを行なっています。</p>
+<p><a href="https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L767-L771">https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L767-L771</a></p>
+<p>任意のセンサを追加したい場合はこれらの関数内に必要な処理を記述してください。</p>
+<h3 id="bleコマンドの変更方法">BLEコマンドの変更方法</h3>
+<p>BLEで接続したPCやスマートフォンからコマンドを送信してLeafony側の設定を変更したり、データの転送を開始したりすることができます。<br>
+下記のソースコードの部分でそのコマンドと処理を記述しています。</p>
+<p><a href="https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L934-L1107">https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L934-L1107</a></p>
+<p>任意のコマンドを追加する場合は上記部分を修正してください。</p>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
-</p><section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>2021年1月現在、測定時刻を記録する機能は実装されてません。実装されるまで今しばらくお待ち下さい。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2" role="doc-endnote">
-<p>2021年1月現在、WebbluetoothのScanning APIを利用可能なのは、Android 6.0 Marshmallow以降、または、Mac OS X Yosemite以降のみです。対応状況は<a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md#scanning-api" target="_brank">Webbluetooth Implementation Status</a>を御覧ください。&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
-
+</p>
         <div class="section-index">
     
     
@@ -3997,12 +4125,14 @@ LeafonyはWebアプリ側からの応答を待ち、<code>get</code>コマンド
         
             
         
+            
+        
     
 </div>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 3, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 29, 2021
 </div>
 </div>
 
@@ -4066,7 +4196,7 @@ LeafonyはWebアプリ側からの応答を待ち、<code>get</code>コマンド
 
 
 
-<script src="/js/main.min.f70926ca86f7153429e54b0705f11c420ceac8da5cb4027087319447696e4a5f.js" integrity="sha256-9wkmyob3FTQp5UsHBfEcQgzqyNpctAJwhzGUR2luSl8=" crossorigin="anonymous"></script>
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
 
 
 

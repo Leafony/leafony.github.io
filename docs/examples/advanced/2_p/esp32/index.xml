@@ -141,6 +141,297 @@
     </item>
     
     <item>
+      <title>Docs: 低電力にポスト投函検出してLINE通知</title>
+      <link>https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_post_notify/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_post_notify/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;ESP32 MCUリーフと4-Sensorsリーフの加速度センサを利用して、ポストの開け閉めを検出します。&lt;br&gt;
+バッテリーを長持ちさせるためにESP32は主に&lt;code&gt;Deep Sleep&lt;/code&gt;状態で、ポストが開いたときに加速度センサから割り込み信号を生成します。
+ESP32が立ち上がってから&lt;code&gt;Google Apps Script&lt;/code&gt;にデータを送信して、そこからLINEに通知を送信します。&lt;/p&gt;
+&lt;h2 id=&#34;line通知サービスの設定&#34;&gt;LINE通知サービスの設定&lt;/h2&gt;
+&lt;p&gt;LINE通知には&lt;a href=&#34;https://notify-bot.line.me/&#34;&gt;LINE Notify&lt;/a&gt;を利用します。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://notify-bot.line.me/&#34;&gt;LINE Notify&lt;/a&gt;のトップページから自分のLINE IDを使ってログインしましょう。&lt;/p&gt;
+ &lt;img src=&#34;line_notify_login_top.jpg&#34; width=80%&gt;
+&lt;hr&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;メールアドレスとパスワードを入力します。&lt;/p&gt;
+ &lt;img src=&#34;line_notify_login.jpg&#34; width=80%&gt;
+&lt;hr&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ログイン後にトップ画面からマイページを開きます。&lt;/p&gt;
+ &lt;img src=&#34;move_to_mypage.jpg&#34; width=80%&gt;
+&lt;hr&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;トークンの新規作成ボタンをクリック。&lt;/p&gt;
+ &lt;img src=&#34;generate_token.jpg&#34; width=80%&gt;
+&lt;hr&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;トークンの名前を入力し、通知を送信するグループを選択する。&lt;/p&gt;
+ &lt;img src=&#34;input_token_info.jpg&#34; width=80%&gt;
+&lt;hr&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;トークンが発行されたら、しっかりとコピーして下さい。&lt;br&gt;
+この画面を閉じたらこのトークンの記号列は二度と表示されなくなります。&lt;/p&gt;
+ &lt;img src=&#34;issued_token.jpg&#34; width=80%&gt;
+&lt;hr&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;トークンの生成が完了しました。設定したLINEにもメッセージが届いているはずです。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;complete_token_generation.jpg&#34; width=60%&gt;    &lt;img src=&#34;line_display.jpg&#34; width=30%&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;googleクラウドサービスの設定&#34;&gt;Googleクラウドサービスの設定&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;Google Apps Script&lt;/code&gt;の設定は&lt;a href=&#34;../esp32_googlesheets_1&#34;&gt;Google Sheetsを使ったIoTサービス&lt;/a&gt;の内容を参照します。&lt;br&gt;
+コードは&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_Post_Notify/&#34;&gt;Github&lt;/a&gt;の&lt;code&gt;google_scripts_code.js&lt;/code&gt;にアップされています。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../esp32_googlesheets_1/#google-sheets%E3%81%AE%E6%BA%96%E5%82%99&#34;&gt;Google Sheetsの準備&lt;/a&gt;の&lt;strong&gt;1-3&lt;/strong&gt;の手順に沿ってスプレッドシートの用意をします。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../esp32_googlesheets_1/#google-sheets%E3%81%AE%E6%BA%96%E5%82%99&#34;&gt;Google Sheetsの準備&lt;/a&gt;の&lt;strong&gt;4&lt;/strong&gt;の部分で以下のコードを貼り付けます。&lt;br&gt;
+その際，以下の箇所を適宜修正してください。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;3行目: &lt;a href=&#34;./#line%E9%80%9A%E7%9F%A5%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E8%A8%AD%E5%AE%9A&#34;&gt;LINE通知サービスの設定&lt;/a&gt;の&lt;strong&gt;6&lt;/strong&gt;の画面で発行されたトークンの記号列に置き換える
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;token&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;line_notify_token&amp;#34;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;16-17行目: GoogleスプレッドシートのID
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;id&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;google_sheets_id&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;sheetName&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;sheet_name&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;44行目: LINEに送るテキストメッセージ&lt;br&gt;
+例のように&lt;code&gt;+&lt;/code&gt;でテキストと変数を連結できます。
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lineMessage&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ポストに投函ました\n現在のバッテリーの電圧：&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;battery&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;[V]&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// LINEへの送信処理
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;sendToLine&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;text&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;){&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;token&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;line_notify_token&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5&lt;/span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;options&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6&lt;/span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7&lt;/span&gt;    &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;method&amp;#34;&lt;/span&gt;  &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;post&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8&lt;/span&gt;    &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;payload&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;message=&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;text&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9&lt;/span&gt;    &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;headers&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Authorization&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Bearer &amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;token&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10&lt;/span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;};&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;UrlFetchApp&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;fetch&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;https://notify-api.line.me/api/notify&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;options&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;12&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;13&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;14&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;doGet&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;15&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;16&lt;/span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;id&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;google_sheets_id&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; 
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;17&lt;/span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;sheetName&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;sheet_name&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; 
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;18&lt;/span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;result&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;19&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;20&lt;/span&gt;    &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// e.parameter has received GET parameters, i.e. temperature, humidity, illumination
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;21&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;undefined&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;22&lt;/span&gt;        &lt;span style=&#34;color:#000&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;Parameter undefined&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;23&lt;/span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;24&lt;/span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;sheet&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SpreadsheetApp&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;openById&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;id&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;).&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;getSheetByName&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;sheetName&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;25&lt;/span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;newRow&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;sheet&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;getLastRow&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// get row number to be inserted
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;rowData&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[];&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;27&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;28&lt;/span&gt;        &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// get current time
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;29&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#000&#34;&gt;rowData&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;Date&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;30&lt;/span&gt;        &lt;span style=&#34;color:#000&#34;&gt;rowData&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;UniqueID&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;31&lt;/span&gt;        &lt;span style=&#34;color:#000&#34;&gt;rowData&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;temperature&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;32&lt;/span&gt;        &lt;span style=&#34;color:#000&#34;&gt;rowData&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;3&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;humidity&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;33&lt;/span&gt;        &lt;span style=&#34;color:#000&#34;&gt;rowData&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;illumination&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;34&lt;/span&gt;        &lt;span style=&#34;color:#000&#34;&gt;rowData&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;battery&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;35&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;36&lt;/span&gt;        &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 1 x rowData.length cells from (newRow, 1) cell are specified
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;37&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;newRange&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;sheet&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;getRange&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;newRow&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;rowData&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;length&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;38&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;39&lt;/span&gt;        &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// insert data to the target cells
+&lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;40&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;        &lt;span style=&#34;color:#000&#34;&gt;newRange&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;setValues&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;([&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;rowData&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;]);&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;41&lt;/span&gt;        &lt;span style=&#34;color:#000&#34;&gt;result&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;  &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;Ok&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;42&lt;/span&gt;    &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;43&lt;/span&gt;       
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;44&lt;/span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lineMessage&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ポストに投函されました\n現在のバッテリーの電圧：&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;battery&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;[V]&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;45&lt;/span&gt;    &lt;span style=&#34;color:#000&#34;&gt;sendToLine&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;lineMessage&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;46&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;47&lt;/span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;ContentService&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;createTextOutput&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;result&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;48&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../esp32_googlesheets_1/#google-sheets%E3%81%AE%E6%BA%96%E5%82%99&#34;&gt;Google Sheetsの準備&lt;/a&gt;の&lt;strong&gt;6-12&lt;/strong&gt;の手順に沿ってデプロイします。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;google-sheetsの動作確認と修正&#34;&gt;Google Sheetsの動作確認と修正&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;../esp32_googlesheets_1&#34;&gt;Google Sheetsを使ったIoTサービス&lt;/a&gt;の以下の項目を参照してください。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../esp32_googlesheets_1/#google-sheets%E3%81%AE%E5%8B%95%E4%BD%9C%E7%A2%BA%E8%AA%8D&#34;&gt;Google Sheetsの動作確認&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;../esp32_googlesheets_1/#%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%AE%E3%83%9F%E3%82%B9%E3%81%8C%E3%81%82%E3%81%A3%E3%81%9F%E5%A0%B4%E5%90%88&#34;&gt;スクリプトのミスがあった場合&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;leafonyの準備&#34;&gt;Leafonyの準備&lt;/h2&gt;
+&lt;h3 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;ESP32 MCUリーフ&lt;/strong&gt;と&lt;strong&gt;4-sensorリーフ&lt;/strong&gt;を重ねます。&lt;/p&gt;
+&lt;h2 id=&#34;書き込みプログラム&#34;&gt;書き込みプログラム&lt;/h2&gt;
+&lt;p&gt;ESP32に&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_Post_Notify/&#34;&gt;Github&lt;/a&gt;に上がっている以下のファイルを&lt;strong&gt;ESP32 MCUリーフ&lt;/strong&gt;に書き込みます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ESP32_Post_Notify.ino&lt;/li&gt;
+&lt;li&gt;MyLIS3DH.cpp&lt;/li&gt;
+&lt;li&gt;MyLIS3DH.h&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;システム全体の制御フローは以下の図ように設計します。&lt;/p&gt;
+&lt;img src=&#34;system_flow.jpg&#34; width=75%&gt;
+&lt;h3 id=&#34;wi-fiの設定&#34;&gt;Wi-Fiの設定&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;ESP32_Post_Notify.ino&lt;/code&gt;にWi-FiのSSIDやパスワードなどの設定項目があります。
+重要な項目を箇条書きにしたので、適当に設定してください。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Wi-Fiを使ってネットに接続する場合は&lt;code&gt;USE_WiFi&lt;/code&gt;を定義します。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define USE_WiFi
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;接続先のWi-FiがWPA2 Personal（自宅のルーターなどで利用される認証方式。通常これ）を利用しているときは以下の変数にSSIDとパスワードを格納します。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SSID&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;wifi-ssid&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// WiFi SSID
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;PASSWORD&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;wifi-pass&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;   &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// WiFi Password
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;特に、接続先のWi-Fiが大学や企業などにあり、EduroamなどのWPA2 Enterpriseを使用しているときのみ、以下を定義します。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define USE_WiFi_ENTERPRISE
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Wi-Fi Enterprise用のIDやパスワードは以下に入力してください。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;/////////////////////////////////////////////////////////////////////////////////////////////////////
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// parameters for connecting eduroam enterprise
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;/////////////////////////////////////////////////////////////////////////////////////////////////////
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define EAP_IDENTITY &amp;#34;eap_id&amp;#34; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//if connecting from another corporation, use identity@organisation.domain in Eduroam 
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define EAP_PASSWORD &amp;#34;eap_pass&amp;#34; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//your Eduroam password
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SSID_ENT&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;eduroam&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Eduroam SSID
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;/////////////////////////////////////////////////////////////////////////////////////////////////////
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;接続先googleクラウドの設定&#34;&gt;接続先Googleクラウドの設定&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;ESP32_Post_Notify.ino&lt;/code&gt;で接続先Googleスクリプトの設定を行っています。
+&lt;a href=&#34;./#google%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E8%A8%AD%E5%AE%9A&#34;&gt;Googleクラウドサービスの設定&lt;/a&gt;の&lt;strong&gt;3&lt;/strong&gt;で設定したGoogle Apps Scriptの固有IDを以下の変数に格納します。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;KEY&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;google_scripts_key&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;加速度センサlis3dhの設定&#34;&gt;加速度センサ(LIS3DH)の設定&lt;/h3&gt;
+&lt;p&gt;加速度センサ用の設定パラメータはレポジトリに上がっている&lt;code&gt;MyLIS3DH.cpp&lt;/code&gt;で修正できます。&lt;br&gt;
+実際に身の回りのポストに実装する場合にはパラメータを環境に合わせて設定する必要があります。 &lt;br&gt;
+今回は例として、以下のように蓋が開閉するポストを考えます。&lt;/p&gt;
+&lt;img src=&#34;post_image.jpg&#34; width=40%&gt;
+&lt;p&gt;加速度センサが生成できる割り込み信号は独立に2つ(&lt;code&gt;INT1&lt;/code&gt;, &lt;code&gt;INT2&lt;/code&gt;)あり、そのうちの&lt;code&gt;INT1&lt;/code&gt;を使います。&lt;br&gt;
+データシートによると割り込み信号の指定には&lt;code&gt;CTRL_REG3&lt;/code&gt;というレジスタに書き込みます。&lt;br&gt;
+&lt;code&gt;CTRL_REG3&lt;/code&gt;の説明をデータシートから読んでみます。&lt;/p&gt;
+&lt;img src=&#34;reg_ctrl_reg3.jpg&#34; width=80%&gt;
+&lt;p&gt;データシートから、&lt;code&gt;I1_AOI1&lt;/code&gt;ビットを&lt;code&gt;1&lt;/code&gt;に設定すると&lt;code&gt;INT1&lt;/code&gt;の割り込みが有効になります。&lt;br&gt;
+よって、以下のようにプログラムします。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;writeRegister8&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LIS3DH_REG_CTRL3&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0x40&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;割り込み信号を生成するための条件（どのような振動の場合に割り込み信号を生成するのか、等）を設定できるのですが、今回主に設定するパラメータは以下の4つです。&lt;/p&gt;
+&lt;img src=&#34;accelerometer_setting_parameters.jpg&#34; width=75%&gt;
+&lt;h4 id=&#34;閾値-threshold&#34;&gt;&lt;strong&gt;閾値 (Threshold)&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;ポストの蓋の裏面にリーフが張り付けると、蓋が傾いた時に、加速度センサからみた重力加速度の向きが変化します。&lt;br&gt;
+この加速度の向きを検出することが出来れば、郵便物が投函されたかどうかセンシング出来ます。&lt;br&gt;
+いま、実験により、郵便物が投函されるとき蓋が少なくとも10度は傾くことが分かったとします。&lt;br&gt;
+そのとき、加速度センサのz軸方向の加速度（図中の緑色の矢印）が&lt;code&gt;0g&lt;/code&gt;から&lt;code&gt;0.17g&lt;/code&gt;まで増加することが分かるので、この&lt;code&gt;0.17g&lt;/code&gt;を閾値に設定してあげれば良さそうです。&lt;/p&gt;
+&lt;img src=&#34;think_threshold.jpg&#34; width=100%&gt;
+&lt;p&gt;一方、加速度センサの&lt;strong&gt;LIS3DH&lt;/strong&gt;はデフォルトでフルスケールが±2gの検出を行います。&lt;br&gt;
+(これは&lt;code&gt;ESP32_PostNotify.ino&lt;/code&gt;で設定されています。)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;lis&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;setRange&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LIS3DH_RANGE_2_G&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;   &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 2, 4, 8 or 16 G!
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;データシートによると、使用している加速度センサは軸の正（負）方向に対してそれぞれ128段階の分解能(フルスケールで8-bitの分解能)を持っています。&lt;br&gt;
+0.17gが2gに対して、どのレベルなのかを128段階のレベルで表すと、&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-math&#34; data-lang=&#34;math&#34;&gt;128 / 2g * 0.17g = 10.88
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;なので、閾値レベル&lt;code&gt;11&lt;/code&gt;(16進数では&lt;code&gt;0x0B&lt;/code&gt;)を設定します。&lt;br&gt;
+この閾値の情報は&lt;code&gt;INT1THS&lt;/code&gt;というレジスタに書き込みます。&lt;br&gt;
+一応、レジスタの情報をデータシートから確認してみると、書き込める数値は0~127までだということが分かります。&lt;/p&gt;
+&lt;img src=&#34;reg_int1_ths.jpg&#34; width=80%&gt;
+&lt;p&gt;プログラムでは以下のように記述します。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;writeRegister8&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LIS3DH_REG_INT1THS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0x0B&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;検出軸-detection-axes&#34;&gt;&lt;strong&gt;検出軸 (Detection Axes)&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;./#%E9%96%BE%E5%80%A4-threshold&#34;&gt;閾値&lt;/a&gt;の項目で考えた通り，今回は加速度の3軸のうち1つの軸のみを使って郵便物の投函を検出します。&lt;/p&gt;
+&lt;img src=&#34;think_detection_axes.jpg&#34; width=100%&gt;
+&lt;p&gt;軸の選択には、以下の2つのレジスタに書き込みます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;CTRL_REG1&lt;br&gt;
+センシングする3軸方向の加速度の有効・無効の設定を行います。&lt;br&gt;
+使用する軸以外は無効にすることで電力を抑えられ、バッテリーが長持ちします。&lt;br&gt;
+また、低電力モード(Low Power Mode)とサンプル周波数の設定もこのレジスタで行います。&lt;/p&gt;
+  &lt;img src=&#34;reg_ctrl_reg1.jpg&#34; width=100%&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;INT1_CFG&lt;br&gt;
+割り込み用に設定する軸方向の決定を行います。&lt;br&gt;
+また、軸の選択以外に割り込み信号の発生方法も設定出来ます。&lt;/p&gt;
+  &lt;img src=&#34;reg_int1_cfg.jpg&#34; width=100%&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;CTRL_REG1&lt;/strong&gt;に関して、今回の用途では、以下のように設定しようと思います。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Z軸方向のみで検出を行う&lt;/li&gt;
+&lt;li&gt;理由は後述するが、10Hzで加速度をサンプリングを行う&lt;/li&gt;
+&lt;li&gt;低電力モードも使う&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;よってデータシートから、レジスタはODR3からXenまで順に&lt;code&gt;00101100&lt;/code&gt;と設定すればいいので以下のようにプログラムします。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_CTRL1, 0x2C);
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;INT1_CFG&lt;/strong&gt;に関して、上のデータシートに、&lt;code&gt;AOI&lt;/code&gt;と&lt;code&gt;6D&lt;/code&gt;というよく分からない項目があります。&lt;br&gt;
+データシートのTable 48.を見てみると、どうやら&lt;code&gt;AOI&lt;/code&gt;と&lt;code&gt;6D&lt;/code&gt;を使って割り込み信号を生成する方法を設定できるようです。&lt;br&gt;
+ORとANDの条件は各軸それぞれに対して割り込みを発生させるときの条件として考えれば良さそうです。&lt;br&gt;
+一方、&lt;code&gt;6 direction movement&lt;/code&gt;と&lt;code&gt;6 direction position recognition&lt;/code&gt;はここからだとよく分かりません。&lt;br&gt;
+それらの説明はアプリケーションノートに以下のように記述されていました。&lt;/p&gt;
+&lt;img src=&#34;6d_orientation_detection.jpg&#34; width=100%&gt;
+&lt;p&gt;少し難しいですが簡単にまとめると、こんな感じになります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;6D movement&lt;/strong&gt;: 指定した閾値を超えたときと、そこから戻るときに一瞬だけ割り込み信号を生成&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;6D position&lt;/strong&gt;: 指定した閾値以上になっている間、常に割り込み信号を生成&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;また、このアプリケーションノートのFigure 12から、X・Y・Z軸の中でも、上方向と下方向で別々に割り込み処理を設定できるということも分かりました。&lt;br&gt;
+これらの設定がINT1_CFGの&lt;code&gt;ZHIE/ZUPE``ZLIE/ZDOWNE&lt;/code&gt;・・・&lt;code&gt;XLIE/XDOWNE&lt;/code&gt;の箇所で設定できるようです。&lt;br&gt;
+以上のことから、割り込み信号の生成条件としては、&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Z方向の割り込み信号のみを有効&lt;/li&gt;
+&lt;li&gt;Z方向の指定した閾値を超えたときに一瞬だけ割り込み信号を生成する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;以下のようにプログラムすれば良いと分かりました。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_INT1CFG, 0x70); 
+&lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;サンプリング周波数-sampling-rate--時間幅-duration&#34;&gt;&lt;strong&gt;サンプリング周波数 (Sampling Rate)&lt;/strong&gt; &amp;amp; &lt;strong&gt;時間幅 (Duration)&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;サンプリング周波数と時間幅は関連しているので、一緒に説明します。はじめにそれぞれを簡単に説明します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;サンプリング周波数&lt;/strong&gt;：センサが加速度を取得する時間間隔を設定できます。周波数が上がるほど，時間分解能は上がりますが，その分センサの消費電力も増加してしまいます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;時間幅&lt;/strong&gt;：割り込み信号が発生するまでに閾値を何秒間越えなければいけないか、という条件を設定できます。&lt;br&gt;
+ポストの蓋に何かがぶつかってしまったりなど、たまたま環境ノイズを拾ってしまったりしたときに、誤って検知してしまうことを防げます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;郵便物が投函されたときに加速度センサの応答が図のように0.3秒以上閾値を超えるとし、それ以下の場合は環境ノイズとして処理します。&lt;br&gt;
+この場合、サンプリング周波数は10Hzで設定すれば問題なさそうです。&lt;br&gt;
+&lt;a href=&#34;./#%E6%A4%9C%E5%87%BA%E8%BB%B8-detection-axes&#34;&gt;検出軸&lt;/a&gt;の項で説明した通り、設定レジスタは&lt;code&gt;CTRL_REG1&lt;/code&gt;です。&lt;br&gt;
+&lt;code&gt;ODR0&lt;/code&gt;-&lt;code&gt;ODR3&lt;/code&gt;でサンプリング周波数を決定できます。&lt;br&gt;
+再掲ですが、以下のようにプログラムします。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_CTRL1, 0x2C);
+&lt;/code&gt;&lt;/pre&gt;&lt;img src=&#34;think_sampling_rate.jpg&#34; width=100%&gt;
+&lt;p&gt;時間幅の設定レジスタは&lt;code&gt;INT1_DURATION&lt;/code&gt;です。実際にセンサは連続時間を測っているわけではなく、サンプリング回数で時間間隔を計算しています。&lt;/p&gt;
+&lt;img src=&#34;reg_int1_duration.jpg&#34; width=60%&gt;
+&lt;p&gt;0.3秒以上閾値を超えるようであれば、割り込み信号を生成します。&lt;br&gt;
+今回はサンプル周波数を&lt;code&gt;10Hz&lt;/code&gt;で設定しており、設定値は以下のように計算します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;0.3 / 0.1 = 3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;これは以下のようにプログラムします。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_INT1DUR, 0x03); 
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
+&lt;p&gt;ESP32を傾けたときにスリープから立ち上がり、Wi-Fiに接続してからLINE Notifyに通知を送信します。&lt;br&gt;
+LINE Notifyで受け取った画面は以下のようになります。&lt;/p&gt;
+&lt;img src=&#34;execution_result.jpg&#34; width=30%&gt;
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
+&lt;/p&gt;
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: Wi-Fi タッチセンサ</title>
       <link>https://docs.leafony.com/docs/examples/advanced/2_p/esp32/wifi_touchsensor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -156,61 +447,61 @@
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Type&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Name&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Name&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02&#34;&gt;AP02&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02&#34;&gt;ESP32 MCU&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02&#34;&gt;AP02&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02&#34;&gt;ESP32 MCU&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av04&#34;&gt;AV04&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av04&#34;&gt;2V~4.5V&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av04&#34;&gt;AV04&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av04&#34;&gt;2V~4.5V&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax07&#34;&gt;AX07&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax07&#34;&gt;Back to back&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax07&#34;&gt;AX07&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax07&#34;&gt;Back to back&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax08&#34;&gt;AX08&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax08&#34;&gt;29pin header&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax08&#34;&gt;AX08&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax08&#34;&gt;29pin header&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;Connector Cover &lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az62&#34;&gt;Connector Cover &lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az63&#34;&gt;AZ63&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az63&#34;&gt;Nut Plate&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az63&#34;&gt;AZ63&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az63&#34;&gt;Nut Plate&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;AAA battery holder&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;AAA battery holder&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;AAA battery&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;AAA battery&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;M2*15mm screw&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;M2*15mm screw&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;φ10x2mm magnet&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;φ10x2mm magnet&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -294,26 +585,26 @@ GATT ServerのAttributeにセンサデータを入れることで、データを
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Type&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Name&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Name&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02&#34;&gt;AP02&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02&#34;&gt;ESP32 MCU&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02&#34;&gt;AP02&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02&#34;&gt;ESP32 MCU&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;AI01&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;AI01&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;M2 screw&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;M2 screw&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
