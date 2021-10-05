@@ -144,7 +144,11 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
+<<<<<<< HEAD
   data-offline-search-index-json-src="/offline-search-index.a05780d5b6f80d3b5ab1a0e8e771cb4b15a5eb5787efc3efdb4b85572edeec6fa0414105c4ec23f09c263b083cc959222a528788ee7d5986a7a22c0dc33c7716.json"
+=======
+  data-offline-search-index-json-src="/offline-search-index.0aea9ea6bf9669e6175f3e8944d94927288f398c5e55659fa1cb5f736adcc53eaf70bce5ec7adcbfbe3ee119093234d39d85214c7847fe0fe3cc25ead8880f69.json"
+>>>>>>> 11852b77d17ad1996ea57645c5ea2f7f02d18001
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +178,11 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
+<<<<<<< HEAD
   data-offline-search-index-json-src="/offline-search-index.a05780d5b6f80d3b5ab1a0e8e771cb4b15a5eb5787efc3efdb4b85572edeec6fa0414105c4ec23f09c263b083cc959222a528788ee7d5986a7a22c0dc33c7716.json"
+=======
+  data-offline-search-index-json-src="/offline-search-index.0aea9ea6bf9669e6175f3e8944d94927288f398c5e55659fa1cb5f736adcc53eaf70bce5ec7adcbfbe3ee119093234d39d85214c7847fe0fe3cc25ead8880f69.json"
+>>>>>>> 11852b77d17ad1996ea57645c5ea2f7f02d18001
   data-offline-search-base-href="/"
 >
 
@@ -3546,6 +3554,10 @@ if (!doNotTrack) {
         <li><a href="#bleコマンドの変更方法">BLEコマンドの変更方法</a></li>
       </ul>
     </li>
+<<<<<<< HEAD
+=======
+    <li><a href="#参考文献">参考文献</a></li>
+>>>>>>> 11852b77d17ad1996ea57645c5ea2f7f02d18001
   </ul>
 </nav>
 
@@ -3664,7 +3676,11 @@ STM32リーフとBLEリーフを使った、センサデータのログ機能付
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
 <li>Leafony</li>
+<<<<<<< HEAD
 <li>Google Chrome</li>
+=======
+<li>Google ChromeがインストールされたAndroidスマートフォン または Mac<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
+>>>>>>> 11852b77d17ad1996ea57645c5ea2f7f02d18001
 </ul>
 <h2 id="使用するリーフ">使用するリーフ</h2>
 <table>
@@ -3734,11 +3750,14 @@ Leafonyから発されるBeaconの電波を受信すると、画面の温度/電
 </ol>
 <h2 id="動作解説">動作解説</h2>
 <h3 id="回路全体のブロック図">回路全体のブロック図</h3>
+<<<<<<< HEAD
 <p>本サンプルコードで利用する回路は下図のとおりです。</p>
 <p>主にBLE、センサ、STM32リーフで構成され、特にSTM32リーフでは内部のRTC(リアルタイムクロック)とFlashを利用しています。</p>
 <p>RTCは、BLEを経由してPCやスマートフォンから時刻を設定して使います。</p>
 <p>Flashはプログラムメモリの保存以外に、末尾2kBをユーザがデータを保存できる領域として使うことができます。本サンプルでは、この領域にセンサデータと測定時刻を保存し、本体の電源が切れた後もデータを保持できる仕組みとなっています。</p>
 <p>センサリーフからは温度、湿度、照度センサがSTM32によって読み出され、BLEでデータが送信されます。加速度センサは振動によって割り込み信号を発生し、STM32をスリープから復帰させる役割があります。</p>
+=======
+>>>>>>> 11852b77d17ad1996ea57645c5ea2f7f02d18001
 <img src="block.jpg">
 <h3 id="動作の流れ">動作の流れ</h3>
 <p>このサンプルコードでは主に以下の2つの動作モードが存在します。</p>
@@ -3825,6 +3844,7 @@ Beaconで送信するデータを変更したい場合は<code>AD Structure 3</c
 <p><a href="https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L767-L771">https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L767-L771</a></p>
 <p>任意のセンサを追加したい場合はこれらの関数内に必要な処理を記述してください。</p>
 <h3 id="bleコマンドの変更方法">BLEコマンドの変更方法</h3>
+<<<<<<< HEAD
 <p>BLEで接続したPCやスマートフォンからコマンドを送信してLeafony側の設定を変更したり、データの転送を開始したりすることができます。<br>
 下記のソースコードの部分でそのコマンドと処理を記述しています。</p>
 <p><a href="https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L934-L1107">https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L934-L1107</a></p>
@@ -3832,6 +3852,22 @@ Beaconで送信するデータを変更したい場合は<code>AD Structure 3</c
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
 </p>
+=======
+<p>TODO: webで送信するコマンドを変更する箇所</p>
+<p><a href="https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L934-L1107">https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L934-L1107</a></p>
+<h2 id="参考文献">参考文献</h2>
+<p style="text-align: right">
+<A HREF="javascript:history.back()">前のページに戻る</A>
+</p><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>2021年9月現在、WebbluetoothのScanning APIを利用可能なのは、Android 6.0 Marshmallow以降、または、Mac OS X Yosemite以降のみです。対応状況は<a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md#scanning-api" target="_brank">Webbluetooth Implementation Status</a>を御覧ください。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
+>>>>>>> 11852b77d17ad1996ea57645c5ea2f7f02d18001
         <div class="section-index">
     
     
@@ -4132,7 +4168,11 @@ Beaconで送信するデータを変更したい場合は<code>AD Structure 3</c
 
 	
 	
+<<<<<<< HEAD
 	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 29, 2021
+=======
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 24, 2021
+>>>>>>> 11852b77d17ad1996ea57645c5ea2f7f02d18001
 </div>
 </div>
 
