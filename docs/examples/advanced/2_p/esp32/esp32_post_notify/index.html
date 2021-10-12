@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.87.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -3822,7 +3822,7 @@ ESP32が立ち上がってから<code>Google Apps Script</code>にデータを�
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">lis</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setRange</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_RANGE_2_G</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">// 2, 4, 8 or 16 G!
 </span></code></pre></div><p>データシートによると、使用している加速度センサは軸の正（負）方向に対してそれぞれ128段階の分解能(フルスケールで8-bitの分解能)を持っています。<br>
 0.17gが2gに対して、どのレベルなのかを128段階のレベルで表すと、</p>
-<pre><code class="language-math" data-lang="math">128 / 2g * 0.17g = 10.88
+<pre tabindex="0"><code class="language-math" data-lang="math">128 / 2g * 0.17g = 10.88
 </code></pre><p>なので、閾値レベル<code>11</code>(16進数では<code>0x0B</code>)を設定します。<br>
 この閾値の情報は<code>INT1THS</code>というレジスタに書き込みます。<br>
 一応、レジスタの情報をデータシートから確認してみると、書き込める数値は0~127までだということが分かります。</p>
@@ -3855,7 +3855,7 @@ ESP32が立ち上がってから<code>Google Apps Script</code>にデータを�
 <li>低電力モードも使う</li>
 </ul>
 <p>よってデータシートから、レジスタはODR3からXenまで順に<code>00101100</code>と設定すればいいので以下のようにプログラムします。</p>
-<pre><code>    writeRegister8(LIS3DH_REG_CTRL1, 0x2C);
+<pre tabindex="0"><code>    writeRegister8(LIS3DH_REG_CTRL1, 0x2C);
 </code></pre><p><strong>INT1_CFG</strong>に関して、上のデータシートに、<code>AOI</code>と<code>6D</code>というよく分からない項目があります。<br>
 データシートのTable 48.を見てみると、どうやら<code>AOI</code>と<code>6D</code>を使って割り込み信号を生成する方法を設定できるようです。<br>
 ORとANDの条件は各軸それぞれに対して割り込みを発生させるときの条件として考えれば良さそうです。<br>
@@ -3875,7 +3875,7 @@ ORとANDの条件は各軸それぞれに対して割り込みを発生させる
 <li>Z方向の指定した閾値を超えたときに一瞬だけ割り込み信号を生成する</li>
 </ul>
 <p>以下のようにプログラムすれば良いと分かりました。</p>
-<pre><code>    writeRegister8(LIS3DH_REG_INT1CFG, 0x70); 
+<pre tabindex="0"><code>    writeRegister8(LIS3DH_REG_INT1CFG, 0x70); 
 </code></pre><h4 id="サンプリング周波数-sampling-rate--時間幅-duration"><strong>サンプリング周波数 (Sampling Rate)</strong> &amp; <strong>時間幅 (Duration)</strong></h4>
 <p>サンプリング周波数と時間幅は関連しているので、一緒に説明します。はじめにそれぞれを簡単に説明します。</p>
 <ul>
@@ -3888,15 +3888,15 @@ ORとANDの条件は各軸それぞれに対して割り込みを発生させる
 <a href="./#%E6%A4%9C%E5%87%BA%E8%BB%B8-detection-axes">検出軸</a>の項で説明した通り、設定レジスタは<code>CTRL_REG1</code>です。<br>
 <code>ODR0</code>-<code>ODR3</code>でサンプリング周波数を決定できます。<br>
 再掲ですが、以下のようにプログラムします。</p>
-<pre><code>    writeRegister8(LIS3DH_REG_CTRL1, 0x2C);
+<pre tabindex="0"><code>    writeRegister8(LIS3DH_REG_CTRL1, 0x2C);
 </code></pre><img src="think_sampling_rate.jpg" width=100%>
 <p>時間幅の設定レジスタは<code>INT1_DURATION</code>です。実際にセンサは連続時間を測っているわけではなく、サンプリング回数で時間間隔を計算しています。</p>
 <img src="reg_int1_duration.jpg" width=60%>
 <p>0.3秒以上閾値を超えるようであれば、割り込み信号を生成します。<br>
 今回はサンプル周波数を<code>10Hz</code>で設定しており、設定値は以下のように計算します。</p>
-<pre><code>0.3 / 0.1 = 3
+<pre tabindex="0"><code>0.3 / 0.1 = 3
 </code></pre><p>これは以下のようにプログラムします。</p>
-<pre><code>    writeRegister8(LIS3DH_REG_INT1DUR, 0x03); 
+<pre tabindex="0"><code>    writeRegister8(LIS3DH_REG_INT1DUR, 0x03); 
 </code></pre><h2 id="実行結果">実行結果</h2>
 <p>ESP32を傾けたときにスリープから立ち上がり、Wi-Fiに接続してからLINE Notifyに通知を送信します。<br>
 LINE Notifyで受け取った画面は以下のようになります。</p>

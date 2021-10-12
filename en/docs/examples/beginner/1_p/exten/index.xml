@@ -82,11 +82,11 @@ But as the loudspeaker is connected to pin 5 in Leafony, you should fix the foll
 &lt;ul&gt;
 &lt;li&gt;Change the &lt;code&gt;8&lt;/code&gt; to &lt;code&gt;5&lt;/code&gt; in line 37.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;tone(5, melody[thisNote], noteDuration);
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;tone(5, melody[thisNote], noteDuration);
 &lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
 &lt;li&gt;Change &lt;code&gt;8&lt;/code&gt; to &lt;code&gt;5&lt;/code&gt; in line 44.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;noTone(5);
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;noTone(5);
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;execution-results&#34;&gt;Execution Results&lt;/h2&gt;
 &lt;p&gt;The melody sounds only once from the speakers.&lt;/p&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;

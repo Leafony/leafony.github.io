@@ -104,7 +104,7 @@
 &lt;img src=&#34;find_url.png&#34; width=500&gt;  
 &lt;p&gt;&lt;br /&gt;
 （アプリ固有のURL）&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;google-sheetsの動作確認&#34;&gt;Google Sheetsの動作確認&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -115,7 +115,7 @@
 &lt;p&gt;アプリ固有のURLに、?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100を追加すると、以下の通りになります。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;上記のURLをブラウザに貼り付け、アクセスすると、設定した&lt;code&gt;Google Sheets&lt;/code&gt;にデータが書き込まれます。&lt;/li&gt;
@@ -346,7 +346,7 @@ ESP32が立ち上がってから&lt;code&gt;Google Apps Script&lt;/code&gt;に�
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;lis&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;setRange&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LIS3DH_RANGE_2_G&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;   &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 2, 4, 8 or 16 G!
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;データシートによると、使用している加速度センサは軸の正（負）方向に対してそれぞれ128段階の分解能(フルスケールで8-bitの分解能)を持っています。&lt;br&gt;
 0.17gが2gに対して、どのレベルなのかを128段階のレベルで表すと、&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-math&#34; data-lang=&#34;math&#34;&gt;128 / 2g * 0.17g = 10.88
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-math&#34; data-lang=&#34;math&#34;&gt;128 / 2g * 0.17g = 10.88
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;なので、閾値レベル&lt;code&gt;11&lt;/code&gt;(16進数では&lt;code&gt;0x0B&lt;/code&gt;)を設定します。&lt;br&gt;
 この閾値の情報は&lt;code&gt;INT1THS&lt;/code&gt;というレジスタに書き込みます。&lt;br&gt;
 一応、レジスタの情報をデータシートから確認してみると、書き込める数値は0~127までだということが分かります。&lt;/p&gt;
@@ -379,7 +379,7 @@ ESP32が立ち上がってから&lt;code&gt;Google Apps Script&lt;/code&gt;に�
 &lt;li&gt;低電力モードも使う&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;よってデータシートから、レジスタはODR3からXenまで順に&lt;code&gt;00101100&lt;/code&gt;と設定すればいいので以下のようにプログラムします。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_CTRL1, 0x2C);
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_CTRL1, 0x2C);
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;INT1_CFG&lt;/strong&gt;に関して、上のデータシートに、&lt;code&gt;AOI&lt;/code&gt;と&lt;code&gt;6D&lt;/code&gt;というよく分からない項目があります。&lt;br&gt;
 データシートのTable 48.を見てみると、どうやら&lt;code&gt;AOI&lt;/code&gt;と&lt;code&gt;6D&lt;/code&gt;を使って割り込み信号を生成する方法を設定できるようです。&lt;br&gt;
 ORとANDの条件は各軸それぞれに対して割り込みを発生させるときの条件として考えれば良さそうです。&lt;br&gt;
@@ -399,7 +399,7 @@ ORとANDの条件は各軸それぞれに対して割り込みを発生させる
 &lt;li&gt;Z方向の指定した閾値を超えたときに一瞬だけ割り込み信号を生成する&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;以下のようにプログラムすれば良いと分かりました。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_INT1CFG, 0x70); 
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_INT1CFG, 0x70); 
 &lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;サンプリング周波数-sampling-rate--時間幅-duration&#34;&gt;&lt;strong&gt;サンプリング周波数 (Sampling Rate)&lt;/strong&gt; &amp;amp; &lt;strong&gt;時間幅 (Duration)&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;サンプリング周波数と時間幅は関連しているので、一緒に説明します。はじめにそれぞれを簡単に説明します。&lt;/p&gt;
 &lt;ul&gt;
@@ -412,15 +412,15 @@ ORとANDの条件は各軸それぞれに対して割り込みを発生させる
 &lt;a href=&#34;./#%E6%A4%9C%E5%87%BA%E8%BB%B8-detection-axes&#34;&gt;検出軸&lt;/a&gt;の項で説明した通り、設定レジスタは&lt;code&gt;CTRL_REG1&lt;/code&gt;です。&lt;br&gt;
 &lt;code&gt;ODR0&lt;/code&gt;-&lt;code&gt;ODR3&lt;/code&gt;でサンプリング周波数を決定できます。&lt;br&gt;
 再掲ですが、以下のようにプログラムします。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_CTRL1, 0x2C);
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_CTRL1, 0x2C);
 &lt;/code&gt;&lt;/pre&gt;&lt;img src=&#34;think_sampling_rate.jpg&#34; width=100%&gt;
 &lt;p&gt;時間幅の設定レジスタは&lt;code&gt;INT1_DURATION&lt;/code&gt;です。実際にセンサは連続時間を測っているわけではなく、サンプリング回数で時間間隔を計算しています。&lt;/p&gt;
 &lt;img src=&#34;reg_int1_duration.jpg&#34; width=60%&gt;
 &lt;p&gt;0.3秒以上閾値を超えるようであれば、割り込み信号を生成します。&lt;br&gt;
 今回はサンプル周波数を&lt;code&gt;10Hz&lt;/code&gt;で設定しており、設定値は以下のように計算します。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;0.3 / 0.1 = 3
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;0.3 / 0.1 = 3
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;これは以下のようにプログラムします。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_INT1DUR, 0x03); 
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_INT1DUR, 0x03); 
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
 &lt;p&gt;ESP32を傾けたときにスリープから立ち上がり、Wi-Fiに接続してからLINE Notifyに通知を送信します。&lt;br&gt;
 LINE Notifyで受け取った画面は以下のようになります。&lt;/p&gt;
@@ -526,7 +526,7 @@ LINE Notifyで受け取った画面は以下のようになります。&lt;/p&gt
 &lt;/li&gt;
 &lt;li&gt;以下のURLをコピーし、WebBLEを立ち上げてアドレスバーに貼り付けてください。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt; http://192.168.4.1
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; http://192.168.4.1
 &lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;29pin headerの7、9、22、24、26、28ピンがタッチセンサに割り当てられています。&lt;br&gt;

@@ -105,7 +105,7 @@ Click &lt;code&gt;Publish&lt;/code&gt;-&amp;gt;&lt;code&gt;Deploy as a web appli
 &lt;img src=&#34;find_url.png&#34; width=500&gt;  
 &lt;p&gt;&lt;br /&gt;
 （App-specific URLs ）&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;checking-the-operation-of-google-sheets&#34;&gt;Checking the operation of Google Sheets&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -116,7 +116,7 @@ Click &lt;code&gt;Publish&lt;/code&gt;-&amp;gt;&lt;code&gt;Deploy as a web appli
 &lt;p&gt;If you add ?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100 to the app-specific URL, you will get the following&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Paste the above URL into your browser and access it, and the data will be written to the configured &lt;code&gt;Google Sheets&lt;/code&gt;.&lt;/li&gt;
