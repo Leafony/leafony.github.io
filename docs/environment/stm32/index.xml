@@ -60,7 +60,8 @@
 &lt;p&gt;&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt;を選択します。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;ボードマネージャの検索ボックスにLeafonyを入力してインストールします。&lt;/br&gt;&lt;/br&gt;
+&lt;p&gt;ボードマネージャの検索ボックスにLeafonyを入力してインストールします。インストールに数分時間のかかる場
+合があります。&lt;/br&gt;&lt;/br&gt;
 &lt;img src=&#34;./stm32cores2.png&#34; width=&#34;640&#34;&gt;&lt;/img&gt;&lt;/br&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -87,7 +88,7 @@
 &lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_tips.jpg&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap03/ap03_tips.jpg&#34; width=&#34;450&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/beginner/3_p/basic/temp_humid_sensors&#34; target=&#34;_blank&#34;&gt;温湿度センサ読み取り&lt;/a&gt;を参照し、プログラムを書き込みます。正常に書き込まれた場合は &lt;code&gt;Start operation achieved successfully&lt;/code&gt;と表示されます。表示されない場合は、プログラムが正常に動作しません。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/br&gt;&lt;/br&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/beginner/3_p/basic/temp_humid_sensors&#34; target=&#34;_blank&#34;&gt;温湿度センサ読み取り&lt;/a&gt;を参照し、プログラムを書き込みます。書き込みが完了するまで、時間のかかる場合があります。正常に書き込まれた場合は &lt;code&gt;Start operation achieved successfully&lt;/code&gt;と表示されます。表示されない場合は、プログラムが正常に動作しません。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/br&gt;&lt;/br&gt;
 &lt;img src=&#34;./operation1_v1.png&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -109,13 +110,13 @@
 &lt;br&gt;
 &lt;br&gt;
 初期設定&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;HardwareTimer&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;HardwareTimer&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;TIM2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;HardwareTimer&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;HardwareTimer&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;TIM2&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 
   &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;setOverflow&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LOOP_INTERVAL&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;MICROSEC_FORMAT&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 125ms
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;attachInterrupt&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;intTimer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;timer2&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;resume&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;割り込みルーチン&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;intTimer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;){&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;intTimer&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;){&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;bInterval&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
 　&lt;span style=&#34;color:#a40000&#34;&gt;：&lt;/span&gt;
 　&lt;span style=&#34;color:#a40000&#34;&gt;：&lt;/span&gt;
@@ -182,7 +183,7 @@
 &lt;br&gt;
 &lt;br&gt;
 &lt;code&gt;名&lt;/code&gt;、&lt;code&gt;姓&lt;/code&gt;、&lt;code&gt;E-mail address&lt;/code&gt;を入力し、&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;□I have read and understood the Sales Terms &amp;amp; Conditions, Terms of Use and Privacy Policy
+&lt;pre&gt;&lt;code&gt;□I have read and understood the Sales Terms &amp;amp; Conditions, Terms of Use and Privacy Policy
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;をチェックして、&lt;code&gt;ダウンロード&lt;/code&gt;をクリックしてください。
 &lt;img src=&#34;./stm32cubeide4.png&#34; width=&#34;500&#34;&gt;
 &lt;br&gt;
