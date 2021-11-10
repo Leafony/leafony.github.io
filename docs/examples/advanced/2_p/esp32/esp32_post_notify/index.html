@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -24,8 +24,8 @@
 <title>低電力にポスト投函検出してLINE通知 | Leafony</title><meta property="og:title" content="低電力にポスト投函検出してLINE通知" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_post_notify/" /><meta property="og:site_name" content="Leafony" />
-
+<meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_post_notify/" />
+<meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="低電力にポスト投函検出してLINE通知">
 <meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="低電力にポスト投函検出してLINE通知"/>
@@ -48,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" as="style">
-<link href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f4955aff66bf60464882e414d77f664b36d1634238870d503bc35dfc28773dc9a3e2dc6747cd9fe862f661e360ddeb2d349e387e76c8e03390786fa23dc6858d.json"
+  data-offline-search-index-json-src="/offline-search-index.a369e4c23aa9b541a37a7685a7986563e9d73bc7697eaa8628877a67fe26a43e18667c9f14a86d91a138c84bbba526dddc1b93d72d2f8cf98ff7df2fefffb924.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f4955aff66bf60464882e414d77f664b36d1634238870d503bc35dfc28773dc9a3e2dc6747cd9fe862f661e360ddeb2d349e387e76c8e03390786fa23dc6858d.json"
+  data-offline-search-index-json-src="/offline-search-index.a369e4c23aa9b541a37a7685a7986563e9d73bc7697eaa8628877a67fe26a43e18667c9f14a86d91a138c84bbba526dddc1b93d72d2f8cf98ff7df2fefffb924.json"
   data-offline-search-base-href="/"
 >
 
@@ -3629,6 +3629,13 @@ if (!doNotTrack) {
 <p>ESP32 MCUリーフと4-Sensorsリーフの加速度センサを利用して、ポストの開け閉めを検出します。<br>
 バッテリーを長持ちさせるためにESP32は主に<code>Deep Sleep</code>状態で、ポストが開いたときに加速度センサから割り込み信号を生成します。
 ESP32が立ち上がってから<code>Google Apps Script</code>にデータを送信して、そこからLINEに通知を送信します。</p>
+<p>実際にこのシステムは東京大学の桜井研究室で利用されています。<br>
+その時の開発のポイントや、どのように役立っているのかを動画にまとめました。</p>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/TRaQ1SStghw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
 <h2 id="line通知サービスの設定">LINE通知サービスの設定</h2>
 <p>LINE通知には<a href="https://notify-bot.line.me/">LINE Notify</a>を利用します。</p>
 <ol>
@@ -3734,7 +3741,7 @@ ESP32が立ち上がってから<code>Google Apps Script</code>にデータを�
 </span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000">newRange</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setValues</span><span style="color:#000;font-weight:bold">([</span><span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">]);</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>        <span style="color:#000">result</span> <span style="color:#ce5c00;font-weight:bold">=</span>  <span style="color:#4e9a06">&#39;Ok&#39;</span><span style="color:#000;font-weight:bold">;</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>    <span style="color:#000;font-weight:bold">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>
+<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>       
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>    <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">lineMessage</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;ポストに投函されました\n現在のバッテリーの電圧：&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">battery</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34;[V]&#34;</span><span style="color:#000;font-weight:bold">;</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>    <span style="color:#000">sendToLine</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">lineMessage</span><span style="color:#000;font-weight:bold">);</span>
 <span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>
@@ -4204,7 +4211,7 @@ LINE Notifyで受け取った画面は以下のようになります。</p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 October 6, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 November 11, 2021
 </div>
 </div>
 
@@ -4268,7 +4275,7 @@ LINE Notifyで受け取った画面は以下のようになります。</p>
 
 
 
-<script src="/js/main.min.f70926ca86f7153429e54b0705f11c420ceac8da5cb4027087319447696e4a5f.js" integrity="sha256-9wkmyob3FTQp5UsHBfEcQgzqyNpctAJwhzGUR2luSl8=" crossorigin="anonymous"></script>
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
 
 
 
