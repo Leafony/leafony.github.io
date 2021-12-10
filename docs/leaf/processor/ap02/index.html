@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a369e4c23aa9b541a37a7685a7986563e9d73bc7697eaa8628877a67fe26a43e18667c9f14a86d91a138c84bbba526dddc1b93d72d2f8cf98ff7df2fefffb924.json"
+  data-offline-search-index-json-src="/offline-search-index.71933b7694ee3730123fec46bf28658f1df831cc78d28ddfaad453449f8ff8d03cdf71c06e4f43de8236cdc6cefce98a6154b8a63923b36a6f843a4979701476.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a369e4c23aa9b541a37a7685a7986563e9d73bc7697eaa8628877a67fe26a43e18667c9f14a86d91a138c84bbba526dddc1b93d72d2f8cf98ff7df2fefffb924.json"
+  data-offline-search-index-json-src="/offline-search-index.71933b7694ee3730123fec46bf28658f1df831cc78d28ddfaad453449f8ff8d03cdf71c06e4f43de8236cdc6cefce98a6154b8a63923b36a6f843a4979701476.json"
   data-offline-search-base-href="/"
 >
 
@@ -3540,6 +3540,7 @@ if (!doNotTrack) {
     <li><a href="#tips">Tips</a>
       <ul>
         <li><a href="#ledスイッチについて">LED、スイッチについて</a></li>
+        <li><a href="#低電力スリープ">低電力スリープ</a></li>
         <li><a href="#電池動作">電池動作</a></li>
         <li><a href="#直上にリーフを積む時の注意">直上にリーフを積む時の注意</a></li>
         <li><a href="#タッチセンサ">タッチセンサ</a></li>
@@ -3732,7 +3733,10 @@ if (!doNotTrack) {
 </tr>
 </tbody>
 </table>
-<h3 id="電池動作">電池動作</h3>
+<h3 id="低電力スリープ">低電力スリープ</h3>
+<p>ESP32 MCUは<em>Deep Sleep</em>機能を利用することで、プロセッサの非利用時に低電力な待機モードを実現できます。</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">wifi</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">disconnect</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// Wi-Fiをオフにするために，trueを明示してください
+</span></code></pre></div><h3 id="電池動作">電池動作</h3>
 <p>ESP32 MCUは、コイン電池では動作しません。</p>
 <h3 id="直上にリーフを積む時の注意">直上にリーフを積む時の注意</h3>
 <p>このリーフには、高背部品(高さ2mm以上)が使用されており、そのままでは直上のリーフと電気的に接続不良をおこす可能性があります。そのため、このリーフの直上には、必ずスペーサリーフ（AX04 Spacer）を間に挟んで下さい。</p>
@@ -4071,7 +4075,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 20, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 December 11, 2021
 </div>
 </div>
 

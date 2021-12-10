@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a369e4c23aa9b541a37a7685a7986563e9d73bc7697eaa8628877a67fe26a43e18667c9f14a86d91a138c84bbba526dddc1b93d72d2f8cf98ff7df2fefffb924.json"
+  data-offline-search-index-json-src="/offline-search-index.71933b7694ee3730123fec46bf28658f1df831cc78d28ddfaad453449f8ff8d03cdf71c06e4f43de8236cdc6cefce98a6154b8a63923b36a6f843a4979701476.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a369e4c23aa9b541a37a7685a7986563e9d73bc7697eaa8628877a67fe26a43e18667c9f14a86d91a138c84bbba526dddc1b93d72d2f8cf98ff7df2fefffb924.json"
+  data-offline-search-index-json-src="/offline-search-index.71933b7694ee3730123fec46bf28658f1df831cc78d28ddfaad453449f8ff8d03cdf71c06e4f43de8236cdc6cefce98a6154b8a63923b36a6f843a4979701476.json"
   data-offline-search-base-href="/"
 >
 
@@ -3542,6 +3542,7 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#wi-fiの設定">Wi-Fiの設定</a></li>
         <li><a href="#接続先googleクラウドの設定">接続先Googleクラウドの設定</a></li>
+        <li><a href="#スリープ動作">スリープ動作</a></li>
         <li><a href="#加速度センサlis3dhの設定">加速度センサ(LIS3DH)の設定</a></li>
       </ul>
     </li>
@@ -3804,7 +3805,11 @@ ESP32が立ち上がってから<code>Google Apps Script</code>にデータを�
 <p><code>ESP32_Post_Notify.ino</code>で接続先Googleスクリプトの設定を行っています。
 <a href="./#google%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E8%A8%AD%E5%AE%9A">Googleクラウドサービスの設定</a>の<strong>3</strong>で設定したGoogle Apps Scriptの固有IDを以下の変数に格納します。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">KEY</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;google_scripts_key&#34;</span><span style="color:#000;font-weight:bold">;</span>
-</code></pre></div><h3 id="加速度センサlis3dhの設定">加速度センサ(LIS3DH)の設定</h3>
+</code></pre></div><h3 id="スリープ動作">スリープ動作</h3>
+<p>Wi-Fiに接続してデータを送った後は，EP32 MCUが<code>Deep Sleep</code>モードに入ることで待機電力を極力減らします。<br>
+<code>Deep Sleep</code>モードに入る前にESP32 MCU内のWi-Fiモジュールの電源を切ることを忘れないでください。</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">WiFi</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">disconnect</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#8f5902;font-style:italic">// Wi-Fiをオフにするために，trueを明示してください
+</span></code></pre></div><h3 id="加速度センサlis3dhの設定">加速度センサ(LIS3DH)の設定</h3>
 <p>加速度センサ用の設定パラメータはレポジトリに上がっている<code>MyLIS3DH.cpp</code>で修正できます。<br>
 実際に身の回りのポストに実装する場合にはパラメータを環境に合わせて設定する必要があります。 <br>
 今回は例として、以下のように蓋が開閉するポストを考えます。</p>
@@ -4211,7 +4216,7 @@ LINE Notifyで受け取った画面は以下のようになります。</p>
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 November 11, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 December 11, 2021
 </div>
 </div>
 
