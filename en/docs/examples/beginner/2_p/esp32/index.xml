@@ -45,7 +45,7 @@
 &lt;/table&gt;
 &lt;h2 id=&#34;source-code&#34;&gt;Source code&lt;/h2&gt;
 &lt;p&gt;Write the following program in the Arduino IDE.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//  Button
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//    (c) 2020 Trillion-Node Study Group
@@ -140,7 +140,7 @@ If you haven&amp;rsquo;t installed it yet, refer to &lt;a href=&#34;https://docs
 &lt;p&gt;Add 87 lines for low power consumption setting.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Date and time functions using a PCF8523 RTC connected via I2C and Wire lib
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Date and time functions using a PCF8523 RTC connected via I2C and Wire lib
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;#34;RTClib.h&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
 &lt;span style=&#34;color:#000&#34;&gt;RTC_PCF8523&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;rtc&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
@@ -300,7 +300,7 @@ When the RTC is initialized due to power loss, etc., it will be initialized to t
 &lt;ul&gt;
 &lt;li&gt;In the Arduino IDE, go to &lt;code&gt;File&lt;/code&gt; -&amp;gt; &lt;code&gt;Sketch Examples&lt;/code&gt; -&amp;gt; &lt;code&gt;SD(esp32)&lt;/code&gt; -&amp;gt; &lt;code&gt;SD_Test&lt;/code&gt; and write it to the microcontroller board.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;/*
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;/*
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt; * Connect the SD card to the following pins:
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt; *
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt; * SD Card | ESP32

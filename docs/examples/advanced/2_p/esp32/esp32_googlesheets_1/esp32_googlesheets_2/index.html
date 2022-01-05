@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.85.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4d249501586c87878a3df5ee2802def91f83391326dba68d53eb727b8d13b307792fe6a487eff94b6e500da9f9d76a922407c771d8846679cbf1bd22ce5bf0a3.json"
+  data-offline-search-index-json-src="/offline-search-index.df0dda30dad2c11ee462dd710de74a83e78f22d3cc52ceb69610c4c005e463b6c4f6cc1778294b2a9c40d11b380392588194cc6cf0781932c0ae6ab6d4a8856e.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4d249501586c87878a3df5ee2802def91f83391326dba68d53eb727b8d13b307792fe6a487eff94b6e500da9f9d76a922407c771d8846679cbf1bd22ce5bf0a3.json"
+  data-offline-search-index-json-src="/offline-search-index.df0dda30dad2c11ee462dd710de74a83e78f22d3cc52ceb69610c4c005e463b6c4f6cc1778294b2a9c40d11b380392588194cc6cf0781932c0ae6ab6d4a8856e.json"
   data-offline-search-base-href="/"
 >
 
@@ -333,7 +333,7 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/products/esp32_2/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 Wi-Fi Kit</a>
+    <a  href="/docs/products/esp32_2/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ESP32 Wi-Fi Kit 2</a>
   </li>
   <ul>
     <li class="collapse " id="docsproductsesp32_2">
@@ -3501,10 +3501,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/leaf/others/az68/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">18650 battery holder</a>
+    <a  href="/docs/leaf/others/az66/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic Kit Case</a>
   </li>
   <ul>
-    <li class="collapse " id="docsleafothersaz68">
+    <li class="collapse " id="docsleafothersaz66">
       
       
       
@@ -3547,10 +3547,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/leaf/others/az66/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Basic Kit Case</a>
+    <a  href="/docs/leaf/others/az68/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">18650 battery holder</a>
   </li>
   <ul>
-    <li class="collapse " id="docsleafothersaz66">
+    <li class="collapse " id="docsleafothersaz68">
       
       
       
@@ -3775,7 +3775,7 @@ if (!doNotTrack) {
 <ol>
 <li>アクセスする<code>WiFi</code>の情報を以下の定数に代入してください。</li>
 </ol>
-<pre tabindex="0"><code>const char* SSID = &quot;wifi_ssid&quot;;    // WiFi SSID
+<pre><code>const char* SSID = &quot;wifi_ssid&quot;;    // WiFi SSID
 const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
 </code></pre><ol start="2">
 <li>先ほど作成したウェブアプリの情報を以下の定数に代入してください。
@@ -3784,7 +3784,7 @@ const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
 </ul>
 </li>
 </ol>
-<pre tabindex="0"><code>const char* KEY = &quot;google_scripts_key&quot;;
+<pre><code>const char* KEY = &quot;google_scripts_key&quot;;
 </code></pre><ol start="3">
 <li>センサデータの書き込みの時間間隔を調整したいときは以下の定数に代入してください。
 <ul>
@@ -3792,8 +3792,8 @@ const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
 </ul>
 </li>
 </ol>
-<pre tabindex="0"><code>uint64_t DEEP_SLEEP_TIME_SEC = 60;
-</code></pre><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
+<pre><code>uint64_t DEEP_SLEEP_TIME_SEC = 60;
+</code></pre><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;HTTPClient.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;HTS221.h&gt;</span><span style="color:#8f5902;font-style:italic">
