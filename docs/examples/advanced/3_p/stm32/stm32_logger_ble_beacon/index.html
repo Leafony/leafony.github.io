@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.85.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -3837,7 +3837,7 @@ Connectionモードは、本体の時刻を設定するなどの初回起動時�
 <p>4-Sensorsに搭載された加速度センサは、振動(指で本体をタップする動作)を検出すると、STM32の<code>INT1ピン</code>に割り込み信号を出します。<br>
 下記の記述で加速度センサのタップ検出を有効化し、その割り込みによってSTM32がスリープから復帰する仕組みを実現しています。<br>
 か速度センサの割り込みによって起動した場合のみConnectモードとして起動させることで、必要な時だけBLEで接続可能な仕組みを実現しました。</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setClick</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">DOUBLETAP</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">CLICKTHRESHHOLD</span><span style="color:#000;font-weight:bold">);</span>  <span style="color:#8f5902;font-style:italic">// enable click interrupt
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setClick</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">DOUBLETAP</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">CLICKTHRESHHOLD</span><span style="color:#000;font-weight:bold">);</span>  <span style="color:#8f5902;font-style:italic">// enable click interrupt
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#8f5902;font-style:italic">// enable interrupt from accelerometer click event
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">LowPower</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">attachInterruptWakeup</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">INT_1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">onClicked</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">RISING</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">DEEP_SLEEP_MODE</span><span style="color:#000;font-weight:bold">);</span>
@@ -3857,7 +3857,7 @@ AD Structureはさらに細かく見ると、<code>Length</code>:データの長
 <p>実際に本サンプルでは下記のコードのように、<code>AD Structure 1</code>にAdvertisingのモード設定、<code>AD Structure 2</code>にデバイス名、<code>AD Structure 3</code>にセンサのデータを保存して送信しています。<br>
 Beaconで送信するデータを変更したい場合は<code>AD Structure 3</code>を任意に変更してください。</p>
 <p><a href="https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L272-L302">https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L272-L302</a></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#8f5902;font-style:italic">//-------------------------
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#8f5902;font-style:italic">//-------------------------
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// Advertising Packet
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-------------------------
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// AD Structure 1 (Flags)
