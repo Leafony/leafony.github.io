@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.615f41d1538a42f8389b143f262b6259b6a9179c1897f8e49c3919a0e4f3119488246e8cfb10b8b364039d37ff2f1274f8b2e2eed17517ea4122183b1fbd9ab7.json"
+  data-offline-search-index-json-src="/offline-search-index.d62e131b592dcdc12d53ccebacea83a8b2b7e878fe418b4046c452ef13183b35ff4bc02f47171f16c03c2ec906caec9029c47d0a32c7794fe110c25a7f1dfd10.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.615f41d1538a42f8389b143f262b6259b6a9179c1897f8e49c3919a0e4f3119488246e8cfb10b8b364039d37ff2f1274f8b2e2eed17517ea4122183b1fbd9ab7.json"
+  data-offline-search-index-json-src="/offline-search-index.d62e131b592dcdc12d53ccebacea83a8b2b7e878fe418b4046c452ef13183b35ff4bc02f47171f16c03c2ec906caec9029c47d0a32c7794fe110c25a7f1dfd10.json"
   data-offline-search-base-href="/"
 >
 
@@ -3771,21 +3771,31 @@ CPUのような回路はクロックの周波数が高いほど計算スピー�
 <h2 id="電池持続時間">電池持続時間</h2>
 <p>　電池の容量は<code>Ah(アンペアアワー)</code>という単位で決まります。
 <code>Ah</code>は電荷の量を示していて、<code>1Ah</code>は<strong>1時間ずっと1Aの電流を流すために必要な電荷の量</strong>を示します。</p>
-<pre><code>1Ah = 1A * 1h
-</code></pre><p>ここでは電池の電荷の量を単に「電池の容量」と表現します。</p>
-<p>　電池の大きさによっても容量は異なります。
+<pre><code>1 Ah = 1 A * 1 h
+</code></pre><p><code>Ah</code>は単にどれくらいの間一定の電流を流せるかということを示しており、ここに電池の電圧は登場しません。
+しかしながら、電池には1.5Vや3Vといった出力電圧が決まっており、電圧は電池によっても異なる場合があります。
+同じ<code>1Ah</code>でも1.5Vの電池と3Vの電池では動かせる電力が変わってきます。</p>
+<p>電力を表す単位として<code>W(ワット)</code>という単位が一般的に用いられます。
+<code>1W</code>は<strong>1Vの電圧がかかった回路に1Aの電流が流れた時の電力</strong>を表しています。</p>
+<pre><code>1 W = 1 V * 1 A
+</code></pre><p>さらに、<strong>1時間ずっと1Wの電力を出力できる量</strong>として<code>Wh(ワットアワー</code>という単位があります。</p>
+<pre><code>1 Wh = 1 W * 1 h
+</code></pre><p><code>Wh</code>を用いれば一定時間に出力できる電力量を比較することができるため、電圧が異なる電池同士でもエネルギーの比較がしやすくなります。 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>　さて、次に実際に電池の容量がどれくらいあるのかを見ていきましょう。
+電池の大きさによっても容量は異なります。
 例えば、代表的な電池は下記のような容量があります。</p>
 <ul>
-<li>コイン電池(CR2032)：220mAh</li>
-<li>単三電池（ニッケル水素）：2000mAh</li>
-<li>リチウムイオン電池：3,000mAh以上</li>
+<li>コイン電池(CR2032)：3.0V 220mAh (660mWh)</li>
+<li>単三電池（ニッケル水素）：1.5V 2,000mAh (3,000mWh)</li>
+<li>リチウムイオン電池：3.0V 3,000mAh以上 (9,000mWh)</li>
 </ul>
-<p>Leafonyで使われるコイン電池(CR2032)は、およそ単三電池の10分の1程度の容量であることがわかります。</p>
-<p>また、<code>Ah</code>の定義より、100mAで動作する回路を動かした場合、コイン電池は</p>
-<pre><code>220mAh ÷ 100mA = 2.2h
+<p>Leafonyで使われるコイン電池(CR2032)は、およそ単三電池の5分の1程度の電力量であることがわかります。</p>
+<p>また、<code>Wh</code>の定義より、3.3Vの電源電圧で100mAの電流で動作する回路を動かした場合、コイン電池は</p>
+<pre><code>660 mWh / (3.3 V * 100 mA) = 2 h
 </code></pre><p>単三電池は</p>
-<pre><code>2000mAh ÷ 100mA = 20h
+<pre><code>3,000 mWh / (3.3 V * 100 mA) ≒ 9 h
 </code></pre><p>動作することがわかります。</p>
+<p>Leafonyの動作電圧とリーフごとの電流はデータシートからおおよそ計算ができるため、電池でどれくらいの時間連続動作が可能なのかを見積もることができます。</p>
 <h3 id="電流が変化する回路の場合">電流が変化する回路の場合</h3>
 <p>　では、回路の消費電流が次のような場合はどうでしょうか？</p>
 <pre><code>1時間のうち1分間だけ回路が動き、そのとき100mAで動作する。
@@ -3827,6 +3837,14 @@ BLEリーフでデータを送信している時間は4-Sensorsリーフのセ�
 <p>この方法はサンプルスケッチ「<a href="/docs/examples/advanced/3_p/stm32/stm32_logger_ble_beacon/">STM32 BLE Logger Beacon</a>」で使用しています。</p>
 <p>　外部からのイベントが発生したときにだけ回路を動作させたい場合は、CPUの割り込み機能を使うと非常に省電力なシステムを作ることができます。</p>
 <h2 id="電力の測定">電力の測定</h2>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>電池は使用量によって電圧が変わってくる場合があるため、精確な電力量を計算することはより複雑になります。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 
         <div class="section-index">
     
@@ -3838,7 +3856,7 @@ BLEリーフでデータを送信している時間は4-Sensorsリーフのセ�
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 27, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 2, 2022
 </div>
 </div>
 
