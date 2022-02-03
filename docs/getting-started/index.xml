@@ -262,7 +262,7 @@ STM32リーフにあらかじめ書き込まれているスケッチでは、IoT
     </item>
     
     <item>
-      <title>Docs: ESP32 Wi-Fi Kit スタートガイド</title>
+      <title>Docs: ESP32 Wi-Fi Kit/Kit 2 スタートガイド</title>
       <link>https://docs.leafony.com/docs/getting-started/esp32/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -270,15 +270,15 @@ STM32リーフにあらかじめ書き込まれているスケッチでは、IoT
       <description>
         
         
-        &lt;p&gt;ESP32 Wi-Fi Kit は、Wi-FiとBluetooth内蔵のESP32-WROOM-32を搭載した乾電池やリチウムバッテリーで駆動可能な開発キットです。Wi-Fiでパソコンやスマートフォンにタッチセンサの値を送信することができるプログラムが、プレインストールされています。&lt;/p&gt;
+        &lt;p&gt;ESP32 Wi-Fi Kit/Kit 2は、Wi-FiとBluetooth内蔵のESP32-WROOM-32を搭載した乾電池やリチウムバッテリーで駆動可能な開発キットです。Wi-Fiでパソコンやスマートフォンにタッチセンサの値を送信することができるプログラムが、プレインストールされています。&lt;/p&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;ESP32 Wi-Fi Kit&lt;/li&gt;
+&lt;li&gt;ESP32 Wi-Fi Kit/Kit 2&lt;/li&gt;
 &lt;li&gt;パソコンやスマートフォン&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;使い方&#34;&gt;使い方&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;ESP32 Wi-Fi Kitに単4電池3本入れ、電源スイッチをONにして下さい。&lt;br&gt;
+&lt;li&gt;ESP32 Wi-Fi Kit/Kit 2に単4電池3本入れ、電源スイッチをONにして下さい。&lt;br&gt;
 &lt;img src=&#34;./quick_esp_assemble.png&#34; alt=&#34;assemble&#34;&gt;&lt;/li&gt;
 &lt;li&gt;パソコンやスマートフォンで周辺のWi-Fiを検索し、以下のSSIDのWi-Fiに接続します。
 &lt;ul&gt;
@@ -305,7 +305,7 @@ STM32リーフにあらかじめ書き込まれているスケッチでは、IoT
 &lt;br&gt;
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;ESP32 Wi-Fi KitのNut Plate部分にマグネットが付いているので、金属の壁などに取付られます。&lt;/p&gt;
+&lt;p&gt;ESP32 Wi-Fi Kit/Kit 2のNut Plate部分にマグネットが付いているので、金属の壁などに取付られます。&lt;/p&gt;
  &lt;img src=&#34;magnet_1.png&#34; width=&#34;400&#34;&gt;
 &lt;/li&gt;
 &lt;/ol&gt;

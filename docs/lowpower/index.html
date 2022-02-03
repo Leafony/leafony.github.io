@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.075bba4539e1be1943760cace3f77801dfe89a9832c27dc9e07cc8f3ad14893550b52a45768dec879c1c6a20b8d6d92486da2536562d757fae141ac684c7419c.json"
+  data-offline-search-index-json-src="/offline-search-index.b6a1bc7c71c72e52a6c65d0200e63d7afa3a2219ed886d7b890dae81c1c3256c3f012cf3e639af058dd2df6bbb23dcea4fc809474746200be90e82d64c1af626.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.075bba4539e1be1943760cace3f77801dfe89a9832c27dc9e07cc8f3ad14893550b52a45768dec879c1c6a20b8d6d92486da2536562d757fae141ac684c7419c.json"
+  data-offline-search-index-json-src="/offline-search-index.b6a1bc7c71c72e52a6c65d0200e63d7afa3a2219ed886d7b890dae81c1c3256c3f012cf3e639af058dd2df6bbb23dcea4fc809474746200be90e82d64c1af626.json"
   data-offline-search-base-href="/"
 >
 
@@ -3787,7 +3787,7 @@ CPUのような回路はクロックの周波数が高いほど計算スピー�
 <ul>
 <li>コイン電池(CR2032)：3.0V 220mAh (660mWh)</li>
 <li>単三電池（ニッケル水素）：1.5V 2,000mAh (3,000mWh)</li>
-<li>リチウムイオン電池：3.0V 3,000mAh以上 (9,000mWh)</li>
+<li>リチウムイオン電池：3.7V 3,000mAh以上 (11,100mWh)</li>
 </ul>
 <p>Leafonyで使われるコイン電池(CR2032)は、およそ単三電池の5分の1程度の電力量であることがわかります。</p>
 <p>また、<code>Wh</code>の定義より、3.3Vの電源電圧で100mAの電流で動作する回路を動かした場合、コイン電池は</p>
@@ -3801,10 +3801,10 @@ CPUのような回路はクロックの周波数が高いほど計算スピー�
 <pre><code>1時間のうち1分間だけ回路が動き、そのとき100mAで動作する。
 残りの59分間は回路がスリープモードに入り、そのとき回路には1mA流れている。
 </code></pre><p>この場合、この回路が1時間にどれだけの電荷を必要とするのかを計算すればよいので、</p>
-<pre><code>100mA * 1min / 60min + 1mA * 59min / 60min = 2.65mAh
+<pre><code>3.3 V * 100 mA * (1 min / 60 min) + 3.3 V * 1 mA * (59 min / 60 min) = 8.745 mWh
 </code></pre><p>が、1時間あたりに消費する電荷量となります。</p>
 <p>したがって、コイン電池(CR2032)を使う場合は、</p>
-<pre><code>220mAh ÷ 2.65mAh = 83h
+<pre><code>660 mWh ÷ 8.745 mWh = 75.5 h
 </code></pre><p>となり、83時間 = 3.45日ほど動作する計算になります。</p>
 <h2 id="省電力化のアイデア">省電力化のアイデア</h2>
 <p>　ここでは、これまでにLeafonyのサンプルデザインで使ってきた省電力化のためのアイデアをご紹介します。</p>
@@ -3856,7 +3856,7 @@ BLEリーフでデータを送信している時間は4-Sensorsリーフのセ�
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 2, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 3, 2022
 </div>
 </div>
 
