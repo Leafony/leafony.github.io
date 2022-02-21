@@ -34,7 +34,7 @@
 &lt;li&gt;Googleアカウントにログインし、新しいスプレッドシートを作成しましょう。アカウントがない場合は作成してください。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;create_new_sheet_a.png&#34; width=1200&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;Google Sheetsのタイトル（デフォルト：&lt;code&gt;無題のスプレッドシート&lt;/code&gt;）は自由に変更して大丈夫です。&lt;br&gt;
@@ -48,7 +48,7 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;open_script_editor_a.PNG&#34;&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;ツールからスクリプトエディタを開き、Githubのソースコードをコピー&amp;amp;ペーストしてください。
 &lt;ul&gt;
@@ -56,7 +56,7 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;
 &lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;以下の変数に、先ほど作成した&lt;code&gt;Google Sheets&lt;/code&gt;の情報を入力してください。
 &lt;ul&gt;
@@ -66,46 +66,48 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;edit_script_a.png&#34;&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;&lt;code&gt;Google Sheets&lt;/code&gt;を公開する手順について、説明します。&lt;br&gt;
 &lt;code&gt;公開&lt;/code&gt;-&amp;gt;&lt;code&gt;ウェブアプリケーションとして導入&lt;/code&gt;をクリックします。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;deploy_app_1a.png&#34;&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;
 &lt;ol start=&#34;7&#34;&gt;
 &lt;li&gt;続いて、アクセスの権限を&lt;code&gt;Anyone, even anonymous&lt;/code&gt;に変更し、誰でも閲覧できるようにします。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;deploy_app_2a.png&#34; width=500&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;
 &lt;ol start=&#34;8&#34;&gt;
 &lt;li&gt;&lt;code&gt;デプロイ&lt;/code&gt;ボタンを押すと、&lt;code&gt;Script App&lt;/code&gt;から&lt;code&gt;Google Sheets&lt;/code&gt;へのアクセス権限の確認が行なわれるので、&lt;code&gt;許可を確認&lt;/code&gt;をクリックしてください。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;first_deploy_authorization_a.png&#34; width=500&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;
 &lt;ol start=&#34;9&#34;&gt;
 &lt;li&gt;左下の&lt;code&gt;詳細&lt;/code&gt;をクリックしてください。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;details.png&#34; width=500&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+ &lt;br /&gt;   
 &lt;ol start=&#34;10&#34;&gt;
 &lt;li&gt;次に警告が出るので、&lt;code&gt;（安全ではないページ）に移動&lt;/code&gt;をクリックしてください。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;confirmation_a.png&#34; width=550&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;
 &lt;ol start=&#34;11&#34;&gt;
 &lt;li&gt;最後にスクリプトからスプレッドシートへのアクセスリクエストを&lt;code&gt;許可&lt;/code&gt;してください。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;access_request_a.png&#34; width=400&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;
 &lt;ol start=&#34;12&#34;&gt;
 &lt;li&gt;以下のポップアップ画面が表示され、今回作成したウェブアプリ固有のURLが発行されるので、URLをコピーして&lt;code&gt;OK&lt;/code&gt;をクリックしてください。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;find_url.png&#34; width=500&gt;  
-&lt;p&gt;&lt;br /&gt;
-（アプリ固有のURL）&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;google-sheetsの動作確認&#34;&gt;Google Sheetsの動作確認&lt;/h2&gt;
+&lt;br /&gt;
+（アプリ固有のURL）
+```
+https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec
+```
+&lt;h2 id=&#34;google-sheetsの動作確認&#34;&gt;Google Sheetsの動作確認&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;今回は試しに、Datetime、UniqueID=Leafony_AP02-1、Temperature=100、Humidity=100、Illumination=100  を、&lt;code&gt;Google Sheets&lt;/code&gt;に書き込んでみます。&lt;br&gt;
@@ -116,14 +118,14 @@
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;br /&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;上記のURLをブラウザに貼り付け、アクセスすると、設定した&lt;code&gt;Google Sheets&lt;/code&gt;にデータが書き込まれます。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;code&gt;Google Sheets&lt;/code&gt;の1行目に記載されているカラム名は自動表示されないため、予めご記載ください。
 &lt;br /&gt;&lt;/p&gt;
 &lt;img src=&#34;check_script_app.png&#34;&gt;  
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;
 &lt;h3 id=&#34;スクリプトのミスがあった場合&#34;&gt;スクリプトのミスがあった場合&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;スクリプトを修正します。&lt;/li&gt;
@@ -132,7 +134,7 @@
 &lt;li&gt;またその時動作しているウェブアプリのURLは以下で確認出来ます。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;deploy_again_a.png&#34; width=500&gt;  
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;
 &lt;h3 id=&#34;次へ進むesp32_googlesheets_2&#34;&gt;&lt;a href=&#34;esp32_googlesheets_2/&#34;&gt;&lt;strong&gt;次へ進む&lt;/strong&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
