@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5d69824fa103b28220ba0adba18ffd0fc384ce31c73b275d70bd8286ed3ba4087b80633c521f5342cadd2cda180ee0f8130870011e055aa26f7875518792be1c.json"
+  data-offline-search-index-json-src="/offline-search-index.2cf9123a9fc17e5678cf772d816b5b0eb3707284d6163c6c19265248bea1c769c5f473e3292dcb6f8728d142e1458466b93c078dd7a6d46083ee590872422584.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5d69824fa103b28220ba0adba18ffd0fc384ce31c73b275d70bd8286ed3ba4087b80633c521f5342cadd2cda180ee0f8130870011e055aa26f7875518792be1c.json"
+  data-offline-search-index-json-src="/offline-search-index.2cf9123a9fc17e5678cf772d816b5b0eb3707284d6163c6c19265248bea1c769c5f473e3292dcb6f8728d142e1458466b93c078dd7a6d46083ee590872422584.json"
   data-offline-search-base-href="/"
 >
 
@@ -3747,9 +3747,21 @@ if (!doNotTrack) {
 <p>下図のようにリーフを組み立てましょう。</p>
 <p><img src="./blink_assemble.png" alt="assemble1"></p>
 <h2 id="ソースコード">ソースコード</h2>
-<p>STM32CubeIDEに下記のプロジェクトを読み込みましょう。</p>
-<p><a href="https://github.com/Leafony/STM32CubeIDE-Sample-Software/tree/main/Blink" target="_blank">Blink.ino</a></p>
-<h2 id="実行結果">実行結果</h2>
+<p>STM32CubeIDEに下記のプロジェクトをインポートしましょう。</p>
+<p><a href="https://github.com/Leafony/STM32CubeIDE-Sample-Software/tree/main/Blink" target="_blank">Blink.zip</a>
+</br>
+</br></p>
+<p>ファイルはZIPで圧縮されているのでフォルダ“ドキュメント¥STM32¥”等に解凍してください。</br>
+プロジェクトのインポート方法は下記を参照してください。</p>
+<p><a href="./stm32cubeide_usag.pdf">STM32CubeIDE使用方法</a> 
+</br>
+</br></p>
+<p>99～102行にある下記4行でLEDの点滅を行っています。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">	  <span style="color:#000">HAL_GPIO_WritePin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">GPIOH</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">GPIO_PIN_3</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">GPIO_PIN_SET</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">// LEDを点灯
+</span><span style="color:#8f5902;font-style:italic"></span>	  <span style="color:#000">HAL_Delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span> 										<span style="color:#8f5902;font-style:italic">// 待ち1000ms
+</span><span style="color:#8f5902;font-style:italic"></span>	  <span style="color:#000">HAL_GPIO_WritePin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">GPIOH</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">GPIO_PIN_3</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">GPIO_PIN_RESET</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// LEDを消灯
+</span><span style="color:#8f5902;font-style:italic"></span>	  <span style="color:#000">HAL_Delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span> 										<span style="color:#8f5902;font-style:italic">// 待ち1000ms
+</span></code></pre></div><h2 id="実行結果">実行結果</h2>
 <p>STM32 MCUリーフに搭載されたLEDが1秒おきに点灯/消灯します。</p>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
@@ -4066,7 +4078,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 21, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 25, 2022
 </div>
 </div>
 
