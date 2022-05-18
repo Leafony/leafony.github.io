@@ -840,7 +840,7 @@ ai_runはメモリ確保された入力データと出力データのポイン�
       <description>
         
         
-        &lt;p&gt;LTE-M Ver.4リーフをセンサーノードとして利⽤するための設定⽅法です。
+        &lt;p&gt;LTE-M Ver.4リーフをセンサーノードとして利⽤するための設定⽅法です。&lt;/br&gt;
 SORACOMによるクラウド設定を紹介します。&lt;/p&gt;
 &lt;h1 id=&#34;leafonyの設定&#34;&gt;Leafonyの設定&lt;/h1&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
@@ -852,7 +852,7 @@ SORACOMによるクラウド設定を紹介します。&lt;/p&gt;
 &lt;li&gt;M2*14mm Screw&lt;/li&gt;
 &lt;li&gt;単3電池ボックス&lt;/li&gt;
 &lt;li&gt;ニッケル⽔素電池単3電池︓3本&lt;/li&gt;
-&lt;li&gt;特定地域向けIoT SIM(plan-KM1)
+&lt;li&gt;特定地域向けIoT SIM(plan-KM1)&lt;/br&gt;
 購入先 &lt;a href=&#34;https://soracom.jp/store/5263/&#34; target=&#34;_brank&#34;&gt;&lt;a href=&#34;https://soracom.jp/store/5263/&#34;&gt;https://soracom.jp/store/5263/&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;サンプルアプリのソースコード&#34;&gt;サンプルアプリのソースコード&lt;/h2&gt;
@@ -861,16 +861,16 @@ SORACOMによるクラウド設定を紹介します。&lt;/p&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/---&#34; target=&#34;_brank&#34;&gt;Arduino スケッチ&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/LTEM_sensor_node_202203_---app&#34; target=&#34;_brank&#34;&gt; LTEM_sensor_node_202203アプリ&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Arduinoライブラリ「ArduinoLibraries.zip」をArduino/Libraries以下に展開、
+&lt;p&gt;Arduinoライブラリ「ArduinoLibraries.zip」をArduino/Libraries以下に展開、&lt;/br&gt;
 ファームウェア「LTEM_sensor_node_202203.zip」はArudinoフォルダに展開。&lt;/p&gt;
 &lt;h2 id=&#34;usbドライバ&#34;&gt;USBドライバ&lt;/h2&gt;
-&lt;p&gt;USBドライバをダウンロードし、PCにインストールします。
+&lt;p&gt;USBドライバをダウンロードし、PCにインストールします。&lt;/br&gt;
 (Windows PCの場合はデバイスマネージャーからUSBドライバの更新を実施します。)&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
-&lt;p&gt;USBシリアル変換IC(FT232)のドライバがインストールされていないと、シリアルポートは見つかりません。
-　最新のMac OSの場合は、問題ありませんが、Windowsの場合、自動インストールされないことがあります。
-　インストールの仕方は、以下のFTDI社のマニュアル等を参照して下さい。&lt;/p&gt;
+&lt;p&gt;USBシリアル変換IC(FT232)のドライバがインストールされていないと、シリアルポートは見つかりません。&lt;/br&gt;
+最新のMac OSの場合は、問題ありませんが、Windowsの場合、自動インストールされないことがあります。&lt;/br&gt;
+インストールの仕方は、以下のFTDI社のマニュアル等を参照して下さい。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://ftdichip.com/drivers/vcp-drivers/&#34;&gt;VCP Drivers&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
@@ -917,8 +917,8 @@ SORACOMによるクラウド設定を紹介します。&lt;/p&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac05&#34;&gt;AC05&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac05&#34;&gt;LTE-M 電源&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/av05&#34;&gt;AC05&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av05&#34;&gt;LTE-M 電源&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -946,15 +946,84 @@ SORACOMによるクラウド設定を紹介します。&lt;/p&gt;
 &lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
 &lt;p&gt;下図のようにリーフを組み立てましょう。&lt;/p&gt;
 &lt;img src=&#34;./lte_soracom.png&#34; width=&#34;350&#34;&gt;
+&lt;ul&gt;
+&lt;li&gt;電源スイッチ&lt;/br&gt;
+ボード上のマイコンとLTE-M回路の主電源を⼊れます。OFF状態でもUART等は認識されます。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;プログラムモード切り替えスイッチ&lt;/br&gt;
+STM32にプログラム書き込みを⾏うときに切り替えます。書き込み中は⾚⾊LEDが点灯。&lt;/br&gt;
+なおプログラム書き込み後にプログラムが動くように⾒えるが⼀部動作に⽀障が出ているため。&lt;/br&gt;
+書き込み後は通常モードに戻してリセットボタンで起動してください。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;リセット&lt;/br&gt;
+STM32リーフの再起動を⾏います。&lt;/br&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;ピンアサイン&#34;&gt;ピンアサイン&lt;/h2&gt;
 &lt;p&gt;各リーフのピンアサインは下図を参考&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;lte---_web_bt_pinassign.jpg&#34;&gt;&lt;img src=&#34;lte---_web_bt_pinassign.jpg&#34; width=&#34;600&#34;&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;実行方法&#34;&gt;実行方法&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Arduino IDEで&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/STM32_4-Sensors_BLE&#34; target=&#34;_brank&#34;&gt;STM32_4-Sensors_BLE.ino&lt;/a&gt;を書き込む&lt;/li&gt;
-&lt;li&gt;ダウンロードした&lt;a href=&#34;https://github.com/Leafony/WebBluetooth_for_Leafony_app&#34; target=&#34;_brank&#34;&gt;Web Bluetooth アプリ&lt;/a&gt;の&lt;code&gt;index.html&lt;/code&gt;をGoogle Chromeで開く&lt;br&gt;
-Webアプリの使い方の詳細は&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/basic&#34;&gt;Basic Kit クイックスタートガイド&lt;/a&gt;を参考&lt;/li&gt;
+&lt;li&gt;ビルドと書き込みは次の⼿順で⾏う。&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;ArduinoIDEを起動し「LTEM_sensor_node_202203.ino」を開く。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;LTE-MリーフとPCをUSBケーブルで接続。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;STM32リーフ上にあるProgramスイッチを書き込み側に切り替える。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;LTE-Mリーフにある電源スイッチをオンにする。&lt;/br&gt;
+⇒STM32リーフ上にあるLED(⾚)が点灯する。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;ArduinoIDE上にある書き込みボタンを押す。&lt;/br&gt;
+⇒ビルドが開始されビルド後は⾃動的に書き込みが⾏われる。&lt;/br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;ファームウェア起動&lt;/br&gt;
+書き込み後は次の⼿順でファームウェアの起動を⾏う。&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;STMリーフ上の電源スイッチをオフにする。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;STM32リーフ上にあるProgramスイッチを元に戻す。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;ArduinoIDE上から、ツール → シリアルモニタを起動する。（注意︓スピードは115,200bpsで設定）&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;LTE-Mリーフにある電源スイッチをオンにする。&lt;/br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;なおシリアルモニタへ出⼒されるログを参考として掲載する。&lt;/br&gt;
+※設定ファイルはまだリーフには書き込まれてない状態。&lt;/br&gt;
+※設定ファイルが書き込まれているリーフのログは本ガイド最後部を参照のこと。&lt;/br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=====&lt;/span&gt; Starting Sensor cloud &lt;span style=&#34;color:#000&#34;&gt;damo&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=====&lt;/span&gt;
+&amp;lt;info&amp;gt; lpwa device power_up
+&amp;lt;info&amp;gt; lpwa device ready.
+LPWA device enabled
+SIM ICCID: &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;8981300025200059498&lt;/span&gt;
+&amp;lt;info&amp;gt; lpwa device ready.
+@@@@@ setup&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;()&lt;/span&gt; finish.
+@@@@@ loop&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;()&lt;/span&gt;
+&lt;span style=&#34;color:#204a87&#34;&gt;time&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; 22/04/28 13:49:35.008
+battery charged: 4654mV
+connecting LPWA
+resume LPWA device
+&amp;lt;info&amp;gt; PDP: idle
+&amp;lt;error&amp;gt; lpwa modem error&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;response timeout&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;
+connecting. &lt;span style=&#34;color:#000&#34;&gt;retry&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;4&lt;/span&gt;
+&amp;lt;info&amp;gt; PDP: idle
+&amp;lt;info&amp;gt; PDP: connect
+LPWA connected
+IP: &amp;lt;info&amp;gt; PDP: connect
+0.0.0.0
+get Network Time:
+&lt;span style=&#34;color:#000&#34;&gt;SignalStrength&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;
+setting file: /setting8981300025200059498.txt
+Status code: -1
+Response:
+disconnect LPWA
+&amp;lt;info&amp;gt; PDP: idle
+power-down LPWA device
+&amp;lt;info&amp;gt; lpwa device power_down
+power-down sensors.
+enter sleep &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; sec
+@@@@@ loop&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;()&lt;/span&gt;
+&lt;span style=&#34;color:#204a87&#34;&gt;time&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; 22/04/28 13:49:54.220
+battery charged: 4670mV
+waiting start-time &lt;span style=&#34;color:#000&#34;&gt;epoc&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1651153797&lt;/span&gt; .OK
+Time designation&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;(&lt;/span&gt;Off hours&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;)&lt;/span&gt;
+power-down sensors.
+enter sleep &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;57&lt;/span&gt; sec
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;br&gt;
 &lt;h3 id=&#34;次へ進むex_esp32_googlesheets_2&#34;&gt;&lt;a href=&#34;ex_esp32_googlesheets_2/&#34;&gt;&lt;strong&gt;次へ進む&lt;/strong&gt;&lt;/a&gt;&lt;/h3&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
