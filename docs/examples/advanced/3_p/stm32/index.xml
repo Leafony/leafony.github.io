@@ -831,5 +831,136 @@ ai_runはメモリ確保された入力データと出力データのポイン�
       </description>
     </item>
     
+    <item>
+      <title>Docs: LTE-M Ver.4リーフを使ったSORACOMによるクラウド設定</title>
+      <link>https://docs.leafony.com/docs/examples/advanced/3_p/stm32/lte-m_soracom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/examples/advanced/3_p/stm32/lte-m_soracom/</guid>
+      <description>
+        
+        
+        &lt;p&gt;LTE-M Ver.4リーフをセンサーノードとして利⽤するための設定⽅法です。
+SORACOMによるクラウド設定を紹介します。&lt;/p&gt;
+&lt;h1 id=&#34;leafonyの設定&#34;&gt;Leafonyの設定&lt;/h1&gt;
+&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;LTE-Mリーフ、電源リーフ（KDDI提供）&lt;/li&gt;
+&lt;li&gt;STM32 MCUリーフ&lt;/li&gt;
+&lt;li&gt;4-Sensorsリーフ&lt;/li&gt;
+&lt;li&gt;Nut Plate&lt;/li&gt;
+&lt;li&gt;M2*14mm Screw&lt;/li&gt;
+&lt;li&gt;単3電池ボックス&lt;/li&gt;
+&lt;li&gt;ニッケル⽔素電池単3電池︓3本&lt;/li&gt;
+&lt;li&gt;特定地域向けIoT SIM(plan-KM1)
+購入先 &lt;a href=&#34;https://soracom.jp/store/5263/&#34; target=&#34;_brank&#34;&gt;&lt;a href=&#34;https://soracom.jp/store/5263/&#34;&gt;https://soracom.jp/store/5263/&lt;/a&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;サンプルアプリのソースコード&#34;&gt;サンプルアプリのソースコード&lt;/h2&gt;
+&lt;p&gt;あらかじめどちらもダウンロードして下さい。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/---&#34; target=&#34;_brank&#34;&gt;Arduino スケッチ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/LTEM_sensor_node_202203_---app&#34; target=&#34;_brank&#34;&gt; LTEM_sensor_node_202203アプリ&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Arduinoライブラリ「ArduinoLibraries.zip」をArduino/Libraries以下に展開、
+ファームウェア「LTEM_sensor_node_202203.zip」はArudinoフォルダに展開。&lt;/p&gt;
+&lt;h2 id=&#34;usbドライバ&#34;&gt;USBドライバ&lt;/h2&gt;
+&lt;p&gt;USBドライバをダウンロードし、PCにインストールします。
+(Windows PCの場合はデバイスマネージャーからUSBドライバの更新を実施します。)&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;USBシリアル変換IC(FT232)のドライバがインストールされていないと、シリアルポートは見つかりません。
+　最新のMac OSの場合は、問題ありませんが、Windowsの場合、自動インストールされないことがあります。
+　インストールの仕方は、以下のFTDI社のマニュアル等を参照して下さい。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://ftdichip.com/drivers/vcp-drivers/&#34;&gt;VCP Drivers&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://ftdichip.com/document/installation-guides/&#34;&gt;Installation Guides&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.monoxit.com/tecmat/windowsftdiusb/&#34;&gt;WindowsパソコンにFTDI社製USBシリアルドライバを手動インストールする手順&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;USB2芯 電源ケーブルは、使用出来ません。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;leafonyの構成&#34;&gt;Leafonyの構成&lt;/h2&gt;
+&lt;p&gt;このサンプルでは下記のリーフ構成で試せます。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Name&lt;/th&gt;
+&lt;th&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az63&#34;&gt;AZ63&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az63&#34;&gt;Nut Plate&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;AI01&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03&#34;&gt;AP03&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03&#34;&gt;STM32 MCU&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac04&#34;&gt;AC04&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac04&#34;&gt;LTE-M&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac05&#34;&gt;AC05&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac05&#34;&gt;LTE-M 電源&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;M2*14mm screw&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;単3電池ボックス                          　&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;ニッケル⽔素電池単3電池               　　&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-&lt;/td&gt;
+&lt;td&gt;特定地域向けIoT SIM(plan-KM1)&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
+&lt;p&gt;下図のようにリーフを組み立てましょう。&lt;/p&gt;
+&lt;img src=&#34;./lte_soracom.png&#34; width=&#34;350&#34;&gt;
+&lt;h2 id=&#34;ピンアサイン&#34;&gt;ピンアサイン&lt;/h2&gt;
+&lt;p&gt;各リーフのピンアサインは下図を参考&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;lte---_web_bt_pinassign.jpg&#34;&gt;&lt;img src=&#34;lte---_web_bt_pinassign.jpg&#34; width=&#34;600&#34;&gt;&lt;/img&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;実行方法&#34;&gt;実行方法&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Arduino IDEで&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/STM32_4-Sensors_BLE&#34; target=&#34;_brank&#34;&gt;STM32_4-Sensors_BLE.ino&lt;/a&gt;を書き込む&lt;/li&gt;
+&lt;li&gt;ダウンロードした&lt;a href=&#34;https://github.com/Leafony/WebBluetooth_for_Leafony_app&#34; target=&#34;_brank&#34;&gt;Web Bluetooth アプリ&lt;/a&gt;の&lt;code&gt;index.html&lt;/code&gt;をGoogle Chromeで開く&lt;br&gt;
+Webアプリの使い方の詳細は&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/basic&#34;&gt;Basic Kit クイックスタートガイド&lt;/a&gt;を参考&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;次へ進むex_esp32_googlesheets_2&#34;&gt;&lt;a href=&#34;ex_esp32_googlesheets_2/&#34;&gt;&lt;strong&gt;次へ進む&lt;/strong&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
+&lt;/p&gt;
+      </description>
+    </item>
+    
   </channel>
 </rss>
