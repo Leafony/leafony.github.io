@@ -219,5 +219,110 @@
       </description>
     </item>
     
+    <item>
+      <title>Docs: AC04 LTE-M</title>
+      <link>https://docs.leafony.com/docs/leaf/communication/ac04/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/leaf/communication/ac04/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./ac04_f_large.jpg&#34;&gt;&lt;img src=&#34;./ac04_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ac04_b_large.jpg&#34;&gt;&lt;img src=&#34;./ac04_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ac04_p_large.jpg&#34;&gt;&lt;img src=&#34;./ac04_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;豊富なセンサー類とLTE-M通信機能を持ったLTE-Mリーフです。電池を標準搭載かつUSB充電に対応しているので、外に持ち運んで様々な用途にお使い頂けます。外装ケースの3Dデータをカスタマイズすれば、お手持ちのグッズに容易に組み合わせることもできます。&lt;/p&gt;
+&lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Item   要変更&lt;/th&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Part Number&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;ES920LRA1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;SoC&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;MKL16Z128 (ARM Cortex-M0+)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;RF Transceiver&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;SX1276 (SEMTECH)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Frequency range&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;920.6～928.0MHz&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Transmission speed&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;146bps～22kbps&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;RX sensitivity&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;-118～-142dBm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;TX power&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Max 13dBm（20mW)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;RF certification&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;TELEC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Approximate communication distance (wire antenna)&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Prospect 5km&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Flash&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;128KB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;RAM&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;32KB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Interfaces&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;UART&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Dimension&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;W23×D32.8×H4.6mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+&lt;h3 id=&#34;直上にリーフを積む時の注意&#34;&gt;直上にリーフを積む時の注意&lt;/h3&gt;
+&lt;p&gt;このリーフには、高背部品(高さ2mm以上)が使用されており、そのままでは直上のリーフと電気的に接続不良をおこす可能性があります。そのため、このリーフの直上には、必ずスペーサリーフ（AX04 Spacer）を間に挟んで下さい。&lt;/p&gt;
+&lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./ac04_block.jpg&#34;&gt;&lt;img src=&#34;./ac04_block.jpg&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./ac04_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ac04_pinassign.jpg&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;サンプルアプリ&#34;&gt;サンプルアプリ&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/3_p/stm32/lte-m_soracom/&#34;&gt;KDDI LTE-Mを使って、SORACOMでセンサデータを可視化&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h2&gt;
+&lt;p&gt;本リーフに対応したライブラリがあります。&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#1-%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA&#34;&gt;開発環境設定のページ&lt;/a&gt;で必要なライブラリをインストールしてご利用下さい。&lt;/p&gt;
+&lt;h2 id=&#34;ドキュメント-要変更&#34;&gt;ドキュメント 要変更&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC03_LoRa_Easy/AC03_LoRa_Easy_SpecSheet_JA.pdf&#34;&gt;仕様書&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC03_LoRa_Easy/AC03_LoRa_Easy_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC03_LoRa_Easy/AC03_LoRa_Easy_ComponentMarking.pdf&#34;&gt;部品配置図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC03_LoRa_Easy/AC03_LoRa_Easy_PCBLayout.zip&#34;&gt;レイアウト図(Zuken)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC03_LoRa_Easy/AC03_LoRa_Easy_PCBLayout_dxf.zip&#34;&gt;レイアウト図(dxf)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC03_LoRa_Easy/AC03_LoRa_Easy_3D.zip&#34;&gt;3D図面&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
+&lt;/p&gt;
+      </description>
+    </item>
+    
   </channel>
 </rss>
