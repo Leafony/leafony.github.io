@@ -21,14 +21,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>LTE-M Ver.4リーフを使ったSORACOMによるクラウド設定 | Leafony</title><meta property="og:title" content="LTE-M Ver.4リーフを使ったSORACOMによるクラウド設定" />
+<title>KDDI LTE-Mを使って、SORACOMでセンサデータを可視化 | Leafony</title><meta property="og:title" content="KDDI LTE-Mを使って、SORACOMでセンサデータを可視化" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/3_p/stm32/lte-m_soracom/" /><meta property="og:site_name" content="Leafony" />
 
-<meta itemprop="name" content="LTE-M Ver.4リーフを使ったSORACOMによるクラウド設定">
+<meta itemprop="name" content="KDDI LTE-Mを使って、SORACOMでセンサデータを可視化">
 <meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="LTE-M Ver.4リーフを使ったSORACOMによるクラウド設定"/>
+<meta name="twitter:title" content="KDDI LTE-Mを使って、SORACOMでセンサデータを可視化"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5312c1a40caca4f50546a11ef0ae2cbd78c2f34f353047f4e75d3faef3dcf4f6640088855db6bdb0abeabd18c59a8e703278f926bc54d7ab2f2221d4799796ea.json"
+  data-offline-search-index-json-src="/offline-search-index.c11627ebb428d966c0712421f83cb4ad0fc1b3b43f4134904ef701923fca891ca9eedcf0545ff9300b7b38c4475a885c9c05c64f5d626cc148a78beca24770f3.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5312c1a40caca4f50546a11ef0ae2cbd78c2f34f353047f4e75d3faef3dcf4f6640088855db6bdb0abeabd18c59a8e703278f926bc54d7ab2f2221d4799796ea.json"
+  data-offline-search-index-json-src="/offline-search-index.c11627ebb428d966c0712421f83cb4ad0fc1b3b43f4134904ef701923fca891ca9eedcf0545ff9300b7b38c4475a885c9c05c64f5d626cc148a78beca24770f3.json"
   data-offline-search-base-href="/"
 >
 
@@ -3669,7 +3669,7 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#用意するもの">用意するもの</a></li>
     <li><a href="#サンプルアプリのソースコード">サンプルアプリのソースコード</a></li>
-    <li><a href="#usbドライバ">USBドライバ</a></li>
+    <li><a href="#usbドライバインストール">USBドライバインストール</a></li>
     <li><a href="#leafonyの構成">Leafonyの構成</a></li>
     <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
     <li><a href="#ピンアサイン">ピンアサイン</a></li>
@@ -3754,11 +3754,12 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>LTE-M Ver.4リーフを使ったSORACOMによるクラウド設定</h1>
+	<h1>KDDI LTE-Mを使って、SORACOMでセンサデータを可視化</h1>
         
 	
-	<p>LTE-M Ver.4リーフをセンサーノードとして利⽤するための設定⽅法です。</br>
-SORACOMによるクラウド設定を紹介します。</p>
+	<p>KDDI LTE-Mリーフ（Ver.4）をセンサノードとして利⽤出来ます。</br>
+こちらでは、SORACOMによるクラウド設定を紹介します。</br>
+※AWSの設定方法は準備中です。</p>
 <h1 id="leafonyの設定">Leafonyの設定</h1>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
@@ -3780,27 +3781,25 @@ SORACOMによるクラウド設定を紹介します。</p>
 </ul>
 <p>Arduinoライブラリ「ArduinoLibraries.zip」をArduino/Libraries以下に展開、</br>
 ファームウェア「LTEM_sensor_node_202203.zip」はArudinoフォルダに展開。</p>
-<h2 id="usbドライバ">USBドライバ</h2>
+<h2 id="usbドライバインストール">USBドライバインストール</h2>
 <p>USBドライバをダウンロードし、PCにインストールします。</br>
 (Windows PCの場合はデバイスマネージャーからUSBドライバの更新を実施します。)</p>
 <ul>
-<li>
-<p>USBシリアル変換IC(FT232)のドライバがインストールされていないと、シリアルポートは見つかりません。</br>
-最新のMac OSの場合は、問題ありませんが、Windowsの場合、自動インストールされないことがあります。</br>
-インストールの仕方は、以下のFTDI社のマニュアル等を参照して下さい。</p>
-</li>
-<li>
-<p><a href="https://ftdichip.com/drivers/vcp-drivers/">VCP Drivers</a><br></p>
-</li>
-<li>
-<p><a href="https://ftdichip.com/document/installation-guides/">Installation Guides</a></br></p>
-</li>
-<li>
-<p><a href="https://www.monoxit.com/tecmat/windowsftdiusb/">WindowsパソコンにFTDI社製USBシリアルドライバを手動インストールする手順</a></br></p>
-</li>
-<li>
-<p>USB2芯 電源ケーブルは、使用出来ません。</p>
-</li>
+<li>USBシリアル変換IC(FT232)のドライバがインストールされていないと、シリアルポートは見つかりません。</br>
+XXXには、調達の都合でAZ01 USBとは異なるUSB-UARTシリアル変換ICを採用したので、USBドライバーをインストールする必要があります。以下の手順に従って、インストールして下さい。</br></li>
+</ul>
+<p>・下記からご使用のOSにあったドライバーをダウンロードし、解凍して下さい。Windowsの場合は、解凍すると「V2.6.0.0 Drivers」のフォルダが出来ます。以降、Windowsの場合を説明します。</br>
+<a href="https://www.maxlinear.com/product/interface/uarts/usb-uarts/xr21b1411" target="_brank"><a href="https://www.maxlinear.com/product/interface/uarts/usb-uarts/xr21b1411">https://www.maxlinear.com/product/interface/uarts/usb-uarts/xr21b1411</a></a></p>
+<p><img src="./usbdrv_1.jpg" alt="usbdrv_1"></p>
+<p>・XXXをPCに接続します。</br>
+・デバイスマネージャを開いて、ポート→USBシリアルデバイスを選択し、ドライバの更新をします。</br></p>
+<p><img src="./usbdrv_2.jpg" alt="usbdrv_2"></p>
+<p>・先程解凍した「V2.6.0.0 Drivers」のフォルダを参照し、ドライバーをインストールします。</br></p>
+<p><img src="./usbdrv_3.jpg" alt="usbdrv_3"></p>
+<p>・XXXをPCに接続していたら、ポートにXR21B1411 USB UARTが表示されます。</br></p>
+<p><img src="./usbdrv_5.jpg" alt="usbdrv_5"></p>
+<ul>
+<li>USB2芯 電源ケーブルは、使用出来ません。</li>
 </ul>
 <h2 id="leafonyの構成">Leafonyの構成</h2>
 <p>このサンプルでは下記のリーフ構成で試せます。</p>
@@ -3834,7 +3833,7 @@ SORACOMによるクラウド設定を紹介します。</p>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/docs/leaf/communication/av05">AV05</a></td>
+<td><a href="/docs/leaf/power/av05">AV05</a></td>
 <td><a href="/docs/leaf/power/av05">LTE-M 電源</a></td>
 <td>1</td>
 </tr>
@@ -4259,7 +4258,7 @@ enter sleep <span style="color:#0000cf;font-weight:bold">57</span> sec
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 18, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 19, 2022
 </div>
 </div>
 

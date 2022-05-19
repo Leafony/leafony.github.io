@@ -832,7 +832,7 @@ ai_runはメモリ確保された入力データと出力データのポイン�
     </item>
     
     <item>
-      <title>Docs: LTE-M Ver.4リーフを使ったSORACOMによるクラウド設定</title>
+      <title>Docs: KDDI LTE-Mを使って、SORACOMでセンサデータを可視化</title>
       <link>https://docs.leafony.com/docs/examples/advanced/3_p/stm32/lte-m_soracom/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -840,8 +840,9 @@ ai_runはメモリ確保された入力データと出力データのポイン�
       <description>
         
         
-        &lt;p&gt;LTE-M Ver.4リーフをセンサーノードとして利⽤するための設定⽅法です。&lt;/br&gt;
-SORACOMによるクラウド設定を紹介します。&lt;/p&gt;
+        &lt;p&gt;KDDI LTE-Mリーフ（Ver.4）をセンサノードとして利⽤出来ます。&lt;/br&gt;
+こちらでは、SORACOMによるクラウド設定を紹介します。&lt;/br&gt;
+※AWSの設定方法は準備中です。&lt;/p&gt;
 &lt;h1 id=&#34;leafonyの設定&#34;&gt;Leafonyの設定&lt;/h1&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
@@ -863,27 +864,25 @@ SORACOMによるクラウド設定を紹介します。&lt;/p&gt;
 &lt;/ul&gt;
 &lt;p&gt;Arduinoライブラリ「ArduinoLibraries.zip」をArduino/Libraries以下に展開、&lt;/br&gt;
 ファームウェア「LTEM_sensor_node_202203.zip」はArudinoフォルダに展開。&lt;/p&gt;
-&lt;h2 id=&#34;usbドライバ&#34;&gt;USBドライバ&lt;/h2&gt;
+&lt;h2 id=&#34;usbドライバインストール&#34;&gt;USBドライバインストール&lt;/h2&gt;
 &lt;p&gt;USBドライバをダウンロードし、PCにインストールします。&lt;/br&gt;
 (Windows PCの場合はデバイスマネージャーからUSBドライバの更新を実施します。)&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;USBシリアル変換IC(FT232)のドライバがインストールされていないと、シリアルポートは見つかりません。&lt;/br&gt;
-最新のMac OSの場合は、問題ありませんが、Windowsの場合、自動インストールされないことがあります。&lt;/br&gt;
-インストールの仕方は、以下のFTDI社のマニュアル等を参照して下さい。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://ftdichip.com/drivers/vcp-drivers/&#34;&gt;VCP Drivers&lt;/a&gt;&lt;br&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://ftdichip.com/document/installation-guides/&#34;&gt;Installation Guides&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.monoxit.com/tecmat/windowsftdiusb/&#34;&gt;WindowsパソコンにFTDI社製USBシリアルドライバを手動インストールする手順&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;USB2芯 電源ケーブルは、使用出来ません。&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;USBシリアル変換IC(FT232)のドライバがインストールされていないと、シリアルポートは見つかりません。&lt;/br&gt;
+XXXには、調達の都合でAZ01 USBとは異なるUSB-UARTシリアル変換ICを採用したので、USBドライバーをインストールする必要があります。以下の手順に従って、インストールして下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;・下記からご使用のOSにあったドライバーをダウンロードし、解凍して下さい。Windowsの場合は、解凍すると「V2.6.0.0 Drivers」のフォルダが出来ます。以降、Windowsの場合を説明します。&lt;/br&gt;
+&lt;a href=&#34;https://www.maxlinear.com/product/interface/uarts/usb-uarts/xr21b1411&#34; target=&#34;_brank&#34;&gt;&lt;a href=&#34;https://www.maxlinear.com/product/interface/uarts/usb-uarts/xr21b1411&#34;&gt;https://www.maxlinear.com/product/interface/uarts/usb-uarts/xr21b1411&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./usbdrv_1.jpg&#34; alt=&#34;usbdrv_1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;・XXXをPCに接続します。&lt;/br&gt;
+・デバイスマネージャを開いて、ポート→USBシリアルデバイスを選択し、ドライバの更新をします。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./usbdrv_2.jpg&#34; alt=&#34;usbdrv_2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;・先程解凍した「V2.6.0.0 Drivers」のフォルダを参照し、ドライバーをインストールします。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./usbdrv_3.jpg&#34; alt=&#34;usbdrv_3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;・XXXをPCに接続していたら、ポートにXR21B1411 USB UARTが表示されます。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./usbdrv_5.jpg&#34; alt=&#34;usbdrv_5&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;USB2芯 電源ケーブルは、使用出来ません。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;leafonyの構成&#34;&gt;Leafonyの構成&lt;/h2&gt;
 &lt;p&gt;このサンプルでは下記のリーフ構成で試せます。&lt;/p&gt;
@@ -917,7 +916,7 @@ SORACOMによるクラウド設定を紹介します。&lt;/p&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/av05&#34;&gt;AV05&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av05&#34;&gt;AV05&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/power/av05&#34;&gt;LTE-M 電源&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
