@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5ce091d32a042c3c922a80e4dcd8602eba611f69ac776a2d048a1f4b5d72277a803c96ac14d28f6cc1d1f1431a967a2fb6dafb658d3e2db0b8a8b334b94fbe8d.json"
+  data-offline-search-index-json-src="/offline-search-index.7b21a6f3019ee84aa636401089e9f279d5068416b309ed17aa32cf50ae52812060d6f241f3fc46a792b446bf7ac314b0194f8d721b85f0d2d2306dc401285ded.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5ce091d32a042c3c922a80e4dcd8602eba611f69ac776a2d048a1f4b5d72277a803c96ac14d28f6cc1d1f1431a967a2fb6dafb658d3e2db0b8a8b334b94fbe8d.json"
+  data-offline-search-index-json-src="/offline-search-index.7b21a6f3019ee84aa636401089e9f279d5068416b309ed17aa32cf50ae52812060d6f241f3fc46a792b446bf7ac314b0194f8d721b85f0d2d2306dc401285ded.json"
   data-offline-search-base-href="/"
 >
 
@@ -3716,13 +3716,13 @@ if (!doNotTrack) {
     <li><a href="#特徴">特徴</a></li>
     <li><a href="#性能">性能　</a>
       <ul>
-        <li><a href="#外形サイズ-要変更">外形サイズ ※要変更</a></li>
-        <li><a href="#電源要変更">電源　※要変更</a></li>
-        <li><a href="#adコンバータ要変更">ADコンバータ　※要変更</a></li>
+        <li><a href="#usb-uart変換">USB-UART変換</a></li>
+        <li><a href="#電源vbuspsys33v">電源(VBUS→PSYS3.3V)</a></li>
+        <li><a href="#電源psys33v">電源(PSYS→3.3V)</a></li>
+        <li><a href="#adコンバータ">ADコンバータ　</a></li>
       </ul>
     </li>
     <li><a href="#ブロック図">ブロック図</a></li>
-    <li><a href="#ピン配置--不要">ピン配置  ※不要？</a></li>
     <li><a href="#tips--要変更">Tips  ※要変更</a>
       <ul>
         <li><a href="#スイッチコネクタについて">スイッチ、コネクタについて</a></li>
@@ -3797,7 +3797,6 @@ if (!doNotTrack) {
 <p>KDDI LTE-M King Mリーフの電源供給用リーフ、LTE-M King Sです。</br>
 LTE-M King Mの裏面とLTE-M King SのバスはLeafony busとは異なり、LTE-M専用の仕様となりますので、必ずLTE-M King SはLTE-M King Mの直下に配置して組み立てて下さい。</p>
 <h2 id="性能">性能　</h2>
-<h3 id="外形サイズ-要変更">外形サイズ ※要変更</h3>
 <table>
 <thead>
 <tr>
@@ -3807,12 +3806,82 @@ LTE-M King Mの裏面とLTE-M King SのバスはLeafony busとは異なり、LTE
 </thead>
 <tbody>
 <tr>
+<td style="text-align:left">USB connector    　</td>
+<td style="text-align:left">Type-C</td>
+</tr>
+<tr>
+<td style="text-align:left">Battery connector   　</td>
+<td style="text-align:left">JST PH connector</td>
+</tr>
+<tr>
 <td style="text-align:left">Dimension     　</td>
 <td style="text-align:left">W23×D21×H6.2mm</td>
 </tr>
 </tbody>
 </table>
-<h3 id="電源要変更">電源　※要変更</h3>
+<h3 id="usb-uart変換">USB-UART変換</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Item</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Part Number</td>
+<td style="text-align:left">XR21B1411L16-F</td>
+</tr>
+<tr>
+<td style="text-align:left">USB</td>
+<td style="text-align:left">USB 2.0 Full Speed</td>
+</tr>
+<tr>
+<td style="text-align:left">Data transfer rates</td>
+<td style="text-align:left">12Mbps (max)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="電源vbuspsys33v">電源(VBUS→PSYS3.3V)</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Item</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Part number</td>
+<td style="text-align:left">TPSM828214SILR</td>
+</tr>
+<tr>
+<td style="text-align:left">Input voltage</td>
+<td style="text-align:left">3.3～5.5V</td>
+</tr>
+<tr>
+<td style="text-align:left">Output voltage</td>
+<td style="text-align:left">3.3V±1% (PWM mode)</td>
+</tr>
+<tr>
+<td style="text-align:left">Topology</td>
+<td style="text-align:left">Buck</td>
+</tr>
+<tr>
+<td style="text-align:left">Controlling method</td>
+<td style="text-align:left">PWM / Power save mode</td>
+</tr>
+<tr>
+<td style="text-align:left">Maximum output current</td>
+<td style="text-align:left">1A</td>
+</tr>
+<tr>
+<td style="text-align:left">Protection circuit</td>
+<td style="text-align:left">Short circuit protection / Overtemperature protection</td>
+</tr>
+</tbody>
+</table>
+<h3 id="電源psys33v">電源(PSYS→3.3V)</h3>
 <table>
 <thead>
 <tr>
@@ -3826,12 +3895,16 @@ LTE-M King Mの裏面とLTE-M King SのバスはLeafony busとは異なり、LTE
 <td style="text-align:left">RP604K331B-TR</td>
 </tr>
 <tr>
-<td style="text-align:left">Battery voltage</td>
+<td style="text-align:left">Input voltage</td>
 <td style="text-align:left">1.8～5.5V</td>
 </tr>
 <tr>
 <td style="text-align:left">Output voltage</td>
 <td style="text-align:left">3.3V±2%</td>
+</tr>
+<tr>
+<td style="text-align:left">Topology</td>
+<td style="text-align:left">Buck-boost</td>
 </tr>
 <tr>
 <td style="text-align:left">Controlling method</td>
@@ -3847,8 +3920,7 @@ LTE-M King Mの裏面とLTE-M King SのバスはLeafony busとは異なり、LTE
 </tr>
 </tbody>
 </table>
-<br>
-<h3 id="adコンバータ要変更">ADコンバータ　※要変更</h3>
+<h3 id="adコンバータ">ADコンバータ　</h3>
 <table>
 <thead>
 <tr>
@@ -3859,11 +3931,11 @@ LTE-M King Mの裏面とLTE-M King SのバスはLeafony busとは異なり、LTE
 <tbody>
 <tr>
 <td style="text-align:left">Part number</td>
-<td style="text-align:left">ADC081C027CIMK</td>
+<td style="text-align:left">ADC101C027CIMK</td>
 </tr>
 <tr>
 <td style="text-align:left">Resolution</td>
-<td style="text-align:left">8bit</td>
+<td style="text-align:left">10bit</td>
 </tr>
 <tr>
 <td style="text-align:left">Reference voltage</td>
@@ -3882,8 +3954,6 @@ LTE-M King Mの裏面とLTE-M King SのバスはLeafony busとは異なり、LTE
 <br>
 <h2 id="ブロック図">ブロック図</h2>
 <p><a href="./ac05_lte-m_king_s_block.jpg"><img src="./ac05_lte-m_king_s_block.jpg" width="250"></a></p>
-<h2 id="ピン配置--不要">ピン配置  ※不要？</h2>
-<p><a href="./ac01-5_pinassign.jpg"><img src="./ac01-5_pinassign.jpg" width="750"></a></p>
 <h2 id="tips--要変更">Tips  ※要変更</h2>
 <h3 id="スイッチコネクタについて">スイッチ、コネクタについて</h3>
 <p><a href="./AC05_tips.jpg"><img src="./AC05_tips.jpg" width="350"></a></p>
