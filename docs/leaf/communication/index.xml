@@ -277,9 +277,11 @@ LTE-M King Mの裏面とLTE-M King SのバスはLeafony busとは異なり、LTE
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;tips要変更&#34;&gt;Tips　※要変更&lt;/h2&gt;
-&lt;h3 id=&#34;直上にリーフを積む時の注意&#34;&gt;直上にリーフを積む時の注意&lt;/h3&gt;
-&lt;p&gt;このリーフには、高背部品(高さ2mm以上)が使用されており、そのままでは直上のリーフと電気的に接続不良をおこす可能性があります。そのため、このリーフの直上には、必ずスペーサリーフ（AX04 Spacer）を間に挟んで下さい。&lt;/p&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips　&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Antenna　基板の20mmから飛び出した部分の&amp;quot;cKDDI Corporation&amp;quot;と記載の下のの斜めに線が入った部品がアンテナです。&lt;/li&gt;
+&lt;li&gt;nanoSIM card slot　裏面の&amp;quot;001&amp;quot;シールが貼ってある部品&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./ac04_lte-m_king_m_block.jpg&#34;&gt;&lt;img src=&#34;./ac04_lte-m_king_m_block.jpg&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置　&lt;/h2&gt;
@@ -359,7 +361,7 @@ LTE-M King Mの裏面とLTE-M King SのバスはLeafony busとは異なり、LTE
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:left&#34;&gt;Part Number&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;XR21B1411L16-F&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;XR21B1411IL16-F&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:left&#34;&gt;USB&lt;/td&gt;
