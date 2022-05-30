@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.92.2" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ae6da32d62fbf61156b6556a212601fe22bd05aa2fcb49077e0df457239dc3c99dc8486a59de37d7cc43fbe01bd60381e3bd1289dadf0ca7e667a57efe68fdb4.json"
+  data-offline-search-index-json-src="/offline-search-index.2d0540dc000e60965ec767b74a3c284b61d9b9d0d910824d12025e0d73256c89a080b9e4bea8ce954b55a2400dec1ac87ae06d267da41441dcc8b36c1c809588.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ae6da32d62fbf61156b6556a212601fe22bd05aa2fcb49077e0df457239dc3c99dc8486a59de37d7cc43fbe01bd60381e3bd1289dadf0ca7e667a57efe68fdb4.json"
+  data-offline-search-index-json-src="/offline-search-index.2d0540dc000e60965ec767b74a3c284b61d9b9d0d910824d12025e0d73256c89a080b9e4bea8ce954b55a2400dec1ac87ae06d267da41441dcc8b36c1c809588.json"
   data-offline-search-base-href="/"
 >
 
@@ -3792,7 +3792,7 @@ ICのような部品は、内部の回路の状態によって、ICに流れ込�
 つまり、電流を測定するタイミングによって、その電流値は変わります。このような部品の場合はどのように電力を考えれば良いでしょうか。
 それについては次に示すデジタル回路の場合と、「各部品の消費電力を知る」で説明します。</p>
 <p>注1：電池の場合は使用状況によって電池の電圧が変化します。</p>
-<p><img src="./Image01.jpg" width="600" /></p>
+<img src="./Image01.jpg" width="600" />
 <p>　ICにも様々な部品があり、大きく分けて2つ、アナログ回路が組み込まれたものとデジタル回路が組み込まれたものがあります。
 ここではCPUのようなデジタル回路の場合の電力の考え方について述べていきます。
 デジタル回路は一般的に、論理ゲートと呼ばれる回路によって構成されています。
@@ -3805,7 +3805,7 @@ ICのような部品は、内部の回路の状態によって、ICに流れ込�
 0Vとなります。このとき、NOTゲートにかかる電流は三番目のグラフに示すとおり、入力ピンの状態が変化したときだけ非常に大きな電流が流れています。
 ここでは、入力ピンの状態が変化していない場合に流れている電流をリーク電流、変化しているときに流れる電流をダイナミック電流と呼ぶことにします。
 一般にリーク電流はダイナミック電流と比較して非常に小さいため、ここではリーク電流を無視してダイナミック電流を計算します。</p>
-<p><img src="./Image02.jpg" width="300" /></p>
+<img src="./Image02.jpg" width="300" />
 <p>　一般に、デジタル回路の消費電力は入力する信号の周波数によって決まります。下図はNOTゲートに周波数fのクロックが入力された回路図です。
 出力には寄生容量と呼ばれるコンデンサが付随しています。
 このコンデンサは回路の配線や、この先に接続される論理ゲートの入力ピンに発生する寄生容量などによって決まるため、ここでは具体的にどのような値があるかを知る必要はありません。
@@ -3814,7 +3814,7 @@ ICのような部品は、内部の回路の状態によって、ICに流れ込�
 </code></pre><p>　ここでのWは瞬間的な電流電圧から求まるものではなく、1秒間で平均したスイッチングで発生する電力を表しています。
 ここから分かることは、電力は入力するクロックの周波数に比例していて、デジタル回路の周波数が高くなれば高くなるほど電力は増大します。
 CPUのような回路はクロックの周波数が高いほど計算スピードが増加しますが、一方で電力も増大してしまうということです。</p>
-<p><img src="./Image03.jpg" width="300" /></p>
+<img src="./Image03.jpg" width="300" />
 <h2 id="各部品の消費電力を知る">各部品の消費電力を知る</h2>
 <p>　ここまででデジタル回路が組み込まれたICの電力が周波数に依存しているということが分かりました。
 しかし、私達は回路の中にどれくらいの論理ゲートが含まれているのか、どれくらいの寄生容量があるのかは、ブラックボックス化されたICの中身を見ない限り知るよしもありません。

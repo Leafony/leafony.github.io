@@ -25,7 +25,7 @@
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac03/&#34;&gt;LoRa Easyリーフ&lt;/a&gt;を使って、センサデータ（温度・湿度・照度・傾き）を、遠く離れた場所に送り、パソコンのターミナルに出力します。&lt;/p&gt;
 &lt;img src=&#34;LoRa_receiver_sender.png&#34; width=500&gt;  
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;
 &lt;p&gt;表示させたい温度（または、湿度）と４-Sensorsの温度（または、湿度）に、ずれがあるときは、２点間補正を行います。詳しくは、&lt;a href=&#34;https://docs.leafony.com/docs/examples/beginner/1_p/basic/temp_humid_sensors/#two-point_correction&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
 &lt;h2 id=&#34;デモ動画&#34;&gt;デモ動画&lt;/h2&gt;
 &lt;div class=&#34;youtube&#34;&gt;
