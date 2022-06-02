@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d34e700a9f4b73098aa0c9e53c62f70036f3520b9a56615742b8db87c3b65a4d5274c08a069f9581bfa12777911b35fe9e86db88373095b6b4979c31aef02527.json"
+  data-offline-search-index-json-src="/offline-search-index.20d7f42fa9a4bad233c0564cab6101bc2d874f290b220968f177295c4fe51355dcdd39c3f084144575d7f5cbb30d58d5568dc459d1088bd4791c2ed99c7f52f6.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d34e700a9f4b73098aa0c9e53c62f70036f3520b9a56615742b8db87c3b65a4d5274c08a069f9581bfa12777911b35fe9e86db88373095b6b4979c31aef02527.json"
+  data-offline-search-index-json-src="/offline-search-index.20d7f42fa9a4bad233c0564cab6101bc2d874f290b220968f177295c4fe51355dcdd39c3f084144575d7f5cbb30d58d5568dc459d1088bd4791c2ed99c7f52f6.json"
   data-offline-search-base-href="/"
 >
 
@@ -3736,7 +3736,8 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#用意するもの">用意するもの</a>
+    <li><a href="#用意するもの">用意するもの</a></li>
+    <li><a href="#購入登録設定">購入、登録、設定</a>
       <ul>
         <li><a href="#次へ進むlte-m_soracom_3"><a href="lte-m_soracom_3/"><strong>次へ進む</strong></a></a></li>
       </ul>
@@ -3836,12 +3837,13 @@ if (!doNotTrack) {
 <h1 id="soracomの設定">SORACOMの設定</h1>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
-<li>
-<p>特定地域向けIoT SIM(plan-KM1)</br>
+<li>特定地域向けIoT SIM(plan-KM1)</br>
 購入先 <a href="https://soracom.jp/store/5263/" target="_brank"><a href="https://soracom.jp/store/5263/">https://soracom.jp/store/5263/</a></a></br>
 または下記を参照して下さい。</br>
-</br></p>
-</li>
+</br></li>
+</ul>
+<h2 id="購入登録設定">購入、登録、設定</h2>
+<ul>
 <li>
 <p>SORACOMのサイトにアクセスします。</br>
 <a href="https://soracom.jp/" target="_brank"><a href="https://soracom.jp/">https://soracom.jp/</a></a></br>
@@ -3857,7 +3859,7 @@ SORACOM Air for セルラーで、今回使用する特定地域向け IoT SIM�
 <p><br /></p>
 <ol>
 <li>SORACOMのアカウントを設定し、SIMを購入します。 </br> 
-<a href="https://soracom.jp/start/" target="_brank"><a href="https://soracom.jp/start/">https://soracom.jp/start/</a></a></br>より</br> 
+<a href="https://soracom.jp/start/" target="_brank"><a href="https://soracom.jp/start/">https://soracom.jp/start/</a></a>より</br> 
 ステップ 1 – アカウントの作成/登録</br> 
 ステップ 2 – 購入</br></li>
 </ol>
@@ -3865,19 +3867,45 @@ SORACOM Air for セルラーで、今回使用する特定地域向け IoT SIM�
 <a href="https://console.soracom.io/#/orders/new?coverage_type=jp" target="_brank"><a href="https://console.soracom.io/#/orders/new?coverage_type=jp">https://console.soracom.io/#/orders/new?coverage_type=jp</a></a>（メニューの「発注」）です。</br></p>
 <p><a href="./sora_1_buy.jpg"><img src="./sora_1_buy.jpg" width="500"></a></br></p>
 <ol start="2">
-<li>SIM管理画面を表示してから、以下を参照しながら、IMSI、名前、グループ、有効期限を設定します。</br></li>
+<li>SIM管理画面を表示してから、以下を参照しながら、IMSI、名前を付け、グループ、有効期限を設定します。</br></li>
 </ol>
-<p>その際、先にメニューの「SIMグループ」でグループ名を付けて、グルーピングします。</br>
+<p>※以下は自動登録での場合です。登録が出来ない場合は、「注文情報を利用して登録する」をご参照下さい。</br>
+<a href="https://users.soracom.io/ja-jp/guides/getting-started/register-sim/#%e6%b3%a8%e6%96%87%e6%83%85%e5%a0%b1%e3%82%92%e5%88%a9%e7%94%a8%e3%81%97%e3%81%a6%e7%99%bb%e9%8c%b2%e3%81%99%e3%82%8b">https://users.soracom.io/ja-jp/guides/getting-started/register-sim/#%e6%b3%a8%e6%96%87%e6%83%85%e5%a0%b1%e3%82%92%e5%88%a9%e7%94%a8%e3%81%97%e3%81%a6%e7%99%bb%e9%8c%b2%e3%81%99%e3%82%8b</a></br></p>
+<ul>
+<li>
+<p>グルーピング</br>
+<a href="https://users.soracom.io/ja-jp/docs/group-configuration/create-group/" target="_brank"><a href="https://users.soracom.io/ja-jp/docs/group-configuration/create-group/">https://users.soracom.io/ja-jp/docs/group-configuration/create-group/</a></a>
+</br></p>
+</li>
+<li>
+<p>グループの設定を変更したい時 </br>
+<a href="https://users.soracom.io/ja-jp/docs/group-configuration/configure-group/" target="_brank"><a href="https://users.soracom.io/ja-jp/docs/group-configuration/configure-group/">https://users.soracom.io/ja-jp/docs/group-configuration/configure-group/</a></a>
+</br></p>
+</li>
+<li>
+<p>SIMが所属するグループを切り替えたい時 </br>
+<a href="https://users.soracom.io/ja-jp/docs/group-configuration/set-group/" target="_brank"><a href="https://users.soracom.io/ja-jp/docs/group-configuration/set-group/">https://users.soracom.io/ja-jp/docs/group-configuration/set-group/</a></a>
+</br></p>
+</li>
+<li>
+<p>IoT SIM の有効期限とアクションの設定方法 </br>
 <a href="https://users.soracom.io/ja-jp/docs/air/set-expiry/" target="_brank"><a href="https://users.soracom.io/ja-jp/docs/air/set-expiry/">https://users.soracom.io/ja-jp/docs/air/set-expiry/</a></a>
 </br></p>
+</li>
+<li>
+<p>設定を反映するために IoT SIM のセッションを再確立して下さい。 </br>
+<a href="https://users.soracom.io/ja-jp/docs/air/delete-session/" target="_brank"><a href="https://users.soracom.io/ja-jp/docs/air/delete-session/">https://users.soracom.io/ja-jp/docs/air/delete-session/</a></a></br></p>
+</li>
+</ul>
 <ol start="2">
-<li>ユーザーコンソールの初期設定を行います。</br></li>
+<li>SIMグループへの初期設定を行います。</br>
+グループ名をクリック、「基本設定」から以下の通り設定して下さい。</li>
 </ol>
 <ul>
 <li>SORACOM Air for セルラー設定　⇒　簡易位置情報ON</br></li>
 <li>SORACOM Harvest Data 設定　⇒　ON</br></li>
 <li>SORACOM Harvest Files 設定　⇒　ON</br></li>
-<li>U En 設定　⇒　Auto</br></li>
+<li>Unified Endpoint 設定　⇒　Auto（デフォルト）</br></li>
 </ul>
 <br>
 <h3 id="次へ進むlte-m_soracom_3"><a href="lte-m_soracom_3/"><strong>次へ進む</strong></a></h3>
@@ -4204,7 +4232,7 @@ SORACOM Air for セルラーで、今回使用する特定地域向け IoT SIM�
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 31, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 2, 2022
 </div>
 </div>
 
