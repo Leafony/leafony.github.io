@@ -22,14 +22,56 @@
       <description>
         
         
-        &lt;p&gt;KDDI LTE-Mリーフ（Ver.4）をセンサノードとして利⽤出来ます。&lt;/br&gt;
-こちらでは、SORACOMによるクラウド設定を紹介します。&lt;/br&gt;
-※AWSの設定方法は準備中です。&lt;/p&gt;
-&lt;h1 id=&#34;soracomの設定&#34;&gt;SORACOMの設定&lt;/h1&gt;
-&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;特定地域向けIoT SIM(plan-KM1)&lt;/br&gt;&lt;/li&gt;
-&lt;/ul&gt;
+        &lt;p&gt;SORACOMのサービスを使って、センサデータを収集・蓄積し、そのデータの可視化を行います。&lt;/br&gt;
+ここでは、SORACOM IoT SIMの購入と登録、そして、サービスの設定方法に関して記載し、次のページにデータの可視化方法を記載します。詳細は、&lt;a href=&#34;https://users.soracom.io/ja-jp/&#34; target=&#34;_brank&#34;&gt; SORACOM Users&lt;/a&gt;を参照して下さい。&lt;/p&gt;
+&lt;h1 id=&#34;soracomのiot-simの購入からサービスの設定&#34;&gt;SORACOMのIoT SIMの購入からサービスの設定&lt;/h1&gt;
+&lt;p&gt;SORACOM アカウント（オペレータ）を作成してからIoT SIMの購入します。&lt;/br&gt;
+IoT SIMが届いたら、SIMの登録を行い、次にSORACOM のサービスの設定をします。&lt;/br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;soracom-アカウント-オペレーター-を作成する&#34;&gt;SORACOM アカウント (オペレーター) を作成する&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://users.soracom.io/ja-jp/&#34; target=&#34;_brank&#34;&gt; &lt;a href=&#34;https://users.soracom.io/ja-jp/&#34;&gt;https://users.soracom.io/ja-jp/&lt;/a&gt;&lt;/a&gt;を開きます。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;右上のユーザコンソールをクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;オンラインの手順に従って登録します。&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;soracomのiot-simplan-km1-サイズナノを購入する&#34;&gt;SORACOMのIoT SIM(plan-KM1 サイズ:ナノ)を購入する&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://users.soracom.io/ja-jp/&#34; target=&#34;_brank&#34;&gt; &lt;a href=&#34;https://users.soracom.io/ja-jp/&#34;&gt;https://users.soracom.io/ja-jp/&lt;/a&gt;&lt;/a&gt;を開きます。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;左上のメニューをクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;発注をクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;新規注文をクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://soracom.jp/store/5263/&#34; target=&#34;_brank&#34;&gt; SORACOM Air SIMカード plan-KM1 サイズ:ナノ（データ通信のみ）&lt;/a&gt;を選択し、購入します。&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;soracomのiot-simの登録をする&#34;&gt;SORACOMのIoT SIMの登録をする&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://users.soracom.io/ja-jp/&#34; target=&#34;_brank&#34;&gt; &lt;a href=&#34;https://users.soracom.io/ja-jp/&#34;&gt;https://users.soracom.io/ja-jp/&lt;/a&gt;&lt;/a&gt;を開きます。&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;左上のメニューをクリックします。&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;SIM管理画面を開いたら詳細をクリックします。&lt;/br&gt;
+&lt;a href=&#34;./sora_2.jpg&#34;&gt;&lt;img src=&#34;./sora_2.jpg&#34; width=&#34;300&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;IMSI(International Mobile Subscriber Identity)の確認、名前とグループを作成します。 
+&lt;a href=&#34;./sora_3.jpg&#34;&gt;&lt;img src=&#34;./sora_3.jpg&#34; width=&#34;600&#34;&gt;&lt;/a&gt;&lt;/br&gt;　&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;IoT SIM の有効期限とアクションを設定する&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;soracomのサービスの設定&#34;&gt;SORACOMのサービスの設定&lt;/h2&gt;
+&lt;p&gt;SORACOMのサービスの設定は、SIMグループ単位で行います。以下の手順で設定して下さい。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://users.soracom.io/ja-jp/&#34; target=&#34;_brank&#34;&gt; &lt;a href=&#34;https://users.soracom.io/ja-jp/&#34;&gt;https://users.soracom.io/ja-jp/&lt;/a&gt;&lt;/a&gt;を開きます。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;左上のメニューをクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;SIM管理画面を開いたら設定するグループをクリックすると以下の設定画面が出てきます。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;SORACOM Air for セルラー設定の&lt;a href=&#34;https://users.soracom.io/ja-jp/docs/air/get-location-info/#%e3%83%87%e3%83%90%e3%82%a4%e3%82%b9%e3%81%ae%e7%b0%a1%e6%98%93%e7%9a%84%e3%81%aa%e4%bd%8d%e7%bd%ae%e6%83%85%e5%a0%b1-%e7%b0%a1%e6%98%93%e4%bd%8d%e7%bd%ae%e6%b8%ac%e4%bd%8d%e6%a9%9f%e8%83%bd-%e3%82%92%e9%80%81%e4%bf%a1%e3%81%99%e3%82%8b&#34; target=&#34;_brank&#34;&gt; 簡易位置情報&lt;/a&gt;をONにする。&lt;/li&gt;
+&lt;li&gt;SORACOM Harvest Data設定をONにする。&lt;/li&gt;
+&lt;li&gt;Unified Endpoint設定が、Auto(デフォルト)であることを確認する。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝&lt;/p&gt;
 &lt;h2 id=&#34;simの購入と登録soracomの設定&#34;&gt;SIMの購入と登録、SORACOMの設定&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -94,19 +136,6 @@
 　※上記は発注日から 4 日経過した際の「自動登録」です。登録が出来ない場合は&lt;/br&gt;
 　　「注文情報を利用して登録する」をご参照下さい。&lt;/br&gt;
 　　&lt;a href=&#34;https://users.soracom.io/ja-jp/guides/getting-started/register-sim/#%e6%b3%a8%e6%96%87%e6%83%85%e5%a0%b1%e3%82%92%e5%88%a9%e7%94%a8%e3%81%97%e3%81%a6%e7%99%bb%e9%8c%b2%e3%81%99%e3%82%8b&#34; target=&#34;_brank&#34;&gt;「注文情報を利用して登録する」&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;SIMグループの初期設定を行います。&lt;/br&gt;
-前出の「グループ名」をクリックすると、別画面で「基本設定」が開くので、
-&lt;/br&gt;
-以下の通り設定して下さい。&lt;/br&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;ul&gt;
-&lt;li&gt;SORACOM Air for セルラー設定　⇒　簡易位置情報ON&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;SORACOM Harvest Data 設定　⇒　ON&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;SORACOM Harvest Files 設定　⇒　ON&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;Unified Endpoint 設定　⇒　Auto（デフォルト）&lt;/br&gt;
-&lt;/br&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;スケッチを書き込んだらUSBリーフを外し、電池またはUSBケーブルで電源を入れ、通信状況を確認します。
 &lt;/br&gt;

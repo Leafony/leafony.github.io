@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.85.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c88c1c97eb86d8c4b36376bcfadf74799aef2d405dbffc154e6f305c6d300146cf5fc3d6c73af96ad63aa237071726df706004fb03151d06e28e5e3a5823d3b4.json"
+  data-offline-search-index-json-src="/offline-search-index.7b700b3bc362a9fa6e80fcbc17c852e762512b5ac505beeae10f50e92935c75f12202de1538eb19d742862b85d5bd4097c9bc79b8006810ddfea29b816b6e5e8.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c88c1c97eb86d8c4b36376bcfadf74799aef2d405dbffc154e6f305c6d300146cf5fc3d6c73af96ad63aa237071726df706004fb03151d06e28e5e3a5823d3b4.json"
+  data-offline-search-index-json-src="/offline-search-index.7b700b3bc362a9fa6e80fcbc17c852e762512b5ac505beeae10f50e92935c75f12202de1538eb19d742862b85d5bd4097c9bc79b8006810ddfea29b816b6e5e8.json"
   data-offline-search-base-href="/"
 >
 
@@ -3913,7 +3913,7 @@ if (!doNotTrack) {
 <ol>
 <li>アクセスする<code>WiFi</code>の情報を以下の定数に代入してください。</li>
 </ol>
-<pre tabindex="0"><code>const char* SSID = &quot;wifi_ssid&quot;;    // WiFi SSID
+<pre><code>const char* SSID = &quot;wifi_ssid&quot;;    // WiFi SSID
 const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
 </code></pre><ol start="2">
 <li>先ほど作成したウェブアプリの情報を以下の定数に代入してください。
@@ -3922,7 +3922,7 @@ const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
 </ul>
 </li>
 </ol>
-<pre tabindex="0"><code>const char* KEY = &quot;google_scripts_key&quot;;
+<pre><code>const char* KEY = &quot;google_scripts_key&quot;;
 </code></pre><ol start="3">
 <li>センサデータの書き込みの時間間隔を調整したいときは以下の定数に代入してください。
 <ul>
@@ -3930,8 +3930,8 @@ const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
 </ul>
 </li>
 </ol>
-<pre tabindex="0"><code>uint64_t DEEP_SLEEP_TIME_SEC = 60;
-</code></pre><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
+<pre><code>uint64_t DEEP_SLEEP_TIME_SEC = 60;
+</code></pre><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;HTTPClient.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;HTS221.h&gt;</span><span style="color:#8f5902;font-style:italic">
