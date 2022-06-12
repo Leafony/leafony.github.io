@@ -21,14 +21,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>KDDI LTE-Mを使って、SORACOMでセンサデータを可視化 | Leafony</title><meta property="og:title" content="KDDI LTE-Mを使って、SORACOMでセンサデータを可視化" />
+<title>LTE-Mを使ったIoTサービス | Leafony</title><meta property="og:title" content="LTE-Mを使ったIoTサービス" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/3_p/stm32/lte-m_soracom_1/" /><meta property="og:site_name" content="Leafony" />
 
-<meta itemprop="name" content="KDDI LTE-Mを使って、SORACOMでセンサデータを可視化">
+<meta itemprop="name" content="LTE-Mを使ったIoTサービス">
 <meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="KDDI LTE-Mを使って、SORACOMでセンサデータを可視化"/>
+<meta name="twitter:title" content="LTE-Mを使ったIoTサービス"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7b700b3bc362a9fa6e80fcbc17c852e762512b5ac505beeae10f50e92935c75f12202de1538eb19d742862b85d5bd4097c9bc79b8006810ddfea29b816b6e5e8.json"
+  data-offline-search-index-json-src="/offline-search-index.62a0bf22f28aff5b66ae8336e132caa5bba082a49cfd28c2f6b1881f8ea7368478d638c29812b26aa004c2655f977591ddbdf9cc16e7a9aecfa2fb11d4c3bbd8.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7b700b3bc362a9fa6e80fcbc17c852e762512b5ac505beeae10f50e92935c75f12202de1538eb19d742862b85d5bd4097c9bc79b8006810ddfea29b816b6e5e8.json"
+  data-offline-search-index-json-src="/offline-search-index.62a0bf22f28aff5b66ae8336e132caa5bba082a49cfd28c2f6b1881f8ea7368478d638c29812b26aa004c2655f977591ddbdf9cc16e7a9aecfa2fb11d4c3bbd8.json"
   data-offline-search-base-href="/"
 >
 
@@ -3736,14 +3736,23 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
+    <li><a href="#はじめに">はじめに</a></li>
     <li><a href="#用意するもの">用意するもの</a></li>
+  </ul>
+
+  <ul>
     <li><a href="#サンプルアプリのソースコード">サンプルアプリのソースコード</a></li>
     <li><a href="#leafonyの構成">Leafonyの構成</a></li>
     <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
-    <li><a href="#ピンアサイン">ピンアサイン</a></li>
     <li><a href="#スケッチの書き込み">スケッチの書き込み</a></li>
-    <li><a href="#実行方法">実行方法</a>
+  </ul>
+
+  <ul>
+    <li><a href="#サービスの設定">サービスの設定</a>
       <ul>
+        <li><a href="#サービスの設定をする">サービスの設定をする</a></li>
+        <li><a href="#iot-simの登録をする">IoT SIMの登録をする</a></li>
+        <li><a href="#確認方法">確認方法</a></li>
         <li><a href="#次へ進むlte-m_soracom_2"><a href="lte-m_soracom_2/"><strong>次へ進む</strong></a></a></li>
       </ul>
     </li>
@@ -3823,33 +3832,29 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>KDDI LTE-Mを使って、SORACOMでセンサデータを可視化</h1>
+	<h1>LTE-Mを使ったIoTサービス</h1>
         
 	
-	<p>KDDI LTE-Mリーフ（Ver.4）をセンサノードとして利⽤出来ます。</br>
-こちらでは、SORACOMによるクラウド設定、まずはLeafonyの設定から紹介します。</br>
-※AWSの設定方法は準備中です。</p>
-<h1 id="leafonyの設定">Leafonyの設定</h1>
+	<h2 id="はじめに">はじめに</h2>
+<p>図を使って、システムの説明
+</br></p>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
-<li>LTE-Mリーフ、電源リーフ（KDDI提供）</li>
-<li>STM32 MCUリーフ</li>
-<li>4-Sensorsリーフ</li>
-<li>Nut Plate</li>
-<li>M2*14mm Screw</li>
-<li>単3電池ボックス</li>
-<li>ニッケル⽔素電池単3電池︓3本</li>
-<li>特定地域向けIoT SIM(plan-KM1)</br>
-購入先 <a href="https://soracom.jp/store/5263/" target="_brank"><a href="https://soracom.jp/store/5263/">https://soracom.jp/store/5263/</a></a></li>
+<li><a href="https://docs.leafony.com/docs/leaf/communication/ac04/" target="_brank"> LTE-M King Mリーフ</a></br></li>
+<li><a href="https://docs.leafony.com/docs/leaf/communication/ac05/" target="_brank"> LTE-M King Sリーフ</a></br></li>
+<li><a href="hhttps://docs.leafony.com/docs/products/basic2/" target="_brank"> basic Kit2</a></br></li>
+<li><a href="https://docs.leafony.com/docs/products/nut/" target="_brank"> Nut Plate</a></br></li>
+<li><a href="https://soracom.jp/store/5263/" target="_brank"> SORACOM IoT SIM(plan-KM1) </a>※1</br></li>
+<li>単3電池ボックス(JST製PHハーネス付き)※2</br></li>
+<li>単3ニッケル⽔素電池︓3本</br></li>
 </ul>
+<p>※1:SORACOMのアカウント（オペレータ）を作成してからIoT SIMを購入します。</br> <a href="https://users.soracom.io/ja-jp/" target="_brank"> SORACOM Users</a>を開き、右上の<code>ユーザコンソール</code>をクリックして、オンラインの手順に従ってアカウント登録します。次に <a href="https://console.soracom.io/" target="_brank"> ユーザコンソール</a>を開いてログインして、左上の<code>メニュー　→　発注　→　新規注文</code>をクリックして、<code>SORACOM Air SIMカード plan-KM1 サイズ:ナノ（データ通信のみ）</code>を選択します。</br></p>
+<p>※2:購入先を記す</p>
+<h1 id="leafony-の組み立て">Leafony の組み立て</h1>
 <h2 id="サンプルアプリのソースコード">サンプルアプリのソースコード</h2>
-<p>あらかじめどちらもダウンロードして下さい。</p>
 <ul>
-<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/---" target="_brank">Arduino スケッチ</a></li>
-<li><a href="https://github.com/Leafony/LTEM_sensor_node_202203_---app" target="_brank"> LTEM_sensor_node_202203アプリ</a></li>
+<li>Arduino スケッチ</br></li>
 </ul>
-<p>Arduinoライブラリ「ArduinoLibraries.zip」をArduino/Libraries以下に展開、</br>
-ファームウェア「LTEM_sensor_node_202203.zip」はArudinoフォルダに展開。</p>
 <h2 id="leafonyの構成">Leafonyの構成</h2>
 <p>このサンプルでは下記のリーフ構成で試せます。</p>
 <table>
@@ -3862,13 +3867,18 @@ if (!doNotTrack) {
 </thead>
 <tbody>
 <tr>
-<td><a href="/docs/leaf/others/az63">AZ63</a></td>
-<td><a href="/docs/leaf/others/az63">Nut Plate</a></td>
+<td><a href="/docs/leaf/others/az62">AZ62</a></td>
+<td><a href="/docs/leaf/others/az62">Connector Cover</a></td>
 <td>1</td>
 </tr>
 <tr>
 <td><a href="/docs/leaf/io/ai01">AI01</a></td>
 <td><a href="/docs/leaf/io/ai01">4-Sensors</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/docs/leaf/others/az01">AZ01</a></td>
+<td><a href="/docs/leaf/others/az01">USB</a></td>
 <td>1</td>
 </tr>
 <tr>
@@ -3878,126 +3888,69 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td><a href="/docs/leaf/communication/ac04">AC04</a></td>
-<td><a href="/docs/leaf/communication/ac04">LTE-M</a></td>
+<td><a href="/docs/leaf/communication/ac04">LTE-M King M</a></td>
 <td>1</td>
 </tr>
 <tr>
 <td><a href="/docs/leaf/power/av05">AV05</a></td>
-<td><a href="/docs/leaf/power/av05">LTE-M 電源</a></td>
+<td><a href="/docs/leaf/communication/ac05">LTE-M King S</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="/docs/leaf/others/az63">AZ63</a></td>
+<td><a href="/docs/leaf/others/az63">Nut Plate</a></td>
 <td>1</td>
 </tr>
 <tr>
 <td>-</td>
-<td>M2*14mm screw</td>
+<td>SORACOM IoT SIM(plan-KM1)</td>
+<td>1</td>
+</tr>
+<tr>
+<td>-</td>
+<td>M2*??mm screw</td>
 <td>2</td>
 </tr>
 <tr>
 <td>-</td>
-<td>単3電池ボックス                          　</td>
+<td>単3電池ボックス(JST製PHハーネス付き)</td>
 <td>1</td>
 </tr>
 <tr>
 <td>-</td>
-<td>ニッケル⽔素電池単3電池               　　</td>
+<td>単3ニッケル⽔素電池 　</td>
 <td>3</td>
-</tr>
-<tr>
-<td>-</td>
-<td>特定地域向けIoT SIM(plan-KM1)</td>
-<td>1</td>
 </tr>
 </tbody>
 </table>
 <h2 id="リーフの組み立て">リーフの組み立て</h2>
-<p>下図のようにリーフを組み立てましょう。</p>
-<img src="./lte_soracom.png" width="350">
-<ul>
-<li>電源スイッチ</br>
-ボード上のマイコンとLTE-M回路の主電源を⼊れます。OFF状態でもUART等は認識されます。</br></li>
-<li>プログラムモード切り替えスイッチ</br>
-STM32にプログラム書き込みを⾏うときに切り替えます。書き込み中は⾚⾊LEDが点灯。</br>
-なおプログラム書き込み後にプログラムが動くように⾒えるが⼀部動作に⽀障が出ているため。</br>
-書き込み後は通常モードに戻してリセットボタンで起動してください。</br></li>
-<li>リセット</br>
-STM32リーフの再起動を⾏います。</br></li>
-</ul>
-<h2 id="ピンアサイン">ピンアサイン</h2>
-<p>各リーフのピンアサインは下図を参照　AC04,AC05を参照？</p>
-<p><a href="lte---_web_bt_pinassign.jpg"><img src="lte---_web_bt_pinassign.jpg" width="600"></img></a></p>
+</br>
+</br>
 <h2 id="スケッチの書き込み">スケッチの書き込み</h2>
-<ul>
-<li>
-<p><a href="https://docs.leafony.com/docs/leaf/others/az01/" target="_brank">AZ01 USBリーフ</a>を追加して、書き込みを行います。</br></p>
-</li>
-<li>
-<p>USB2芯 電源ケーブルは、使用出来ません。</p>
-</li>
-</ul>
-<h2 id="実行方法">実行方法</h2>
+</br>
+</br>
+<h1 id="soracomの設定">SORACOMの設定</h1>
+<p><a href="https://soracom.jp/" target="_brank"> SORACOM</a>のサービスを使って、センサデータを収集・蓄積し、可視化を行います。ここでは、SORACOM IoT SIMの購入、サービスの設定、データの可視化方法について記載しています。詳細は、<a href="https://users.soracom.io/ja-jp/" target="_brank"> SORACOM Users</a>を参照して下さい。</br></p>
+<h2 id="サービスの設定">サービスの設定</h2>
+<h3 id="サービスの設定をする">サービスの設定をする</h3>
 <ol>
-<li>ビルドと書き込みは次の⼿順で⾏う。</br></li>
+<li><a href="https://console.soracom.io/" target="_brank"> ユーザコンソール</a>を開き、ログインし、
+左上の<code>メニュー　→　SIMグループ　→　追加</code>をクリックします。</br></li>
+<li>グループ名は、<code>KM-1_SORACOM-Lagoon</code>（例）とします。</li>
+<li>SORACOM Air for セルラー設定の<a href="https://users.soracom.io/ja-jp/docs/air/get-location-info/#%e3%83%87%e3%83%90%e3%82%a4%e3%82%b9%e3%81%ae%e7%b0%a1%e6%98%93%e7%9a%84%e3%81%aa%e4%bd%8d%e7%bd%ae%e6%83%85%e5%a0%b1-%e7%b0%a1%e6%98%93%e4%bd%8d%e7%bd%ae%e6%b8%ac%e4%bd%8d%e6%a9%9f%e8%83%bd-%e3%82%92%e9%80%81%e4%bf%a1%e3%81%99%e3%82%8b" target="_brank"> 簡易位置情報</a>をONにする。</li>
+<li>SORACOM Harvest Data設定をONにする。</li>
+<li>Unified Endpoint設定が、Auto(デフォルト)であることを確認する。</li>
 </ol>
-<ul>
-<li>ArduinoIDEを起動し「LTEM_sensor_node_202203.ino」を開く。</br></li>
-<li>LTE-MリーフとPCをUSBケーブルで接続。</br></li>
-<li>STM32リーフ上にあるProgramスイッチを書き込み側に切り替える。</br></li>
-<li>LTE-Mリーフにある電源スイッチをオンにする。</br>
-⇒STM32リーフ上にあるLED(⾚)が点灯する。</br></li>
-<li>ArduinoIDE上にある書き込みボタンを押す。</br>
-⇒ビルドが開始されビルド後は⾃動的に書き込みが⾏われる。</br></li>
-</ul>
-<ol start="2">
-<li>ファームウェア起動</br>
-書き込み後は次の⼿順でファームウェアの起動を⾏う。</br></li>
+<h3 id="iot-simの登録をする">IoT SIMの登録をする</h3>
+<ol>
+<li><a href="https://console.soracom.io/" target="_brank"> ユーザコンソール</a>を開き、ログインします。</br></li>
+<li>左上の<code>メニュー → SIM管理画面</code>を開いたら<code>詳細</code>をクリックします。</br></li>
+<li>IMSI(International Mobile Subscriber Identity)の確認、名前を決め、グループ<code>KM-1_SORACOM-Lagoon</code>を選択します。</br></li>
+<li>IoT SIM の有効期限とアクションを設定する。</br>
+</br></li>
 </ol>
-<ul>
-<li>STMリーフ上の電源スイッチをオフにする。</br></li>
-<li>STM32リーフ上にあるProgramスイッチを元に戻す。</br></li>
-<li>ArduinoIDE上から、ツール → シリアルモニタを起動する。（注意︓スピードは115,200bpsで設定）</br></li>
-<li>LTE-Mリーフにある電源スイッチをオンにする。</br></li>
-</ul>
-<p>なおシリアルモニタへ出⼒されるログを参考として掲載する。</br>
-※設定ファイルはまだリーフには書き込まれてない状態。</br>
-※設定ファイルが書き込まれているリーフのログは本ガイド最後部を参照のこと。</br></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#ce5c00;font-weight:bold">=====</span> Starting Sensor cloud <span style="color:#000">damo</span> <span style="color:#ce5c00;font-weight:bold">=====</span>
-&lt;info&gt; lpwa device power_up
-&lt;info&gt; lpwa device ready.
-LPWA device enabled
-SIM ICCID: <span style="color:#0000cf;font-weight:bold">8981300025200059498</span>
-&lt;info&gt; lpwa device ready.
-@@@@@ setup<span style="color:#ce5c00;font-weight:bold">()</span> finish.
-@@@@@ loop<span style="color:#ce5c00;font-weight:bold">()</span>
-<span style="color:#204a87">time</span> <span style="color:#ce5c00;font-weight:bold">=</span> 22/04/28 13:49:35.008
-battery charged: 4654mV
-connecting LPWA
-resume LPWA device
-&lt;info&gt; PDP: idle
-&lt;error&gt; lpwa modem error<span style="color:#ce5c00;font-weight:bold">(</span>response timeout<span style="color:#ce5c00;font-weight:bold">)</span>
-connecting. <span style="color:#000">retry</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">4</span>
-&lt;info&gt; PDP: idle
-&lt;info&gt; PDP: connect
-LPWA connected
-IP: &lt;info&gt; PDP: connect
-0.0.0.0
-get Network Time:
-<span style="color:#000">SignalStrength</span><span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span>
-setting file: /setting8981300025200059498.txt
-Status code: -1
-Response:
-disconnect LPWA
-&lt;info&gt; PDP: idle
-power-down LPWA device
-&lt;info&gt; lpwa device power_down
-power-down sensors.
-enter sleep <span style="color:#0000cf;font-weight:bold">1</span> sec
-@@@@@ loop<span style="color:#ce5c00;font-weight:bold">()</span>
-<span style="color:#204a87">time</span> <span style="color:#ce5c00;font-weight:bold">=</span> 22/04/28 13:49:54.220
-battery charged: 4670mV
-waiting start-time <span style="color:#000">epoc</span><span style="color:#ce5c00;font-weight:bold">=</span><span style="color:#0000cf;font-weight:bold">1651153797</span> .OK
-Time designation<span style="color:#ce5c00;font-weight:bold">(</span>Off hours<span style="color:#ce5c00;font-weight:bold">)</span>
-power-down sensors.
-enter sleep <span style="color:#0000cf;font-weight:bold">57</span> sec
-</code></pre></div><br>
+<h3 id="確認方法">確認方法</h3>
+<br>
 <h3 id="次へ進むlte-m_soracom_2"><a href="lte-m_soracom_2/"><strong>次へ進む</strong></a></h3>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
@@ -4316,7 +4269,7 @@ enter sleep <span style="color:#0000cf;font-weight:bold">57</span> sec
             
                 <div class="entry">
                     <h5>
-                        <a href="/docs/examples/advanced/3_p/stm32/lte-m_soracom_1/lte-m_soracom_2/">KDDI LTE-Mを使って、SORACOMでセンサデータを可視化</a>
+                        <a href="/docs/examples/advanced/3_p/stm32/lte-m_soracom_1/lte-m_soracom_2/">LTE-Mを使ったIoTサービス</a>
                     </h5>
                     <p></p>
                 </div>
@@ -4329,7 +4282,7 @@ enter sleep <span style="color:#0000cf;font-weight:bold">57</span> sec
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 31, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 12, 2022
 </div>
 </div>
 

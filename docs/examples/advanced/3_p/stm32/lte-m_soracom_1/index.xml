@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Leafony – KDDI LTE-Mを使って、SORACOMでセンサデータを可視化</title>
+    <title>Leafony – LTE-Mを使ったIoTサービス</title>
     <link>https://docs.leafony.com/docs/examples/advanced/3_p/stm32/lte-m_soracom_1/</link>
-    <description>Recent content in KDDI LTE-Mを使って、SORACOMでセンサデータを可視化 on Leafony</description>
+    <description>Recent content in LTE-Mを使ったIoTサービス on Leafony</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	  <atom:link href="https://docs.leafony.com/docs/examples/advanced/3_p/stm32/lte-m_soracom_1/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +14,7 @@
     
     
     <item>
-      <title>Docs: KDDI LTE-Mを使って、SORACOMでセンサデータを可視化</title>
+      <title>Docs: LTE-Mを使ったIoTサービス</title>
       <link>https://docs.leafony.com/docs/examples/advanced/3_p/stm32/lte-m_soracom_1/lte-m_soracom_2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -22,54 +22,39 @@
       <description>
         
         
-        &lt;p&gt;SORACOMのサービスを使って、センサデータを収集・蓄積し、そのデータの可視化を行います。&lt;/br&gt;
-ここでは、SORACOM IoT SIMの購入と登録、そして、サービスの設定方法に関して記載し、次のページにデータの可視化方法を記載します。詳細は、&lt;a href=&#34;https://users.soracom.io/ja-jp/&#34; target=&#34;_brank&#34;&gt; SORACOM Users&lt;/a&gt;を参照して下さい。&lt;/p&gt;
-&lt;h1 id=&#34;soracomのiot-simの購入からサービスの設定&#34;&gt;SORACOMのIoT SIMの購入からサービスの設定&lt;/h1&gt;
-&lt;p&gt;SORACOM アカウント（オペレータ）を作成してからIoT SIMの購入します。&lt;/br&gt;
-IoT SIMが届いたら、SIMの登録を行い、次にSORACOM のサービスの設定をします。&lt;/br&gt;&lt;/p&gt;
-&lt;h2 id=&#34;soracom-アカウント-オペレーター-を作成する&#34;&gt;SORACOM アカウント (オペレーター) を作成する&lt;/h2&gt;
+        &lt;p&gt;&lt;a href=&#34;https://soracom.jp/&#34; target=&#34;_brank&#34;&gt; SORACOM&lt;/a&gt;のサービスを使って、センサデータを収集・蓄積し、可視化を行います。&lt;/br&gt;
+ここでは、SORACOM IoT SIMの購入、サービスの設定、データの可視化方法について記載しています。詳細は、&lt;a href=&#34;https://users.soracom.io/ja-jp/&#34; target=&#34;_brank&#34;&gt; SORACOM Users&lt;/a&gt;を参照して下さい。&lt;/p&gt;
+&lt;h2 id=&#34;iot-simの購入&#34;&gt;IoT SIMの購入&lt;/h2&gt;
+&lt;p&gt;アカウント（オペレータ）を作成してからIoT SIMの購入します。&lt;/br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;アカウント-オペレーター-を作成する&#34;&gt;アカウント (オペレーター) を作成する&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://users.soracom.io/ja-jp/&#34; target=&#34;_brank&#34;&gt; &lt;a href=&#34;https://users.soracom.io/ja-jp/&#34;&gt;https://users.soracom.io/ja-jp/&lt;/a&gt;&lt;/a&gt;を開きます。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;右上のユーザコンソールをクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://users.soracom.io/ja-jp/&#34; target=&#34;_brank&#34;&gt; SORACOM Users&lt;/a&gt;を開きます。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;右上の&lt;code&gt;ユーザコンソール&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;オンラインの手順に従って登録します。&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;soracomのiot-simplan-km1-サイズナノを購入する&#34;&gt;SORACOMのIoT SIM(plan-KM1 サイズ:ナノ)を購入する&lt;/h2&gt;
+&lt;h3 id=&#34;iot-simplan-km1を購入する&#34;&gt;IoT SIM(plan-KM1)を購入する&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://users.soracom.io/ja-jp/&#34; target=&#34;_brank&#34;&gt; &lt;a href=&#34;https://users.soracom.io/ja-jp/&#34;&gt;https://users.soracom.io/ja-jp/&lt;/a&gt;&lt;/a&gt;を開きます。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;左上のメニューをクリックします。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;発注をクリックします。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;新規注文をクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、ログインします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;左上の&lt;code&gt;メニュー　→　発注　→　新規注文&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://soracom.jp/store/5263/&#34; target=&#34;_brank&#34;&gt; SORACOM Air SIMカード plan-KM1 サイズ:ナノ（データ通信のみ）&lt;/a&gt;を選択し、購入します。&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;soracomのiot-simの登録をする&#34;&gt;SORACOMのIoT SIMの登録をする&lt;/h2&gt;
+&lt;h2 id=&#34;サービスの設定&#34;&gt;サービスの設定&lt;/h2&gt;
+&lt;p&gt;IoT SIMが届いたら、サービスの設定とIoT SIMの登録を行います。&lt;/p&gt;
+&lt;h3 id=&#34;サービスの設定をする&#34;&gt;サービスの設定をする&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://users.soracom.io/ja-jp/&#34; target=&#34;_brank&#34;&gt; &lt;a href=&#34;https://users.soracom.io/ja-jp/&#34;&gt;https://users.soracom.io/ja-jp/&lt;/a&gt;&lt;/a&gt;を開きます。&lt;/br&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;左上のメニューをクリックします。&lt;/br&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;SIM管理画面を開いたら詳細をクリックします。&lt;/br&gt;
-&lt;a href=&#34;./sora_2.jpg&#34;&gt;&lt;img src=&#34;./sora_2.jpg&#34; width=&#34;300&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;IMSI(International Mobile Subscriber Identity)の確認、名前とグループを作成します。 
-&lt;a href=&#34;./sora_3.jpg&#34;&gt;&lt;img src=&#34;./sora_3.jpg&#34; width=&#34;600&#34;&gt;&lt;/a&gt;&lt;/br&gt;　&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;IoT SIM の有効期限とアクションを設定する&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;soracomのサービスの設定&#34;&gt;SORACOMのサービスの設定&lt;/h2&gt;
-&lt;p&gt;SORACOMのサービスの設定は、SIMグループ単位で行います。以下の手順で設定して下さい。&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://users.soracom.io/ja-jp/&#34; target=&#34;_brank&#34;&gt; &lt;a href=&#34;https://users.soracom.io/ja-jp/&#34;&gt;https://users.soracom.io/ja-jp/&lt;/a&gt;&lt;/a&gt;を開きます。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;左上のメニューをクリックします。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;SIM管理画面を開いたら設定するグループをクリックすると以下の設定画面が出てきます。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、ログインします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;左上の&lt;code&gt;メニュー　→　SIMグループ　→　追加&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;グループ名は、&lt;code&gt;KM-1_SORACOM-Lagoon&lt;/code&gt;（例）とします。&lt;/li&gt;
 &lt;li&gt;SORACOM Air for セルラー設定の&lt;a href=&#34;https://users.soracom.io/ja-jp/docs/air/get-location-info/#%e3%83%87%e3%83%90%e3%82%a4%e3%82%b9%e3%81%ae%e7%b0%a1%e6%98%93%e7%9a%84%e3%81%aa%e4%bd%8d%e7%bd%ae%e6%83%85%e5%a0%b1-%e7%b0%a1%e6%98%93%e4%bd%8d%e7%bd%ae%e6%b8%ac%e4%bd%8d%e6%a9%9f%e8%83%bd-%e3%82%92%e9%80%81%e4%bf%a1%e3%81%99%e3%82%8b&#34; target=&#34;_brank&#34;&gt; 簡易位置情報&lt;/a&gt;をONにする。&lt;/li&gt;
 &lt;li&gt;SORACOM Harvest Data設定をONにする。&lt;/li&gt;
 &lt;li&gt;Unified Endpoint設定が、Auto(デフォルト)であることを確認する。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;iot-simの登録をする&#34;&gt;IoT SIMの登録をする&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、ログインします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;左上の&lt;code&gt;メニュー → SIM管理画面&lt;/code&gt;を開いたら&lt;code&gt;詳細&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;IMSI(International Mobile Subscriber Identity)の確認、名前を決め、グループ&lt;code&gt;KM-1_SORACOM-Lagoon&lt;/code&gt;を選択します。&lt;/li&gt;
+&lt;li&gt;IoT SIM の有効期限とアクションを設定する&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝&lt;/p&gt;
 &lt;h2 id=&#34;simの購入と登録soracomの設定&#34;&gt;SIMの購入と登録、SORACOMの設定&lt;/h2&gt;
