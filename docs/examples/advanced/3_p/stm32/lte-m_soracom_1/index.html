@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.892a29ab42546c5c113543a9f27154224ab802c2d01f68a75b045ca3f6c9d8a34a584012f7d70f77a48333d3f542df882d366540b6d5e8c689cdaef830cbcc30.json"
+  data-offline-search-index-json-src="/offline-search-index.2b7d726adf80913ccf6b04f6c7eb42c5c3077d17e705b8c7e7eb9b449df5305b7bd2e83213f58ea9fa8a184085aed425840310bcd5d66327587f32723f102ac3.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.892a29ab42546c5c113543a9f27154224ab802c2d01f68a75b045ca3f6c9d8a34a584012f7d70f77a48333d3f542df882d366540b6d5e8c689cdaef830cbcc30.json"
+  data-offline-search-index-json-src="/offline-search-index.2b7d726adf80913ccf6b04f6c7eb42c5c3077d17e705b8c7e7eb9b449df5305b7bd2e83213f58ea9fa8a184085aed425840310bcd5d66327587f32723f102ac3.json"
   data-offline-search-base-href="/"
 >
 
@@ -3742,7 +3742,7 @@ if (!doNotTrack) {
     <li><a href="#leafonyの構成">Leafonyの構成</a></li>
     <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
     <li><a href="#スケッチの書き込み">スケッチの書き込み</a></li>
-    <li><a href="#soracom-harvest-センサデータ収集蓄積">SORACOM Harvest (センサデータ収集・蓄積)  　</a>
+    <li><a href="#soracom-harvest-データ収集蓄積">SORACOM Harvest (データ収集・蓄積)  　</a>
       <ul>
         <li><a href="#simグループのサービスの設定をする">SIMグループのサービスの設定をする</a></li>
         <li><a href="#iot-simをユーザコンソールに登録する">IoT SIMをユーザコンソールに登録する</a></li>
@@ -3750,7 +3750,7 @@ if (!doNotTrack) {
         <li><a href="#leafonyからセンサデータを確認する">Leafonyからセンサデータを確認する</a></li>
       </ul>
     </li>
-    <li><a href="#soracom-lagoon-センサデータの可視化">SORACOM Lagoon (センサデータの可視化) 　　　</a>
+    <li><a href="#soracom-lagoon-ダッシュボード">SORACOM Lagoon (ダッシュボード) 　　　</a>
       <ul>
         <li><a href="#次へ進むlte-m_soracom_2"><a href="lte-m_soracom_2/"><strong>次へ進む</strong></a></a></li>
       </ul>
@@ -3835,6 +3835,14 @@ if (!doNotTrack) {
         
 	
 	<h2 id="はじめに">はじめに</h2>
+<p>Leafonyを使うと、次のようなIoTサービスを身近にすることが出来ます。是非、トライして下さい。</br></p>
+<ul>
+<li>Leafonyがセンサ・データを一定時間間隔で取得し、LTE-Mでを送信します。</br></li>
+<li>電池駆動なので屋外に設置が出来、Arduinoなのでプログラミングが簡単に出来ます。</br></li>
+<li>データは、SORACOMクラウドで収集・蓄積し、ダッシュボードで可視化されます。</br></li>
+<li>ユーザは、スマートフォンやPCでデータを確認したり、 異常値はメールやLINEで知ります。</br>
+<img src="Example_LTE-M_v0.png" alt="Example_LTE-M_v0.png"></li>
+</ul>
 <p><a href="https://soracom.jp/" target="_brank"> SORACOM</a>のサービスを使って、センサデータを収集・蓄積し、可視化を行います。ここでは、SORACOM IoT SIMの購入、サービスの設定、データの可視化方法について記載しています。</p>
 <p>ドキュメントを読んでもわからないことがあれば、ユーザコンソールにログインし、右上の<code>サポート　→　お問い合わせ</code>から質問を出すことが出来ます。
 図を用いて説明
@@ -3853,9 +3861,7 @@ if (!doNotTrack) {
 <p><a href="hhttps://docs.leafony.com/docs/products/basic2/" target="_brank"> basic Kit 2</a>、<a href="https://docs.leafony.com/docs/products/nut/" target="_brank"> Nut Plate</a></br></p>
 </li>
 <li>
-<p><a href="https://soracom.jp/store/5263/" target="_brank"> IoT SIM(plan-KM1) </a></br>
-SORACOMの<a href="https://console.soracom.io/" target="_brank"> ユーザコンソール</a>を開き、アカウント(オペレータ)登録します。</br>
-次に<code>メニュー → 発注 → 新規注文</code>をクリックし、<code>SORACOM Air SIMカード plan-KM1</code>を選択します。</br></p>
+<p>SORACOM IoT SIM plan-KM1(<a href="https://users.soracom.io/ja-jp/guides/getting-started/" target="_brank"> <a href="https://users.soracom.io/ja-jp/guides/getting-started/">https://users.soracom.io/ja-jp/guides/getting-started/</a></a>)</p>
 </li>
 <li>
 <p>単3電池ボックス(JST製PHハーネス付き　1番pin：＋側、2番pin：－側)</br></p>
@@ -3947,7 +3953,7 @@ SORACOMの<a href="https://console.soracom.io/" target="_brank"> ユーザコン
 </br>
 </br></li>
 </ul>
-<h2 id="soracom-harvest-センサデータ収集蓄積">SORACOM Harvest (センサデータ収集・蓄積)  　</h2>
+<h2 id="soracom-harvest-データ収集蓄積">SORACOM Harvest (データ収集・蓄積)  　</h2>
 <p>SORACOMを使って、センサデータを収集・蓄積を行います。ここでは、手順のみ記載しますので、</p>
 <h3 id="simグループのサービスの設定をする">SIMグループのサービスの設定をする</h3>
 <ol>
@@ -3979,7 +3985,7 @@ SORACOMの<a href="https://console.soracom.io/" target="_brank"> ユーザコン
 <ol>
 <li>確認して下さい。</li>
 </ol>
-<h2 id="soracom-lagoon-センサデータの可視化">SORACOM Lagoon (センサデータの可視化) 　　　</h2>
+<h2 id="soracom-lagoon-ダッシュボード">SORACOM Lagoon (ダッシュボード) 　　　</h2>
 <p>SORACOM Lagoon は、SORACOM Harvest Data に蓄積したデータを用いて、グラフ・地図などを使ったダッシュボードを作成いただけるサービスです。</p>
 <br>
 <h3 id="次へ進むlte-m_soracom_2"><a href="lte-m_soracom_2/"><strong>次へ進む</strong></a></h3>
@@ -4313,7 +4319,7 @@ SORACOMの<a href="https://console.soracom.io/" target="_brank"> ユーザコン
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 13, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 14, 2022
 </div>
 </div>
 
