@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.2b7d726adf80913ccf6b04f6c7eb42c5c3077d17e705b8c7e7eb9b449df5305b7bd2e83213f58ea9fa8a184085aed425840310bcd5d66327587f32723f102ac3.json"
+  data-offline-search-index-json-src="/offline-search-index.25fb5e8eadc41533e228c51b3a23e4a3ddbe803e5fe090a578a5193209fbdd5a3ad06e88485f7c94d385eaffa646c28d6dbf4284ad305c4c95af91a18cd097d3.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.2b7d726adf80913ccf6b04f6c7eb42c5c3077d17e705b8c7e7eb9b449df5305b7bd2e83213f58ea9fa8a184085aed425840310bcd5d66327587f32723f102ac3.json"
+  data-offline-search-index-json-src="/offline-search-index.25fb5e8eadc41533e228c51b3a23e4a3ddbe803e5fe090a578a5193209fbdd5a3ad06e88485f7c94d385eaffa646c28d6dbf4284ad305c4c95af91a18cd097d3.json"
   data-offline-search-base-href="/"
 >
 
@@ -3736,7 +3736,11 @@ if (!doNotTrack) {
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#はじめに">はじめに</a>
+      <ul>
+        <li><a href="#kddilte-mリーフの特長">KDDI「LTE-Mリーフ」の特長</a></li>
+      </ul>
+    </li>
     <li><a href="#用意するもの">用意するもの</a></li>
     <li><a href="#サンプルアプリのソースコード">サンプルアプリのソースコード</a></li>
     <li><a href="#leafonyの構成">Leafonyの構成</a></li>
@@ -3835,19 +3839,16 @@ if (!doNotTrack) {
         
 	
 	<h2 id="はじめに">はじめに</h2>
-<p>Leafonyを使うと、次のようなIoTサービスを身近にすることが出来ます。是非、トライして下さい。</br></p>
+<p>屋外のセンサデータを一定間隔で取得し、クラウドのダッシュボードで確認したり、異常値をメールやLINEで知る一般的なIoTサービスが、KDDIが開発した「LTE-Mリーフ」を使えば、簡単に実現出来ます。</br>
+<img src="Example_LTE-M_v0.png" alt="Example_LTE-M_v0.png"></p>
+<h3 id="kddilte-mリーフの特長">KDDI「LTE-Mリーフ」の特長</h3>
 <ul>
-<li>Leafonyがセンサ・データを一定時間間隔で取得し、LTE-Mでを送信します。</br></li>
-<li>電池駆動なので屋外に設置が出来、Arduinoなのでプログラミングが簡単に出来ます。</br></li>
-<li>データは、SORACOMクラウドで収集・蓄積し、ダッシュボードで可視化されます。</br></li>
-<li>ユーザは、スマートフォンやPCでデータを確認したり、 異常値はメールやLINEで知ります。</br>
-<img src="Example_LTE-M_v0.png" alt="Example_LTE-M_v0.png"></li>
+<li>KDDI は、約23×30mmと超小型でLTE-M 通信機能に対応した「LTE-Mリーフ」を開発に成功しました。</br></li>
+<li>小さな基板上に、データ通信用のアンテナを内蔵し（技適取得済）、外部アンテナは不要です。</br></li>
+<li>SIMカードは、KDDI網に対応したソラコムのLTE-Mサービス「SORACOM Air for セルラー(plan-KM1)」が利用出来ます。</br></li>
+<li>省電力性能は、通信モジュールが具備するスリープ等の機能だけでなく、ソフトウェア設定で通信モジュールへの給電自体を遮断する機能を搭載しており、長期間使用しない時は電池の消費を限りなくゼロに近づけることが可能にしました。</br></li>
+<li>電池は、単3電池やリチウムイオン電池等で、データ送信の頻度や回数等のユースケース応じて選択することが出来ます。</br></li>
 </ul>
-<p><a href="https://soracom.jp/" target="_brank"> SORACOM</a>のサービスを使って、センサデータを収集・蓄積し、可視化を行います。ここでは、SORACOM IoT SIMの購入、サービスの設定、データの可視化方法について記載しています。</p>
-<p>ドキュメントを読んでもわからないことがあれば、ユーザコンソールにログインし、右上の<code>サポート　→　お問い合わせ</code>から質問を出すことが出来ます。
-図を用いて説明
-詳細な説明は、<a href="https://users.soracom.io/ja-jp/" target="_brank"> SORACOM Users</a>を参考にしてください。</br></p>
-</br>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
 <li>
@@ -4319,7 +4320,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 14, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 15, 2022
 </div>
 </div>
 

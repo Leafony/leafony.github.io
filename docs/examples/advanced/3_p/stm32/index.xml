@@ -841,19 +841,16 @@ ai_runはメモリ確保された入力データと出力データのポイン�
         
         
         &lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;Leafonyを使うと、次のようなIoTサービスを身近にすることが出来ます。是非、トライして下さい。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;屋外のセンサデータを一定間隔で取得し、クラウドのダッシュボードで確認したり、異常値をメールやLINEで知る一般的なIoTサービスが、KDDIが開発した「LTE-Mリーフ」を使えば、簡単に実現出来ます。&lt;/br&gt;
+&lt;img src=&#34;Example_LTE-M_v0.png&#34; alt=&#34;Example_LTE-M_v0.png&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;kddilte-mリーフの特長&#34;&gt;KDDI「LTE-Mリーフ」の特長&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;Leafonyがセンサ・データを一定時間間隔で取得し、LTE-Mでを送信します。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;電池駆動なので屋外に設置が出来、Arduinoなのでプログラミングが簡単に出来ます。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;データは、SORACOMクラウドで収集・蓄積し、ダッシュボードで可視化されます。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;ユーザは、スマートフォンやPCでデータを確認したり、 異常値はメールやLINEで知ります。&lt;/br&gt;
-&lt;img src=&#34;Example_LTE-M_v0.png&#34; alt=&#34;Example_LTE-M_v0.png&#34;&gt;&lt;/li&gt;
+&lt;li&gt;KDDI は、約23×30mmと超小型でLTE-M 通信機能に対応した「LTE-Mリーフ」を開発に成功しました。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;小さな基板上に、データ通信用のアンテナを内蔵し（技適取得済）、外部アンテナは不要です。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;SIMカードは、KDDI網に対応したソラコムのLTE-Mサービス「SORACOM Air for セルラー(plan-KM1)」が利用出来ます。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;省電力性能は、通信モジュールが具備するスリープ等の機能だけでなく、ソフトウェア設定で通信モジュールへの給電自体を遮断する機能を搭載しており、長期間使用しない時は電池の消費を限りなくゼロに近づけることが可能にしました。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;電池は、単3電池やリチウムイオン電池等で、データ送信の頻度や回数等のユースケース応じて選択することが出来ます。&lt;/br&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;a href=&#34;https://soracom.jp/&#34; target=&#34;_brank&#34;&gt; SORACOM&lt;/a&gt;のサービスを使って、センサデータを収集・蓄積し、可視化を行います。ここでは、SORACOM IoT SIMの購入、サービスの設定、データの可視化方法について記載しています。&lt;/p&gt;
-&lt;p&gt;ドキュメントを読んでもわからないことがあれば、ユーザコンソールにログインし、右上の&lt;code&gt;サポート　→　お問い合わせ&lt;/code&gt;から質問を出すことが出来ます。
-図を用いて説明
-詳細な説明は、&lt;a href=&#34;https://users.soracom.io/ja-jp/&#34; target=&#34;_brank&#34;&gt; SORACOM Users&lt;/a&gt;を参考にしてください。&lt;/br&gt;&lt;/p&gt;
-&lt;/br&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
