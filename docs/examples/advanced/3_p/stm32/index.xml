@@ -841,16 +841,27 @@ ai_runはメモリ確保された入力データと出力データのポイン�
         
         
         &lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;屋外のセンサデータを一定間隔で取得し、クラウドのダッシュボードで確認したり、異常値をメールやLINEで知る一般的なIoTサービスが、KDDIが開発した「LTE-Mリーフ」を使えば、簡単に実現出来ます。&lt;/br&gt;
-&lt;img src=&#34;Example_LTE-M_v0.png&#34; alt=&#34;Example_LTE-M_v0.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;屋外のセンサデータを一定間隔で取得し、クラウドのダッシュボードで確認したり、異常値をメールやLINEで知る一般的なIoTサービスが、KDDIが開発した「LTE-Mリーフ」を使えば、簡単に実現出来ます。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;Example_LTE-M_v0.png&#34; alt=&#34;Example_LTE-M_v0.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;kddilte-mリーフの特長&#34;&gt;KDDI「LTE-Mリーフ」の特長&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;KDDI は、約23×30mmと超小型でLTE-M 通信機能に対応した「LTE-Mリーフ」を開発に成功しました。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;KDDI は、約23×30mmと超小型でLTE-M 通信機能に対応したLTE-Mリーフの開発に成功しました。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;小さな基板上に、データ通信用のアンテナを内蔵し（技適取得済）、外部アンテナは不要です。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;SIMカードは、KDDI網に対応したソラコムのLTE-Mサービス「SORACOM Air for セルラー(plan-KM1)」が利用出来ます。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;SIMカードは、&lt;a href=&#34;https://biz.kddi.com/service/iot-lpwa/&#34; target=&#34;_brank&#34;&gt; KDDIのLTE-M通信網&lt;/a&gt;に対応したソラコムのLTE-Mサービス「SORACOM Air for セルラー(plan-KM1)」が利用出来ます。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;省電力性能は、通信モジュールが具備するスリープ等の機能だけでなく、ソフトウェア設定で通信モジュールへの給電自体を遮断する機能を搭載しており、長期間使用しない時は電池の消費を限りなくゼロに近づけることが可能にしました。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;電池は、単3電池やリチウムイオン電池等で、データ送信の頻度や回数等のユースケース応じて選択することが出来ます。&lt;/br&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id=&#34;電池での駆動時間計算値&#34;&gt;電池での駆動時間(計算値)&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;作成中&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ランニングコスト&#34;&gt;ランニングコスト&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;作成中
+&lt;/br&gt;
+&lt;/br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;leadonyの設定&#34;&gt;Leadonyの設定&lt;/h1&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
@@ -864,7 +875,9 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;p&gt;&lt;a href=&#34;hhttps://docs.leafony.com/docs/products/basic2/&#34; target=&#34;_brank&#34;&gt; basic Kit 2&lt;/a&gt;、&lt;a href=&#34;https://docs.leafony.com/docs/products/nut/&#34; target=&#34;_brank&#34;&gt; Nut Plate&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;SORACOM IoT SIM plan-KM1(&lt;a href=&#34;https://users.soracom.io/ja-jp/guides/getting-started/&#34; target=&#34;_brank&#34;&gt; &lt;a href=&#34;https://users.soracom.io/ja-jp/guides/getting-started/&#34;&gt;https://users.soracom.io/ja-jp/guides/getting-started/&lt;/a&gt;&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;SORACOM IoT SIM(plan-KM1)&lt;/br&gt;
+以下を参照し、SORACOMアカウント(オペレータ)を作成してからIoT SIMを購入して下さい。
+&lt;a href=&#34;https://users.soracom.io/ja-jp/guides/getting-started/&#34; target=&#34;_brank&#34;&gt; &lt;a href=&#34;https://users.soracom.io/ja-jp/guides/getting-started/&#34;&gt;https://users.soracom.io/ja-jp/guides/getting-started/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;単3電池ボックス(JST製PHハーネス付き　1番pin：＋側、2番pin：－側)&lt;/br&gt;&lt;/p&gt;
@@ -950,45 +963,43 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;スケッチの書き込み&#34;&gt;スケッチの書き込み&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/environment/stm32/arduino_ide/&#34; target=&#34;_brank&#34;&gt; STM32 MCUのArduino IDE設定&lt;/a&gt;が、まだ済んでない方は、インストールして下さい。&lt;/li&gt;
-&lt;li&gt;ボードは、ツール → Board part number→ Leafony STM32 MCU(16MHz) を選択して下さい。&lt;/li&gt;
-&lt;li&gt;Arduino スケッチを書き込んで下さい。
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/environment/stm32/arduino_ide/&#34; target=&#34;_brank&#34;&gt; STM32 MCUのArduino IDE設定&lt;/a&gt;が、まだ済んでない方は、インストールして下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;ボードは、ツール → Board part number→ Leafony STM32 MCU(16MHz) を選択して下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;Arduino スケッチを書き込んで下さい。&lt;/br&gt;
 &lt;/br&gt;
 &lt;/br&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;soracom-harvest-データ収集蓄積&#34;&gt;SORACOM Harvest (データ収集・蓄積)  　&lt;/h2&gt;
-&lt;p&gt;SORACOMを使って、センサデータを収集・蓄積を行います。ここでは、手順のみ記載しますので、&lt;/p&gt;
-&lt;h3 id=&#34;simグループのサービスの設定をする&#34;&gt;SIMグループのサービスの設定をする&lt;/h3&gt;
+&lt;h1 id=&#34;soracomの設定&#34;&gt;SORACOMの設定&lt;/h1&gt;
+&lt;p&gt;SORACOMは、複数のSIMを束ねたSIMグループで、クラウドの設定をします。以下の手順に従って、設定をすれば、SORACOM上のデータを収集・蓄積することが出来ます。&lt;/p&gt;
+&lt;h2 id=&#34;simグループの設定をする&#34;&gt;SIMグループの設定をする&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開いて、ログインする。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;左上の&lt;code&gt;メニュー　→　SIMグループ　→　追加&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、
+左上の&lt;code&gt;メニュー　→　SIMグループ　→　追加&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;グループ名は、&lt;code&gt;KM-1_SORACOM-Lagoon&lt;/code&gt;（例）とします。&lt;/li&gt;
-&lt;li&gt;SORACOM Air for セルラー設定の&lt;a href=&#34;https://users.soracom.io/ja-jp/docs/air/get-location-info/#%e3%83%87%e3%83%90%e3%82%a4%e3%82%b9%e3%81%ae%e7%b0%a1%e6%98%93%e7%9a%84%e3%81%aa%e4%bd%8d%e7%bd%ae%e6%83%85%e5%a0%b1-%e7%b0%a1%e6%98%93%e4%bd%8d%e7%bd%ae%e6%b8%ac%e4%bd%8d%e6%a9%9f%e8%83%bd-%e3%82%92%e9%80%81%e4%bf%a1%e3%81%99%e3%82%8b&#34; target=&#34;_brank&#34;&gt; 簡易位置情報&lt;/a&gt;をONにする。&lt;/li&gt;
+&lt;li&gt;SORACOM Air for セルラー設定の&lt;a href=&#34;https://users.soracom.io/ja-jp/docs/air/get-location-info/#%e3%83%87%e3%83%90%e3%82%a4%e3%82%b9%e3%81%ae%e7%b0%a1%e6%98%93%e7%9a%84%e3%81%aa%e4%bd%8d%e7%bd%ae%e6%83%85%e5%a0%b1-%e7%b0%a1%e6%98%93%e4%bd%8d%e7%bd%ae%e6%b8%ac%e4%bd%8d%e6%a9%9f%e8%83%bd-%e3%82%92%e9%80%81%e4%bf%a1%e3%81%99%e3%82%8b&#34; target=&#34;_brank&#34;&gt; 簡易位置情報&lt;/a&gt;をONにします。&lt;/li&gt;
 &lt;li&gt;SORACOM Harvest Data設定をONにする。&lt;/li&gt;
-&lt;li&gt;Unified Endpoint設定が、Auto(デフォルト)であることを確認する。&lt;/li&gt;
+&lt;li&gt;Unified Endpoint設定が、Auto(デフォルト)であることを確認します。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;iot-simをユーザコンソールに登録する&#34;&gt;IoT SIMをユーザコンソールに登録する&lt;/h3&gt;
+&lt;h2 id=&#34;iot-simを登録する&#34;&gt;IoT SIMを登録する&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://users.soracom.io/ja-jp/guides/getting-started/register-sim/&#34; target=&#34;_brank&#34;&gt; こちら&lt;/a&gt;
-を参照し、IoT SIMをユーザコンソールに登録します。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、ログインします。&lt;/br&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;グループは、&lt;code&gt;KM-1_SORACOM-Lagoon&lt;/code&gt;を選択します。&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://users.soracom.io/ja-jp/guides/getting-started/register-sim/&#34; target=&#34;_brank&#34;&gt; こちら&lt;/a&gt;
+を参照し、IoT SIMをユーザコンソールに登録します。&lt;/li&gt;
+&lt;li&gt;グループ名は、&lt;code&gt;KM-1_SORACOM-Lagoon&lt;/code&gt;を選択します。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;iot-sim-の有効期限とアクションを設定する&#34;&gt;IoT SIM の有効期限とアクションを設定する&lt;/h3&gt;
+&lt;h2 id=&#34;iot-simの通信を開始する&#34;&gt;IoT SIMの通信を開始する&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://users.soracom.io/ja-jp/docs/air/set-expiry/&#34; target=&#34;_brank&#34;&gt; こちら&lt;/a&gt;を参照し、有効期限とアクションを設定して下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://users.soracom.io/ja-jp/docs/air/set-expiry/&#34; target=&#34;_brank&#34;&gt; こちら&lt;/a&gt;を参照し、有効期限とアクションを設定します。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、
+&lt;code&gt;操作 →　使用開始&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;leafonyからセンサデータを確認する&#34;&gt;Leafonyからセンサデータを確認する&lt;/h3&gt;
+&lt;h2 id=&#34;soracom-harvest上でleafonyが送信したデータを確認する&#34;&gt;SORACOM Harvest上でLeafonyが送信したデータを確認する&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;確認して下さい。&lt;/li&gt;
+&lt;li&gt;Leafonyの電源をONにしてデータを送信する&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、
+左上の&lt;code&gt;メニュー　→　データ収集・蓄積・可視化 → SORACOM Harvest Data&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;SORACOM Harvest Dataの左上のリソースからSIMを選択し、Leafonyが送付したデータが確認出来れば、正しくデータが送付されれいます。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;soracom-lagoon-ダッシュボード&#34;&gt;SORACOM Lagoon (ダッシュボード) 　　　&lt;/h2&gt;
+&lt;h1 id=&#34;soracom-lagoon-ダッシュボードの使い方&#34;&gt;SORACOM Lagoon (ダッシュボード)の使い方 　　　&lt;/h1&gt;
 &lt;p&gt;SORACOM Lagoon は、SORACOM Harvest Data に蓄積したデータを用いて、グラフ・地図などを使ったダッシュボードを作成いただけるサービスです。&lt;/p&gt;
 &lt;br&gt;
 &lt;h3 id=&#34;次へ進むlte-m_soracom_2&#34;&gt;&lt;a href=&#34;lte-m_soracom_2/&#34;&gt;&lt;strong&gt;次へ進む&lt;/strong&gt;&lt;/a&gt;&lt;/h3&gt;
