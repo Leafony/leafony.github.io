@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.353dd07b00cdf0931e0cf6c961fa79d245357db1ec7157c50a8627f8e40b13ab588ec258479f981327f03b6dfde0cd404bd096ac9d6119ed5b82e5e0f2066a81.json"
+  data-offline-search-index-json-src="/offline-search-index.4c13196ee4dc4d81a63467834f4bf02f2f0e858b8cf5603674232e157f699cadd6c275bb634c84e0a600f3d33a7f6fe015dec80b93b33f8592cecaff2cfd3f7e.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.353dd07b00cdf0931e0cf6c961fa79d245357db1ec7157c50a8627f8e40b13ab588ec258479f981327f03b6dfde0cd404bd096ac9d6119ed5b82e5e0f2066a81.json"
+  data-offline-search-index-json-src="/offline-search-index.4c13196ee4dc4d81a63467834f4bf02f2f0e858b8cf5603674232e157f699cadd6c275bb634c84e0a600f3d33a7f6fe015dec80b93b33f8592cecaff2cfd3f7e.json"
   data-offline-search-base-href="/"
 >
 
@@ -3849,7 +3849,7 @@ if (!doNotTrack) {
 <p><code>adv_data[]</code>配列がAdvertising dataです。この配列はコメントに記載されているように、<code>AD Structure 1</code>～<code>AD Structure 3</code>というデータの塊を繋げたデータとなっています。これらのデータの内容については後述します。</p>
 <p><code>ble112.ble_cmd_le_gap_set_adv_data()</code>で<code>adv_data</code>をBLEリーフに登録し、BLEリーフ側から登録完了の信号が来るのを待つために、<code>ble112.checkActivity()</code>を実行しています。</p>
 <p><code>ble112.ble_cmd_le_gap_start_advertising()</code>を実行することで、BLEがAdvertisingを開始して、先程設定したAdvertising dataをブロードキャストし始めます。<code>LE_GA_SCANNABLE_NON_CONNECTALBE</code>を設定したことで、BLE Client側はAdvertising dataをスキャンすることはできますが、このデバイスと接続を確立することは禁止しています。これは、接続要求が来た場合に発生するイベントの処理を減らして電力を削減するための設定です。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">StartAdvData</span><span style="color:#000;font-weight:bold">()</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">StartAdvData</span><span style="color:#000;font-weight:bold">()</span>
 <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#8f5902;font-style:italic">// Advertising data; 25byte MAX
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
