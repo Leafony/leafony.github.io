@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.dcbb92b74af51691ee1c3c9ca69d6d2cb86425c18cfaf4978816fe85f62a75b77cec2a2cf2c6a85566d6cefbf99063cc3015252fb75e63b2cdf931541de86b38.json"
+  data-offline-search-index-json-src="/offline-search-index.353dd07b00cdf0931e0cf6c961fa79d245357db1ec7157c50a8627f8e40b13ab588ec258479f981327f03b6dfde0cd404bd096ac9d6119ed5b82e5e0f2066a81.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.dcbb92b74af51691ee1c3c9ca69d6d2cb86425c18cfaf4978816fe85f62a75b77cec2a2cf2c6a85566d6cefbf99063cc3015252fb75e63b2cdf931541de86b38.json"
+  data-offline-search-index-json-src="/offline-search-index.353dd07b00cdf0931e0cf6c961fa79d245357db1ec7157c50a8627f8e40b13ab588ec258479f981327f03b6dfde0cd404bd096ac9d6119ed5b82e5e0f2066a81.json"
   data-offline-search-base-href="/"
 >
 
@@ -3758,14 +3758,7 @@ if (!doNotTrack) {
     <li><a href="#iot-simを登録する">IoT SIMを登録する</a></li>
     <li><a href="#iot-simの通信を開始する">IoT SIMの通信を開始する</a></li>
     <li><a href="#soracom-harvest上でleafonyが送信したデータを確認する">SORACOM Harvest上でLeafonyが送信したデータを確認する</a></li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#次へ進むlte-m_soracom_2"><a href="lte-m_soracom_2/"><strong>次へ進む</strong></a></a></li>
-      </ul>
-    </li>
+    <li><a href="#soracom-lagoon-ダッシュボードについて">SORACOM Lagoon (ダッシュボード)について 　　　</a></li>
   </ul>
 </nav>
 
@@ -3846,8 +3839,9 @@ if (!doNotTrack) {
         
 	
 	<h2 id="はじめに">はじめに</h2>
-<p>屋外のセンサデータを一定間隔で取得し、クラウドのダッシュボードで確認したり、異常値をメールやLINEで知る一般的なIoTサービスが、KDDIが開発した「LTE-Mリーフ」を使えば、簡単に実現出来ます。</br></p>
-<p><img src="Example_LTE-M_v0.png" alt="Example_LTE-M_v0.png"></p>
+<p>屋外のセンサデータを一定間隔で取得し、クラウドのダッシュボードで確認したり、異常値をメールやLINEで知る一般的なIoTサービスが、KDDIが開発した「LTE-M*リーフ」を使えば、簡単に実現出来ます。</br></p>
+<p>*：LTEは通常使用している携帯電話・スマートフォン用広域無線通信規格のことで、LTE-Mはこの通信技術を応用し通信速度を下げて超低電力化している無線規格です。
+<img src="Example_LTE-M_v0.png" alt="Example_LTE-M_v0.png"></p>
 <h3 id="kddilte-mリーフの特長">KDDI「LTE-Mリーフ」の特長</h3>
 <ul>
 <li>KDDI は、約23×30mmと超小型でLTE-M 通信機能に対応したLTE-Mリーフの開発に成功しました。</br></li>
@@ -3866,7 +3860,7 @@ if (!doNotTrack) {
 </br>
 </br></li>
 </ul>
-<h1 id="leadonyの設定">Leadonyの設定</h1>
+<h1 id="leafonyの設定">Leafonyの設定</h1>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
 <li>
@@ -3881,7 +3875,7 @@ if (!doNotTrack) {
 </li>
 <li>
 <p>SORACOM IoT SIM(plan-KM1)</br>
-以下を参照し、SORACOMアカウント(オペレータ)を作成してからIoT SIMを購入して下さい。
+以下を参照し、SORACOMアカウント(オペレータ)を作成してからIoT SIMを購入して下さい。</br>
 <a href="https://users.soracom.io/ja-jp/guides/getting-started/" target="_brank"> <a href="https://users.soracom.io/ja-jp/guides/getting-started/">https://users.soracom.io/ja-jp/guides/getting-started/</a></a></p>
 </li>
 <li>
@@ -3970,12 +3964,12 @@ if (!doNotTrack) {
 <ul>
 <li><a href="https://docs.leafony.com/docs/environment/stm32/arduino_ide/" target="_brank"> STM32 MCUのArduino IDE設定</a>が、まだ済んでない方は、インストールして下さい。</br></li>
 <li>ボードは、ツール → Board part number→ Leafony STM32 MCU(16MHz) を選択して下さい。</br></li>
-<li>Arduino スケッチを書き込んで下さい。</br>
-</br>
+<li>Arduino スケッチを書き込んで下さい。</br></li>
+<li>通信品質確保のため、スケッチを書き込んだらUSBリーフを外して下さい。 
 </br></li>
 </ul>
 <h1 id="soracomの設定">SORACOMの設定</h1>
-<p>SORACOMは、複数のSIMを束ねたSIMグループで、クラウドの設定をします。以下の手順に従って、設定をすれば、SORACOM上のデータを収集・蓄積することが出来ます。</p>
+<p>SORACOMは、複数のSIMを束ねたSIMグループで、クラウドの設定をします。以下の手順に従って設定をすれば、SORACOM上に収集したデータを確認することが出来ます。</p>
 <h2 id="simグループの設定をする">SIMグループの設定をする</h2>
 <ol>
 <li><a href="https://console.soracom.io/" target="_brank"> ユーザコンソール</a>を開き、
@@ -4002,12 +3996,10 @@ if (!doNotTrack) {
 <li>Leafonyの電源をONにしてデータを送信する</li>
 <li><a href="https://console.soracom.io/" target="_brank"> ユーザコンソール</a>を開き、
 左上の<code>メニュー　→　データ収集・蓄積・可視化 → SORACOM Harvest Data</code>をクリックします。</br></li>
-<li>SORACOM Harvest Dataの左上のリソースからSIMを選択し、Leafonyが送付したデータが確認出来れば、正しくデータが送付されれいます。</li>
+<li>SORACOM Harvest Dataの左上のリソースからSIMを選択し、Leafonyが送付したデータが確認出来れば、正しくデータが送付されています。</li>
 </ol>
-<h1 id="soracom-lagoon-ダッシュボードの使い方">SORACOM Lagoon (ダッシュボード)の使い方 　　　</h1>
-<p>SORACOM Lagoon は、SORACOM Harvest Data に蓄積したデータを用いて、グラフ・地図などを使ったダッシュボードを作成いただけるサービスです。</p>
-<br>
-<h3 id="次へ進むlte-m_soracom_2"><a href="lte-m_soracom_2/"><strong>次へ進む</strong></a></h3>
+<h2 id="soracom-lagoon-ダッシュボードについて">SORACOM Lagoon (ダッシュボード)について 　　　</h2>
+<p>SORACOM Lagoon は、SORACOM Harvest Data に蓄積したデータを用いて、グラフ・地図などを使ったダッシュボードを作成いただけるサービスです。使用するプランに基づいて月額の利用料金が発生しますが、無料利用枠からでも始められます。<a href="https://users.soracom.io/ja-jp/docs/lagoon-v2/" target="_brank"> こちら</a>を参照して始めて下さい。<br></p>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
 </p>
@@ -4338,7 +4330,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 16, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 17, 2022
 </div>
 </div>
 
