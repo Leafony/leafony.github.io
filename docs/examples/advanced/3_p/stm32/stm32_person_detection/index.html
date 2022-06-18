@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.85.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6a21a5f33a2dadd9402e8f9c063d6684ef755af0b887e45c236db4f75d41639421909ca46a08549eec8055e83a8c4a5614843cdcb87508e1e29c2f33dc4defaf.json"
+  data-offline-search-index-json-src="/offline-search-index.c397e111f558539fb372ddf117724c7fd1b2948139c2b79757ac3121b0565b1899cd05b444e12fe4e8d2407b7d8de5865aff06466c8c1a554ea822559a7b523c.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6a21a5f33a2dadd9402e8f9c063d6684ef755af0b887e45c236db4f75d41639421909ca46a08549eec8055e83a8c4a5614843cdcb87508e1e29c2f33dc4defaf.json"
+  data-offline-search-index-json-src="/offline-search-index.c397e111f558539fb372ddf117724c7fd1b2948139c2b79757ac3121b0565b1899cd05b444e12fe4e8d2407b7d8de5865aff06466c8c1a554ea822559a7b523c.json"
   data-offline-search-base-href="/"
 >
 
@@ -4020,7 +4020,7 @@ STM32CubeIDEの<code>Project Explorer</code>を見ると次のフォルダが自
 <p>それぞれ以下のように実装しましょう<br>
 ai_runはメモリ確保された入力データと出力データのポインタを渡して上げるだけで，自動生成されたコードだけで実行されます。<br>
 ですからほぼ修正する必要がありません。とても便利ですね。</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">acquire_and_process_data</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">data</span><span style="color:#000;font-weight:bold">)</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">acquire_and_process_data</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">data</span><span style="color:#000;font-weight:bold">)</span>
 <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#204a87;font-weight:bold">uint32_t</span> <span style="color:#000">sTime</span><span style="color:#000;font-weight:bold">;</span>
   <span style="color:#204a87;font-weight:bold">uint32_t</span> <span style="color:#000">eTime</span><span style="color:#000;font-weight:bold">;</span>
@@ -4051,7 +4051,7 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 
   <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">static</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">ai_run</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">data_in</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">data_out</span><span style="color:#000;font-weight:bold">)</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">static</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">ai_run</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">data_in</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">data_out</span><span style="color:#000;font-weight:bold">)</span>
 <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#000">ai_i32</span> <span style="color:#000">batch</span><span style="color:#000;font-weight:bold">;</span>
 
@@ -4070,7 +4070,7 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 
   <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">post_process</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">data</span><span style="color:#000;font-weight:bold">)</span>
+</code></pre></div><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">post_process</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">data</span><span style="color:#000;font-weight:bold">)</span>
 <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#204a87;font-weight:bold">uint32_t</span> <span style="color:#000">sTime</span><span style="color:#000;font-weight:bold">;</span>
   <span style="color:#204a87;font-weight:bold">uint32_t</span> <span style="color:#000">eTime</span><span style="color:#000;font-weight:bold">;</span>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.85.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6a21a5f33a2dadd9402e8f9c063d6684ef755af0b887e45c236db4f75d41639421909ca46a08549eec8055e83a8c4a5614843cdcb87508e1e29c2f33dc4defaf.json"
+  data-offline-search-index-json-src="/offline-search-index.c397e111f558539fb372ddf117724c7fd1b2948139c2b79757ac3121b0565b1899cd05b444e12fe4e8d2407b7d8de5865aff06466c8c1a554ea822559a7b523c.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6a21a5f33a2dadd9402e8f9c063d6684ef755af0b887e45c236db4f75d41639421909ca46a08549eec8055e83a8c4a5614843cdcb87508e1e29c2f33dc4defaf.json"
+  data-offline-search-index-json-src="/offline-search-index.c397e111f558539fb372ddf117724c7fd1b2948139c2b79757ac3121b0565b1899cd05b444e12fe4e8d2407b7d8de5865aff06466c8c1a554ea822559a7b523c.json"
   data-offline-search-base-href="/"
 >
 
@@ -3549,7 +3549,7 @@ if (!doNotTrack) {
 <ol>
 <li>Substitute the following constants for the information of the <code>WiFi</code> to be accessed.</li>
 </ol>
-<pre tabindex="0"><code>const char* SSID = &quot;wifi_ssid&quot;;    // WiFi SSID
+<pre><code>const char* SSID = &quot;wifi_ssid&quot;;    // WiFi SSID
 const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
 </code></pre><ol start="2">
 <li>Substitute the following constants for the web app information you just created.
@@ -3558,7 +3558,7 @@ const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
 </ul>
 </li>
 </ol>
-<pre tabindex="0"><code>const char* KEY = &quot;google_scripts_key&quot;;
+<pre><code>const char* KEY = &quot;google_scripts_key&quot;;
 </code></pre><ol start="3">
 <li>If you want to adjust the time interval for writing sensor data, substitute the following constants.
 <ul>
@@ -3566,8 +3566,8 @@ const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
 </ul>
 </li>
 </ol>
-<pre tabindex="0"><code>uint64_t DEEP_SLEEP_TIME_SEC = 60;
-</code></pre><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
+<pre><code>uint64_t DEEP_SLEEP_TIME_SEC = 60;
+</code></pre><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;HTTPClient.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;HTS221.h&gt;</span><span style="color:#8f5902;font-style:italic">
