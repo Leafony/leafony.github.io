@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.edd8a86cd916df2f66c3e19c9fb65505cd2b1885e94368d3d41a131d163506da767ac21c2c112a8a1e9fcfe57a79d6efc5632f1f6242c585054674568aa53304.json"
+  data-offline-search-index-json-src="/offline-search-index.6664a65531f5c6066e297a327a9aaf5a611778acd822dba1d21764f4dbbbbadb4502d51eaf038c6fe7b15a07aae93d70269f9b87976e2d46576fdcab1d2dd61e.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.edd8a86cd916df2f66c3e19c9fb65505cd2b1885e94368d3d41a131d163506da767ac21c2c112a8a1e9fcfe57a79d6efc5632f1f6242c585054674568aa53304.json"
+  data-offline-search-index-json-src="/offline-search-index.6664a65531f5c6066e297a327a9aaf5a611778acd822dba1d21764f4dbbbbadb4502d51eaf038c6fe7b15a07aae93d70269f9b87976e2d46576fdcab1d2dd61e.json"
   data-offline-search-base-href="/"
 >
 
@@ -3817,10 +3817,11 @@ if (!doNotTrack) {
 	
 	<p><a href="./ac05_f_large.jpg"><img src="./ac05_f_small.jpg" width="200"></a>
 <a href="./ac05_b_large.jpg"><img src="./ac05_b_small.jpg" width="200"></a>
-<a href="./ac05_p_large.jpg"><img src="./ac05_p_small.jpg" width="200"></a></p>
+<a href="./ac05_p_large.jpg"><img src="./ac05_p_small.jpg" width="300"></a></p>
+<p><strong>LTE-M King Sは、LTE-Mリーフ専用のリーフなので、必ずLTE-M King Mの下に配置してご使用下さい。</strong></br>
+<strong>また、電池はニッケル⽔素電池電池3本か、3.7Vのリチウムイオン電池を想定しています。</strong></br></p>
 <h2 id="特徴">特徴</h2>
-<p>KDDI LTE-M King Mリーフの電源供給用リーフ、LTE-M King Sです。</br>
-LTE-M King Mの裏面とLTE-M King SのバスはLeafony busとは異なり、LTE-M専用の仕様となりますので、必ずLTE-M King SはLTE-M King Mの直下に配置して組み立てて下さい。</p>
+<p>LTE-M king Sリーフは、JST製PHコネクタからの電池電圧やVBUSの電圧を3.3Vに変換して、各リーフに供給します。また、MaxLinear社のIC(XR21B1411IL16-F)でUSB-UART変換します。ON/OFFのスイッチや電池電圧をモニターするためのADコンバータも実装しています。</p>
 <h2 id="性能">性能　</h2>
 <table>
 <thead>
@@ -3978,12 +3979,12 @@ LTE-M King Mの裏面とLTE-M King SのバスはLeafony busとは異なり、LTE
 </table>
 <br>
 <h2 id="ブロック図">ブロック図</h2>
-<p><a href="./ac05_lte-m_king_s_block.jpg"><img src="./ac05_lte-m_king_s_block.jpg" width="250"></a></p>
+<p><a href="./ac05_lte-m_king_s_block.jpg"><img src="./ac05_lte-m_king_s_block.jpg" width="350"></a></p>
 <h2 id="ピン配置">ピン配置　</h2>
 <p><a href="./ac05_lte-m_king_s_pinassign_f.jpg"><img src="./ac05_lte-m_king_s_pinassign_f.jpg" width="750"></a></p>
 <h2 id="tips">Tips</h2>
 <h3 id="スイッチコネクタusbについて">スイッチ、コネクタ、USBについて</h3>
-<p><a href="./AC05_tips.jpg"><img src="./AC05_tips.jpg" width="350"></a></p>
+<p><a href="./AC05_tips.jpg"><img src="./AC05_tips.jpg" width="450"></a></p>
 <table>
 <thead>
 <tr>
@@ -4007,29 +4008,35 @@ LTE-M King Mの裏面とLTE-M King SのバスはLeafony busとは異なり、LTE
 </tbody>
 </table>
 <h2 id="usbドライバインストール">USBドライバインストール</h2>
-<p>USBドライバをダウンロードし、PCにインストールします。</br>
-(Windows PCの場合はデバイスマネージャーからUSBドライバの更新を実施します。)</p>
+<p>LTE-M king SリーフのUSB-UART変換ICは、調達の都合上、MaxLinear社のIC(XR21B1411IL16-F)を採用しました。以下にXR21B1411IL16-Fのドライバーのインストール方法を記載します。</p>
 <ul>
-<li>USBシリアル変換IC(FT232)のドライバがインストールされていないと、シリアルポートは見つかりません。</br>
-XXXには、調達の都合でAZ01 USBとは異なるUSB-UARTシリアル変換ICを採用したので、USBドライバーをインストールする必要があります。以下の手順に従って、インストールして下さい。</br></li>
-</ul>
-<p>・下記からご使用のOSにあったドライバーをダウンロードし、解凍して下さい。Windowsの場合は、解凍すると「V2.6.0.0 Drivers」のフォルダが出来ます。以降、Windowsの場合を説明します。</br>
-<a href="https://www.maxlinear.com/product/interface/uarts/usb-uarts/xr21b1411" target="_brank"><a href="https://www.maxlinear.com/product/interface/uarts/usb-uarts/xr21b1411">https://www.maxlinear.com/product/interface/uarts/usb-uarts/xr21b1411</a></a></p>
-<p><img src="./usbdrv_1.jpg" alt="usbdrv_1"></p>
-<p>・XXXをPCに接続します。</br>
-・デバイスマネージャを開いて、ポート→USBシリアルデバイスを選択し、ドライバの更新をします。</br></p>
-<p><img src="./usbdrv_2.jpg" alt="usbdrv_2"></p>
-<p>・先程解凍した「V2.6.0.0 Drivers」のフォルダを参照し、ドライバーをインストールします。</br></p>
-<p><img src="./usbdrv_3.jpg" alt="usbdrv_3"></p>
-<p>・XXXをPCに接続していたら、ポートにXR21B1411 USB UARTが表示されます。</br></p>
-<p><img src="./usbdrv_5.jpg" alt="usbdrv_5"></p>
-<ul>
-<li>USB2芯 電源ケーブルは、使用出来ません。</li>
-<li><a href="https://docs.leafony.com/docs/leaf/others/az01/" target="_brank">AZ01 USBリーフ</a>でも、スケッチの書き込みが可能です。</br></li>
+<li>
+<p>下記からご使用のOSにあったドライバーをダウンロードし、解凍して下さい。Windowsの場合は、解凍すると「V2.6.0.0 Drivers」のフォルダが出来ます。以降、Windowsの場合を説明します。</br></br>
+<a href="https://www.maxlinear.com/product/interface/uarts/usb-uarts/xr21b1411" target="_brank"><a href="https://www.maxlinear.com/product/interface/uarts/usb-uarts/xr21b1411">https://www.maxlinear.com/product/interface/uarts/usb-uarts/xr21b1411</a></a></br></br>
+<img src="./usbdrv_1.jpg" alt="usbdrv_1"></p>
+</li>
+<li>
+<p>LTE-M king SリーフをPCに接続します。</br></p>
+</li>
+<li>
+<p>スイッチをONにします。</p>
+</li>
+<li>
+<p>デバイスマネージャを開いて、ポート→USBシリアルデバイスを選択し、ドライバの更新をします。</br>
+<img src="./usbdrv_2.jpg" alt="usbdrv_2"></p>
+</li>
+<li>
+<p>先程解凍した「V2.6.0.0 Drivers」のフォルダを参照し、ドライバーをインストールします。</br>
+<img src="./usbdrv_3.jpg" alt="usbdrv_3"></p>
+</li>
+<li>
+<p>正しく接続出来ていたら、ポートにXR21B1411 USB UARTが表示されます。</br>
+<img src="./usbdrv_5.jpg" alt="usbdrv_5"></p>
+</li>
 </ul>
 <h2 id="サンプルアプリ">サンプルアプリ</h2>
 <ul>
-<li><a href="/docs/examples/advanced/3_p/stm32/lte-m_soracom_1/">KDDI LTE-Mを使って、SORACOMでセンサデータを可視化</a>※仕掛中</li>
+<li><a href="/docs/examples/advanced/3_p/stm32/lte-m_soracom_1/">LTE-Mを使ったIoTサービス</a></li>
 </ul>
 <h2 id="ドキュメント">ドキュメント　</h2>
 <ul>
@@ -4367,7 +4374,7 @@ XXXには、調達の都合でAZ01 USBとは異なるUSB-UARTシリアル変換I
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 31, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 20, 2022
 </div>
 </div>
 
