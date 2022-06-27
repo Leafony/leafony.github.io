@@ -850,36 +850,35 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;li&gt;SIMカードは、&lt;a href=&#34;https://biz.kddi.com/service/iot-lpwa/&#34; target=&#34;_brank&#34;&gt; KDDIのLTE-M通信網&lt;/a&gt;に対応したソラコムのLTE-Mサービス「SORACOM Air for セルラー(plan-KM1)」が利用出来ます。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;省電力性能は、通信モジュールが具備するスリープ等の機能だけでなく、ソフトウェア設定で通信モジュールへの給電自体を遮断する機能を搭載しており、長期間使用しない時は電池の消費を限りなくゼロに近づけることが可能にしました。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;電池は、単3電池やリチウムイオン電池等で、データ送信の頻度や回数等のユースケース応じて選択することが出来ます。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;電池での駆動時間(作成中）&lt;/li&gt;
-&lt;li&gt;ランニングコスト(作成中)
-&lt;/br&gt;
-&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;電池寿命は約200日&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;です。&lt;/li&gt;
+&lt;li&gt;毎月のご利用料金は従量制です。(作成中)&lt;/li&gt;
 &lt;/ul&gt;
+&lt;/br&gt;
+&lt;/br&gt;
 &lt;h1 id=&#34;leafonyの設定&#34;&gt;Leafonyの設定&lt;/h1&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;開発用のパソコン&lt;/p&gt;
-&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac04/&#34; target=&#34;_brank&#34;&gt; LTE-M King M&lt;/a&gt;、
 &lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac05/&#34; target=&#34;_brank&#34;&gt; LTE-M King S&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://soracom.jp/store/5263/&#34; target=&#34;_brank&#34;&gt; SORACOM IoT SIM(plan-KM1)&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;a href=&#34;hhttps://docs.leafony.com/docs/products/basic2/&#34; target=&#34;_brank&#34;&gt; basic Kit 2&lt;/a&gt;、&lt;a href=&#34;https://docs.leafony.com/docs/products/nut/&#34; target=&#34;_brank&#34;&gt; Nut Plate&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;SORACOM IoT SIM(plan-KM1)&lt;/br&gt;
-以下を参照し、SORACOMアカウント(オペレータ)を作成してからIoT SIMを購入して下さい。&lt;/br&gt;
-&lt;a href=&#34;https://users.soracom.io/ja-jp/guides/getting-started/&#34; target=&#34;_brank&#34;&gt; &lt;a href=&#34;https://users.soracom.io/ja-jp/guides/getting-started/&#34;&gt;https://users.soracom.io/ja-jp/guides/getting-started/&lt;/a&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;開発用パソコン&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;単3電池ボックス(JST製PHハーネス付き　1番pin：＋側、2番pin：－側)&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;単3ニッケル⽔素電池x3本&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;単3ニッケル⽔素電池︓3本&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;単3x3本電池ボックス(JST製PHコネクタ付き)&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;./lte-m_soracom_socket_large.jpg&#34;&gt;&lt;img src=&#34;./lte-m_soracom_socket_small.jpg&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;サンプルアプリのソースコード&#34;&gt;サンプルアプリのソースコード&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Arduino スケッチ&lt;/br&gt;&lt;/li&gt;
@@ -937,12 +936,12 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;-&lt;/td&gt;
-&lt;td&gt;M2*??mm screw&lt;/td&gt;
+&lt;td&gt;M2*18mm screw&lt;/td&gt;
 &lt;td&gt;2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;-&lt;/td&gt;
-&lt;td&gt;単3電池ボックス(JST製PHハーネス付き)&lt;/td&gt;
+&lt;td&gt;単3x3本電池ボックス(JST製PHコネクタ付き)&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -953,18 +952,21 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
-&lt;p&gt;写真追加
-&lt;/br&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;IoT SIM(plan-KM1)をLTE-M King MのnanoSIM card slotに差し込んで下さい。&lt;/li&gt;
+&lt;li&gt;上から4-Sensorsリーフ、USBリーフ、STM32 MCUリーフ、LTE-M King Mリーフ、LTE-M King Sリーフの順番で組み立て、ネジ止めして下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;a href=&#34;./lte-m_soracom_block_large.jpg&#34;&gt;&lt;img src=&#34;./lte-m_soracom_block_small.jpg&#34; width=&#34;300&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;スケッチの書き込み&#34;&gt;スケッチの書き込み&lt;/h2&gt;
-&lt;ul&gt;
+&lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/environment/stm32/arduino_ide/&#34; target=&#34;_brank&#34;&gt; STM32 MCUのArduino IDE設定&lt;/a&gt;が、まだ済んでない方は、インストールして下さい。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;ボードは、ツール → Board part number→ Leafony STM32 MCU(16MHz) を選択して下さい。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;Arduino スケッチを書き込んで下さい。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;通信品質確保のため、スケッチを書き込んだらUSBリーフを外して下さい。 
-&lt;/br&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;Arduinoのボードは、ツール→ Board part number→ Leafony STM32 MCU(16MHz)を選択します。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;Arduinoのスケッチを書き込んで下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/br&gt;
+&lt;/br&gt;
 &lt;h1 id=&#34;soracomの設定&#34;&gt;SORACOMの設定&lt;/h1&gt;
-&lt;p&gt;SORACOMは、複数のSIMを束ねたSIMグループで、クラウドの設定をします。以下の手順に従って設定をすれば、SORACOM上に収集したデータを確認することが出来ます。&lt;/p&gt;
+&lt;p&gt;SORACOMは、複数のSIMを束ねたSIMグループで、クラウドの設定をします。以下の手順で、SORACOM上に送信したデータを確認することが出来ます。&lt;/p&gt;
 &lt;h2 id=&#34;simグループの設定をする&#34;&gt;SIMグループの設定をする&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、
@@ -975,7 +977,6 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;li&gt;Unified Endpoint設定が、Auto(デフォルト)であることを確認します。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;iot-simを登録する&#34;&gt;IoT SIMを登録する&lt;/h2&gt;
-&lt;p&gt;IoT SIMをユーザコンソールに登録は &lt;a href=&#34;https://users.soracom.io/ja-jp/guides/getting-started/register-sim/&#34; target=&#34;_brank&#34;&gt; こちら&lt;/a&gt;を参照して登録して下さい。ただし、ソラコムのショッピングサイト (SORACOM ユーザーコンソール) で購入の場合に関しては、あまり記載がないので、以下を参考にして下さい。&lt;/br&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、
 左上の&lt;code&gt;メニュー　→　発注 &lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
@@ -996,13 +997,19 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;/ol&gt;
 &lt;h2 id=&#34;soracom-harvest上でleafonyが送信したデータを確認する&#34;&gt;SORACOM Harvest上でLeafonyが送信したデータを確認する&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Leafonyの電源をONにしてデータを送信する&lt;/li&gt;
+&lt;li&gt;Leafonyの電源をONにしてデータを送信します。&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、
 左上の&lt;code&gt;メニュー　→　データ収集・蓄積・可視化 → SORACOM Harvest Data&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;SORACOM Harvest Dataの左上のリソースからSIMを選択し、Leafonyが送付したデータが確認出来れば、正しくデータが送付されています。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;soracom-lagoon-ダッシュボードについて&#34;&gt;SORACOM Lagoon (ダッシュボード)について 　　　&lt;/h2&gt;
 &lt;p&gt;SORACOM Lagoon は、SORACOM Harvest Data に蓄積したデータを用いて、グラフ・地図などを使ったダッシュボードを作成いただけるサービスです。使用するプランに基づいて月額の利用料金が発生しますが、無料利用枠からでも始められます。&lt;a href=&#34;https://users.soracom.io/ja-jp/docs/lagoon-v2/&#34; target=&#34;_brank&#34;&gt; こちら&lt;/a&gt;を参照して始めて下さい。&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;soracom-の利用料金&#34;&gt;SORACOM の利用料金&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;SORACOMの利用料金は、&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、
+右上の&lt;code&gt;オペレータ →　ご利用料金 &lt;/code&gt;で確認出来ます。&lt;/li&gt;
+&lt;li&gt;ご利用料金が設定金額を上回ったときにオペレーターのメールアドレスに通知がくる設定が出来ます。&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;/p&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
@@ -1010,6 +1017,16 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;LTEは通常使用している携帯電話・スマートフォン用広域無線通信規格のことで、LTE-Mはこの通信技術を応用し通信速度を下げて超低電力化している無線規格です。 &lt;/br&gt;&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;3000mAhの18650電池を使用し、1時間に1回データ送信した時の計算値 &lt;/br&gt;&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;写真の電池ボックスの購入先 &lt;/br&gt;
+・単3x3本電池ボックス(秋月)：&lt;a href=&#34;https://akizukidenshi.com/catalog/g/gP-02667/&#34; target=&#34;_brank&#34;&gt; &lt;a href=&#34;https://akizukidenshi.com/catalog/g/gP-02667/&#34;&gt;https://akizukidenshi.com/catalog/g/gP-02667/&lt;/a&gt;&lt;/a&gt;　&lt;/br&gt;
+・JST製PHコネクタ(秋月):&lt;a href=&#34;https://akizukidenshi.com/catalog/g/gP-12665/&#34; target=&#34;_brank&#34;&gt; &lt;a href=&#34;https://akizukidenshi.com/catalog/g/gP-12665/&#34;&gt;https://akizukidenshi.com/catalog/g/gP-12665/&lt;/a&gt;&lt;/a&gt;　&lt;/br&gt;
+・接続コネクタ(エーモン)：&lt;a href=&#34;https://www.amon.jp/diy/index.php?diy_id=63&amp;mode=contents
+&#34; target=&#34;_brank&#34;&gt; &lt;a href=&#34;https://www.amon.jp/diy/index.php?diy_id=63&amp;amp;mode=contents&#34;&gt;https://www.amon.jp/diy/index.php?diy_id=63&amp;amp;mode=contents&lt;/a&gt; &lt;/a&gt;&lt;/br&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
