@@ -851,7 +851,7 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;li&gt;省電力性能は、通信モジュールが具備するスリープ等の機能だけでなく、ソフトウェア設定で通信モジュールへの給電自体を遮断する機能を搭載しており、長期間使用しない時は電池の消費を限りなくゼロに近づけることが可能にしました。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;電池は、単3電池やリチウムイオン電池等で、データ送信の頻度や回数等のユースケース応じて選択することが出来ます。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;電池寿命は約200日&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;です。&lt;/li&gt;
-&lt;li&gt;毎月のご利用料金は従量制です。(作成中)&lt;/li&gt;
+&lt;li&gt;毎月の通信量は従量制です。(作成中)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/br&gt;
 &lt;/br&gt;
@@ -866,7 +866,7 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;p&gt;&lt;a href=&#34;https://soracom.jp/store/5263/&#34; target=&#34;_brank&#34;&gt; SORACOM IoT SIM(plan-KM1)&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;hhttps://docs.leafony.com/docs/products/basic2/&#34; target=&#34;_brank&#34;&gt; basic Kit 2&lt;/a&gt;、&lt;a href=&#34;https://docs.leafony.com/docs/products/nut/&#34; target=&#34;_brank&#34;&gt; Nut Plate&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;hhttps://docs.leafony.com/docs/products/basic2/&#34; target=&#34;_brank&#34;&gt; Basic Kit 2&lt;/a&gt;、&lt;a href=&#34;https://docs.leafony.com/docs/products/nut/&#34; target=&#34;_brank&#34;&gt; Nut Plate&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;開発用パソコン&lt;/p&gt;
@@ -906,7 +906,7 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;AZ01&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;USB&lt;/a&gt;&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;USB&lt;/a&gt; &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -954,14 +954,14 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;IoT SIM(plan-KM1)をLTE-M King MのnanoSIM card slotに差し込んで下さい。&lt;/li&gt;
-&lt;li&gt;上から4-Sensorsリーフ、USBリーフ、STM32 MCUリーフ、LTE-M King Mリーフ、LTE-M King Sリーフの順番で組み立て、ネジ止めして下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;上から4-Sensorsリーフ、USBリーフ&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;、STM32 MCUリーフ、LTE-M King Mリーフ、LTE-M King Sリーフの順番で組み立て、ネジ止めして下さい。&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;a href=&#34;./lte-m_soracom_block_large.jpg&#34;&gt;&lt;img src=&#34;./lte-m_soracom_block_small.jpg&#34; width=&#34;300&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;スケッチの書き込み&#34;&gt;スケッチの書き込み&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/environment/stm32/arduino_ide/&#34; target=&#34;_brank&#34;&gt; STM32 MCUのArduino IDE設定&lt;/a&gt;が、まだ済んでない方は、インストールして下さい。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;Arduinoのボードは、ツール→ Board part number→ Leafony STM32 MCU(16MHz)を選択します。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;Arduinoのスケッチを書き込んで下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;Arduinoのスケッチ&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;を書き込んで下さい。&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/br&gt;
 &lt;/br&gt;
@@ -1000,16 +1000,16 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;li&gt;Leafonyの電源をONにしてデータを送信します。&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、
 左上の&lt;code&gt;メニュー　→　データ収集・蓄積・可視化 → SORACOM Harvest Data&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;SORACOM Harvest Dataの左上のリソースからSIMを選択し、Leafonyが送付したデータが確認出来れば、正しくデータが送付されています。&lt;/li&gt;
+&lt;li&gt;SORACOM Harvest Dataの左上のリソースからSIMを選択し、Leafonyが送付したデータが確認出来れば、正しくデータが送付されています。
+&lt;img src=&#34;data_1.png&#34; alt=&#34;data_1.png&#34;&gt;&lt;/br&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;soracom-の利用料金について&#34;&gt;SORACOM の利用料金について&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;SORACOMの利用料金は、&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、右上の&lt;code&gt;オペレータ →　ご利用料金 &lt;/code&gt;で確認出来ます。&lt;/li&gt;
+&lt;li&gt;通信料金は、従量制(0.55 円/KB)なので、設定金額を上回った時にオペレーターに通知がくる設定をしておくのがよろしいです。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;soracom-lagoon-ダッシュボードについて&#34;&gt;SORACOM Lagoon (ダッシュボード)について 　　　&lt;/h2&gt;
 &lt;p&gt;SORACOM Lagoon は、SORACOM Harvest Data に蓄積したデータを用いて、グラフ・地図などを使ったダッシュボードを作成いただけるサービスです。使用するプランに基づいて月額の利用料金が発生しますが、無料利用枠からでも始められます。&lt;a href=&#34;https://users.soracom.io/ja-jp/docs/lagoon-v2/&#34; target=&#34;_brank&#34;&gt; こちら&lt;/a&gt;を参照して始めて下さい。&lt;br&gt;&lt;/p&gt;
-&lt;h2 id=&#34;soracom-の利用料金&#34;&gt;SORACOM の利用料金&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;SORACOMの利用料金は、&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、
-右上の&lt;code&gt;オペレータ →　ご利用料金 &lt;/code&gt;で確認出来ます。&lt;/li&gt;
-&lt;li&gt;ご利用料金が設定金額を上回ったときにオペレーターのメールアドレスに通知がくる設定が出来ます。&lt;/li&gt;
-&lt;/ol&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;/p&gt;
 &lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
@@ -1027,6 +1027,9 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 ・JST製PHコネクタ(秋月):&lt;a href=&#34;https://akizukidenshi.com/catalog/g/gP-12665/&#34; target=&#34;_brank&#34;&gt; &lt;a href=&#34;https://akizukidenshi.com/catalog/g/gP-12665/&#34;&gt;https://akizukidenshi.com/catalog/g/gP-12665/&lt;/a&gt;&lt;/a&gt;　&lt;/br&gt;
 ・接続コネクタ(エーモン)：&lt;a href=&#34;https://www.amon.jp/diy/index.php?diy_id=63&amp;mode=contents
 &#34; target=&#34;_brank&#34;&gt; &lt;a href=&#34;https://www.amon.jp/diy/index.php?diy_id=63&amp;amp;mode=contents&#34;&gt;https://www.amon.jp/diy/index.php?diy_id=63&amp;amp;mode=contents&lt;/a&gt; &lt;/a&gt;&lt;/br&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Arduinoのスケッチは、USBリーフを使わないで、LTE-M King Sリーフを使ってもを書き込むことが出来ますが、新たにUSBドライバーをインストールする必要があります。インストール方法は、&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac05/#usb%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34; target=&#34;_brank&#34;&gt; こちらを&lt;/a&gt;参照して下さい。&lt;/br&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;

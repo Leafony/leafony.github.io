@@ -232,8 +232,7 @@
 &lt;a href=&#34;./ac04_b_large.jpg&#34;&gt;&lt;img src=&#34;./ac04_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
 &lt;a href=&#34;./ac04_p_large.jpg&#34;&gt;&lt;img src=&#34;./ac04_p_small.jpg&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;p&gt;豊富なセンサー類とLTE-M通信機能を持ったLTE-M King Mリーフです。電池を標準搭載かつUSB充電に対応しているので、外に持ち運んで様々な用途にお使い頂けます。外装ケースの3Dデータをカスタマイズすれば、お手持ちのグッズに容易に組み合わせることもできます。&lt;/br&gt;
-LTE-M King Mの裏面とLTE-M King SのバスはLeafony busとは異なり、LTE-M専用の仕様となりますので、必ずLTE-M King SはLTE-M King Mの直下に配置して組み立てて下さい。&lt;/p&gt;
+&lt;p&gt;LTE-M king Mリーフは、約23×30mmと超小型でLTE-M (LTE Cat-M1)通信機能に対応したリーフです。小さな基板上に、村田製作所製モジュール LBAD0XX1SC( Altair Semiconductor製 ALT1250 Chipset)とデータ通信用のアンテナを内蔵し（技適取得済）、外部アンテナは不要です。省電力性能は、通信モジュールが具備するスリープ等の機能だけでなく、ソフトウェア設定で通信モジュールへの給電自体を遮断する機能を搭載しており、長期間使用しない時は電池の消費を限りなくゼロに近づけることが可能にしています。SIMカードは、&lt;a href=&#34;https://biz.kddi.com/service/iot-lpwa/&#34; target=&#34;_brank&#34;&gt; KDDIのLTE-M通信網&lt;/a&gt;に対応したソラコムのLTE-Mサービス「SORACOM Air for セルラー(plan-KM1)」が利用出来ます。LTE-M King Mリーフの裏面のバスはLeafony busとは異なり、LTE-M専用の仕様になっているので必ずLTE-M king Sを上に配置してご使用下さい。&lt;/p&gt;
 &lt;h2 id=&#34;性能&#34;&gt;性能&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -302,12 +301,9 @@ LTE-M King Mの裏面とLTE-M King SのバスはLeafony busとは異なり、LTE
 &lt;p&gt;&lt;a href=&#34;./ac04_lte-m_king_m_block.jpg&#34;&gt;&lt;img src=&#34;./ac04_lte-m_king_m_block.jpg&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置　&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./ac04_lte-m_king_m_pinassign_f.jpg&#34;&gt;&lt;img src=&#34;./ac04_lte-m_king_m_pinassign_f.jpg&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
-&lt;/br&gt;
-&lt;p&gt;裏面&lt;/br&gt;
-&lt;a href=&#34;./ac04_lte-m_king_m_pinassign_b.jpg&#34;&gt;&lt;img src=&#34;./ac04_lte-m_king_m_pinassign_b.jpg&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;サンプルアプリ&#34;&gt;サンプルアプリ&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/3_p/stm32/lte-m_soracom_1/&#34;&gt;KDDI LTE-Mを使って、SORACOMでセンサデータを可視化&lt;/a&gt;※仕掛中&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/3_p/stm32/lte-m_soracom_1/&#34;&gt;LTE-Mを使ったIoTサービス&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h2&gt;
 &lt;p&gt;本リーフに対応したライブラリがあります。&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#1-%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA&#34;&gt;開発環境設定のページ&lt;/a&gt;で必要なライブラリをインストールしてご利用下さい。&lt;/p&gt;

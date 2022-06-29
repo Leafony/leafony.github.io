@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b784c899130059f369f0c1566b0737011546ab7ecd9bc95a888c4aa2140f3a686aa3e96c2c770f77ddb8147f20173fc602031e41e34e3b95f74a369be58505b3.json"
+  data-offline-search-index-json-src="/offline-search-index.ca824d65570142f74eda5d8335122410a827cc68c1fc4b27e93f31bc811d43cdbde3b0a039376bbf8c94aad95e7c45b011cb64f88eee42ba5d34323187bbe836.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b784c899130059f369f0c1566b0737011546ab7ecd9bc95a888c4aa2140f3a686aa3e96c2c770f77ddb8147f20173fc602031e41e34e3b95f74a369be58505b3.json"
+  data-offline-search-index-json-src="/offline-search-index.ca824d65570142f74eda5d8335122410a827cc68c1fc4b27e93f31bc811d43cdbde3b0a039376bbf8c94aad95e7c45b011cb64f88eee42ba5d34323187bbe836.json"
   data-offline-search-base-href="/"
 >
 
@@ -3733,8 +3733,8 @@ if (!doNotTrack) {
     <li><a href="#iot-simを登録する">IoT SIMを登録する</a></li>
     <li><a href="#iot-simの通信を開始する">IoT SIMの通信を開始する</a></li>
     <li><a href="#soracom-harvest上でleafonyが送信したデータを確認する">SORACOM Harvest上でLeafonyが送信したデータを確認する</a></li>
+    <li><a href="#soracom-の利用料金について">SORACOM の利用料金について</a></li>
     <li><a href="#soracom-lagoon-ダッシュボードについて">SORACOM Lagoon (ダッシュボード)について 　　　</a></li>
-    <li><a href="#soracom-の利用料金">SORACOM の利用料金</a></li>
   </ul>
 </nav>
 
@@ -3825,7 +3825,7 @@ if (!doNotTrack) {
 <li>省電力性能は、通信モジュールが具備するスリープ等の機能だけでなく、ソフトウェア設定で通信モジュールへの給電自体を遮断する機能を搭載しており、長期間使用しない時は電池の消費を限りなくゼロに近づけることが可能にしました。</br></li>
 <li>電池は、単3電池やリチウムイオン電池等で、データ送信の頻度や回数等のユースケース応じて選択することが出来ます。</br></li>
 <li>電池寿命は約200日<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>です。</li>
-<li>毎月のご利用料金は従量制です。(作成中)</li>
+<li>毎月の通信量は従量制です。(作成中)</li>
 </ul>
 </br>
 </br>
@@ -3840,7 +3840,7 @@ if (!doNotTrack) {
 <p><a href="https://soracom.jp/store/5263/" target="_brank"> SORACOM IoT SIM(plan-KM1)</a></br></p>
 </li>
 <li>
-<p><a href="hhttps://docs.leafony.com/docs/products/basic2/" target="_brank"> basic Kit 2</a>、<a href="https://docs.leafony.com/docs/products/nut/" target="_brank"> Nut Plate</a></br></p>
+<p><a href="hhttps://docs.leafony.com/docs/products/basic2/" target="_brank"> Basic Kit 2</a>、<a href="https://docs.leafony.com/docs/products/nut/" target="_brank"> Nut Plate</a></br></p>
 </li>
 <li>
 <p>開発用パソコン</p>
@@ -3880,7 +3880,7 @@ if (!doNotTrack) {
 </tr>
 <tr>
 <td><a href="/docs/leaf/others/az01">AZ01</a></td>
-<td><a href="/docs/leaf/others/az01">USB</a></td>
+<td><a href="/docs/leaf/others/az01">USB</a> <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></td>
 <td>1</td>
 </tr>
 <tr>
@@ -3928,14 +3928,14 @@ if (!doNotTrack) {
 <h2 id="リーフの組み立て">リーフの組み立て</h2>
 <ol>
 <li>IoT SIM(plan-KM1)をLTE-M King MのnanoSIM card slotに差し込んで下さい。</li>
-<li>上から4-Sensorsリーフ、USBリーフ、STM32 MCUリーフ、LTE-M King Mリーフ、LTE-M King Sリーフの順番で組み立て、ネジ止めして下さい。</br></li>
+<li>上から4-Sensorsリーフ、USBリーフ<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>、STM32 MCUリーフ、LTE-M King Mリーフ、LTE-M King Sリーフの順番で組み立て、ネジ止めして下さい。</br></li>
 </ol>
 <p><a href="./lte-m_soracom_block_large.jpg"><img src="./lte-m_soracom_block_small.jpg" width="300"></a></br></p>
 <h2 id="スケッチの書き込み">スケッチの書き込み</h2>
 <ol>
 <li><a href="https://docs.leafony.com/docs/environment/stm32/arduino_ide/" target="_brank"> STM32 MCUのArduino IDE設定</a>が、まだ済んでない方は、インストールして下さい。</br></li>
 <li>Arduinoのボードは、ツール→ Board part number→ Leafony STM32 MCU(16MHz)を選択します。</br></li>
-<li>Arduinoのスケッチを書き込んで下さい。</br></li>
+<li>Arduinoのスケッチ<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>を書き込んで下さい。</br></li>
 </ol>
 </br>
 </br>
@@ -3974,16 +3974,16 @@ if (!doNotTrack) {
 <li>Leafonyの電源をONにしてデータを送信します。</li>
 <li><a href="https://console.soracom.io/" target="_brank"> ユーザコンソール</a>を開き、
 左上の<code>メニュー　→　データ収集・蓄積・可視化 → SORACOM Harvest Data</code>をクリックします。</br></li>
-<li>SORACOM Harvest Dataの左上のリソースからSIMを選択し、Leafonyが送付したデータが確認出来れば、正しくデータが送付されています。</li>
+<li>SORACOM Harvest Dataの左上のリソースからSIMを選択し、Leafonyが送付したデータが確認出来れば、正しくデータが送付されています。
+<img src="data_1.png" alt="data_1.png"></br></br></li>
+</ol>
+<h2 id="soracom-の利用料金について">SORACOM の利用料金について</h2>
+<ol>
+<li>SORACOMの利用料金は、<a href="https://console.soracom.io/" target="_brank"> ユーザコンソール</a>を開き、右上の<code>オペレータ →　ご利用料金 </code>で確認出来ます。</li>
+<li>通信料金は、従量制(0.55 円/KB)なので、設定金額を上回った時にオペレーターに通知がくる設定をしておくのがよろしいです。</li>
 </ol>
 <h2 id="soracom-lagoon-ダッシュボードについて">SORACOM Lagoon (ダッシュボード)について 　　　</h2>
 <p>SORACOM Lagoon は、SORACOM Harvest Data に蓄積したデータを用いて、グラフ・地図などを使ったダッシュボードを作成いただけるサービスです。使用するプランに基づいて月額の利用料金が発生しますが、無料利用枠からでも始められます。<a href="https://users.soracom.io/ja-jp/docs/lagoon-v2/" target="_brank"> こちら</a>を参照して始めて下さい。<br></p>
-<h2 id="soracom-の利用料金">SORACOM の利用料金</h2>
-<ol>
-<li>SORACOMの利用料金は、<a href="https://console.soracom.io/" target="_brank"> ユーザコンソール</a>を開き、
-右上の<code>オペレータ →　ご利用料金 </code>で確認出来ます。</li>
-<li>ご利用料金が設定金額を上回ったときにオペレーターのメールアドレスに通知がくる設定が出来ます。</li>
-</ol>
 <p style="text-align: right">
 </p>
 <section class="footnotes" role="doc-endnotes">
@@ -4001,6 +4001,9 @@ if (!doNotTrack) {
 ・JST製PHコネクタ(秋月):<a href="https://akizukidenshi.com/catalog/g/gP-12665/" target="_brank"> <a href="https://akizukidenshi.com/catalog/g/gP-12665/">https://akizukidenshi.com/catalog/g/gP-12665/</a></a>　</br>
 ・接続コネクタ(エーモン)：<a href="https://www.amon.jp/diy/index.php?diy_id=63&mode=contents
 " target="_brank"> <a href="https://www.amon.jp/diy/index.php?diy_id=63&amp;mode=contents">https://www.amon.jp/diy/index.php?diy_id=63&amp;mode=contents</a> </a></br>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>Arduinoのスケッチは、USBリーフを使わないで、LTE-M King Sリーフを使ってもを書き込むことが出来ますが、新たにUSBドライバーをインストールする必要があります。インストール方法は、<a href="https://docs.leafony.com/docs/leaf/communication/ac05/#usb%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" target="_brank"> こちらを</a>参照して下さい。</br>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -4323,7 +4326,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 27, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 29, 2022
 </div>
 </div>
 
