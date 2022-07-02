@@ -286,7 +286,7 @@
 &lt;tr&gt;
 &lt;td style=&#34;text-align:left&#34;&gt;AI01&lt;/td&gt;
 &lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;../../leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;温湿度、照度、加速度センサを搭載したリーフ             　&lt;/td&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;温度、湿度、照度、加速度センサを搭載したリーフ             　&lt;/td&gt;
 &lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -774,7 +774,7 @@
 &lt;!-- &lt;a href=&#34;https://shop.leafony.com/&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;./shopping.png&#34; width=&#34;200&#34;&gt;&lt;/a&gt; --&gt;
 &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
 &lt;p&gt;人気のESP32マイコンをベースとしたWi-Fi無線通信、microSD、リアルタイムクロック機能が入ったキットです。Basic Kitより少しサイズが大きく、消費電力も大きくなっていますが、断然高性能です。コイン電池では動作しませんが、少し大きめの電池で動きます。そのままで、スマートフォンやパソコンにWi-Fiを使ってタッチセンサの値を送信し、簡単に表示できます。単4形 アルカリ乾電池、リチウムイオン充電池対応の18650電池ホルダを各々ご用意しました。&lt;/p&gt;
-&lt;h3 id=&#34;18650電池のご購入時の注意&#34;&gt;18650電池のご購入時の注意&lt;/h3&gt;
+&lt;h3 id=&#34;span-stylecolor-red18650電池のご購入時の注意span&#34;&gt;&lt;span style=&#34;color: red&#34;&gt;18650電池のご購入時の注意&lt;/span&gt;&lt;/h3&gt;
 &lt;p&gt;ESP32 Kit 2の18650電池ホルダには、「保護回路なし」の18650電池を使用して下さい。「保護回路付き」の18650電池は、長さ65mmよりも若干長く、統一していないため、市販の電池ホルダが用意されていません。Leafonyは、電池リーフに電流制限が付いているため、「保護回路なし」を選択しています。「保護回路なし」の18650電池は、以下から購入することが出来ます。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
