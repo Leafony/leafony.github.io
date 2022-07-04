@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f30f6c5ec9c4e1f5a01aa1d4c52e7d718fab26dbec2f9e925e7c5fe933b75da35330f6f2babe54d399c48fcd604776616b2e68243817fd9bcbee91ce3d3b5452.json"
+  data-offline-search-index-json-src="/offline-search-index.0745e5c618c3617fab32491e8c78be99b8e90180765779a48262c7d9c05806d51f7e8ccfcfa4a17636f420145a0a8860d026cd808190757a8a8ffb2d3da8addb.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f30f6c5ec9c4e1f5a01aa1d4c52e7d718fab26dbec2f9e925e7c5fe933b75da35330f6f2babe54d399c48fcd604776616b2e68243817fd9bcbee91ce3d3b5452.json"
+  data-offline-search-index-json-src="/offline-search-index.0745e5c618c3617fab32491e8c78be99b8e90180765779a48262c7d9c05806d51f7e8ccfcfa4a17636f420145a0a8860d026cd808190757a8a8ffb2d3da8addb.json"
   data-offline-search-base-href="/"
 >
 
@@ -3864,63 +3864,75 @@ if (!doNotTrack) {
 <tr>
 <th>Type</th>
 <th>Name</th>
+<th></th>
 <th>Q&rsquo;ty</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="/docs/leaf/others/az62">AZ62</a></td>
+<td>AZ62</td>
 <td><a href="/docs/leaf/others/az62">Connector Cover</a></td>
+<td>コネクタカバー</td>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/docs/leaf/io/ai01">AI01</a></td>
+<td>AI01</td>
 <td><a href="/docs/leaf/io/ai01">4-Sensors</a></td>
+<td>温度、湿度、照度、加速度センサを搭載したリーフ</td>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/docs/leaf/others/az01">AZ01</a></td>
+<td>AZ0</td>
 <td><a href="/docs/leaf/others/az01">USB</a> <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></td>
+<td>MCU への書き込みやシリアルモニタに接続するリーフ</td>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/docs/leaf/processor/ap03">AP03</a></td>
+<td>AP03</td>
 <td><a href="/docs/leaf/processor/ap03">STM32 MCU</a></td>
+<td>STM32L452REシリーズを使用した32bit MCUリーフ</td>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/docs/leaf/communication/ac04">AC04</a></td>
+<td>AC04</td>
 <td><a href="/docs/leaf/communication/ac04">LTE-M King M</a></td>
+<td>LTE-M (LTE Cat-M1)リーフ</td>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/docs/leaf/power/av05">AV05</a></td>
+<td>AV05</td>
 <td><a href="/docs/leaf/communication/ac05">LTE-M King S</a></td>
+<td>LTE-M用電源リーフ</td>
 <td>1</td>
 </tr>
 <tr>
-<td><a href="/docs/leaf/others/az63">AZ63</a></td>
+<td>AZ63</td>
 <td><a href="/docs/leaf/others/az63">Nut Plate</a></td>
+<td>固定金具</td>
 <td>1</td>
 </tr>
 <tr>
 <td>-</td>
 <td>IoT SIM(plan-KM1)</td>
+<td></td>
 <td>1</td>
 </tr>
 <tr>
 <td>-</td>
 <td>M2*18mm screw</td>
+<td></td>
 <td>2</td>
 </tr>
 <tr>
 <td>-</td>
-<td>単3x3本電池ボックス(JST製PHコネクタ付き)</td>
+<td>単3x3本電池ボックス</td>
+<td></td>
 <td>1</td>
 </tr>
 <tr>
 <td>-</td>
 <td>単3ニッケル⽔素電池 　</td>
+<td></td>
 <td>3</td>
 </tr>
 </tbody>
@@ -3983,7 +3995,36 @@ if (!doNotTrack) {
 <li>通信料金は、従量制(0.55 円/KB)なので、設定金額を上回った時にオペレーターに通知がくる設定をしておくのがよろしいです。</li>
 </ol>
 <h2 id="soracom-lagoon-ダッシュボードについて">SORACOM Lagoon (ダッシュボード)について 　　　</h2>
-<p>SORACOM Lagoon は、SORACOM Harvest Data に蓄積したデータを用いて、グラフ・地図などを使ったダッシュボードを作成いただけるサービスです。使用するプランに基づいて月額の利用料金が発生しますが、無料利用枠からでも始められます。<a href="https://users.soracom.io/ja-jp/docs/lagoon-v2/" target="_brank"> こちら</a>を参照して始めて下さい。<br></p>
+<p>SORACOM Lagoon は、SORACOM Harvest Data に蓄積したデータを用いて、グラフ・地図などを使ったダッシュボードを作成いただけるサービスです。</br></p>
+<ol>
+<li>
+<p><a href="https://console.soracom.io/" target="_brank"> ユーザコンソール</a>を開き、
+左上の<code>メニュー　→　データ収集・蓄積・可視化 → SORACOM Harvest Lagoon</code>をクリックします。</br></p>
+</li>
+<li>
+<p>Lagoonの利用を開始するをクリックします。</br>
+<img src="user_lagoon_1.png" alt="user_lagoon_1.png"></br></br></p>
+</li>
+<li>
+<p>プランを選択します。使用するプランに基づいて月額の利用料金が発生しますが、無料利用枠からでも始められます。</br> 
+<img src="user_lagoon_2.png" alt="user_lagoon_2.png"></br></br></p>
+</li>
+<li>
+<p>パスワードは、アカウント(オペレータ)作成時に設定したパスワードと同じ方でも構いません。</br>
+<img src="user_lagoon_3.png" alt="user_lagoon_3.png"></br></br></p>
+</li>
+<li>
+<p>Lagoonコンソールをクリックします。</br>
+<img src="user_lagoon_4.png" alt="user_lagoon_4.png"></br></br></p>
+</li>
+<li>
+<p>SORACOM Lagoonの画面を出てくることを確認して下さい。</br>
+<img src="user_lagoon_5.png" alt="user_lagoon_5.png"></br></br></p>
+</li>
+<li>
+<p><a href="https://users.soracom.io/ja-jp/docs/lagoon-v2/" target="_brank"> こちら</a>を参照し、SORACOM Lagoonを始めて下さい。<br></p>
+</li>
+</ol>
 <p style="text-align: right">
 </p>
 <section class="footnotes" role="doc-endnotes">
