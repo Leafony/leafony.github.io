@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.1216b6b5faad31d8d9b73f3c238a0d3189ba8fdeaf1f3cfb9cd33d74e3e2ea0e3fc49ef78a5b45149e054234fac238818b8f4168f466d6560103ed67278ee4de.json"
+  data-offline-search-index-json-src="/offline-search-index.532f07684ba60a08d1b999ba7a3bfa1aad80f3e5272f913291de7803409055f043ef3bd5b1bcdff16200d1fd909b3f04dd32bfa1092f8f37768a242cfc900a7e.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.1216b6b5faad31d8d9b73f3c238a0d3189ba8fdeaf1f3cfb9cd33d74e3e2ea0e3fc49ef78a5b45149e054234fac238818b8f4168f466d6560103ed67278ee4de.json"
+  data-offline-search-index-json-src="/offline-search-index.532f07684ba60a08d1b999ba7a3bfa1aad80f3e5272f913291de7803409055f043ef3bd5b1bcdff16200d1fd909b3f04dd32bfa1092f8f37768a242cfc900a7e.json"
   data-offline-search-base-href="/"
 >
 
@@ -3729,7 +3729,12 @@ if (!doNotTrack) {
   </ul>
 
   <ul>
-    <li><a href="#simグループの設定をする">SIMグループの設定をする</a></li>
+    <li><a href="#simグループの設定をする">SIMグループの設定をする</a>
+      <ul>
+        <li><a href="#tcpの場合のsimグループの設定">TCPの場合のSIMグループの設定</a></li>
+        <li><a href="#udpの場合のsimグループの設定">UDPの場合のSIMグループの設定</a></li>
+      </ul>
+    </li>
     <li><a href="#iot-simを登録する">IoT SIMを登録する</a></li>
     <li><a href="#iot-simの通信を開始する">IoT SIMの通信を開始する</a></li>
     <li><a href="#soracom-harvest上でleafonyが送信したデータを確認する">SORACOM Harvest上でLeafonyが送信したデータを確認する</a></li>
@@ -3854,8 +3859,15 @@ if (!doNotTrack) {
 </ul>
 <p><a href="./lte-m_soracom_socket_large.jpg"><img src="./lte-m_soracom_socket_small.jpg" width="250"></a></br></p>
 <h2 id="サンプルアプリのソースコード">サンプルアプリのソースコード</h2>
+<p>Leafonyのデータを送信する際の通信プロトコルは、TCPとUDPの二通りあり、Arduinoのスケッチだけでなく、 SORACOMの設定も異なります。また、TCPのスケッチは、テキストデータで送信する設定になっていますが、UDPのスケッチは、通信量を減らすため、バイナリーデータにしています。</a></br>
+初めての方は、TCPのスケッチがお勧めで、通信コストを抑えたい方は、UDPのをお使い下さい。</a></br></p>
 <ul>
-<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_upload_tcp" target="_brank">  Arduino スケッチ</a>　</br></li>
+<li>
+<p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_upload_tcp" target="_brank">  Arduino スケッチ(TCP用)</a>　</br></p>
+</li>
+<li>
+<p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_upload_udp" target="_brank">  Arduino スケッチ(UDP用)</a>　</br></p>
+</li>
 </ul>
 <h2 id="leafonyの構成">Leafonyの構成</h2>
 <p>このサンプルでは下記のリーフ構成で試せます。</p>
@@ -3954,6 +3966,7 @@ if (!doNotTrack) {
 <h1 id="soracomの設定">SORACOMの設定</h1>
 <p>SORACOMは、複数のSIMを束ねたSIMグループで、クラウドの設定をします。以下の手順で、SORACOM上に送信したデータを確認することが出来ます。</p>
 <h2 id="simグループの設定をする">SIMグループの設定をする</h2>
+<h3 id="tcpの場合のsimグループの設定">TCPの場合のSIMグループの設定</h3>
 <ol>
 <li><a href="https://console.soracom.io/" target="_brank"> ユーザコンソール</a>を開き、
 左上の<code>メニュー　→　SIMグループ　→　追加</code>をクリックします。</br></li>
@@ -3962,6 +3975,22 @@ if (!doNotTrack) {
 <li>SORACOM Harvest Data設定をONにする。</li>
 <li>Unified Endpoint設定が、Auto(デフォルト)であることを確認します。</li>
 </ol>
+<h3 id="udpの場合のsimグループの設定">UDPの場合のSIMグループの設定</h3>
+<ol>
+<li><a href="https://console.soracom.io/" target="_brank"> ユーザコンソール</a>を開き、
+左上の<code>メニュー　→　SIMグループ　→　追加</code>をクリックします。</br></li>
+<li>グループ名は、<code>KM-1_SORACOM-Lagoon_udp</code>（例）とします。</li>
+<li>SORACOM Air for セルラー設定の<a href="https://users.soracom.io/ja-jp/docs/air/get-location-info/#%e3%83%87%e3%83%90%e3%82%a4%e3%82%b9%e3%81%ae%e7%b0%a1%e6%98%93%e7%9a%84%e3%81%aa%e4%bd%8d%e7%bd%ae%e6%83%85%e5%a0%b1-%e7%b0%a1%e6%98%93%e4%bd%8d%e7%bd%ae%e6%b8%ac%e4%bd%8d%e6%a9%9f%e8%83%bd-%e3%82%92%e9%80%81%e4%bf%a1%e3%81%99%e3%82%8b" target="_brank"> 簡易位置情報</a>と<a href="https://users.soracom.io/ja-jp/docs/binary-parser/" target="_brank"> バイナリーパーサ</a>をONにし、フォーマットに下記を入力します。</br>
+<code>Temperature:0:float:32 Humidity:4:float:32 Illuminance:8:float:32 Battery_Level:12:float:32 Signal_Power:16:float:32</code></li>
+<li>SORACOM Harvest Data設定をONにする。</br></li>
+<li>Unified Endpoint設定</br></li>
+</ol>
+<ul>
+<li>フォーマットは、<code>カスタム</code>を選択します。</br></li>
+<li>成功時のレスポンスのHTTP ステータスコードは<code>200</code>を選択、CONTENT-TYPE ヘッダーの値は<code>text/plan</code>　を入力、ステータスコードのボックスにチェック（レ点）を入れてます。</br></li>
+<li>失敗時のレスポンスは、ステータスコードのボックスにチェック（レ点）を入れます。</br>
+<img src="unified_endpoint.png" alt="unified_endpoint.png"></li>
+</ul>
 <h2 id="iot-simを登録する">IoT SIMを登録する</h2>
 <ol>
 <li><a href="https://console.soracom.io/" target="_brank"> ユーザコンソール</a>を開き、
@@ -4367,7 +4396,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 29, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 31, 2022
 </div>
 </div>
 

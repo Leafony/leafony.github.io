@@ -880,8 +880,15 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href=&#34;./lte-m_soracom_socket_large.jpg&#34;&gt;&lt;img src=&#34;./lte-m_soracom_socket_small.jpg&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;サンプルアプリのソースコード&#34;&gt;サンプルアプリのソースコード&lt;/h2&gt;
+&lt;p&gt;Leafonyのデータを送信する際の通信プロトコルは、TCPとUDPの二通りあり、Arduinoのスケッチだけでなく、 SORACOMの設定も異なります。また、TCPのスケッチは、テキストデータで送信する設定になっていますが、UDPのスケッチは、通信量を減らすため、バイナリーデータにしています。&lt;/a&gt;&lt;/br&gt;
+初めての方は、TCPのスケッチがお勧めで、通信コストを抑えたい方は、UDPのをお使い下さい。&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_upload_tcp&#34; target=&#34;_brank&#34;&gt;  Arduino スケッチ&lt;/a&gt;　&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_upload_tcp&#34; target=&#34;_brank&#34;&gt;  Arduino スケッチ(TCP用)&lt;/a&gt;　&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/4-Sensors_upload_udp&#34; target=&#34;_brank&#34;&gt;  Arduino スケッチ(UDP用)&lt;/a&gt;　&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;leafonyの構成&#34;&gt;Leafonyの構成&lt;/h2&gt;
 &lt;p&gt;このサンプルでは下記のリーフ構成で試せます。&lt;/p&gt;
@@ -980,6 +987,7 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;h1 id=&#34;soracomの設定&#34;&gt;SORACOMの設定&lt;/h1&gt;
 &lt;p&gt;SORACOMは、複数のSIMを束ねたSIMグループで、クラウドの設定をします。以下の手順で、SORACOM上に送信したデータを確認することが出来ます。&lt;/p&gt;
 &lt;h2 id=&#34;simグループの設定をする&#34;&gt;SIMグループの設定をする&lt;/h2&gt;
+&lt;h3 id=&#34;tcpの場合のsimグループの設定&#34;&gt;TCPの場合のSIMグループの設定&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、
 左上の&lt;code&gt;メニュー　→　SIMグループ　→　追加&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
@@ -988,6 +996,22 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;li&gt;SORACOM Harvest Data設定をONにする。&lt;/li&gt;
 &lt;li&gt;Unified Endpoint設定が、Auto(デフォルト)であることを確認します。&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h3 id=&#34;udpの場合のsimグループの設定&#34;&gt;UDPの場合のSIMグループの設定&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、
+左上の&lt;code&gt;メニュー　→　SIMグループ　→　追加&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;グループ名は、&lt;code&gt;KM-1_SORACOM-Lagoon_udp&lt;/code&gt;（例）とします。&lt;/li&gt;
+&lt;li&gt;SORACOM Air for セルラー設定の&lt;a href=&#34;https://users.soracom.io/ja-jp/docs/air/get-location-info/#%e3%83%87%e3%83%90%e3%82%a4%e3%82%b9%e3%81%ae%e7%b0%a1%e6%98%93%e7%9a%84%e3%81%aa%e4%bd%8d%e7%bd%ae%e6%83%85%e5%a0%b1-%e7%b0%a1%e6%98%93%e4%bd%8d%e7%bd%ae%e6%b8%ac%e4%bd%8d%e6%a9%9f%e8%83%bd-%e3%82%92%e9%80%81%e4%bf%a1%e3%81%99%e3%82%8b&#34; target=&#34;_brank&#34;&gt; 簡易位置情報&lt;/a&gt;と&lt;a href=&#34;https://users.soracom.io/ja-jp/docs/binary-parser/&#34; target=&#34;_brank&#34;&gt; バイナリーパーサ&lt;/a&gt;をONにし、フォーマットに下記を入力します。&lt;/br&gt;
+&lt;code&gt;Temperature:0:float:32 Humidity:4:float:32 Illuminance:8:float:32 Battery_Level:12:float:32 Signal_Power:16:float:32&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;SORACOM Harvest Data設定をONにする。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;Unified Endpoint設定&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;フォーマットは、&lt;code&gt;カスタム&lt;/code&gt;を選択します。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;成功時のレスポンスのHTTP ステータスコードは&lt;code&gt;200&lt;/code&gt;を選択、CONTENT-TYPE ヘッダーの値は&lt;code&gt;text/plan&lt;/code&gt;　を入力、ステータスコードのボックスにチェック（レ点）を入れてます。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;失敗時のレスポンスは、ステータスコードのボックスにチェック（レ点）を入れます。&lt;/br&gt;
+&lt;img src=&#34;unified_endpoint.png&#34; alt=&#34;unified_endpoint.png&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;iot-simを登録する&#34;&gt;IoT SIMを登録する&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、
