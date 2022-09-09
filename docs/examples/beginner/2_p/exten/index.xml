@@ -97,7 +97,7 @@
 &lt;p&gt;&lt;img src=&#34;./ESP32_speaker&amp;amp;ir.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define LEDC_CHANNEL_0     0      &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// use first channel of 16 channels (started from zero)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define LEDC_CHANNEL_0     0      &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// use first channel of 16 channels (started from zero)
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define LEDC_TIMER_13_BIT  13     &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// use 13 bit precission for LEDC timer
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define LEDC_BASE_FREQ     5000   &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// use 5000 Hz as a LEDC base frequency
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
@@ -249,7 +249,7 @@
 &lt;ul&gt;
 &lt;li&gt;ビープ音の場合&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Leafony Platform sample sketch
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//     Application  : Human_Sensing (Beep)
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//     Processor    : ESP32-WROOM-32 (ESP32 Dev Module)
@@ -549,7 +549,7 @@
 &lt;p&gt;&lt;img src=&#34;./ESP32_sound_level.png&#34; alt=&#34;assemble2&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//  ESP32 Sound level meter
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//    (c) 2021 LEAFONY SYSTEMS Co., Ltd
@@ -780,7 +780,7 @@
 &lt;p&gt;Arduino IDEで下記のプログラムを書きましょう。&lt;/p&gt;
 &lt;p&gt;このスケッチを動かすためには、ライブラリのインストールが必要です。
 まだインストールしていない場合は&lt;a href=&#34;https://docs.leafony.com/docs/environment/esp32/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//  Leafony Platform sample sketch
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//     Application  : LCD SW test
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//     Processor    : ESP32-WROOM-32 (ESP32 Dev Module)
