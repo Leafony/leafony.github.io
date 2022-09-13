@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.85.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.db6fc820ac68e25a58e48f98c24c9c0b7c9690392b68a806df6f1c8163bfbebccf2ae6b3b4383ddc35d94d2cf01404a62ba5323ed9c939f23a61923c57c125d7.json"
+  data-offline-search-index-json-src="/offline-search-index.ae64cbffa46e81ef52ea4fa56231c559ba904965332ee4612f36a25e7f6d78b6717126104f21c417cddb7e1386d576a96642195602b39910d2f3409ece4cac0a.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.db6fc820ac68e25a58e48f98c24c9c0b7c9690392b68a806df6f1c8163bfbebccf2ae6b3b4383ddc35d94d2cf01404a62ba5323ed9c939f23a61923c57c125d7.json"
+  data-offline-search-index-json-src="/offline-search-index.ae64cbffa46e81ef52ea4fa56231c559ba904965332ee4612f36a25e7f6d78b6717126104f21c417cddb7e1386d576a96642195602b39910d2f3409ece4cac0a.json"
   data-offline-search-base-href="/"
 >
 
@@ -3748,6 +3748,7 @@ if (!doNotTrack) {
     <li><a href="#サンプルアプリのソースコード">サンプルアプリのソースコード</a></li>
     <li><a href="#leafonyの構成">Leafonyの構成</a></li>
     <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
+    <li><a href="#usbドライバーのインストール">USBドライバーのインストール</a></li>
     <li><a href="#スケッチの書き込み">スケッチの書き込み</a></li>
   </ul>
 
@@ -3917,12 +3918,6 @@ if (!doNotTrack) {
 <td>1</td>
 </tr>
 <tr>
-<td>AZ01</td>
-<td><a href="/docs/leaf/others/az01">USB</a> <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></td>
-<td>MCU への書き込みやシリアルモニタに接続するリーフ</td>
-<td>1</td>
-</tr>
-<tr>
 <td>AP03</td>
 <td><a href="/docs/leaf/processor/ap03">STM32 MCU</a></td>
 <td>STM32L452REシリーズを使用した32bit MCUリーフ</td>
@@ -3975,14 +3970,18 @@ if (!doNotTrack) {
 <h2 id="リーフの組み立て">リーフの組み立て</h2>
 <ol>
 <li>IoT SIM(plan-KM1)をLTE-M King MのnanoSIM card slotに差し込んで下さい。</li>
-<li>上から4-Sensorsリーフ、USBリーフ<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>、STM32 MCUリーフ、LTE-M King Mリーフ、LTE-M King Sリーフの順番で組み立て、ネジ止めして下さい。</br></li>
+<li>上から4-Sensorsリーフ、STM32 MCUリーフ、LTE-M King Mリーフ、LTE-M King Sリーフの順番で組み立て、ネジ止めして下さい。</br></li>
 </ol>
-<p><a href="./lte-m_soracom_block_large.jpg"><img src="./lte-m_soracom_block_small.jpg" width="300"></a></br></p>
+<p><a href="./lte-m_soracom_block.jpg"><img src="./lte-m_soracom_block.jpg" width="250"></a></br></p>
+<h2 id="usbドライバーのインストール">USBドライバーのインストール</h2>
+<ol>
+<li>Arduinoのスケッチは、LTE-M King Sリーフを使って書き込んで下さい。LTE-M king SリーフのUSB-UART変換ICは、調達の都合上、MaxLinear社のIC(XR21B1411IL16-F)を採用しました。インストール方法は、<a href="https://docs.leafony.com/docs/leaf/communication/ac05/#usb%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" target="_brank"> こちらを</a>参照して下さい。</li>
+</ol>
 <h2 id="スケッチの書き込み">スケッチの書き込み</h2>
 <ol>
 <li><a href="https://docs.leafony.com/docs/environment/stm32/arduino_ide/" target="_brank"> STM32 MCUのArduino IDE設定</a>が、まだ済んでない方は、インストールして下さい。</br></li>
 <li>Arduinoのボードは、ツール→ Board part number→ Leafony STM32 MCU(16MHz)を選択します。</br></li>
-<li>Arduinoのスケッチ<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>を書き込んで下さい。</br></li>
+<li>Arduinoのスケッチを書き込んで下さい。</br></li>
 </ol>
 </br>
 </br>
@@ -4094,9 +4093,6 @@ if (!doNotTrack) {
 ・JST製PHコネクタ(秋月):<a href="https://akizukidenshi.com/catalog/g/gP-12665/" target="_brank"> <a href="https://akizukidenshi.com/catalog/g/gP-12665/">https://akizukidenshi.com/catalog/g/gP-12665/</a></a>　</br>
 ・接続コネクタ(エーモン)：<a href="https://www.amon.jp/diy/index.php?diy_id=63&mode=contents
 " target="_brank"> <a href="https://www.amon.jp/diy/index.php?diy_id=63&amp;mode=contents">https://www.amon.jp/diy/index.php?diy_id=63&amp;mode=contents</a> </a></br>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:4" role="doc-endnote">
-<p>Arduinoのスケッチは、USBリーフを使わないで、LTE-M King Sリーフを使ってもを書き込むことが出来ますが、新たにUSBドライバーをインストールする必要があります。インストール方法は、<a href="https://docs.leafony.com/docs/leaf/communication/ac05/#usb%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" target="_brank"> こちらを</a>参照して下さい。</br>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -4421,7 +4417,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 7, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 13, 2022
 </div>
 </div>
 
