@@ -1113,7 +1113,7 @@ ai_runはメモリ確保された入力データと出力データのポイン�
         
         &lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
 &lt;p&gt;屋外のセンサデータを一定間隔で取得し、クラウドのダッシュボードで確認したり、異常値をメールやLINEで知る一般的なIoTサービスが、KDDIが開発した「LTE-M&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;リーフ」を使えば、簡単に実現出来ます。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;Example_LTE-M_v0.png&#34; alt=&#34;Example_LTE-M_v0.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;setting_block.png&#34; alt=&#34;setting_block.png&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;kddilte-mリーフの特長&#34;&gt;KDDI「LTE-Mリーフ」の特長&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;KDDI は、約23×30mmと超小型でLTE-M 通信機能に対応したLTE-Mリーフの開発に成功しました。&lt;/br&gt;&lt;/li&gt;
@@ -1186,12 +1186,6 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;td&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td&gt;AZ01&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/others/az01&#34;&gt;USB&lt;/a&gt; &lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-&lt;td&gt;MCU への書き込みやシリアルモニタに接続するリーフ&lt;/td&gt;
-&lt;td&gt;1&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
 &lt;td&gt;AP03&lt;/td&gt;
 &lt;td&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap03&#34;&gt;STM32 MCU&lt;/a&gt;&lt;/td&gt;
 &lt;td&gt;STM32L452REシリーズを使用した32bit MCUリーフ&lt;/td&gt;
@@ -1244,14 +1238,19 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;IoT SIM(plan-KM1)をLTE-M King MのnanoSIM card slotに差し込んで下さい。&lt;/li&gt;
-&lt;li&gt;上から4-Sensorsリーフ、USBリーフ&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;、STM32 MCUリーフ、LTE-M King Mリーフ、LTE-M King Sリーフの順番で組み立て、ネジ止めして下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;上から4-Sensorsリーフ、STM32 MCUリーフ、LTE-M King Mリーフ、LTE-M King Sリーフの順番で組み立て、ネジ止めして下さい。&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;a href=&#34;./lte-m_soracom_block_large.jpg&#34;&gt;&lt;img src=&#34;./lte-m_soracom_block_small.jpg&#34; width=&#34;300&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./lte-m_soracom_block.jpg&#34;&gt;&lt;img src=&#34;./lte-m_soracom_block.jpg&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;usbドライバーのインストール&#34;&gt;USBドライバーのインストール&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Arduinoのスケッチは、LTE-M King Sリーフを使って書き込んで下さい。LTE-M king SリーフのUSB-UART変換ICは、調達の都合上、MaxLinear社のIC(XR21B1411IL16-F)を採用しました。インストール方法は、&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac05/#usb%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34; target=&#34;_brank&#34;&gt; こちらを&lt;/a&gt;参照して下さい。
+&lt;a href=&#34;./lte-m_soracom_block_large.jpg&#34;&gt;&lt;img src=&#34;./lte-m_soracom_block_small.jpg&#34; width=&#34;300&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&#34;スケッチの書き込み&#34;&gt;スケッチの書き込み&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/environment/stm32/arduino_ide/&#34; target=&#34;_brank&#34;&gt; STM32 MCUのArduino IDE設定&lt;/a&gt;が、まだ済んでない方は、インストールして下さい。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;Arduinoのボードは、ツール→ Board part number→ Leafony STM32 MCU(16MHz)を選択します。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;Arduinoのスケッチ&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;を書き込んで下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;Arduinoのスケッチ[^4]を書き込んで下さい。&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/br&gt;
 &lt;/br&gt;
@@ -1364,9 +1363,6 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 ・JST製PHコネクタ(秋月):&lt;a href=&#34;https://akizukidenshi.com/catalog/g/gP-12665/&#34; target=&#34;_brank&#34;&gt; &lt;a href=&#34;https://akizukidenshi.com/catalog/g/gP-12665/&#34;&gt;https://akizukidenshi.com/catalog/g/gP-12665/&lt;/a&gt;&lt;/a&gt;　&lt;/br&gt;
 ・接続コネクタ(エーモン)：&lt;a href=&#34;https://www.amon.jp/diy/index.php?diy_id=63&amp;mode=contents
 &#34; target=&#34;_brank&#34;&gt; &lt;a href=&#34;https://www.amon.jp/diy/index.php?diy_id=63&amp;amp;mode=contents&#34;&gt;https://www.amon.jp/diy/index.php?diy_id=63&amp;amp;mode=contents&lt;/a&gt; &lt;/a&gt;&lt;/br&gt;&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Arduinoのスケッチは、USBリーフを使わないで、LTE-M King Sリーフを使ってもを書き込むことが出来ますが、新たにUSBドライバーをインストールする必要があります。インストール方法は、&lt;a href=&#34;https://docs.leafony.com/docs/leaf/communication/ac05/#usb%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34; target=&#34;_brank&#34;&gt; こちらを&lt;/a&gt;参照して下さい。&lt;/br&gt;&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;

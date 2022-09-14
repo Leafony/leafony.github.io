@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9cefe21bb46ebd8f8c90cf9cc44055f0ef20b4684785ba789feabc7714e301b982390f2760a339bb611be3641b74820622a303fb4b1271ddfabfb54fbfd5267b.json"
+  data-offline-search-index-json-src="/offline-search-index.685ccfa714ce9ed489cf1feca59fd7efc848b1a69a41fdeafae58bb61172d4395e4aa7c7ad52e5b3f5341caa3d7b005e9789b89dcb31f70e5cd4e6c31f2a5698.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9cefe21bb46ebd8f8c90cf9cc44055f0ef20b4684785ba789feabc7714e301b982390f2760a339bb611be3641b74820622a303fb4b1271ddfabfb54fbfd5267b.json"
+  data-offline-search-index-json-src="/offline-search-index.685ccfa714ce9ed489cf1feca59fd7efc848b1a69a41fdeafae58bb61172d4395e4aa7c7ad52e5b3f5341caa3d7b005e9789b89dcb31f70e5cd4e6c31f2a5698.json"
   data-offline-search-base-href="/"
 >
 
@@ -3748,6 +3748,7 @@ if (!doNotTrack) {
     <li><a href="#サンプルアプリのソースコード">サンプルアプリのソースコード</a></li>
     <li><a href="#leafonyの構成">Leafonyの構成</a></li>
     <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
+    <li><a href="#usbドライバーのインストール">USBドライバーのインストール</a></li>
     <li><a href="#スケッチの書き込み">スケッチの書き込み</a></li>
   </ul>
 
@@ -3844,7 +3845,7 @@ if (!doNotTrack) {
 	
 	<h2 id="はじめに">はじめに</h2>
 <p>屋外のセンサデータを一定間隔で取得し、クラウドのダッシュボードで確認したり、異常値をメールやLINEで知る一般的なIoTサービスが、KDDIが開発した「LTE-M<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>リーフ」を使えば、簡単に実現出来ます。</p>
-<p><img src="Example_LTE-M_v0.png" alt="Example_LTE-M_v0.png"></p>
+<p><img src="setting_block.png" alt="setting_block.png"></p>
 <h3 id="kddilte-mリーフの特長">KDDI「LTE-Mリーフ」の特長</h3>
 <ul>
 <li>KDDI は、約23×30mmと超小型でLTE-M 通信機能に対応したLTE-Mリーフの開発に成功しました。</br></li>
@@ -3917,12 +3918,6 @@ if (!doNotTrack) {
 <td>1</td>
 </tr>
 <tr>
-<td>AZ01</td>
-<td><a href="/docs/leaf/others/az01">USB</a> <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></td>
-<td>MCU への書き込みやシリアルモニタに接続するリーフ</td>
-<td>1</td>
-</tr>
-<tr>
 <td>AP03</td>
 <td><a href="/docs/leaf/processor/ap03">STM32 MCU</a></td>
 <td>STM32L452REシリーズを使用した32bit MCUリーフ</td>
@@ -3975,14 +3970,19 @@ if (!doNotTrack) {
 <h2 id="リーフの組み立て">リーフの組み立て</h2>
 <ol>
 <li>IoT SIM(plan-KM1)をLTE-M King MのnanoSIM card slotに差し込んで下さい。</li>
-<li>上から4-Sensorsリーフ、USBリーフ<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>、STM32 MCUリーフ、LTE-M King Mリーフ、LTE-M King Sリーフの順番で組み立て、ネジ止めして下さい。</br></li>
+<li>上から4-Sensorsリーフ、STM32 MCUリーフ、LTE-M King Mリーフ、LTE-M King Sリーフの順番で組み立て、ネジ止めして下さい。</br></li>
 </ol>
-<p><a href="./lte-m_soracom_block_large.jpg"><img src="./lte-m_soracom_block_small.jpg" width="300"></a></br></p>
+<p><a href="./lte-m_soracom_block.jpg"><img src="./lte-m_soracom_block.jpg" width="250"></a></br></p>
+<h2 id="usbドライバーのインストール">USBドライバーのインストール</h2>
+<ol>
+<li>Arduinoのスケッチは、LTE-M King Sリーフを使って書き込んで下さい。LTE-M king SリーフのUSB-UART変換ICは、調達の都合上、MaxLinear社のIC(XR21B1411IL16-F)を採用しました。インストール方法は、<a href="https://docs.leafony.com/docs/leaf/communication/ac05/#usb%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" target="_brank"> こちらを</a>参照して下さい。
+<a href="./lte-m_soracom_block_large.jpg"><img src="./lte-m_soracom_block_small.jpg" width="300"></a></br></li>
+</ol>
 <h2 id="スケッチの書き込み">スケッチの書き込み</h2>
 <ol>
 <li><a href="https://docs.leafony.com/docs/environment/stm32/arduino_ide/" target="_brank"> STM32 MCUのArduino IDE設定</a>が、まだ済んでない方は、インストールして下さい。</br></li>
 <li>Arduinoのボードは、ツール→ Board part number→ Leafony STM32 MCU(16MHz)を選択します。</br></li>
-<li>Arduinoのスケッチ<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>を書き込んで下さい。</br></li>
+<li>Arduinoのスケッチ[^4]を書き込んで下さい。</br></li>
 </ol>
 </br>
 </br>
@@ -4095,9 +4095,6 @@ if (!doNotTrack) {
 ・JST製PHコネクタ(秋月):<a href="https://akizukidenshi.com/catalog/g/gP-12665/" target="_brank"> <a href="https://akizukidenshi.com/catalog/g/gP-12665/">https://akizukidenshi.com/catalog/g/gP-12665/</a></a>　</br>
 ・接続コネクタ(エーモン)：<a href="https://www.amon.jp/diy/index.php?diy_id=63&mode=contents
 " target="_brank"> <a href="https://www.amon.jp/diy/index.php?diy_id=63&amp;mode=contents">https://www.amon.jp/diy/index.php?diy_id=63&amp;mode=contents</a> </a></br>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:4" role="doc-endnote">
-<p>Arduinoのスケッチは、USBリーフを使わないで、LTE-M King Sリーフを使ってもを書き込むことが出来ますが、新たにUSBドライバーをインストールする必要があります。インストール方法は、<a href="https://docs.leafony.com/docs/leaf/communication/ac05/#usb%E3%83%89%E3%83%A9%E3%82%A4%E3%83%90%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB" target="_brank"> こちらを</a>参照して下さい。</br>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -4422,7 +4419,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 9, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 14, 2022
 </div>
 </div>
 
