@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.685ccfa714ce9ed489cf1feca59fd7efc848b1a69a41fdeafae58bb61172d4395e4aa7c7ad52e5b3f5341caa3d7b005e9789b89dcb31f70e5cd4e6c31f2a5698.json"
+  data-offline-search-index-json-src="/offline-search-index.f14a17c8ed2bfc1a7ee919193534683031b6531f56aac6ae8e407b61ee87758f09de1a399cc647b6b66117bc074b5a4ed3a38ea9b29c915853d37d03ddfe44b5.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.685ccfa714ce9ed489cf1feca59fd7efc848b1a69a41fdeafae58bb61172d4395e4aa7c7ad52e5b3f5341caa3d7b005e9789b89dcb31f70e5cd4e6c31f2a5698.json"
+  data-offline-search-index-json-src="/offline-search-index.f14a17c8ed2bfc1a7ee919193534683031b6531f56aac6ae8e407b61ee87758f09de1a399cc647b6b66117bc074b5a4ed3a38ea9b29c915853d37d03ddfe44b5.json"
   data-offline-search-base-href="/"
 >
 
@@ -3798,9 +3798,13 @@ if (!doNotTrack) {
 	<h1>Basic Kit 2 スタートガイド</h1>
         <div class="lead">Bluetoothで環境センシング</div>
 	
-	<p>Basic Kit 2には、Leafony block(複数のリーフをネジ止め)、STM32 MCU、29pin、ケース、ドライバーが入っています。Leafony blockのマイコンには、あらかじめスケッチが書き込まれています。まずは、<a href="https://docs.leafony.com/docs/getting-started/basic/" target=" blank">Basic Kit スタートガイド</a>をお試し下さい。スケッチのバージョンは、<a href="https://docs.leafony.com/Sample-Sketches/STM32_Logger_Beacon/sample_web_app/lescan/" target="_blank">Webアプリ</a>で確認出来ます。また、最新のスケッチは、<a href="https://github.com/Leafony/Sample-Sketches/blob/master/STM32_Logger_Beacon/STM32_Logger_Beacon.ino/" target="_blank">STM32_Logger_Beacon.ino</a>にあるので、古い場合は、新しいのを書き込んで下さい。</p>
-<p></br><br>
-<img src="STM32_sakurai.png" alt="STM32_sakurai.png">
+	<p>Basic Kit 2には、Leafony block(AVR MCU等のリーフをネジ止め)、STM32 MCU、29pin、ケース、ドライバーが入っており、AVR MCUとSTM32 MCUには、予め以下のスケッチが書き込まれています。</p>
+<ul>
+<li>AVR MCU：センサのデータをスマートフォン等に送信するスケッチ</br></li>
+<li>STM32 MCU：センサのデータをマイコンのEEPROMに書き込むと同時に、スマートフォン等に送信するスケッチ</br></li>
+</ul>
+<p>まずは、<a href="https://docs.leafony.com/docs/getting-started/basic/" target=" blank">Basic Kit スタートガイド</a>に従って、AVR MCUのスケッチをお試し下さい。次に、本スタートガイドに従って、Leafony blockのマイコンをSTM32 MCUに変更し、最新技術に触れてみて下さい。</br></br></p>
+<p><img src="STM32_sakurai.png" alt="STM32_sakurai.png">
 </br><br>
 STM32リーフにあらかじめ書き込まれているスケッチでは、IoT応用に良く出てくるような次の動作を確認できます。</p>
 <ul>
@@ -3901,7 +3905,7 @@ STM32リーフにあらかじめ書き込まれているスケッチでは、IoT
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 28, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 28, 2022
 </div>
 </div>
 
