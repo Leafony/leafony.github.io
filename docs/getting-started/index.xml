@@ -165,12 +165,12 @@
       <description>
         
         
-        &lt;p&gt;Basic Kit 2には、Leafony block(AVR MCU等のリーフをネジ止め)、STM32 MCU、29pin、ケース、ドライバーが入っており、AVR MCUとSTM32 MCUには、予めスケッチが書き込まれています。まずは、&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/basic/&#34; target=&#34; blank&#34;&gt;Basic Kit スタートガイド&lt;/a&gt;をお試し下さい。次に、本スタートガイドに従って、Leafony blockのマイコンをSTM32 MCUに変更し、最新技術に触れてみて下さい。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/basic/&#34; target=&#34; blank&#34;&gt;Basic Kit スタートガイド&lt;/a&gt;(AVR MCU)：センサのデータをスマートフォン等に送信するアプリ&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;本スタートガイド(STM32 MCU)：センサのデータをマイコンに書き込むと同時に、スマートフォン等に送信するアプリ
+        &lt;p&gt;Basic Kit 2には、Leafony block(AVR MCU等のリーフをネジ止め)、STM32 MCU、29pin、ケース、ドライバーが入っており、AVR MCUとSTM32 MCUには、予めスケッチが書き込まれています。出荷時はAVR MCUがLeafony blockに組み込まれています。&lt;/br&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;まずは、&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/basic/&#34; target=&#34; blank&#34;&gt;Basic Kit スタートガイド&lt;/a&gt;をお試し下さい。センサのデータをBLEのコネクションモードを使ってスマートフォン等に送信するアプリで動作確認ができます。&lt;/li&gt;
+&lt;li&gt;次に、以下のスタートガイドに従って、Leafony blockのマイコンをAVR MCU からSTM32MCUに変更し、最新技術に触れてみて下さい。出荷時に書き込まれているプログラムはセンサのデータをBLEのビーコンモードを使ってスマートフォン等に送信するもので、コイン電池でも数か月動作する低電力動作を実現しています。
 &lt;/br&gt;&lt;/br&gt;&lt;/li&gt;
-&lt;/ul&gt;
+&lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;STM32_sakurai.png&#34; alt=&#34;STM32_sakurai.png&#34;&gt;
 &lt;/br&gt;&lt;br&gt;
 STM32リーフにあらかじめ書き込まれているスケッチでは、IoT応用に良く出てくるような次の動作を確認できます。&lt;/p&gt;
