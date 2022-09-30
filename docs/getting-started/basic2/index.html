@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ba860f83dd475134427973a46252a83937bf81739b8e2bb8999e70ad22642e7ce3afa1572c338f34a93b471c0e3f4d03062dbf9e8ab10bada4e2c18fbf21df3f.json"
+  data-offline-search-index-json-src="/offline-search-index.25e2ceff23f222266da30b862c6cf24cb812cf946d34fc3a9cb565440245fdd07ab23057aa9e1226c294b6c3e9725e1f6c57cb0f839d926b599749d5b4fdfa63.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ba860f83dd475134427973a46252a83937bf81739b8e2bb8999e70ad22642e7ce3afa1572c338f34a93b471c0e3f4d03062dbf9e8ab10bada4e2c18fbf21df3f.json"
+  data-offline-search-index-json-src="/offline-search-index.25e2ceff23f222266da30b862c6cf24cb812cf946d34fc3a9cb565440245fdd07ab23057aa9e1226c294b6c3e9725e1f6c57cb0f839d926b599749d5b4fdfa63.json"
   data-offline-search-base-href="/"
 >
 
@@ -3815,22 +3815,25 @@ STM32リーフにあらかじめ書き込まれているスケッチでは、IoT
 <p>これらの動作を超低電力で行えるように、上図のように双方向通信ができるconnection modeと超低電力なbeacon modeの2つのモードを使っています。一定時間間隔（デフォルト10秒、変更可能）でセンサデータを取得し、EEPROMにデータを蓄積するとともに、beacon modeでデータを一方的に送信します。Connection mode を使ってEEPROM内のセンサ蓄積データをPCやAndroidスマホに一括ダウンロードすることもできます。
 それでは、ビデオとwebを見ながら、新しいSTM32リーフをお試しください。</p>
 <h1 id="web-bluetooth">Web Bluetooth</h1>
-<p>Web Bluetoothは、Leafony blockのデータ(最大169サンプル)をグラフにしたり、センシングしたデータを表示させること(Android のみ)が出来ます。ただし、対応のブラウザに制限がありますので、注意して下さい。</p>
+<p>Web Bluetoothは、Leafony blockのデータ(最大169サンプル)をグラフにしたり、センシングしたデータを表示させることが出来ます。ただし、対応のブラウザに制限がありますので、注意して下さい。</p>
 <h3 id="web-bluetoothの注意点">Web Bluetoothの注意点</h3>
-<p>2021年8月時点ではWeb Bluetoothは以下の点に注意しなければいけません。</p>
+<p>2022年9月時点ではWeb Bluetoothは以下の点に注意しなければいけません。</p>
 <ul>
-<li>iPhoneのChromeでは動作しません。<a href="https://apps.apple.com/jp/app/webble/id1193531073" target=" blank">WebBLE</a>という有料のアプリは利用出来ません。</li>
-<li>センシングデータを表示出来るのは、Andoroid のみです。Google Chromeを開き、
-<code>アドレスバー</code>に、下記URLを入力し、Enabledにして下さい。</li>
-</ul>
-<p>　　<code>chrome://flags/#enable-experimental-web-platform-features</code></p>
-<ul>
-<li>Web Bluetoothの開発状況と対応ブラウザについては<a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md" target=" blank">implementation-status.md</a>で確認できます。</li>
+<li>
+<p>センシングデータを表示出来るのは、Andoroid のみです。Google Chromeを開き、<code>アドレスバー</code>に、下記URLを入力し、Enabledにして下さい。</br>
+　　<code>chrome://flags/#enable-experimental-web-platform-features</code></p>
+</li>
+<li>
+<p>iPhoneには<a href="https://apps.apple.com/jp/app/bluefy-web-ble-browser/id1492822055" target=" blank">Bluefy</a>のアプリが必要です。また、画面上に「Download CSV」のボタンはありますが使用で出来ません。</p>
+</li>
+<li>
+<p>Web Bluetoothの開発状況と対応ブラウザについては<a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md" target=" blank">implementation-status.md</a>で確認できます。</p>
+</li>
 </ul>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
 <li>Basic Kit</li>
-<li>Android<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>、Mac<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>、Windows<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>、Linux<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>のスマートフォンやパソコン</li>
+<li>Android<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>、Mac<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>、Windows<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>、Linux<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>、iPhone<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>のスマートフォンやパソコン</li>
 <li>Google Chrome (バージョン70.0.3526.0以降)</li>
 </ul>
 <h2 id="デモ動画">デモ動画</h2>
@@ -3891,6 +3894,9 @@ STM32リーフにあらかじめ書き込まれているスケッチでは、IoT
 </li>
 <li id="fn:4" role="doc-endnote">
 <p>Kernel 3.19+ and BlueZ 5.41+ installed.&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p>iPhoneには<a href="https://apps.apple.com/jp/app/bluefy-web-ble-browser/id1492822055" target=" blank">Bluefy</a>のアプリが必要です。iPhoneのChromeではWeb Bluetoothが実装されていないためです。&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
