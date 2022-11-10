@@ -76,7 +76,7 @@
 &lt;li&gt;App Storeから&lt;a href=&#34;https://apps.apple.com/jp/app/bluefy-web-ble-browser/id1492822055&#34; target=&#34;_blank&#34;&gt;Bluefy&lt;/a&gt; をダウンロードします。&lt;/li&gt;
 &lt;li&gt;Bluefyを立ち上げて、以下のURLをアドレスバーに貼り付けてください。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt; https://docs.leafony.com/WebBluetooth_for_Leafony_app/
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; https://docs.leafony.com/WebBluetooth_for_Leafony_app/
 &lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;iPhoneまたはipadの&lt;code&gt;位置情報を共有&lt;/code&gt;をオンにします。位置情報共有設定は、&lt;code&gt;設定 → 自分の名前 → 探す&lt;/code&gt;を選択して変更します。&lt;/p&gt;
@@ -298,7 +298,7 @@ STM32リーフにあらかじめ書き込まれているスケッチでは、IoT
 &lt;/li&gt;
 &lt;li&gt;Webブラウザを立ち上げて、以下のURLをアドレスバーに貼り付けてください。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt; http://192.168.4.1
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; http://192.168.4.1
 &lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;29pin headerの7、9、22、24、26、28ピンがタッチセンサに割り当てられています。ただし、24ピンは、RTC&amp;amp;microSDと干渉しているため、サンプルスケッチでは非表示にしています。ピンに触れると静電容量が増えるため、値が減少します。閾値20以下になると”Touch detected”と表示される設定にしています。検出閾値は、スケッチで変更することが出来ます。&lt;/p&gt;

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.01eaeec3ba2ee5dbd962701f3c25b4f54da111188eb8755b3e6f07b4d183baaac23ab1b06518c493e91fccc8a459537823950d4cebc27f175aa129845e99271a.json"
+  data-offline-search-index-json-src="/offline-search-index.3bfefd914731501ee0a5992ef8ef01135455dfd9db04429e4a39692ba481b0c6dd8073461ce1ff771ca0e81a0f5383843220cd81b129b6c04f1d15750a35bad2.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.01eaeec3ba2ee5dbd962701f3c25b4f54da111188eb8755b3e6f07b4d183baaac23ab1b06518c493e91fccc8a459537823950d4cebc27f175aa129845e99271a.json"
+  data-offline-search-index-json-src="/offline-search-index.3bfefd914731501ee0a5992ef8ef01135455dfd9db04429e4a39692ba481b0c6dd8073461ce1ff771ca0e81a0f5383843220cd81b129b6c04f1d15750a35bad2.json"
   data-offline-search-base-href="/"
 >
 
@@ -2316,6 +2316,52 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1_old/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced2_pesp32esp32_googlesheets_1_old">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1_old/esp32_googlesheets_2/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced2_pesp32esp32_googlesheets_1_oldesp32_googlesheets_2">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/advanced/2_p/esp32/esp32_post_notify/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
   </li>
   <ul>
@@ -3806,7 +3852,7 @@ Leafonyのように極めて小さなバッテリ駆動回路を開発する場�
 この章では、Leafonyをできる限り省電力に動作させるべく、電力の考え方と省電力化のための手引きについて紹介します。</p>
 <h2 id="電力の計算">電力の計算</h2>
 <p>　電力（単位：ワット）は</p>
-<pre><code>W=V×I
+<pre tabindex="0"><code>W=V×I
 </code></pre><p>で計算できます。回路全体で消費される電力を計算したい場合は、電池から流れ出る電流を計算してあげれば、電池電圧×電源電流で回路全体の電力が求まります。
 1さらに図1のように回路に接続された部品にはそれぞれ異なる電流（ここでは平均電流）が流れています。
 電流はそれぞれの部品によっても、また、その動作状況によっても変化します。
@@ -3833,7 +3879,7 @@ ICのような部品は、内部の回路の状態によって、ICに流れ込�
 出力には寄生容量と呼ばれるコンデンサが付随しています。
 このコンデンサは回路の配線や、この先に接続される論理ゲートの入力ピンに発生する寄生容量などによって決まるため、ここでは具体的にどのような値があるかを知る必要はありません。
 この場合のNOTゲートで消費される電力は次の式で表されます。</p>
-<pre><code>W=½ * CV^2 * f
+<pre tabindex="0"><code>W=½ * CV^2 * f
 </code></pre><p>　ここでのWは瞬間的な電流電圧から求まるものではなく、1秒間で平均したスイッチングで発生する電力を表しています。
 ここから分かることは、電力は入力するクロックの周波数に比例していて、デジタル回路の周波数が高くなれば高くなるほど電力は増大します。
 CPUのような回路はクロックの周波数が高いほど計算スピードが増加しますが、一方で電力も増大してしまうということです。</p>
@@ -3886,15 +3932,15 @@ CPUのような回路はクロックの周波数が高いほど計算スピー�
 <h2 id="電池持続時間">電池持続時間</h2>
 <p>　電池の容量は<code>Ah(アンペアアワー)</code>という単位で決まります。
 <code>Ah</code>は電荷の量を示していて、<code>1Ah</code>は<strong>1時間ずっと1Aの電流を流すために必要な電荷の量</strong>を示します。</p>
-<pre><code>1 Ah = 1 A * 1 h
+<pre tabindex="0"><code>1 Ah = 1 A * 1 h
 </code></pre><p><code>Ah</code>は単にどれくらいの間一定の電流を流せるかということを示しており、ここに電池の電圧は登場しません。
 しかしながら、電池には1.5Vや3Vといった出力電圧が決まっており、電圧は電池によっても異なる場合があります。
 同じ<code>1Ah</code>でも1.5Vの電池と3Vの電池では動かせる電力が変わってきます。</p>
 <p>電力を表す単位として<code>W(ワット)</code>という単位が一般的に用いられます。
 <code>1W</code>は<strong>1Vの電圧がかかった回路に1Aの電流が流れた時の電力</strong>を表しています。</p>
-<pre><code>1 W = 1 V * 1 A
+<pre tabindex="0"><code>1 W = 1 V * 1 A
 </code></pre><p>さらに、<strong>1時間ずっと1Wの電力を出力できる量</strong>として<code>Wh(ワットアワー</code>という単位があります。</p>
-<pre><code>1 Wh = 1 W * 1 h
+<pre tabindex="0"><code>1 Wh = 1 W * 1 h
 </code></pre><p><code>Wh</code>を用いれば一定時間に出力できる電力量を比較することができるため、電圧が異なる電池同士でもエネルギーの比較がしやすくなります。 <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <p>　さて、次に実際に電池の容量がどれくらいあるのかを見ていきましょう。
 電池の大きさによっても容量は異なります。
@@ -3906,20 +3952,20 @@ CPUのような回路はクロックの周波数が高いほど計算スピー�
 </ul>
 <p>Leafonyで使われるコイン電池(CR2032)は、およそ単三電池の5分の1程度の電力量であることがわかります。</p>
 <p>また、<code>Wh</code>の定義より、3.3Vの電源電圧で100mAの電流で動作する回路を動かした場合、コイン電池は</p>
-<pre><code>660 mWh / (3.3 V * 100 mA) = 2 h
+<pre tabindex="0"><code>660 mWh / (3.3 V * 100 mA) = 2 h
 </code></pre><p>単三電池は</p>
-<pre><code>3,000 mWh / (3.3 V * 100 mA) ≒ 9 h
+<pre tabindex="0"><code>3,000 mWh / (3.3 V * 100 mA) ≒ 9 h
 </code></pre><p>動作することがわかります。</p>
 <p>Leafonyの動作電圧とリーフごとの電流はデータシートからおおよそ計算ができるため、電池でどれくらいの時間連続動作が可能なのかを見積もることができます。</p>
 <h3 id="電流が変化する回路の場合">電流が変化する回路の場合</h3>
 <p>　では、回路の消費電流が次のような場合はどうでしょうか？</p>
-<pre><code>1時間のうち1分間だけ回路が動き、そのとき100mAで動作する。
+<pre tabindex="0"><code>1時間のうち1分間だけ回路が動き、そのとき100mAで動作する。
 残りの59分間は回路がスリープモードに入り、そのとき回路には1mA流れている。
 </code></pre><p>この場合、この回路が1時間にどれだけの電荷を必要とするのかを計算すればよいので、</p>
-<pre><code>3.3 V * 100 mA * (1 min / 60 min) + 3.3 V * 1 mA * (59 min / 60 min) = 8.745 mWh
+<pre tabindex="0"><code>3.3 V * 100 mA * (1 min / 60 min) + 3.3 V * 1 mA * (59 min / 60 min) = 8.745 mWh
 </code></pre><p>が、1時間あたりに消費する電荷量となります。</p>
 <p>したがって、コイン電池(CR2032)を使う場合は、</p>
-<pre><code>660 mWh ÷ 8.745 mWh = 75.5 h
+<pre tabindex="0"><code>660 mWh ÷ 8.745 mWh = 75.5 h
 </code></pre><p>となり、83時間 = 3.45日ほど動作する計算になります。</p>
 <h2 id="省電力化のアイデア">省電力化のアイデア</h2>
 <p>　ここでは、これまでにLeafonyのサンプルデザインで使ってきた省電力化のためのアイデアをご紹介します。</p>

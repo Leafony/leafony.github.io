@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.85.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.01eaeec3ba2ee5dbd962701f3c25b4f54da111188eb8755b3e6f07b4d183baaac23ab1b06518c493e91fccc8a459537823950d4cebc27f175aa129845e99271a.json"
+  data-offline-search-index-json-src="/offline-search-index.3bfefd914731501ee0a5992ef8ef01135455dfd9db04429e4a39692ba481b0c6dd8073461ce1ff771ca0e81a0f5383843220cd81b129b6c04f1d15750a35bad2.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.01eaeec3ba2ee5dbd962701f3c25b4f54da111188eb8755b3e6f07b4d183baaac23ab1b06518c493e91fccc8a459537823950d4cebc27f175aa129845e99271a.json"
+  data-offline-search-index-json-src="/offline-search-index.3bfefd914731501ee0a5992ef8ef01135455dfd9db04429e4a39692ba481b0c6dd8073461ce1ff771ca0e81a0f5383843220cd81b129b6c04f1d15750a35bad2.json"
   data-offline-search-base-href="/"
 >
 
@@ -2316,6 +2316,52 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1_old/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced2_pesp32esp32_googlesheets_1_old">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1_old/esp32_googlesheets_2/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsexamplesadvanced2_pesp32esp32_googlesheets_1_oldesp32_googlesheets_2">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/examples/advanced/2_p/esp32/esp32_post_notify/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
   </li>
   <ul>
@@ -3913,7 +3959,7 @@ if (!doNotTrack) {
 <ol>
 <li>アクセスする<code>WiFi</code>の情報を以下の定数に代入してください。</li>
 </ol>
-<pre><code>const char* SSID = &quot;wifi_ssid&quot;;    // WiFi SSID
+<pre tabindex="0"><code>const char* SSID = &quot;wifi_ssid&quot;;    // WiFi SSID
 const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
 </code></pre><ol start="2">
 <li>先ほど作成したウェブアプリの情報を以下の定数に代入してください。
@@ -3922,7 +3968,7 @@ const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
 </ul>
 </li>
 </ol>
-<pre><code>const char* KEY = &quot;google_scripts_key&quot;;
+<pre tabindex="0"><code>const char* KEY = &quot;google_scripts_key&quot;;
 </code></pre><ol start="3">
 <li>センサデータの書き込みの時間間隔を調整したいときは以下の定数に代入してください。
 <ul>
@@ -3930,8 +3976,8 @@ const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
 </ul>
 </li>
 </ol>
-<pre><code>uint64_t DEEP_SLEEP_TIME_SEC = 60;
-</code></pre><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
+<pre tabindex="0"><code>uint64_t DEEP_SLEEP_TIME_SEC = 60;
+</code></pre><div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;HTTPClient.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;HTS221.h&gt;</span><span style="color:#8f5902;font-style:italic">
@@ -3964,6 +4010,10 @@ const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
     
     
     <hr class="panel-line">
+        
+            
+        
+            
         
             
         
