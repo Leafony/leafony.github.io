@@ -36,18 +36,19 @@
 &lt;img src=&#34;create_new_sheet_a.png&#34; width=1200&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;Google Sheetsのタイトル（デフォルト：&lt;code&gt;無題のスプレッドシート&lt;/code&gt;）は自由に変更してください。&lt;br&gt;
-また、シート番号（デフォルト：&lt;code&gt;シート1&lt;/code&gt;）も自由に変更して大丈夫です。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;下のGoogle SheetsのURLの部分の赤枠で囲った記号列は、後でGoogle Sheetを指定するのに利用するので、適当な場所にコピーしておいてください。&lt;/p&gt;
+&lt;li&gt;Google Sheetsのタイトル（デフォルト：&lt;code&gt;無題のスプレッドシート&lt;/code&gt;）は自由に変更してください。&lt;br&gt;
+また、シート番号（デフォルト：&lt;code&gt;シート1&lt;/code&gt;）も自由に変更して大丈夫です。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;下のGoogle SheetsのURLの部分の赤枠で囲った記号列は、後でGoogle Sheetを指定するのに利用するので、適当な場所にコピーしておいてください。
 &lt;ul&gt;
 &lt;li&gt;ここでは、&lt;code&gt;1ilM_Qz0A82_PueJtT-2PAzlnJ5ZSRB5OC_JkV4WQQCs&lt;/code&gt; になります。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;1.esp32_googlesheets_1_scripteditor_a.jpg&#34; width=1000&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;img src=&#34;1.esp32_googlesheets_1_scripteditor_a.jpg&#34; width=700&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;拡張機能から&lt;code&gt;Apps Script&lt;/code&gt;を開き、Githubのソースコードをコピー&amp;amp;ペーストしてください。
@@ -65,7 +66,8 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;2.esp32_googlesheets_1_scriptscode_a.jpg&#34; width=1000&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;img src=&#34;2.esp32_googlesheets_1_scriptscode_a.jpg&#34; width=700&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;&lt;code&gt;Google Sheets&lt;/code&gt;を公開する手順について、説明します。&lt;br&gt;
@@ -92,7 +94,7 @@
 &lt;li&gt;左下の&lt;code&gt;詳細&lt;/code&gt;をクリックしてください。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;7.esp32_googlesheets_1_scripts_confirm_a.jpg&#34; width=400&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;br /&gt;
 &lt;ol start=&#34;11&#34;&gt;
 &lt;li&gt;次に警告が出るので、&lt;code&gt;無題のプロジェクト（安全ではないページ）に移動&lt;/code&gt; をクリックしてください。&lt;/li&gt;
 &lt;/ol&gt;
@@ -104,7 +106,7 @@
 &lt;img src=&#34;9.esp32_googlesheets_1_approval_a.jpg&#34; width=400&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;13&#34;&gt;
-&lt;li&gt;以下のポップアップ画面が表示され、今回作成した「ウェブアプリ固有のURL」が発行されるので、URLをコピーして&lt;code&gt;完了&lt;/code&gt;をクリックしてください。&lt;/li&gt;
+&lt;li&gt;以下のポップアップ画面が表示され、今回作成した「ウェブアプリ固有のURL」が発行されるので、URLを&lt;code&gt;コピー&lt;/code&gt;して&lt;code&gt;完了&lt;/code&gt;をクリックしてください。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;10.esp32_googlesheets_1_deployurl_a.jpg&#34; width=500&gt;  
 &lt;p&gt;&lt;br /&gt;
@@ -123,7 +125,7 @@
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbzaAHAO8oBBJ1alqfQAv4h76Q-7ugOLm47jATWiqDczu6vahAl3ZncxSh3tQVRuSVRk/exec?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;上記のURLをブラウザに貼り付けてアクセスすると(Enert)、設定した&lt;code&gt;Google Sheets&lt;/code&gt;にデータが書き込まれます。&lt;/li&gt;
+&lt;li&gt;上記のURLをブラウザに貼り付けてアクセスすると(Enter)、設定した&lt;code&gt;Google Sheets&lt;/code&gt;にデータが書き込まれます。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;code&gt;Google Sheets&lt;/code&gt;の1行目に記載されているカラム名は自動表示されないため、予めご記載ください。&lt;/p&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
