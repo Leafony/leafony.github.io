@@ -46,13 +46,13 @@
 &lt;tr&gt;
 &lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;AI01&lt;/a&gt;&lt;/td&gt;
 &lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;温度、湿度、照度、加速度センサを搭載したリーフ　* DHT-22センサを使用する場合は不要&lt;/td&gt;
+&lt;td&gt;温度、湿度、照度、加速度センサを搭載したリーフ&lt;/td&gt;
 &lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td style=&#34;text-align:left&#34;&gt;[A\](/docs/leaf/\/\)&lt;/td&gt;
 &lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/%5C/%5C&#34;&gt;DHT-22センサ&lt;/a&gt;&lt;/td&gt;
-&lt;td&gt;温湿度センサモジュール　* 4-Sensorsリーフを使用する場合は不要&lt;/td&gt;
+&lt;td&gt;温湿度センサモジュール&lt;/td&gt;
 &lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
@@ -111,6 +111,10 @@
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;ul&gt;
+&lt;li&gt;4-Sensorsリーフを使用する場合は、DHT-22センサは不要&lt;/li&gt;
+&lt;li&gt;DHT-22センサを使用する場合は、4-Sensorsリーフは不要です。&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;
