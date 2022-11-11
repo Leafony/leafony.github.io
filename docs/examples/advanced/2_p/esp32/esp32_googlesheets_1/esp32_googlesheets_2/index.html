@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.2930093e10eac567669ff9d3beeb2c0e6d41e30bdc9e363330c5323db1194b7a977f55cfb63f485147914f608832488eeaa014044a03c99517357adbef8289e6.json"
+  data-offline-search-index-json-src="/offline-search-index.a3fe7efa30cc93e1a136af8136f3a43784eb432fb0a0dd47d2e984740aa44efe52a5ac7e3afebc8e0ada868910d1cb298f73a1f58a3afb320fffe29c36d08c6a.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.2930093e10eac567669ff9d3beeb2c0e6d41e30bdc9e363330c5323db1194b7a977f55cfb63f485147914f608832488eeaa014044a03c99517357adbef8289e6.json"
+  data-offline-search-index-json-src="/offline-search-index.a3fe7efa30cc93e1a136af8136f3a43784eb432fb0a0dd47d2e984740aa44efe52a5ac7e3afebc8e0ada868910d1cb298f73a1f58a3afb320fffe29c36d08c6a.json"
   data-offline-search-base-href="/"
 >
 
@@ -2333,10 +2333,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1_old/esp32_googlesheets_2/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
+    <a  href="/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1_old/esp32_googlesheets_2_old/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
   </li>
   <ul>
-    <li class="collapse " id="docsexamplesadvanced2_pesp32esp32_googlesheets_1_oldesp32_googlesheets_2">
+    <li class="collapse " id="docsexamplesadvanced2_pesp32esp32_googlesheets_1_oldesp32_googlesheets_2_old">
       
       
       
@@ -3876,7 +3876,7 @@ if (!doNotTrack) {
 	<h1> </h1>
         
 	
-	<h1 id="google-sheetsを使ったiotサービス">Google Sheetsを使ったIoTサービス</h1>
+	<h1 id="google-apps-scriptを使ったiotサービス">Google Apps Scriptを使ったIoTサービス</h1>
 <h2 id="esp32の設定">ESP32の設定</h2>
 <p>リーフを組み立ててスケッチを書き込み、データが<code>Google Sheets</code>に書き込まれることを確認しましょう。</p>
 <h2 id="使用するリーフ">使用するリーフ</h2>
@@ -3886,6 +3886,7 @@ if (!doNotTrack) {
 <tr>
 <th style="text-align:left">Type</th>
 <th style="text-align:left">Name</th>
+<th></th>
 <th style="text-align:left">Q&rsquo;ty</th>
 </tr>
 </thead>
@@ -3893,67 +3894,103 @@ if (!doNotTrack) {
 <tr>
 <td style="text-align:left"><a href="/docs/leaf/others/az62">AZ62</a></td>
 <td style="text-align:left"><a href="/docs/leaf/others/az62">Connector Cover </a></td>
+<td>コネクタカバー</td>
 <td style="text-align:left">2</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="/docs/leaf/io/ai01">AI01</a></td>
 <td style="text-align:left"><a href="/docs/leaf/io/ai01">4-Sensors</a></td>
+<td>温度、湿度、照度、加速度センサを搭載したリーフ</td>
 <td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">※DHT-22センサを使用する場合は不要</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">[A\](/docs/leaf/\/\)</td>
+<td style="text-align:left"><a href="/docs/leaf/%5C/%5C">DHT-22センサ</a></td>
+<td>温湿度センサモジュール</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td style="text-align:left">※4-Sensorsリーフを使用する場合は不要</td>
+<td></td>
+<td></td>
+<td></td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="/docs/leaf/extension/ax07">AX07</a></td>
 <td style="text-align:left"><a href="/docs/leaf/extension/ax07">Back to back</a></td>
+<td>背中合わせに接続するリーフ</td>
 <td style="text-align:left">1</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="/docs/leaf/processor/ap02">AP02</a></td>
 <td style="text-align:left"><a href="/docs/leaf/processor/ap02">ESP32 MCU</a></td>
+<td>Wi-FiとBluetooth LEを内蔵した32bit MCUリーフ</td>
 <td style="text-align:left">1</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="/docs/leaf/power/av04">AV04</a></td>
 <td style="text-align:left"><a href="/docs/leaf/power/av04">2V~4.5V</a></td>
+<td>JST製SHコネクタと昇降圧回路を搭載した2V～4.5Vのリーフ</td>
 <td style="text-align:left">1</td>
 </tr>
 <tr>
 <td style="text-align:left"><a href="/docs/leaf/others/az63">AZ63</a></td>
 <td style="text-align:left"><a href="/docs/leaf/others/az63">Nut Plate</a></td>
+<td>固定金具</td>
 <td style="text-align:left">2</td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
 <td style="text-align:left">AAA battery holder</td>
+<td>単4形 アルカリ乾電池ホルダー</td>
 <td style="text-align:left">1</td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
 <td style="text-align:left">AAA battery</td>
+<td>単4形 アルカリ乾電池</td>
 <td style="text-align:left">3</td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
 <td style="text-align:left">M2*8mm screw</td>
+<td>M2×8ネジ</td>
 <td style="text-align:left">2</td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
 <td style="text-align:left">M2*12mm screw</td>
+<td>M2×12ネジ</td>
 <td style="text-align:left">2</td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
 <td style="text-align:left">φ10x2mm magnet</td>
+<td>φ10x2mmマグネット</td>
 <td style="text-align:left">1</td>
 </tr>
 </tbody>
 </table>
 <h2 id="リーフの組み立て">リーフの組み立て</h2>
+<p>*4-Sensorsリーフの場合
+*DHT-22センサの場合</p>
 <p>ESP32 MCUリーフと4-Sensorsリーフを重ねて、下図のようにねじ止めします。</p>
 <p><img src="./ESP32_4-Sensors.png" alt="assemble1"></p>
 <h2 id="ソースコード">ソースコード</h2>
 <p>Arduino IDEでプログラムを書きましょう。</p>
 <ul>
-<li><a href="https://github.com/Leafony/Sample-Sketches/blob/master/ESP32_GoogleSheets/ESP32_GoogleSheets.ino" target="_brank">ESP32_GoogleSheets.ino</a></li>
+<li>
+<p>4-Sensorsリーフ用 <a href="https://github.com/Leafony/Sample-Sketches/blob/master/ESP32_GoogleSheets/ESP32_GoogleSheets.ino" target="_brank">ESP32_GoogleSheets_4-Sensors.ino</a></p>
+</li>
+<li>
+<p>DHT-22センサ用 <a href="https://github.com/Leafony/Sample-Sketches/blob/master/ESP32_GoogleSheets/ESP32_DHT-22.ino" target="_brank">ESP32_GoogleSheets_DHT-22.ino ※要変更</a></p>
+</li>
 </ul>
 <p>Githubのソースコードの以下の箇条書きの内容に注意して修正し、<code>ESP32リーフ</code>に書き込んで下さい。</p>
 <ol>
@@ -4328,7 +4365,7 @@ const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 3, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 November 11, 2022
 </div>
 </div>
 
