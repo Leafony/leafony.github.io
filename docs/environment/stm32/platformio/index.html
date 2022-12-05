@@ -21,17 +21,17 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>PlatformIO Settings for STM32 MCU | Leafony</title><meta property="og:title" content="PlatformIO Settings for STM32 MCU" />
-<meta property="og:description" content="VS CodeとPlatformIOを使った開発環境
+<title>PlatformIO 設定 | Leafony</title><meta property="og:title" content="PlatformIO 設定" />
+<meta property="og:description" content="PlatformIOでSTM32 MCUにプログラムを書き込む
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/environment/stm32/platformio/" /><meta property="og:site_name" content="Leafony" />
 
-<meta itemprop="name" content="PlatformIO Settings for STM32 MCU">
-<meta itemprop="description" content="VS CodeとPlatformIOを使った開発環境
+<meta itemprop="name" content="PlatformIO 設定">
+<meta itemprop="description" content="PlatformIOでSTM32 MCUにプログラムを書き込む
 "><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="PlatformIO Settings for STM32 MCU"/>
-<meta name="twitter:description" content="VS CodeとPlatformIOを使った開発環境
+<meta name="twitter:title" content="PlatformIO 設定"/>
+<meta name="twitter:description" content="PlatformIOでSTM32 MCUにプログラムを書き込む
 "/>
 
 
@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3cc04ecab8d0098427f5c423ad2117403a51932de25e089279dd19cdd078cc9bc5e00ce216acbb92c00d90686cd1cc60d130b43629fc0ae613c54dad485fa52d.json"
+  data-offline-search-index-json-src="/offline-search-index.07401ab552d2aab2f42f3533108f89e7ce553004c799b2117eb6f0d75472da55ee8e5c02ab61f22203ba01b17609e43014f975a2b25371b3c9ba7ba022cad991.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3cc04ecab8d0098427f5c423ad2117403a51932de25e089279dd19cdd078cc9bc5e00ce216acbb92c00d90686cd1cc60d130b43629fc0ae613c54dad485fa52d.json"
+  data-offline-search-index-json-src="/offline-search-index.07401ab552d2aab2f42f3533108f89e7ce553004c799b2117eb6f0d75472da55ee8e5c02ab61f22203ba01b17609e43014f975a2b25371b3c9ba7ba022cad991.json"
   data-offline-search-base-href="/"
 >
 
@@ -859,7 +859,7 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/environment/stm32/arduino_ide/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">STM32 Arduino</a>
+    <a  href="/docs/environment/stm32/arduino_ide/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Arduino</a>
   </li>
   <ul>
     <li class="collapse " id="docsenvironmentstm32arduino_ide">
@@ -3809,15 +3809,9 @@ if (!doNotTrack) {
 <nav id="TableOfContents">
   <ul>
     <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#用意するもの">用意するもの</a></li>
     <li><a href="#事前準備">事前準備</a></li>
-    <li><a href="#platformioのインストール">PlatformIOのインストール</a></li>
-    <li><a href="#クイックスタート">クイックスタート</a>
-      <ul>
-        <li><a href="#新規プロジェクトを作成">新規プロジェクトを作成</a></li>
-      </ul>
-    </li>
-    <li><a href="#ライブラリをインストール">ライブラリをインストール</a></li>
-    <li><a href="#書き込みとシリアルモニタ">書き込みとシリアルモニタ</a></li>
+    <li><a href="#platformio-使い方">PlatformIO 使い方</a></li>
     <li><a href="#参考">参考</a></li>
   </ul>
 </nav>
@@ -3875,80 +3869,34 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>PlatformIO Settings for STM32 MCU</h1>
-        <div class="lead">VS CodeとPlatformIOを使った開発環境</div>
+	<h1>PlatformIO 設定</h1>
+        <div class="lead">PlatformIOでSTM32 MCUにプログラムを書き込む</div>
 	
 	<h2 id="はじめに">はじめに</h2>
-<p>Arduino IDEの代わりに、PlatformIOをLeafonyの開発環境として使うことも可能です。
-PlatformIOを使うと、ライブラリのバージョン管理やボード設定の管理などを簡単に行えるだけでなく、
-Visual Studio Codeの強力なプラグインを活用し、より快適な開発をすることができます。</p>
-<h2 id="事前準備">事前準備</h2>
-<p>PlatformIOはVisual Studio Code (以下、VSCode)のプラグインです。
-事前に以下のソフトウェアをインストールする必要があります。</p>
+<p>PlatformIOは、Vidual Studio Code(VsCode)のプラグインで、コンパイルが早いだけでなく、ライブラリやボードのバージョン管理などを行えるため、快適にボード開発が行なえます。</br></p>
+<h2 id="用意するもの">用意するもの</h2>
 <ul>
-<li><a href="https://code.visualstudio.com/">VSCode</a></li>
-<li><a href="https://www.python.org/downloads/">Python 3</a></li>
+<li>Basic Kit 2</li>
+<li>パソコン (Windows、Mac OS X 、または Linux)</li>
 </ul>
-<h2 id="platformioのインストール">PlatformIOのインストール</h2>
+<h2 id="事前準備">事前準備</h2>
 <ol>
-<li>VSCodeを起動し、「拡張機能」タブを開く。</li>
-<li>検索窓に<code>platformio ide</code>を入力する。</li>
-<li>PlatformIO IDEをインストールする。</li>
+<li>STM32 MCUにプログラムを書き込むので、<a href="https://www.stmcu.jp/design/sw_dev/pc_soft/58442/">STM32CubeProg</a>をインストール<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>をして下さい。<br></li>
 </ol>
-<img src="./001.jpg" width="300">
-<h2 id="クイックスタート">クイックスタート</h2>
-<h3 id="新規プロジェクトを作成">新規プロジェクトを作成</h3>
+<ol start="2">
+<li>PlatformIOは、Vidual Studio Code(VsCode)のプラグインなので、 <a href="https://code.visualstudio.com/">VSCode</a>をインストールして下さい。</br></li>
+<li>VsCodeのデフォルトは、言語が英語になっているので、拡張機能「Japanese Language Pack for Visual Studio Code」をインストールし、日本語化して下さい。
+詳しくは、<a href="https://www.javadrive.jp/vscode/install/index4.html">こちら</a>を参照して下さい。</br></li>
+<li>PlatformIOを動かすには、Pythonが必要なので、 <a href="https://www.python.org/downloads/">Python</a>をインストールして下さい。</br></li>
+<li>VSCodeを起動して「拡張機能」タブを開いて、PlatformIO IDEをインストールして下さい。</li>
+</ol>
+<h2 id="platformio-使い方">PlatformIO 使い方</h2>
 <ol>
-<li><code>PlatformIO Home</code>ボタンを押してPlatformIOのホームを表示する。</li>
-<li><code>New Project</code>をクリック。</li>
-<li>任意のプロジェクト名を指定し、<code>Board</code>で適切なボードを選択。</li>
-<li><code>src</code>フォルダに含まれる<code>main.cpp</code>を開き、以下のコードを貼り付け。</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
 </ol>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#8f5902;font-style:italic">// LEDピンを出力ピンに設定
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">OUTPUT</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#000;font-weight:bold">}</span>
-
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">// LEDを点灯
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">999</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// LEDを消灯
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">999</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><ol start="5">
-<li><code>Build</code>ボタンを押してプロジェクトをビルド。</li>
-<li>LeafonyをPCに接続。</li>
-<li><code>Upload</code>ボタンを押してプロジェクトをLeafonyに書き込み。</li>
-</ol>
-<h2 id="ライブラリをインストール">ライブラリをインストール</h2>
-<ol>
-<li><code>PlatformIO Home</code>ボタンを押してPlatformIOのホームを表示する。</li>
-<li><code>Libraries</code>タブを開く。</li>
-<li>検索窓に<code>OPT3001</code>と入力し、照度センサOPT3001用ライブラリを検索。</li>
-<li><code>ClosedCube OPT3001</code>をクリック。</li>
-<li><code>Add to Project</code>ボタンをクリックし、<code>Add</code>で追加。</li>
-<li><code>platformio.ini</code>を開く。</li>
-<li><code>lib_deps</code>オプションに<code>closedcube/ClosedCube OPT3001 @ &lt;バージョン&gt;</code>が追加されているか確認。</li>
-<li>下記のコードを貼り付けると、上記の操作をしなくても簡単にライブラリの環境を設定することができる。</li>
-</ol>
-<pre><code>[env:pro8MHzatmega328]
-platform = atmelavr
-board = pro8MHzatmega328
-framework = arduino
-lib_deps = 
-	closedcube/ClosedCube OPT3001 @ ^1.1.2
-	adafruit/Adafruit LIS3DH@1.1.2
-	https://github.com/ameltech/sme-hts221-library.git
-	https://github.com/Leafony/TBGLib
-	tomozh/ST7032@0.0.0-alpha+sha.501bf64fe6
-	paulstoffregen/MsTimer2@^1.1
-	adafruit/RTClib@^1.11.2
-	adafruit/Adafruit Unified Sensor@^1.1.4
-	adafruit/Adafruit BusIO@^1.5.0
-</code></pre><h2 id="書き込みとシリアルモニタ">書き込みとシリアルモニタ</h2>
-<p><code>Serial Port Monitor</code>ボタンを押すと、シリアルモニタが表示される。</p>
 <h2 id="参考">参考</h2>
 <p>PlatformIO for VSCodeのより詳細な使い方は、公式ドキュメントを参考。</p>
 <ul>
@@ -3956,7 +3904,15 @@ lib_deps =
 </ul>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
-</p>
+</p><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Windows 64bitのV2.6.0とV2.4.0は動作確認済みですが、v2.5.0は動作しません。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
         <div class="section-index">
     
     

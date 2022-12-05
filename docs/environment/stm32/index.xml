@@ -14,7 +14,7 @@
     
     
     <item>
-      <title>Docs: STM32 MCU の Arduino IDE 設定</title>
+      <title>Docs: Arduino IDE 設定</title>
       <link>https://docs.leafony.com/docs/environment/stm32/arduino_ide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -142,7 +142,7 @@
     </item>
     
     <item>
-      <title>Docs: PlatformIO Settings for STM32 MCU</title>
+      <title>Docs: PlatformIO 設定</title>
       <link>https://docs.leafony.com/docs/environment/stm32/platformio/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -151,76 +151,30 @@
         
         
         &lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;Arduino IDEの代わりに、PlatformIOをLeafonyの開発環境として使うことも可能です。
-PlatformIOを使うと、ライブラリのバージョン管理やボード設定の管理などを簡単に行えるだけでなく、
-Visual Studio Codeの強力なプラグインを活用し、より快適な開発をすることができます。&lt;/p&gt;
-&lt;h2 id=&#34;事前準備&#34;&gt;事前準備&lt;/h2&gt;
-&lt;p&gt;PlatformIOはVisual Studio Code (以下、VSCode)のプラグインです。
-事前に以下のソフトウェアをインストールする必要があります。&lt;/p&gt;
+&lt;p&gt;PlatformIOは、Vidual Studio Code(VsCode)のプラグインで、コンパイルが早いだけでなく、ライブラリやボードのバージョン管理などを行えるため、快適にボード開発が行なえます。&lt;/br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VSCode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.python.org/downloads/&#34;&gt;Python 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Basic Kit 2&lt;/li&gt;
+&lt;li&gt;パソコン (Windows、Mac OS X 、または Linux)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;platformioのインストール&#34;&gt;PlatformIOのインストール&lt;/h2&gt;
+&lt;h2 id=&#34;事前準備&#34;&gt;事前準備&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;VSCodeを起動し、「拡張機能」タブを開く。&lt;/li&gt;
-&lt;li&gt;検索窓に&lt;code&gt;platformio ide&lt;/code&gt;を入力する。&lt;/li&gt;
-&lt;li&gt;PlatformIO IDEをインストールする。&lt;/li&gt;
+&lt;li&gt;STM32 MCUにプログラムを書き込むので、&lt;a href=&#34;https://www.stmcu.jp/design/sw_dev/pc_soft/58442/&#34;&gt;STM32CubeProg&lt;/a&gt;をインストール&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;をして下さい。&lt;br&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;./001.jpg&#34; width=&#34;300&#34;&gt;
-&lt;h2 id=&#34;クイックスタート&#34;&gt;クイックスタート&lt;/h2&gt;
-&lt;h3 id=&#34;新規プロジェクトを作成&#34;&gt;新規プロジェクトを作成&lt;/h3&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;PlatformIOは、Vidual Studio Code(VsCode)のプラグインなので、 &lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VSCode&lt;/a&gt;をインストールして下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;VsCodeのデフォルトは、言語が英語になっているので、拡張機能「Japanese Language Pack for Visual Studio Code」をインストールし、日本語化して下さい。
+詳しくは、&lt;a href=&#34;https://www.javadrive.jp/vscode/install/index4.html&#34;&gt;こちら&lt;/a&gt;を参照して下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;PlatformIOを動かすには、Pythonが必要なので、 &lt;a href=&#34;https://www.python.org/downloads/&#34;&gt;Python&lt;/a&gt;をインストールして下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;VSCodeを起動して「拡張機能」タブを開いて、PlatformIO IDEをインストールして下さい。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;platformio-使い方&#34;&gt;PlatformIO 使い方&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;code&gt;PlatformIO Home&lt;/code&gt;ボタンを押してPlatformIOのホームを表示する。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;New Project&lt;/code&gt;をクリック。&lt;/li&gt;
-&lt;li&gt;任意のプロジェクト名を指定し、&lt;code&gt;Board&lt;/code&gt;で適切なボードを選択。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;src&lt;/code&gt;フォルダに含まれる&lt;code&gt;main.cpp&lt;/code&gt;を開き、以下のコードを貼り付け。&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;Arduino.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// LEDピンを出力ピンに設定
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;pinMode&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LED_BUILTIN&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;OUTPUT&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
-&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-
-&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;loop&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;digitalWrite&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LED_BUILTIN&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;HIGH&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;   &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// LEDを点灯
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;999&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;                       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 1秒待つ
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;digitalWrite&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LED_BUILTIN&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;LOW&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;    &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// LEDを消灯
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;999&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;                       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 1秒待つ
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;&lt;code&gt;Build&lt;/code&gt;ボタンを押してプロジェクトをビルド。&lt;/li&gt;
-&lt;li&gt;LeafonyをPCに接続。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Upload&lt;/code&gt;ボタンを押してプロジェクトをLeafonyに書き込み。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;ライブラリをインストール&#34;&gt;ライブラリをインストール&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;PlatformIO Home&lt;/code&gt;ボタンを押してPlatformIOのホームを表示する。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Libraries&lt;/code&gt;タブを開く。&lt;/li&gt;
-&lt;li&gt;検索窓に&lt;code&gt;OPT3001&lt;/code&gt;と入力し、照度センサOPT3001用ライブラリを検索。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ClosedCube OPT3001&lt;/code&gt;をクリック。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Add to Project&lt;/code&gt;ボタンをクリックし、&lt;code&gt;Add&lt;/code&gt;で追加。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;platformio.ini&lt;/code&gt;を開く。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;lib_deps&lt;/code&gt;オプションに&lt;code&gt;closedcube/ClosedCube OPT3001 @ &amp;lt;バージョン&amp;gt;&lt;/code&gt;が追加されているか確認。&lt;/li&gt;
-&lt;li&gt;下記のコードを貼り付けると、上記の操作をしなくても簡単にライブラリの環境を設定することができる。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt;[env:pro8MHzatmega328]
-platform = atmelavr
-board = pro8MHzatmega328
-framework = arduino
-lib_deps = 
-	closedcube/ClosedCube OPT3001 @ ^1.1.2
-	adafruit/Adafruit LIS3DH@1.1.2
-	https://github.com/ameltech/sme-hts221-library.git
-	https://github.com/Leafony/TBGLib
-	tomozh/ST7032@0.0.0-alpha+sha.501bf64fe6
-	paulstoffregen/MsTimer2@^1.1
-	adafruit/RTClib@^1.11.2
-	adafruit/Adafruit Unified Sensor@^1.1.4
-	adafruit/Adafruit BusIO@^1.5.0
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;書き込みとシリアルモニタ&#34;&gt;書き込みとシリアルモニタ&lt;/h2&gt;
-&lt;p&gt;&lt;code&gt;Serial Port Monitor&lt;/code&gt;ボタンを押すと、シリアルモニタが表示される。&lt;/p&gt;
 &lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
 &lt;p&gt;PlatformIO for VSCodeのより詳細な使い方は、公式ドキュメントを参考。&lt;/p&gt;
 &lt;ul&gt;
@@ -228,7 +182,15 @@ lib_deps =
 &lt;/ul&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
-&lt;/p&gt;
+&lt;/p&gt;&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Windows 64bitのV2.6.0とV2.4.0は動作確認済みですが、v2.5.0は動作しません。&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+
       </description>
     </item>
     
