@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.85.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.2f41ec5d5cd75895e1019eaced98ad5da389befd05861c8e382006e986fe5787ffc02258acfe682509bba1d871c2608d1c2b4f278ab52491438be5684d7f3774.json"
+  data-offline-search-index-json-src="/offline-search-index.b4d38adc5cc382f9023828956b929ec2ffc6ba67e213abc3febb5f4df4c92ce32c63eaa58f00d540fcd5a28ceb62a64753edae0a21bf7e0b1903f04096b14c12.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.2f41ec5d5cd75895e1019eaced98ad5da389befd05861c8e382006e986fe5787ffc02258acfe682509bba1d871c2608d1c2b4f278ab52491438be5684d7f3774.json"
+  data-offline-search-index-json-src="/offline-search-index.b4d38adc5cc382f9023828956b929ec2ffc6ba67e213abc3febb5f4df4c92ce32c63eaa58f00d540fcd5a28ceb62a64753edae0a21bf7e0b1903f04096b14c12.json"
   data-offline-search-base-href="/"
 >
 
@@ -860,6 +860,29 @@ if (!doNotTrack) {
   </li>
   <ul>
     <li class="collapse " id="docsenvironmentstm32arduino_ide">
+      
+      
+      
+    </li>
+  </ul>
+</ul>
+
+      
+      
+      
+      
+
+
+
+
+
+
+<ul class="td-sidebar-nav__section pr-md-3">
+  <li class="td-sidebar-nav__section-title">
+    <a  href="/docs/environment/stm32/platformio/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">PlatformIO</a>
+  </li>
+  <ul>
+    <li class="collapse " id="docsenvironmentstm32platformio">
       
       
       
@@ -3895,7 +3918,7 @@ if (!doNotTrack) {
 <p><code>adv_data[]</code>配列がAdvertising dataです。この配列はコメントに記載されているように、<code>AD Structure 1</code>～<code>AD Structure 3</code>というデータの塊を繋げたデータとなっています。これらのデータの内容については後述します。</p>
 <p><code>ble112.ble_cmd_le_gap_set_adv_data()</code>で<code>adv_data</code>をBLEリーフに登録し、BLEリーフ側から登録完了の信号が来るのを待つために、<code>ble112.checkActivity()</code>を実行しています。</p>
 <p><code>ble112.ble_cmd_le_gap_start_advertising()</code>を実行することで、BLEがAdvertisingを開始して、先程設定したAdvertising dataをブロードキャストし始めます。<code>LE_GA_SCANNABLE_NON_CONNECTALBE</code>を設定したことで、BLE Client側はAdvertising dataをスキャンすることはできますが、このデバイスと接続を確立することは禁止しています。これは、接続要求が来た場合に発生するイベントの処理を減らして電力を削減するための設定です。</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">StartAdvData</span><span style="color:#000;font-weight:bold">()</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">StartAdvData</span><span style="color:#000;font-weight:bold">()</span>
 <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#8f5902;font-style:italic">// Advertising data; 25byte MAX
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
@@ -3958,6 +3981,8 @@ if (!doNotTrack) {
     
     
     <hr class="panel-line">
+        
+            
         
             
         

@@ -143,7 +143,7 @@
 &lt;ol&gt;
 &lt;li&gt;アクセスする&lt;code&gt;WiFi&lt;/code&gt;の情報を以下の定数に代入してください。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;const char* SSID = &amp;quot;wifi_ssid&amp;quot;;    // WiFi SSID
+&lt;pre&gt;&lt;code&gt;const char* SSID = &amp;quot;wifi_ssid&amp;quot;;    // WiFi SSID
 const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
 &lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;先ほど作成したウェブアプリの情報を以下の定数に代入してください。
@@ -152,7 +152,7 @@ const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;const char* KEY = &amp;quot;google_scripts_key&amp;quot;;
+&lt;pre&gt;&lt;code&gt;const char* KEY = &amp;quot;google_scripts_key&amp;quot;;
 &lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;センサデータの書き込みの時間間隔を調整したいときは以下の定数に代入してください。
 &lt;ul&gt;
@@ -160,8 +160,8 @@ const char* PASSWORD = &amp;quot;wifi_password&amp;quot;;  // WiFi Password
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;uint64_t DEEP_SLEEP_TIME_SEC = 60;
-&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;Arduino.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
+&lt;pre&gt;&lt;code&gt;uint64_t DEEP_SLEEP_TIME_SEC = 60;
+&lt;/code&gt;&lt;/pre&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;Arduino.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;Wire.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;HTTPClient.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;HTS221.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;

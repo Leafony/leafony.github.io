@@ -111,7 +111,7 @@
 &lt;img src=&#34;10.esp32_googlesheets_1_deployurl_a.jpg&#34; width=600&gt;  
 &lt;p&gt;&lt;br /&gt;
 （アプリ固有のURL）&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbzaAHAO8oBBJ1alqfQAv4h76Q-7ugOLm47jATWiqDczu6vahAl3ZncxSh3tQVRuSVRk/exec
+&lt;pre&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbzaAHAO8oBBJ1alqfQAv4h76Q-7ugOLm47jATWiqDczu6vahAl3ZncxSh3tQVRuSVRk/exec
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;google-sheetsの動作確認&#34;&gt;Google Sheetsの動作確認&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -122,7 +122,7 @@
 &lt;p&gt;アプリ固有のURLの末尾に、?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100を追加すると、以下の通りになります。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbzaAHAO8oBBJ1alqfQAv4h76Q-7ugOLm47jATWiqDczu6vahAl3ZncxSh3tQVRuSVRk/exec?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100
+&lt;pre&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbzaAHAO8oBBJ1alqfQAv4h76Q-7ugOLm47jATWiqDczu6vahAl3ZncxSh3tQVRuSVRk/exec?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;上記のURLをブラウザに貼り付けてアクセスすると(Enter)、設定した&lt;code&gt;Google Sheets&lt;/code&gt;にデータが書き込まれます。&lt;/li&gt;
@@ -238,7 +238,7 @@
 &lt;img src=&#34;find_url.png&#34; width=500&gt;  
 &lt;p&gt;&lt;br /&gt;
 （アプリ固有のURL）&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec
+&lt;pre&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;google-sheetsの動作確認&#34;&gt;Google Sheetsの動作確認&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
@@ -249,7 +249,7 @@
 &lt;p&gt;アプリ固有のURLに、?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100を追加すると、以下の通りになります。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100
+&lt;pre&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;上記のURLをブラウザに貼り付け、アクセスすると、設定した&lt;code&gt;Google Sheets&lt;/code&gt;にデータが書き込まれます。&lt;/li&gt;
@@ -346,18 +346,18 @@ ESP32が立ち上がってから&lt;code&gt;Google Apps Script&lt;/code&gt;に�
 その際，以下の箇所を適宜修正してください。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;3行目: &lt;a href=&#34;./#line%E9%80%9A%E7%9F%A5%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E8%A8%AD%E5%AE%9A&#34;&gt;LINE通知サービスの設定&lt;/a&gt;の&lt;strong&gt;6&lt;/strong&gt;の画面で発行されたトークンの記号列に置き換える
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;token&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;line_notify_token&amp;#34;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;token&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;line_notify_token&amp;#34;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;16-17行目: GoogleスプレッドシートのID
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;id&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;google_sheets_id&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;id&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;google_sheets_id&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;sheetName&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#39;sheet_name&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;44行目: LINEに送るテキストメッセージ&lt;br&gt;
 例のように&lt;code&gt;+&lt;/code&gt;でテキストと変数を連結できます。
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lineMessage&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ポストに投函ました\n現在のバッテリーの電圧：&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;battery&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;[V]&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;lineMessage&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;ポストに投函ました\n現在のバッテリーの電圧：&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameter&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;battery&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;[V]&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// LINEへの送信処理
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// LINEへの送信処理
 &lt;/span&gt;&lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;sendToLine&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;text&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;){&lt;/span&gt;
 &lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;token&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;line_notify_token&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
 &lt;span style=&#34;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4&lt;/span&gt;
@@ -438,18 +438,18 @@ ESP32が立ち上がってから&lt;code&gt;Google Apps Script&lt;/code&gt;に�
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Wi-Fiを使ってネットに接続する場合は&lt;code&gt;USE_WiFi&lt;/code&gt;を定義します。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define USE_WiFi
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define USE_WiFi
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;接続先のWi-FiがWPA2 Personal（自宅のルーターなどで利用される認証方式。通常これ）を利用しているときは以下の変数にSSIDとパスワードを格納します。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SSID&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;wifi-ssid&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// WiFi SSID
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SSID&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;wifi-ssid&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// WiFi SSID
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;PASSWORD&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;wifi-pass&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;   &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// WiFi Password
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;特に、接続先のWi-Fiが大学や企業などにあり、EduroamなどのWPA2 Enterpriseを使用しているときのみ、以下を定義します。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define USE_WiFi_ENTERPRISE
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define USE_WiFi_ENTERPRISE
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Wi-Fi Enterprise用のIDやパスワードは以下に入力してください。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;/////////////////////////////////////////////////////////////////////////////////////////////////////
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;/////////////////////////////////////////////////////////////////////////////////////////////////////
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// parameters for connecting eduroam enterprise
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;/////////////////////////////////////////////////////////////////////////////////////////////////////
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define EAP_IDENTITY &amp;#34;eap_id&amp;#34; &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//if connecting from another corporation, use identity@organisation.domain in Eduroam 
@@ -461,11 +461,11 @@ ESP32が立ち上がってから&lt;code&gt;Google Apps Script&lt;/code&gt;に�
 &lt;h3 id=&#34;接続先googleクラウドの設定&#34;&gt;接続先Googleクラウドの設定&lt;/h3&gt;
 &lt;p&gt;&lt;code&gt;ESP32_Post_Notify.ino&lt;/code&gt;で接続先Googleスクリプトの設定を行っています。
 &lt;a href=&#34;./#google%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E8%A8%AD%E5%AE%9A&#34;&gt;Googleクラウドサービスの設定&lt;/a&gt;の&lt;strong&gt;3&lt;/strong&gt;で設定したGoogle Apps Scriptの固有IDを以下の変数に格納します。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;KEY&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;google_scripts_key&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;KEY&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;google_scripts_key&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;スリープ動作&#34;&gt;スリープ動作&lt;/h3&gt;
 &lt;p&gt;Wi-Fiに接続してデータを送った後は，EP32 MCUが&lt;code&gt;Deep Sleep&lt;/code&gt;モードに入ることで待機電力を極力減らします。&lt;br&gt;
 &lt;code&gt;Deep Sleep&lt;/code&gt;モードに入る前にESP32 MCU内のWi-Fiモジュールの電源を切ることを忘れないでください。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;WiFi&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;disconnect&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Wi-Fiをオフにするために，trueを明示してください
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;WiFi&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;disconnect&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;true&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Wi-Fiをオフにするために，trueを明示してください
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;加速度センサlis3dhの設定&#34;&gt;加速度センサ(LIS3DH)の設定&lt;/h3&gt;
 &lt;p&gt;加速度センサ用の設定パラメータはレポジトリに上がっている&lt;code&gt;MyLIS3DH.cpp&lt;/code&gt;で修正できます。&lt;br&gt;
 実際に身の回りのポストに実装する場合にはパラメータを環境に合わせて設定する必要があります。 &lt;br&gt;
@@ -477,7 +477,7 @@ ESP32が立ち上がってから&lt;code&gt;Google Apps Script&lt;/code&gt;に�
 &lt;img src=&#34;reg_ctrl_reg3.jpg&#34; width=80%&gt;
 &lt;p&gt;データシートから、&lt;code&gt;I1_AOI1&lt;/code&gt;ビットを&lt;code&gt;1&lt;/code&gt;に設定すると&lt;code&gt;INT1&lt;/code&gt;の割り込みが有効になります。&lt;br&gt;
 よって、以下のようにプログラムします。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;writeRegister8&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LIS3DH_REG_CTRL3&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0x40&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; 
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;writeRegister8&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LIS3DH_REG_CTRL3&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0x40&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; 
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;割り込み信号を生成するための条件（どのような振動の場合に割り込み信号を生成するのか、等）を設定できるのですが、今回主に設定するパラメータは以下の4つです。&lt;/p&gt;
 &lt;img src=&#34;accelerometer_setting_parameters.jpg&#34; width=75%&gt;
 &lt;h4 id=&#34;閾値-threshold&#34;&gt;&lt;strong&gt;閾値 (Threshold)&lt;/strong&gt;&lt;/h4&gt;
@@ -488,16 +488,16 @@ ESP32が立ち上がってから&lt;code&gt;Google Apps Script&lt;/code&gt;に�
 &lt;img src=&#34;think_threshold.jpg&#34; width=100%&gt;
 &lt;p&gt;一方、加速度センサの&lt;strong&gt;LIS3DH&lt;/strong&gt;はデフォルトでフルスケールが±2gの検出を行います。&lt;br&gt;
 (これは&lt;code&gt;ESP32_PostNotify.ino&lt;/code&gt;で設定されています。)&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;lis&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;setRange&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LIS3DH_RANGE_2_G&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;   &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 2, 4, 8 or 16 G!
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;lis&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;setRange&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LIS3DH_RANGE_2_G&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;   &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 2, 4, 8 or 16 G!
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;データシートによると、使用している加速度センサは軸の正（負）方向に対してそれぞれ128段階の分解能(フルスケールで8-bitの分解能)を持っています。&lt;br&gt;
 0.17gが2gに対して、どのレベルなのかを128段階のレベルで表すと、&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-math&#34; data-lang=&#34;math&#34;&gt;128 / 2g * 0.17g = 10.88
+&lt;pre&gt;&lt;code class=&#34;language-math&#34; data-lang=&#34;math&#34;&gt;128 / 2g * 0.17g = 10.88
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;なので、閾値レベル&lt;code&gt;11&lt;/code&gt;(16進数では&lt;code&gt;0x0B&lt;/code&gt;)を設定します。&lt;br&gt;
 この閾値の情報は&lt;code&gt;INT1THS&lt;/code&gt;というレジスタに書き込みます。&lt;br&gt;
 一応、レジスタの情報をデータシートから確認してみると、書き込める数値は0~127までだということが分かります。&lt;/p&gt;
 &lt;img src=&#34;reg_int1_ths.jpg&#34; width=80%&gt;
 &lt;p&gt;プログラムでは以下のように記述します。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;writeRegister8&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LIS3DH_REG_INT1THS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0x0B&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;writeRegister8&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;LIS3DH_REG_INT1THS&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0x0B&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;検出軸-detection-axes&#34;&gt;&lt;strong&gt;検出軸 (Detection Axes)&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;a href=&#34;./#%E9%96%BE%E5%80%A4-threshold&#34;&gt;閾値&lt;/a&gt;の項目で考えた通り，今回は加速度の3軸のうち1つの軸のみを使って郵便物の投函を検出します。&lt;/p&gt;
 &lt;img src=&#34;think_detection_axes.jpg&#34; width=100%&gt;
@@ -524,7 +524,7 @@ ESP32が立ち上がってから&lt;code&gt;Google Apps Script&lt;/code&gt;に�
 &lt;li&gt;低電力モードも使う&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;よってデータシートから、レジスタはODR3からXenまで順に&lt;code&gt;00101100&lt;/code&gt;と設定すればいいので以下のようにプログラムします。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_CTRL1, 0x2C);
+&lt;pre&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_CTRL1, 0x2C);
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;strong&gt;INT1_CFG&lt;/strong&gt;に関して、上のデータシートに、&lt;code&gt;AOI&lt;/code&gt;と&lt;code&gt;6D&lt;/code&gt;というよく分からない項目があります。&lt;br&gt;
 データシートのTable 48.を見てみると、どうやら&lt;code&gt;AOI&lt;/code&gt;と&lt;code&gt;6D&lt;/code&gt;を使って割り込み信号を生成する方法を設定できるようです。&lt;br&gt;
 ORとANDの条件は各軸それぞれに対して割り込みを発生させるときの条件として考えれば良さそうです。&lt;br&gt;
@@ -544,7 +544,7 @@ ORとANDの条件は各軸それぞれに対して割り込みを発生させる
 &lt;li&gt;Z方向の指定した閾値を超えたときに一瞬だけ割り込み信号を生成する&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;以下のようにプログラムすれば良いと分かりました。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_INT1CFG, 0x70); 
+&lt;pre&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_INT1CFG, 0x70); 
 &lt;/code&gt;&lt;/pre&gt;&lt;h4 id=&#34;サンプリング周波数-sampling-rate--時間幅-duration&#34;&gt;&lt;strong&gt;サンプリング周波数 (Sampling Rate)&lt;/strong&gt; &amp;amp; &lt;strong&gt;時間幅 (Duration)&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;サンプリング周波数と時間幅は関連しているので、一緒に説明します。はじめにそれぞれを簡単に説明します。&lt;/p&gt;
 &lt;ul&gt;
@@ -557,15 +557,15 @@ ORとANDの条件は各軸それぞれに対して割り込みを発生させる
 &lt;a href=&#34;./#%E6%A4%9C%E5%87%BA%E8%BB%B8-detection-axes&#34;&gt;検出軸&lt;/a&gt;の項で説明した通り、設定レジスタは&lt;code&gt;CTRL_REG1&lt;/code&gt;です。&lt;br&gt;
 &lt;code&gt;ODR0&lt;/code&gt;-&lt;code&gt;ODR3&lt;/code&gt;でサンプリング周波数を決定できます。&lt;br&gt;
 再掲ですが、以下のようにプログラムします。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_CTRL1, 0x2C);
+&lt;pre&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_CTRL1, 0x2C);
 &lt;/code&gt;&lt;/pre&gt;&lt;img src=&#34;think_sampling_rate.jpg&#34; width=100%&gt;
 &lt;p&gt;時間幅の設定レジスタは&lt;code&gt;INT1_DURATION&lt;/code&gt;です。実際にセンサは連続時間を測っているわけではなく、サンプリング回数で時間間隔を計算しています。&lt;/p&gt;
 &lt;img src=&#34;reg_int1_duration.jpg&#34; width=60%&gt;
 &lt;p&gt;0.3秒以上閾値を超えるようであれば、割り込み信号を生成します。&lt;br&gt;
 今回はサンプル周波数を&lt;code&gt;10Hz&lt;/code&gt;で設定しており、設定値は以下のように計算します。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;0.3 / 0.1 = 3
+&lt;pre&gt;&lt;code&gt;0.3 / 0.1 = 3
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;これは以下のようにプログラムします。&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_INT1DUR, 0x03); 
+&lt;pre&gt;&lt;code&gt;    writeRegister8(LIS3DH_REG_INT1DUR, 0x03); 
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
 &lt;p&gt;ESP32を傾けたときにスリープから立ち上がり、Wi-Fiに接続してからLINE Notifyに通知を送信します。&lt;br&gt;
 LINE Notifyで受け取った画面は以下のようになります。&lt;/p&gt;
@@ -671,7 +671,7 @@ LINE Notifyで受け取った画面は以下のようになります。&lt;/p&gt
 &lt;/li&gt;
 &lt;li&gt;以下のURLをコピーし、WebBLEを立ち上げてアドレスバーに貼り付けてください。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; http://192.168.4.1
+&lt;pre&gt;&lt;code&gt; http://192.168.4.1
 &lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;29pin headerの7、9、22、24、26、28ピンがタッチセンサに割り当てられています。&lt;br&gt;
@@ -764,7 +764,7 @@ Arduino IDEの「ツール → Code Debug Level」を任意のレベルに設定
 Node.jsが動く環境であれば動作環境は問いませんが、今回は屋外に定点設置するBeacon受信機とすることを想定し、
 Raspberry Pi 4を使ってアプリの動作方法について解説します。&lt;/p&gt;
 &lt;p&gt;必要なパッケージをインストールしてアプリ実行します。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; ./tools/node-scanner
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; ./tools/node-scanner
 npm install
 npm start
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;3-ログ取得アプリを実行&#34;&gt;3. ログ取得アプリを実行&lt;/h3&gt;
