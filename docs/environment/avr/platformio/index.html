@@ -21,17 +21,17 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>PlatformIO Settings for AVR MCU | Leafony</title><meta property="og:title" content="PlatformIO Settings for AVR MCU" />
-<meta property="og:description" content="VS CodeとPlatformIOを使った開発環境
+<title>PlatformIO IDEの設定 | Leafony</title><meta property="og:title" content="PlatformIO IDEの設定" />
+<meta property="og:description" content="PlatformIO IDEでLeafonyにプログラムを書き込む
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/environment/avr/platformio/" /><meta property="og:site_name" content="Leafony" />
 
-<meta itemprop="name" content="PlatformIO Settings for AVR MCU">
-<meta itemprop="description" content="VS CodeとPlatformIOを使った開発環境
+<meta itemprop="name" content="PlatformIO IDEの設定">
+<meta itemprop="description" content="PlatformIO IDEでLeafonyにプログラムを書き込む
 "><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="PlatformIO Settings for AVR MCU"/>
-<meta name="twitter:description" content="VS CodeとPlatformIOを使った開発環境
+<meta name="twitter:title" content="PlatformIO IDEの設定"/>
+<meta name="twitter:description" content="PlatformIO IDEでLeafonyにプログラムを書き込む
 "/>
 
 
@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.07401ab552d2aab2f42f3533108f89e7ce553004c799b2117eb6f0d75472da55ee8e5c02ab61f22203ba01b17609e43014f975a2b25371b3c9ba7ba022cad991.json"
+  data-offline-search-index-json-src="/offline-search-index.16440618295b0d476f8f2e2df7234a478ffc0494bf670939f0ce44f4ac5b7ff4eb98f24152aa104ae28f45ddfaec2f46a1315b8ac98d28a491b74ca5078680f9.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.07401ab552d2aab2f42f3533108f89e7ce553004c799b2117eb6f0d75472da55ee8e5c02ab61f22203ba01b17609e43014f975a2b25371b3c9ba7ba022cad991.json"
+  data-offline-search-index-json-src="/offline-search-index.16440618295b0d476f8f2e2df7234a478ffc0494bf670939f0ce44f4ac5b7ff4eb98f24152aa104ae28f45ddfaec2f46a1315b8ac98d28a491b74ca5078680f9.json"
   data-offline-search-base-href="/"
 >
 
@@ -3809,8 +3809,13 @@ if (!doNotTrack) {
 <nav id="TableOfContents">
   <ul>
     <li><a href="#はじめに">はじめに</a></li>
-    <li><a href="#事前準備">事前準備</a></li>
-    <li><a href="#platformioのインストール">PlatformIOのインストール</a></li>
+    <li><a href="#用意するもの">用意するもの</a></li>
+    <li><a href="#事前準備">事前準備</a>
+      <ul>
+        <li><a href="#python">Python</a></li>
+        <li><a href="#vscode">VSCode</a></li>
+      </ul>
+    </li>
     <li><a href="#クイックスタート">クイックスタート</a>
       <ul>
         <li><a href="#新規プロジェクトを作成">新規プロジェクトを作成</a></li>
@@ -3875,27 +3880,33 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>PlatformIO Settings for AVR MCU</h1>
-        <div class="lead">VS CodeとPlatformIOを使った開発環境</div>
+	<h1>PlatformIO IDEの設定</h1>
+        <div class="lead">PlatformIO IDEでLeafonyにプログラムを書き込む</div>
 	
 	<h2 id="はじめに">はじめに</h2>
-<p>Arduino IDEの代わりに、PlatformIOをLeafonyの開発環境として使うことも可能です。
-PlatformIOを使うと、ライブラリのバージョン管理やボード設定の管理などを簡単に行えるだけでなく、
-Visual Studio Codeの強力なプラグインを活用し、より快適な開発をすることができます。</p>
-<h2 id="事前準備">事前準備</h2>
-<p>PlatformIOはVisual Studio Code (以下、VSCode)のプラグインです。
-事前に以下のソフトウェアをインストールする必要があります。</p>
+<p>PlatformIO IDEは、Vidual Studio Code(VsCode)のプラグインで、コンパイルが早いだけでなく、ライブラリやボードのバージョン管理などを行えるため、快適にボード開発が行なえます。</br></p>
+<h2 id="用意するもの">用意するもの</h2>
 <ul>
-<li><a href="https://code.visualstudio.com/">VSCode</a></li>
-<li><a href="https://www.python.org/downloads/">Python 3</a></li>
+<li>Basic Kit 2</li>
+<li>パソコン (Windows、Mac OS X 、または Linux)</li>
 </ul>
-<h2 id="platformioのインストール">PlatformIOのインストール</h2>
+<h2 id="事前準備">事前準備</h2>
+<h3 id="python">Python</h3>
 <ol>
-<li>VSCodeを起動し、「拡張機能」タブを開く。</li>
-<li>検索窓に<code>platformio ide</code>を入力する。</li>
-<li>PlatformIO IDEをインストールする。</li>
+<li>PlatformIOを動かすには、Pythonが必要です。まず、<a href="https://www.python.org/downloads/">Python</a>をインストールして下さい。</br></li>
 </ol>
-<img src="./001.jpg" width="300">
+<h3 id="vscode">VSCode</h3>
+<ol>
+<li>
+<p>まず、<a href="https://code.visualstudio.com/">VSCode</a>をインストールして下さい。</br></p>
+</li>
+<li>
+<p>次に、VSCodeの拡張機能の<a href="https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-ja">Japanese Language Pack for Visual Studio Code</a>をインストールし、言語を日本語にしてください。</br></p>
+</li>
+<li>
+<p>VSCodeの拡張機能の<a href="https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide">PlatformIO IDE</a>をインストールして下さい。</br></p>
+</li>
+</ol>
 <h2 id="クイックスタート">クイックスタート</h2>
 <h3 id="新規プロジェクトを作成">新規プロジェクトを作成</h3>
 <ol>
@@ -3967,7 +3978,7 @@ lib_deps =
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 22, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 December 8, 2022
 </div>
 </div>
 

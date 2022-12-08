@@ -14,7 +14,7 @@
     
     
     <item>
-      <title>Docs: AVR MCU の Arduino IDE 設定</title>
+      <title>Docs: Arduino IDE の設定</title>
       <link>https://docs.leafony.com/docs/environment/avr/arduino/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -195,7 +195,7 @@
     </item>
     
     <item>
-      <title>Docs: PlatformIO Settings for AVR MCU</title>
+      <title>Docs: PlatformIO IDEの設定</title>
       <link>https://docs.leafony.com/docs/environment/avr/platformio/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -204,23 +204,29 @@
         
         
         &lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;Arduino IDEの代わりに、PlatformIOをLeafonyの開発環境として使うことも可能です。
-PlatformIOを使うと、ライブラリのバージョン管理やボード設定の管理などを簡単に行えるだけでなく、
-Visual Studio Codeの強力なプラグインを活用し、より快適な開発をすることができます。&lt;/p&gt;
-&lt;h2 id=&#34;事前準備&#34;&gt;事前準備&lt;/h2&gt;
-&lt;p&gt;PlatformIOはVisual Studio Code (以下、VSCode)のプラグインです。
-事前に以下のソフトウェアをインストールする必要があります。&lt;/p&gt;
+&lt;p&gt;PlatformIO IDEは、Vidual Studio Code(VsCode)のプラグインで、コンパイルが早いだけでなく、ライブラリやボードのバージョン管理などを行えるため、快適にボード開発が行なえます。&lt;/br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VSCode&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.python.org/downloads/&#34;&gt;Python 3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Basic Kit 2&lt;/li&gt;
+&lt;li&gt;パソコン (Windows、Mac OS X 、または Linux)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;platformioのインストール&#34;&gt;PlatformIOのインストール&lt;/h2&gt;
+&lt;h2 id=&#34;事前準備&#34;&gt;事前準備&lt;/h2&gt;
+&lt;h3 id=&#34;python&#34;&gt;Python&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;VSCodeを起動し、「拡張機能」タブを開く。&lt;/li&gt;
-&lt;li&gt;検索窓に&lt;code&gt;platformio ide&lt;/code&gt;を入力する。&lt;/li&gt;
-&lt;li&gt;PlatformIO IDEをインストールする。&lt;/li&gt;
+&lt;li&gt;PlatformIOを動かすには、Pythonが必要です。まず、&lt;a href=&#34;https://www.python.org/downloads/&#34;&gt;Python&lt;/a&gt;をインストールして下さい。&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;./001.jpg&#34; width=&#34;300&#34;&gt;
+&lt;h3 id=&#34;vscode&#34;&gt;VSCode&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;まず、&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VSCode&lt;/a&gt;をインストールして下さい。&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;次に、VSCodeの拡張機能の&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-ja&#34;&gt;Japanese Language Pack for Visual Studio Code&lt;/a&gt;をインストールし、言語を日本語にしてください。&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;VSCodeの拡張機能の&lt;a href=&#34;https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide&#34;&gt;PlatformIO IDE&lt;/a&gt;をインストールして下さい。&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&#34;クイックスタート&#34;&gt;クイックスタート&lt;/h2&gt;
 &lt;h3 id=&#34;新規プロジェクトを作成&#34;&gt;新規プロジェクトを作成&lt;/h3&gt;
 &lt;ol&gt;
