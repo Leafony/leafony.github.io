@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.16440618295b0d476f8f2e2df7234a478ffc0494bf670939f0ce44f4ac5b7ff4eb98f24152aa104ae28f45ddfaec2f46a1315b8ac98d28a491b74ca5078680f9.json"
+  data-offline-search-index-json-src="/offline-search-index.eafae132824c691ce84cc340545db9be6bba45f56d97c88f7794802e48e820257630ee337e757658cd0f13479fa63363ba2cbd9ce866952f5c5d1bc6fd503604.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.16440618295b0d476f8f2e2df7234a478ffc0494bf670939f0ce44f4ac5b7ff4eb98f24152aa104ae28f45ddfaec2f46a1315b8ac98d28a491b74ca5078680f9.json"
+  data-offline-search-index-json-src="/offline-search-index.eafae132824c691ce84cc340545db9be6bba45f56d97c88f7794802e48e820257630ee337e757658cd0f13479fa63363ba2cbd9ce866952f5c5d1bc6fd503604.json"
   data-offline-search-base-href="/"
 >
 
@@ -3810,10 +3810,10 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#はじめに">はじめに</a></li>
     <li><a href="#用意するもの">用意するもの</a></li>
-    <li><a href="#事前準備">事前準備</a>
+    <li><a href="#インストール">インストール</a>
       <ul>
-        <li><a href="#python">Python</a></li>
-        <li><a href="#vscode">VSCode</a></li>
+        <li><a href="#pythonのインストール">Pythonのインストール</a></li>
+        <li><a href="#platformio-ideのインストール">PlatformIO IDEのインストール</a></li>
       </ul>
     </li>
     <li><a href="#クイックスタート">クイックスタート</a>
@@ -3822,6 +3822,11 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#ライブラリをインストール">ライブラリをインストール</a></li>
+    <li><a href="#ライブラリのインストール">ライブラリのインストール</a>
+      <ul>
+        <li><a href="#1-使用するライブラリ">1. 使用するライブラリ</a></li>
+      </ul>
+    </li>
     <li><a href="#書き込みとシリアルモニタ">書き込みとシリアルモニタ</a></li>
     <li><a href="#参考">参考</a></li>
   </ul>
@@ -3884,28 +3889,22 @@ if (!doNotTrack) {
         <div class="lead">PlatformIO IDEでLeafonyにプログラムを書き込む</div>
 	
 	<h2 id="はじめに">はじめに</h2>
-<p>PlatformIO IDEは、Vidual Studio Code(VsCode)のプラグインで、コンパイルが早いだけでなく、ライブラリやボードのバージョン管理などを行えるため、快適にボード開発が行なえます。</br></p>
+<p>PlatformIO IDEは、Vidual Studio Code(VsCode)の拡張機能で、コンパイルが早いだけでなく、ライブラリやボードのバージョン管理などを行えます。</br></p>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
-<li>Basic Kit 2</li>
-<li>パソコン (Windows、Mac OS X 、または Linux)</li>
+<li>Basic Kit 2 </br></li>
+<li>パソコン (Windows、Mac OS X 、または Linux)</br></li>
 </ul>
-<h2 id="事前準備">事前準備</h2>
-<h3 id="python">Python</h3>
+<h2 id="インストール">インストール</h2>
+<h3 id="pythonのインストール">Pythonのインストール</h3>
 <ol>
-<li>PlatformIOを動かすには、Pythonが必要です。まず、<a href="https://www.python.org/downloads/">Python</a>をインストールして下さい。</br></li>
+<li>PlatformIO IDEを動かすには、Pythonが必要です。まず、<a href="https://www.python.org/downloads/">Python</a>をインストールして下さい。</br></li>
 </ol>
-<h3 id="vscode">VSCode</h3>
+<h3 id="platformio-ideのインストール">PlatformIO IDEのインストール</h3>
 <ol>
-<li>
-<p>まず、<a href="https://code.visualstudio.com/">VSCode</a>をインストールして下さい。</br></p>
-</li>
-<li>
-<p>次に、VSCodeの拡張機能の<a href="https://marketplace.visualstudio.com/items?itemName=MS-CEINTL.vscode-language-pack-ja">Japanese Language Pack for Visual Studio Code</a>をインストールし、言語を日本語にしてください。</br></p>
-</li>
-<li>
-<p>VSCodeの拡張機能の<a href="https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide">PlatformIO IDE</a>をインストールして下さい。</br></p>
-</li>
+<li>PlatformIO IDEは、VSCodeの拡張機能です。まず、<a href="https://code.visualstudio.com/">VSCode</a>をインストールして下さい。</br></li>
+<li>検索窓に <code>Japanese Language Pack for Visual Studio Code</code>を入力し、日本語の拡張機能をインストールして下さい。</br></li>
+<li>検索窓に <code>platformio ide</code>を入力し、PlatformIO IDEをインストールして下さい。</br></li>
 </ol>
 <h2 id="クイックスタート">クイックスタート</h2>
 <h3 id="新規プロジェクトを作成">新規プロジェクトを作成</h3>
@@ -3944,6 +3943,94 @@ if (!doNotTrack) {
 <li><code>lib_deps</code>オプションに<code>closedcube/ClosedCube OPT3001 @ &lt;バージョン&gt;</code>が追加されているか確認。</li>
 <li>下記のコードを貼り付けると、上記の操作をしなくても簡単にライブラリの環境を設定することができる。</li>
 </ol>
+<h2 id="ライブラリのインストール">ライブラリのインストール</h2>
+<p>プログラムを書き込むには、ライブラリのインストールが必要なリーフがあります。下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきます。</p>
+<h3 id="1-使用するライブラリ">1. 使用するライブラリ</h3>
+<p>各Kitで使用するライブラリは以下の通りです。</p>
+<table class="table-hover">
+  <thread>
+    <tr>
+      <th>Item</th>
+      <th>lib_deps</th>
+      <th>Tags</th>
+      <th>Description</th>
+    </tr>
+  </thread>
+  <tbody>
+    <tr>
+      <td>BLE</td>
+      <td><a href="https://github.com/Leafony/TBGLib" target="_blank">https://github.com/Leafony/TBGLib</a></td>
+      <td></td>
+      <td>Bluetoothライブラリ</td>
+    </tr>
+    <tr>
+      <td rowspan=6>4-Sensors</td>
+      <td><a href="https://github.com/adafruit/Adafruit_Sensor" target="_blank">adafruit/Adafruit Unified Sensor@^1.1.6</a></td>
+      <td></td>
+      <td>ユニファイドセンサドライバ</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/adafruit/Adafruit_BusIO" target="_blank">adafruit/Adafruit BusIO@^1.14.1</a></td>
+      <td></td>
+      <td>Bus IOライブラリ</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/ameltech/sme-hts221-library" target="_blank">https://github.com/ameltech/sme-hts221-library</a></td>
+      <td></td>
+      <td>温湿度センサライブラリ</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/adafruit/Adafruit_HTS221" target="_blank">adafruit/Adafruit HTS221@^0.1.2</a></td>
+      <td></td>
+      <td>Adafruit温湿度センサライブラリ</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/closedcube/ClosedCube_OPT3001_Arduino" target="_blank">closedcube/ClosedCube OPT3001@^1.1.2</a></td>
+      <td></td>
+      <td>照度センサライブラリ</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/adafruit/Adafruit_LIS3DH/tree/1.1.2" target="_blank">adafruit/Adafruit LIS3DH@^1.1.2</a></td>
+      <td>1.1.2</td>
+      <td>加速度センサライブラリ</td>
+    </tr>
+    <tr>
+      <td>LCD</td>
+      <td><a href="https://github.com/tomozh/arduino_ST7032" target="_blank">tomozh/ST7032@0.0.0-alpha+sha.501bf64fe6</a></td>
+      <td></td>
+      <td>LCDライブラリ</td>
+    </tr>
+    <tr>
+      <td>AVR MCU</td>
+      <td><a href="https://github.com/PaulStoffregen/MsTimer2" target="_blank">paulstoffregen/MsTimer2@^1.1</a></td>
+      <td></td>
+      <td>タイマ割り込みライブラリ</td>
+    </tr>
+    <tr>
+      <td>RTC&MicroSD</td>
+      <td><a href="https://github.com/adafruit/RTClib" target="_blank">adafruit/RTClib@^2.1.1</a></td>
+      <td></td>
+      <td>RTCライブラリ</td>
+    </tr>
+    <tr>
+      <td rowspan=2>STM32 MCU</td>
+      <td><a href="https://github.com/stm32duino/STM32RTC/tree/1.2.0" target="_blank">stm32duino/STM32duino RTC @ 1.2.0</a></td>
+      <td>1.2.0</td>
+      <td>STM32RTCライブラリ</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/stm32duino/STM32LowPower" target="_blank">stm32duino/STM32duino Low Power@^1.2.2</a></td>
+      <td></td>
+      <td>STM32LowPowerライブラリ</td>
+    </tr>
+    <tr>
+      <td>LTE-M</td>
+      <td><a href="https://github.com/Leafony/LteLeafV4" target="_blank">Lhttps://github.com/Leafony/LteLeafV4</a></td>
+      <td></td>
+      <td>LTE-Mライブラリ</td>
+    </tr>
+  </tbody>
+</table>
 <pre><code>[env:pro8MHzatmega328]
 platform = atmelavr
 board = pro8MHzatmega328
@@ -3978,7 +4065,7 @@ lib_deps =
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 December 8, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 December 14, 2022
 </div>
 </div>
 
