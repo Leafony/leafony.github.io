@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.eafae132824c691ce84cc340545db9be6bba45f56d97c88f7794802e48e820257630ee337e757658cd0f13479fa63363ba2cbd9ce866952f5c5d1bc6fd503604.json"
+  data-offline-search-index-json-src="/offline-search-index.42a0bdce86708b071b301d227badf1854c9bfc678b00ff38c585ae3181aec6029e953a2c48efcd5b501b222c489fe12b976643af31388aed0522d44ecb31297b.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.eafae132824c691ce84cc340545db9be6bba45f56d97c88f7794802e48e820257630ee337e757658cd0f13479fa63363ba2cbd9ce866952f5c5d1bc6fd503604.json"
+  data-offline-search-index-json-src="/offline-search-index.42a0bdce86708b071b301d227badf1854c9bfc678b00ff38c585ae3181aec6029e953a2c48efcd5b501b222c489fe12b976643af31388aed0522d44ecb31297b.json"
   data-offline-search-base-href="/"
 >
 
@@ -3808,7 +3808,12 @@ if (!doNotTrack) {
     <li><a href="#概要">概要</a></li>
     <li><a href="#使用するリーフ">使用するリーフ</a></li>
     <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
-    <li><a href="#ソースコード">ソースコード</a></li>
+    <li><a href="#ソースコード">ソースコード</a>
+      <ul>
+        <li><a href="#arduino-ide-の場合docsenvironmentavrarduino"><a href="/docs/environment/avr/arduino">Arduino IDE の場合</a></a></li>
+        <li><a href="#platformio-ide-の場合docsenvironmentavrplatformio"><a href="/docs/environment/avr/platformio">PlatformIO IDE の場合</a></a></li>
+      </ul>
+    </li>
     <li><a href="#実行結果">実行結果</a></li>
   </ul>
 </nav>
@@ -3938,7 +3943,10 @@ if (!doNotTrack) {
 <p>下図のようにリーフを組み立てましょう。</p>
 <p><img src="./blink_assemble.png" alt="assemble1"></p>
 <h2 id="ソースコード">ソースコード</h2>
-<p>Arduino IDEで下記のプログラムを書きましょう。</p>
+<h3 id="arduino-ide-の場合docsenvironmentavrarduino"><a href="/docs/environment/avr/arduino">Arduino IDE の場合</a></h3>
+<ul>
+<li>xxx.inoファイルには、以下のコードを書き込んで下さい。</li>
+</ul>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
 </span><span style="color:#8f5902;font-style:italic">//  Blink
 </span><span style="color:#8f5902;font-style:italic">//
@@ -3961,6 +3969,21 @@ if (!doNotTrack) {
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/Blink/Blink.ino" target="_blank">Blink.ino</a></p>
+<h3 id="platformio-ide-の場合docsenvironmentavrplatformio"><a href="/docs/environment/avr/platformio">PlatformIO IDE の場合</a></h3>
+<ul>
+<li>
+<p>main.cppファイルには、Arduino IDEのコードの先頭に<code>#include &lt;Arduino.h&gt;</code>を加えて書き込んで下さい。</BR></p>
+</li>
+<li>
+<p>platformio.iniには、以下のコードを書き込んで下さい。</p>
+</li>
+</ul>
+<pre><code>[env:pro8MHzatmega328]
+platform = atmelavr
+board = pro8MHzatmega328
+framework = arduino
+monitor_speed =115200
+</code></pre><p><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Blink_Pjt" target="_blank">Blink.Pjt</a></p>
 <h2 id="実行結果">実行結果</h2>
 <p>AVR MCUリーフに搭載されたLEDが1秒おきに点灯/消灯します。</p>
 <p style="text-align: right">
@@ -4292,7 +4315,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 30, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 December 19, 2022
 </div>
 </div>
 
