@@ -204,7 +204,7 @@
         
         
         &lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;PlatformIO IDEは、Vidual Studio Code(VsCode)の拡張機能で、コンパイルが早いだけでなく、ライブラリやボードのバージョン管理などを行えます。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;PlatformIO IDEは、Microsoft社が提供するコードエディタであるVidual Studio Code(VsCode)の拡張機能です。ビルドが早く、ライブラリやボードのバージョンがプロジェクト毎に管理されているのが特長です。&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Basic Kit 2 &lt;/br&gt;&lt;/li&gt;
@@ -217,10 +217,11 @@
 &lt;/ol&gt;
 &lt;h3 id=&#34;platformio-ideのインストール&#34;&gt;PlatformIO IDEのインストール&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;PlatformIO IDEは、VSCodeの拡張機能です。まず、&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VSCode&lt;/a&gt;をインストールして下さい。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;検索窓に &lt;code&gt;Japanese Language Pack for Visual Studio Code&lt;/code&gt;を入力し、日本語の拡張機能をインストールして下さい。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;検索窓に &lt;code&gt;platformio ide&lt;/code&gt;を入力し、PlatformIO IDEをインストールして下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;PlatformIO IDEは、VSCodeの拡張機能なので、まず、&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VSCode&lt;/a&gt;をインストールして下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;左側の列にある「拡張機能」をクリックします。&lt;/li&gt;
+&lt;li&gt;検索窓が現れたら、&lt;code&gt;Japanese Language Pack for Visual Studio Code&lt;/code&gt;を入力し、日本語の拡張機能をインストールし、次に &lt;code&gt;platformio ide&lt;/code&gt;を入力し、PlatformIO IDEをインストールして下さい。&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;img src=&#34;./platformio_1.png&#34; width=&#34;640&#34;&gt;
 &lt;h2 id=&#34;クイックスタート&#34;&gt;クイックスタート&lt;/h2&gt;
 &lt;h3 id=&#34;新規プロジェクトを作成&#34;&gt;新規プロジェクトを作成&lt;/h3&gt;
 &lt;ol&gt;
