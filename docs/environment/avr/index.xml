@@ -195,7 +195,7 @@
     </item>
     
     <item>
-      <title>Docs: PlatformIO IDEの設定</title>
+      <title>Docs: PlatformIO IDE for VSCodeの設定</title>
       <link>https://docs.leafony.com/docs/environment/avr/platformio/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -204,13 +204,13 @@
         
         
         &lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;PlatformIO IDEは、Microsoft社が提供するコードエディタであるVidual Studio Code(VsCode)の拡張機能です。ビルドが早く、ライブラリやボードのバージョンがプロジェクト毎に管理されているのが特長です。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;Visual Studio Code (VSCode)のは、Microsoft社が提供する軽量ながら強力なソース コード エディターで、デスクトップ上で実行され、Windows、macOS、および Linux で使用できます。PlatformIO IDEは、VSCodeの拡張機能で、ビルドが早く、ライブラリやボードのバージョンがプロジェクト毎に管理されているのが特長です。&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Basic Kit 2 &lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;パソコン (Windows、Mac OS X 、または Linux)&lt;/br&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;インストール&#34;&gt;インストール&lt;/h2&gt;
+&lt;h2 id=&#34;事前準備&#34;&gt;事前準備&lt;/h2&gt;
 &lt;h3 id=&#34;pythonのインストール&#34;&gt;Pythonのインストール&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;PlatformIO IDEを動かすには、Pythonが必要です。まず、&lt;a href=&#34;https://www.python.org/downloads/&#34;&gt;Python&lt;/a&gt;をインストールして下さい。&lt;/br&gt;&lt;/li&gt;
@@ -218,17 +218,28 @@
 &lt;h3 id=&#34;platformio-ideのインストール&#34;&gt;PlatformIO IDEのインストール&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;PlatformIO IDEは、VSCodeの拡張機能なので、まず、&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VSCode&lt;/a&gt;をインストールして下さい。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;左側の列にある「拡張機能」をクリックします。&lt;/li&gt;
-&lt;li&gt;検索窓が現れたら、&lt;code&gt;Japanese Language Pack for Visual Studio Code&lt;/code&gt;を入力し、日本語の拡張機能をインストールし、次に &lt;code&gt;platformio ide&lt;/code&gt;を入力し、PlatformIO IDEをインストールして下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;左側の列にある「拡張機能」をクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;検索窓が現れたら、&lt;code&gt;Japanese Language Pack for Visual Studio Code&lt;/code&gt;を入力し、日本語の拡張機能をインストールします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;次に &lt;code&gt;platformio ide&lt;/code&gt;を入力し、PlatformIO IDEをインストールが出来れば、事前準備は完了します。&lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./platformio_1.png&#34; width=&#34;640&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;./platformio_1.png&#34; width=&#34;640&#34;&gt;
 &lt;h2 id=&#34;クイックスタート&#34;&gt;クイックスタート&lt;/h2&gt;
+&lt;p&gt;このクイックでは、PlatformIO IDE ワークフローの基本操作を紹介し、簡単な&amp;quot;Blink&amp;quot;の例の作成プロセスを説明します。&lt;/p&gt;
 &lt;h3 id=&#34;新規プロジェクトを作成&#34;&gt;新規プロジェクトを作成&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;code&gt;PlatformIO Home&lt;/code&gt;ボタンを押してPlatformIOのホームを表示する。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;New Project&lt;/code&gt;をクリック。&lt;/li&gt;
-&lt;li&gt;任意のプロジェクト名を指定し、&lt;code&gt;Board&lt;/code&gt;で適切なボードを選択。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;src&lt;/code&gt;フォルダに含まれる&lt;code&gt;main.cpp&lt;/code&gt;を開き、以下のコードを貼り付け。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;PlatformIO Home&lt;/code&gt;ボタンを押してPlatformIOのホームを表示する。&lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./platformio_2.png&#34; width=&#34;320&#34;&gt;&lt;/BR&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;New Project&lt;/code&gt;をクリックし、Projevt Wizardが表示いされるので、名前を&lt;code&gt;Blink&lt;/code&gt;を入力し、ボードを選択します。&lt;/br&gt;
+AVR MCUのマイコンを使用する場合は、&lt;code&gt;Arduino Pro or Pro Mini ATmega328(3.3v,8Mhz)&lt;/code&gt;を選択して下さい。&lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./platformio_3.png&#34; width=&#34;640&#34;&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;src&lt;/code&gt;フォルダに含まれる&lt;code&gt;main.cpp&lt;/code&gt;を開き、以下のコードを貼り付け。&lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./platformio_4.png&#34; width=&#34;640&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;Arduino.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
@@ -244,9 +255,9 @@
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;999&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;                       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 1秒待つ
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;&lt;code&gt;Build&lt;/code&gt;ボタンを押してプロジェクトをビルド。&lt;/li&gt;
-&lt;li&gt;LeafonyをPCに接続。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Upload&lt;/code&gt;ボタンを押してプロジェクトをLeafonyに書き込み。&lt;/li&gt;
+&lt;li&gt;PlatformIO Toolbarの&lt;code&gt;Build&lt;/code&gt;ボタンを押して、プロジェクトをビルドします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;LeafonyをPCに接続し、 &lt;code&gt;Upload&lt;/code&gt;ボタンを押して、プログラムをAVR MCUに書き込みます。&lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./platformio_5.png&#34; width=&#34;640&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;ライブラリをインストール&#34;&gt;ライブラリをインストール&lt;/h2&gt;
 &lt;ol&gt;

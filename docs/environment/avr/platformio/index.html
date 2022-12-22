@@ -21,16 +21,16 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>PlatformIO IDEの設定 | Leafony</title><meta property="og:title" content="PlatformIO IDEの設定" />
+<title>PlatformIO IDE for VSCodeの設定 | Leafony</title><meta property="og:title" content="PlatformIO IDE for VSCodeの設定" />
 <meta property="og:description" content="PlatformIO IDEでAVR MCUにプログラムを書き込む
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/environment/avr/platformio/" /><meta property="og:site_name" content="Leafony" />
 
-<meta itemprop="name" content="PlatformIO IDEの設定">
+<meta itemprop="name" content="PlatformIO IDE for VSCodeの設定">
 <meta itemprop="description" content="PlatformIO IDEでAVR MCUにプログラムを書き込む
 "><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="PlatformIO IDEの設定"/>
+<meta name="twitter:title" content="PlatformIO IDE for VSCodeの設定"/>
 <meta name="twitter:description" content="PlatformIO IDEでAVR MCUにプログラムを書き込む
 "/>
 
@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.bd46c9cd141032e5150d023c6231e01292438c07295a5edf026d4bcc0718bb56df36589ad5cf53c56f50972f4d9cab155ff09d543ae049e7dfc9084605afba34.json"
+  data-offline-search-index-json-src="/offline-search-index.0b628253600624586fccf990dff6535d9af0491125ad12695529c4b64e6300a0486884aaca306b145c4da7d52f5c6979b1c0619e2b3614e9ccc8108a7d8a1ab2.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.bd46c9cd141032e5150d023c6231e01292438c07295a5edf026d4bcc0718bb56df36589ad5cf53c56f50972f4d9cab155ff09d543ae049e7dfc9084605afba34.json"
+  data-offline-search-index-json-src="/offline-search-index.0b628253600624586fccf990dff6535d9af0491125ad12695529c4b64e6300a0486884aaca306b145c4da7d52f5c6979b1c0619e2b3614e9ccc8108a7d8a1ab2.json"
   data-offline-search-base-href="/"
 >
 
@@ -3810,7 +3810,7 @@ if (!doNotTrack) {
   <ul>
     <li><a href="#はじめに">はじめに</a></li>
     <li><a href="#用意するもの">用意するもの</a></li>
-    <li><a href="#インストール">インストール</a>
+    <li><a href="#事前準備">事前準備</a>
       <ul>
         <li><a href="#pythonのインストール">Pythonのインストール</a></li>
         <li><a href="#platformio-ideのインストール">PlatformIO IDEのインストール</a></li>
@@ -3885,17 +3885,17 @@ if (!doNotTrack) {
 
             
 <div class="td-content">
-	<h1>PlatformIO IDEの設定</h1>
+	<h1>PlatformIO IDE for VSCodeの設定</h1>
         <div class="lead">PlatformIO IDEでAVR MCUにプログラムを書き込む</div>
 	
 	<h2 id="はじめに">はじめに</h2>
-<p>PlatformIO IDEは、Microsoft社が提供するコードエディタであるVidual Studio Code(VsCode)の拡張機能です。ビルドが早く、ライブラリやボードのバージョンがプロジェクト毎に管理されているのが特長です。</br></p>
+<p>Visual Studio Code (VSCode)のは、Microsoft社が提供する軽量ながら強力なソース コード エディターで、デスクトップ上で実行され、Windows、macOS、および Linux で使用できます。PlatformIO IDEは、VSCodeの拡張機能で、ビルドが早く、ライブラリやボードのバージョンがプロジェクト毎に管理されているのが特長です。</br></p>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
 <li>Basic Kit 2 </br></li>
 <li>パソコン (Windows、Mac OS X 、または Linux)</br></li>
 </ul>
-<h2 id="インストール">インストール</h2>
+<h2 id="事前準備">事前準備</h2>
 <h3 id="pythonのインストール">Pythonのインストール</h3>
 <ol>
 <li>PlatformIO IDEを動かすには、Pythonが必要です。まず、<a href="https://www.python.org/downloads/">Python</a>をインストールして下さい。</br></li>
@@ -3903,17 +3903,28 @@ if (!doNotTrack) {
 <h3 id="platformio-ideのインストール">PlatformIO IDEのインストール</h3>
 <ol>
 <li>PlatformIO IDEは、VSCodeの拡張機能なので、まず、<a href="https://code.visualstudio.com/">VSCode</a>をインストールして下さい。</br></li>
-<li>左側の列にある「拡張機能」をクリックします。</li>
-<li>検索窓が現れたら、<code>Japanese Language Pack for Visual Studio Code</code>を入力し、日本語の拡張機能をインストールし、次に <code>platformio ide</code>を入力し、PlatformIO IDEをインストールして下さい。</br></li>
+<li>左側の列にある「拡張機能」をクリックします。</br></li>
+<li>検索窓が現れたら、<code>Japanese Language Pack for Visual Studio Code</code>を入力し、日本語の拡張機能をインストールします。</br></li>
+<li>次に <code>platformio ide</code>を入力し、PlatformIO IDEをインストールが出来れば、事前準備は完了します。</br></br>
+<img src="./platformio_1.png" width="640"></li>
 </ol>
-<img src="./platformio_1.png" width="640">
 <h2 id="クイックスタート">クイックスタート</h2>
+<p>このクイックでは、PlatformIO IDE ワークフローの基本操作を紹介し、簡単な&quot;Blink&quot;の例の作成プロセスを説明します。</p>
 <h3 id="新規プロジェクトを作成">新規プロジェクトを作成</h3>
 <ol>
-<li><code>PlatformIO Home</code>ボタンを押してPlatformIOのホームを表示する。</li>
-<li><code>New Project</code>をクリック。</li>
-<li>任意のプロジェクト名を指定し、<code>Board</code>で適切なボードを選択。</li>
-<li><code>src</code>フォルダに含まれる<code>main.cpp</code>を開き、以下のコードを貼り付け。</li>
+<li>
+<p><code>PlatformIO Home</code>ボタンを押してPlatformIOのホームを表示する。</br></br>
+<img src="./platformio_2.png" width="320"></BR></p>
+</li>
+<li>
+<p><code>New Project</code>をクリックし、Projevt Wizardが表示いされるので、名前を<code>Blink</code>を入力し、ボードを選択します。</br>
+AVR MCUのマイコンを使用する場合は、<code>Arduino Pro or Pro Mini ATmega328(3.3v,8Mhz)</code>を選択して下さい。</br></br>
+<img src="./platformio_3.png" width="640"></br></p>
+</li>
+<li>
+<p><code>src</code>フォルダに含まれる<code>main.cpp</code>を開き、以下のコードを貼り付け。</br></br>
+<img src="./platformio_4.png" width="640"></p>
+</li>
 </ol>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
@@ -3929,9 +3940,9 @@ if (!doNotTrack) {
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">999</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><ol start="5">
-<li><code>Build</code>ボタンを押してプロジェクトをビルド。</li>
-<li>LeafonyをPCに接続。</li>
-<li><code>Upload</code>ボタンを押してプロジェクトをLeafonyに書き込み。</li>
+<li>PlatformIO Toolbarの<code>Build</code>ボタンを押して、プロジェクトをビルドします。</br></li>
+<li>LeafonyをPCに接続し、 <code>Upload</code>ボタンを押して、プログラムをAVR MCUに書き込みます。</br></br>
+<img src="./platformio_5.png" width="640"></li>
 </ol>
 <h2 id="ライブラリをインストール">ライブラリをインストール</h2>
 <ol>
@@ -4066,7 +4077,7 @@ lib_deps =
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 December 21, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 December 22, 2022
 </div>
 </div>
 
