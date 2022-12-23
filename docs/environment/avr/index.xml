@@ -220,16 +220,19 @@
 &lt;li&gt;PlatformIO IDEは、VSCodeの拡張機能なので、まず、&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VSCode&lt;/a&gt;をインストールして下さい。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;左側の列にある「拡張機能」をクリックします。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;検索窓が現れたら、&lt;code&gt;Japanese Language Pack for Visual Studio Code&lt;/code&gt;を入力し、日本語の拡張機能をインストールします。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;次に &lt;code&gt;platformio ide&lt;/code&gt;を入力し、PlatformIO IDEをインストールが出来れば、事前準備は完了します。&lt;/br&gt;&lt;/br&gt;
+&lt;li&gt;次に &lt;code&gt;platformio ide&lt;/code&gt;を入力し、PlatformIO IDEをインストールが出来れば、事前準備は完了です。&lt;/br&gt;&lt;/br&gt;
 &lt;img src=&#34;./platformio_1.png&#34; width=&#34;640&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;クイックスタート&#34;&gt;クイックスタート&lt;/h2&gt;
-&lt;p&gt;このクイックでは、PlatformIO IDE ワークフローの基本操作を紹介し、簡単な&amp;quot;Blink&amp;quot;の例の作成プロセスを説明します。&lt;/p&gt;
+&lt;p&gt;このクイックでは、PlatformIO IDE ワークフローの基本操作を紹介し、簡単な「Blink」の作成プロセスを説明します。&lt;/p&gt;
 &lt;h3 id=&#34;新規プロジェクトを作成&#34;&gt;新規プロジェクトを作成&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;PlatformIO Home&lt;/code&gt;ボタンを押してPlatformIOのホームを表示する。&lt;/br&gt;&lt;/br&gt;
-&lt;img src=&#34;./platformio_2.png&#34; width=&#34;320&#34;&gt;&lt;/BR&gt;&lt;/p&gt;
+&lt;p&gt;VSCodeを立ち上げ、「ファイル」→ 「新しいウィンドウ」を開きます。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;VSCode ステータス バー (画面一番下のバー)の&lt;code&gt;PlatformIO Home&lt;/code&gt;ボタンを押します。&lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./platformio_2.png&#34; width=&#34;320&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;New Project&lt;/code&gt;をクリックし、Projevt Wizardが表示いされるので、名前を&lt;code&gt;Blink&lt;/code&gt;を入力し、ボードを選択します。&lt;/br&gt;
@@ -237,7 +240,7 @@ AVR MCUのマイコンを使用する場合は、&lt;code&gt;Arduino Pro or Pro 
 &lt;img src=&#34;./platformio_3.png&#34; width=&#34;640&#34;&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;src&lt;/code&gt;フォルダに含まれる&lt;code&gt;main.cpp&lt;/code&gt;を開き、以下のコードを貼り付け。&lt;/br&gt;&lt;/br&gt;
+&lt;p&gt;&lt;code&gt;src&lt;/code&gt;フォルダの&lt;code&gt;main.cpp&lt;/code&gt;を開き、以下のコードを貼り付けます。&lt;/br&gt;&lt;/br&gt;
 &lt;img src=&#34;./platformio_4.png&#34; width=&#34;640&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
@@ -255,25 +258,41 @@ AVR MCUのマイコンを使用する場合は、&lt;code&gt;Arduino Pro or Pro 
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;999&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;                       &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// 1秒待つ
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;PlatformIO Toolbarの&lt;code&gt;Build&lt;/code&gt;ボタンを押して、プロジェクトをビルドします。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;LeafonyをPCに接続し、 &lt;code&gt;Upload&lt;/code&gt;ボタンを押して、プログラムをAVR MCUに書き込みます。&lt;/br&gt;&lt;/br&gt;
-&lt;img src=&#34;./platformio_5.png&#34; width=&#34;640&#34;&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;platformio.ini のファイルを開き、Projectで定義した&lt;a href=&#34;https://docs.platformio.org/en/latest/platforms/index.html#development-platforms&#34;&gt;platform&lt;/a&gt;、 &lt;a href=&#34;https://docs.platformio.org/en/latest/platforms/index.html#development-platforms&#34;&gt;board&lt;/a&gt;、&lt;a href=&#34;https://docs.platformio.org/en/latest/platforms/index.html#development-platforms&#34;&gt;framework&lt;/a&gt;が、書かれていることを確認します。&lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./platformio_7.png&#34; width=&#34;640&#34;&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;今回のBrinkの場合は不要ですが、シリアル通信のボーレートとライブラリは、platformio.ini の最後の行に、&lt;code&gt;monitor_speed =&lt;/code&gt;、&lt;code&gt;lib_deps =&lt;/code&gt;で定義出来ます。　&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;PlatformIO Toolbarの&lt;code&gt;Build&lt;/code&gt;ボタンを押して、プロジェクトをビルドします。&lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./platformio_5.png&#34; width=&#34;640&#34;&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;LeafonyをPCに接続し、 &lt;code&gt;Upload&lt;/code&gt;ボタンを押して、プログラムをAVR MCUに書き込みます。&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;PlatformIO ツールバーに関して&lt;/br&gt;
+PlatformIO IDE ツールバーは 、VSCode ステータス バー (画面一番下のバー) にあり、以下のコマンドへのアクセス ボタンがあります。
+詳しくは、 &lt;a href=&#34;https://docs.platformio.org/en/latest/integration/ide/vscode.html#platformio-toolbar&#34; target=&#34;_blank&#34;&gt;こちらを&lt;/a&gt;参照して下さい。 &lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;ライブラリをインストール&#34;&gt;ライブラリをインストール&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;PlatformIO Home&lt;/code&gt;ボタンを押してPlatformIOのホームを表示する。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Libraries&lt;/code&gt;タブを開く。&lt;/li&gt;
-&lt;li&gt;検索窓に&lt;code&gt;OPT3001&lt;/code&gt;と入力し、照度センサOPT3001用ライブラリを検索。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ClosedCube OPT3001&lt;/code&gt;をクリック。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Add to Project&lt;/code&gt;ボタンをクリックし、&lt;code&gt;Add&lt;/code&gt;で追加。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;platformio.ini&lt;/code&gt;を開く。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;lib_deps&lt;/code&gt;オプションに&lt;code&gt;closedcube/ClosedCube OPT3001 @ &amp;lt;バージョン&amp;gt;&lt;/code&gt;が追加されているか確認。&lt;/li&gt;
-&lt;li&gt;下記のコードを貼り付けると、上記の操作をしなくても簡単にライブラリの環境を設定することができる。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;ライブラリのインストール&#34;&gt;ライブラリのインストール&lt;/h2&gt;
-&lt;p&gt;プログラムを書き込むには、ライブラリのインストールが必要なリーフがあります。下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきます。&lt;/p&gt;
-&lt;h3 id=&#34;1-使用するライブラリ&#34;&gt;1. 使用するライブラリ&lt;/h3&gt;
-&lt;p&gt;各Kitで使用するライブラリは以下の通りです。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PlatformIO Home&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;Build&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;Upload&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;Clean&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;Serial Port Monitor&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;PlatformIO Core (CLI)&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;Project environment switcher &lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./platformio_6.png&#34; width=&#34;640&#34;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h2&gt;
+&lt;p&gt;ライブラリは、&lt;/p&gt;
+&lt;p&gt;のインストールが必要なリーフがあります。下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきます。&lt;/p&gt;
+&lt;h3 id=&#34;使用するライブラリ&#34;&gt;使用するライブラリ&lt;/h3&gt;
+&lt;p&gt;各リーフが使用するライブラリは以下の通りです。&lt;/p&gt;
 &lt;table class=&#34;table-hover&#34;&gt;
   &lt;thread&gt;
     &lt;tr&gt;
@@ -358,21 +377,18 @@ AVR MCUのマイコンを使用する場合は、&lt;code&gt;Arduino Pro or Pro 
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;pre&gt;&lt;code&gt;[env:pro8MHzatmega328]
-platform = atmelavr
-board = pro8MHzatmega328
-framework = arduino
-lib_deps = 
-	closedcube/ClosedCube OPT3001 @ ^1.1.2
-	adafruit/Adafruit LIS3DH@1.1.2
-	https://github.com/ameltech/sme-hts221-library.git
-	https://github.com/Leafony/TBGLib
-	tomozh/ST7032@0.0.0-alpha+sha.501bf64fe6
-	paulstoffregen/MsTimer2@^1.1
-	adafruit/RTClib@^1.11.2
-	adafruit/Adafruit Unified Sensor@^1.1.4
-	adafruit/Adafruit BusIO@^1.5.0
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;書き込みとシリアルモニタ&#34;&gt;書き込みとシリアルモニタ&lt;/h2&gt;
+&lt;h2 id=&#34;ライブラリをインストール&#34;&gt;ライブラリをインストール&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;PlatformIO Home&lt;/code&gt;ボタンを押してPlatformIOのホームを表示する。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Libraries&lt;/code&gt;タブを開く。&lt;/li&gt;
+&lt;li&gt;検索窓に&lt;code&gt;OPT3001&lt;/code&gt;と入力し、照度センサOPT3001用ライブラリを検索。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ClosedCube OPT3001&lt;/code&gt;をクリック。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Add to Project&lt;/code&gt;ボタンをクリックし、&lt;code&gt;Add&lt;/code&gt;で追加。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;platformio.ini&lt;/code&gt;を開く。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;lib_deps&lt;/code&gt;オプションに&lt;code&gt;closedcube/ClosedCube OPT3001 @ &amp;lt;バージョン&amp;gt;&lt;/code&gt;が追加されているか確認。&lt;/li&gt;
+&lt;li&gt;下記のコードを貼り付けると、上記の操作をしなくても簡単にライブラリの環境を設定することができる。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;書き込みとシリアルモニタ&#34;&gt;書き込みとシリアルモニタ&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;Serial Port Monitor&lt;/code&gt;ボタンを押すと、シリアルモニタが表示される。&lt;/p&gt;
 &lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
 &lt;p&gt;PlatformIO for VSCodeのより詳細な使い方は、公式ドキュメントを参考。&lt;/p&gt;
