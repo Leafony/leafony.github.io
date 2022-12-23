@@ -234,7 +234,6 @@
 &lt;/ol&gt;
 &lt;h2 id=&#34;クイックスタート&#34;&gt;クイックスタート&lt;/h2&gt;
 &lt;p&gt;このクイックでは、PlatformIO IDE ワークフローの基本操作を紹介し、簡単な「Blink」の作成プロセスを説明します。&lt;/p&gt;
-&lt;h3 id=&#34;新規プロジェクトを作成&#34;&gt;新規プロジェクトを作成&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;VSCodeを立ち上げ、「ファイル」→ 「新しいウィンドウ」を開きます。&lt;/p&gt;
@@ -253,7 +252,7 @@
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;src&lt;/code&gt;フォルダの&lt;code&gt;main.cpp&lt;/code&gt;を開き、以下のコードを貼り付けます。&lt;/br&gt;&lt;/br&gt;
-&lt;img src=&#34;./platformio_4.png&#34; width=&#34;440&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;./platformio_4.png&#34; width=&#34;640&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;Arduino.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
@@ -272,7 +271,7 @@
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;platformio.ini のファイルを開き、Projectで定義した&lt;a href=&#34;https://docs.platformio.org/en/latest/platforms/index.html#development-platforms&#34;&gt;platform&lt;/a&gt;、 &lt;a href=&#34;https://docs.platformio.org/en/latest/platforms/index.html#development-platforms&#34;&gt;board&lt;/a&gt;、&lt;a href=&#34;https://docs.platformio.org/en/latest/platforms/index.html#development-platforms&#34;&gt;framework&lt;/a&gt;が、書かれていることを確認します。&lt;/br&gt;&lt;/br&gt;
-&lt;img src=&#34;./platformio_7.png&#34; width=&#34;440&#34;&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;img src=&#34;./platformio_7.png&#34; width=&#34;640&#34;&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;今回のBrinkの場合は不要ですが、シリアル通信のボーレートとライブラリは、platformio.ini の最後の行に、&lt;code&gt;monitor_speed =&lt;/code&gt;、&lt;code&gt;lib_deps =&lt;/code&gt;で定義します。　&lt;/br&gt;&lt;/p&gt;
