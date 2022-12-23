@@ -22,16 +22,16 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>PlatformIO IDE for VSCodeの設定 | Leafony</title><meta property="og:title" content="PlatformIO IDE for VSCodeの設定" />
-<meta property="og:description" content="PlatformIO IDEでAVR MCUにプログラムを書き込む
+<meta property="og:description" content="PlatformIO IDEでマイコンにプログラムを書き込む
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/environment/avr/platformio/" /><meta property="og:site_name" content="Leafony" />
 
 <meta itemprop="name" content="PlatformIO IDE for VSCodeの設定">
-<meta itemprop="description" content="PlatformIO IDEでAVR MCUにプログラムを書き込む
+<meta itemprop="description" content="PlatformIO IDEでマイコンにプログラムを書き込む
 "><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="PlatformIO IDE for VSCodeの設定"/>
-<meta name="twitter:description" content="PlatformIO IDEでAVR MCUにプログラムを書き込む
+<meta name="twitter:description" content="PlatformIO IDEでマイコンにプログラムを書き込む
 "/>
 
 
@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d7e4019998210f9c185de4eeea5b9b1e7f3b202f824e0dea405044b94de4226a39b6af0dd2923b38f38abd0a2653eaf9b3113e298f5601627b52bd21d6ef81f4.json"
+  data-offline-search-index-json-src="/offline-search-index.56570bf279cd9449e327d96c684a5b24665239325aaff4ffc9dd7c8149acb437ce8fe60358c351efb489567bb499d6fc10fea750052d6c8afb224fc55a668e07.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d7e4019998210f9c185de4eeea5b9b1e7f3b202f824e0dea405044b94de4226a39b6af0dd2923b38f38abd0a2653eaf9b3113e298f5601627b52bd21d6ef81f4.json"
+  data-offline-search-index-json-src="/offline-search-index.56570bf279cd9449e327d96c684a5b24665239325aaff4ffc9dd7c8149acb437ce8fe60358c351efb489567bb499d6fc10fea750052d6c8afb224fc55a668e07.json"
   data-offline-search-base-href="/"
 >
 
@@ -3814,6 +3814,8 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#pythonのインストール">Pythonのインストール</a></li>
         <li><a href="#platformio-ideのインストール">PlatformIO IDEのインストール</a></li>
+        <li><a href="#stm32cubeprog-のインストールstm32-mcuの場合のみ">STM32CubeProg のインストール(STM32 MCUの場合のみ)</a></li>
+        <li><a href="#ststm321540-のダウンロードstm32-mcuの場合のみ"><a href="mailto:ststm32@15.4.0">ststm32@15.4.0</a> のダウンロード(STM32 MCUの場合のみ)</a></li>
       </ul>
     </li>
     <li><a href="#クイックスタート">クイックスタート</a>
@@ -3821,14 +3823,11 @@ if (!doNotTrack) {
         <li><a href="#新規プロジェクトを作成">新規プロジェクトを作成</a></li>
       </ul>
     </li>
-    <li><a href="#ライブラリ">ライブラリ</a>
-      <ul>
-        <li><a href="#使用するライブラリ">使用するライブラリ</a></li>
-      </ul>
-    </li>
-    <li><a href="#ライブラリをインストール">ライブラリをインストール</a></li>
-    <li><a href="#書き込みとシリアルモニタ">書き込みとシリアルモニタ</a></li>
-    <li><a href="#参考">参考</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#ライブラリのインストールの仕方">ライブラリのインストールの仕方</a></li>
+    <li><a href="#platformio-のドキュメント">PlatformIO のドキュメント</a></li>
   </ul>
 </nav>
 
@@ -3886,7 +3885,7 @@ if (!doNotTrack) {
             
 <div class="td-content">
 	<h1>PlatformIO IDE for VSCodeの設定</h1>
-        <div class="lead">PlatformIO IDEでAVR MCUにプログラムを書き込む</div>
+        <div class="lead">PlatformIO IDEでマイコンにプログラムを書き込む</div>
 	
 	<h2 id="はじめに">はじめに</h2>
 <p>Visual Studio Code (VSCode)のは、Microsoft社が提供する軽量ながら強力なソース コード エディターで、デスクトップ上で実行され、Windows、macOS、および Linux で使用できます。PlatformIO IDEは、VSCodeの拡張機能で、ビルドが早く、ライブラリやボードのバージョンがプロジェクト毎に管理されているのが特長です。</br></p>
@@ -3908,6 +3907,15 @@ if (!doNotTrack) {
 <li>次に <code>platformio ide</code>を入力し、PlatformIO IDEをインストールが出来れば、事前準備は完了です。</br></br>
 <img src="./platformio_1.png" width="640"></li>
 </ol>
+<h3 id="stm32cubeprog-のインストールstm32-mcuの場合のみ">STM32CubeProg のインストール(STM32 MCUの場合のみ)</h3>
+<ol>
+<li>プログラムを書き込むには、<a href="https://www.stmcu.jp/design/sw_dev/pc_soft/58442/">STM32CubeProg</a>のインストール<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>が必要です。下記より、インストールしてください。<br></li>
+</ol>
+<h3 id="ststm321540-のダウンロードstm32-mcuの場合のみ"><a href="mailto:ststm32@15.4.0">ststm32@15.4.0</a> のダウンロード(STM32 MCUの場合のみ)</h3>
+<ol>
+<li><a href="mailto:ststm32@15.4.0">ststm32@15.4.0</a> のフォルダをダウンロードして、以下のフォルダの下において下さい。(暫定対応)</br>
+<code>C:\Users\ユーザ名\.platformio\platforms</code></li>
+</ol>
 <h2 id="クイックスタート">クイックスタート</h2>
 <p>このクイックでは、PlatformIO IDE ワークフローの基本操作を紹介し、簡単な「Blink」の作成プロセスを説明します。</p>
 <h3 id="新規プロジェクトを作成">新規プロジェクトを作成</h3>
@@ -3920,13 +3928,16 @@ if (!doNotTrack) {
 <img src="./platformio_2.png" width="320"></p>
 </li>
 <li>
-<p><code>New Project</code>をクリックし、Projevt Wizardが表示いされるので、名前を<code>Blink</code>を入力し、ボードを選択します。</br>
-AVR MCUのマイコンを使用する場合は、<code>Arduino Pro or Pro Mini ATmega328(3.3v,8Mhz)</code>を選択して下さい。</br></br>
-<img src="./platformio_3.png" width="640"></br></p>
+<p><code>New Project</code>をクリックし、Projevt Wizardが表示されるので、<code>Name</code>、<code>Boad</code>、<code>Framework</code>を入力します。MCUリーフと<code>Boad</code>の関係は、以下の通りです。</br></p>
+</li>
+<li>
+<p>名前を<code>Blink</code>を入力し、ボードを選択します。</br>
+今回は、AVR MCUのマイコンを使用するので、<code>Arduino Pro or Pro Mini ATmega328(3.3v,8Mhz)</code>を選択して下さい。</br></br>
+<img src="./platformio_3.png" width="440"></br></p>
 </li>
 <li>
 <p><code>src</code>フォルダの<code>main.cpp</code>を開き、以下のコードを貼り付けます。</br></br>
-<img src="./platformio_4.png" width="640"></p>
+<img src="./platformio_4.png" width="440"></p>
 </li>
 </ol>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
@@ -3942,17 +3953,17 @@ AVR MCUのマイコンを使用する場合は、<code>Arduino Pro or Pro Mini A
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// LEDを消灯
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">999</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><ol start="5">
+</code></pre></div><ol start="6">
 <li>
 <p>platformio.ini のファイルを開き、Projectで定義した<a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">platform</a>、 <a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">board</a>、<a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">framework</a>が、書かれていることを確認します。</br></br>
-<img src="./platformio_7.png" width="640"></br></p>
+<img src="./platformio_7.png" width="440"></br></p>
 </li>
 <li>
-<p>今回のBrinkの場合は不要ですが、シリアル通信のボーレートとライブラリは、platformio.ini の最後の行に、<code>monitor_speed =</code>、<code>lib_deps =</code>で定義出来ます。　</br></p>
+<p>今回のBrinkの場合は不要ですが、シリアル通信のボーレートとライブラリは、platformio.ini の最後の行に、<code>monitor_speed =</code>、<code>lib_deps =</code>で定義します。　</br></p>
 </li>
 <li>
 <p>PlatformIO Toolbarの<code>Build</code>ボタンを押して、プロジェクトをビルドします。</br></br>
-<img src="./platformio_5.png" width="640"></p>
+<img src="./platformio_5.png" width="440"></p>
 </li>
 <li>
 <p>LeafonyをPCに接続し、 <code>Upload</code>ボタンを押して、プログラムをAVR MCUに書き込みます。</br></p>
@@ -3971,13 +3982,21 @@ PlatformIO IDE ツールバーは 、VSCode ステータス バー (画面一番
 <li>Serial Port Monitor</br></li>
 <li>PlatformIO Core (CLI)</br></li>
 <li>Project environment switcher </br></br>
-<img src="./platformio_6.png" width="640"></li>
+<img src="./platformio_6.png" width="420"></br></br></li>
 </ul>
-<h2 id="ライブラリ">ライブラリ</h2>
-<p>ライブラリは、</p>
-<p>のインストールが必要なリーフがあります。下記の手順を参考に、あらかじめ全てののライブラリをインストールしておきます。</p>
-<h3 id="使用するライブラリ">使用するライブラリ</h3>
-<p>各リーフが使用するライブラリは以下の通りです。</p>
+<h1 id="詳しい使い方">詳しい使い方</h1>
+<h2 id="ライブラリのインストールの仕方">ライブラリのインストールの仕方</h2>
+<ol>
+<li><code>PlatformIO Home</code>ボタンを押してPlatformIOのホームを表示する。</li>
+<li><code>Libraries</code>タブを開く。</li>
+<li>検索窓に<code>OPT3001</code>と入力し、照度センサOPT3001用ライブラリを検索。</li>
+<li><code>ClosedCube OPT3001</code>をクリック。</li>
+<li><code>Add to Project</code>ボタンをクリックし、<code>Add</code>で追加。</li>
+<li><code>platformio.ini</code>を開く。</li>
+<li><code>lib_deps</code>オプションに<code>closedcube/ClosedCube OPT3001 @ &lt;バージョン&gt;</code>が追加されているか確認。</li>
+<li>githubから直接出来る</li>
+<li>各リーフのライブラリ一覧</li>
+</ol>
 <table class="table-hover">
   <thread>
     <tr>
@@ -4062,27 +4081,21 @@ PlatformIO IDE ツールバーは 、VSCode ステータス バー (画面一番
     </tr>
   </tbody>
 </table>
-<h2 id="ライブラリをインストール">ライブラリをインストール</h2>
-<ol>
-<li><code>PlatformIO Home</code>ボタンを押してPlatformIOのホームを表示する。</li>
-<li><code>Libraries</code>タブを開く。</li>
-<li>検索窓に<code>OPT3001</code>と入力し、照度センサOPT3001用ライブラリを検索。</li>
-<li><code>ClosedCube OPT3001</code>をクリック。</li>
-<li><code>Add to Project</code>ボタンをクリックし、<code>Add</code>で追加。</li>
-<li><code>platformio.ini</code>を開く。</li>
-<li><code>lib_deps</code>オプションに<code>closedcube/ClosedCube OPT3001 @ &lt;バージョン&gt;</code>が追加されているか確認。</li>
-<li>下記のコードを貼り付けると、上記の操作をしなくても簡単にライブラリの環境を設定することができる。</li>
-</ol>
-<h2 id="書き込みとシリアルモニタ">書き込みとシリアルモニタ</h2>
-<p><code>Serial Port Monitor</code>ボタンを押すと、シリアルモニタが表示される。</p>
-<h2 id="参考">参考</h2>
-<p>PlatformIO for VSCodeのより詳細な使い方は、公式ドキュメントを参考。</p>
+<h2 id="platformio-のドキュメント">PlatformIO のドキュメント</h2>
 <ul>
 <li><a href="https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode">https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode</a></li>
 </ul>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
-</p>
+</p><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Windows 64bitのV2.6.0とV2.4.0は動作確認済みですが、v2.5.0は動作しません。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
         <div class="section-index">
     
     
@@ -4093,7 +4106,7 @@ PlatformIO IDE ツールバーは 、VSCode ステータス バー (画面一番
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 December 23, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 December 24, 2022
 </div>
 </div>
 
