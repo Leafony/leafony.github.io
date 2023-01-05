@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c6401e0b089ed6fdff019a177d11d5198d44a0885740aa5717e53d718b9578f2b59c3e678dafe04aa523df6201b82573e404de153c2d5a81840b41b689a96215.json"
+  data-offline-search-index-json-src="/offline-search-index.e6aa7d608a214dd02030adefe3fbe3d07ace2bdd848b9e8e8479fa0895d9d5593e77678c4124bcdeb7c4b7f1b20c14f06b1f25842161f3ece96085bb48bc2951.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c6401e0b089ed6fdff019a177d11d5198d44a0885740aa5717e53d718b9578f2b59c3e678dafe04aa523df6201b82573e404de153c2d5a81840b41b689a96215.json"
+  data-offline-search-index-json-src="/offline-search-index.e6aa7d608a214dd02030adefe3fbe3d07ace2bdd848b9e8e8479fa0895d9d5593e77678c4124bcdeb7c4b7f1b20c14f06b1f25842161f3ece96085bb48bc2951.json"
   data-offline-search-base-href="/"
 >
 
@@ -3814,16 +3814,17 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#pythonのインストール">Pythonのインストール</a></li>
         <li><a href="#platformio-ideのインストール">PlatformIO IDEのインストール</a></li>
-        <li><a href="#stm32cubeprog-のインストールstm32-mcuの場合のみ">STM32CubeProg のインストール(STM32 MCUの場合のみ)</a></li>
-        <li><a href="#ststm321540-のダウンロードstm32-mcuの場合のみ"><a href="mailto:ststm32@15.4.0">ststm32@15.4.0</a> のダウンロード(STM32 MCUの場合のみ)</a></li>
       </ul>
     </li>
     <li><a href="#クイックスタート">クイックスタート</a></li>
   </ul>
 
   <ul>
-    <li><a href="#ライブラリのインストールの仕方">ライブラリのインストールの仕方</a></li>
-    <li><a href="#platformio-のドキュメント">PlatformIO のドキュメント</a></li>
+    <li><a href="#書き込み時のcomポート">書き込み時のCOMポート</a></li>
+    <li><a href="#シリアル通信のボーレート">シリアル通信のボーレート</a></li>
+    <li><a href="#platformio-ideのツールバー">PlatformIO IDEのツールバー</a></li>
+    <li><a href="#ライブラリ">ライブラリ</a></li>
+    <li><a href="#参考">参考</a></li>
   </ul>
 </nav>
 
@@ -3904,15 +3905,6 @@ if (!doNotTrack) {
 <li>次に <code>platformio ide</code>を入力し、PlatformIO IDEをインストールが出来れば、事前準備は完了です。</br></br>
 <img src="./platformio_1.png" width="440"></li>
 </ol>
-<h3 id="stm32cubeprog-のインストールstm32-mcuの場合のみ">STM32CubeProg のインストール(STM32 MCUの場合のみ)</h3>
-<ol>
-<li>プログラムを書き込むには、<a href="https://www.stmcu.jp/design/sw_dev/pc_soft/58442/">STM32CubeProg</a>のインストール<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>が必要です。下記より、インストールしてください。<br></li>
-</ol>
-<h3 id="ststm321540-のダウンロードstm32-mcuの場合のみ"><a href="mailto:ststm32@15.4.0">ststm32@15.4.0</a> のダウンロード(STM32 MCUの場合のみ)</h3>
-<ol>
-<li><a href="mailto:ststm32@15.4.0">ststm32@15.4.0</a> のフォルダをダウンロードして、以下のフォルダの下において下さい。(暫定対応)</br>
-<code>C:\Users\ユーザ名\.platformio\platforms</code></li>
-</ol>
 <h2 id="クイックスタート">クイックスタート</h2>
 <p>このクイックでは、PlatformIO IDE ワークフローの基本操作を紹介し、簡単な「Blink」の作成プロセスを説明します。</p>
 <ol>
@@ -3955,21 +3947,22 @@ if (!doNotTrack) {
 <img src="./platformio_7.png" width="640"></br></p>
 </li>
 <li>
-<p>今回のBrinkの場合は不要ですが、シリアル通信のボーレートとライブラリは、platformio.ini の最後の行に、<code>monitor_speed =</code>、<code>lib_deps =</code>で定義します。　</br></p>
-</li>
-<li>
 <p>PlatformIO Toolbarの<code>Build</code>ボタンを押して、プロジェクトをビルドします。</br></br>
 <img src="./platformio_5.png" width="440"></p>
 </li>
 <li>
 <p>LeafonyをPCに接続し、 <code>Upload</code>ボタンを押して、プログラムをAVR MCUに書き込みます。</br></p>
 </li>
-<li>
-<p>PlatformIO ツールバーに関して</br>
-PlatformIO IDE ツールバーは 、VSCode ステータス バー (画面一番下のバー) にあり、以下のコマンドへのアクセス ボタンがあります。
-詳しくは、 <a href="https://docs.platformio.org/en/latest/integration/ide/vscode.html#platformio-toolbar" target="_blank">こちらを</a>参照して下さい。 </br></p>
-</li>
 </ol>
+</br>
+<h1 id="詳しい使い方">詳しい使い方</h1>
+<h2 id="書き込み時のcomポート">書き込み時のCOMポート</h2>
+<p>書き込み時のCOMポートは、自動検出されるため指定する必要はありません。</br></p>
+<h2 id="シリアル通信のボーレート">シリアル通信のボーレート</h2>
+<p>シリアル通信のボーレートは、platformio.ini の最後の行に<code>monitor_speed =</code>で定義します。　</br></p>
+<h2 id="platformio-ideのツールバー">PlatformIO IDEのツールバー</h2>
+<p>PlatformIO IDE ツールバーは 、VSCode ステータス バー (画面一番下のバー) にあり、以下のコマンドへのアクセス ボタンがあります。
+詳しくは、 <a href="https://docs.platformio.org/en/latest/integration/ide/vscode.html#platformio-toolbar" target="_blank">こちらを</a>参照して下さい。 </br></p>
 <ul>
 <li>PlatformIO Home</br></li>
 <li>Build</br></li>
@@ -3980,18 +3973,17 @@ PlatformIO IDE ツールバーは 、VSCode ステータス バー (画面一番
 <li>Project environment switcher </br></br>
 <img src="./platformio_6.png" width="420"></br></br></li>
 </ul>
-<h1 id="詳しい使い方">詳しい使い方</h1>
-<h2 id="ライブラリのインストールの仕方">ライブラリのインストールの仕方</h2>
+<h2 id="ライブラリ">ライブラリ</h2>
 <ol>
-<li><code>PlatformIO Home</code>ボタンを押してPlatformIOのホームを表示する。</li>
-<li><code>Libraries</code>タブを開く。</li>
-<li>検索窓に<code>OPT3001</code>と入力し、照度センサOPT3001用ライブラリを検索。</li>
-<li><code>ClosedCube OPT3001</code>をクリック。</li>
-<li><code>Add to Project</code>ボタンをクリックし、<code>Add</code>で追加。</li>
-<li><code>platformio.ini</code>を開く。</li>
-<li><code>lib_deps</code>オプションに<code>closedcube/ClosedCube OPT3001 @ &lt;バージョン&gt;</code>が追加されているか確認。</li>
-<li>githubから直接出来る</li>
-<li>各リーフのライブラリ一覧</li>
+<li>
+<p>インストールの仕方
+ライブラリは、platformio.ini の最後の行に、<code>lib_deps =</code>で定義すれば、PCにインストールされます。定義の仕方は、GitHubのURLを直接指定する方法と、<code>Libraries</code>で指定する方法のふたつがあります。
+<code>Libraries</code>には、事前にPlatformIO Registryに登録されたものだけが参照出来ます。</br></br>
+<img src="./platformio_8.png" width="840"></br></br></p>
+</li>
+<li>
+<p>各リーフのライブラリ一覧は、以下の通りです。</br></p>
+</li>
 </ol>
 <table class="table-hover">
   <thread>
@@ -4077,21 +4069,13 @@ PlatformIO IDE ツールバーは 、VSCode ステータス バー (画面一番
     </tr>
   </tbody>
 </table>
-<h2 id="platformio-のドキュメント">PlatformIO のドキュメント</h2>
+<h2 id="参考">参考</h2>
 <ul>
-<li><a href="https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode">https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode</a></li>
+<li><a href="https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode" target="_blank">PlatformIO ドキュメント</a></li>
 </ul>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
-</p><section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>Windows 64bitのV2.6.0とV2.4.0は動作確認済みですが、v2.5.0は動作しません。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
-
+</p>
         <div class="section-index">
     
     
@@ -4102,7 +4086,7 @@ PlatformIO IDE ツールバーは 、VSCode ステータス バー (画面一番
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 4, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 5, 2023
 </div>
 </div>
 

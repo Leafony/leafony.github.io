@@ -224,15 +224,6 @@
 &lt;li&gt;次に &lt;code&gt;platformio ide&lt;/code&gt;を入力し、PlatformIO IDEをインストールが出来れば、事前準備は完了です。&lt;/br&gt;&lt;/br&gt;
 &lt;img src=&#34;./platformio_1.png&#34; width=&#34;440&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;stm32cubeprog-のインストールstm32-mcuの場合のみ&#34;&gt;STM32CubeProg のインストール(STM32 MCUの場合のみ)&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;プログラムを書き込むには、&lt;a href=&#34;https://www.stmcu.jp/design/sw_dev/pc_soft/58442/&#34;&gt;STM32CubeProg&lt;/a&gt;のインストール&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;が必要です。下記より、インストールしてください。&lt;br&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;ststm321540-のダウンロードstm32-mcuの場合のみ&#34;&gt;&lt;a href=&#34;mailto:ststm32@15.4.0&#34;&gt;ststm32@15.4.0&lt;/a&gt; のダウンロード(STM32 MCUの場合のみ)&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;mailto:ststm32@15.4.0&#34;&gt;ststm32@15.4.0&lt;/a&gt; のフォルダをダウンロードして、以下のフォルダの下において下さい。(暫定対応)&lt;/br&gt;
-&lt;code&gt;C:\Users\ユーザ名\.platformio\platforms&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
 &lt;h2 id=&#34;クイックスタート&#34;&gt;クイックスタート&lt;/h2&gt;
 &lt;p&gt;このクイックでは、PlatformIO IDE ワークフローの基本操作を紹介し、簡単な「Blink」の作成プロセスを説明します。&lt;/p&gt;
 &lt;ol&gt;
@@ -275,21 +266,22 @@
 &lt;img src=&#34;./platformio_7.png&#34; width=&#34;640&#34;&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;今回のBrinkの場合は不要ですが、シリアル通信のボーレートとライブラリは、platformio.ini の最後の行に、&lt;code&gt;monitor_speed =&lt;/code&gt;、&lt;code&gt;lib_deps =&lt;/code&gt;で定義します。　&lt;/br&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
 &lt;p&gt;PlatformIO Toolbarの&lt;code&gt;Build&lt;/code&gt;ボタンを押して、プロジェクトをビルドします。&lt;/br&gt;&lt;/br&gt;
 &lt;img src=&#34;./platformio_5.png&#34; width=&#34;440&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;LeafonyをPCに接続し、 &lt;code&gt;Upload&lt;/code&gt;ボタンを押して、プログラムをAVR MCUに書き込みます。&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;PlatformIO ツールバーに関して&lt;/br&gt;
-PlatformIO IDE ツールバーは 、VSCode ステータス バー (画面一番下のバー) にあり、以下のコマンドへのアクセス ボタンがあります。
-詳しくは、 &lt;a href=&#34;https://docs.platformio.org/en/latest/integration/ide/vscode.html#platformio-toolbar&#34; target=&#34;_blank&#34;&gt;こちらを&lt;/a&gt;参照して下さい。 &lt;/br&gt;&lt;/p&gt;
-&lt;/li&gt;
 &lt;/ol&gt;
+&lt;/br&gt;
+&lt;h1 id=&#34;詳しい使い方&#34;&gt;詳しい使い方&lt;/h1&gt;
+&lt;h2 id=&#34;書き込み時のcomポート&#34;&gt;書き込み時のCOMポート&lt;/h2&gt;
+&lt;p&gt;書き込み時のCOMポートは、自動検出されるため指定する必要はありません。&lt;/br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;シリアル通信のボーレート&#34;&gt;シリアル通信のボーレート&lt;/h2&gt;
+&lt;p&gt;シリアル通信のボーレートは、platformio.ini の最後の行に&lt;code&gt;monitor_speed =&lt;/code&gt;で定義します。　&lt;/br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;platformio-ideのツールバー&#34;&gt;PlatformIO IDEのツールバー&lt;/h2&gt;
+&lt;p&gt;PlatformIO IDE ツールバーは 、VSCode ステータス バー (画面一番下のバー) にあり、以下のコマンドへのアクセス ボタンがあります。
+詳しくは、 &lt;a href=&#34;https://docs.platformio.org/en/latest/integration/ide/vscode.html#platformio-toolbar&#34; target=&#34;_blank&#34;&gt;こちらを&lt;/a&gt;参照して下さい。 &lt;/br&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;PlatformIO Home&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;Build&lt;/br&gt;&lt;/li&gt;
@@ -300,18 +292,17 @@ PlatformIO IDE ツールバーは 、VSCode ステータス バー (画面一番
 &lt;li&gt;Project environment switcher &lt;/br&gt;&lt;/br&gt;
 &lt;img src=&#34;./platformio_6.png&#34; width=&#34;420&#34;&gt;&lt;/br&gt;&lt;/br&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&#34;詳しい使い方&#34;&gt;詳しい使い方&lt;/h1&gt;
-&lt;h2 id=&#34;ライブラリのインストールの仕方&#34;&gt;ライブラリのインストールの仕方&lt;/h2&gt;
+&lt;h2 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;code&gt;PlatformIO Home&lt;/code&gt;ボタンを押してPlatformIOのホームを表示する。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Libraries&lt;/code&gt;タブを開く。&lt;/li&gt;
-&lt;li&gt;検索窓に&lt;code&gt;OPT3001&lt;/code&gt;と入力し、照度センサOPT3001用ライブラリを検索。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ClosedCube OPT3001&lt;/code&gt;をクリック。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;Add to Project&lt;/code&gt;ボタンをクリックし、&lt;code&gt;Add&lt;/code&gt;で追加。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;platformio.ini&lt;/code&gt;を開く。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;lib_deps&lt;/code&gt;オプションに&lt;code&gt;closedcube/ClosedCube OPT3001 @ &amp;lt;バージョン&amp;gt;&lt;/code&gt;が追加されているか確認。&lt;/li&gt;
-&lt;li&gt;githubから直接出来る&lt;/li&gt;
-&lt;li&gt;各リーフのライブラリ一覧&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;インストールの仕方
+ライブラリは、platformio.ini の最後の行に、&lt;code&gt;lib_deps =&lt;/code&gt;で定義すれば、PCにインストールされます。定義の仕方は、GitHubのURLを直接指定する方法と、&lt;code&gt;Libraries&lt;/code&gt;で指定する方法のふたつがあります。
+&lt;code&gt;Libraries&lt;/code&gt;には、事前にPlatformIO Registryに登録されたものだけが参照出来ます。&lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./platformio_8.png&#34; width=&#34;840&#34;&gt;&lt;/br&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;各リーフのライブラリ一覧は、以下の通りです。&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;table class=&#34;table-hover&#34;&gt;
   &lt;thread&gt;
@@ -397,21 +388,13 @@ PlatformIO IDE ツールバーは 、VSCode ステータス バー (画面一番
     &lt;/tr&gt;
   &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;platformio-のドキュメント&#34;&gt;PlatformIO のドキュメント&lt;/h2&gt;
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode&#34;&gt;https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode&#34; target=&#34;_blank&#34;&gt;PlatformIO ドキュメント&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
-&lt;/p&gt;&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Windows 64bitのV2.6.0とV2.4.0は動作確認済みですが、v2.5.0は動作しません。 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;
-
+&lt;/p&gt;
       </description>
     </item>
     
