@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ef57495ec80bc4fd2b8a294fafc8084a9306fdb438f4c35ef9b69ccebf75dddf1704523b60a04f1120eb39e25d01c58602dd980e616aa0e8d52364f20d07fd52.json"
+  data-offline-search-index-json-src="/offline-search-index.06f3278692040a4b7b913894ada6cc02132f790e6727a92e97d79d16c602476a54af14f59b75c2e1d038ed34a4f62fab8eb10490ed073350df0456574a50d10d.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.ef57495ec80bc4fd2b8a294fafc8084a9306fdb438f4c35ef9b69ccebf75dddf1704523b60a04f1120eb39e25d01c58602dd980e616aa0e8d52364f20d07fd52.json"
+  data-offline-search-index-json-src="/offline-search-index.06f3278692040a4b7b913894ada6cc02132f790e6727a92e97d79d16c602476a54af14f59b75c2e1d038ed34a4f62fab8eb10490ed073350df0456574a50d10d.json"
   data-offline-search-base-href="/"
 >
 
@@ -3814,6 +3814,8 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#pythonのインストール">Pythonのインストール</a></li>
         <li><a href="#platformio-ideのインストール">PlatformIO IDEのインストール</a></li>
+        <li><a href="#stm32cubeprog-のインストールstm32mcuを使用する場合">STM32CubeProg のインストール(STM32MCUを使用する場合)</a></li>
+        <li><a href="#leafony_ap03-のboardファイルの格納stm32mcuを使用する場合">LEAFONY_AP03 のBoardファイルの格納(STM32MCUを使用する場合)</a></li>
       </ul>
     </li>
     <li><a href="#クイックスタート">クイックスタート</a></li>
@@ -3910,6 +3912,46 @@ if (!doNotTrack) {
 <li>検索窓が現れたら、<code>Japanese Language Pack for Visual Studio Code</code>を入力し、日本語の拡張機能をインストールします。</br></li>
 <li>次に <code>platformio ide</code>を入力し、PlatformIO IDEをインストールが出来れば、事前準備は完了です。</br></br>
 <img src="./platformio_1.png" width="440"></li>
+</ol>
+<h3 id="stm32cubeprog-のインストールstm32mcuを使用する場合">STM32CubeProg のインストール(STM32MCUを使用する場合)</h3>
+<p>プログラムを書き込むために、<a href="https://www.stmcu.jp/design/sw_dev/pc_soft/58442/">STM32CubeProg</a>のインストール<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>をしてください。<br></p>
+<h3 id="leafony_ap03-のboardファイルの格納stm32mcuを使用する場合">LEAFONY_AP03 のBoardファイルの格納(STM32MCUを使用する場合)</h3>
+<p>STM32MCUは、<a href="https://www.st.com/ja/evaluation-tools/nucleo-l452re.html">NUCLEO-L452REの開発ボード</a>とピンアサインが異なるため、STM32MCUの<a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">Board</a>(<code>LEAFONY_AP03</code>)を定義する必要があります。
+Boardファイルは、C:\Users\ユーザ名\ .platformio　の<code>Pacages</code>と<code>Platforms</code>のフォルダに格納されています。初期の状態では、ふたつののフォルダが出来ていないため、
+<a href="https://docs.platformio.org/en/latest/boards/ststm32/nucleo_l452re.html">ST Nucleo L452RE</a>のProjectを立ち上げて、<code>LEAFONY_AP03</code>のBoardファイルをこれらのフォルダに格納させます。以下にその手順を記します。</br></p>
+<ol>
+<li>VSCodeを立ち上げ、「ファイル」→ 「新しいウィンドウ」を開きます。</li>
+<li>VSCode ステータス バー (画面一番下のバー)の<code>PlatformIO Home</code>ボタンを押します。</br></li>
+<li><code>New Project</code>をクリックし、Project Wizardが表示されます。</br>
+以下の様に、<code>Name</code>、<code>Boad</code>、<code>Framework</code>を入力し、<code>Finish</code>をクリックします。</br></li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Name</td>
+<td align="left">「Test」 と記入</td>
+</tr>
+<tr>
+<td align="left">Board</td>
+<td align="left">「ST Nucleo L452RE)」 を選択</td>
+</tr>
+<tr>
+<td align="left">Framework</td>
+<td align="left">「Arduino 」を選択</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li>C:\Users\ユーザ名\ .platformio　の<code>Pacages</code>と<code>Platforms</code>が出来ていることを確認します。</li>
+<li>次に以下のファイルとフォルダをダウンロードします。</li>
+<li>xxを、C:\Users\ユーザ名\ .platformioに、xxをC:\Users\ユーザ名\ .platformioに格納します。</li>
+<li>Project Wizardの<code>Boad</code>の検索窓に、<code>LEAFONY_AP03</code>が出てくれば、成功です。</li>
 </ol>
 <h2 id="クイックスタート">クイックスタート</h2>
 <p>このクイックでは、PlatformIO IDE ワークフローの基本操作を紹介し、簡単な「Blink_Pjt」の作成プロセスを説明します。</p>
@@ -4125,7 +4167,15 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 </ul>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
-</p>
+</p><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み。v2.5.0は動作しないので要注意。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
         <div class="section-index">
     
     
@@ -4136,7 +4186,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 6, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 7, 2023
 </div>
 </div>
 
