@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.e6aa7d608a214dd02030adefe3fbe3d07ace2bdd848b9e8e8479fa0895d9d5593e77678c4124bcdeb7c4b7f1b20c14f06b1f25842161f3ece96085bb48bc2951.json"
+  data-offline-search-index-json-src="/offline-search-index.ef57495ec80bc4fd2b8a294fafc8084a9306fdb438f4c35ef9b69ccebf75dddf1704523b60a04f1120eb39e25d01c58602dd980e616aa0e8d52364f20d07fd52.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.e6aa7d608a214dd02030adefe3fbe3d07ace2bdd848b9e8e8479fa0895d9d5593e77678c4124bcdeb7c4b7f1b20c14f06b1f25842161f3ece96085bb48bc2951.json"
+  data-offline-search-index-json-src="/offline-search-index.ef57495ec80bc4fd2b8a294fafc8084a9306fdb438f4c35ef9b69ccebf75dddf1704523b60a04f1120eb39e25d01c58602dd980e616aa0e8d52364f20d07fd52.json"
   data-offline-search-base-href="/"
 >
 
@@ -3823,6 +3823,12 @@ if (!doNotTrack) {
     <li><a href="#書き込み時のcomポート">書き込み時のCOMポート</a></li>
     <li><a href="#シリアル通信のボーレート">シリアル通信のボーレート</a></li>
     <li><a href="#platformio-ideのツールバー">PlatformIO IDEのツールバー</a></li>
+    <li><a href="#プロジェクトフォルダ">プロジェクトフォルダ</a>
+      <ul>
+        <li><a href="#プロジェクトフォルダの名前変更や削除に関して">プロジェクトフォルダの名前変更や削除に関して</a></li>
+        <li><a href="#プロジェクトフォルダの保存場所の設定">プロジェクトフォルダの保存場所の設定</a></li>
+      </ul>
+    </li>
     <li><a href="#ライブラリ">ライブラリ</a></li>
     <li><a href="#参考">参考</a></li>
   </ul>
@@ -3906,7 +3912,7 @@ if (!doNotTrack) {
 <img src="./platformio_1.png" width="440"></li>
 </ol>
 <h2 id="クイックスタート">クイックスタート</h2>
-<p>このクイックでは、PlatformIO IDE ワークフローの基本操作を紹介し、簡単な「Blink」の作成プロセスを説明します。</p>
+<p>このクイックでは、PlatformIO IDE ワークフローの基本操作を紹介し、簡単な「Blink_Pjt」の作成プロセスを説明します。</p>
 <ol>
 <li>
 <p>VSCodeを立ち上げ、「ファイル」→ 「新しいウィンドウ」を開きます。</p>
@@ -3916,17 +3922,35 @@ if (!doNotTrack) {
 <img src="./platformio_2.png" width="320"></p>
 </li>
 <li>
-<p><code>New Project</code>をクリックし、Projevt Wizardが表示されるので、<code>Name</code>、<code>Boad</code>、<code>Framework</code>を入力します。MCUリーフと<code>Boad</code>の関係は、以下の通りです。</br></p>
+<p><code>New Project</code>をクリックし、Project Wizardが表示されます。</br>
+以下の様に、<code>Name</code>、<code>Boad</code>、<code>Framework</code>を入力し、<code>Finish</code>をクリックします。</br></p>
 </li>
-<li>
-<p>名前を<code>Blink</code>を入力し、ボードを選択します。</br>
-今回は、AVR MCUのマイコンを使用するので、<code>Arduino Pro or Pro Mini ATmega328(3.3v,8Mhz)</code>を選択して下さい。</br></br>
-<img src="./platformio_3.png" width="440"></br></p>
-</li>
-<li>
-<p><code>src</code>フォルダの<code>main.cpp</code>を開き、以下のコードを貼り付けます。</br></br>
-<img src="./platformio_4.png" width="640"></p>
-</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Name</td>
+<td align="left">「Blink_Pjt」 と記入</td>
+</tr>
+<tr>
+<td align="left">Board</td>
+<td align="left">「Arduino Pro or Pro Mini ATmega328(3.3v,8Mhz)」 を選択</td>
+</tr>
+<tr>
+<td align="left">Framework</td>
+<td align="left">「Arduino 」を選択</td>
+</tr>
+</tbody>
+</table>
+<ol start="5">
+<li><code>src</code>フォルダの<code>main.cpp</code>を開き、以下のコードを貼り付けます。</br></br>
+<img src="./platformio_4.png" width="640"></li>
 </ol>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
@@ -3959,7 +3983,7 @@ if (!doNotTrack) {
 <h2 id="書き込み時のcomポート">書き込み時のCOMポート</h2>
 <p>書き込み時のCOMポートは、自動検出されるため指定する必要はありません。</br></p>
 <h2 id="シリアル通信のボーレート">シリアル通信のボーレート</h2>
-<p>シリアル通信のボーレートは、platformio.ini の最後の行に<code>monitor_speed =</code>で定義します。　</br></p>
+<p>シリアルモニタに出力する際は、シリアル通信のボーレートをplatformio.ini の最後の行に<code>monitor_speed =</code>で定義します。</br></p>
 <h2 id="platformio-ideのツールバー">PlatformIO IDEのツールバー</h2>
 <p>PlatformIO IDE ツールバーは 、VSCode ステータス バー (画面一番下のバー) にあり、以下のコマンドへのアクセス ボタンがあります。
 詳しくは、 <a href="https://docs.platformio.org/en/latest/integration/ide/vscode.html#platformio-toolbar" target="_blank">こちらを</a>参照して下さい。 </br></p>
@@ -3971,8 +3995,34 @@ if (!doNotTrack) {
 <li>Serial Port Monitor</br></li>
 <li>PlatformIO Core (CLI)</br></li>
 <li>Project environment switcher </br></br>
-<img src="./platformio_6.png" width="420"></br></br></li>
+<img src="./platformio_6.png" width="420"></br></li>
 </ul>
+<h2 id="プロジェクトフォルダ">プロジェクトフォルダ</h2>
+<h3 id="プロジェクトフォルダの名前変更や削除に関して">プロジェクトフォルダの名前変更や削除に関して</h3>
+<p>Project Wizarで、New Projectを立ち上げると、フォルダが作成され、デフォルトでは、~/Documents/PlatformIO/Projects に保存されます。
+Projectの名前変更やフォルダの削除は、Project Wizarではなく、エクスプローラから直接出来ます。</br></p>
+<h3 id="プロジェクトフォルダの保存場所の設定">プロジェクトフォルダの保存場所の設定</h3>
+<p>プロジェクトフォルダの保存場所の設定は、Project Wizarではなく、ターミナルから行います。</p>
+<ol>
+<li>
+<p>VSCodeを立ち上げ、「ファイル」→ 「新しいウィンドウ」を開きます。</p>
+</li>
+<li>
+<p>VSCode ステータス バー (画面一番下のバー)の<code>PlatformIO Home</code>ボタンを押します。</br></br>
+<img src="./platformio_2.png" width="320"></p>
+</li>
+<li>
+<p>PlatformIO – QUICK ACCESS – Miscellaneous – New Terminal を選択して開きます。</br></p>
+</li>
+<li>
+<p>以下のコードを実行します。</br>
+　<code>pio settings set projects_dir ＜設定したい(絶対)パス＞</code></p>
+</li>
+<li>
+<p>VSCodeを再起動します。</br></br>
+<img src="./platformio_9.png" width="840"></br></p>
+</li>
+</ol>
 <h2 id="ライブラリ">ライブラリ</h2>
 <ol>
 <li>
@@ -4086,7 +4136,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 5, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 6, 2023
 </div>
 </div>
 
