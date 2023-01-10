@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c1ed8f4a0e69bee8218b7006f226775fc33edf4aa1fff0d756630b0f28c04ea6655b7be7e28a75cdbf7cafc5a8c25e9bbbcefd41da9debcda785963d1ed2eef9.json"
+  data-offline-search-index-json-src="/offline-search-index.19effe5ac724098d737a69bb4195caed7ca0b14f50323ccbbf3e3efee063b5e1f7257469e6576485105984cc852c6e5d78d0ad11fed3eb047c438ecf81ed4c01.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c1ed8f4a0e69bee8218b7006f226775fc33edf4aa1fff0d756630b0f28c04ea6655b7be7e28a75cdbf7cafc5a8c25e9bbbcefd41da9debcda785963d1ed2eef9.json"
+  data-offline-search-index-json-src="/offline-search-index.19effe5ac724098d737a69bb4195caed7ca0b14f50323ccbbf3e3efee063b5e1f7257469e6576485105984cc852c6e5d78d0ad11fed3eb047c438ecf81ed4c01.json"
   data-offline-search-base-href="/"
 >
 
@@ -3904,7 +3904,7 @@ if (!doNotTrack) {
 <h2 id="事前準備">事前準備</h2>
 <h3 id="pythonのインストール">Pythonのインストール</h3>
 <ol>
-<li>PlatformIO IDEを動かすには、Pythonが必要です。まず、<a href="https://www.python.org/downloads/">Python</a>をインストールして下さい。</br></li>
+<li>PlatformIO IDEを動かすには、Pythonが必要です。<a href="https://www.javadrive.jp/python/install/index1.html#section2">こちら</a>を参照して、Pythonインストールして下さい。</br></li>
 </ol>
 <h3 id="platformio-ideのインストール">PlatformIO IDEのインストール</h3>
 <ol>
@@ -3917,8 +3917,8 @@ if (!doNotTrack) {
 <h3 id="stm32cubeprog-のインストール">STM32CubeProg のインストール</h3>
 <p>STM32MCUにプログラムを書き込むために、<a href="https://www.stmcu.jp/design/sw_dev/pc_soft/58442/">STM32CubeProg</a>のインストール<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>をして下さい<br></p>
 <h3 id="stm32mcuのboardファイルの保存">STM32MCUのBoardファイルの保存</h3>
-<p>STM32MCUは、<a href="https://www.st.com/ja/evaluation-tools/nucleo-l452re.html">NUCLEO-L452RE</a>とピンアサインが異なるため、STM32MCUのBoardファイルを用意する必要があります。</br>
-Boardファイルは、C:\Users\ユーザ名\ .platformioのフォルダにあり、以下の構成になっています。</br>
+<p>STM32MCUは、<a href="https://www.st.com/ja/evaluation-tools/nucleo-l452re.html">NUCLEO-L452RE</a>とピンアサインが異なるため、STM32MCUのBoardファイルを用意する必要があります。
+Boardファイルは、C:\Users\ユーザ名\ .platformioの下にある①framework-arduinoststm32と②ststm32であり、以下の構成になっています。</br></br>
 <img src="./platformio_12.png" width="440"></p>
 <h4 id="framework-arduinoststm32とststm32のフォルダのダウンロード">①framework-arduinoststm32と②ststm32のフォルダのダウンロード</h4>
 <ol>
@@ -3932,13 +3932,13 @@ Boardファイルは、C:\Users\ユーザ名\ .platformioのフォルダにあ�
 <li>
 <p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。</p>
 <ul>
-<li>Name:「Test」 と記入 </br></li>
-<li>Board:「ST Nucleo L452RE」を選択 </br></li>
-<li>Framework:「Arduino 」を選択 </br></li>
+<li>Name:<code>Test</code>と記入 </br></li>
+<li>Board:<code>ST Nucleo L452RE</code>を選択 </br></li>
+<li>Framework:<code>Arduino </code>を選択 </br></li>
 </ul>
 </li>
 <li>
-<p>C:\Users\ユーザ名\ .platformio の下に、ふたつのフォルダが出来ていることを確認して下さい。</br></p>
+<p>C:\Users\ユーザ名\ .platformio の下に、①と②のふたつのフォルダが出来ていることを確認して下さい。</br></p>
 </li>
 </ol>
 <h4 id="leafony_ap03のフォルダとleafony_ap03jsonのファイルの保存">③Leafony_AP03のフォルダと④Leafony_AP03.jsonのファイルの保存</h4>
@@ -3949,7 +3949,7 @@ Boardファイルは、C:\Users\ユーザ名\ .platformioのフォルダにあ�
 <li><a href="https://github.com/Leafony/platformio-LEAFONY_AP03/blob/main/Leafony_STM32.json">Leafony_AP03.json</a></br></br></li>
 </ul>
 </li>
-<li>Project WizardのBoardの検索窓に「LEAFONY_AP03」が表示されることを確認して下さい。</br></li>
+<li>Project WizardのBoardの検索窓に<code>Leafony_AP03</code>が表示されることを確認して下さい。</br></li>
 </ol>
 <h2 id="クイックスタート">クイックスタート</h2>
 <p>このクイックでは、AVR MCUを使って、PlatformIO IDE ワークフローの基本操作を紹介し、簡単な「Blink_Pjt」の作成プロセスを説明します。
@@ -3965,9 +3965,9 @@ ESP32 MCUとSTM32 MCUのPlatformIO IDEのBoardとの関係は、<a href="https:/
 <li>
 <p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。</br></p>
 <ul>
-<li>Name:「Blink_Pjt」 と記入 </br></li>
-<li>Board:「Arduino Pro or Pro Mini ATmega328(3.3v,8Mhz)」を選択</br></li>
-<li>Framework:「Arduino 」を選択  </br></li>
+<li>Name:<code>Blink_Pjt</code>と記入 </br></li>
+<li>Board:<code>Srduino Pro or Pro Mini ATmega328(3.3v,8Mhz)</code>を選択 </br></li>
+<li>Framework:<code>Arduino </code>を選択 </br></li>
 </ul>
 </li>
 <li>
