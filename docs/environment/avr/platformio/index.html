@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9c1b6ae0ffcefefcd5f25fcf585d5ec82ce4d0bd78f1ef8cb3e953eac1d5fdc20b5d6f830895cd1969b9f67041aeb5fda0a7ebc9c637d0ac028ebd85b4c6cd26.json"
+  data-offline-search-index-json-src="/offline-search-index.c1ed8f4a0e69bee8218b7006f226775fc33edf4aa1fff0d756630b0f28c04ea6655b7be7e28a75cdbf7cafc5a8c25e9bbbcefd41da9debcda785963d1ed2eef9.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9c1b6ae0ffcefefcd5f25fcf585d5ec82ce4d0bd78f1ef8cb3e953eac1d5fdc20b5d6f830895cd1969b9f67041aeb5fda0a7ebc9c637d0ac028ebd85b4c6cd26.json"
+  data-offline-search-index-json-src="/offline-search-index.c1ed8f4a0e69bee8218b7006f226775fc33edf4aa1fff0d756630b0f28c04ea6655b7be7e28a75cdbf7cafc5a8c25e9bbbcefd41da9debcda785963d1ed2eef9.json"
   data-offline-search-base-href="/"
 >
 
@@ -3822,6 +3822,7 @@ if (!doNotTrack) {
   </ul>
 
   <ul>
+    <li><a href="#leafonyのマイコンとplatformio-ideのboardとの関係">LeafonyのマイコンとPlatformIO IDEのBoardとの関係</a></li>
     <li><a href="#書き込み時のcomポート">書き込み時のCOMポート</a></li>
     <li><a href="#シリアル通信のボーレート">シリアル通信のボーレート</a></li>
     <li><a href="#platformio-ideのツールバー">PlatformIO IDEのツールバー</a></li>
@@ -3897,7 +3898,7 @@ if (!doNotTrack) {
 </br></p>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
-<li>Basic Kit 2 </br></li>
+<li>Basic Kit 2 または、ESP32 Wi-Fi Kit 2</br></li>
 <li>パソコン (Windows、Mac OS X 、または Linux)</br></li>
 </ul>
 <h2 id="事前準備">事前準備</h2>
@@ -3914,35 +3915,45 @@ if (!doNotTrack) {
 <img src="./platformio_1.png" width="440"></li>
 </ol>
 <h3 id="stm32cubeprog-のインストール">STM32CubeProg のインストール</h3>
-<p>STM32MCUにプログラムを書き込むために、<a href="https://www.stmcu.jp/design/sw_dev/pc_soft/58442/">STM32CubeProg</a>のインストール<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>をしてください。<br></p>
+<p>STM32MCUにプログラムを書き込むために、<a href="https://www.stmcu.jp/design/sw_dev/pc_soft/58442/">STM32CubeProg</a>のインストール<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>をして下さい<br></p>
 <h3 id="stm32mcuのboardファイルの保存">STM32MCUのBoardファイルの保存</h3>
 <p>STM32MCUは、<a href="https://www.st.com/ja/evaluation-tools/nucleo-l452re.html">NUCLEO-L452RE</a>とピンアサインが異なるため、STM32MCUのBoardファイルを用意する必要があります。</br>
-Boardファイルは、C:\Users\ユーザ名\ .platformioのフォルダにあり、以下の構成になっています。
-<img src="./platformio_10.png" width="440"></p>
-<h4 id="framework-arduinoststm32とststm32のフォルダのダウンロード">「framework-arduinoststm32」と「ststm32」のフォルダのダウンロード</h4>
+Boardファイルは、C:\Users\ユーザ名\ .platformioのフォルダにあり、以下の構成になっています。</br>
+<img src="./platformio_12.png" width="440"></p>
+<h4 id="framework-arduinoststm32とststm32のフォルダのダウンロード">①framework-arduinoststm32と②ststm32のフォルダのダウンロード</h4>
 <ol>
 <li>
 <p>VSCodeを立ち上げ、「ファイル」→ 「新しいウィンドウ」を開きます。</p>
 </li>
 <li>
-<p>VSCode ステータス バー (画面一番下のバー)の<code>PlatformIO Home</code>ボタンを押します。</br></p>
+<p>VSCode ステータス バー (画面一番下のバー)の<code>PlatformIO Home</code>ボタンを押します。</br></br>
+<img src="./platformio_2.png" width="320"></p>
 </li>
 <li>
-<p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。C:\Users\ユーザ名\ .platformio の下に、ふたつのフォルダが出来ていることを確認して下さい。</br></p>
+<p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。</p>
 <ul>
-<li>Name;「Test」 と記入 </br></li>
-<li>Board;「ST Nucleo L452RE」を選択 </br></li>
-<li>Framework;「Arduino 」を選択 </br></li>
+<li>Name:「Test」 と記入 </br></li>
+<li>Board:「ST Nucleo L452RE」を選択 </br></li>
+<li>Framework:「Arduino 」を選択 </br></li>
 </ul>
 </li>
+<li>
+<p>C:\Users\ユーザ名\ .platformio の下に、ふたつのフォルダが出来ていることを確認して下さい。</br></p>
+</li>
 </ol>
-<h4 id="leafony_ap03のフォルダとleafony_ap03jsonファイルの保存">「Leafony_AP03」のフォルダと「Leafony_AP03.json」ファイルの保存</h4>
+<h4 id="leafony_ap03のフォルダとleafony_ap03jsonのファイルの保存">③Leafony_AP03のフォルダと④Leafony_AP03.jsonのファイルの保存</h4>
 <ol start="5">
-<li><code>Leafony_AP03</code>のフォルダと<code>Leafony_AP03.json</code>ファイルを以下からダウンロードしてください。</br></li>
-<li><code>Leafony_AP03</code>のフォルダと<code>Leafony_AP03.json</code>ファイルを保存してください。</br></li>
+<li><code>Leafony_AP03</code>のフォルダと<code>Leafony_AP03.json</code>ファイルを以下からダウンロードし、所定の場所に保存して下さい。</br>
+<ul>
+<li><a href="https://github.com/Leafony/platformio-LEAFONY_AP03/tree/main/LEAFONY_AP03">Leafony_AP03</a> </br></li>
+<li><a href="https://github.com/Leafony/platformio-LEAFONY_AP03/blob/main/Leafony_STM32.json">Leafony_AP03.json</a></br></br></li>
+</ul>
+</li>
+<li>Project WizardのBoardの検索窓に「LEAFONY_AP03」が表示されることを確認して下さい。</br></li>
 </ol>
 <h2 id="クイックスタート">クイックスタート</h2>
-<p>このクイックでは、PlatformIO IDE ワークフローの基本操作を紹介し、簡単な「Blink_Pjt」の作成プロセスを説明します。</p>
+<p>このクイックでは、AVR MCUを使って、PlatformIO IDE ワークフローの基本操作を紹介し、簡単な「Blink_Pjt」の作成プロセスを説明します。
+ESP32 MCUとSTM32 MCUのPlatformIO IDEのBoardとの関係は、<a href="https://docs.leafony.com/docs/environment/avr/platformio/#%E8%A9%B3%E3%81%97%E3%81%84%E4%BD%BF%E3%81%84%E6%96%B9">詳しい使い方</a>に記載しています。</p>
 <ol>
 <li>
 <p>VSCodeを立ち上げ、「ファイル」→ 「新しいウィンドウ」を開きます。</p>
@@ -3954,15 +3965,46 @@ Boardファイルは、C:\Users\ユーザ名\ .platformioのフォルダにあ�
 <li>
 <p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。</br></p>
 <ul>
-<li>Name;「Blink_Pjt」 と記入 </br></li>
-<li>Board;「Arduino Pro or Pro Mini ATmega328(3.3v,8Mhz)」を選択</br></li>
-<li>Framework;「Arduino 」を選択  </br></li>
+<li>Name:「Blink_Pjt」 と記入 </br></li>
+<li>Board:「Arduino Pro or Pro Mini ATmega328(3.3v,8Mhz)」を選択</br></li>
+<li>Framework:「Arduino 」を選択  </br></li>
 </ul>
 </li>
 <li>
-<p>今回はAVR MCUを使用しましたが、LeafonyのマイコンとPlatformIO IDEのBoardとの関係は、以下の様になります。</br></p>
+<p><code>src</code>フォルダの<code>main.cpp</code>を開き、以下のコードを貼り付けます。</br></br>
+<img src="./platformio_4.png" width="640"></p>
 </li>
 </ol>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#8f5902;font-style:italic">// LEDピンを出力ピンに設定
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">OUTPUT</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">// LEDを点灯
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">999</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// LEDを消灯
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">999</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><ol start="6">
+<li>
+<p>platformio.ini のファイルを開き、Projectで定義した<a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">platform</a>、 <a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">board</a>、<a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">framework</a>が、書かれていることを確認します。</br></br>
+<img src="./platformio_7.png" width="640"></br></p>
+</li>
+<li>
+<p>PlatformIO Toolbarの<code>Build</code>ボタンを押して、プロジェクトをビルドします。</br></br>
+<img src="./platformio_5.png" width="440"></p>
+</li>
+<li>
+<p>LeafonyをPCに接続し、 <code>Upload</code>ボタンを押して、プログラムをAVR MCUに書き込みます。</br></p>
+</li>
+</ol>
+</br>
+<h1 id="詳しい使い方">詳しい使い方</h1>
+<h2 id="leafonyのマイコンとplatformio-ideのboardとの関係">LeafonyのマイコンとPlatformIO IDEのBoardとの関係</h2>
+<p>LeafonyのマイコンとPlatformIO IDEのBoardとの関係は、以下の様になります。</br></p>
 <table>
 <thead>
 <tr>
@@ -3993,38 +4035,6 @@ Boardファイルは、C:\Users\ユーザ名\ .platformioのフォルダにあ�
 </tr>
 </tbody>
 </table>
-<ol start="5">
-<li><code>src</code>フォルダの<code>main.cpp</code>を開き、以下のコードを貼り付けます。</br></br>
-<img src="./platformio_4.png" width="640"></li>
-</ol>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#8f5902;font-style:italic">// LEDピンを出力ピンに設定
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">OUTPUT</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#000;font-weight:bold">}</span>
-
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">// LEDを点灯
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">999</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// LEDを消灯
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">999</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><ol start="6">
-<li>
-<p>platformio.ini のファイルを開き、Projectで定義した<a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">platform</a>、 <a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">board</a>、<a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">framework</a>が、書かれていることを確認します。</br></br>
-<img src="./platformio_7.png" width="640"></br></p>
-</li>
-<li>
-<p>PlatformIO Toolbarの<code>Build</code>ボタンを押して、プロジェクトをビルドします。</br></br>
-<img src="./platformio_5.png" width="440"></p>
-</li>
-<li>
-<p>LeafonyをPCに接続し、 <code>Upload</code>ボタンを押して、プログラムをAVR MCUに書き込みます。</br></p>
-</li>
-</ol>
-</br>
-<h1 id="詳しい使い方">詳しい使い方</h1>
 <h2 id="書き込み時のcomポート">書き込み時のCOMポート</h2>
 <p>書き込み時のCOMポートは、自動検出されるため指定する必要はありません。</br></p>
 <h2 id="シリアル通信のボーレート">シリアル通信のボーレート</h2>
@@ -4189,7 +4199,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 8, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 10, 2023
 </div>
 </div>
 
