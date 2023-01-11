@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.19effe5ac724098d737a69bb4195caed7ca0b14f50323ccbbf3e3efee063b5e1f7257469e6576485105984cc852c6e5d78d0ad11fed3eb047c438ecf81ed4c01.json"
+  data-offline-search-index-json-src="/offline-search-index.fcbdb1f68331292b14f53d750e8b8982de0c282585defc6909956c50a8b309ada34d8f18792849e7d37516d5f661a63846fcea5945e5976b7b212470b1f10538.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.19effe5ac724098d737a69bb4195caed7ca0b14f50323ccbbf3e3efee063b5e1f7257469e6576485105984cc852c6e5d78d0ad11fed3eb047c438ecf81ed4c01.json"
+  data-offline-search-index-json-src="/offline-search-index.fcbdb1f68331292b14f53d750e8b8982de0c282585defc6909956c50a8b309ada34d8f18792849e7d37516d5f661a63846fcea5945e5976b7b212470b1f10538.json"
   data-offline-search-base-href="/"
 >
 
@@ -3930,26 +3930,28 @@ Boardファイルは、C:\Users\ユーザ名\ .platformioの下にある①frame
 <img src="./platformio_2.png" width="320"></p>
 </li>
 <li>
-<p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。</p>
+<p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <ul>
 <li>Name:<code>Test</code>と記入 </br></li>
 <li>Board:<code>ST Nucleo L452RE</code>を選択 </br></li>
 <li>Framework:<code>Arduino </code>を選択 </br></li>
 </ul>
 </li>
-<li>
-<p>C:\Users\ユーザ名\ .platformio の下に、①と②のふたつのフォルダが出来ていることを確認して下さい。</br></p>
-</li>
+</ol>
+<ol start="4">
+<li>C:\Users\ユーザ名\ .platformio の下に、①と②のふたつのフォルダが出来ていることを確認して下さい。</br></li>
 </ol>
 <h4 id="leafony_ap03のフォルダとleafony_ap03jsonのファイルの保存">③Leafony_AP03のフォルダと④Leafony_AP03.jsonのファイルの保存</h4>
 <ol start="5">
-<li><code>Leafony_AP03</code>のフォルダと<code>Leafony_AP03.json</code>ファイルを以下からダウンロードし、所定の場所に保存して下さい。</br>
+<li>
+<p><code>Leafony_AP03</code>のフォルダと<code>Leafony_AP03.json</code>ファイルを以下からダウンロードし、所定の場所に保存して下さい。</br></p>
 <ul>
-<li><a href="https://github.com/Leafony/platformio-LEAFONY_AP03/tree/main/LEAFONY_AP03">Leafony_AP03</a> </br></li>
-<li><a href="https://github.com/Leafony/platformio-LEAFONY_AP03/blob/main/Leafony_STM32.json">Leafony_AP03.json</a></br></br></li>
+<li><code>https://github.com/Leafony/platformio-LEAFONY_AP03</code></li>
 </ul>
 </li>
-<li>Project WizardのBoardの検索窓に<code>Leafony_AP03</code>が表示されることを確認して下さい。</br></li>
+<li>
+<p>Project WizardのBoardの検索窓に<code>Leafony_AP03</code>が表示されることを確認して下さい。</br></p>
+</li>
 </ol>
 <h2 id="クイックスタート">クイックスタート</h2>
 <p>このクイックでは、AVR MCUを使って、PlatformIO IDE ワークフローの基本操作を紹介し、簡単な「Blink_Pjt」の作成プロセスを説明します。
@@ -3963,7 +3965,7 @@ ESP32 MCUとSTM32 MCUのPlatformIO IDEのBoardとの関係は、<a href="https:/
 <img src="./platformio_2.png" width="320"></p>
 </li>
 <li>
-<p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。</br></p>
+<p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>　</br></p>
 <ul>
 <li>Name:<code>Blink_Pjt</code>と記入 </br></li>
 <li>Board:<code>Srduino Pro or Pro Mini ATmega328(3.3v,8Mhz)</code>を選択 </br></li>
@@ -3971,7 +3973,7 @@ ESP32 MCUとSTM32 MCUのPlatformIO IDEのBoardとの関係は、<a href="https:/
 </ul>
 </li>
 <li>
-<p><code>src</code>フォルダの<code>main.cpp</code>を開き、以下のコードを貼り付けます。</br></br>
+<p>main.cppファイルには、Arduino IDEのコードの先頭に<code>#include &lt;Arduino.h&gt;</code>を加える必要があります。<code>src</code>フォルダの<code>main.cpp</code>を開き、以下のコードを貼り付けます。</br></br>
 <img src="./platformio_4.png" width="640"></p>
 </li>
 </ol>
@@ -3988,7 +3990,7 @@ ESP32 MCUとSTM32 MCUのPlatformIO IDEのBoardとの関係は、<a href="https:/
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// LEDを消灯
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">999</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><ol start="6">
+</code></pre></div><ol start="5">
 <li>
 <p>platformio.ini のファイルを開き、Projectで定義した<a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">platform</a>、 <a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">board</a>、<a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">framework</a>が、書かれていることを確認します。</br></br>
 <img src="./platformio_7.png" width="640"></br></p>
@@ -4184,7 +4186,10 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み。v2.5.0は動作しないので要注意。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み。v2.5.0は動作しないので要注意。</br> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>新しいBoardを選択した時、プログラミングに必要なデータをダウンロードするため、1回目だけ数分時間がかかります。　</br> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -4199,7 +4204,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 10, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 11, 2023
 </div>
 </div>
 
