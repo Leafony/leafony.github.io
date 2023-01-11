@@ -264,8 +264,8 @@ Boardファイルは、C:\Users\ユーザ名\ .platformioの下にある①frame
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;クイックスタート&#34;&gt;クイックスタート&lt;/h2&gt;
-&lt;p&gt;このクイックでは、AVR MCUを使って、PlatformIO IDE ワークフローの基本操作を紹介し、簡単な「Blink_Pjt」の作成プロセスを説明します。
-ESP32 MCUとSTM32 MCUのPlatformIO IDEのBoardとの関係は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/platformio/#%E8%A9%B3%E3%81%97%E3%81%84%E4%BD%BF%E3%81%84%E6%96%B9&#34;&gt;詳しい使い方&lt;/a&gt;に記載しています。&lt;/p&gt;
+&lt;p&gt;このクイックでは、AVR MCUを使って、PlatformIO IDE ワークフローの基本操作を紹介し、簡単な「Blink_Pjt」の作成プロセスを説明します。&lt;/br&gt;
+他のMCUとBoardとの関係は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/platformio/#%E8%A9%B3%E3%81%97%E3%81%84%E4%BD%BF%E3%81%84%E6%96%B9&#34;&gt;詳しい使い方&lt;/a&gt;に記載しています。&lt;/br&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;VSCodeを立ち上げ、「ファイル」→ 「新しいウィンドウ」を開きます。&lt;/p&gt;
@@ -311,11 +311,10 @@ ESP32 MCUとSTM32 MCUのPlatformIO IDEのBoardとの関係は、&lt;a href=&#34;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;ol start=&#34;7&#34;&gt;
-&lt;li&gt;LeafonyをPCに接続し、 &lt;code&gt;Upload&lt;/code&gt;ボタンを押して、プログラムがMCUに書き込まれます。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;LeafonyをPCに接続し、 &lt;code&gt;Upload&lt;/code&gt;ボタンを押すと、プログラムがMCUに書き込まれ、正しく書き込まれた場合は、&lt;code&gt;avrdude done.  Thank you.&lt;/code&gt;　と表示しています。&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/br&gt;
 &lt;h1 id=&#34;詳しい使い方&#34;&gt;詳しい使い方&lt;/h1&gt;
-&lt;h2 id=&#34;leafonyのmcuとplatformio-ideのboardとの関係&#34;&gt;LeafonyのMCUとPlatformIO IDEのBoardとの関係&lt;/h2&gt;
+&lt;h2 id=&#34;mcuとboardとの関係&#34;&gt;MCUとBoardとの関係&lt;/h2&gt;
 &lt;p&gt;LeafonyのMCUとPlatformIO IDEのBoardとの関係は、以下の様になります。&lt;/br&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -325,6 +324,7 @@ ESP32 MCUとSTM32 MCUのPlatformIO IDEのBoardとの関係は、&lt;a href=&#34;
 &lt;th align=&#34;left&#34;&gt;Platform&lt;/th&gt;
 &lt;th align=&#34;left&#34;&gt;Board&lt;/th&gt;
 &lt;th align=&#34;left&#34;&gt;Upload&lt;/th&gt;
+&lt;th&gt;&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -334,6 +334,7 @@ ESP32 MCUとSTM32 MCUのPlatformIO IDEのBoardとの関係は、&lt;a href=&#34;
 &lt;td align=&#34;left&#34;&gt;atmelavr&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Arduino Pro or Pro Mini ATmega328(3.3v,8Mhz)&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;COMポートの自動検出&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;AP02&lt;/td&gt;
@@ -341,22 +342,34 @@ ESP32 MCUとSTM32 MCUのPlatformIO IDEのBoardとの関係は、&lt;a href=&#34;
 &lt;td align=&#34;left&#34;&gt;Espressif 32&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Espressif ESP32 Dev Module&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;COMポートの自動検出&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;AP03&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;../../leaf/processor/ap03&#34;&gt;STM32 MCU&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;ststm32&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;LEAFONY_AP03&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;＜注＞COMポートの自動検出が出来ない&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;COMポートの自動検出が出来ない。※1&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;＜注＞&lt;/br&gt;
-LEAFONY_AP03は、アップロード時に、COMポートの自動検出が出来ないため、以下をplatform.inに書き込む必要があります。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;※1:STM32 MCUは、アップロード時に、COMポートの自動検出が出来ないため、以下をplatform.inに書き込む必要があります。&lt;/br&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;upload_protocol = custom
-upload_port = COM3
+upload_port = COM&amp;lt;番号&amp;gt;
 upload_command = %%userprofile%%\AppData\Local\Arduino15\packages\STM32\tools\STM32Tools\1.4.0\tools\win\stm32CubeProg.bat 1 $SOURCE $UPLOAD_PORT -s
-&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;シリアル通信のボーレート&#34;&gt;シリアル通信のボーレート&lt;/h2&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;※2:STM32 MCUは、&lt;/p&gt;
+&lt;h2 id=&#34;stm32-mcuのuploadの仕方&#34;&gt;STM32 MCUのUploadの仕方&lt;/h2&gt;
+&lt;p&gt;Start operation achieved successfully&lt;/p&gt;
+&lt;p&gt;Timeout error occured while waiting for acknowledgement.
+Error: Activating device: KO. Please, verify the boot mode configuration and check the serial port configuration. Reset your device then try again&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Error: Cannot open port COM3, it may be used by another application or port name is invalid.
+==================== [SUCCESS] Took 6.29 seconds ====================&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ターミナルはタスクで再利用されます、閉じるには任意のキーを押してください。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;stm32-mcuの周波数を80mhz16mhzの変更方法&#34;&gt;STM32 MCUの周波数を80MHz→16MHzの変更方法&lt;/h2&gt;
+&lt;h2 id=&#34;シリアル通信のボーレート&#34;&gt;シリアル通信のボーレート&lt;/h2&gt;
 &lt;p&gt;シリアルモニタに出力する際は、シリアル通信のボーレートをplatformio.ini の最後の行に&lt;code&gt;monitor_speed =&lt;/code&gt;で定義します。&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;platformio-ideのツールバー&#34;&gt;PlatformIO IDEのツールバー&lt;/h2&gt;
 &lt;p&gt;PlatformIO IDE ツールバーは 、VSCode ステータス バー (画面一番下のバー) にあり、以下のコマンドへのアクセス ボタンがあります。
@@ -371,6 +384,7 @@ upload_command = %%userprofile%%\AppData\Local\Arduino15\packages\STM32\tools\ST
 &lt;li&gt;Project environment switcher &lt;/br&gt;&lt;/br&gt;
 &lt;img src=&#34;./platformio_6.png&#34; width=&#34;420&#34;&gt;&lt;/br&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id=&#34;シリアルモニターの使い方&#34;&gt;シリアルモニターの使い方&lt;/h3&gt;
 &lt;h2 id=&#34;プロジェクトフォルダ&#34;&gt;プロジェクトフォルダ&lt;/h2&gt;
 &lt;h3 id=&#34;プロジェクトフォルダの名前変更や削除に関して&#34;&gt;プロジェクトフォルダの名前変更や削除に関して&lt;/h3&gt;
 &lt;p&gt;Project Wizarで、New Projectを立ち上げると、フォルダが作成され、デフォルトでは、~/Documents/PlatformIO/Projects に保存されます。
