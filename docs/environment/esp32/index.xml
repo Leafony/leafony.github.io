@@ -72,7 +72,7 @@
 &lt;ol&gt;
 &lt;li&gt;Arduino IDEを起動し、下記のサンプルコードをコードエディタに貼り付けます。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//*****************************
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//*****************************
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// ボタン入力の状態をシリアルモニタに表示するサンプル
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//*****************************
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;int&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;pushButton&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
@@ -103,7 +103,7 @@
 &lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02/ap02_pinassign_v1.png&#34;&gt;&lt;img src=&#34;https://docs.leafony.com/docs/leaf/processor/ap02/ap02_pinassign_v1.png&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;※1：出力の設定は出来ません。&lt;/br&gt;
 ※2：WiFi.hをインクルードする場合は、アナログ入力として使用出来ません。UART1は、ピン番号をRX=26、TX=25に設定です。UART0、2に関しては、ピン番号の指定はありません。下記に、UART1の設定例を記します。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;HardwareSerial&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Serial1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// UART1 (RX=9, TX=10)
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;HardwareSerial&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;Serial1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// UART1 (RX=9, TX=10)
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;Serial1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;begin&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;9600&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SERIAL_8N1&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;26&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;25&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// ピンを変更 (RX=26, TX=25)
@@ -155,7 +155,7 @@ Visual Studio Codeの強力なプラグインを活用し、より快適な開�
 &lt;li&gt;任意のプロジェクト名を指定し、&lt;code&gt;Board&lt;/code&gt;で&lt;code&gt;fm-devkit&lt;/code&gt;を選択。&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;src&lt;/code&gt;フォルダに含まれる&lt;code&gt;main.cpp&lt;/code&gt;を開き、以下のコードを貼り付け。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//  Button
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//    (c) 2020 Trillion-Node Study Group
@@ -195,7 +195,7 @@ Visual Studio Codeの強力なプラグインを活用し、より快適な開�
 &lt;li&gt;&lt;code&gt;lib_deps&lt;/code&gt;オプションに&lt;code&gt;closedcube/ClosedCube OPT3001 @ &amp;lt;バージョン&amp;gt;&lt;/code&gt;が追加されているか確認。&lt;/li&gt;
 &lt;li&gt;下記のコードを貼り付けると、上記の操作をしなくても簡単にライブラリの環境を設定することができる。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt;[env:fm-devkit]
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[env:fm-devkit]
 platform = espressif32
 board = fm-devkit
 framework = arduino

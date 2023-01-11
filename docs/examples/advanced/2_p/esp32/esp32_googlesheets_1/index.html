@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -24,8 +24,8 @@
 <title>Google Apps Scriptを使ったIoTサービス | Leafony</title><meta property="og:title" content="Google Apps Scriptを使ったIoTサービス" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/" />
-<meta property="og:site_name" content="Leafony" />
+<meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/" /><meta property="og:site_name" content="Leafony" />
+
 <meta itemprop="name" content="Google Apps Scriptを使ったIoTサービス">
 <meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Google Apps Scriptを使ったIoTサービス"/>
@@ -48,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
-<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" as="style">
+<link href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.fcbdb1f68331292b14f53d750e8b8982de0c282585defc6909956c50a8b309ada34d8f18792849e7d37516d5f661a63846fcea5945e5976b7b212470b1f10538.json"
+  data-offline-search-index-json-src="/offline-search-index.c30323f133d02a4bf9b05139a65712ad158bbd078b8fff1d8c1f42d339793879554fd9577875dd73c7bd929e7547335ac52b63bdbf5408fb9d66a1724d9d4372.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.fcbdb1f68331292b14f53d750e8b8982de0c282585defc6909956c50a8b309ada34d8f18792849e7d37516d5f661a63846fcea5945e5976b7b212470b1f10538.json"
+  data-offline-search-index-json-src="/offline-search-index.c30323f133d02a4bf9b05139a65712ad158bbd078b8fff1d8c1f42d339793879554fd9577875dd73c7bd929e7547335ac52b63bdbf5408fb9d66a1724d9d4372.json"
   data-offline-search-base-href="/"
 >
 
@@ -3921,13 +3921,41 @@ if (!doNotTrack) {
 <img src="1.esp32_googlesheets_1_scripteditor_a.jpg" width=700>
 <p><br /></p>
 <ol start="4">
-<li>拡張機能から<code>Apps Script</code>を開き、Githubのソースコードをコピー&amp;ペーストしてください。
-<ul>
-<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets/google_scripts_code.js" target="_brank">Leafony/Sample-Sketches/ESP32_GoogleSheets/google_scripts_code.js - GitHub</a></li>
-</ul>
-</li>
+<li>拡張機能から<code>Apps Script</code>を開き、Githubのソースコードをコピー&amp;ペーストしてください。</li>
 </ol>
-<p><br /></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">function</span> <span style="color:#000">doGet</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">e</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+
+    <span style="color:#000">let</span> <span style="color:#000">id</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#a40000">&#39;</span><span style="color:#000">google_sheets_id</span><span style="color:#a40000">&#39;</span><span style="color:#000;font-weight:bold">;</span> 
+    <span style="color:#000">let</span> <span style="color:#000">sheetName</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#a40000">&#39;</span><span style="color:#000">sheet_name</span><span style="color:#a40000">&#39;</span><span style="color:#000;font-weight:bold">;</span> 
+    <span style="color:#000">var</span> <span style="color:#000">result</span><span style="color:#000;font-weight:bold">;</span>
+
+    <span style="color:#8f5902;font-style:italic">// e.parameter has received GET parameters, i.e. temperature, humidity, illumination
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#000">undefined</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000">result</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#a40000">&#39;</span><span style="color:#000">Parameter</span> <span style="color:#000">undefined</span><span style="color:#a40000">&#39;</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
+        <span style="color:#000">var</span> <span style="color:#000">sheet</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">SpreadsheetApp</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">openById</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">id</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">getSheetByName</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">sheetName</span><span style="color:#000;font-weight:bold">);</span>
+        <span style="color:#000">var</span> <span style="color:#000">newRow</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">sheet</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">getLastRow</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>  <span style="color:#8f5902;font-style:italic">// get row number to be inserted
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000">var</span> <span style="color:#000">rowData</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">[];</span>
+
+        <span style="color:#8f5902;font-style:italic">// get current time
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">Date</span><span style="color:#000;font-weight:bold">();</span>
+        <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">UniqueID</span><span style="color:#000;font-weight:bold">;</span>
+        <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">temperature</span><span style="color:#000;font-weight:bold">;</span>
+        <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">humidity</span><span style="color:#000;font-weight:bold">;</span>
+        <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">illumination</span><span style="color:#000;font-weight:bold">;</span>
+
+        <span style="color:#8f5902;font-style:italic">// 1 x rowData.length cells from (newRow, 1) cell are specified
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000">var</span> <span style="color:#000">newRange</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">sheet</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">getRange</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">newRow</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">length</span><span style="color:#000;font-weight:bold">);</span>
+
+        <span style="color:#8f5902;font-style:italic">// insert data to the target cells
+</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000">newRange</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setValues</span><span style="color:#000;font-weight:bold">([</span><span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">]);</span>
+        <span style="color:#000">result</span> <span style="color:#ce5c00;font-weight:bold">=</span>  <span style="color:#a40000">&#39;</span><span style="color:#000">Ok</span><span style="color:#a40000">&#39;</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000;font-weight:bold">}</span>
+
+    <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">ContentService</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">createTextOutput</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">result</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
+    
+</code></pre></div><p><br /></p>
 <ol start="5">
 <li>以下の変数に、先ほど作成した<code>Google Sheets</code>の情報を入力してください。
 <ul>
@@ -3981,7 +4009,7 @@ if (!doNotTrack) {
 <img src="10.esp32_googlesheets_1_deployurl_a.jpg" width=600>  
 <p><br />
 （アプリ固有のURL）</p>
-<pre><code>https://script.google.com/macros/s/AKfycbzaAHAO8oBBJ1alqfQAv4h76Q-7ugOLm47jATWiqDczu6vahAl3ZncxSh3tQVRuSVRk/exec
+<pre tabindex="0"><code>https://script.google.com/macros/s/AKfycbzaAHAO8oBBJ1alqfQAv4h76Q-7ugOLm47jATWiqDczu6vahAl3ZncxSh3tQVRuSVRk/exec
 </code></pre><h2 id="google-sheetsの動作確認">Google Sheetsの動作確認</h2>
 <ol>
 <li>
@@ -3992,7 +4020,7 @@ if (!doNotTrack) {
 <p>アプリ固有のURLの末尾に、?UniqueID=Leafony_AP02-1&amp;temperature=100&amp;humidity=100&amp;illumination=100を追加すると、以下の通りになります。</p>
 </li>
 </ol>
-<pre><code>https://script.google.com/macros/s/AKfycbzaAHAO8oBBJ1alqfQAv4h76Q-7ugOLm47jATWiqDczu6vahAl3ZncxSh3tQVRuSVRk/exec?UniqueID=Leafony_AP02-1&amp;temperature=100&amp;humidity=100&amp;illumination=100
+<pre tabindex="0"><code>https://script.google.com/macros/s/AKfycbzaAHAO8oBBJ1alqfQAv4h76Q-7ugOLm47jATWiqDczu6vahAl3ZncxSh3tQVRuSVRk/exec?UniqueID=Leafony_AP02-1&amp;temperature=100&amp;humidity=100&amp;illumination=100
 </code></pre><p><br /></p>
 <ol start="3">
 <li>上記のURLをブラウザに貼り付けてアクセスすると(Enter)、設定した<code>Google Sheets</code>にデータが書き込まれます。</li>
@@ -4347,7 +4375,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 November 11, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 11, 2023
 </div>
 </div>
 
@@ -4411,7 +4439,7 @@ if (!doNotTrack) {
 
 
 
-<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
+<script src="/js/main.min.f70926ca86f7153429e54b0705f11c420ceac8da5cb4027087319447696e4a5f.js" integrity="sha256-9wkmyob3FTQp5UsHBfEcQgzqyNpctAJwhzGUR2luSl8=" crossorigin="anonymous"></script>
 
 
 

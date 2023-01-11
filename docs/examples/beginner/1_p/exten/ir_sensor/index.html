@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -24,8 +24,8 @@
 <title>人感センサ | Leafony</title><meta property="og:title" content="人感センサ" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/docs/examples/beginner/1_p/exten/ir_sensor/" />
-<meta property="og:site_name" content="Leafony" />
+<meta property="og:url" content="https://docs.leafony.com/docs/examples/beginner/1_p/exten/ir_sensor/" /><meta property="og:site_name" content="Leafony" />
+
 <meta itemprop="name" content="人感センサ">
 <meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="人感センサ"/>
@@ -48,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
-<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" as="style">
+<link href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.fcbdb1f68331292b14f53d750e8b8982de0c282585defc6909956c50a8b309ada34d8f18792849e7d37516d5f661a63846fcea5945e5976b7b212470b1f10538.json"
+  data-offline-search-index-json-src="/offline-search-index.c30323f133d02a4bf9b05139a65712ad158bbd078b8fff1d8c1f42d339793879554fd9577875dd73c7bd929e7547335ac52b63bdbf5408fb9d66a1724d9d4372.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.fcbdb1f68331292b14f53d750e8b8982de0c282585defc6909956c50a8b309ada34d8f18792849e7d37516d5f661a63846fcea5945e5976b7b212470b1f10538.json"
+  data-offline-search-index-json-src="/offline-search-index.c30323f133d02a4bf9b05139a65712ad158bbd078b8fff1d8c1f42d339793879554fd9577875dd73c7bd929e7547335ac52b63bdbf5408fb9d66a1724d9d4372.json"
   data-offline-search-base-href="/"
 >
 
@@ -3808,7 +3808,12 @@ if (!doNotTrack) {
     <li><a href="#概要">概要</a></li>
     <li><a href="#使用するリーフ">使用するリーフ</a></li>
     <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
-    <li><a href="#ソースコード">ソースコード</a></li>
+    <li><a href="#ソースコード">ソースコード</a>
+      <ul>
+        <li><a href="#arduino-ide-の場合docsenvironmentavrarduino"><a href="/docs/environment/avr/arduino">Arduino IDE の場合</a></a></li>
+        <li><a href="#platformio-ide-の場合docsenvironmentavrplatformio"><a href="/docs/environment/avr/platformio">PlatformIO IDE の場合</a></a></li>
+      </ul>
+    </li>
     <li><a href="#実行結果">実行結果</a></li>
   </ul>
 </nav>
@@ -3897,46 +3902,46 @@ if (!doNotTrack) {
 <table>
 <thead>
 <tr>
-<th align="left">Type</th>
-<th align="left">Name</th>
-<th align="left">Q&rsquo;ty</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Name</th>
+<th style="text-align:left">Q&rsquo;ty</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><a href="/docs/leaf/others/az62">AZ62</a></td>
-<td align="left"><a href="/docs/leaf/others/az62">Connector Cover</a></td>
-<td align="left">1</td>
+<td style="text-align:left"><a href="/docs/leaf/others/az62">AZ62</a></td>
+<td style="text-align:left"><a href="/docs/leaf/others/az62">Connector Cover</a></td>
+<td style="text-align:left">1</td>
 </tr>
 <tr>
-<td align="left"><a href="/docs/leaf/io/ai02">AI02</a></td>
-<td align="left"><a href="/docs/leaf/io/ai02">SP&amp;PIR</a></td>
-<td align="left">1</td>
+<td style="text-align:left"><a href="/docs/leaf/io/ai02">AI02</a></td>
+<td style="text-align:left"><a href="/docs/leaf/io/ai02">SP&amp;PIR</a></td>
+<td style="text-align:left">1</td>
 </tr>
 <tr>
-<td align="left"><a href="/docs/leaf/others/az01">AZ01</a></td>
-<td align="left"><a href="/docs/leaf/others/az01">USB</a></td>
-<td align="left">1</td>
+<td style="text-align:left"><a href="/docs/leaf/others/az01">AZ01</a></td>
+<td style="text-align:left"><a href="/docs/leaf/others/az01">USB</a></td>
+<td style="text-align:left">1</td>
 </tr>
 <tr>
-<td align="left"><a href="/docs/leaf/processor/ap01">AP01</a></td>
-<td align="left"><a href="/docs/leaf/processor/ap01">AVR MCU</a></td>
-<td align="left">1</td>
+<td style="text-align:left"><a href="/docs/leaf/processor/ap01">AP01</a></td>
+<td style="text-align:left"><a href="/docs/leaf/processor/ap01">AVR MCU</a></td>
+<td style="text-align:left">1</td>
 </tr>
 <tr>
-<td align="left"><a href="/docs/leaf/power/av01">AV01</a></td>
-<td align="left"><a href="/docs/leaf/power/av01">CR2032</a></td>
-<td align="left">1</td>
+<td style="text-align:left"><a href="/docs/leaf/power/av01">AV01</a></td>
+<td style="text-align:left"><a href="/docs/leaf/power/av01">CR2032</a></td>
+<td style="text-align:left">1</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">CR2032 coin cell battery</td>
-<td align="left">1</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">CR2032 coin cell battery</td>
+<td style="text-align:left">1</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">M2*15mm screw</td>
-<td align="left">2</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">M2*15mm screw</td>
+<td style="text-align:left">2</td>
 </tr>
 </tbody>
 </table>
@@ -3944,8 +3949,11 @@ if (!doNotTrack) {
 <p>下図のようにリーフを組み立てましょう。</p>
 <p><img src="./ir_assemble.png" alt="assemble1"></p>
 <h2 id="ソースコード">ソースコード</h2>
-<p>Arduino IDEで下記のプログラムを書きましょう。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
+<h3 id="arduino-ide-の場合docsenvironmentavrarduino"><a href="/docs/environment/avr/arduino">Arduino IDE の場合</a></h3>
+<ul>
+<li>xxx.inoファイルには、以下のコードを書き込んで下さい。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
 </span><span style="color:#8f5902;font-style:italic">//  Human Sensing
 </span><span style="color:#8f5902;font-style:italic">//
 </span><span style="color:#8f5902;font-style:italic">//    (c) 2021 LEAFONY SYSTEMS Co., Ltd
@@ -4113,6 +4121,22 @@ if (!doNotTrack) {
   <span style="color:#000">memset</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">i2c_recvBuf</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">],</span> <span style="color:#0000cf;font-weight:bold">0x00</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">sizeof</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i2c_recvBuf</span><span style="color:#000;font-weight:bold">));</span>
 <span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/blob/master/Human_Sensing/Human_Sensing.ino" target="_blank">Human_Sensing.ino</a></p>
+<h3 id="platformio-ide-の場合docsenvironmentavrplatformio"><a href="/docs/environment/avr/platformio">PlatformIO IDE の場合</a></h3>
+<ul>
+<li>
+<p>main.cppファイルには、Arduino IDEのコードの先頭に<code>#include &lt;Arduino.h&gt;</code>を加えて書き込んで下さい。</BR></p>
+</li>
+<li>
+<p>platformio.iniには、以下のコードを書き込んで下さい。</p>
+</li>
+</ul>
+<pre tabindex="0"><code>[env:pro8MHzatmega328]
+platform = atmelavr
+board = pro8MHzatmega328
+framework = arduino
+monitor_speed = 115200
+
+</code></pre><p><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Human_Sensing_Pjt" target="_blank">Human_Sensing_Pjt</a></p>
 <h2 id="実行結果">実行結果</h2>
 <p>人が近づくと音が鳴ります。</p>
 <p style="text-align: right">
@@ -4444,7 +4468,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 June 30, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 11, 2023
 </div>
 </div>
 
@@ -4508,7 +4532,7 @@ if (!doNotTrack) {
 
 
 
-<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
+<script src="/js/main.min.f70926ca86f7153429e54b0705f11c420ceac8da5cb4027087319447696e4a5f.js" integrity="sha256-9wkmyob3FTQp5UsHBfEcQgzqyNpctAJwhzGUR2luSl8=" crossorigin="anonymous"></script>
 
 
 

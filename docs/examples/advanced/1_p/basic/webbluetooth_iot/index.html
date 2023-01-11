@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -24,8 +24,8 @@
 <title>Web Bluetoothを使ったIoTアプリ入門 | Leafony</title><meta property="og:title" content="Web Bluetoothを使ったIoTアプリ入門" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/1_p/basic/webbluetooth_iot/" />
-<meta property="og:site_name" content="Leafony" />
+<meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/1_p/basic/webbluetooth_iot/" /><meta property="og:site_name" content="Leafony" />
+
 <meta itemprop="name" content="Web Bluetoothを使ったIoTアプリ入門">
 <meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Web Bluetoothを使ったIoTアプリ入門"/>
@@ -48,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
-<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" as="style">
+<link href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.fcbdb1f68331292b14f53d750e8b8982de0c282585defc6909956c50a8b309ada34d8f18792849e7d37516d5f661a63846fcea5945e5976b7b212470b1f10538.json"
+  data-offline-search-index-json-src="/offline-search-index.c30323f133d02a4bf9b05139a65712ad158bbd078b8fff1d8c1f42d339793879554fd9577875dd73c7bd929e7547335ac52b63bdbf5408fb9d66a1724d9d4372.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.fcbdb1f68331292b14f53d750e8b8982de0c282585defc6909956c50a8b309ada34d8f18792849e7d37516d5f661a63846fcea5945e5976b7b212470b1f10538.json"
+  data-offline-search-index-json-src="/offline-search-index.c30323f133d02a4bf9b05139a65712ad158bbd078b8fff1d8c1f42d339793879554fd9577875dd73c7bd929e7547335ac52b63bdbf5408fb9d66a1724d9d4372.json"
   data-offline-search-base-href="/"
 >
 
@@ -4028,21 +4028,21 @@ Webアプリの使い方の詳細は<a href="/docs/getting-started/basic">Basic 
 <h3 id="leafony側">Leafony側</h3>
 <p><code>4-Sensors_BLE.ino</code>の1020行目付近でBluetoothで送信するテキストデータを生成しています。
 このテキストを変えることで任意のデータを送信可能です。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++:4-Sensors_BLE.ino" data-lang="c++:4-Sensors_BLE.ino"><span style="color:#000">sendLen</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">sprintf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">sendData</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;%04s,%04s,%04s,%04s,%04s,%01s</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">temp</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">humid</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">light</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">tilt</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">battVolt</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pips</span><span style="color:#000;font-weight:bold">)</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++:4-Sensors_BLE.ino" data-lang="c++:4-Sensors_BLE.ino"><span style="color:#000">sendLen</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">sprintf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">sendData</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#4e9a06">&#34;%04s,%04s,%04s,%04s,%04s,%01s</span><span style="color:#4e9a06">\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">temp</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">humid</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">light</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">tilt</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">battVolt</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">pips</span><span style="color:#000;font-weight:bold">)</span>
 </code></pre></div><p>上記では<code>&lt;温度&gt;,&lt;湿度&gt;,&lt;照度&gt;,&lt;傾き&gt;,&lt;電池電圧&gt;,&lt;サイコロ&gt;</code>のようにカンマ区切りのデータを送信しています。</p>
 <p>実際にこのテキストデータを送信しているのは下記の部分です。(1085行目付近)</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++:4-Sensors_BLE.ino" data-lang="c++:4-Sensors_BLE.ino"><span style="color:#000">ble112</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ble_cmd_gatt_server_send_characteristic_notification</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x000C</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">sendLen</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">uint8</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">sendData</span> <span style="color:#000;font-weight:bold">);</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++:4-Sensors_BLE.ino" data-lang="c++:4-Sensors_BLE.ino"><span style="color:#000">ble112</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ble_cmd_gatt_server_send_characteristic_notification</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x000C</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">sendLen</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#000">uint8</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">sendData</span> <span style="color:#000;font-weight:bold">);</span>
 </code></pre></div><h3 id="webアプリ側">Webアプリ側</h3>
 <p>Webアプリ側では<code>leafony.js</code>にデータ受信時の処理が書かれています。</p>
 <p><code>leafony.js</code>の75行目の記述で、データを受信した時に呼び出される関数を指定します。
 ここでは<code>handleData()</code>という関数が呼び出されます。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js:leafony.js" data-lang="js:leafony.js"><span style="color:#204a87;font-weight:bold">char</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">addEventListener</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;characteristicvaluechanged&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">handleData</span> <span style="color:#000;font-weight:bold">);</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js:leafony.js" data-lang="js:leafony.js"><span style="color:#204a87;font-weight:bold">char</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">read</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">addEventListener</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;characteristicvaluechanged&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">handleData</span> <span style="color:#000;font-weight:bold">);</span>
 </code></pre></div><p><code>handleData()</code>関数も<code>leafony.js</code>に記述されています。<br>
 BLEで受信したデータは<code>event.target.value</code>に含まれています。<br>
 一旦<code>data</code>という変数に値をコピーした後に、受信データをutf-8でデコードし、改行コード(<code>\r\n</code>)を取り除いてから、カンマ<code>,</code>で区切って配列にしています。<br>
 これらのデータは<code>state</code>という変数に任意の名前をつけて保存しています。(<code>state.temp</code>や<code>state.humid</code>など)</p>
 <p>Leafony側で送るデータを変更した際は、<code>handleData()</code>関数を修正することでデコードすることが可能です。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:leafony.js" data-lang="javascript:leafony.js">    <span style="color:#8f5902;font-style:italic">/**
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:leafony.js" data-lang="javascript:leafony.js">    <span style="color:#8f5902;font-style:italic">/**
 </span><span style="color:#8f5902;font-style:italic">     * Characteristicの値が変化した時に呼び出される関数
 </span><span style="color:#8f5902;font-style:italic">     * @param {*} event
 </span><span style="color:#8f5902;font-style:italic">     */</span>
@@ -4074,7 +4074,7 @@ BLEで受信したデータは<code>event.target.value</code>に含まれてい�
 <h3 id="webアプリ側-1">Webアプリ側</h3>
 <p>Webアプリの画面で「LED+」「LED-」ボタンを押すと、LeafonyのLEDの点滅スピードを変えることができます。<br>
 ボタン押された時の処理は<code>app.js</code>の下記の部分に記述されています。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:app.js" data-lang="javascript:app.js"><span style="color:#000">buttonLedPls</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">addEventListener</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;click&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript:app.js" data-lang="javascript:app.js"><span style="color:#000">buttonLedPls</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">addEventListener</span> <span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;click&#39;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
 
     <span style="color:#000">console</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">log</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;LED Plus Button Clicked&#39;</span> <span style="color:#000;font-weight:bold">);</span>
     <span style="color:#000">leafony</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">sendCommand</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#4e9a06">&#39;PLS&#39;</span> <span style="color:#000;font-weight:bold">);</span>
@@ -4084,7 +4084,7 @@ BLEで受信したデータは<code>event.target.value</code>に含まれてい�
 <h3 id="leafony側-1">Leafony側</h3>
 <p>Webアプリ側から送信された文字列をLeafonyが受信したとき、<code>4-Sensors.ino</code>の<code>my_evt_gatt_server_attribute_value()</code>関数が呼び出されます。<br>
 デコードされた文字列は<code>rcv_data</code>という変数にコピーされ、その文字列の内容に応じた処理をしています。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++:4-Sensors.ino" data-lang="c++:4-Sensors.ino"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">my_evt_gatt_server_attribute_value</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000">ble_msg_gatt_server_attribute_value_evt_t</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">msg</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++:4-Sensors.ino" data-lang="c++:4-Sensors.ino"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">my_evt_gatt_server_attribute_value</span><span style="color:#000;font-weight:bold">(</span> <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">struct</span> <span style="color:#000">ble_msg_gatt_server_attribute_value_evt_t</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">msg</span> <span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
     <span style="color:#000">uint16</span> <span style="color:#000">attribute</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">uint16</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">msg</span> <span style="color:#ce5c00;font-weight:bold">-&gt;</span> <span style="color:#000">attribute</span><span style="color:#000;font-weight:bold">;</span>
     <span style="color:#000">uint16</span> <span style="color:#000">offset</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
     <span style="color:#000">uint8</span> <span style="color:#000">value_len</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">msg</span> <span style="color:#ce5c00;font-weight:bold">-&gt;</span> <span style="color:#000">value</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">len</span><span style="color:#000;font-weight:bold">;</span>
@@ -4142,23 +4142,23 @@ BLEで受信したデータは<code>event.target.value</code>に含まれてい�
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Windows 10 version 1703以降 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Windows 10 version 1703以降&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>OS X Yosemite以降 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>OS X Yosemite以降&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>Kernel 3.19+ and BlueZ 5.41+ installed. <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Kernel 3.19+ and BlueZ 5.41+ installed.&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
-<p>Android 6.0 Marshmallow以降 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Android 6.0 Marshmallow以降&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5" role="doc-endnote">
-<p>iPhoneまたはiPadには <a href="https://apps.apple.com/jp/app/bluefy-web-ble-browser/id1492822055" target=" blank">Bluefy</a>のアプリが必要です。iPhone、iPad版のChromeではWeb Bluetoothが実装されていないためです。 <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>iPhoneまたはiPadには <a href="https://apps.apple.com/jp/app/bluefy-web-ble-browser/id1492822055" target=" blank">Bluefy</a>のアプリが必要です。iPhone、iPad版のChromeではWeb Bluetoothが実装されていないためです。&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:6" role="doc-endnote">
 <p>動作しない場合はArduino IDE 1.8.7、Arduino AVR Boards 1.6.23で書き込みを行ってください。古いバージョンのArduino IDEダウンロードとArduino AVR Boardsの変更方法については
-<a href="../../../../../environment/avr/arduino_ver" target=" blank">Arduino IDE のバージョン</a>参照。 <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<a href="../../../../../environment/avr/arduino_ver" target=" blank">Arduino IDE のバージョン</a>参照。&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -4553,7 +4553,7 @@ BLEで受信したデータは<code>event.target.value</code>に含まれてい�
 
 
 
-<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
+<script src="/js/main.min.f70926ca86f7153429e54b0705f11c420ceac8da5cb4027087319447696e4a5f.js" integrity="sha256-9wkmyob3FTQp5UsHBfEcQgzqyNpctAJwhzGUR2luSl8=" crossorigin="anonymous"></script>
 
 
 
