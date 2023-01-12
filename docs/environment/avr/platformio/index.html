@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.708bd356d2a9edd3bdf2a2b1052aee10ed2e6bde41c2101e4d7b8af6852774e8a00bc7ae1ead700aa1f857b519781bad72d200779af9da9244849620624e4ff7.json"
+  data-offline-search-index-json-src="/offline-search-index.45c65c8e1c91fb22fe78fc20e63bafdf24b201c7f7af8079d55a0037d67df5edc5f029bc3f76454ce78beae405324d46407ab46f62cc865fd1f1ca0467470b39.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.708bd356d2a9edd3bdf2a2b1052aee10ed2e6bde41c2101e4d7b8af6852774e8a00bc7ae1ead700aa1f857b519781bad72d200779af9da9244849620624e4ff7.json"
+  data-offline-search-index-json-src="/offline-search-index.45c65c8e1c91fb22fe78fc20e63bafdf24b201c7f7af8079d55a0037d67df5edc5f029bc3f76454ce78beae405324d46407ab46f62cc865fd1f1ca0467470b39.json"
   data-offline-search-base-href="/"
 >
 
@@ -3823,7 +3823,8 @@ if (!doNotTrack) {
 
   <ul>
     <li><a href="#mcuとboardとの関係">MCUとBoardとの関係</a></li>
-    <li><a href="#stm32-mcuのuploadの仕方">STM32 MCUのUploadの仕方</a></li>
+    <li><a href="#stm32-mcu-platformini">STM32 MCU Platform.ini</a></li>
+    <li><a href="#stm32-mcu-upload">STM32 MCU Upload</a></li>
     <li><a href="#stm32-mcuの周波数を80mhz16mhzの変更方法">STM32 MCUの周波数を80MHz→16MHzの変更方法</a></li>
     <li><a href="#シリアル通信のボーレート">シリアル通信のボーレート</a></li>
     <li><a href="#platformio-ideのツールバー">PlatformIO IDEのツールバー</a>
@@ -3978,6 +3979,10 @@ Boardファイルは、C:\Users\ユーザ名\ .platformioの下にある①frame
 </ul>
 </li>
 <li>
+<p>platformio.ini のファイルを開き、Projectで定義した<a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">platform</a>、 <a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">board</a>、<a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">framework</a>が、書かれていることを確認します。</br></br>
+<img src="./platformio_7.png" width="640"></br></p>
+</li>
+<li>
 <p>main.cppファイルには、Arduino IDEのコードの先頭に<code>#include &lt;Arduino.h&gt;</code>を加える必要があります。<code>src</code>フォルダの<code>main.cpp</code>を開き、以下のコードを貼り付けます。</br></br>
 <img src="./platformio_4.png" width="640"></p>
 </li>
@@ -3995,18 +4000,12 @@ Boardファイルは、C:\Users\ユーザ名\ .platformioの下にある①frame
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// LEDを消灯
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">999</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><ol start="5">
-<li>
-<p>platformio.ini のファイルを開き、Projectで定義した<a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">platform</a>、 <a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">board</a>、<a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">framework</a>が、書かれていることを確認します。</br></br>
-<img src="./platformio_7.png" width="640"></br></p>
-</li>
-<li>
-<p>PlatformIO Toolbarの<code>Project environment switcher</code>ボタンを押すと、アクティブなプロジェクが、上段に表示されます。複数ある場合は、全て表示されます。プロジェクトを選択し、<code>Build</code>ボタンを押すと、ビルドが開始されます。<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></br></br>
-<img src="./platformio_5.png" width="640"></p>
-</li>
+</code></pre></div><ol start="6">
+<li>PlatformIO Toolbarの<code>Project environment switcher</code>ボタンを押すと、アクティブなプロジェクが、上段に表示されます。複数ある場合は、全て表示されます。プロジェクトを選択し、<code>Build</code>ボタンを押すと、ビルドが開始されます。<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></br></br>
+<img src="./platformio_5.png" width="640"></li>
 </ol>
 <ol start="7">
-<li>LeafonyをPCに接続し、 <code>Upload</code>ボタンを押すと、プログラムがMCUに書き込まれ、正しく書き込まれた場合は、<code>avrdude done.  Thank you.</code>　と表示しています。</br></li>
+<li>LeafonyをPCに接続し、<code>Upload</code>ボタンを押すと、プログラムがMCUに書き込まれます。</br></li>
 </ol>
 <h1 id="詳しい使い方">詳しい使い方</h1>
 <h2 id="mcuとboardとの関係">MCUとBoardとの関係</h2>
@@ -4044,25 +4043,29 @@ Boardファイルは、C:\Users\ユーザ名\ .platformioの下にある①frame
 <td align="left"><a href="../../leaf/processor/ap03">STM32 MCU</a></td>
 <td align="left">ststm32</td>
 <td align="left">LEAFONY_AP03</td>
-<td align="left">COMポートの自動検出が出来ない。※1</td>
+<td align="left">COMポートの自動検出が出来ない。</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<p>※1:STM32 MCUは、アップロード時に、COMポートの自動検出が出来ないため、以下をplatform.inに書き込む必要があります。</br></p>
+<h2 id="stm32-mcu-platformini">STM32 MCU Platform.ini</h2>
+<p>platformio.ini のファイルを開き、Projectで定義した<a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">platform</a>、 <a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">board</a>、<a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">framework</a>が、書かれていることを確認します。STM32 MCUは、アップロード時に、COMポートの自動検出が出来ないため、以下をplatform.inに書き込む必要があります。</br></p>
 <pre><code>upload_protocol = custom
 upload_port = COM&lt;番号&gt;
 upload_command = %%userprofile%%\AppData\Local\Arduino15\packages\STM32\tools\STM32Tools\1.4.0\tools\win\stm32CubeProg.bat 1 $SOURCE $UPLOAD_PORT -s
-</code></pre><p>※2:STM32 MCUは、</p>
-<h2 id="stm32-mcuのuploadの仕方">STM32 MCUのUploadの仕方</h2>
-<p>Start operation achieved successfully</p>
-<p>Timeout error occured while waiting for acknowledgement.
-Error: Activating device: KO. Please, verify the boot mode configuration and check the serial port configuration. Reset your device then try again&hellip;</p>
-<p>Error: Cannot open port COM3, it may be used by another application or port name is invalid.
-==================== [SUCCESS] Took 6.29 seconds ====================</p>
-<ul>
-<li>ターミナルはタスクで再利用されます、閉じるには任意のキーを押してください。</li>
-</ul>
+</code></pre><h2 id="stm32-mcu-upload">STM32 MCU Upload</h2>
+<ol>
+<li>
+<p>STM32 MCUリーフの<code>プログラムスイッチ</code>を、プログラム側LED消灯)にします。</br>
+<a href="/docs/leaf/processor/ap03/ap03_tips.jpg"><img src="/docs/leaf/processor/ap03/ap03_tips.jpg" width="450"></a></p>
+</li>
+<li>
+<p>アップロードされたら、<code>Start operation achieved successfully</code>と表示されるので、STM32 MCUリーフの<code>プログラムスイッチ</code>を実行（Run)側にします。LEDが消灯していることを確認して下さい。</br></p>
+</li>
+<li>
+<p>STM32 MCUリーフの<code>リセットスイッチ</code>を押すと、プログラムが実行されます。</br></p>
+</li>
+</ol>
 <h2 id="stm32-mcuの周波数を80mhz16mhzの変更方法">STM32 MCUの周波数を80MHz→16MHzの変更方法</h2>
 <h2 id="シリアル通信のボーレート">シリアル通信のボーレート</h2>
 <p>シリアルモニタに出力する際は、シリアル通信のボーレートをplatformio.ini の最後の行に<code>monitor_speed =</code>で定義します。</br></p>
@@ -4233,7 +4236,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 11, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 12, 2023
 </div>
 </div>
 
