@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -24,8 +24,8 @@
 <title>STM32 Logger Beacon | Leafony</title><meta property="og:title" content="STM32 Logger Beacon" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_logger_ble_beacon/" />
-<meta property="og:site_name" content="Leafony" />
+<meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_logger_ble_beacon/" /><meta property="og:site_name" content="Leafony" />
+
 <meta itemprop="name" content="STM32 Logger Beacon">
 <meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STM32 Logger Beacon"/>
@@ -48,8 +48,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
-<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" as="style">
+<link href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.0f225864bd915fdb3c41c972c1228861ad224108a00a6e113983d6657a2eb0c2b369237fef18768f6463def2d52817bb36f0de199ab9ac8f39b1b1472fde5f28.json"
+  data-offline-search-index-json-src="/offline-search-index.e1bd8b2e1bc3dee1a2adf70452a3ca919482bd9d154537f24f4e44102e4df617d175c194a388ea93ec6f0b2d9fe1d0de80d55e1dfdee9b908f8885e847c73316.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.0f225864bd915fdb3c41c972c1228861ad224108a00a6e113983d6657a2eb0c2b369237fef18768f6463def2d52817bb36f0de199ab9ac8f39b1b1472fde5f28.json"
+  data-offline-search-index-json-src="/offline-search-index.e1bd8b2e1bc3dee1a2adf70452a3ca919482bd9d154537f24f4e44102e4df617d175c194a388ea93ec6f0b2d9fe1d0de80d55e1dfdee9b908f8885e847c73316.json"
   data-offline-search-base-href="/"
 >
 
@@ -4044,7 +4044,7 @@ Connectionモードは、本体の時刻を設定するなどの初回起動時�
 <p>4-Sensorsに搭載された加速度センサは、振動(指で本体をタップする動作)を検出すると、STM32の<code>INT1ピン</code>に割り込み信号を出します。<br>
 下記の記述で加速度センサのタップ検出を有効化し、その割り込みによってSTM32がスリープから復帰する仕組みを実現しています。<br>
 か速度センサの割り込みによって起動した場合のみConnectモードとして起動させることで、必要な時だけBLEで接続可能な仕組みを実現しました。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setClick</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">DOUBLETAP</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">CLICKTHRESHHOLD</span><span style="color:#000;font-weight:bold">);</span>  <span style="color:#8f5902;font-style:italic">// enable click interrupt
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">accel</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setClick</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">DOUBLETAP</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">CLICKTHRESHHOLD</span><span style="color:#000;font-weight:bold">);</span>  <span style="color:#8f5902;font-style:italic">// enable click interrupt
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#8f5902;font-style:italic">// enable interrupt from accelerometer click event
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">LowPower</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">attachInterruptWakeup</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">INT_1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">onClicked</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">RISING</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">DEEP_SLEEP_MODE</span><span style="color:#000;font-weight:bold">);</span>
@@ -4064,7 +4064,7 @@ AD Structureはさらに細かく見ると、<code>Length</code>:データの長
 <p>実際に本サンプルでは下記のコードのように、<code>AD Structure 1</code>にAdvertisingのモード設定、<code>AD Structure 2</code>にデバイス名、<code>AD Structure 3</code>にセンサのデータを保存して送信しています。<br>
 Beaconで送信するデータを変更したい場合は<code>AD Structure 3</code>を任意に変更してください。</p>
 <p><a href="https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L272-L302">https://github.com/Leafony/Sample-Sketches/blob/4e474bcb1f154025873ecf883ddc998df58605cf/STM32_Logger_Beacon/STM32_Logger_Beacon.ino#L272-L302</a></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#8f5902;font-style:italic">//-------------------------
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#8f5902;font-style:italic">//-------------------------
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// Advertising Packet
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">//-------------------------
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#8f5902;font-style:italic">// AD Structure 1 (Flags)
@@ -4499,7 +4499,7 @@ Beaconで送信するデータを変更したい場合は<code>AD Structure 3</c
 
 
 
-<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
+<script src="/js/main.min.f70926ca86f7153429e54b0705f11c420ceac8da5cb4027087319447696e4a5f.js" integrity="sha256-9wkmyob3FTQp5UsHBfEcQgzqyNpctAJwhzGUR2luSl8=" crossorigin="anonymous"></script>
 
 
 
