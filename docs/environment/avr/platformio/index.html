@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.84eeaab9328362a0ea055376afa29551da699114cc76d5ca546822cf825e75c30ef9ae558d62e870494dd1e02ca749e2775434c74729ed0bd9023a74d0be91cc.json"
+  data-offline-search-index-json-src="/offline-search-index.0f225864bd915fdb3c41c972c1228861ad224108a00a6e113983d6657a2eb0c2b369237fef18768f6463def2d52817bb36f0de199ab9ac8f39b1b1472fde5f28.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.84eeaab9328362a0ea055376afa29551da699114cc76d5ca546822cf825e75c30ef9ae558d62e870494dd1e02ca749e2775434c74729ed0bd9023a74d0be91cc.json"
+  data-offline-search-index-json-src="/offline-search-index.0f225864bd915fdb3c41c972c1228861ad224108a00a6e113983d6657a2eb0c2b369237fef18768f6463def2d52817bb36f0de199ab9ac8f39b1b1472fde5f28.json"
   data-offline-search-base-href="/"
 >
 
@@ -3814,8 +3814,6 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#pythonのインストール">Pythonのインストール</a></li>
         <li><a href="#platformio-ideのインストール">PlatformIO IDEのインストール</a></li>
-        <li><a href="#stm32cubeprog-のインストール">STM32CubeProg のインストール</a></li>
-        <li><a href="#stm32mcuのboardファイルの保存">STM32MCUのBoardファイルの保存</a></li>
       </ul>
     </li>
     <li><a href="#クイックスタート">クイックスタート</a></li>
@@ -3823,14 +3821,6 @@ if (!doNotTrack) {
 
   <ul>
     <li><a href="#mcuとboardとの関係">MCUとBoardとの関係</a></li>
-    <li><a href="#stm32-mcu-platformini">STM32 MCU Platform.ini</a></li>
-    <li><a href="#stm32-mcu-upload">STM32 MCU Upload</a></li>
-    <li><a href="#stm32-mcuの周波数を80mhz16mhzの変更方法">STM32 MCUの周波数を80MHz→16MHzの変更方法</a></li>
-    <li><a href="#シリアル通信のボーレート">シリアル通信のボーレート</a>
-      <ul>
-        <li><a href="#シリアルモニターの使い方">シリアルモニターの使い方</a></li>
-      </ul>
-    </li>
     <li><a href="#プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</a></li>
     <li><a href="#プロジェクトフォルダの保存場所の設定">プロジェクトフォルダの保存場所の設定</a></li>
     <li><a href="#ライブラリ">ライブラリ</a></li>
@@ -3914,13 +3904,8 @@ if (!doNotTrack) {
 <li>検索窓が現れたら、<code>Japanese Language Pack for Visual Studio Code</code>を入力し、日本語の拡張機能をインストールします。</br></li>
 <li>次に <code>platformio ide</code>を入力し、PlatformIO IDEをインストールが出来れば、事前準備は完了です。</br></li>
 </ol>
-<h3 id="stm32cubeprog-のインストール">STM32CubeProg のインストール</h3>
-<p>STM32MCUにプログラムを書き込むために、<a href="https://www.stmcu.jp/design/sw_dev/pc_soft/58442/">STM32CubeProg</a>のインストール<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>をして下さい。<br></p>
-<h3 id="stm32mcuのboardファイルの保存">STM32MCUのBoardファイルの保存</h3>
-<p>STM32MCUは、<a href="https://www.st.com/ja/evaluation-tools/nucleo-l452re.html">NUCLEO-L452RE</a>とピンアサインが異なるため、STM32MCUのBoardファイルを用意する必要があります。
-Boardファイルは、C:\Users\ユーザ名\ .platformioの下にある①framework-arduinoststm32と②ststm32であり、以下の構成になっています。</br></br>
-<img src="./platformio_12.png" width="440"></p>
-<h4 id="framework-arduinoststm32とststm32のフォルダのダウンロード">①framework-arduinoststm32と②ststm32のフォルダのダウンロード</h4>
+<h2 id="クイックスタート">クイックスタート</h2>
+<p>「Hello Wolrd」の事例で、platformIO IDEの使い方を紹介します。</br></p>
 <ol>
 <li>
 <p>VSCodeを立ち上げ、<code>ファイル</code>→ <code>新しいウィンドウ</code>を開きます。</br></p>
@@ -3932,81 +3917,62 @@ Boardファイルは、C:\Users\ユーザ名\ .platformioの下にある①frame
 <p><code>PIO Home/Open</code>をクリックします。</br></p>
 </li>
 <li>
-<p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>　</br></p>
 <ul>
-<li>Name:<code>Test</code>と記入 </br></li>
-<li>Board:<code>ST Nucleo L452RE</code>を選択 </br></li>
+<li>Name:<code>Hellow Wolrd_Pjt</code>と記入 </br></li>
+<li>Board:<code>Srduino Pro or Pro Mini ATmega328(3.3v,8Mhz)</code>を選択 </br></li>
 <li>Framework:<code>Arduino </code>を選択 </br></li>
 </ul>
 </li>
 </ol>
 <ol start="5">
-<li>C:\Users\ユーザ名\ .platformio の下に、①と②のふたつのフォルダが出来ていることを確認して下さい。</br></li>
-</ol>
-<h4 id="leafony_ap03のフォルダとleafony_ap03jsonのファイルの保存">③Leafony_AP03のフォルダと④Leafony_AP03.jsonのファイルの保存</h4>
-<ol start="6">
-<li>
-<p><code>Leafony_AP03</code>のフォルダと<code>Leafony_AP03.json</code>ファイルを以下からダウンロードし、所定の場所に保存して下さい。</br></p>
-<ul>
-<li><code>https://github.com/Leafony/platformio-LEAFONY_AP03</code></li>
-</ul>
-</li>
-<li>
-<p>Project Wizardの<code>Board</code>の検索窓に<code>Leafony_AP03</code>が表示されることを確認して下さい。</br></p>
-</li>
-</ol>
-<h2 id="クイックスタート">クイックスタート</h2>
-<p>Lチカの事例で、platformIO IDEの使い方を紹介します。</br></p>
-<ol>
-<li>
-<p>VSCodeを立ち上げ、<code>ファイル</code>→ <code>新しいウィンドウ</code>を開きます。</br></p>
-</li>
-<li>
-<p><code>PlatformIO</code>(画面左のバー)をクリックし、PLATFORMIO QUICK ACCESS（画面左）を表示させます。</br></p>
-</li>
-<li>
-<p><code>PIO Home/Open</code>をクリックします。</br></p>
-</li>
-<li>
-<p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>　</br></p>
-<ul>
-<li>Name:<code>Blink_Pjt</code>と記入 </br></li>
-<li>Board:<code>Srduino Pro or Pro Mini ATmega328(3.3v,8Mhz)</code>を選択 </br></li>
-<li>Framework:<code>Arduino </code>を選択 </br></li>
-</ul>
-</li>
-<li>
-<p><code>platformio.ini</code> (画面左）を開き、以下の内容が書かれていることを確認します。</p>
-</li>
+<li><code>platformio.ini</code> (画面左）を開き、 Projectで定義したBoardとFrameworkが、正しく定義されていることを確認します。</br></li>
 </ol>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000;font-weight:bold">[</span><span style="color:#f57900">env</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">pro8MHzatmega328</span><span style="color:#000;font-weight:bold">]</span>
 <span style="color:#000">platform</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">atmelavr</span>
 <span style="color:#000">board</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">pro8MHzatmega328</span>
 <span style="color:#000">framework</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">arduino</span>
 </code></pre></div><ol start="6">
+<li>シリアル通信のボーレートを<code>monitor_speed =</code>で定義します。以下を参考に、platformio.iniに加えて下さい。</br></li>
+</ol>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000">monitor_speed</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">115200</span>
+</code></pre></div><ol start="7">
 <li><code>src/main.cpp</code>(画面左）を開き、以下のコードを貼り付けて下さい。</br>
 PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#include &lt;Arduino.h&gt;</code>を加えます。</br></li>
 </ol>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#8f5902;font-style:italic">// LEDピンを出力ピンに設定
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">OUTPUT</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//  Hello_World
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//    (c) 2023 LEAFONY SYSTEMS Co., Ltd
+</span><span style="color:#8f5902;font-style:italic">//    Released under the MIT license
+</span><span style="color:#8f5902;font-style:italic">//    https://opensource.org/licenses/MIT
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2023/02/01  First release
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
 
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">// LEDを点灯
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">999</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// LEDを消灯
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">999</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><ol start="7">
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">(){</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Hello World&#34;</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><ul>
+<li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Hello%20Wold_Pjt">Hello Wold</a></li>
+</ul>
+<ol start="8">
 <li>
 <p>PlatformIO ツールバー(画面下のバー)の<code>Project environment switcher</code>ボタンを押すと、アクティブなプロジェクが画面上側に全て表示されます。実行しないプロジェクトを削除してから<code>Build</code>ボタンを押して下さい。</br></br>
 <img src="./platformio_6.png" width="640"></br></p>
 </li>
 <li>
-<p>LeafonyをPCに接続し、<code>Upload</code>ボタンを押すと、プログラムがMCUに書き込まれます。</br></p>
+<p><a href="https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%A8%E6%8E%A5%E7%B6%9A">LeafonyをPCに接続</a> し、<code>Upload</code>ボタンを押すと、プログラムがMCUに書き込まれます。アップロードされたら、<code>avrdude done.  Thank you.</code>と表示されます。</br></p>
+</li>
+<li>
+<p>PlatformIO ツールバー(画面下のバー)の<code>Serial Monitor</code>ボタンを押して、シリアルモニターを起動させます。次に、MCUリーフの<code>リセットスイッチ</code>を押すと、プログラムが実行され、<code>Hello Wolrd</code>が表示されます。</br></p>
 </li>
 </ol>
 <h1 id="詳しい使い方">詳しい使い方</h1>
@@ -4050,28 +4016,6 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 </tr>
 </tbody>
 </table>
-<h2 id="stm32-mcu-platformini">STM32 MCU Platform.ini</h2>
-<p>platformio.ini のファイルを開き、Projectで定義した<a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">platform</a>、 <a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">board</a>、<a href="https://docs.platformio.org/en/latest/platforms/index.html#development-platforms">framework</a>が、書かれていることを確認します。STM32 MCUは、アップロード時に、COMポートの自動検出が出来ないため、以下をplatform.inに書き込む必要があります。</br></p>
-<pre><code>upload_protocol = custom
-upload_port = COM&lt;番号&gt;
-upload_command = %%userprofile%%\AppData\Local\Arduino15\packages\STM32\tools\STM32Tools\1.4.0\tools\win\stm32CubeProg.bat 1 $SOURCE $UPLOAD_PORT -s
-</code></pre><h2 id="stm32-mcu-upload">STM32 MCU Upload</h2>
-<ol>
-<li>
-<p>STM32 MCUリーフの<code>プログラムスイッチ</code>を、プログラム側LED消灯)にします。</br>
-<a href="/docs/leaf/processor/ap03/ap03_tips.jpg"><img src="/docs/leaf/processor/ap03/ap03_tips.jpg" width="450"></a></p>
-</li>
-<li>
-<p>アップロードされたら、<code>Start operation achieved successfully</code>と表示されるので、STM32 MCUリーフの<code>プログラムスイッチ</code>を実行（Run)側にします。LEDが消灯していることを確認して下さい。</br></p>
-</li>
-<li>
-<p>STM32 MCUリーフの<code>リセットスイッチ</code>を押すと、プログラムが実行されます。</br></p>
-</li>
-</ol>
-<h2 id="stm32-mcuの周波数を80mhz16mhzの変更方法">STM32 MCUの周波数を80MHz→16MHzの変更方法</h2>
-<h2 id="シリアル通信のボーレート">シリアル通信のボーレート</h2>
-<p>シリアルモニタに出力する際は、シリアル通信のボーレートをplatformio.ini の最後の行に<code>monitor_speed =</code>で定義します。</br></p>
-<h3 id="シリアルモニターの使い方">シリアルモニターの使い方</h3>
 <h2 id="プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</h2>
 <p>Project Wizarで、New Projectを立ち上げると、フォルダが作成され、デフォルトでは、~/Documents/PlatformIO/Projects に保存されます。
 Projectの名前変更やフォルダの削除は、Project Wizarではなく、エクスプローラから直接出来ます。</br></p>
@@ -4101,7 +4045,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 ライブラリは、platformio.ini の最後の行に、<code>lib_deps =</code>で定義すれば、PCにインストールされます。定義の仕方は、</br>
 <ul>
 <li>GitHubのURLを直接指定。</li>
-<li><code>Libraries</code><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>で指定。事前にPlatformIO Registryに登録されたものだけが参照出来ます。
+<li><code>Libraries</code><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>で指定。事前にPlatformIO Registryに登録されたものだけが参照出来ます。
 の二通りがあります。</li>
 </ul>
 </li>
@@ -4203,13 +4147,10 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み。v2.5.0は動作しないので要注意。</br> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>新しいBoardを選択した時、プログラミングに必要なデータをダウンロードするため、1回目だけ数分時間がかかります。　</br> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>新しいBoardを選択した時、プログラミングに必要なデータをダウンロードするため、1回目だけ数分時間がかかります。　</br> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:3" role="doc-endnote">
-<p><code>PlatformIO</code>(画面左のバー)をクリックし、PLATFORMIO QUICK ACCESS（画面左）を表示させ、<code>PIO Home/Libraries</code>をクリックします。 <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p><code>PlatformIO</code>(画面左のバー)をクリックし、PLATFORMIO QUICK ACCESS（画面左）を表示させ、<code>PIO Home/Libraries</code>をクリックします。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -4224,7 +4165,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 13, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 16, 2023
 </div>
 </div>
 
