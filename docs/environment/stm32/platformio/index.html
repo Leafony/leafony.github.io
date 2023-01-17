@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.51bf10e89572444633b5da764f1d70c9a7b32921c30d36196e3defbc76d2503f1e8d21601e974bec74a0a52adc7f23f81a7842e75348752d7075a3fb980897f7.json"
+  data-offline-search-index-json-src="/offline-search-index.63af9594dc90132eb5092df3b2c30b7124c5c546ae1b43afeea2f3beb4704a0b92b7fdea32e2ceefa29cfdca22475e70f33bfc370363464a5ba3b6b918e4f45c.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.51bf10e89572444633b5da764f1d70c9a7b32921c30d36196e3defbc76d2503f1e8d21601e974bec74a0a52adc7f23f81a7842e75348752d7075a3fb980897f7.json"
+  data-offline-search-index-json-src="/offline-search-index.63af9594dc90132eb5092df3b2c30b7124c5c546ae1b43afeea2f3beb4704a0b92b7fdea32e2ceefa29cfdca22475e70f33bfc370363464a5ba3b6b918e4f45c.json"
   data-offline-search-base-href="/"
 >
 
@@ -3822,6 +3822,7 @@ if (!doNotTrack) {
   </ul>
 
   <ul>
+    <li><a href="#mcuとboardとの関係">MCUとBoardとの関係</a></li>
     <li><a href="#プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</a></li>
     <li><a href="#プロジェクトフォルダの保存場所の設定">プロジェクトフォルダの保存場所の設定</a></li>
     <li><a href="#ライブラリ">ライブラリ</a></li>
@@ -4014,6 +4015,46 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 </li>
 </ol>
 <h1 id="詳しい使い方">詳しい使い方</h1>
+<h2 id="mcuとboardとの関係">MCUとBoardとの関係</h2>
+<p>LeafonyのMCUとPlatformIO IDEのBoardとの関係は、以下の様になります。</br></p>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Item</th>
+<th align="left">Platform</th>
+<th align="left">Board</th>
+<th align="left">Upload</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">AP01</td>
+<td align="left"><a href="../../leaf/processor/ap01">AVR MCU</a></td>
+<td align="left">atmelavr</td>
+<td align="left">Arduino Pro or Pro Mini ATmega328(3.3v,8Mhz)</td>
+<td align="left">COMポートの自動検出</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">AP02</td>
+<td align="left"><a href="../../leaf/processor/ap02">ESP32 MCU</a></td>
+<td align="left">Espressif 32</td>
+<td align="left">Espressif ESP32 Dev Module</td>
+<td align="left">COMポートの自動検出</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">AP03</td>
+<td align="left"><a href="../../leaf/processor/ap03">STM32 MCU</a></td>
+<td align="left">ststm32</td>
+<td align="left">LEAFONY_AP03</td>
+<td align="left">COMポートの自動検出が出来ない。</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <h2 id="プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</h2>
 <p>Project Wizarで、New Projectを立ち上げると、フォルダが作成され、デフォルトでは、~/Documents/PlatformIO/Projects に保存されます。
 Projectの名前変更やフォルダの削除は、Project Wizarではなく、エクスプローラから直接出来ます。</br></p>
