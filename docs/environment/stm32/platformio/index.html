@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -25,8 +25,8 @@
 <meta property="og:description" content="PlatformIO IDEでマイコンにプログラムを書き込む
 " />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/docs/environment/stm32/platformio/" /><meta property="og:site_name" content="Leafony" />
-
+<meta property="og:url" content="https://docs.leafony.com/docs/environment/stm32/platformio/" />
+<meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="PlatformIO 設定">
 <meta itemprop="description" content="PlatformIO IDEでマイコンにプログラムを書き込む
 "><meta name="twitter:card" content="summary"/>
@@ -51,8 +51,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" as="style">
-<link href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6557fb29d4f16d2277d96117454ab9e2f706a600d932e80bf34247350ff6d40b791a1485560b556a1fd872b87b41caac436dbbde93a56f572ffe8d38f200559f.json"
+  data-offline-search-index-json-src="/offline-search-index.51bf10e89572444633b5da764f1d70c9a7b32921c30d36196e3defbc76d2503f1e8d21601e974bec74a0a52adc7f23f81a7842e75348752d7075a3fb980897f7.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6557fb29d4f16d2277d96117454ab9e2f706a600d932e80bf34247350ff6d40b791a1485560b556a1fd872b87b41caac436dbbde93a56f572ffe8d38f200559f.json"
+  data-offline-search-index-json-src="/offline-search-index.51bf10e89572444633b5da764f1d70c9a7b32921c30d36196e3defbc76d2503f1e8d21601e974bec74a0a52adc7f23f81a7842e75348752d7075a3fb980897f7.json"
   data-offline-search-base-href="/"
 >
 
@@ -3923,16 +3923,16 @@ Boardファイルは、C:\Users\ユーザ名\ .platformioの下にある①frame
 <p><code>PIO Home/Open</code>をクリックします。</br></p>
 </li>
 <li>
-<p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。新しいBoardを選択した時、プログラミングに必要なファイルのダウンロードするために数分かかります。</br></p>
 <ul>
 <li>Name:<code>Test</code>と記入 </br></li>
 <li>Board:<code>ST Nucleo L452RE</code>を選択 </br></li>
 <li>Framework:<code>Arduino </code>を選択 </br></li>
 </ul>
 </li>
-</ol>
-<ol start="5">
-<li>C:\Users\ユーザ名\ .platformio の下に、①と②のふたつのフォルダが出来ていることを確認して下さい。</br></li>
+<li>
+<p>C:\Users\ユーザ名\ .platformio の下に、①と②のふたつのフォルダが出来ていることを確認して下さい。</br></p>
+</li>
 </ol>
 <h4 id="leafony_ap03のフォルダとleafony_ap03jsonのファイルの保存">③Leafony_AP03のフォルダと④Leafony_AP03.jsonのファイルの保存</h4>
 <ol start="6">
@@ -3959,7 +3959,7 @@ Boardファイルは、C:\Users\ユーザ名\ .platformioの下にある①frame
 <p><code>PIO Home/Open</code>をクリックします。</br></p>
 </li>
 <li>
-<p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>　</br></p>
+<p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。新しいBoardを選択した時、プログラミングに必要なファイルのダウンロードするために数分かかります。</br></p>
 <ul>
 <li>Name:<code>STM32_Hello_World_Pjt</code>と記入 </br></li>
 <li>Board:<code>LEAFONY_AP03</code>を選択 </br></li>
@@ -3970,34 +3970,25 @@ Boardファイルは、C:\Users\ユーザ名\ .platformioの下にある①frame
 <p><code>platformio.ini</code> (画面左）を開き、 Projectで定義したBoardとFrameworkが、正しく定義されていることを確認します。</br></p>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000;font-weight:bold">[</span><span style="color:#f57900">env</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">LEAFONY_AP03</span><span style="color:#000;font-weight:bold">]</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000;font-weight:bold">[</span><span style="color:#f57900">env</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">LEAFONY_AP03</span><span style="color:#000;font-weight:bold">]</span>
 <span style="color:#000">platform</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">ststm32</span>
 <span style="color:#000">board</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">LEAFONY_AP03</span>
 <span style="color:#000">framework</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">arduino</span>
 </code></pre></div><ol start="6">
-<li>STM32 MCUは、アップロード時に、COMポートの自動検出が出来ないため、COMポートの番号<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>とプログラムファイルの実行場所を指定します。また、 シリアル通信のボーレートを<code>monitor_speed =</code>で定義します。以下を参考に、platformio.iniに加えて下さい。</br></li>
+<li>STM32 MCUは、アップロード時に、COMポートの自動検出が出来ないため、COMポートの番号<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>とプログラムファイルの実行場所を指定します。また、 シリアル通信のボーレートを<code>monitor_speed =</code>で定義します。以下を参考に、platformio.iniに加えて下さい。</br></li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000">upload_protocol</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">custom</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000">upload_protocol</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">custom</span>
 <span style="color:#000">upload_port</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">COM</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#a40000">番号</span><span style="color:#ce5c00;font-weight:bold">&gt;</span>
 <span style="color:#000">upload_command</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">%%</span><span style="color:#000">userprofile</span><span style="color:#ce5c00;font-weight:bold">%%</span><span style="color:#a40000">\</span><span style="color:#000">AppData</span><span style="color:#a40000">\</span><span style="color:#000">Local</span><span style="color:#a40000">\</span><span style="color:#000">Arduino15</span><span style="color:#a40000">\</span><span style="color:#000">packages</span><span style="color:#a40000">\</span><span style="color:#000">STM32</span><span style="color:#a40000">\</span><span style="color:#000">tools</span><span style="color:#a40000">\</span><span style="color:#000">STM32Tools</span><span style="color:#a40000">\</span><span style="color:#0000cf;font-weight:bold">1.4.0</span><span style="color:#a40000">\</span><span style="color:#000">tools</span><span style="color:#a40000">\</span><span style="color:#000">win</span><span style="color:#a40000">\</span><span style="color:#000">stm32CubeProg</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">bat</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#a40000">$</span><span style="color:#000">SOURCE</span> <span style="color:#a40000">$</span><span style="color:#000">UPLOAD_PORT</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">s</span>
 
 <span style="color:#000">monitor_speed</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">115200</span>
-</code></pre></div><ol start="6">
+</code></pre></div><ol start="7">
 <li><code>src/main.cpp</code>(画面左）を開き、以下のコードを貼り付けて下さい。</br>
 PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#include &lt;Arduino.h&gt;</code>を加えます。</br></li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic">//  STM32_Hello_World
-</span><span style="color:#8f5902;font-style:italic">//
-</span><span style="color:#8f5902;font-style:italic">//    (c) 2023 LEAFONY SYSTEMS Co., Ltd
-</span><span style="color:#8f5902;font-style:italic">//    Released under the MIT license
-</span><span style="color:#8f5902;font-style:italic">//    https://opensource.org/licenses/MIT
-</span><span style="color:#8f5902;font-style:italic">//
-</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2023/02/01  First release
-</span><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
@@ -4007,19 +3998,16 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
   <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><ul>
-<li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_Hello_World_Pjt">STM32_Hello_Wold</a></li>
+<li>ソースコード:<a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_Hello_World_Pjt">STM32_Hello_Wold_Pjt</a></li>
 </ul>
-<ol start="7">
+<ol start="8">
 <li>
 <p>PlatformIO ツールバー(画面下のバー)の<code>Project environment switcher</code>ボタンを押すと、アクティブなプロジェクが画面上側に全て表示されます。実行しないプロジェクトを削除してから<code>Build</code>ボタンを押して下さい。</br></br>
 <img src="./platformio_6.png" width="640"></br></p>
 </li>
 <li>
-<p><a href="https://docs.leafony.com/docs/environment/stm32/arduino_ide/#%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%A8%E6%8E%A5%E7%B6%9A">LeafonyをPCに接続</a>し、STM32 MCUリーフの<code>プログラムスイッチ</code>を、プログラム側LED消灯)にします。</br>
-<a href="/docs/leaf/processor/ap03/ap03_tips.jpg"><img src="/docs/leaf/processor/ap03/ap03_tips.jpg" width="450"></a></p>
-</li>
-<li>
-<p>アップロードされたら、<code>Start operation achieved successfully</code>と表示されるので、STM32 MCUリーフの<code>プログラムスイッチ</code>を実行（Run)側にします。LEDが消灯していることを確認して下さい。</br></p>
+<p>LeafonyをPCに接続し、STM32 MCUリーフの<code>プログラムスイッチ</code>を、プログラム側(LED点灯)にし、<code>Upload</code>ボタンを押すと、プログラムがMCUに書き込まれます。LeafonyをPCに接続の仕方は、<a href="https://docs.leafony.com/docs/environment/stm32/arduino_ide/#%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%A8%E6%8E%A5%E7%B6%9A">こちら</a> を参照願います。</br>
+アップロードされたら、<code>Start operation achieved successfully</code>と表示されるので、<code>プログラムスイッチ</code>を実行側(LED消灯)にして下さい。</br></p>
 </li>
 <li>
 <p>PlatformIO ツールバー(画面下のバー)の<code>Serial Monitor</code>ボタンを押して、シリアルモニターを起動させます。次に、MCUリーフの<code>リセットスイッチ</code>を押すと、プログラムが実行され、<code>Hello Wolrd</code>が表示されます。</br></p>
@@ -4051,17 +4039,14 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 </ol>
 <h2 id="ライブラリ">ライブラリ</h2>
 <ol>
-<li>インストールの仕方</br>
-ライブラリは、platformio.ini の最後の行に、<code>lib_deps =</code>で定義すれば、PCにインストールされます。定義の仕方は、</br>
-<ul>
-<li>GitHubのURLを直接指定。</li>
-<li><code>Libraries</code><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>で指定。事前にPlatformIO Registryに登録されたものだけが参照出来ます。
-の二通りがあります。</li>
-</ul>
+<li>
+<p>インストールの仕方</br>
+ライブラリは、platformio.ini の最後の行に、<code>lib_deps =</code>で定義すれば、PCにインストールされます。定義の仕方は、GitHubのURLを直接指定する方法と<code>Libraries</code>で指定する方法の二通りがあります。
+</br></p>
 </li>
-</ol>
-<ol start="2">
-<li>各リーフのライブラリ一覧は、以下の通りです。</br></li>
+<li>
+<p>各リーフのライブラリ一覧は、以下の通りです。</br></p>
+</li>
 </ol>
 <table class="table-hover">
   <thread>
@@ -4157,13 +4142,10 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み。v2.5.0は動作しないので要注意。</br>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み。v2.5.0は動作しないので要注意。</br> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>新しいBoardを選択した時、プログラミングに必要なデータをダウンロードするため、1回目だけ数分時間がかかります。　</br>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:3" role="doc-endnote">
-<p>　COMポートの番号は、<a href="https://answers.microsoft.com/ja-jp/windows/forum/all/%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%83%9E/981a79d0-cf25-460b-9b94-6426dfafca74">デバイスマネージャー</a>から確認できます。</br>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>　COMポートの番号は、<a href="https://answers.microsoft.com/ja-jp/windows/forum/all/%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%83%9E/981a79d0-cf25-460b-9b94-6426dfafca74">デバイスマネージャー</a>から確認できます。</br> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -4178,7 +4160,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 16, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 17, 2023
 </div>
 </div>
 
@@ -4242,7 +4224,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 
 
 
-<script src="/js/main.min.f70926ca86f7153429e54b0705f11c420ceac8da5cb4027087319447696e4a5f.js" integrity="sha256-9wkmyob3FTQp5UsHBfEcQgzqyNpctAJwhzGUR2luSl8=" crossorigin="anonymous"></script>
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
 
 
 

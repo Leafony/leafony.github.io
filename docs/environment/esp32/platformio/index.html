@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -22,16 +22,16 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>ESP32 MCU の PlatformIO 設定 | Leafony</title><meta property="og:title" content="ESP32 MCU の PlatformIO 設定" />
-<meta property="og:description" content="VS CodeとPlatformIOを使った開発環境
+<meta property="og:description" content="PlatformIO IDEでマイコンにプログラムを書き込む
 " />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/docs/environment/esp32/platformio/" /><meta property="og:site_name" content="Leafony" />
-
+<meta property="og:url" content="https://docs.leafony.com/docs/environment/esp32/platformio/" />
+<meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="ESP32 MCU の PlatformIO 設定">
-<meta itemprop="description" content="VS CodeとPlatformIOを使った開発環境
+<meta itemprop="description" content="PlatformIO IDEでマイコンにプログラムを書き込む
 "><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="ESP32 MCU の PlatformIO 設定"/>
-<meta name="twitter:description" content="VS CodeとPlatformIOを使った開発環境
+<meta name="twitter:description" content="PlatformIO IDEでマイコンにプログラムを書き込む
 "/>
 
 
@@ -51,8 +51,8 @@ if (!doNotTrack) {
 
 
 
-<link rel="preload" href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" as="style">
-<link href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6557fb29d4f16d2277d96117454ab9e2f706a600d932e80bf34247350ff6d40b791a1485560b556a1fd872b87b41caac436dbbde93a56f572ffe8d38f200559f.json"
+  data-offline-search-index-json-src="/offline-search-index.51bf10e89572444633b5da764f1d70c9a7b32921c30d36196e3defbc76d2503f1e8d21601e974bec74a0a52adc7f23f81a7842e75348752d7075a3fb980897f7.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6557fb29d4f16d2277d96117454ab9e2f706a600d932e80bf34247350ff6d40b791a1485560b556a1fd872b87b41caac436dbbde93a56f572ffe8d38f200559f.json"
+  data-offline-search-index-json-src="/offline-search-index.51bf10e89572444633b5da764f1d70c9a7b32921c30d36196e3defbc76d2503f1e8d21601e974bec74a0a52adc7f23f81a7842e75348752d7075a3fb980897f7.json"
   data-offline-search-base-href="/"
 >
 
@@ -3809,15 +3809,21 @@ if (!doNotTrack) {
 <nav id="TableOfContents">
   <ul>
     <li><a href="#はじめに">はじめに</a></li>
-    <li><a href="#事前準備">事前準備</a></li>
-    <li><a href="#platformioのインストール">PlatformIOのインストール</a></li>
-    <li><a href="#クイックスタート">クイックスタート</a>
+    <li><a href="#用意するもの">用意するもの</a></li>
+    <li><a href="#事前準備">事前準備</a>
       <ul>
-        <li><a href="#新規プロジェクトを作成">新規プロジェクトを作成</a></li>
+        <li><a href="#pythonのインストール">Pythonのインストール</a></li>
+        <li><a href="#platformio-ideのインストール">PlatformIO IDEのインストール</a></li>
       </ul>
     </li>
-    <li><a href="#ライブラリをインストール">ライブラリをインストール</a></li>
-    <li><a href="#書き込みとシリアルモニタ">書き込みとシリアルモニタ</a></li>
+    <li><a href="#クイックスタート">クイックスタート</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#mcuとboardとの関係">MCUとBoardとの関係</a></li>
+    <li><a href="#プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</a></li>
+    <li><a href="#プロジェクトフォルダの保存場所の設定">プロジェクトフォルダの保存場所の設定</a></li>
+    <li><a href="#ライブラリ">ライブラリ</a></li>
     <li><a href="#参考">参考</a></li>
   </ul>
 </nav>
@@ -3876,95 +3882,253 @@ if (!doNotTrack) {
             
 <div class="td-content">
 	<h1>ESP32 MCU の PlatformIO 設定</h1>
-        <div class="lead">VS CodeとPlatformIOを使った開発環境</div>
+        <div class="lead">PlatformIO IDEでマイコンにプログラムを書き込む</div>
 	
 	<h2 id="はじめに">はじめに</h2>
-<p>Arduino IDEの代わりに、PlatformIOをLeafonyの開発環境として使うことも可能です。
-PlatformIOを使うと、ライブラリのバージョン管理やボード設定の管理などを簡単に行えるだけでなく、
-Visual Studio Codeの強力なプラグインを活用し、より快適な開発をすることができます。</p>
-<h2 id="事前準備">事前準備</h2>
-<p>PlatformIOはVisual Studio Code (以下、VSCode)のプラグインです。
-事前に以下のソフトウェアをインストールする必要があります。</p>
+<p>Visual Studio Code (VSCode)は、Microsoft社が提供する軽量ながら強力なソース コード エディターで、デスクトップ上で実行され、Windows、macOS、および Linux で使用できます。PlatformIO IDEは、VSCodeの拡張機能で、ビルドが早く、ライブラリやボードのバージョンがプロジェクト毎に管理されているのが特長です。
+</br></p>
+<h2 id="用意するもの">用意するもの</h2>
 <ul>
-<li><a href="https://code.visualstudio.com/">VSCode</a></li>
-<li><a href="https://www.python.org/downloads/">Python 3</a></li>
+<li>Basic Kit 2 または、ESP32 Wi-Fi Kit 2</br></li>
+<li>パソコン (Windows、Mac OS X 、または Linux)</br></li>
 </ul>
-<h2 id="platformioのインストール">PlatformIOのインストール</h2>
+<h2 id="事前準備">事前準備</h2>
+<h3 id="pythonのインストール">Pythonのインストール</h3>
 <ol>
-<li>VSCodeを起動し、「拡張機能」タブを開く。</li>
-<li>検索窓に<code>platformio ide</code>を入力する。</li>
-<li>PlatformIO IDEをインストールする。</li>
+<li>PlatformIO IDEを動かすには、Pythonが必要です。<a href="https://www.javadrive.jp/python/install/index1.html#section2">こちら</a>を参照して、Pythonインストールして下さい。</br></li>
 </ol>
-<img src="./001.jpg" width="300">
+<h3 id="platformio-ideのインストール">PlatformIO IDEのインストール</h3>
+<ol>
+<li>PlatformIO IDEは、VSCodeの拡張機能なので、まず、<a href="https://code.visualstudio.com/">VSCode</a>をインストールして下さい。</br></li>
+<li><code>拡張機能</code>(画面左のバー)をクリックします。</br></li>
+<li>検索窓が現れたら、<code>Japanese Language Pack for Visual Studio Code</code>を入力し、日本語の拡張機能をインストールします。</br></li>
+<li>次に <code>platformio ide</code>を入力し、PlatformIO IDEをインストールが出来れば、事前準備は完了です。</br></li>
+</ol>
 <h2 id="クイックスタート">クイックスタート</h2>
-<h3 id="新規プロジェクトを作成">新規プロジェクトを作成</h3>
+<p>「Hello Wolrd」の事例で、platformIO IDEの使い方を紹介します。</br></p>
 <ol>
-<li><code>PlatformIO Home</code>ボタンを押してPlatformIOのホームを表示する。</li>
-<li><code>New Project</code>をクリック。</li>
-<li>任意のプロジェクト名を指定し、<code>Board</code>で<code>fm-devkit</code>を選択。</li>
-<li><code>src</code>フォルダに含まれる<code>main.cpp</code>を開き、以下のコードを貼り付け。</li>
+<li>
+<p>VSCodeを立ち上げ、<code>ファイル</code>→ <code>新しいウィンドウ</code>を開きます。</br></p>
+</li>
+<li>
+<p><code>PlatformIO</code>(画面左のバー)をクリックし、PLATFORMIO QUICK ACCESS（画面左）を表示させます。</br></p>
+</li>
+<li>
+<p><code>PIO Home/Open</code>をクリックします。</br></p>
+</li>
+<li>
+<p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。新しいBoardを選択した時、プログラミングに必要なファイルのダウンロードするために数分かかります。</br></p>
+<ul>
+<li>Name:<code>ESP32_Hellow_Wolrd_Pjt</code>と記入 </br></li>
+<li>Board:<code>Espressif ESP32 Dev Module </code>を選択 </br></li>
+<li>Framework:<code>Arduino </code>を選択 </br></li>
+</ul>
+</li>
+<li>
+<p><code>platformio.ini</code> (画面左）を開き、 Projectで定義したBoardとFrameworkが、正しく定義されていることを確認します。</br></p>
+</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic">//  Button
-</span><span style="color:#8f5902;font-style:italic">//
-</span><span style="color:#8f5902;font-style:italic">//    (c) 2020 Trillion-Node Study Group
-</span><span style="color:#8f5902;font-style:italic">//    Released under the MIT license
-</span><span style="color:#8f5902;font-style:italic">//    https://opensource.org/licenses/MIT
-</span><span style="color:#8f5902;font-style:italic">//
-</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2020/07/02  First release
-</span><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000;font-weight:bold">[</span><span style="color:#f57900">env</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">esp32dev</span><span style="color:#000;font-weight:bold">]</span>
+<span style="color:#000">platform</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">espressif32</span>
+<span style="color:#000">board</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">esp32dev</span>
+<span style="color:#000">framework</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">arduino</span>
+</code></pre></div><ol start="6">
+<li>ESP32 MCUは、アップロード時に、COMポートの自動検出をするため、COMポートの番号の指定が不要になります。また、シリアル通信のボーレートを<code>monitor_speed =</code>で定義します。以下を参考に、platformio.iniに加えて下さい。</br></li>
+</ol>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000">monitor_speed</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">115200</span>
+</code></pre></div><ol start="7">
+<li><code>src/main.cpp</code>(画面左）を開き、以下のコードを貼り付けて下さい。</br>
+PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#include &lt;Arduino.h&gt;</code>を加えます。</br></li>
+</ol>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">pushButton</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
-
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pushButton</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">INPUT</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
 
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">buttonState</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">digitalRead</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pushButton</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buttonState</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">(){</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Hello World&#34;</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><ol start="5">
-<li><code>Build</code>ボタンを押してプロジェクトをビルド。</li>
-<li>LeafonyをPCに接続。</li>
-<li><code>Upload</code>ボタンを押してプロジェクトをLeafonyに書き込み。</li>
-<li><code>Serial Port Monitor</code>ボタンを押すとシリアルモニタが表示され、ボタンの入力状態が表示される。</li>
+</code></pre></div><ul>
+<li>ソースコード：<a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/ESP32_Hello_Wold_Pjt">ESP32_Hello_Wold.Pjt</a></li>
+</ul>
+<ol start="8">
+<li>
+<p>PlatformIO ツールバー(画面下のバー)の<code>Project environment switcher</code>ボタンを押すと、アクティブなプロジェクが画面上側に全て表示されます。実行しないプロジェクトを削除してから<code>Build</code>ボタンを押して下さい。</br></br>
+<img src="./platformio_6.png" width="640"></br></p>
+</li>
+<li>
+<p>LeafonyをPCに接続し、<code>Upload</code>ボタンを押すと、プログラムがMCUに書き込まれます。</br>
+LeafonyをPCに接続の仕方は、<a href="https://docs.leafony.com/docs/environment/esp32/arduino/#%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%A8%E6%8E%A5%E7%B6%9A">こちら</a> を参照願います。</br></p>
+</li>
+<li>
+<p>PlatformIO ツールバー(画面下のバー)の<code>Serial Monitor</code>ボタンを押して、起動させます。次に、MCUリーフの<code>リセットスイッチ</code>を押すと、プログラムが実行され、<code>Hello Wolrd</code>が表示されます。</br></p>
+</li>
 </ol>
-<h2 id="ライブラリをインストール">ライブラリをインストール</h2>
+<h1 id="詳しい使い方">詳しい使い方</h1>
+<h2 id="mcuとboardとの関係">MCUとBoardとの関係</h2>
+<p>LeafonyのMCUとPlatformIO IDEのBoardとの関係は、以下の様になります。</br></p>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Item</th>
+<th align="left">Platform</th>
+<th align="left">Board</th>
+<th align="left">Upload</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">AP01</td>
+<td align="left"><a href="../../leaf/processor/ap01">AVR MCU</a></td>
+<td align="left">atmelavr</td>
+<td align="left">Arduino Pro or Pro Mini ATmega328(3.3v,8Mhz)</td>
+<td align="left">COMポートの自動検出</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">AP02</td>
+<td align="left"><a href="../../leaf/processor/ap02">ESP32 MCU</a></td>
+<td align="left">Espressif 32</td>
+<td align="left">Espressif ESP32 Dev Module</td>
+<td align="left">COMポートの自動検出</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">AP03</td>
+<td align="left"><a href="../../leaf/processor/ap03">STM32 MCU</a></td>
+<td align="left">ststm32</td>
+<td align="left">LEAFONY_AP03</td>
+<td align="left">COMポートの自動検出が出来ない。</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</h2>
+<p>Project Wizarで、New Projectを立ち上げると、フォルダが作成され、デフォルトでは、~/Documents/PlatformIO/Projects に保存されます。
+Projectの名前変更やフォルダの削除は、Project Wizarではなく、エクスプローラから直接出来ます。</br></p>
+<h2 id="プロジェクトフォルダの保存場所の設定">プロジェクトフォルダの保存場所の設定</h2>
+<p>プロジェクトフォルダの保存場所の設定は、Project Wizarではなく、ターミナルから行います。</p>
 <ol>
-<li><code>PlatformIO Home</code>ボタンを押してPlatformIOのホームを表示する。</li>
-<li><code>Libraries</code>タブを開く。</li>
-<li>検索窓に<code>OPT3001</code>と入力し、照度センサOPT3001用ライブラリを検索。</li>
-<li><code>ClosedCube OPT3001</code>をクリック。</li>
-<li><code>Add to Project</code>ボタンをクリックし、<code>Add</code>で追加。</li>
-<li><code>platformio.ini</code>を開く。</li>
-<li><code>lib_deps</code>オプションに<code>closedcube/ClosedCube OPT3001 @ &lt;バージョン&gt;</code>が追加されているか確認。</li>
-<li>下記のコードを貼り付けると、上記の操作をしなくても簡単にライブラリの環境を設定することができる。</li>
+<li>
+<p>VSCodeを立ち上げ、<code>ファイル</code>→ <code>新しいウィンドウ</code>を開きます。</br></p>
+</li>
+<li>
+<p><code>PlatformIO</code>(画面左のバー)をクリックし、PLATFORMIO QUICK ACCESS（画面左）を表示させます。</br></p>
+</li>
+<li>
+<p><code>PIO Home/Open</code>をクリックします。</br></p>
+</li>
+<li>
+<p>以下のコードを実行します。</br>
+　<code>pio settings set projects_dir ＜設定したい(絶対)パス＞</code></p>
+</li>
+<li>
+<p>VSCodeを再起動します。</br></br></p>
+</li>
 </ol>
-<pre tabindex="0"><code>[env:fm-devkit]
-platform = espressif32
-board = fm-devkit
-framework = arduino
-monitor_speed = 115200
-lib_deps =
-	closedcube/ClosedCube OPT3001 @ ^1.1.2
-	adafruit/Adafruit LIS3DH@1.1.2
-	https://github.com/ameltech/sme-hts221-library.git
-	https://github.com/Leafony/TBGLib
-	tomozh/ST7032@0.0.0-alpha+sha.501bf64fe6
-	paulstoffregen/MsTimer2@^1.1
-	adafruit/RTClib@^1.11.2
-	adafruit/Adafruit Unified Sensor@^1.1.4
-	adafruit/Adafruit BusIO@^1.5.0
-</code></pre><h2 id="書き込みとシリアルモニタ">書き込みとシリアルモニタ</h2>
-<p><code>Serial Port Monitor</code>ボタンを押すと、シリアルモニタが表示される。</p>
+<h2 id="ライブラリ">ライブラリ</h2>
+<ol>
+<li>
+<p>インストールの仕方</br>
+ライブラリは、platformio.ini の最後の行に、<code>lib_deps =</code>で定義すれば、PCにインストールされます。定義の仕方は、GitHubのURLを直接指定する方法と<code>Libraries</code>で指定する方法の二通りがあります。
+</br></p>
+</li>
+<li>
+<p>各リーフのライブラリ一覧は、以下の通りです。</br></p>
+</li>
+</ol>
+<table class="table-hover">
+  <thread>
+    <tr>
+      <th>Item</th>
+      <th>lib_deps</th>
+      <th>Tags</th>
+      <th>Description</th>
+    </tr>
+  </thread>
+  <tbody>
+    <tr>
+      <td>BLE</td>
+      <td><a href="https://github.com/Leafony/TBGLib" target="_blank">https://github.com/Leafony/TBGLib</a></td>
+      <td></td>
+      <td>Bluetoothライブラリ</td>
+    </tr>
+    <tr>
+      <td rowspan=6>4-Sensors</td>
+      <td><a href="https://github.com/adafruit/Adafruit_Sensor" target="_blank">adafruit/Adafruit Unified Sensor@^1.1.6</a></td>
+      <td></td>
+      <td>ユニファイドセンサドライバ</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/adafruit/Adafruit_BusIO" target="_blank">adafruit/Adafruit BusIO@^1.14.1</a></td>
+      <td></td>
+      <td>Bus IOライブラリ</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/ameltech/sme-hts221-library" target="_blank">https://github.com/ameltech/sme-hts221-library</a></td>
+      <td></td>
+      <td>温湿度センサライブラリ</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/adafruit/Adafruit_HTS221" target="_blank">adafruit/Adafruit HTS221@^0.1.2</a></td>
+      <td></td>
+      <td>Adafruit温湿度センサライブラリ</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/closedcube/ClosedCube_OPT3001_Arduino" target="_blank">closedcube/ClosedCube OPT3001@^1.1.2</a></td>
+      <td></td>
+      <td>照度センサライブラリ</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/adafruit/Adafruit_LIS3DH/tree/1.1.2" target="_blank">adafruit/Adafruit LIS3DH@^1.1.2</a></td>
+      <td>1.1.2</td>
+      <td>加速度センサライブラリ</td>
+    </tr>
+    <tr>
+      <td>LCD</td>
+      <td><a href="https://github.com/tomozh/arduino_ST7032" target="_blank">tomozh/ST7032@0.0.0-alpha+sha.501bf64fe6</a></td>
+      <td></td>
+      <td>LCDライブラリ</td>
+    </tr>
+    <tr>
+      <td>AVR MCU</td>
+      <td><a href="https://github.com/PaulStoffregen/MsTimer2" target="_blank">paulstoffregen/MsTimer2@^1.1</a></td>
+      <td></td>
+      <td>タイマ割り込みライブラリ</td>
+    </tr>
+    <tr>
+      <td>RTC&MicroSD</td>
+      <td><a href="https://github.com/adafruit/RTClib" target="_blank">adafruit/RTClib@^2.1.1</a></td>
+      <td></td>
+      <td>RTCライブラリ</td>
+    </tr>
+    <tr>
+      <td rowspan=2>STM32 MCU</td>
+      <td><a href="https://github.com/stm32duino/STM32RTC/tree/1.2.0" target="_blank">stm32duino/STM32duino RTC @ 1.2.0</a></td>
+      <td>1.2.0</td>
+      <td>STM32RTCライブラリ</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/stm32duino/STM32LowPower" target="_blank">stm32duino/STM32duino Low Power@^1.2.2</a></td>
+      <td></td>
+      <td>STM32LowPowerライブラリ</td>
+    </tr>
+    <tr>
+      <td>LTE-M</td>
+      <td><a href="https://github.com/Leafony/LteLeafV4" target="_blank">Lhttps://github.com/Leafony/LteLeafV4</a></td>
+      <td></td>
+      <td>LTE-Mライブラリ</td>
+    </tr>
+  </tbody>
+</table>
 <h2 id="参考">参考</h2>
-<p>PlatformIO for VSCodeのより詳細な使い方は、公式ドキュメントを参考。</p>
 <ul>
-<li><a href="https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode">https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode</a></li>
+<li><a href="https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode" target="_blank">PlatformIO ドキュメント</a></li>
 </ul>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
@@ -3979,7 +4143,7 @@ lib_deps =
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 3, 2021
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 17, 2023
 </div>
 </div>
 
@@ -4043,7 +4207,7 @@ lib_deps =
 
 
 
-<script src="/js/main.min.f70926ca86f7153429e54b0705f11c420ceac8da5cb4027087319447696e4a5f.js" integrity="sha256-9wkmyob3FTQp5UsHBfEcQgzqyNpctAJwhzGUR2luSl8=" crossorigin="anonymous"></script>
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
 
 
 
