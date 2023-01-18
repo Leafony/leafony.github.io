@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.198a0c3a0dade07cabe740ecd6f9ff9c8fe3326a9065c32b96ce063e6746cf2729af9efba57ffe87afab42c238bff2d59c06b1c3e87a7bc93cd48e37b9899b13.json"
+  data-offline-search-index-json-src="/offline-search-index.d9dcb181c214ffa63f0b5f78201c7bb3584b290a3a36378d0f86db2ab625bdf2698d73745f95295243dddba60e8b64dd87cec499d1c28546f84eabbc9a7c3ab3.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.198a0c3a0dade07cabe740ecd6f9ff9c8fe3326a9065c32b96ce063e6746cf2729af9efba57ffe87afab42c238bff2d59c06b1c3e87a7bc93cd48e37b9899b13.json"
+  data-offline-search-index-json-src="/offline-search-index.d9dcb181c214ffa63f0b5f78201c7bb3584b290a3a36378d0f86db2ab625bdf2698d73745f95295243dddba60e8b64dd87cec499d1c28546f84eabbc9a7c3ab3.json"
   data-offline-search-base-href="/"
 >
 
@@ -3884,13 +3884,18 @@ if (!doNotTrack) {
 <li>次に <code>platformio ide</code>を入力し、PlatformIO IDEをインストールが出来れば、事前準備は完了です。</br></li>
 </ol>
 <h3 id="stm32cubeprog-のインストール">STM32CubeProg のインストール</h3>
-<p>STM32MCUにプログラムを書き込むために、<a href="https://www.stmcu.jp/design/sw_dev/pc_soft/58442/">STM32CubeProg</a>のインストール<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>をして下さい。<br></p>
-<h3 id="stm32mcuのboardファイルの保存">STM32MCUのBoardファイルの保存</h3>
-<p>STM32MCUは、<a href="https://www.st.com/ja/evaluation-tools/nucleo-l452re.html">NUCLEO-L452RE</a>とピンアサインが異なるため、STM32MCUのBoardファイルを用意する必要があります。
-Boardファイルは、C:\Users\ユーザ名\ .platformioの下にある①framework-arduinoststm32と②ststm32であり、以下の構成になっています。</br></br>
-<img src="./platformio_12.png" width="440"></p>
-<h4 id="framework-arduinoststm32とststm32のフォルダのダウンロード">①framework-arduinoststm32と②ststm32のフォルダのダウンロード</h4>
 <ol>
+<li>STM32MCUにプログラムを書き込むために、<a href="https://www.stmcu.jp/design/sw_dev/pc_soft/58442/">STM32CubeProg</a>をインストール<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>して下さい。<br>
+Arduino IDEを使って、STM32 MCUの開発をしている方は、既にSTM32CubeProgがインストールされています。</br></li>
+</ol>
+<h3 id="stm32mcuのboardファイルの保存">STM32MCUのBoardファイルの保存</h3>
+<ol>
+<li>STM32MCUは、<a href="https://www.st.com/ja/evaluation-tools/nucleo-l452re.html">NUCLEO-L452RE</a>とピンアサインが異なるため、STM32MCUのBoardファイルを用意する必要があります。
+Boardファイルは、C:\Users\ユーザ名\ .platformioの下にある①framework-arduinoststm32と②ststm32であり、以下の構成になっています。</br></br>
+<img src="./platformio_12.png" width="440"></li>
+</ol>
+<h4 id="framework-arduinoststm32とststm32のフォルダのダウンロード">①framework-arduinoststm32と②ststm32のフォルダのダウンロード</h4>
+<ol start="2">
 <li>
 <p>VSCodeを立ち上げ、<code>ファイル</code>→ <code>新しいウィンドウ</code>を開きます。</br></p>
 </li>
@@ -3913,7 +3918,7 @@ Boardファイルは、C:\Users\ユーザ名\ .platformioの下にある①frame
 </li>
 </ol>
 <h4 id="leafony_ap03のフォルダとleafony_ap03jsonのファイルの保存">③Leafony_AP03のフォルダと④Leafony_AP03.jsonのファイルの保存</h4>
-<ol start="6">
+<ol start="7">
 <li>
 <p><code>Leafony_AP03</code>のフォルダと<code>Leafony_AP03.json</code>ファイルを以下からダウンロードし、所定の場所に保存して下さい。</br></p>
 <ul>
