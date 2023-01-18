@@ -14,7 +14,7 @@
     
     
     <item>
-      <title>Docs: Arduino IDE の設定</title>
+      <title>Docs: Arduino IDEの設定</title>
       <link>https://docs.leafony.com/docs/environment/avr/arduino/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -164,30 +164,6 @@
 &lt;img src=&#34;IDE_libinclude.png&#34; width=&#34;640&#34;&gt;  
 &lt;h2 id=&#34;困ったときには&#34;&gt;困ったときには&lt;/h2&gt;
 &lt;p&gt;お問い合わせをする前に、&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/solution&#34; target=&#34;_blank&#34;&gt;困ったときには&lt;/a&gt;を読んでみてください。&lt;/p&gt;
-&lt;p style=&#34;text-align: right&#34;&gt;
-&lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
-&lt;/p&gt;
-      </description>
-    </item>
-    
-    <item>
-      <title>Docs: 旧バージョンArduino IDE</title>
-      <link>https://docs.leafony.com/docs/environment/avr/arduino_ver/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.leafony.com/docs/environment/avr/arduino_ver/</guid>
-      <description>
-        
-        
-        &lt;h2 id=&#34;旧バージョンのarduino-ide-インストール方法&#34;&gt;旧バージョンのArduino IDE インストール方法&lt;/h2&gt;
-&lt;p&gt;Arduino IDE のバージョンによって、動作しないことがあります。その場合、動作検証済みのバージョンを使います。下記より、旧バージョンをダウンロードすることができます。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://www.arduino.cc/en/Main/OldSoftwareReleases#previous&#34;&gt;Previous IDE Releases&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;arduino-avr-boardsの確認と変更&#34;&gt;Arduino AVR Boardsの確認と変更&lt;/h2&gt;
-&lt;p&gt;通常はインストールした Arduino IDE のバージョンに対応するバージョンの Arduino AVR Boards がインストールされますが、環境により異なるバージョンの Arduino AVR Boards が指定されている場合があります。
-そのため Arduino IDE の&lt;code&gt;ツール→ボード→ボードマネージャ&lt;/code&gt; を開いて Arduino AVR Boards のバージョンを確認してください。
-&lt;img src=&#34;./ardunoide_boards.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
-&lt;p&gt;もし想定と異なるバージョンの場合は&lt;code&gt;バージョンの選択&lt;/code&gt;から必要なバージョンを選択して&lt;code&gt;インストール&lt;/code&gt;してください。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./ardunoide_boardmanager.jpg&#34;&gt;&lt;/img&gt;&lt;/p&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
 &lt;/p&gt;
