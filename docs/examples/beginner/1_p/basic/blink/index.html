@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b05558f8c1a580d2bf61c2fae97901d10d48398716df86f8bb0447f435025f27232be79e37062012a59037dbede36da0ec3d41c14fd450f1f194d6206c55754c.json"
+  data-offline-search-index-json-src="/offline-search-index.80b1f97f438c2880240a1d37c7d2bef1b33547fe78b5dc0d0c65625ce092146b697dcc5c0d1091ac41f7a8453068eb2359b0a3b3b9e58bba162becb6f613f38d.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b05558f8c1a580d2bf61c2fae97901d10d48398716df86f8bb0447f435025f27232be79e37062012a59037dbede36da0ec3d41c14fd450f1f194d6206c55754c.json"
+  data-offline-search-index-json-src="/offline-search-index.80b1f97f438c2880240a1d37c7d2bef1b33547fe78b5dc0d0c65625ce092146b697dcc5c0d1091ac41f7a8453068eb2359b0a3b3b9e58bba162becb6f613f38d.json"
   data-offline-search-base-href="/"
 >
 
@@ -3924,17 +3924,7 @@ if (!doNotTrack) {
 <ul>
 <li>xxx.inoファイルには、以下のコードを書き込んで下さい。</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic">//  Blink
-</span><span style="color:#8f5902;font-style:italic">//
-</span><span style="color:#8f5902;font-style:italic">//    (c) 2021 LEAFONY SYSTEMS Co., Ltd
-</span><span style="color:#8f5902;font-style:italic">//    Released under the MIT license
-</span><span style="color:#8f5902;font-style:italic">//    https://opensource.org/licenses/MIT
-</span><span style="color:#8f5902;font-style:italic">//
-</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2021/04/01  First release
-</span><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#8f5902;font-style:italic">// LEDピンを出力ピンに設定
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">OUTPUT</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
@@ -3945,21 +3935,25 @@ if (!doNotTrack) {
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// LEDを消灯
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/Blink/Blink.ino" target="_blank">Blink.ino</a></p>
+</code></pre></div><ul>
+<li>ソースコード：<a href="https://github.com/Leafony/Sample-Sketches/tree/master/Blink/Blink.ino">Blink.ino</a></li>
+</ul>
 <h3 id="platformio-ide-の場合docsenvironmentavrplatformio"><a href="/docs/environment/avr/platformio">PlatformIO IDE の場合</a></h3>
 <ul>
-<li>
-<p>main.cppファイルには、Arduino IDEのコードの先頭に<code>#include &lt;Arduino.h&gt;</code>を加えて書き込んで下さい。</BR></p>
-</li>
-<li>
-<p>platformio.iniには、以下のコードを書き込んで下さい。</p>
-</li>
+<li>platformio.iniには、以下のコードを書き込んで下さい。</li>
 </ul>
 <pre><code>[env:pro8MHzatmega328]
 platform = atmelavr
 board = pro8MHzatmega328
 framework = arduino
-</code></pre><p><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Blink_Pjt" target="_blank">Blink.Pjt</a></p>
+</code></pre><ul>
+<li>
+<p>main.cppファイルには、Arduino IDEのコードの先頭に<code>#include &lt;Arduino.h&gt;</code>を加えて書き込んで下さい。</BR></p>
+</li>
+<li>
+<p>ソースコード：<a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Blink_Pjt">Blink.Pjt</a></p>
+</li>
+</ul>
 <h2 id="実行結果">実行結果</h2>
 <p>AVR MCUリーフに搭載されたLEDが1秒おきに点灯/消灯します。</p>
 <p style="text-align: right">
