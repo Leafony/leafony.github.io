@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.80b1f97f438c2880240a1d37c7d2bef1b33547fe78b5dc0d0c65625ce092146b697dcc5c0d1091ac41f7a8453068eb2359b0a3b3b9e58bba162becb6f613f38d.json"
+  data-offline-search-index-json-src="/offline-search-index.877185775b1026422b1d9d3fb994d54fac1804f493bfd83bd7d83ea8e71bd5edd76babc71dad45e18b1a33be3e6a821117aa330ab33e3f5c5f7c8c2831c51c5c.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.80b1f97f438c2880240a1d37c7d2bef1b33547fe78b5dc0d0c65625ce092146b697dcc5c0d1091ac41f7a8453068eb2359b0a3b3b9e58bba162becb6f613f38d.json"
+  data-offline-search-index-json-src="/offline-search-index.877185775b1026422b1d9d3fb994d54fac1804f493bfd83bd7d83ea8e71bd5edd76babc71dad45e18b1a33be3e6a821117aa330ab33e3f5c5f7c8c2831c51c5c.json"
   data-offline-search-base-href="/"
 >
 
@@ -3796,6 +3796,7 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#クイックスタート">クイックスタート</a></li>
+    <li><a href="#stm32-mcuの動作周波数の切替80mhz16mhz">STM32 MCUの動作周波数の切替(80MHz、16MHz)</a></li>
     <li><a href="#ライブラリ">ライブラリ</a></li>
     <li><a href="#examples">Examples</a></li>
   </ul>
@@ -3995,6 +3996,19 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 </li>
 <li>
 <p>PlatformIO ツールバー(画面下のバー)の<code>Serial Monitor</code>ボタンを押して、シリアルモニターを起動させます。次に、MCUリーフの<code>リセットスイッチ</code>を押すと、プログラムが実行され、<code>Hello Wolrd</code>が表示されます。</br></p>
+</li>
+</ol>
+<h2 id="stm32-mcuの動作周波数の切替80mhz16mhz">STM32 MCUの動作周波数の切替(80MHz、16MHz)</h2>
+<p><code>LEAFONY_AP03</code>の動作周波数は、80MHz（デフォルト）に設定されていて、特別の指示がなければ80MHzで駆動するようになっています。省電力を実現するために、周波数を下げることは有効な手段なので、16MHzの動作周波数を選択で出来るようにしました。設定方法に関して以下に記します。</br></p>
+<ol>
+<li>
+<p><code>platformio.ini</code>に、以下を追記すると、80MHzと16MHzの環境が設定出来ます。</br></p>
+</li>
+<li>
+<p><code>main.cpp</code>に、以下を記載して下さい。</br></p>
+</li>
+<li>
+<p>サンプルのソースコードを使って、動作周波数が変更出来ることを確認して下さい。</br></p>
 </li>
 </ol>
 <h2 id="ライブラリ">ライブラリ</h2>
