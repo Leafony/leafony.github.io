@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d9dcb181c214ffa63f0b5f78201c7bb3584b290a3a36378d0f86db2ab625bdf2698d73745f95295243dddba60e8b64dd87cec499d1c28546f84eabbc9a7c3ab3.json"
+  data-offline-search-index-json-src="/offline-search-index.b05558f8c1a580d2bf61c2fae97901d10d48398716df86f8bb0447f435025f27232be79e37062012a59037dbede36da0ec3d41c14fd450f1f194d6206c55754c.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d9dcb181c214ffa63f0b5f78201c7bb3584b290a3a36378d0f86db2ab625bdf2698d73745f95295243dddba60e8b64dd87cec499d1c28546f84eabbc9a7c3ab3.json"
+  data-offline-search-index-json-src="/offline-search-index.b05558f8c1a580d2bf61c2fae97901d10d48398716df86f8bb0447f435025f27232be79e37062012a59037dbede36da0ec3d41c14fd450f1f194d6206c55754c.json"
   data-offline-search-base-href="/"
 >
 
@@ -3794,13 +3794,14 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#クイックスタート">クイックスタート</a></li>
+    <li><a href="#ライブラリ">ライブラリ</a></li>
+    <li><a href="#examples">Examples</a></li>
   </ul>
 
   <ul>
     <li><a href="#mcuとboardとの関係">MCUとBoardとの関係</a></li>
     <li><a href="#プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</a></li>
     <li><a href="#プロジェクトフォルダの保存場所の設定">プロジェクトフォルダの保存場所の設定</a></li>
-    <li><a href="#ライブラリ">ライブラリ</a></li>
     <li><a href="#参考">参考</a></li>
   </ul>
 </nav>
@@ -3944,70 +3945,6 @@ LeafonyをPCに接続の仕方は、<a href="https://docs.leafony.com/docs/envir
 <p>PlatformIO ツールバー(画面下のバー)の<code>Serial Monitor</code>ボタンを押して、起動させます。次に、MCUリーフの<code>リセットスイッチ</code>を押すと、プログラムが実行され、<code>Hello Wolrd</code>が表示されます。</br></p>
 </li>
 </ol>
-<h1 id="詳しい使い方">詳しい使い方</h1>
-<h2 id="mcuとboardとの関係">MCUとBoardとの関係</h2>
-<p>LeafonyのMCUとPlatformIO IDEのBoardとの関係は、以下の様になります。</br></p>
-<table>
-<thead>
-<tr>
-<th align="left">Type</th>
-<th align="left">Item</th>
-<th align="left">Platform</th>
-<th align="left">Board</th>
-<th align="left">Upload</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">AP01</td>
-<td align="left"><a href="../../leaf/processor/ap01">AVR MCU</a></td>
-<td align="left">atmelavr</td>
-<td align="left">Arduino Pro or Pro Mini ATmega328(3.3v,8Mhz)</td>
-<td align="left">COMポートの自動検出</td>
-<td></td>
-</tr>
-<tr>
-<td align="left">AP02</td>
-<td align="left"><a href="../../leaf/processor/ap02">ESP32 MCU</a></td>
-<td align="left">Espressif 32</td>
-<td align="left">Espressif ESP32 Dev Module</td>
-<td align="left">COMポートの自動検出</td>
-<td></td>
-</tr>
-<tr>
-<td align="left">AP03</td>
-<td align="left"><a href="../../leaf/processor/ap03">STM32 MCU</a></td>
-<td align="left">ststm32</td>
-<td align="left">LEAFONY_AP03</td>
-<td align="left">COMポートの自動検出が出来ない。</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</h2>
-<p>Project Wizarで、New Projectを立ち上げると、フォルダが作成され、デフォルトでは、~/Documents/PlatformIO/Projects に保存されます。
-Projectの名前変更やフォルダの削除は、Project Wizarではなく、エクスプローラから直接出来ます。</br></p>
-<h2 id="プロジェクトフォルダの保存場所の設定">プロジェクトフォルダの保存場所の設定</h2>
-<p>プロジェクトフォルダの保存場所の設定は、Project Wizarではなく、ターミナルから行います。</p>
-<ol>
-<li>
-<p>VSCodeを立ち上げ、<code>ファイル</code>→ <code>新しいウィンドウ</code>を開きます。</br></p>
-</li>
-<li>
-<p><code>PlatformIO</code>(画面左のバー)をクリックし、PLATFORMIO QUICK ACCESS（画面左）を表示させます。</br></p>
-</li>
-<li>
-<p><code>PIO Home/Open</code>をクリックします。</br></p>
-</li>
-<li>
-<p>以下のコードを実行します。</br>
-　<code>pio settings set projects_dir ＜設定したい(絶対)パス＞</code></p>
-</li>
-<li>
-<p>VSCodeを再起動します。</br></br></p>
-</li>
-</ol>
 <h2 id="ライブラリ">ライブラリ</h2>
 <ol>
 <li>
@@ -4103,6 +4040,75 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
     </tr>
   </tbody>
 </table>
+<h2 id="examples">Examples</h2>
+<p>PlatformIO IDEを使ったソースコードを準備しましたので試して下さい。</br></p>
+<ul>
+<li><a href="https://github.com/Leafony/platformio-sample-projects">Examples</a><br><br></li>
+</ul>
+<h1 id="tips">Tips</h1>
+<h2 id="mcuとboardとの関係">MCUとBoardとの関係</h2>
+<p>LeafonyのMCUとPlatformIO IDEのBoardとの関係は、以下の様になります。</br></p>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Item</th>
+<th align="left">Platform</th>
+<th align="left">Board</th>
+<th align="left">Upload</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">AP01</td>
+<td align="left"><a href="../../leaf/processor/ap01">AVR MCU</a></td>
+<td align="left">atmelavr</td>
+<td align="left">Arduino Pro or Pro Mini ATmega328(3.3v,8Mhz)</td>
+<td align="left">COMポートの自動検出</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">AP02</td>
+<td align="left"><a href="../../leaf/processor/ap02">ESP32 MCU</a></td>
+<td align="left">Espressif 32</td>
+<td align="left">Espressif ESP32 Dev Module</td>
+<td align="left">COMポートの自動検出</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">AP03</td>
+<td align="left"><a href="../../leaf/processor/ap03">STM32 MCU</a></td>
+<td align="left">ststm32</td>
+<td align="left">LEAFONY_AP03</td>
+<td align="left">COMポートの自動検出が出来ない。</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</h2>
+<p>Project Wizarで、New Projectを立ち上げると、フォルダが作成され、デフォルトでは、~/Documents/PlatformIO/Projects に保存されます。
+Projectの名前変更やフォルダの削除は、Project Wizarではなく、エクスプローラから直接出来ます。</br></p>
+<h2 id="プロジェクトフォルダの保存場所の設定">プロジェクトフォルダの保存場所の設定</h2>
+<p>プロジェクトフォルダの保存場所の設定は、Project Wizarではなく、ターミナルから行います。</p>
+<ol>
+<li>
+<p>VSCodeを立ち上げ、<code>ファイル</code>→ <code>新しいウィンドウ</code>を開きます。</br></p>
+</li>
+<li>
+<p><code>PlatformIO</code>(画面左のバー)をクリックし、PLATFORMIO QUICK ACCESS（画面左）を表示させます。</br></p>
+</li>
+<li>
+<p><code>PIO Home/Open</code>をクリックします。</br></p>
+</li>
+<li>
+<p>以下のコードを実行します。</br>
+　<code>pio settings set projects_dir ＜設定したい(絶対)パス＞</code></p>
+</li>
+<li>
+<p>VSCodeを再起動します。</br></br></p>
+</li>
+</ol>
 <h2 id="参考">参考</h2>
 <ul>
 <li><a href="https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode" target="_blank">PlatformIO ドキュメント</a></li>
