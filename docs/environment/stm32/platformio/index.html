@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.1d06f006418acf827a3828b7236c72e32a2bab2a51f1ba991fd14affc85481260dd14f278c67cae4ea8e98765a15a2a8197113b6d7d4d3f3b039951a50422366.json"
+  data-offline-search-index-json-src="/offline-search-index.67c50db106e8834fb227226f669996d38190f97fe2c53ec784c9ae459fa93db189d6a1fad5fd0a7d572693e141ad40155f6db9555accbec8d656b6a4081a11cc.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.1d06f006418acf827a3828b7236c72e32a2bab2a51f1ba991fd14affc85481260dd14f278c67cae4ea8e98765a15a2a8197113b6d7d4d3f3b039951a50422366.json"
+  data-offline-search-index-json-src="/offline-search-index.67c50db106e8834fb227226f669996d38190f97fe2c53ec784c9ae459fa93db189d6a1fad5fd0a7d572693e141ad40155f6db9555accbec8d656b6a4081a11cc.json"
   data-offline-search-base-href="/"
 >
 
@@ -3881,9 +3881,13 @@ if (!doNotTrack) {
 <h3 id="platformio-ideのインストール">PlatformIO IDEのインストール</h3>
 <ol>
 <li>PlatformIO IDEは、VSCodeの拡張機能なので、まず、<a href="https://code.visualstudio.com/">VSCode</a>をインストールして下さい。</br></li>
-<li><code>拡張機能</code>(画面左のバー)をクリックします。</br></li>
-<li>検索窓が現れたら、<code>Japanese Language Pack for Visual Studio Code</code>を入力し、日本語の拡張機能をインストールします。</br></li>
-<li>次に <code>platformio ide</code>を入力し、PlatformIO IDEをインストールが出来れば、事前準備は完了です。</br></li>
+<li><code>拡張機能</code>(画面左のバー)をクリックし、検索窓に以下を入力して、拡張機能をインストールします。
+<ul>
+<li><code>Japanese Language Pack for Visual Studio Code</code></br></li>
+<li><code>platformio ide</code></br></li>
+<li><code>Serial Monitor</code></br></li>
+</ul>
+</li>
 </ol>
 <h3 id="stm32cubeprog-のインストール">STM32CubeProg のインストール</h3>
 <ol>
@@ -3995,7 +3999,8 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 アップロードされたら、<code>Start operation achieved successfully</code>と表示されるので、<code>プログラムスイッチ</code>を実行側(LED消灯)にして下さい。</br></p>
 </li>
 <li>
-<p>PlatformIO ツールバー(画面下のバー)の<code>Serial Monitor</code>ボタンを押して、シリアルモニターを起動させます。次に、MCUリーフの<code>リセットスイッチ</code>を押すと、プログラムが実行され、<code>Hello Wolrd</code>が表示されます。</br></p>
+<p><code>シリアルモニター</code>ボタンを押して起動させます。次に、MCUリーフの<code>リセットスイッチ</code>を押して<code>Hello Wolrd</code>を表示させます。</br></br>
+<img src="./platformio_14.png" width="440"></br></p>
 </li>
 </ol>
 <h2 id="stm32-mcuの動作周波数の切替80mhz16mhz">STM32 MCUの動作周波数の切替(80MHz、16MHz)</h2>
@@ -4203,7 +4208,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 18, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 19, 2023
 </div>
 </div>
 

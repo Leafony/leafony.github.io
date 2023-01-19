@@ -195,9 +195,13 @@
 &lt;h3 id=&#34;platformio-ideのインストール&#34;&gt;PlatformIO IDEのインストール&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;PlatformIO IDEは、VSCodeの拡張機能なので、まず、&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VSCode&lt;/a&gt;をインストールして下さい。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;拡張機能&lt;/code&gt;(画面左のバー)をクリックします。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;検索窓が現れたら、&lt;code&gt;Japanese Language Pack for Visual Studio Code&lt;/code&gt;を入力し、日本語の拡張機能をインストールします。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;次に &lt;code&gt;platformio ide&lt;/code&gt;を入力し、PlatformIO IDEをインストールが出来れば、事前準備は完了です。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;拡張機能&lt;/code&gt;(画面左のバー)をクリックし、検索窓に以下を入力して、拡張機能をインストールします。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Japanese Language Pack for Visual Studio Code&lt;/code&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;platformio ide&lt;/code&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Serial Monitor&lt;/code&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;クイックスタート&#34;&gt;クイックスタート&lt;/h2&gt;
 &lt;p&gt;「Hello Wolrd」の事例で、platformIO IDEの使い方を紹介します。&lt;/br&gt;&lt;/p&gt;
@@ -259,7 +263,8 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に&lt;code&g
 LeafonyをPCに接続の仕方は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%A8%E6%8E%A5%E7%B6%9A&#34;&gt;こちら&lt;/a&gt; を参照願います。&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;PlatformIO ツールバー(画面下のバー)の&lt;code&gt;Serial Monitor&lt;/code&gt;ボタンを押して、起動させます。次に、MCUリーフの&lt;code&gt;リセットスイッチ&lt;/code&gt;を押すと、プログラムが実行され、&lt;code&gt;Hello Wolrd&lt;/code&gt;が表示されます。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;シリアルモニター&lt;/code&gt;ボタンを押して起動させます。次に、MCUリーフの&lt;code&gt;リセットスイッチ&lt;/code&gt;を押して&lt;code&gt;Hello Wolrd&lt;/code&gt;を表示させます。&lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./platformio_14.png&#34; width=&#34;440&#34;&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h2&gt;
