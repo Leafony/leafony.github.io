@@ -160,9 +160,7 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;事前準備&#34;&gt;事前準備&lt;/h2&gt;
 &lt;h3 id=&#34;pythonのインストール&#34;&gt;Pythonのインストール&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;PlatformIO IDEを動かすには、Pythonが必要です。&lt;a href=&#34;https://www.javadrive.jp/python/install/index1.html#section2&#34;&gt;こちら&lt;/a&gt;を参照して、Pythonインストールして下さい。&lt;/br&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;p&gt;PlatformIO IDEを動かすには、Pythonが必要です。&lt;a href=&#34;https://www.javadrive.jp/python/install/index1.html#section2&#34;&gt;こちら&lt;/a&gt;を参照して、Pythonインストールして下さい。&lt;/br&gt;&lt;/p&gt;
 &lt;h3 id=&#34;platformio-ideのインストール&#34;&gt;PlatformIO IDEのインストール&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;PlatformIO IDEは、VSCodeの拡張機能なので、まず、&lt;a href=&#34;https://code.visualstudio.com/&#34;&gt;VSCode&lt;/a&gt;をインストールして下さい。&lt;/br&gt;&lt;/li&gt;
@@ -174,19 +172,18 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;stm32cubeprog-のインストール&#34;&gt;STM32CubeProg のインストール&lt;/h3&gt;
+&lt;h3 id=&#34;stm32cubeprog-とarduino-ideのインストール&#34;&gt;STM32CubeProg とArduino IDEのインストール&lt;/h3&gt;
+&lt;p&gt;STM32MCUにプログラムを書き込むために、以下のインストールが必要になります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.stmcu.jp/design/sw_dev/pc_soft/58442/&#34;&gt;STM32CubeProg&lt;/a&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.arduino.cc/en/software&#34;&gt;Arduino IDE&lt;/a&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;stm32mcuのboardファイルの準備&#34;&gt;STM32MCUのBoardファイルの準備&lt;/h2&gt;
+&lt;p&gt;STM32MCUは、&lt;a href=&#34;https://www.st.com/ja/evaluation-tools/nucleo-l452re.html&#34;&gt;NUCLEO-L452RE&lt;/a&gt;とピンアサインが異なるため、STM32MCUのBoardファイル(③、④）が必要になります。PlatformIOで
+NUCLEO-L452REのプロジェクトを立ち上げると①と②がPCにダウンロードされます。次に③と④をGitHubからダウンロードしてpcの保存すれば完了です。&lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./platformio_15.png&#34; width=&#34;840&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;nucleo-l452reのプロジェクトの立ち上げ&#34;&gt;Nucleo L452REのプロジェクトの立ち上げ&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;STM32MCUにプログラムを書き込むために、&lt;a href=&#34;https://www.stmcu.jp/design/sw_dev/pc_soft/58442/&#34;&gt;STM32CubeProg&lt;/a&gt;をインストール&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;して下さい。&lt;br&gt;
-Arduino IDEを使って、STM32 MCUの開発をしている方は、既にSTM32CubeProgがインストールされています。&lt;/br&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&#34;stm32mcuのboardファイルの保存&#34;&gt;STM32MCUのBoardファイルの保存&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;STM32MCUは、&lt;a href=&#34;https://www.st.com/ja/evaluation-tools/nucleo-l452re.html&#34;&gt;NUCLEO-L452RE&lt;/a&gt;とピンアサインが異なるため、STM32MCUのBoardファイルを用意する必要があります。
-Boardファイルは、C:\Users\ユーザ名\ .platformioの下にある①framework-arduinoststm32と②ststm32であり、以下の構成になっています。&lt;/br&gt;&lt;/br&gt;
-&lt;img src=&#34;./platformio_12.png&#34; width=&#34;440&#34;&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;framework-arduinoststm32とststm32のフォルダのダウンロード&#34;&gt;①framework-arduinoststm32と②ststm32のフォルダのダウンロード&lt;/h4&gt;
-&lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;VSCodeを立ち上げ、&lt;code&gt;ファイル&lt;/code&gt;→ &lt;code&gt;新しいウィンドウ&lt;/code&gt;を開きます。&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
@@ -208,10 +205,10 @@ Boardファイルは、C:\Users\ユーザ名\ .platformioの下にある①frame
 &lt;p&gt;C:\Users\ユーザ名\ .platformio の下に、①と②のふたつのフォルダが出来ていることを確認して下さい。&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h4 id=&#34;leafony_ap03のフォルダとleafony_ap03jsonのファイルの保存&#34;&gt;③Leafony_AP03のフォルダと④Leafony_AP03.jsonのファイルの保存&lt;/h4&gt;
-&lt;ol start=&#34;7&#34;&gt;
+&lt;h3 id=&#34;leafony_ap03とleafony_ap03jsonのダウンロードと保存&#34;&gt;③Leafony_AP03と④Leafony_AP03.jsonのダウンロードと保存&lt;/h3&gt;
+&lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;Leafony_AP03&lt;/code&gt;のフォルダと&lt;code&gt;Leafony_AP03.json&lt;/code&gt;ファイルを以下からダウンロードし、所定の場所に保存して下さい。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;以下からダウンロードし、所定の場所に保存して下さい。&lt;/br&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;https://github.com/Leafony/platformio-LEAFONY_AP03&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -249,14 +246,17 @@ Boardファイルは、C:\Users\ユーザ名\ .platformioの下にある①frame
 &lt;span style=&#34;color:#000&#34;&gt;board&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;LEAFONY_AP03&lt;/span&gt;
 &lt;span style=&#34;color:#000&#34;&gt;framework&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;arduino&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;STM32 MCUは、アップロード時に、COMポートの自動検出が出来ないため、COMポートの番号&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;とプログラムファイルの実行場所を指定します。また、 シリアル通信のボーレートを&lt;code&gt;monitor_speed =&lt;/code&gt;で定義します。以下を参考に、platformio.iniに加えて下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;STM32 MCUは、アップロード時に、COMポートの自動検出が出来ないため、COMポートの番号とプログラムファイルの実行場所をplatformio.iniに記載して下さい。COMポートの番号は、シリアルモニターから確認出来ます。&lt;/br&gt;&lt;/br&gt;
+&lt;img src=&#34;./platformio_14.png&#34; width=&#34;440&#34;&gt;&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;upload_protocol&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;custom&lt;/span&gt;
 &lt;span style=&#34;color:#000&#34;&gt;upload_port&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;COM&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;番号&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;span style=&#34;color:#000&#34;&gt;upload_command&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;%%&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;userprofile&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;%%&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;\&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;AppData&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;\&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Local&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;\&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;Arduino15&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;\&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;packages&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;\&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;STM32&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;\&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;tools&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;\&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;STM32Tools&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;\&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1.4.0&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;\&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;tools&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;\&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;win&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;\&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;stm32CubeProg&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;bat&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;SOURCE&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;$&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;UPLOAD_PORT&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;s&lt;/span&gt;
-
-&lt;span style=&#34;color:#000&#34;&gt;monitor_speed&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;115200&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;また、 シリアル通信のボーレートを&lt;code&gt;monitor_speed =&lt;/code&gt;で定義し、platformio.iniに記載して下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;monitor_speed&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;115200&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;8&#34;&gt;
 &lt;li&gt;&lt;code&gt;src/main.cpp&lt;/code&gt;(画面左）を開き、以下のコードを貼り付けて下さい。&lt;/br&gt;
 PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に&lt;code&gt;#include &amp;lt;Arduino.h&amp;gt;&lt;/code&gt;を加えます。&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -274,18 +274,20 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に&lt;code&g
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;ソースコード:&lt;a href=&#34;https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_Hello_World_Pjt&#34;&gt;STM32_Hello_Wold_Pjt&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;ol start=&#34;8&#34;&gt;
+&lt;ol start=&#34;9&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;PlatformIO ツールバー(画面下のバー)の&lt;code&gt;Project environment switcher&lt;/code&gt;ボタンを押すと、アクティブなプロジェクが画面上側に全て表示されます。実行しないプロジェクトを削除してから&lt;code&gt;Build&lt;/code&gt;ボタンを押して下さい。&lt;/br&gt;&lt;/br&gt;
+&lt;p&gt;PlatformIO ツールバー(画面下のバー)の&lt;code&gt;Project environment switcher&lt;/code&gt;ボタンを押すと、アクティブなプロジェクが画面上側に全て表示されます。実行するプロジェクトを正しく選択して、&lt;code&gt;Build&lt;/code&gt;ボタンを押して下さい。&lt;/br&gt;&lt;/br&gt;
 &lt;img src=&#34;./platformio_6.png&#34; width=&#34;640&#34;&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;LeafonyをPCに接続し、STM32 MCUリーフの&lt;code&gt;プログラムスイッチ&lt;/code&gt;を、プログラム側(LED点灯)にし、&lt;code&gt;Upload&lt;/code&gt;ボタンを押すと、プログラムがMCUに書き込まれます。LeafonyをPCに接続の仕方は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/stm32/arduino_ide/#%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%A8%E6%8E%A5%E7%B6%9A&#34;&gt;こちら&lt;/a&gt; を参照願います。&lt;/br&gt;
-アップロードされたら、&lt;code&gt;Start operation achieved successfully&lt;/code&gt;と表示されるので、&lt;code&gt;プログラムスイッチ&lt;/code&gt;を実行側(LED消灯)にして下さい。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/environment/stm32/arduino_ide/#%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%A8%E6%8E%A5%E7%B6%9A&#34;&gt;こちら&lt;/a&gt; を参考に、LeafonyをPCに接続し、STM32 MCUリーフの&lt;code&gt;プログラムスイッチ&lt;/code&gt;をプログラム側(LED点灯)にし下さい。&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;code&gt;シリアルモニター&lt;/code&gt;ボタンを押して起動させます。次に、MCUリーフの&lt;code&gt;リセットスイッチ&lt;/code&gt;を押して&lt;code&gt;Hello Wolrd&lt;/code&gt;を表示させます。&lt;/br&gt;&lt;/br&gt;
-&lt;img src=&#34;./platformio_14.png&#34; width=&#34;440&#34;&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Upload&lt;/code&gt;ボタンを押すと、プログラムがMCUに書き込まれます。&lt;code&gt;SUCCESS　TooK XX.XX seconds&lt;/code&gt;と表示が出ても、以下の表示が出ていない時は、正しく書き込まれていないので、再度試みて下さい。正しく書き込まれたら、&lt;code&gt;プログラムスイッチ&lt;/code&gt;を実行側(LED消灯)にして下さい。&lt;/br&gt;
+&lt;img src=&#34;./platformio_16.png&#34; width=&#34;640&#34;&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;シリアルモニター&lt;/code&gt;ボタンを押して起動させ、&lt;code&gt;Hello Wolrd&lt;/code&gt;を表示が出来れば完成です。&lt;/br&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;stm32-mcuの周波数の切替80mhz16mhz&#34;&gt;STM32 MCUの周波数の切替(80MHz→16MHz)&lt;/h2&gt;
@@ -334,7 +336,6 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に&lt;code&g
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
 
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;loop&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(){&lt;/span&gt;
-  &lt;span style=&#34;color:#000&#34;&gt;Serial&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;println&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;Hello World&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;SystemClock_Print&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;          &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// CPU周波数を表示
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;1000&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
@@ -519,9 +520,6 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み。v2.5.0は動作しないので要注意。&lt;/br&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;　COMポートの番号は、&lt;a href=&#34;https://answers.microsoft.com/ja-jp/windows/forum/all/%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%83%9E/981a79d0-cf25-460b-9b94-6426dfafca74&#34;&gt;デバイスマネージャー&lt;/a&gt;から確認できます。&lt;/br&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
