@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d05d8e1dd752af501b941293ddd8b40fff98070f627ed6292fd822e709061cf680f03e3786245521d1831e4dc433912800f60a217f9a5f2d44e02bc1b5be53d7.json"
+  data-offline-search-index-json-src="/offline-search-index.e5b387bc67769e3d156ee9c0298b0cfe97f50cda0d02d1c5702d4e30bf2500882edda0f2ce6109c2a6fc6929d3e6e0bf7169465a3f024fee244f4a8dab48c1f8.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d05d8e1dd752af501b941293ddd8b40fff98070f627ed6292fd822e709061cf680f03e3786245521d1831e4dc433912800f60a217f9a5f2d44e02bc1b5be53d7.json"
+  data-offline-search-index-json-src="/offline-search-index.e5b387bc67769e3d156ee9c0298b0cfe97f50cda0d02d1c5702d4e30bf2500882edda0f2ce6109c2a6fc6929d3e6e0bf7169465a3f024fee244f4a8dab48c1f8.json"
   data-offline-search-base-href="/"
 >
 
@@ -3875,7 +3875,7 @@ if (!doNotTrack) {
 </br></p>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
-<li>Basic Kit 2 または、ESP32 Wi-Fi Kit 2</br></li>
+<li>Basic Kit 2</br></li>
 <li>パソコン (Windows、Mac OS X 、または Linux)</br></li>
 </ul>
 <h2 id="事前準備">事前準備</h2>
@@ -3966,8 +3966,8 @@ NUCLEO-L452REのプロジェクトを立ち上げると①と②がPCにダウ�
 <span style="color:#000">board</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">LEAFONY_AP03</span>
 <span style="color:#000">framework</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">arduino</span>
 </code></pre></div><ol start="6">
-<li>STM32 MCUは、アップロード時に、COMポートの自動検出が出来ないため、COMポートの番号とプログラムファイルの実行場所をplatformio.iniに記載して下さい。COMポートの番号は、シリアルモニターから確認出来ます。</br></br>
-<img src="./platformio_14.png" width="440"></br></li>
+<li>STM32 MCUは、COMポートの番号とプログラムファイルの実行場所をplatformio.iniに記載して下さい。COMポートの番号は、シリアルモニターから確認出来ます。</br></br>
+<img src="./platformio_14.png" width="840"></br></li>
 </ol>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000">upload_protocol</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">custom</span>
 <span style="color:#000">upload_port</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">COM</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#a40000">番号</span><span style="color:#ce5c00;font-weight:bold">&gt;</span>
@@ -3996,18 +3996,21 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 </ul>
 <ol start="9">
 <li>
-<p>PlatformIO ツールバー(画面下のバー)の<code>Project environment switcher</code>ボタンを押すと、アクティブなプロジェクが画面上側に全て表示されます。実行するプロジェクトを正しく選択して、<code>Build</code>ボタンを押して下さい。</br></br>
+<p>PlatformIO ツールバー(画面下のバー)の<code>Project Environment Switcher</code>ボタンを押すと、アクティブなプロジェクが画面上側に全て表示されます。実行するプロジェクトを正しく選択して、<code>Build</code>ボタンを押して下さい。</br></br>
 <img src="./platformio_6.png" width="640"></br></p>
 </li>
 <li>
 <p><a href="https://docs.leafony.com/docs/environment/stm32/arduino_ide/#%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%A8%E6%8E%A5%E7%B6%9A">こちら</a> を参考に、LeafonyをPCに接続し、STM32 MCUリーフの<code>プログラムスイッチ</code>をプログラム側(LED点灯)にし下さい。</br></p>
 </li>
 <li>
-<p><code>Upload</code>ボタンを押すと、プログラムがMCUに書き込まれます。<code>SUCCESS　TooK XX.XX seconds</code>と表示が出ても、以下の表示が出ていない時は、正しく書き込まれていないので、再度試みて下さい。正しく書き込まれたら、<code>プログラムスイッチ</code>を実行側(LED消灯)にして下さい。</br>
-<img src="./platformio_16.png" width="640"></br></p>
+<p><code>Upload</code>ボタンを押すと、プログラムがMCUに書き込まれます。<code>SUCCESS　TooK XX.XX seconds</code>と表示が出ても、以下の表示が出ていない時は、正しく書き込まれていないので、注意をして下さい。</br></br>
+<img src="./platformio_16.png" width="840"></br></p>
 </li>
 <li>
-<p><code>シリアルモニター</code>ボタンを押して起動させ、<code>Hello Wolrd</code>を表示が出来れば完成です。</br></br></p>
+<p>正しく書き込まれたら、<code>プログラムスイッチ</code>を実行側(LED消灯)にして下さい。</p>
+</li>
+<li>
+<p><code>シリアルモニター</code>ボタンを押して起動させ、<code>Hello Wolrd</code>を表示が出来れば完成です。</br></p>
 </li>
 </ol>
 <h2 id="stm32-mcuの周波数の切替80mhz16mhz">STM32 MCUの周波数の切替(80MHz→16MHz)</h2>

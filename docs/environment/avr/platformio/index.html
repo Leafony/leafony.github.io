@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d05d8e1dd752af501b941293ddd8b40fff98070f627ed6292fd822e709061cf680f03e3786245521d1831e4dc433912800f60a217f9a5f2d44e02bc1b5be53d7.json"
+  data-offline-search-index-json-src="/offline-search-index.e5b387bc67769e3d156ee9c0298b0cfe97f50cda0d02d1c5702d4e30bf2500882edda0f2ce6109c2a6fc6929d3e6e0bf7169465a3f024fee244f4a8dab48c1f8.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d05d8e1dd752af501b941293ddd8b40fff98070f627ed6292fd822e709061cf680f03e3786245521d1831e4dc433912800f60a217f9a5f2d44e02bc1b5be53d7.json"
+  data-offline-search-index-json-src="/offline-search-index.e5b387bc67769e3d156ee9c0298b0cfe97f50cda0d02d1c5702d4e30bf2500882edda0f2ce6109c2a6fc6929d3e6e0bf7169465a3f024fee244f4a8dab48c1f8.json"
   data-offline-search-base-href="/"
 >
 
@@ -3867,7 +3867,7 @@ if (!doNotTrack) {
 </br></p>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
-<li>Basic Kit 2 または、ESP32 Wi-Fi Kit 2</br></li>
+<li>Basic Kit 2</br></li>
 <li>パソコン (Windows、Mac OS X 、または Linux)</br></li>
 </ul>
 <h2 id="事前準備">事前準備</h2>
@@ -3915,10 +3915,15 @@ if (!doNotTrack) {
 <span style="color:#000">board</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">pro8MHzatmega328</span>
 <span style="color:#000">framework</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">arduino</span>
 </code></pre></div><ol start="6">
-<li>AVR MCUは、アップロード時に、COMポートの自動検出をするため、COMポートの番号の指定が不要になります。また、シリアル通信のボーレートを<code>monitor_speed =</code>で定義します。以下を参考に、platformio.iniに加えて下さい。</br></li>
+<li>
+<p>AVR MCUは、アップロード時に、COMポートの自動検出をするため、COMポートの番号の指定が不要になります。</br></p>
+</li>
+<li>
+<p>シリアル通信のボーレートを<code>monitor_speed =</code>で定義します。以下の様に、platformio.iniに加えて下さい。</br></p>
+</li>
 </ol>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000">monitor_speed</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">115200</span>
-</code></pre></div><ol start="7">
+</code></pre></div><ol start="8">
 <li><code>src/main.cpp</code>(画面左）を開き、以下のコードを貼り付けて下さい。</br>
 PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#include &lt;Arduino.h&gt;</code>を加えます。</br></li>
 </ol>
@@ -3936,18 +3941,20 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 </code></pre></div><ul>
 <li>ソースコード：<a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Hello_World_Pjt">Hello_Wold.Pjt</a></li>
 </ul>
-<ol start="8">
+<ol start="9">
 <li>
-<p>PlatformIO ツールバー(画面下のバー)の<code>Project environment switcher</code>ボタンを押すと、アクティブなプロジェクが画面上側に全て表示されます。実行しないプロジェクトを削除してから<code>Build</code>ボタンを押して下さい。</br></br>
+<p>PlatformIO ツールバー(画面下のバー)の<code>Project Environment Switcher</code>ボタンを押すと、アクティブなプロジェクが画面上側に全て表示されます。実行するプロジェクトを正しく選択して、<code>Build</code>ボタンを押して下さい。</br></br>
 <img src="./platformio_6.png" width="640"></br></p>
 </li>
 <li>
-<p>LeafonyをPCに接続し、<code>Upload</code>ボタンを押すと、プログラムがMCUに書き込まれます。</br>
-LeafonyをPCに接続の仕方は、<a href="https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%A8%E6%8E%A5%E7%B6%9A">こちら</a> を参照願います。</br></p>
+<p><a href="hhttps://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%A8%E6%8E%A5%E7%B6%9A">こちら</a> を参考に、LeafonyをPCに接続して下さい。</br></p>
 </li>
 <li>
-<p><code>シリアルモニター</code>ボタンを押して起動させます。次に、MCUリーフの<code>リセットスイッチ</code>を押して<code>Hello Wolrd</code>を表示させます。</br></br>
-<img src="./platformio_14.png" width="440"></br></p>
+<p><code>Upload</code>ボタンを押すと、プログラムがMCUに書き込まれます。</br></p>
+</li>
+<li>
+<p><code>シリアルモニター</code>ボタンを押して起動させ、<code>Hello Wolrd</code>を表示が出来れば完成です。</br></br>
+<img src="./platformio_14.png" width="840"></br></p>
 </li>
 </ol>
 <h2 id="ライブラリ">ライブラリ</h2>
@@ -4131,7 +4138,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 19, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 20, 2023
 </div>
 </div>
 
