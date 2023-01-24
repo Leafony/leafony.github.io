@@ -270,6 +270,9 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に&lt;code&g
 &lt;p&gt;&lt;code&gt;Upload&lt;/code&gt;ボタンを押すと、プログラムがMCUに書き込まれます。&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
+&lt;p&gt;MCUのリセットボタンを押して、プログラムを実行させます。&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;&lt;code&gt;シリアルモニター&lt;/code&gt;ボタンを押して起動させ、&lt;code&gt;Hello Wolrd&lt;/code&gt;を表示が出来れば完成です。&lt;/br&gt;&lt;/br&gt;
 &lt;img src=&#34;./platformio_14.png&#34; width=&#34;840&#34;&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;

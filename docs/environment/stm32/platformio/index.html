@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.37a9d76020b3f7f7613d8d9af1ae8d01a52eb1e01f5a3f88b842b42f4ecb2b0c7232b2de334c2ed857f3c94a6e397c94cb21ae065c9109a0a26fded8ff64960d.json"
+  data-offline-search-index-json-src="/offline-search-index.e8e97218f4d6cfb26333638397d6995e4fa54eef9155b855ac2afc0ca67f1d72e20fafd90677674099883fe036da5bd0faa92d71ab7ae29e91a605d274ad90bd.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.37a9d76020b3f7f7613d8d9af1ae8d01a52eb1e01f5a3f88b842b42f4ecb2b0c7232b2de334c2ed857f3c94a6e397c94cb21ae065c9109a0a26fded8ff64960d.json"
+  data-offline-search-index-json-src="/offline-search-index.e8e97218f4d6cfb26333638397d6995e4fa54eef9155b855ac2afc0ca67f1d72e20fafd90677674099883fe036da5bd0faa92d71ab7ae29e91a605d274ad90bd.json"
   data-offline-search-base-href="/"
 >
 
@@ -3801,7 +3801,7 @@ if (!doNotTrack) {
       </ul>
     </li>
     <li><a href="#クイックスタート">クイックスタート</a></li>
-    <li><a href="#stm32-mcuの周波数の切替80mhz16mhz">STM32 MCUの周波数の切替(80MHz→16MHz)</a></li>
+    <li><a href="#cpuの周波数を80mhzデフォルトから16mhzに設定変更">CPUの周波数を80MHz(デフォルト）から16MHzに設定変更</a></li>
     <li><a href="#ライブラリ">ライブラリ</a></li>
     <li><a href="#examples">Examples</a></li>
   </ul>
@@ -4015,26 +4015,18 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 <p>正しく書き込まれたら、<code>プログラムスイッチ</code>を実行側(LED消灯)にして下さい。</p>
 </li>
 <li>
+<p>MCUのリセットボタンを押して、プログラムを実行させます。</br></p>
+</li>
+<li>
 <p><code>シリアルモニター</code>ボタンを押して起動させ、<code>Hello Wolrd</code>を表示が出来れば完成です。</br></p>
 </li>
 </ol>
-<h2 id="stm32-mcuの周波数の切替80mhz16mhz">STM32 MCUの周波数の切替(80MHz→16MHz)</h2>
-<p><code>LEAFONY_AP03</code>の周波数は、80MHz（デフォルト）に設定されていて、指示がなければ80MHzで駆動します。省電力を実現するために周波数を下げることは有効な手段なので、16MHzの動作周波数を選択で出来るようにしました。以下にサンプルソースコードを記載します</br></p>
+<h2 id="cpuの周波数を80mhzデフォルトから16mhzに設定変更">CPUの周波数を80MHz(デフォルト）から16MHzに設定変更</h2>
+<p>CPUの周波数は、80MHz（デフォルト）に設定されています。省電力を実現するためにCPUの周波数を下げることは有効な手段なので、CPUの周波数を16MHzに設定出来るようにしました。設定方法を以下に記します。</br></p>
 <ol>
-<li><code>platformio.ini</code>に以下を記載し、動作周波数を16MHzに設定します。</br></li>
+<li><code>platformio.ini</code>に以下を追記して下さい。</li>
 </ol>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000;font-weight:bold">[</span><span style="color:#f57900">env</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">LEAFONY_AP03</span><span style="color:#000;font-weight:bold">]</span>
-<span style="color:#000">platform</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">ststm32</span>
-<span style="color:#000">board</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">LEAFONY_AP03</span>
-<span style="color:#000">framework</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">arduino</span>
-
-<span style="color:#000;font-weight:bold">;</span><span style="color:#000">upload_protocol</span> <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000">Windows</span>
-<span style="color:#000">upload_port</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">COM</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#a40000">番号</span><span style="color:#ce5c00;font-weight:bold">&gt;</span>
-<span style="color:#000">upload_command</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">%%</span><span style="color:#000">userprofile</span><span style="color:#ce5c00;font-weight:bold">%%</span><span style="color:#a40000">\</span><span style="color:#000">AppData</span><span style="color:#a40000">\</span><span style="color:#000">Local</span><span style="color:#a40000">\</span><span style="color:#000">Arduino15</span><span style="color:#a40000">\</span><span style="color:#000">packages</span><span style="color:#a40000">\</span><span style="color:#000">STM32</span><span style="color:#a40000">\</span><span style="color:#000">tools</span><span style="color:#a40000">\</span><span style="color:#000">STM32Tools</span><span style="color:#a40000">\</span><span style="color:#0000cf;font-weight:bold">1.4.0</span><span style="color:#a40000">\</span><span style="color:#000">tools</span><span style="color:#a40000">\</span><span style="color:#000">win</span><span style="color:#a40000">\</span><span style="color:#000">stm32CubeProg</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">bat</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#a40000">$</span><span style="color:#000">SOURCE</span> <span style="color:#a40000">$</span><span style="color:#000">UPLOAD_PORT</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">s</span>
-
-<span style="color:#000">monitor_speed</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">115200</span>
-
-<span style="color:#000;font-weight:bold">;</span> <span style="color:#000">Enable</span> <span style="color:#000">function</span> <span style="color:#000">to</span> <span style="color:#000">set</span> <span style="color:#000">CPU</span> <span style="color:#000">frequency</span> <span style="color:#000">to</span> <span style="color:#0000cf;font-weight:bold">16</span> <span style="color:#000">MHz</span> <span style="color:#000">in</span> <span style="color:#000">Leafony_tools</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">cpp</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">Enable</span> <span style="color:#000">function</span> <span style="color:#000">to</span> <span style="color:#000">set</span> <span style="color:#000">CPU</span> <span style="color:#000">frequency</span> <span style="color:#000">to</span> <span style="color:#0000cf;font-weight:bold">16</span> <span style="color:#000">MHz</span> <span style="color:#000">in</span> <span style="color:#000">Leafony_tools</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">cpp</span>
 <span style="color:#000">build_flags</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">D</span> <span style="color:#000">CPUCLOCK_LOW</span>
 </code></pre></div><ol start="2">
 <li>
@@ -4044,28 +4036,10 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 </ul>
 </li>
 <li>
-<p><code>main.cpp</code>に、以下を貼り付けて下さい。</br></p>
+<p>以下のソースコードを実行して、CPUの周波数が16MHzに設定されていることをシリアルモニターで確認して下さい。</p>
 </li>
 </ol>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#8f5902;font-style:italic">// prototype
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">SystemClock_Config</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">void</span><span style="color:#000;font-weight:bold">);</span>  <span style="color:#8f5902;font-style:italic">// CPU frequency setting
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">SystemClock_Print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">void</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">// CPU frequency display
-</span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">SystemClock_Config</span><span style="color:#000;font-weight:bold">();</span>         <span style="color:#8f5902;font-style:italic">// CPU frequency setting
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
-
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">(){</span>
-  <span style="color:#000">SystemClock_Print</span><span style="color:#000;font-weight:bold">();</span>          <span style="color:#8f5902;font-style:italic">// CPU frequency display
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><ol start="3">
-<li>サンプルのソースコードを実行し、動作周波数が16MHzに変更出来ることを確認して下さい。</br></li>
-</ol>
+</br>
 <ul>
 <li>ソースコード：<a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_CPU_Frequency_Pjt">STM32_CPU_Frequency_Pjt</a></br></li>
 </ul>
@@ -4258,7 +4232,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 23, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 24, 2023
 </div>
 </div>
 
