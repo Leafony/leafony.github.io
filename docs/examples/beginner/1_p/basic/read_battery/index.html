@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.e8e97218f4d6cfb26333638397d6995e4fa54eef9155b855ac2afc0ca67f1d72e20fafd90677674099883fe036da5bd0faa92d71ab7ae29e91a605d274ad90bd.json"
+  data-offline-search-index-json-src="/offline-search-index.050c1ce7d3c0d70f176e1cf177873c913ebb03013eccc0f92b929f930021fb9b44cb4b16ab671ce4c8e6a92a403a5cd03bc0923b673bc37c97699d9ec82f30c3.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.e8e97218f4d6cfb26333638397d6995e4fa54eef9155b855ac2afc0ca67f1d72e20fafd90677674099883fe036da5bd0faa92d71ab7ae29e91a605d274ad90bd.json"
+  data-offline-search-index-json-src="/offline-search-index.050c1ce7d3c0d70f176e1cf177873c913ebb03013eccc0f92b929f930021fb9b44cb4b16ab671ce4c8e6a92a403a5cd03bc0923b673bc37c97699d9ec82f30c3.json"
   data-offline-search-base-href="/"
 >
 
@@ -3785,13 +3785,18 @@ if (!doNotTrack) {
     <li><a href="#概要">概要</a></li>
     <li><a href="#使用するリーフ">使用するリーフ</a></li>
     <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
-    <li><a href="#ソースコード">ソースコード</a>
+    <li><a href="#arduino-ideの場合">Arduino IDEの場合</a>
       <ul>
-        <li><a href="#arduino-ide-の場合docsenvironmentavrarduino"><a href="/docs/environment/avr/arduino">Arduino IDE の場合</a></a></li>
-        <li><a href="#platformio-ide-の場合docsenvironmentavrplatformio"><a href="/docs/environment/avr/platformio">PlatformIO IDE の場合</a></a></li>
+        <li><a href="#ソースコード">ソースコード</a></li>
+        <li><a href="#実行結果">実行結果</a></li>
       </ul>
     </li>
-    <li><a href="#実行結果">実行結果</a></li>
+    <li><a href="#platformio-ide-の場合">PlatformIO IDE の場合</a>
+      <ul>
+        <li><a href="#ソースコード-1">ソースコード</a></li>
+        <li><a href="#実行結果-1">実行結果</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -3919,22 +3924,19 @@ if (!doNotTrack) {
 </table>
 <h2 id="リーフの組み立て">リーフの組み立て</h2>
 <p><img src="./read_battery_1.png" alt="CR2032"></p>
-<h2 id="ソースコード">ソースコード</h2>
-<h3 id="arduino-ide-の場合docsenvironmentavrarduino"><a href="/docs/environment/avr/arduino">Arduino IDE の場合</a></h3>
+<h2 id="arduino-ideの場合">Arduino IDEの場合</h2>
+<h3 id="ソースコード">ソースコード</h3>
+<ol>
+<li>マイコンにプログラムを書き込むために、<a href="https://docs.leafony.com/docs/environment/avr/arduino/">Arduino IDEの設定</a>をして下さい。<br></li>
+<li>以下のソースコードをGitHubからダウンロードし、保存して下さい。</br>
+デフォルトの保存場所は、C:\Users\＜ユーザ名＞\ドキュメント\Arduinoです。<br>
 <ul>
-<li>xxx.inoファイルには、以下のコードを書き込んで下さい。</li>
+<li>ソースコード：<a href="https://github.com/Leafony/Sample-Sketches/tree/master/Battery_Voltage/Battery_Voltage.ino">Battery_Voltage.ino</a></li>
 </ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic">//  Battery Voltage
-</span><span style="color:#8f5902;font-style:italic">//
-</span><span style="color:#8f5902;font-style:italic">//    (c) 2021 LEAFONY SYSTEMS Co., Ltd
-</span><span style="color:#8f5902;font-style:italic">//    Released under the MIT license
-</span><span style="color:#8f5902;font-style:italic">//    https://opensource.org/licenses/MIT
-</span><span style="color:#8f5902;font-style:italic">//
-</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2021/04/01  First release
-</span><span style="color:#8f5902;font-style:italic">//=====================================================================
-</span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</li>
+<li>マイコンにプログラムを書き込んで下さい。</br></li>
+</ol>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C++" data-lang="C++"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">BATT_ADC_ADDR</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0x50</span><span style="color:#000;font-weight:bold">;</span>
 
@@ -3967,26 +3969,29 @@ if (!doNotTrack) {
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Batt[V]  = &#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">String</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">dataBatt</span><span style="color:#000;font-weight:bold">));</span>
   <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/Battery_Voltage/Battery_Voltage.ino" target="_blank">Battery_Voltage.ino</a></p>
-<h3 id="platformio-ide-の場合docsenvironmentavrplatformio"><a href="/docs/environment/avr/platformio">PlatformIO IDE の場合</a></h3>
-<ul>
-<li>
-<p>main.cppファイルには、Arduino IDEのコードの先頭に<code>#include &lt;Arduino.h&gt;</code>を加えて書き込んで下さい。</BR></p>
-</li>
-<li>
-<p>platformio.iniには、以下のコードを書き込んで下さい。</p>
-</li>
-</ul>
-<pre><code>[env:pro8MHzatmega328]
-platform = atmelavr
-board = pro8MHzatmega328
-framework = arduino
-monitor_speed = 115200
-
-</code></pre><p><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Battery_Voltage_Pjt" target="_blank">Battery_Voltage_Pjt</a></p>
-<h2 id="実行結果">実行結果</h2>
-<p>Arduino IDEのシリアルモニタを開き、ボーレートを115200bpsとすると、電池の電圧が表示されます。</p>
+</code></pre></div><h3 id="実行結果">実行結果</h3>
+<ol>
+<li>シリアルモニタを開き、ボーレートを115200bpsとすると、電池の電圧が表示されます。<br></li>
+</ol>
+<!---
 <img src="read_battery_result.jpg" width="750">
+-->
+<h2 id="platformio-ide-の場合">PlatformIO IDE の場合</h2>
+<h3 id="ソースコード-1">ソースコード</h3>
+<ol>
+<li>マイコンにプログラムを書き込むために、<a href="/docs/environment/avr/platformio">PlatformIO IDE for VSCodeの設定</a> をして下さい。<br></li>
+<li>以下のソースコードをGitHubからダウンロードし、保存して下さい。<br>
+デフォルトの保存場所は、C:\Users\＜ユーザ名＞\ドキュメント\PlatformIO\Projectsです。<br>
+<ul>
+<li>ソースコード：<a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Battery_Voltage_Pjt">Battery_Voltage_Pjt</a>　<br></li>
+</ul>
+</li>
+<li>マイコンにプログラムを書き込んで下さい。</br></li>
+</ol>
+<h3 id="実行結果-1">実行結果</h3>
+<ol>
+<li>シリアルモニターを開くと電池の電圧が表示されます。<br></li>
+</ol>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
 </p>
@@ -4314,7 +4319,7 @@ monitor_speed = 115200
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 11, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 25, 2023
 </div>
 </div>
 

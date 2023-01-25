@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.e8e97218f4d6cfb26333638397d6995e4fa54eef9155b855ac2afc0ca67f1d72e20fafd90677674099883fe036da5bd0faa92d71ab7ae29e91a605d274ad90bd.json"
+  data-offline-search-index-json-src="/offline-search-index.050c1ce7d3c0d70f176e1cf177873c913ebb03013eccc0f92b929f930021fb9b44cb4b16ab671ce4c8e6a92a403a5cd03bc0923b673bc37c97699d9ec82f30c3.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.e8e97218f4d6cfb26333638397d6995e4fa54eef9155b855ac2afc0ca67f1d72e20fafd90677674099883fe036da5bd0faa92d71ab7ae29e91a605d274ad90bd.json"
+  data-offline-search-index-json-src="/offline-search-index.050c1ce7d3c0d70f176e1cf177873c913ebb03013eccc0f92b929f930021fb9b44cb4b16ab671ce4c8e6a92a403a5cd03bc0923b673bc37c97699d9ec82f30c3.json"
   data-offline-search-base-href="/"
 >
 
@@ -3785,13 +3785,18 @@ if (!doNotTrack) {
     <li><a href="#概要">概要</a></li>
     <li><a href="#使用するリーフ">使用するリーフ</a></li>
     <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
-    <li><a href="#ソースコード">ソースコード</a>
+    <li><a href="#arduino-ideの場合">Arduino IDEの場合</a>
       <ul>
-        <li><a href="#arduino-ide-の場合docsenvironmentavrarduino"><a href="/docs/environment/avr/arduino">Arduino IDE の場合</a></a></li>
-        <li><a href="#platformio-ide-の場合docsenvironmentavrplatformio"><a href="/docs/environment/avr/platformio">PlatformIO IDE の場合</a></a></li>
+        <li><a href="#ソースコード">ソースコード</a></li>
+        <li><a href="#実行結果">実行結果</a></li>
       </ul>
     </li>
-    <li><a href="#実行結果">実行結果</a></li>
+    <li><a href="#platformio-ide-の場合">PlatformIO IDE の場合</a>
+      <ul>
+        <li><a href="#ソースコード-1">ソースコード</a></li>
+        <li><a href="#実行結果-1">実行結果</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -3919,43 +3924,49 @@ if (!doNotTrack) {
 <h2 id="リーフの組み立て">リーフの組み立て</h2>
 <p>下図のようにリーフを組み立てましょう。</p>
 <p><img src="./blink_assemble.png" alt="assemble1"></p>
-<h2 id="ソースコード">ソースコード</h2>
-<h3 id="arduino-ide-の場合docsenvironmentavrarduino"><a href="/docs/environment/avr/arduino">Arduino IDE の場合</a></h3>
+<h2 id="arduino-ideの場合">Arduino IDEの場合</h2>
+<h3 id="ソースコード">ソースコード</h3>
+<ol>
+<li>マイコンにプログラムを書き込むために、<a href="https://docs.leafony.com/docs/environment/avr/arduino/">Arduino IDEの設定</a>をして下さい。<br></li>
+<li>以下のソースコードをGitHubからダウンロードし、保存して下さい。</br>
+デフォルトの保存場所は、C:\Users\＜ユーザ名＞\ドキュメント\Arduinoです。<br>
 <ul>
-<li>xxx.inoファイルには、以下のコードを書き込んで下さい。</li>
+<li>ソースコード：<a href="https://github.com/Leafony/Sample-Sketches/tree/master/Blink/Blink.ino">Blink.ino</a></li>
 </ul>
+</li>
+<li>マイコンにプログラムを書き込んで下さい。</br></li>
+</ol>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#8f5902;font-style:italic">// LEDピンを出力ピンに設定
+  <span style="color:#8f5902;font-style:italic">// initialize digital pin LED_BUILTIN as an output.
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">OUTPUT</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
 
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">// LEDを点灯
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// LEDを消灯
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// 1秒待つ
+  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">HIGH</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">// turn the LED on (HIGH is the voltage level)
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// wait for a second
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">digitalWrite</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LED_BUILTIN</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LOW</span><span style="color:#000;font-weight:bold">);</span>    <span style="color:#8f5902;font-style:italic">// turn the LED off by making the voltage LOW
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>                       <span style="color:#8f5902;font-style:italic">// wait for a second
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><ul>
-<li>ソースコード：<a href="https://github.com/Leafony/Sample-Sketches/tree/master/Blink/Blink.ino">Blink.ino</a></li>
-</ul>
-<h3 id="platformio-ide-の場合docsenvironmentavrplatformio"><a href="/docs/environment/avr/platformio">PlatformIO IDE の場合</a></h3>
+</code></pre></div><h3 id="実行結果">実行結果</h3>
+<ol>
+<li>AVR MCUリーフに搭載されたLEDが1秒おきに点灯することを確認して下さい。</br></li>
+</ol>
+<h2 id="platformio-ide-の場合">PlatformIO IDE の場合</h2>
+<h3 id="ソースコード-1">ソースコード</h3>
+<ol>
+<li>マイコンにプログラムを書き込むために、<a href="/docs/environment/avr/platformio">PlatformIO IDE for VSCodeの設定</a> をして下さい。<br></li>
+<li>以下のソースコードをGitHubからダウンロードし、保存して下さい。<br>
+デフォルトの保存場所は、C:\Users\＜ユーザ名＞\ドキュメント\PlatformIO\Projectsです。<br>
 <ul>
-<li>platformio.iniには、以下のコードを書き込んで下さい。</li>
+<li>ソースコード：<a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Blink_Pjt">Blink.Pjt</a>　<br></li>
 </ul>
-<pre><code>[env:pro8MHzatmega328]
-platform = atmelavr
-board = pro8MHzatmega328
-framework = arduino
-</code></pre><ul>
-<li>
-<p>main.cppファイルには、Arduino IDEのコードの先頭に<code>#include &lt;Arduino.h&gt;</code>を加えて書き込んで下さい。</BR></p>
 </li>
-<li>
-<p>ソースコード：<a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Blink_Pjt">Blink.Pjt</a></p>
-</li>
-</ul>
-<h2 id="実行結果">実行結果</h2>
-<p>AVR MCUリーフに搭載されたLEDが1秒おきに点灯/消灯します。</p>
+<li>マイコンにプログラムを書き込んで下さい。</br></li>
+</ol>
+<h3 id="実行結果-1">実行結果</h3>
+<ol>
+<li>AVR MCUリーフに搭載されたLEDが1秒おきに点灯することを確認して下さい。</br></li>
+</ol>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
 </p>
@@ -4283,7 +4294,7 @@ framework = arduino
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 18, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 25, 2023
 </div>
 </div>
 
