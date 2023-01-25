@@ -25,7 +25,6 @@
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
 &lt;p&gt;SP&amp;amp;PIRリーフに搭載された圧電スピーカを使って、メロディーを鳴らしましょう。&lt;/p&gt;
 &lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
-&lt;p&gt;以下のリーフを使用します。&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -73,44 +72,56 @@
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
-&lt;p&gt;下図のようにリーフを組み立てましょう。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./speaker_assemble.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
-&lt;h3 id=&#34;arduino-ide-の場合docsenvironmentavrarduino&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino&#34;&gt;Arduino IDE の場合&lt;/a&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;xxx.inoファイルには、以下の修正を反映して下さい。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Arduinoを開き、&lt;code&gt;ファイル → スケッチ例 → 02.Digital → toneMelody&lt;/code&gt;を開いてください。&lt;/p&gt;
-&lt;p&gt;このサンプルコードでは、スピーカが8番ピンに接続されている事になっています。&lt;br&gt;
-しかし、Leafonyではスピーカが5番ピンに接続されているので、下記の部分を修正して正しいピン接続になるようにしましょう。&lt;/p&gt;
+&lt;h2 id=&#34;arduino-ideの場合&#34;&gt;Arduino IDEの場合&lt;/h2&gt;
+&lt;h3 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;マイコンにプログラムを書き込むために、&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/&#34;&gt;Arduino IDEの設定&lt;/a&gt;をして下さい。&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;Arduinoを開き、&lt;code&gt;ファイル → スケッチ例 → 02.Digital → toneMelody&lt;/code&gt;を開いてください。&lt;/li&gt;
+&lt;li&gt;このサンプルコードは、スピーカが8番ピンに接続されていますが、Leafonyは5番ピンです。以下の修正をして下さい&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;37行目の&lt;code&gt;8&lt;/code&gt;を&lt;code&gt;5&lt;/code&gt;に変更&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;tone(5, melody[thisNote], noteDuration);
-&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;tone&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;melody&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;thisNote&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;noteDuration&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
 &lt;li&gt;44行目の&lt;code&gt;8&lt;/code&gt;を&lt;code&gt;5&lt;/code&gt;に変更&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;noTone(5);
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;platformio-ide-の場合docsenvironmentavrplatformio&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/platformio&#34;&gt;PlatformIO IDE の場合&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;noTone&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;5&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;実行結果&#34;&gt;実行結果&lt;/h3&gt;
+&lt;p&gt;スピーカーから一度だけメロディが鳴ります。&lt;/p&gt;
+&lt;h2 id=&#34;platformio-ide-の場合&#34;&gt;PlatformIO IDE の場合&lt;/h2&gt;
+&lt;h3 id=&#34;ソースコード-1&#34;&gt;ソースコード&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;マイコンにプログラムを書き込むために、&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/platformio&#34;&gt;PlatformIO IDE for VSCodeの設定&lt;/a&gt; をして下さい。&lt;br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;「Hello Wolrd」のクイックスタートを行って、PlatformIO IDEの仕組みを把握して下さい。&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のソースコードをGitHubからダウンロードし、パソコンに保存して下さい。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;br&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;main.cppファイルには、Arduino IDEのコードの先頭に&lt;code&gt;#include &amp;lt;Arduino.h&amp;gt;&lt;/code&gt;を加えて書き込んで下さい。&lt;/BR&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;platformio.iniには、以下のコードを書き込んで下さい。&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;ソースコード：&lt;a href=&#34;https://github.com/Leafony/platformio-sample-projects/tree/main/avr/toneMelody_Pjt&#34;&gt;toneMelody_Pjt&lt;/a&gt;　&lt;br&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;[env:pro8MHzatmega328]
-platform = atmelavr
-board = pro8MHzatmega328
-framework = arduino
-
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/platformio-sample-projects/tree/main/avr/toneMelody_Pjt&#34; target=&#34;_blank&#34;&gt;toneMelody_Pjt&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;マイコンにプログラムを書き込んで下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;実行結果-1&#34;&gt;実行結果&lt;/h3&gt;
 &lt;p&gt;スピーカーから一度だけメロディが鳴ります。&lt;/p&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
-&lt;/p&gt;
+&lt;/p&gt;&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;デフォルトの保存場所は、C:\Users\＜ユーザ名＞\ドキュメント\PlatformIO\Projectsです。&lt;br&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+
       </description>
     </item>
     
@@ -124,10 +135,9 @@ framework = arduino
         
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;SP&amp;amp;PIRリーフに搭載された近距離検出用途の赤外線センサIC(AKM AK9754AE)を使って、人が近づいたら音が鳴るシステムを作りましょう。&lt;/p&gt;
+&lt;p&gt;SP&amp;amp;PIRリーフに搭載された近距離検出用途の赤外線センサ(AKM AK9754AE)を使って、人が近づいたら音が鳴るシステムを作ります。&lt;/br&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./ir_about.png&#34; alt=&#34;ir_about&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
-&lt;p&gt;以下のリーフを使用します&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -175,23 +185,24 @@ framework = arduino
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
-&lt;p&gt;下図のようにリーフを組み立てましょう。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./ir_assemble.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
-&lt;h3 id=&#34;arduino-ide-の場合docsenvironmentavrarduino&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino&#34;&gt;Arduino IDE の場合&lt;/a&gt;&lt;/h3&gt;
+&lt;h2 id=&#34;arduino-ideの場合&#34;&gt;Arduino IDEの場合&lt;/h2&gt;
+&lt;h3 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;マイコンにプログラムを書き込むために、&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/&#34;&gt;Arduino IDEの設定&lt;/a&gt;をして下さい。&lt;br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のソースコードをGitHubからダウンロードし、パソコンに保存&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; して下さい。&lt;/br&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;xxx.inoファイルには、以下のコードを書き込んで下さい。&lt;/li&gt;
+&lt;li&gt;ソースコード：&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/blob/master/Human_Sensing/Human_Sensing.ino&#34;&gt;Human_Sensing.ino&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//  Human Sensing
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//    (c) 2021 LEAFONY SYSTEMS Co., Ltd
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//    Released under the MIT license
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//    https://opensource.org/licenses/MIT
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//      Rev.00 2021/04/01  First release
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;Wire.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;マイコンにプログラムを書き込んで下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;Wire.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
 &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define I2C_PIR_ADDR   0x65
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define I2C_SEND_BUF_LENGTH 10
@@ -349,28 +360,43 @@ framework = arduino
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;clearI2CReadbuf&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(){&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;memset&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;&amp;amp;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;i2c_recvBuf&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;[&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;],&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;0x00&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;,&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;sizeof&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;i2c_recvBuf&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;));&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/blob/master/Human_Sensing/Human_Sensing.ino&#34; target=&#34;_blank&#34;&gt;Human_Sensing.ino&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;platformio-ide-の場合docsenvironmentavrplatformio&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/platformio&#34;&gt;PlatformIO IDE の場合&lt;/a&gt;&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;実行結果&#34;&gt;実行結果&lt;/h3&gt;
+&lt;p&gt;人が近づくと音が鳴ります。&lt;/p&gt;
+&lt;h2 id=&#34;platformio-ide-の場合&#34;&gt;PlatformIO IDE の場合&lt;/h2&gt;
+&lt;h3 id=&#34;ソースコード-1&#34;&gt;ソースコード&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;マイコンにプログラムを書き込むために、&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/platformio&#34;&gt;PlatformIO IDE for VSCodeの設定&lt;/a&gt; をして下さい。&lt;br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;「Hello Wolrd」のクイックスタートを行って、PlatformIO IDEの仕組みを把握して下さい。&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のソースコードをGitHubからダウンロードし、パソコンに保存して下さい。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;br&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;main.cppファイルには、Arduino IDEのコードの先頭に&lt;code&gt;#include &amp;lt;Arduino.h&amp;gt;&lt;/code&gt;を加えて書き込んで下さい。&lt;/BR&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;platformio.iniには、以下のコードを書き込んで下さい。&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;ソースコード：&lt;a href=&#34;https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Human_Sensing_Pjt&#34;&gt;Human_Sensing_Pjt&lt;/a&gt;　&lt;br&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;[env:pro8MHzatmega328]
-platform = atmelavr
-board = pro8MHzatmega328
-framework = arduino
-monitor_speed = 115200
-
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Human_Sensing_Pjt&#34; target=&#34;_blank&#34;&gt;Human_Sensing_Pjt&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;マイコンにプログラムを書き込んで下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;実行結果-1&#34;&gt;実行結果&lt;/h3&gt;
 &lt;p&gt;人が近づくと音が鳴ります。&lt;/p&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
-&lt;/p&gt;
+&lt;/p&gt;&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;デフォルトの保存場所は、C:\Users\＜ユーザ名＞\ドキュメント\Arduinoです。&lt;br&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;デフォルトの保存場所は、C:\Users\＜ユーザ名＞\ドキュメント\PlatformIO\Projectsです。&lt;br&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+
       </description>
     </item>
     
@@ -384,10 +410,9 @@ monitor_speed = 115200
         
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;ボリュームを回転させると回転量に応じた数のLEDが点灯。また、マイクにより周囲の音量に応じた数のLEDを点灯させることが出来ます。&lt;/p&gt;
+&lt;p&gt;ボリュームの回転量やマイクの音量に応じた数のLEDを点灯させることが出来ます。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./sound_level_assemble.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
-&lt;p&gt;以下のリーフを使用します&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -435,23 +460,24 @@ monitor_speed = 115200
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
-&lt;p&gt;下図のようにリーフを組み立てましょう。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./sound_level_assemble2.png&#34; alt=&#34;assemble2&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
-&lt;h3 id=&#34;arduino-ide-の場合docsenvironmentavrarduino&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino&#34;&gt;Arduino IDE の場合&lt;/a&gt;&lt;/h3&gt;
+&lt;h2 id=&#34;arduino-ideの場合&#34;&gt;Arduino IDEの場合&lt;/h2&gt;
+&lt;h3 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;マイコンにプログラムを書き込むために、&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/&#34;&gt;Arduino IDEの設定&lt;/a&gt;をして下さい。&lt;br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のソースコードをGitHubからダウンロードし、パソコンに保存&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; して下さい。&lt;/br&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;xxx.inoファイルには、以下のコードを書き込んで下さい。&lt;/li&gt;
+&lt;li&gt;ソースコード：&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/blob/master/Sound_Level_Meter/Sound_Level_Meter.ino&#34;&gt;Sound_Level_Meter.ino&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//  Sound level meter
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//    (c) 2022 LEAFONY SYSTEMS Co., Ltd
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//    Released under the MIT license
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//    https://opensource.org/licenses/MIT
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//      Rev.00 2021/04/01  First release
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define LED1             6
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;マイコンにプログラムを書き込んで下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define LED1             6
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define LED2             7
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define LED3             8
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#define LED4             9
@@ -588,29 +614,43 @@ monitor_speed = 115200
   &lt;span style=&#34;color:#000&#34;&gt;dispSensorData&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
   &lt;span style=&#34;color:#000&#34;&gt;delay&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;100&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/blob/master/Sound_Level_Meter/Sound_Level_Meter.ino&#34; target=&#34;_blank&#34;&gt;Sound_Level_Meter.ino&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;platformio-ide-の場合docsenvironmentavrplatformio&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/platformio&#34;&gt;PlatformIO IDE の場合&lt;/a&gt;&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;実行結果&#34;&gt;実行結果&lt;/h3&gt;
+&lt;p&gt;ボリュームを回転させると回転量に応じた数のLEDが点灯します。また、シリアルプロッタの画面にボリュームの抵抗とマイクの音量が表示されます。&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;platformio-ide-の場合&#34;&gt;PlatformIO IDE の場合&lt;/h2&gt;
+&lt;h3 id=&#34;ソースコード-1&#34;&gt;ソースコード&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;マイコンにプログラムを書き込むために、&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/platformio&#34;&gt;PlatformIO IDE for VSCodeの設定&lt;/a&gt; をして下さい。&lt;br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;「Hello Wolrd」のクイックスタートを行って、PlatformIO IDEの仕組みを把握して下さい。&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のソースコードをGitHubからダウンロードし、パソコンに保存して下さい。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;br&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;main.cppファイルには、Arduino IDEのコードの先頭に&lt;code&gt;#include &amp;lt;Arduino.h&amp;gt;&lt;/code&gt;を加えて書き込んで下さい。&lt;/BR&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;platformio.iniには、以下のコードを書き込んで下さい。&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;ソースコード：&lt;a href=&#34;https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Sound_Level_Meter_Pjt&#34;&gt;Sound_Level_Meter_Pjt&lt;/a&gt;　&lt;br&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;[env:pro8MHzatmega328]
-platform = atmelavr
-board = pro8MHzatmega328
-framework = arduino
-monitor_speed = 115200
-
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Sound_Level_Meter_Pjt&#34; target=&#34;_blank&#34;&gt;Sound_Level_Meter_Pjt&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
-&lt;p&gt;ボリュームを回転させると回転量に応じた数のLEDが点灯します。また、シリアルプ
-ロッタの画面にボリュームの抵抗とマイクの音量が表示されます。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;マイコンにプログラムを書き込んで下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;実行結果-1&#34;&gt;実行結果&lt;/h3&gt;
+&lt;p&gt;ボリュームを回転させると回転量に応じた数のLEDが点灯します。また、シリアルプロッタの画面にボリュームの抵抗とマイクの音量が表示されます。&lt;br&gt;&lt;/p&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
-&lt;/p&gt;
+&lt;/p&gt;&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;デフォルトの保存場所は、C:\Users\＜ユーザ名＞\ドキュメント\Arduinoです。&lt;br&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;デフォルトの保存場所は、C:\Users\＜ユーザ名＞\ドキュメント\PlatformIO\Projectsです。&lt;br&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+
       </description>
     </item>
     
@@ -624,8 +664,7 @@ monitor_speed = 115200
         
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;LCD(液晶ディスプレイ)リーフを使用すると、文字列を簡単に画面に表示することができます。&lt;br&gt;
-また、ボタンスイッチが2個搭載されていて、コントローラとして使うこともできます。&lt;/p&gt;
+&lt;p&gt;LCD(液晶ディスプレイ)リーフを使用すると、文字列を簡単に画面に表示することができます。また、ボタンスイッチが2個搭載されていて、コントローラとして使うこともできます。&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;使用するリーフ&#34;&gt;使用するリーフ&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -674,37 +713,24 @@ monitor_speed = 115200
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;リーフの組み立て&#34;&gt;リーフの組み立て&lt;/h2&gt;
-&lt;p&gt;下図のようにリーフを組み立てましょう。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;./LCD_assemble2.png&#34; alt=&#34;assemble1&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
-&lt;h3 id=&#34;arduino-ide-の場合docsenvironmentavrarduino&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino&#34;&gt;Arduino IDE の場合&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;このスケッチを動かすためには、ライブラリのインストールが必要です。
-まだインストールしていない場合は&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB&#34;&gt;開発環境設定ページ&lt;/a&gt;を参考にライブラリをインストールしてください。&lt;/p&gt;
+&lt;h2 id=&#34;arduino-ideの場合&#34;&gt;Arduino IDEの場合&lt;/h2&gt;
+&lt;h3 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;マイコンにプログラムを書き込むために、&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/&#34;&gt;Arduino IDEの設定&lt;/a&gt;をして下さい。&lt;br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のソースコードをGitHubからダウンロードし、パソコンに保存&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; して下さい。&lt;/br&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;xxx.inoファイルには、以下のコードを書き込んで下さい。&lt;/li&gt;
+&lt;li&gt;ソースコード：&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/LCD-SW_test/LCD-SW_test.ino&#34;&gt;LCD-SW_test.ino&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//  Leafony Platform sample sketch
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//     Application  : LCD SW test
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//     Processor    : ATmega328P (3.3V /8MHz)
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//     Leaf configuration
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//       (1) AI04 LCD
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//       (2) AP01 AVR MCU
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//       (3) AZ01 USB
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//		(c) 2021 LEAFONY SYSTEMS Co., Ltd
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//		Released under the MIT license
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//		https://opensource.org/licenses/MIT
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//      Rev.00 2021/04/01  First release
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// use libraries
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//  ST7032 - Arduino LiquidCrystal compatible library
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//    https://github.com/tomozh/arduino_ST7032
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//=====================================================================
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
-&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//---------------------------------------------------------------------
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;マイコンにプログラムを書き込んで下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//---------------------------------------------------------------------
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// difinition
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//---------------------------------------------------------------------
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;Wire.h&amp;gt;                   // I2C&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
@@ -835,24 +861,33 @@ monitor_speed = 115200
 
   &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;read_data&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/LCD-SW_test/LCD-SW_test.ino&#34; target=&#34;_blank&#34;&gt;LCD-SW_test.ino&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;platformio-ide-の場合docsenvironmentavrplatformio&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/platformio&#34;&gt;PlatformIO IDE の場合&lt;/a&gt;&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;実行結果&#34;&gt;実行結果&lt;/h3&gt;
+&lt;p&gt;LCDに下記の順で画面が表示されます。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;「Hello」の文字列&lt;/li&gt;
+&lt;li&gt;カーソルの移動&lt;/li&gt;
+&lt;li&gt;ボタンの入力状態表示&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;platformio-ide-の場合&#34;&gt;PlatformIO IDE の場合&lt;/h2&gt;
+&lt;h3 id=&#34;ソースコード-1&#34;&gt;ソースコード&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;マイコンにプログラムを書き込むために、&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/platformio&#34;&gt;PlatformIO IDE for VSCodeの設定&lt;/a&gt; をして下さい。&lt;br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;「Hello Wolrd」のクイックスタートを行って、PlatformIO IDEの仕組みを把握して下さい。&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;以下のソースコードをGitHubからダウンロードし、パソコンに保存して下さい。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;br&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;main.cppファイルには、Arduino IDEのコードの先頭に&lt;code&gt;#include &amp;lt;Arduino.h&amp;gt;&lt;/code&gt;を加えて書き込んで下さい。&lt;/BR&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;platformio.iniには、以下のコードを書き込んで下さい。&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;ソースコード：&lt;a href=&#34;https://github.com/Leafony/platformio-sample-projects/tree/main/avr/LCD-SW_test_Pjt&#34;&gt;LCD-SW_test_Pjt&lt;/a&gt;　&lt;br&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;pre&gt;&lt;code&gt;[env:pro8MHzatmega328]
-platform = atmelavr
-board = pro8MHzatmega328
-framework = arduino
-lib_deps = https://github.com/tomozh/arduino_ST7032
-
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/platformio-sample-projects/tree/main/avr/LCD-SW_test_Pjt&#34; target=&#34;_blank&#34;&gt;LCD-SW_test_Pjt&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;マイコンにプログラムを書き込んで下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;実行結果-1&#34;&gt;実行結果&lt;/h3&gt;
 &lt;p&gt;LCDに下記の順で画面が表示されます。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;「Hello」の文字列&lt;/li&gt;
@@ -861,7 +896,18 @@ lib_deps = https://github.com/tomozh/arduino_ST7032
 &lt;/ol&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
-&lt;/p&gt;
+&lt;/p&gt;&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;デフォルトの保存場所は、C:\Users\＜ユーザ名＞\ドキュメント\Arduinoです。&lt;br&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;デフォルトの保存場所は、C:\Users\＜ユーザ名＞\ドキュメント\PlatformIO\Projectsです。&lt;br&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+
       </description>
     </item>
     
