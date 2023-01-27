@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.23e3e76a378cd6e4e1214d77df0b3c22e5c6e96783c10ca6e935cfb7780bfa06609b9747c6ed7ad236bd15317938f151772fcbad5f0f94ce52a3bf64efe31188.json"
+  data-offline-search-index-json-src="/offline-search-index.6d9c0516203e6696a04751ab6d7c1ca61c8d86be54acd985a523fcb1dbe7943388c554d4d695b6c81f8756615ed1d9280db2764c3419fa4d379efb1a95c8b92e.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.23e3e76a378cd6e4e1214d77df0b3c22e5c6e96783c10ca6e935cfb7780bfa06609b9747c6ed7ad236bd15317938f151772fcbad5f0f94ce52a3bf64efe31188.json"
+  data-offline-search-index-json-src="/offline-search-index.6d9c0516203e6696a04751ab6d7c1ca61c8d86be54acd985a523fcb1dbe7943388c554d4d695b6c81f8756615ed1d9280db2764c3419fa4d379efb1a95c8b92e.json"
   data-offline-search-base-href="/"
 >
 
@@ -3795,6 +3795,7 @@ if (!doNotTrack) {
     </li>
     <li><a href="#クイックスタート">クイックスタート</a></li>
     <li><a href="#ライブラリ">ライブラリ</a></li>
+    <li><a href="#シリアルプロッター">シリアルプロッター　</a></li>
   </ul>
 
   <ul>
@@ -3886,6 +3887,7 @@ if (!doNotTrack) {
 <li><code>Japanese Language Pack for Visual Studio Code</code></br></li>
 <li><code>platformio ide</code></br></li>
 <li><code>Serial Monitor</code></br></li>
+<li><code>teleplot</code></br></li>
 </ul>
 </li>
 </ol>
@@ -4058,9 +4060,34 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
     </tr>
   </tbody>
 </table>
-</br>
-<h1 id="サンプルアプリ応用">サンプルアプリ・応用</h1>
-<p>PlatformIOを使った初心者向けのソースコードを準備しました。GitHubからソースコードをダウンロードし、パソコンの所定の場所に保存<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> しからプログラムを実行して下さい。</br></p>
+<h2 id="シリアルプロッター">シリアルプロッター　</h2>
+<p>PlatformIOには、Arduino IDEにあるシリアルプロッターがないため、VSCodeの拡張機能である<code>Teleplot for VSCode</code>を導入します。サンプルのソースコードをダウンロードして、試して下さい。</br></p>
+<ol>
+<li>
+<p>GitHubからソースコードをダウンロードし、パソコンの所定の場所に保存<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> します。</br></p>
+<ul>
+<li>ソースコード:<a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Teleplot_Example_1">Teleplot_Example_1</a></li>
+</ul>
+</li>
+<li>
+<p>プログラムを実行して下さい。</p>
+</li>
+<li>
+<p>画面下の<code>teleplot</code>の表示をクリックして、COMポートを指定して、<code>Open</code> を押すとグラフが表示されます <br></p>
+</li>
+<li>
+<p><code>&gt;varName:1234\n</code>という形式のシリアルメッセージは、すべて<code>teleplot</code>に表示されます。詳しくは、<a href="https://marketplace.visualstudio.com/items?itemName=alexnesnes.teleplot">こちら</a>を参照して下さい。</br></p>
+</li>
+</ol>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"> <span style="color:#8f5902;font-style:italic">// Plot a sinus
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&gt;sin:&#34;</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">sin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">));</span>
+
+  <span style="color:#8f5902;font-style:italic">// Plot a cosinus
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&gt;cos:&#34;</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cos</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">));</span>
+</code></pre></div><h1 id="サンプルアプリ応用">サンプルアプリ・応用</h1>
+<p>PlatformIOを使った初心者向けのソースコードを準備しました。GitHubからソースコードをダウンロードし、パソコンの所定の場所に保存<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> してプログラムを実行して下さい。</br></p>
 <h2 id="avr-beginner-examples">AVR Beginner Examples</h2>
 <table>
 <thead>
@@ -4197,7 +4224,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 27, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 28, 2023
 </div>
 </div>
 
