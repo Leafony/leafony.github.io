@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.97a05b9d092c085a7abefb98f25edb2a2bd1307ce8e5e8ce1e07c3816f1c32b03b179358d978f22d72af53d8c61ef8600a4a4927710e54801258c74ce9080e09.json"
+  data-offline-search-index-json-src="/offline-search-index.23e3e76a378cd6e4e1214d77df0b3c22e5c6e96783c10ca6e935cfb7780bfa06609b9747c6ed7ad236bd15317938f151772fcbad5f0f94ce52a3bf64efe31188.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.97a05b9d092c085a7abefb98f25edb2a2bd1307ce8e5e8ce1e07c3816f1c32b03b179358d978f22d72af53d8c61ef8600a4a4927710e54801258c74ce9080e09.json"
+  data-offline-search-index-json-src="/offline-search-index.23e3e76a378cd6e4e1214d77df0b3c22e5c6e96783c10ca6e935cfb7780bfa06609b9747c6ed7ad236bd15317938f151772fcbad5f0f94ce52a3bf64efe31188.json"
   data-offline-search-base-href="/"
 >
 
@@ -3795,7 +3795,10 @@ if (!doNotTrack) {
     </li>
     <li><a href="#クイックスタート">クイックスタート</a></li>
     <li><a href="#ライブラリ">ライブラリ</a></li>
-    <li><a href="#examples">Examples</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#avr-beginner-examples">AVR Beginner Examples</a></li>
   </ul>
 
   <ul>
@@ -4055,11 +4058,56 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
     </tr>
   </tbody>
 </table>
-<h2 id="examples">Examples</h2>
-<p>PlatformIO IDEを使ったソースコードを準備しましたので試して下さい。</br></p>
-<ul>
-<li><a href="https://github.com/Leafony/platformio-sample-projects">Examples</a><br><br></li>
-</ul>
+</br>
+<h1 id="サンプルアプリ応用">サンプルアプリ・応用</h1>
+<p>PlatformIOを使った初心者向けのソースコードを準備しました。GitHubからソースコードをダウンロードし、パソコンの所定の場所に保存<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> しからプログラムを実行して下さい。</br></p>
+<h2 id="avr-beginner-examples">AVR Beginner Examples</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Item</th>
+<th align="left">Source code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="./beginner/1_p/basic/blink">LED点滅</a></td>
+<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Blink_Pjt">Blink_Pjt</a></td>
+</tr>
+<tr>
+<td align="left"><a href="./beginner/1_p/basic/read_battery">バッテリ電圧読み取り</a></td>
+<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Battery_Voltage_Pjt">Battery_Voltage_Pjt</a></td>
+</tr>
+<tr>
+<td align="left"><a href="./beginner/1_p/basic/temp_humid_sensors">温湿度センサ読み取り</a></td>
+<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Thermo-Hygrometer_Pjt">Thermo-Hygrometer_Pjt</a></td>
+</tr>
+<tr>
+<td align="left"><a href="./beginner/1_p/basic/illum_sensor">照度センサ読み取り</a></td>
+<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Illuminance_Meter_Pjt">Illuminance_Meter_Pjt</a></td>
+</tr>
+<tr>
+<td align="left"><a href="./beginner/1_p/basic/accelerometer">加速度センサ読み取り</a></td>
+<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Accelerometer_Pjt">Accelerometer_Pjt</a></td>
+</tr>
+<tr>
+<td align="left"><a href="./beginner/1_p/exten/speaker">スピーカ</a></td>
+<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/toneMelody_Pjt">toneMelody_Pjt</a></td>
+</tr>
+<tr>
+<td align="left"><a href="./beginner/1_p/exten/ir_sensor">人感センサ</a></td>
+<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Human_Sensing_Pjt">Human_Sensing_Pjt</a></td>
+</tr>
+<tr>
+<td align="left"><a href="./beginner/1_p/exten/sound_level">サウンドレベルメータ</a></td>
+<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Sound_Level_Meter_Pjt">Sound_Level_Meter_Pjt</a></td>
+</tr>
+<tr>
+<td align="left"><a href="./beginner/1_p/exten/lcd">LCD</a></td>
+<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/LCD-SW_test_Pjt">LCD-SW_test_Pjt</a></td>
+</tr>
+</tbody>
+</table>
 <h1 id="tips">Tips</h1>
 <h2 id="mcuとboardとの関係">MCUとBoardとの関係</h2>
 <p>LeafonyのMCUとPlatformIO IDEのBoardとの関係は、以下の様になります。</br></p>
@@ -4130,7 +4178,15 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 </ul>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
-</p>
+</p><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>デフォルトの保存場所は、C:\Users\＜ユーザ名＞\ドキュメント\PlatformIO\Projectsです。 <br> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
         <div class="section-index">
     
     
@@ -4141,7 +4197,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 24, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 27, 2023
 </div>
 </div>
 
