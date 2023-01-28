@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6d9c0516203e6696a04751ab6d7c1ca61c8d86be54acd985a523fcb1dbe7943388c554d4d695b6c81f8756615ed1d9280db2764c3419fa4d379efb1a95c8b92e.json"
+  data-offline-search-index-json-src="/offline-search-index.f1c8610802276d7b6b98e22f26f434f35da84410f785327bcd5fdd1758a88386c6814b77b8612aa23ae8e0c6242b0c4b578a8a60876ede800cb1d1799562e4a5.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6d9c0516203e6696a04751ab6d7c1ca61c8d86be54acd985a523fcb1dbe7943388c554d4d695b6c81f8756615ed1d9280db2764c3419fa4d379efb1a95c8b92e.json"
+  data-offline-search-index-json-src="/offline-search-index.f1c8610802276d7b6b98e22f26f434f35da84410f785327bcd5fdd1758a88386c6814b77b8612aa23ae8e0c6242b0c4b578a8a60876ede800cb1d1799562e4a5.json"
   data-offline-search-base-href="/"
 >
 
@@ -3795,7 +3795,11 @@ if (!doNotTrack) {
     </li>
     <li><a href="#クイックスタート">クイックスタート</a></li>
     <li><a href="#ライブラリ">ライブラリ</a></li>
-    <li><a href="#examples">Examples</a></li>
+    <li><a href="#シリアルプロッター">シリアルプロッター　</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#esp32-beginner-examples">ESP32 Beginner Examples</a></li>
   </ul>
 
   <ul>
@@ -3883,6 +3887,7 @@ if (!doNotTrack) {
 <li><code>Japanese Language Pack for Visual Studio Code</code></br></li>
 <li><code>platformio ide</code></br></li>
 <li><code>Serial Monitor</code></br></li>
+<li><code>teleplot</code></br></li>
 </ul>
 </li>
 </ol>
@@ -4055,11 +4060,85 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
     </tr>
   </tbody>
 </table>
-<h2 id="examples">Examples</h2>
-<p>PlatformIO IDEを使ったソースコードを準備しましたので試して下さい。</br></p>
+<h2 id="シリアルプロッター">シリアルプロッター　</h2>
+<p>PlatformIOには、Arduino IDEにあるシリアルプロッターがないため、VSCodeの拡張機能である<code>Teleplot for VSCode</code>を導入します。サンプルのソースコードをダウンロードして、試して下さい。</br></p>
+<ol>
+<li>
+<p>GitHubからソースコードをダウンロードし、パソコンの所定の場所に保存<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> します。</br></p>
 <ul>
-<li><a href="https://github.com/Leafony/platformio-sample-projects">Examples</a><br><br></li>
+<li>ソースコード:<a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Teleplot_Example_1">Teleplot_Example_1</a></li>
 </ul>
+</li>
+<li>
+<p>プログラムを実行して下さい。</p>
+</li>
+<li>
+<p>画面下の<code>teleplot</code>の表示をクリックして、COMポートを指定して、<code>Open</code> を押すとグラフが表示されます <br></p>
+</li>
+<li>
+<p><code>&gt;varName:1234\n</code>という形式のシリアルメッセージは、すべて<code>teleplot</code>に表示されます。詳しくは、<a href="https://marketplace.visualstudio.com/items?itemName=alexnesnes.teleplot">こちら</a>を参照して下さい。</br></p>
+</li>
+</ol>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"> <span style="color:#8f5902;font-style:italic">// Plot a sinus
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&gt;sin:&#34;</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">sin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">));</span>
+
+  <span style="color:#8f5902;font-style:italic">// Plot a cosinus
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&gt;cos:&#34;</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cos</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">));</span>
+</code></pre></div><h1 id="サンプルアプリ応用">サンプルアプリ・応用</h1>
+<p>PlatformIOを使った初心者向けのソースコードを準備しました。GitHubからソースコードをダウンロードし、パソコンの所定の場所に保存<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> してプログラムを実行して下さい。</br></p>
+<h2 id="esp32-beginner-examples">ESP32 Beginner Examples</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th align="left">Source code</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="./beginner/2_p/esp32/button">ボタン入力</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td><a href="./beginner/2_p/esp32/rtc">リアルタイムクロック</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td><a href="./beginner/2_p/esp32/microsd">microSDカード</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td><a href="./beginner/2_p/basic/temp_humid_sensors">温湿度センサ読み取り</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td><a href="./beginner/2_p/basic/illum_sensor">照度センサ読み取り</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td><a href="./beginner/2_p/basic/accelerometer">加速度センサ読み取り</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td><a href="./beginner/2_p/exten/speaker">スピーカ</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td><a href="./beginner/2_p/exten/ir_sensor">人感センサ</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td><a href="./beginner/2_p/exten/sound_level">サウンドレベルメータ</a></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td><a href="./beginner/2_p/exten/lcd">LCD</a></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
 <h1 id="tips">Tips</h1>
 <h2 id="mcuとboardとの関係">MCUとBoardとの関係</h2>
 <p>LeafonyのMCUとPlatformIO IDEのBoardとの関係は、以下の様になります。</br></p>
@@ -4130,7 +4209,15 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 </ul>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
-</p>
+</p><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>デフォルトの保存場所は、C:\Users\＜ユーザ名＞\ドキュメント\PlatformIO\Projectsです。 <br> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
         <div class="section-index">
     
     
@@ -4141,7 +4228,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 24, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 29, 2023
 </div>
 </div>
 

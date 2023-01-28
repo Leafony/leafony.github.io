@@ -144,7 +144,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6d9c0516203e6696a04751ab6d7c1ca61c8d86be54acd985a523fcb1dbe7943388c554d4d695b6c81f8756615ed1d9280db2764c3419fa4d379efb1a95c8b92e.json"
+  data-offline-search-index-json-src="/offline-search-index.f1c8610802276d7b6b98e22f26f434f35da84410f785327bcd5fdd1758a88386c6814b77b8612aa23ae8e0c6242b0c4b578a8a60876ede800cb1d1799562e4a5.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +174,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6d9c0516203e6696a04751ab6d7c1ca61c8d86be54acd985a523fcb1dbe7943388c554d4d695b6c81f8756615ed1d9280db2764c3419fa4d379efb1a95c8b92e.json"
+  data-offline-search-index-json-src="/offline-search-index.f1c8610802276d7b6b98e22f26f434f35da84410f785327bcd5fdd1758a88386c6814b77b8612aa23ae8e0c6242b0c4b578a8a60876ede800cb1d1799562e4a5.json"
   data-offline-search-base-href="/"
 >
 
@@ -3785,18 +3785,8 @@ if (!doNotTrack) {
     <li><a href="#概要">概要</a></li>
     <li><a href="#使用するリーフ">使用するリーフ</a></li>
     <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
-    <li><a href="#arduino-ideの場合">Arduino IDEの場合</a>
-      <ul>
-        <li><a href="#ソースコード">ソースコード</a></li>
-        <li><a href="#実行結果">実行結果</a></li>
-      </ul>
-    </li>
-    <li><a href="#platformio-ide-の場合">PlatformIO IDE の場合</a>
-      <ul>
-        <li><a href="#ソースコード-1">ソースコード</a></li>
-        <li><a href="#実行結果-1">実行結果</a></li>
-      </ul>
-    </li>
+    <li><a href="#ソースコード">ソースコード</a></li>
+    <li><a href="#実行結果">実行結果</a></li>
   </ul>
 </nav>
 
@@ -3877,8 +3867,9 @@ if (!doNotTrack) {
         
 	
 	<h2 id="概要">概要</h2>
-<p>4-Sensorsリーフに搭載された加速度センサの値を読み取って、シリアルモニタに表示させます。</p>
+<p>4-Sensorsリーフに搭載された加速度センサの値を読み取って、シリアルモニタに表示するサンプルです。</p>
 <h2 id="使用するリーフ">使用するリーフ</h2>
+<p>以下のリーフを使用します</p>
 <table>
 <thead>
 <tr>
@@ -3926,24 +3917,22 @@ if (!doNotTrack) {
 </tbody>
 </table>
 <h2 id="リーフの組み立て">リーフの組み立て</h2>
+<p>下図を参考にリーフを組み立ててみましょう。</p>
 <p><img src="./environment_assemble.png" alt="assemble1"></p>
-<h2 id="arduino-ideの場合">Arduino IDEの場合</h2>
-<h3 id="ソースコード">ソースコード</h3>
-<ol>
-<li>
-<p>マイコンにプログラムを書き込むために、<a href="https://docs.leafony.com/docs/environment/avr/arduino/">Arduino IDEの設定</a>をして下さい。<br></p>
-</li>
-<li>
-<p>以下のソースコードをGitHubからダウンロードし、パソコンに保存<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> して下さい。</br></p>
-<ul>
-<li>ソースコード：<a href="https://github.com/Leafony/Sample-Sketches/blob/master/Accelerometer/Accelerometer.ino">Accelerometer.ino</a></li>
-</ul>
-</li>
-</ol>
-<ol start="3">
-<li>マイコンにプログラムを書き込んで下さい。</br></li>
-</ol>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Adafruit_LIS3DH.h&gt;</span><span style="color:#8f5902;font-style:italic">
+<h2 id="ソースコード">ソースコード</h2>
+<p>Arduino IDEで下記のプログラムを書きましょう。</p>
+<p>このスケッチを動かすためには、ライブラリのインストールが必要です。
+まだインストールしていない場合は<a href="/docs/environment/stm32/arduino_ide/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">開発環境設定ページ</a>を参考にライブラリをインストールしてください。</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic">//  Accelerometer
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//    (c) 2021 LEAFONY SYSTEMS Co., Ltd
+</span><span style="color:#8f5902;font-style:italic">//    Released under the MIT license
+</span><span style="color:#8f5902;font-style:italic">//    https://opensource.org/licenses/MIT
+</span><span style="color:#8f5902;font-style:italic">//
+</span><span style="color:#8f5902;font-style:italic">//      Rev.00 2021/04/01  First release
+</span><span style="color:#8f5902;font-style:italic">//=====================================================================
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Adafruit_LIS3DH.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span>
 <span style="color:#8f5902;font-style:italic">#define LIS3DH_ADDRESS 0x19
 </span><span style="color:#8f5902;font-style:italic"></span>
@@ -3974,44 +3963,13 @@ if (!doNotTrack) {
 
     <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">100</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><h3 id="実行結果">実行結果</h3>
-<p>Arduino IDEのシリアルモニタを開き、ボーレートを115200bpsとすると、加速度と傾きが表示されます。</p>
-<h2 id="platformio-ide-の場合">PlatformIO IDE の場合</h2>
-<h3 id="ソースコード-1">ソースコード</h3>
-<ol>
-<li>
-<p>マイコンにプログラムを書き込むために、<a href="/docs/environment/avr/platformio">PlatformIO IDE for VSCodeの設定</a> をして下さい。<br></p>
-</li>
-<li>
-<p>「Hello Wolrd」のクイックスタートを行って、PlatformIO IDEの仕組みを把握して下さい。</br></p>
-</li>
-<li>
-<p>以下のソースコードをGitHubからダウンロードし、パソコンに保存して下さい。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup><br></p>
-<ul>
-<li>ソースコード：<a href="https://github.com/Leafony/platformio-sample-projects/tree/main/avr/Accelerometer_Pjt">Accelerometer_Pjt</a>　<br></li>
-</ul>
-</li>
-</ol>
-<ol start="4">
-<li>マイコンにプログラムを書き込んで下さい。</br></li>
-</ol>
-<h3 id="実行結果-1">実行結果</h3>
+</code></pre></div><p><a href="https://github.com/Leafony/Sample-Sketches/blob/master/Accelerometer/Accelerometer.ino" target="_blank">Accelerometer.ino</a></p>
+<h2 id="実行結果">実行結果</h2>
 <p>Arduino IDEのシリアルモニタを開き、ボーレートを115200bpsとすると、加速度と傾きが表示されます。</p>
 <img src="accelerometer.png" width="700">
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
-</p><section class="footnotes" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn:1" role="doc-endnote">
-<p>デフォルトの保存場所は、C:\Users\＜ユーザ名＞\ドキュメント\Arduinoです。<br> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2" role="doc-endnote">
-<p>デフォルトの保存場所は、C:\Users\＜ユーザ名＞\ドキュメント\PlatformIO\Projectsです。<br> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-</ol>
-</section>
-
+</p>
         <div class="section-index">
     
     
@@ -4336,7 +4294,7 @@ if (!doNotTrack) {
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 25, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 29, 2023
 </div>
 </div>
 
