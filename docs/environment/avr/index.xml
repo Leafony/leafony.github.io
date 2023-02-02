@@ -89,7 +89,7 @@
       &lt;td&gt;Bluetoothライブラリ&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td rowspan=6&gt;4-Sensors&lt;/td&gt;
+      &lt;td rowspan=5&gt;4-Sensors&lt;/td&gt;
       &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_Sensor&#34; target=&#34;_blank&#34;&gt;Adafruit_Sensor.h&lt;/a&gt;&lt;/td&gt;
       &lt;td&gt;&lt;/td&gt;
       &lt;td&gt;ユニファイドセンサドライバ&lt;/td&gt;
@@ -103,11 +103,6 @@
       &lt;td&gt;&lt;a href=&#34;https://github.com/ameltech/sme-hts221-library&#34; target=&#34;_blank&#34;&gt;HTS221.h&lt;/a&gt;&lt;/td&gt;
       &lt;td&gt;&lt;/td&gt;
       &lt;td&gt;温湿度センサライブラリ&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_HTS221&#34; target=&#34;_blank&#34;&gt;Adafruit_HTS221.h&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;Adafruit温湿度センサライブラリ&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;&lt;a href=&#34;https://github.com/closedcube/ClosedCube_OPT3001_Arduino&#34; target=&#34;_blank&#34;&gt;ClosedCube_OPT3001.h&lt;/a&gt;&lt;/td&gt;
@@ -306,7 +301,7 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に&lt;code&g
       &lt;td&gt;Bluetoothライブラリ&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td rowspan=6&gt;4-Sensors&lt;/td&gt;
+      &lt;td rowspan=5&gt;4-Sensors&lt;/td&gt;
       &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_Sensor&#34; target=&#34;_blank&#34;&gt;adafruit/Adafruit Unified Sensor@^1.1.6&lt;/a&gt;&lt;/td&gt;
       &lt;td&gt;&lt;/td&gt;
       &lt;td&gt;ユニファイドセンサドライバ&lt;/td&gt;
@@ -321,18 +316,13 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に&lt;code&g
       &lt;td&gt;&lt;/td&gt;
       &lt;td&gt;温湿度センサライブラリ&lt;/td&gt;
     &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_HTS221&#34; target=&#34;_blank&#34;&gt;adafruit/Adafruit HTS221@^0.1.2&lt;/a&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;/td&gt;
-      &lt;td&gt;Adafruit温湿度センサライブラリ&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
+     &lt;tr&gt;
       &lt;td&gt;&lt;a href=&#34;https://github.com/closedcube/ClosedCube_OPT3001_Arduino&#34; target=&#34;_blank&#34;&gt;closedcube/ClosedCube OPT3001@^1.1.2&lt;/a&gt;&lt;/td&gt;
       &lt;td&gt;&lt;/td&gt;
       &lt;td&gt;照度センサライブラリ&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_LIS3DH/tree/1.1.2&#34; target=&#34;_blank&#34;&gt;adafruit/Adafruit LIS3DH@^1.1.2&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/adafruit/Adafruit_LIS3DH/tree/1.1.2&#34; target=&#34;_blank&#34;&gt;adafruit/Adafruit LIS3DH@1.1.2&lt;/a&gt;&lt;/td&gt;
       &lt;td&gt;1.1.2&lt;/td&gt;
       &lt;td&gt;加速度センサライブラリ&lt;/td&gt;
     &lt;/tr&gt;
@@ -356,7 +346,7 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に&lt;code&g
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td rowspan=2&gt;STM32 MCU&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/stm32duino/STM32RTC/tree/1.2.0&#34; target=&#34;_blank&#34;&gt;stm32duino/STM32duino RTC @ 1.2.0&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/stm32duino/STM32RTC/tree/1.2.0&#34; target=&#34;_blank&#34;&gt;stm32duino/STM32duino RTC @1.2.0&lt;/a&gt;&lt;/td&gt;
       &lt;td&gt;1.2.0&lt;/td&gt;
       &lt;td&gt;STM32RTCライブラリ&lt;/td&gt;
     &lt;/tr&gt;
@@ -367,7 +357,7 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に&lt;code&g
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;LTE-M&lt;/td&gt;
-      &lt;td&gt;&lt;a href=&#34;https://github.com/Leafony/LteLeafV4&#34; target=&#34;_blank&#34;&gt;Lhttps://github.com/Leafony/LteLeafV4&lt;/a&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;a href=&#34;https://github.com/Leafony/LteLeafV4&#34; target=&#34;_blank&#34;&gt;https://github.com/Leafony/LteLeafV4&lt;/a&gt;&lt;/td&gt;
       &lt;td&gt;&lt;/td&gt;
       &lt;td&gt;LTE-Mライブラリ&lt;/td&gt;
     &lt;/tr&gt;
