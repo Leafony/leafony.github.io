@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a0c571df6b865fc4a7246775dee46e16963faccc7ea99faba53e0593db49f36104aac15e038b701f4dddad03adeb04ad7603b53eaa1952225a3a7db113382aec.json"
+  data-offline-search-index-json-src="/offline-search-index.c1dc756525bc7021213ffc4978bb3654f2fdb2ccc864db14b2e8586a1184ad17003fd6ab9f8c26bffa58c325005a25dc807c94edbcc09f7cd22531db4e2eccae.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a0c571df6b865fc4a7246775dee46e16963faccc7ea99faba53e0593db49f36104aac15e038b701f4dddad03adeb04ad7603b53eaa1952225a3a7db113382aec.json"
+  data-offline-search-index-json-src="/offline-search-index.c1dc756525bc7021213ffc4978bb3654f2fdb2ccc864db14b2e8586a1184ad17003fd6ab9f8c26bffa58c325005a25dc807c94edbcc09f7cd22531db4e2eccae.json"
   data-offline-search-base-href="/"
 >
 
@@ -3804,14 +3804,12 @@ if (!doNotTrack) {
     <li><a href="#cpuの周波数を80mhzデフォルトから16mhzに設定変更">CPUの周波数を80MHz(デフォルト）から16MHzに設定変更</a></li>
     <li><a href="#ライブラリ">ライブラリ</a></li>
     <li><a href="#シリアルプロッター">シリアルプロッター　</a></li>
-  </ul>
-
-  <ul>
     <li><a href="#stm32-beginner-examples">STM32 Beginner Examples</a></li>
   </ul>
 
   <ul>
     <li><a href="#mcuとboardとの関係">MCUとBoardとの関係</a></li>
+    <li><a href="#maincppの注意点">main.cppの注意点</a></li>
     <li><a href="#プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</a></li>
     <li><a href="#プロジェクトフォルダの保存場所の設定">プロジェクトフォルダの保存場所の設定</a></li>
     <li><a href="#参考">参考</a></li>
@@ -4164,9 +4162,8 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
   <span style="color:#8f5902;font-style:italic">// Plot a cosinus
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&gt;cos:&#34;</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cos</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">));</span>
-</code></pre></div><h1 id="サンプルアプリ応用">サンプルアプリ・応用</h1>
-<p>PlatformIOを使った初心者向けのソースコードを準備しました。GitHubからソースコードをダウンロードし、パソコンの所定の場所に保存<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> してプログラムを実行して下さい。</br></p>
-<h2 id="stm32-beginner-examples">STM32 Beginner Examples</h2>
+</code></pre></div><h2 id="stm32-beginner-examples">STM32 Beginner Examples</h2>
+<p>PlatformIO IDEを使った簡単なソースコードを準備しました。GitHubからダウンロードし、パソコンの所定の場所に保存<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> してプログラムを実行して下さい。</br></p>
 <table>
 <thead>
 <tr>
@@ -4185,10 +4182,6 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 </tr>
 <tr>
 <td><a href="./beginner/3_p/basic/illum_sensor">照度センサ読み取り</a></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td><a href="./beginner/3_p/basic/accelerometer">加速度センサ読み取り</a></td>
 <td align="left"></td>
 </tr>
 <tr>
@@ -4250,6 +4243,17 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 </tr>
 </tbody>
 </table>
+<h2 id="maincppの注意点">main.cppの注意点</h2>
+<ol>
+<li>
+<p>&lt;Arduino.h&gt; が必要</br>
+Arduino用のスケッチをmain.cppに貼り付けるだけでは、ビルド出来ません。先頭に、&lt;Arduino.h&gt; を入れる必要があります。</br></p>
+</li>
+<li>
+<p>変数・関数の出現順が厳密</br>
+Arduino IDEは、関数の設定などを最後に書いてもビルドが通りますが、PlatformIOは、関数や変数は、使用する前に宣言される必要があります。</br></p>
+</li>
+</ol>
 <h2 id="プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</h2>
 <p>Project Wizarで、New Projectを立ち上げると、フォルダが作成され、デフォルトでは、~/Documents/PlatformIO/Projects に保存されます。
 Projectの名前変更やフォルダの削除は、Project Wizarではなく、エクスプローラから直接出来ます。</br></p>

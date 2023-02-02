@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a0c571df6b865fc4a7246775dee46e16963faccc7ea99faba53e0593db49f36104aac15e038b701f4dddad03adeb04ad7603b53eaa1952225a3a7db113382aec.json"
+  data-offline-search-index-json-src="/offline-search-index.c1dc756525bc7021213ffc4978bb3654f2fdb2ccc864db14b2e8586a1184ad17003fd6ab9f8c26bffa58c325005a25dc807c94edbcc09f7cd22531db4e2eccae.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a0c571df6b865fc4a7246775dee46e16963faccc7ea99faba53e0593db49f36104aac15e038b701f4dddad03adeb04ad7603b53eaa1952225a3a7db113382aec.json"
+  data-offline-search-index-json-src="/offline-search-index.c1dc756525bc7021213ffc4978bb3654f2fdb2ccc864db14b2e8586a1184ad17003fd6ab9f8c26bffa58c325005a25dc807c94edbcc09f7cd22531db4e2eccae.json"
   data-offline-search-base-href="/"
 >
 
@@ -3804,6 +3804,7 @@ if (!doNotTrack) {
 
   <ul>
     <li><a href="#mcuとboardとの関係">MCUとBoardとの関係</a></li>
+    <li><a href="#maincppの注意点">main.cppの注意点</a></li>
     <li><a href="#プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</a></li>
     <li><a href="#プロジェクトフォルダの保存場所の設定">プロジェクトフォルダの保存場所の設定</a></li>
     <li><a href="#参考">参考</a></li>
@@ -4175,6 +4176,17 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 </tr>
 </tbody>
 </table>
+<h2 id="maincppの注意点">main.cppの注意点</h2>
+<ol>
+<li>
+<p>&lt;Arduino.h&gt; が必要</br>
+Arduino用のスケッチをmain.cppに貼り付けるだけでは、ビルド出来ません。先頭に、&lt;Arduino.h&gt; を入れる必要があります。</br></p>
+</li>
+<li>
+<p>変数・関数の出現順が厳密</br>
+Arduino IDEは、関数の設定などを最後に書いてもビルドが通りますが、PlatformIOは、関数や変数は、使用する前に宣言される必要があります。</br></p>
+</li>
+</ol>
 <h2 id="プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</h2>
 <p>Project Wizarで、New Projectを立ち上げると、フォルダが作成され、デフォルトでは、~/Documents/PlatformIO/Projects に保存されます。
 Projectの名前変更やフォルダの削除は、Project Wizarではなく、エクスプローラから直接出来ます。</br></p>
