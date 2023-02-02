@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c1dc756525bc7021213ffc4978bb3654f2fdb2ccc864db14b2e8586a1184ad17003fd6ab9f8c26bffa58c325005a25dc807c94edbcc09f7cd22531db4e2eccae.json"
+  data-offline-search-index-json-src="/offline-search-index.f9611330fdca70ade451d909c108e04f6fc795b286d2bdffd22373589a3a592b7ee883d245c7ebd31dbc591fdc8b5b80105622db147929eac02d28e3894e07a9.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c1dc756525bc7021213ffc4978bb3654f2fdb2ccc864db14b2e8586a1184ad17003fd6ab9f8c26bffa58c325005a25dc807c94edbcc09f7cd22531db4e2eccae.json"
+  data-offline-search-index-json-src="/offline-search-index.f9611330fdca70ade451d909c108e04f6fc795b286d2bdffd22373589a3a592b7ee883d245c7ebd31dbc591fdc8b5b80105622db147929eac02d28e3894e07a9.json"
   data-offline-search-base-href="/"
 >
 
@@ -3796,9 +3796,6 @@ if (!doNotTrack) {
     <li><a href="#クイックスタート">クイックスタート</a></li>
     <li><a href="#ライブラリ">ライブラリ</a></li>
     <li><a href="#シリアルプロッター">シリアルプロッター　</a></li>
-  </ul>
-
-  <ul>
     <li><a href="#esp32-beginner-examples">ESP32 Beginner Examples</a></li>
   </ul>
 
@@ -4082,56 +4079,27 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
   <span style="color:#8f5902;font-style:italic">// Plot a cosinus
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&gt;cos:&#34;</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cos</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">));</span>
-</code></pre></div><h1 id="サンプルアプリ応用">サンプルアプリ・応用</h1>
-<p>PlatformIOを使った初心者向けのソースコードを準備しました。GitHubからソースコードをダウンロードし、パソコンの所定の場所に保存<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> してプログラムを実行して下さい。</br></p>
-<h2 id="esp32-beginner-examples">ESP32 Beginner Examples</h2>
+</code></pre></div><h2 id="esp32-beginner-examples">ESP32 Beginner Examples</h2>
+<p>PlatformIO IDEを使った簡単なソースコードを準備しました。GitHubからダウンロードし、パソコンの所定の場所に保存<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> してプログラムを試して下さい。</br></p>
 <table>
 <thead>
 <tr>
-<th>Item</th>
+<th align="left">Item</th>
 <th align="left">Source code</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="./beginner/2_p/esp32/button">ボタン入力</a></td>
-<td align="left"></td>
+<td align="left"><a href="/docs/examples/beginner/2_p/basic/temp_humid_sensors">温湿度センサ読み取り</a></td>
+<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/esp32/ESP32_Thermo-Hygrometer_Pjt">ESP32_Thermo-Hygrometer_Pjt</a></td>
 </tr>
 <tr>
-<td><a href="./beginner/2_p/esp32/rtc">リアルタイムクロック</a></td>
-<td align="left"></td>
+<td align="left"><a href="/docs/examples/beginner/2_p/basic/illum_sensor">照度センサ読み取り</a></td>
+<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/esp32/ESP32_Illuminance_Meter_Pjt">ESP32_Illuminance_Meter_Pjt</a></td>
 </tr>
 <tr>
-<td><a href="./beginner/2_p/esp32/microsd">microSDカード</a></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td><a href="./beginner/2_p/basic/temp_humid_sensors">温湿度センサ読み取り</a></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td><a href="./beginner/2_p/basic/illum_sensor">照度センサ読み取り</a></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td><a href="./beginner/2_p/basic/accelerometer">加速度センサ読み取り</a></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td><a href="./beginner/2_p/exten/speaker">スピーカ</a></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td><a href="./beginner/2_p/exten/ir_sensor">人感センサ</a></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td><a href="./beginner/2_p/exten/sound_level">サウンドレベルメータ</a></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td><a href="./beginner/2_p/exten/lcd">LCD</a></td>
-<td align="left"></td>
+<td align="left"><a href="/docs/examples/beginner/2_p/basic/accelerometer">加速度センサ読み取り</a></td>
+<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/esp32/ESP32_Accelerometer_Pjt">ESP32_Accelerometer_Pjt</a></td>
 </tr>
 </tbody>
 </table>
