@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f9611330fdca70ade451d909c108e04f6fc795b286d2bdffd22373589a3a592b7ee883d245c7ebd31dbc591fdc8b5b80105622db147929eac02d28e3894e07a9.json"
+  data-offline-search-index-json-src="/offline-search-index.e5997b9650fbc59152cb3b2548941c9714fbc10dd1327ff0d9c35646bda8cb0c26d60ee90a377dfe4103e14d4c04e93aef5f0580d3df9cccf0b0e03772014a54.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f9611330fdca70ade451d909c108e04f6fc795b286d2bdffd22373589a3a592b7ee883d245c7ebd31dbc591fdc8b5b80105622db147929eac02d28e3894e07a9.json"
+  data-offline-search-index-json-src="/offline-search-index.e5997b9650fbc59152cb3b2548941c9714fbc10dd1327ff0d9c35646bda8cb0c26d60ee90a377dfe4103e14d4c04e93aef5f0580d3df9cccf0b0e03772014a54.json"
   data-offline-search-base-href="/"
 >
 
@@ -3801,7 +3801,7 @@ if (!doNotTrack) {
 
   <ul>
     <li><a href="#mcuとboardとの関係">MCUとBoardとの関係</a></li>
-    <li><a href="#maincppの注意点">main.cppの注意点</a></li>
+    <li><a href="#プログラムを記述する時のarduino-ideとの違い">プログラムを記述する時のArduino IDEとの違い</a></li>
     <li><a href="#プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</a></li>
     <li><a href="#プロジェクトフォルダの保存場所の設定">プロジェクトフォルダの保存場所の設定</a></li>
     <li><a href="#参考">参考</a></li>
@@ -4144,18 +4144,63 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 </tr>
 </tbody>
 </table>
-<h2 id="maincppの注意点">main.cppの注意点</h2>
+<h2 id="プログラムを記述する時のarduino-ideとの違い">プログラムを記述する時のArduino IDEとの違い</h2>
 <ol>
 <li>
-<p>&lt;Arduino.h&gt; が必要</br>
-Arduino用のスケッチをmain.cppに貼り付けるだけでは、ビルド出来ません。先頭に、&lt;Arduino.h&gt; を入れる必要があります。</br></p>
+<p>#include &lt;Arduino.h&gt;をプログラムの先頭に記述</br>
+Arduino IDEは、プログラム言語としてはC++を使っており、基本的な型の宣言やよく使うライブラリのヘッダファイルは<code>Arduino.h</code>を書かなくても自動的にインクルードされます。しかし、PlatformIO IDEは、そうではなく<code>Arduino.h</code>がプログラムの先頭に必要になります。</br></p>
 </li>
 <li>
-<p>変数・関数の出現順が厳密</br>
-Arduino IDEは、関数の設定などを最後に書いてもビルドが通りますが、PlatformIOは、関数や変数は、使用する前に宣言される必要があります。</br></p>
+<p>独自関数の出現順が厳密</br>
+Arduino IDEは、独自関数の設定は、使用する関数の後に書いてもビルドが<code>SUCCESS</code>になりますが、PlatformIO　IDEは、独自関数の設定は、使用する関数の前に書く必要があります。</br></p>
 </li>
 </ol>
-<h2 id="プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</h2>
+<p>例えば、以下は、独自関数の設定は、使用する関数の後に書いてあるのでビルドが<code>FAIL</code>になります。</br></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#8f5902;font-style:italic">// put your setup code here, to run once:
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">func</span><span style="color:#000;font-weight:bold">();</span>
+
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">func</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#8f5902;font-style:italic">// put your main code here, to run repeatedly:
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+
+</code></pre></div><p>以下は、独自関数の設定は、使用する関数の前に書いてあるのでビルドが<code>SUCSESS</code>になります。</br></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">func</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#8f5902;font-style:italic">// put your setup code here, to run once:
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">func</span><span style="color:#000;font-weight:bold">();</span>
+
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#8f5902;font-style:italic">// put your main code here, to run repeatedly:
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><p>以下は、プロトタイプ宣言するので、ビルドが<code>SUCSESS</code>になります。</br></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">// Prototypes
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">func</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">void</span><span style="color:#000;font-weight:bold">);</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#8f5902;font-style:italic">// put your setup code here, to run once:
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">func</span><span style="color:#000;font-weight:bold">();</span>
+
+<span style="color:#000;font-weight:bold">}</span>
+
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">func</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#8f5902;font-style:italic">// put your main code here, to run repeatedly:
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><h2 id="プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</h2>
 <p>Project Wizarで、New Projectを立ち上げると、フォルダが作成され、デフォルトでは、~/Documents/PlatformIO/Projects に保存されます。
 Projectの名前変更やフォルダの削除は、Project Wizarではなく、エクスプローラから直接出来ます。</br></p>
 <h2 id="プロジェクトフォルダの保存場所の設定">プロジェクトフォルダの保存場所の設定</h2>
@@ -4203,7 +4248,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 2, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 5, 2023
 </div>
 </div>
 
