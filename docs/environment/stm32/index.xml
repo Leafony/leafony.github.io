@@ -505,18 +505,51 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に&lt;code&g
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h2 id=&#34;maincppの注意点&#34;&gt;main.cppの注意点&lt;/h2&gt;
+&lt;h2 id=&#34;プログラムを記述する時のarduino-ideとの違い&#34;&gt;プログラムを記述する時のArduino IDEとの違い&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;&amp;lt;Arduino.h&amp;gt; が必要&lt;/br&gt;
-Arduino用のスケッチをmain.cppに貼り付けるだけでは、ビルド出来ません。先頭に、&amp;lt;Arduino.h&amp;gt; を入れる必要があります。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;#include &amp;lt;Arduino.h&amp;gt;をプログラムの先頭に記述&lt;/br&gt;
+Arduino IDEは、プログラム言語としてはC++を使っており、基本的な型の宣言やよく使うライブラリのヘッダファイルは&lt;code&gt;Arduino.h&lt;/code&gt;を書かなくても自動的にインクルードされますが、PlatformIO IDEは、&lt;code&gt;Arduino.h&lt;/code&gt;がプログラムの先頭に必要に記述する必要があります。&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;変数・関数の出現順が厳密&lt;/br&gt;
-Arduino IDEは、関数の設定などを最後に書いてもビルドが通りますが、PlatformIOは、関数や変数は、使用する前に宣言される必要があります。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;独自関数は使用する関数の前に定義&lt;/br&gt;
+Arduino IDEは、独自関数の定義を使用する関数の後に書いてもビルドが&lt;code&gt;SUCCESS&lt;/code&gt;になりますが、PlatformIO　IDEは、C++のルールに従って独自関数は使用する関数の前に定義する必要があります。&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;プロジェクトフォルダの名前変更や削除&#34;&gt;プロジェクトフォルダの名前変更や削除&lt;/h2&gt;
+&lt;p&gt;例えば、以下は、独自関数の設定は、使用する関数の後に書いてあるのでビルドが&lt;code&gt;FAIL&lt;/code&gt;になります。&lt;/br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// put your setup code here, to run once:
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;func&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;func&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以下は、独自関数の定義は、使用する関数の前に書いてあるのでビルドが&lt;code&gt;SUCSESS&lt;/code&gt;になります。&lt;/br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;func&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// put your setup code here, to run once:
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;func&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;以下は、プロトタイプ宣言するので、ビルドが&lt;code&gt;SUCSESS&lt;/code&gt;になります。&lt;/br&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Prototypes
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;func&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
+
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// put your setup code here, to run once:
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#000&#34;&gt;func&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;();&lt;/span&gt;
+
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+
+&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;func&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
+  &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;プロジェクトフォルダの名前変更や削除&#34;&gt;プロジェクトフォルダの名前変更や削除&lt;/h2&gt;
 &lt;p&gt;Project Wizarで、New Projectを立ち上げると、フォルダが作成され、デフォルトでは、~/Documents/PlatformIO/Projects に保存されます。
 Projectの名前変更やフォルダの削除は、Project Wizarではなく、エクスプローラから直接出来ます。&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;プロジェクトフォルダの保存場所の設定&#34;&gt;プロジェクトフォルダの保存場所の設定&lt;/h2&gt;

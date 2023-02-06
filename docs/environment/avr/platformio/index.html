@@ -147,7 +147,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.e5997b9650fbc59152cb3b2548941c9714fbc10dd1327ff0d9c35646bda8cb0c26d60ee90a377dfe4103e14d4c04e93aef5f0580d3df9cccf0b0e03772014a54.json"
+  data-offline-search-index-json-src="/offline-search-index.82eaedc4bd6089787566e43352b9cab198c3b3ccee05a9c8ab25a12bb4d4891b2f1f2521fda338a066c408f903519b9c13593a9cfa54cdff629e9f96f4925537.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +177,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.e5997b9650fbc59152cb3b2548941c9714fbc10dd1327ff0d9c35646bda8cb0c26d60ee90a377dfe4103e14d4c04e93aef5f0580d3df9cccf0b0e03772014a54.json"
+  data-offline-search-index-json-src="/offline-search-index.82eaedc4bd6089787566e43352b9cab198c3b3ccee05a9c8ab25a12bb4d4891b2f1f2521fda338a066c408f903519b9c13593a9cfa54cdff629e9f96f4925537.json"
   data-offline-search-base-href="/"
 >
 
@@ -4148,11 +4148,11 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 <ol>
 <li>
 <p>#include &lt;Arduino.h&gt;をプログラムの先頭に記述</br>
-Arduino IDEは、プログラム言語としてはC++を使っており、基本的な型の宣言やよく使うライブラリのヘッダファイルは<code>Arduino.h</code>を書かなくても自動的にインクルードされます。しかし、PlatformIO IDEは、そうではなく<code>Arduino.h</code>がプログラムの先頭に必要になります。</br></p>
+Arduino IDEは、プログラム言語としてはC++を使っており、基本的な型の宣言やよく使うライブラリのヘッダファイルは<code>Arduino.h</code>を書かなくても自動的にインクルードされますが、PlatformIO IDEは、<code>Arduino.h</code>がプログラムの先頭に必要に記述する必要があります。</br></p>
 </li>
 <li>
-<p>独自関数の出現順が厳密</br>
-Arduino IDEは、独自関数の設定は、使用する関数の後に書いてもビルドが<code>SUCCESS</code>になりますが、PlatformIO　IDEは、独自関数の設定は、使用する関数の前に書く必要があります。</br></p>
+<p>独自関数は使用する関数の前に定義</br>
+Arduino IDEは、独自関数の定義を使用する関数の後に書いてもビルドが<code>SUCCESS</code>になりますが、PlatformIO　IDEは、C++のルールに従って独自関数は使用する関数の前に定義する必要があります。</br></p>
 </li>
 </ol>
 <p>例えば、以下は、独自関数の設定は、使用する関数の後に書いてあるのでビルドが<code>FAIL</code>になります。</br></p>
@@ -4165,12 +4165,7 @@ Arduino IDEは、独自関数の設定は、使用する関数の後に書いて
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">func</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#000;font-weight:bold">;</span>
 <span style="color:#000;font-weight:bold">}</span>
-
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#8f5902;font-style:italic">// put your main code here, to run repeatedly:
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
-
-</code></pre></div><p>以下は、独自関数の設定は、使用する関数の前に書いてあるのでビルドが<code>SUCSESS</code>になります。</br></p>
+</code></pre></div><p>以下は、独自関数の定義は、使用する関数の前に書いてあるのでビルドが<code>SUCSESS</code>になります。</br></p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">func</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#000;font-weight:bold">;</span>
 <span style="color:#000;font-weight:bold">}</span>
@@ -4180,10 +4175,6 @@ Arduino IDEは、独自関数の設定は、使用する関数の後に書いて
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">func</span><span style="color:#000;font-weight:bold">();</span>
 
 <span style="color:#000;font-weight:bold">}</span>
-
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#8f5902;font-style:italic">// put your main code here, to run repeatedly:
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><p>以下は、プロトタイプ宣言するので、ビルドが<code>SUCSESS</code>になります。</br></p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">// Prototypes
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">func</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">void</span><span style="color:#000;font-weight:bold">);</span>
@@ -4197,9 +4188,6 @@ Arduino IDEは、独自関数の設定は、使用する関数の後に書いて
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">func</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#000;font-weight:bold">;</span>
 <span style="color:#000;font-weight:bold">}</span>
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#8f5902;font-style:italic">// put your main code here, to run repeatedly:
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
 </code></pre></div><h2 id="プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</h2>
 <p>Project Wizarで、New Projectを立ち上げると、フォルダが作成され、デフォルトでは、~/Documents/PlatformIO/Projects に保存されます。
 Projectの名前変更やフォルダの削除は、Project Wizarではなく、エクスプローラから直接出来ます。</br></p>
@@ -4248,7 +4236,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 5, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 6, 2023
 </div>
 </div>
 
