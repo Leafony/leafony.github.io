@@ -33,7 +33,7 @@
 &lt;h2 id=&#34;what-to-prepare&#34;&gt;What to prepare&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Basic Kit&lt;/li&gt;
-&lt;li&gt;Windows&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, Mac&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, Linux&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;, PC with Chrome OS or Android&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;, iPhone&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;, iPad&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; smartphone or tablet&lt;/li&gt;
+&lt;li&gt;Windows&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;, Mac&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, Linux&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;, PC with Chrome OS or Android&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;, iPhone&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;, iPad&lt;sup id=&#34;fnref1:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt; smartphone or tablet&lt;/li&gt;
 &lt;li&gt;Google Chrome (Since version 70.0.3526.0)&lt;sup id=&#34;fnref:6&#34;&gt;&lt;a href=&#34;#fn:6&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;6&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;demo-video&#34;&gt;Demo Video&lt;/h2&gt;
@@ -45,7 +45,7 @@
 &lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Insert the CR2032 coin cell battery into the Basic Kit and turn on the power switch.
-&lt;br&gt; 
+&lt;br&gt;
 &lt;img src=&#34;quick_basic_assemble.png&#34; width=&#34;400&#34;&gt;&lt;/img&gt;
 &lt;br&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -81,10 +81,10 @@
 
 &lt;h3 id=&#34;for-iphone-or-ipad&#34;&gt;For iPhone or iPad&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;Download &lt;a href=&#34;https://apps.apple.com/us/app/webble/id1193531073&#34; target=&#34;_blank&#34;&gt;WebBLE&lt;/a&gt; (paid) from the App Store&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;Download &lt;a href=&#34;https://apps.apple.com/us/app/webble/id1193531073&#34; target=&#34;_blank&#34;&gt;WebBLE&lt;/a&gt; (paid) from the App Store&lt;sup id=&#34;fnref2:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
 &lt;li&gt;Copy the following URL, launch WebBLE and paste it into the address bar.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt; https://docs.leafony.com/WebBluetooth_for_Leafony_app/
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; https://docs.leafony.com/WebBluetooth_for_Leafony_app/
 &lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;Press the &lt;code&gt;Connect&lt;/code&gt; button of the web app, select &lt;code&gt;Leafony_AC02&lt;/code&gt; and press the &lt;code&gt;Pair&lt;/code&gt; button.&lt;br&gt;
@@ -137,7 +137,7 @@ There is a &amp;ldquo;Download CSV&amp;rdquo; button on the screen, but it is no
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;To enable Web Bluetooth on Linux, please refer to the following articles to set up your environment.&lt;br&gt;
-&lt;a href=&#34;https://acassis.wordpress.com/2016/06/28/how-to-get-chrome-web-bluetooth-working-on-linux/&#34; target=&#34;_blank&#34;&gt;&amp;quot;How to get Chrome Web Bluetooth working on Linux&amp;quot;&lt;/a&gt;&lt;/p&gt;
+&lt;a href=&#34;https://acassis.wordpress.com/2016/06/28/how-to-get-chrome-web-bluetooth-working-on-linux/&#34; target=&#34;_blank&#34;&gt;&amp;ldquo;How to get Chrome Web Bluetooth working on Linux&amp;rdquo;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Open Google Chrome.&lt;/p&gt;
@@ -147,7 +147,7 @@ There is a &amp;ldquo;Download CSV&amp;rdquo; button on the screen, but it is no
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Press the &lt;code&gt;Connect&lt;/code&gt; button of the web app, select &lt;code&gt;Leafony_AC02&lt;/code&gt; and press the &lt;code&gt;Pair&lt;/code&gt; button.&lt;br&gt;
-&lt;br&gt; 
+&lt;br&gt;
 &lt;img src=&#34;basic_android.jpg&#34; alt=&#34;basic_android&#34;&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -168,31 +168,31 @@ There is a &amp;ldquo;Download CSV&amp;rdquo; button on the screen, but it is no
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;Back to previous page&lt;/A&gt;
 &lt;/p&gt;
-&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;div class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
 &lt;hr&gt;
 &lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Windows 10 version 1703 or later &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;li id=&#34;fn:1&#34;&gt;
+&lt;p&gt;Windows 10 version 1703 or later&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;OS X Yosemite or later &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;li id=&#34;fn:2&#34;&gt;
+&lt;p&gt;OS X Yosemite or later&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Kernel 3.19+ and BlueZ 5.41+ installed. &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;li id=&#34;fn:3&#34;&gt;
+&lt;p&gt;Kernel 3.19+ and BlueZ 5.41+ installed.&amp;#160;&lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Android 6.0 Marshmallow or later &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;li id=&#34;fn:4&#34;&gt;
+&lt;p&gt;Android 6.0 Marshmallow or later&amp;#160;&lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;For iPhone or iPad, &lt;a href=&#34;https://itunes.apple.com/us/app/webble/id1193531073&#34; target=&#34;_blank&#34;&gt;WebBLE&lt;/a&gt; (paid) is required. This is because Web Bluetooth is not implemented in the iPhone and iPad versions of Chrome. &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;li id=&#34;fn:5&#34;&gt;
+&lt;p&gt;For iPhone or iPad, &lt;a href=&#34;https://itunes.apple.com/us/app/webble/id1193531073&#34; target=&#34;_blank&#34;&gt;WebBLE&lt;/a&gt; (paid) is required. This is because Web Bluetooth is not implemented in the iPhone and iPad versions of Chrome.&amp;#160;&lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref1:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&amp;#160;&lt;a href=&#34;#fnref2:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;li id=&#34;fn:6&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;li id=&#34;fn:6&#34;&gt;
 &lt;p&gt;If you have Chrome less than version 79, Web Bluetooth is not enabled by default.&lt;br&gt;
 Enter the following URL in Chrome&amp;rsquo;s address bar and set the &lt;code&gt;Experimental Web Platform features&lt;/code&gt; to &lt;code&gt;Enable&lt;/code&gt;.&lt;br&gt;
-&lt;code&gt;chrome://flags/#enable-experimental-web-platform-features&lt;/code&gt; &lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;code&gt;chrome://flags/#enable-experimental-web-platform-features&lt;/code&gt;&amp;#160;&lt;a href=&#34;#fnref:6&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/section&gt;
+&lt;/div&gt;
 
       </description>
     </item>
@@ -227,7 +227,7 @@ Enter the following URL in Chrome&amp;rsquo;s address bar and set the &lt;code&g
 &lt;/li&gt;
 &lt;li&gt;Copy the following URL, launch WebBLE and paste it into the address bar.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre&gt;&lt;code&gt; http://192.168.4.1
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt; http://192.168.4.1
 &lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;Pins 7, 9, 22, 24, 26 and 28 of the 29pin header are assigned to the touch sensor.&lt;br&gt;

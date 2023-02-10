@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.110.0">
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -25,8 +25,7 @@
 <meta property="og:description" content="Let&#39;s use the Wi-Fi equipped Leaf!
 " />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/en/docs/environment/esp32/arduino/" />
-<meta property="og:site_name" content="Leafony" />
+<meta property="og:url" content="https://docs.leafony.com/en/docs/environment/esp32/arduino/" /><meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="Arduino IDE Settings for ESP32 MCU">
 <meta itemprop="description" content="Let&#39;s use the Wi-Fi equipped Leaf!
 "><meta name="twitter:card" content="summary"/>
@@ -35,24 +34,13 @@
 "/>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-168974589-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
 
 
-
-<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
-<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.bcd8d798c95d3c15736d43337a9540d44830b86aa7c5e2fd979bbd9ce559083b.css" as="style">
+<link href="/scss/main.min.bcd8d798c95d3c15736d43337a9540d44830b86aa7c5e2fd979bbd9ce559083b.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -147,7 +135,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.82eaedc4bd6089787566e43352b9cab198c3b3ccee05a9c8ab25a12bb4d4891b2f1f2521fda338a066c408f903519b9c13593a9cfa54cdff629e9f96f4925537.json"
+  data-offline-search-index-json-src="/offline-search-index.b13774cbfb0cd55e066e9297a7b2f084f593e2833374c49388770adfb9cd346f6302497cabc94b87c5b532ec363a3effaf61a253867d9fde3a0d2a3115732913.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +165,7 @@ if (!doNotTrack) {
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.82eaedc4bd6089787566e43352b9cab198c3b3ccee05a9c8ab25a12bb4d4891b2f1f2521fda338a066c408f903519b9c13593a9cfa54cdff629e9f96f4925537.json"
+  data-offline-search-index-json-src="/offline-search-index.b13774cbfb0cd55e066e9297a7b2f084f593e2833374c49388770adfb9cd346f6302497cabc94b87c5b532ec363a3effaf61a253867d9fde3a0d2a3115732913.json"
   data-offline-search-base-href="/"
 >
 
@@ -698,10 +686,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/environment/esp32/arduino/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Arduino IDE </a>
+    <a  href="/en/docs/environment/esp32/arduino/" class="align-left pl-0 pr-2 collapsed active td-sidebar-link td-sidebar-link__section">Arduino IDE </a>
   </li>
   <ul>
-    <li class="collapse show" id="endocsenvironmentesp32arduino">
+    <li class="collapse " id="endocsenvironmentesp32arduino">
       
       
       
@@ -3489,22 +3477,22 @@ Let’s write a program in Leafony and make it work!
 <li>Launch the Arduino.</li>
 <li>Paste the following sample code into your code editor.</li>
 </ol>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//*****************************
-</span><span style="color:#8f5902;font-style:italic">// ボタン入力の状態をシリアルモニタに表示するサンプル
-</span><span style="color:#8f5902;font-style:italic">//*****************************
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">pushButton</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
-
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pushButton</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">INPUT</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#000;font-weight:bold">}</span>
-
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">buttonState</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">digitalRead</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pushButton</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buttonState</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><ol start="3">
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">//*****************************
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">// ボタン入力の状態をシリアルモニタに表示するサンプル
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">//*****************************
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">pushButton</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">pinMode</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pushButton</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">INPUT</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">buttonState</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">digitalRead</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">pushButton</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">buttonState</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><ol start="3">
 <li>Select the COM port to which the ESP32 leaf is connected.</li>
 <li>Push the <code>write to microcomputer board</code> button to write a sketch.</li>
 <li>Press and hold the <code>Boot mode switch</code> on the ESP32 leaf when the following message appears during the writing process.</li>
@@ -3516,17 +3504,17 @@ Let’s write a program in Leafony and make it work!
 </ol>
 <p><a href="./AP02_tips.png"><img src="./AP02_tips.png" width="450"></a></p>
 <h3 id="specifying-pins-for-a-sketch">Specifying pins for a sketch</h3>
-<p>**Pin should be specified by Port, not Name.**</br></br>
+<p><strong>Pin should be specified by Port, not Name.</strong></br></br>
 <a href="https://docs.leafony.com/docs/leaf/processor/ap02/ap02_pinassign_v1.png"><img src="https://docs.leafony.com/docs/leaf/processor/ap02/ap02_pinassign_v1.png" width="750"></a></p>
 <h4 id="制限事項">制限事項</h4>
 <p>※1：Output cannot be set</br>
 ※2：①For UART1, the pin number is set to RX=26 and TX=25. For UART0 and UART2, the pin number is not specified.</br></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">HardwareSerial</span> <span style="color:#000">Serial1</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// UART1 (RX=9, TX=10)
-</span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">Serial1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">9600</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">SERIAL_8N1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">26</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">25</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// ピンを変更 (RX=26, TX=25)
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><p>　　②Cannot be used as analog input if WiFi.h is included</br></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#000">HardwareSerial</span> <span style="color:#000">Serial1</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// UART1 (RX=9, TX=10)
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">Serial1</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">9600</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">SERIAL_8N1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">26</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">25</span><span style="color:#000;font-weight:bold">);</span> <span style="color:#8f5902;font-style:italic">// ピンを変更 (RX=26, TX=25)
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><p>　　②Cannot be used as analog input if WiFi.h is included</br></p>
 <p>※3: Pull-up prohibited because it is used for bootstrapping</p>
 <h2 id="installing-libraries">Installing Libraries</h2>
 <p>To use some of the leaves, you will need to install additional libraries. <br>
@@ -3555,7 +3543,7 @@ To make development easier, install the library and get started.
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">Last modified 01.01.0001
+	<div class="text-muted mt-5 pt-3 border-top">Last modified 22.03.2021
 </div>
 </div>
 
@@ -3619,7 +3607,7 @@ To make development easier, install the library and get started.
 
 
 
-<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
+<script src="/js/main.min.5a6d58949eb3d46041385a49b1ca0d96fe5f18f0893d2f33daf64b10444ff94b.js" integrity="sha256-Wm1YlJ6z1GBBOFpJscoNlv5fGPCJPS8z2vZLEERP&#43;Us=" crossorigin="anonymous"></script>
 
 
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.110.0">
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -24,32 +24,20 @@
 <title>低電力にポスト投函検出してLINE通知 | Leafony</title><meta property="og:title" content="低電力にポスト投函検出してLINE通知" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_post_notify/" />
-<meta property="og:site_name" content="Leafony" />
+<meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_post_notify/" /><meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="低電力にポスト投函検出してLINE通知">
 <meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="低電力にポスト投函検出してLINE通知"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-168974589-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
 
 
-
-<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
-<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.bcd8d798c95d3c15736d43337a9540d44830b86aa7c5e2fd979bbd9ce559083b.css" as="style">
+<link href="/scss/main.min.bcd8d798c95d3c15736d43337a9540d44830b86aa7c5e2fd979bbd9ce559083b.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -144,7 +132,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.82eaedc4bd6089787566e43352b9cab198c3b3ccee05a9c8ab25a12bb4d4891b2f1f2521fda338a066c408f903519b9c13593a9cfa54cdff629e9f96f4925537.json"
+  data-offline-search-index-json-src="/offline-search-index.b13774cbfb0cd55e066e9297a7b2f084f593e2833374c49388770adfb9cd346f6302497cabc94b87c5b532ec363a3effaf61a253867d9fde3a0d2a3115732913.json"
   data-offline-search-base-href="/"
 >
 
@@ -174,7 +162,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.82eaedc4bd6089787566e43352b9cab198c3b3ccee05a9c8ab25a12bb4d4891b2f1f2521fda338a066c408f903519b9c13593a9cfa54cdff629e9f96f4925537.json"
+  data-offline-search-index-json-src="/offline-search-index.b13774cbfb0cd55e066e9297a7b2f084f593e2833374c49388770adfb9cd346f6302497cabc94b87c5b532ec363a3effaf61a253867d9fde3a0d2a3115732913.json"
   data-offline-search-base-href="/"
 >
 
@@ -2362,10 +2350,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/advanced/2_p/esp32/esp32_post_notify/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"> </a>
+    <a  href="/docs/examples/advanced/2_p/esp32/esp32_post_notify/" class="align-left pl-0 pr-2 collapsed active td-sidebar-link td-sidebar-link__section"> </a>
   </li>
   <ul>
-    <li class="collapse show" id="docsexamplesadvanced2_pesp32esp32_post_notify">
+    <li class="collapse " id="docsexamplesadvanced2_pesp32esp32_post_notify">
       
       
       
@@ -3942,66 +3930,66 @@ ESP32が立ち上がってから<code>Google Apps Script</code>にデータを�
 その際，以下の箇所を適宜修正してください。</p>
 <ul>
 <li>3行目: <a href="./#line%E9%80%9A%E7%9F%A5%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E8%A8%AD%E5%AE%9A">LINE通知サービスの設定</a>の<strong>6</strong>の画面で発行されたトークンの記号列に置き換える
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">token</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;line_notify_token&#34;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">token</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;line_notify_token&#34;</span>
+</span></span></code></pre></div></li>
 <li>16-17行目: GoogleスプレッドシートのID
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">id</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;google_sheets_id&#39;</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">sheetName</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;sheet_name&#39;</span><span style="color:#000;font-weight:bold">;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">id</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;google_sheets_id&#39;</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">sheetName</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;sheet_name&#39;</span><span style="color:#000;font-weight:bold">;</span>
+</span></span></code></pre></div></li>
 <li>44行目: LINEに送るテキストメッセージ<br>
 例のように<code>+</code>でテキストと変数を連結できます。
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">lineMessage</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;ポストに投函ました\n現在のバッテリーの電圧：&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">battery</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34;[V]&#34;</span><span style="color:#000;font-weight:bold">;</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">lineMessage</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;ポストに投函ました\n現在のバッテリーの電圧：&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">battery</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34;[V]&#34;</span><span style="color:#000;font-weight:bold">;</span>
+</span></span></code></pre></div></li>
 </ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span style="color:#8f5902;font-style:italic">// LINEへの送信処理
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">sendToLine</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">text</span><span style="color:#000;font-weight:bold">){</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">token</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;line_notify_token&#34;</span><span style="color:#000;font-weight:bold">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span>    <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">options</span> <span style="color:#ce5c00;font-weight:bold">=</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span>    <span style="color:#000;font-weight:bold">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span>    <span style="color:#4e9a06">&#34;method&#34;</span>  <span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;post&#34;</span><span style="color:#000;font-weight:bold">,</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span>    <span style="color:#4e9a06">&#34;payload&#34;</span> <span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;message=&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">text</span><span style="color:#000;font-weight:bold">,</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span>    <span style="color:#4e9a06">&#34;headers&#34;</span> <span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#4e9a06">&#34;Authorization&#34;</span> <span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Bearer &#34;</span><span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">token</span><span style="color:#000;font-weight:bold">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span>    <span style="color:#000;font-weight:bold">};</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span style="color:#000">UrlFetchApp</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">fetch</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;https://notify-api.line.me/api/notify&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">options</span><span style="color:#000;font-weight:bold">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span style="color:#000;font-weight:bold">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">doGet</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">e</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span>    <span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">id</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;google_sheets_id&#39;</span><span style="color:#000;font-weight:bold">;</span> 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span>    <span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">sheetName</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;sheet_name&#39;</span><span style="color:#000;font-weight:bold">;</span> 
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span>    <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">result</span><span style="color:#000;font-weight:bold">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span>    <span style="color:#8f5902;font-style:italic">// e.parameter has received GET parameters, i.e. temperature, humidity, illumination
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#204a87;font-weight:bold">undefined</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span>        <span style="color:#000">result</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;Parameter undefined&#39;</span><span style="color:#000;font-weight:bold">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span>    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span>        <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">sheet</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">SpreadsheetApp</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">openById</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">id</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">getSheetByName</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">sheetName</span><span style="color:#000;font-weight:bold">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span>        <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">newRow</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">sheet</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">getLastRow</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>  <span style="color:#8f5902;font-style:italic">// get row number to be inserted
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">rowData</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">[];</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span>        <span style="color:#8f5902;font-style:italic">// get current time
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#204a87">Date</span><span style="color:#000;font-weight:bold">();</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span>        <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">UniqueID</span><span style="color:#000;font-weight:bold">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span>        <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">temperature</span><span style="color:#000;font-weight:bold">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span>        <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">humidity</span><span style="color:#000;font-weight:bold">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span>        <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">illumination</span><span style="color:#000;font-weight:bold">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span>        <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">battery</span><span style="color:#000;font-weight:bold">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span>        <span style="color:#8f5902;font-style:italic">// 1 x rowData.length cells from (newRow, 1) cell are specified
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">newRange</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">sheet</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">getRange</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">newRow</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">length</span><span style="color:#000;font-weight:bold">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span>        <span style="color:#8f5902;font-style:italic">// insert data to the target cells
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000">newRange</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setValues</span><span style="color:#000;font-weight:bold">([</span><span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">]);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span>        <span style="color:#000">result</span> <span style="color:#ce5c00;font-weight:bold">=</span>  <span style="color:#4e9a06">&#39;Ok&#39;</span><span style="color:#000;font-weight:bold">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span>    <span style="color:#000;font-weight:bold">}</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span>       
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span>    <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">lineMessage</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;ポストに投函されました\n現在のバッテリーの電圧：&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">battery</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34;[V]&#34;</span><span style="color:#000;font-weight:bold">;</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span>    <span style="color:#000">sendToLine</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">lineMessage</span><span style="color:#000;font-weight:bold">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span>    <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">ContentService</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">createTextOutput</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">result</span><span style="color:#000;font-weight:bold">);</span>
-<span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span style="color:#000;font-weight:bold">}</span>
-</code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#8f5902;font-style:italic">// LINEへの送信処理
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">sendToLine</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">text</span><span style="color:#000;font-weight:bold">){</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">token</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;line_notify_token&#34;</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">options</span> <span style="color:#ce5c00;font-weight:bold">=</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#4e9a06">&#34;method&#34;</span>  <span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;post&#34;</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    <span style="color:#4e9a06">&#34;payload&#34;</span> <span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;message=&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">text</span><span style="color:#000;font-weight:bold">,</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    <span style="color:#4e9a06">&#34;headers&#34;</span> <span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#000;font-weight:bold">{</span><span style="color:#4e9a06">&#34;Authorization&#34;</span> <span style="color:#ce5c00;font-weight:bold">:</span> <span style="color:#4e9a06">&#34;Bearer &#34;</span><span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">token</span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    <span style="color:#000;font-weight:bold">};</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#000">UrlFetchApp</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">fetch</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;https://notify-api.line.me/api/notify&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">options</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#204a87;font-weight:bold">function</span> <span style="color:#000">doGet</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">e</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    <span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">id</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;google_sheets_id&#39;</span><span style="color:#000;font-weight:bold">;</span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>    <span style="color:#204a87;font-weight:bold">let</span> <span style="color:#000">sheetName</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;sheet_name&#39;</span><span style="color:#000;font-weight:bold">;</span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>    <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">result</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>    <span style="color:#8f5902;font-style:italic">// e.parameter has received GET parameters, i.e. temperature, humidity, illumination
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#204a87;font-weight:bold">undefined</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>        <span style="color:#000">result</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#39;Parameter undefined&#39;</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>    <span style="color:#000;font-weight:bold">}</span> <span style="color:#204a87;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>        <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">sheet</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">SpreadsheetApp</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">openById</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">id</span><span style="color:#000;font-weight:bold">).</span><span style="color:#000">getSheetByName</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">sheetName</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>        <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">newRow</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">sheet</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">getLastRow</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">;</span>  <span style="color:#8f5902;font-style:italic">// get row number to be inserted
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">rowData</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">[];</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>        <span style="color:#8f5902;font-style:italic">// get current time
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#204a87">Date</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>        <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">UniqueID</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>        <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">temperature</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>        <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">3</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">humidity</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>        <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">4</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">illumination</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>        <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">[</span><span style="color:#0000cf;font-weight:bold">5</span><span style="color:#000;font-weight:bold">]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">battery</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>        <span style="color:#8f5902;font-style:italic">// 1 x rowData.length cells from (newRow, 1) cell are specified
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">newRange</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">sheet</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">getRange</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">newRow</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">length</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>        <span style="color:#8f5902;font-style:italic">// insert data to the target cells
+</span></span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span><span style="color:#8f5902;font-style:italic"></span>        <span style="color:#000">newRange</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setValues</span><span style="color:#000;font-weight:bold">([</span><span style="color:#000">rowData</span><span style="color:#000;font-weight:bold">]);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span>        <span style="color:#000">result</span> <span style="color:#ce5c00;font-weight:bold">=</span>  <span style="color:#4e9a06">&#39;Ok&#39;</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span>    <span style="color:#204a87;font-weight:bold">var</span> <span style="color:#000">lineMessage</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;ポストに投函されました\n現在のバッテリーの電圧：&#34;</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">battery</span> <span style="color:#ce5c00;font-weight:bold">+</span> <span style="color:#4e9a06">&#34;[V]&#34;</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span>    <span style="color:#000">sendToLine</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">lineMessage</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span>    <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">ContentService</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">createTextOutput</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">result</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div></li>
 <li>
 <p><a href="../esp32_googlesheets_1/#google-sheets%E3%81%AE%E6%BA%96%E5%82%99">Google Sheetsの準備</a>の<strong>6-12</strong>の手順に沿ってデプロイします。</p>
 </li>
@@ -4034,35 +4022,35 @@ ESP32が立ち上がってから<code>Google Apps Script</code>にデータを�
 <ul>
 <li>
 <p>Wi-Fiを使ってネットに接続する場合は<code>USE_WiFi</code>を定義します。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#define USE_WiFi
-</span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#define USE_WiFi
+</span></span></span></code></pre></div></li>
 <li>
 <p>接続先のWi-FiがWPA2 Personal（自宅のルーターなどで利用される認証方式。通常これ）を利用しているときは以下の変数にSSIDとパスワードを格納します。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">SSID</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;wifi-ssid&#34;</span><span style="color:#000;font-weight:bold">;</span>       <span style="color:#8f5902;font-style:italic">// WiFi SSID
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">PASSWORD</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;wifi-pass&#34;</span><span style="color:#000;font-weight:bold">;</span>   <span style="color:#8f5902;font-style:italic">// WiFi Password
-</span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">SSID</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;wifi-ssid&#34;</span><span style="color:#000;font-weight:bold">;</span>       <span style="color:#8f5902;font-style:italic">// WiFi SSID
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">PASSWORD</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;wifi-pass&#34;</span><span style="color:#000;font-weight:bold">;</span>   <span style="color:#8f5902;font-style:italic">// WiFi Password
+</span></span></span></code></pre></div></li>
 <li>
 <p>特に、接続先のWi-Fiが大学や企業などにあり、EduroamなどのWPA2 Enterpriseを使用しているときのみ、以下を定義します。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#define USE_WiFi_ENTERPRISE
-</span></code></pre></div><p>Wi-Fi Enterprise用のIDやパスワードは以下に入力してください。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">/////////////////////////////////////////////////////////////////////////////////////////////////////
-</span><span style="color:#8f5902;font-style:italic">// parameters for connecting eduroam enterprise
-</span><span style="color:#8f5902;font-style:italic">/////////////////////////////////////////////////////////////////////////////////////////////////////
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define EAP_IDENTITY &#34;eap_id&#34; </span><span style="color:#8f5902;font-style:italic">//if connecting from another corporation, use identity@organisation.domain in Eduroam 
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define EAP_PASSWORD &#34;eap_pass&#34; </span><span style="color:#8f5902;font-style:italic">//your Eduroam password
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">SSID_ENT</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;eduroam&#34;</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#8f5902;font-style:italic">// Eduroam SSID
-</span><span style="color:#8f5902;font-style:italic">/////////////////////////////////////////////////////////////////////////////////////////////////////
-</span></code></pre></div></li>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#define USE_WiFi_ENTERPRISE
+</span></span></span></code></pre></div><p>Wi-Fi Enterprise用のIDやパスワードは以下に入力してください。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">/////////////////////////////////////////////////////////////////////////////////////////////////////
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">// parameters for connecting eduroam enterprise
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">/////////////////////////////////////////////////////////////////////////////////////////////////////
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define EAP_IDENTITY &#34;eap_id&#34; </span><span style="color:#8f5902;font-style:italic">//if connecting from another corporation, use identity@organisation.domain in Eduroam 
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define EAP_PASSWORD &#34;eap_pass&#34; </span><span style="color:#8f5902;font-style:italic">//your Eduroam password
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">SSID_ENT</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;eduroam&#34;</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#8f5902;font-style:italic">// Eduroam SSID
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">/////////////////////////////////////////////////////////////////////////////////////////////////////
+</span></span></span></code></pre></div></li>
 </ul>
 <h3 id="接続先googleクラウドの設定">接続先Googleクラウドの設定</h3>
 <p><code>ESP32_Post_Notify.ino</code>で接続先Googleスクリプトの設定を行っています。
 <a href="./#google%E3%82%AF%E3%83%A9%E3%82%A6%E3%83%89%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E8%A8%AD%E5%AE%9A">Googleクラウドサービスの設定</a>の<strong>3</strong>で設定したGoogle Apps Scriptの固有IDを以下の変数に格納します。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">KEY</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;google_scripts_key&#34;</span><span style="color:#000;font-weight:bold">;</span>
-</code></pre></div><h3 id="スリープ動作">スリープ動作</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">KEY</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;google_scripts_key&#34;</span><span style="color:#000;font-weight:bold">;</span>
+</span></span></code></pre></div><h3 id="スリープ動作">スリープ動作</h3>
 <p>Wi-Fiに接続してデータを送った後は，EP32 MCUが<code>Deep Sleep</code>モードに入ることで待機電力を極力減らします。<br>
 <code>Deep Sleep</code>モードに入る前にESP32 MCU内のWi-Fiモジュールの電源を切ることを忘れないでください。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">WiFi</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">disconnect</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#8f5902;font-style:italic">// Wi-Fiをオフにするために，trueを明示してください
-</span></code></pre></div><h3 id="加速度センサlis3dhの設定">加速度センサ(LIS3DH)の設定</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#000">WiFi</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">disconnect</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#8f5902;font-style:italic">// Wi-Fiをオフにするために，trueを明示してください
+</span></span></span></code></pre></div><h3 id="加速度センサlis3dhの設定">加速度センサ(LIS3DH)の設定</h3>
 <p>加速度センサ用の設定パラメータはレポジトリに上がっている<code>MyLIS3DH.cpp</code>で修正できます。<br>
 実際に身の回りのポストに実装する場合にはパラメータを環境に合わせて設定する必要があります。 <br>
 今回は例として、以下のように蓋が開閉するポストを考えます。</p>
@@ -4073,8 +4061,8 @@ ESP32が立ち上がってから<code>Google Apps Script</code>にデータを�
 <img src="reg_ctrl_reg3.jpg" width=80%>
 <p>データシートから、<code>I1_AOI1</code>ビットを<code>1</code>に設定すると<code>INT1</code>の割り込みが有効になります。<br>
 よって、以下のようにプログラムします。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_CTRL3</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x40</span><span style="color:#000;font-weight:bold">);</span> 
-</code></pre></div><p>割り込み信号を生成するための条件（どのような振動の場合に割り込み信号を生成するのか、等）を設定できるのですが、今回主に設定するパラメータは以下の4つです。</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_CTRL3</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x40</span><span style="color:#000;font-weight:bold">);</span> 
+</span></span></code></pre></div><p>割り込み信号を生成するための条件（どのような振動の場合に割り込み信号を生成するのか、等）を設定できるのですが、今回主に設定するパラメータは以下の4つです。</p>
 <img src="accelerometer_setting_parameters.jpg" width=75%>
 <h4 id="閾値-threshold"><strong>閾値 (Threshold)</strong></h4>
 <p>ポストの蓋の裏面にリーフが張り付けると、蓋が傾いた時に、加速度センサからみた重力加速度の向きが変化します。<br>
@@ -4084,17 +4072,17 @@ ESP32が立ち上がってから<code>Google Apps Script</code>にデータを�
 <img src="think_threshold.jpg" width=100%>
 <p>一方、加速度センサの<strong>LIS3DH</strong>はデフォルトでフルスケールが±2gの検出を行います。<br>
 (これは<code>ESP32_PostNotify.ino</code>で設定されています。)</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">lis</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setRange</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_RANGE_2_G</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">// 2, 4, 8 or 16 G!
-</span></code></pre></div><p>データシートによると、使用している加速度センサは軸の正（負）方向に対してそれぞれ128段階の分解能(フルスケールで8-bitの分解能)を持っています。<br>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#000">lis</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">setRange</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_RANGE_2_G</span><span style="color:#000;font-weight:bold">);</span>   <span style="color:#8f5902;font-style:italic">// 2, 4, 8 or 16 G!
+</span></span></span></code></pre></div><p>データシートによると、使用している加速度センサは軸の正（負）方向に対してそれぞれ128段階の分解能(フルスケールで8-bitの分解能)を持っています。<br>
 0.17gが2gに対して、どのレベルなのかを128段階のレベルで表すと、</p>
-<pre><code class="language-math" data-lang="math">128 / 2g * 0.17g = 10.88
+<pre tabindex="0"><code class="language-math" data-lang="math">128 / 2g * 0.17g = 10.88
 </code></pre><p>なので、閾値レベル<code>11</code>(16進数では<code>0x0B</code>)を設定します。<br>
 この閾値の情報は<code>INT1THS</code>というレジスタに書き込みます。<br>
 一応、レジスタの情報をデータシートから確認してみると、書き込める数値は0~127までだということが分かります。</p>
 <img src="reg_int1_ths.jpg" width=80%>
 <p>プログラムでは以下のように記述します。</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_INT1THS</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x0B</span><span style="color:#000;font-weight:bold">);</span>
-</code></pre></div><h4 id="検出軸-detection-axes"><strong>検出軸 (Detection Axes)</strong></h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#000">writeRegister8</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LIS3DH_REG_INT1THS</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#0000cf;font-weight:bold">0x0B</span><span style="color:#000;font-weight:bold">);</span>
+</span></span></code></pre></div><h4 id="検出軸-detection-axes"><strong>検出軸 (Detection Axes)</strong></h4>
 <p><a href="./#%E9%96%BE%E5%80%A4-threshold">閾値</a>の項目で考えた通り，今回は加速度の3軸のうち1つの軸のみを使って郵便物の投函を検出します。</p>
 <img src="think_detection_axes.jpg" width=100%>
 <p>軸の選択には、以下の2つのレジスタに書き込みます。</p>
@@ -4120,7 +4108,7 @@ ESP32が立ち上がってから<code>Google Apps Script</code>にデータを�
 <li>低電力モードも使う</li>
 </ul>
 <p>よってデータシートから、レジスタはODR3からXenまで順に<code>00101100</code>と設定すればいいので以下のようにプログラムします。</p>
-<pre><code>    writeRegister8(LIS3DH_REG_CTRL1, 0x2C);
+<pre tabindex="0"><code>    writeRegister8(LIS3DH_REG_CTRL1, 0x2C);
 </code></pre><p><strong>INT1_CFG</strong>に関して、上のデータシートに、<code>AOI</code>と<code>6D</code>というよく分からない項目があります。<br>
 データシートのTable 48.を見てみると、どうやら<code>AOI</code>と<code>6D</code>を使って割り込み信号を生成する方法を設定できるようです。<br>
 ORとANDの条件は各軸それぞれに対して割り込みを発生させるときの条件として考えれば良さそうです。<br>
@@ -4140,7 +4128,7 @@ ORとANDの条件は各軸それぞれに対して割り込みを発生させる
 <li>Z方向の指定した閾値を超えたときに一瞬だけ割り込み信号を生成する</li>
 </ul>
 <p>以下のようにプログラムすれば良いと分かりました。</p>
-<pre><code>    writeRegister8(LIS3DH_REG_INT1CFG, 0x70); 
+<pre tabindex="0"><code>    writeRegister8(LIS3DH_REG_INT1CFG, 0x70); 
 </code></pre><h4 id="サンプリング周波数-sampling-rate--時間幅-duration"><strong>サンプリング周波数 (Sampling Rate)</strong> &amp; <strong>時間幅 (Duration)</strong></h4>
 <p>サンプリング周波数と時間幅は関連しているので、一緒に説明します。はじめにそれぞれを簡単に説明します。</p>
 <ul>
@@ -4153,15 +4141,15 @@ ORとANDの条件は各軸それぞれに対して割り込みを発生させる
 <a href="./#%E6%A4%9C%E5%87%BA%E8%BB%B8-detection-axes">検出軸</a>の項で説明した通り、設定レジスタは<code>CTRL_REG1</code>です。<br>
 <code>ODR0</code>-<code>ODR3</code>でサンプリング周波数を決定できます。<br>
 再掲ですが、以下のようにプログラムします。</p>
-<pre><code>    writeRegister8(LIS3DH_REG_CTRL1, 0x2C);
+<pre tabindex="0"><code>    writeRegister8(LIS3DH_REG_CTRL1, 0x2C);
 </code></pre><img src="think_sampling_rate.jpg" width=100%>
 <p>時間幅の設定レジスタは<code>INT1_DURATION</code>です。実際にセンサは連続時間を測っているわけではなく、サンプリング回数で時間間隔を計算しています。</p>
 <img src="reg_int1_duration.jpg" width=60%>
 <p>0.3秒以上閾値を超えるようであれば、割り込み信号を生成します。<br>
 今回はサンプル周波数を<code>10Hz</code>で設定しており、設定値は以下のように計算します。</p>
-<pre><code>0.3 / 0.1 = 3
+<pre tabindex="0"><code>0.3 / 0.1 = 3
 </code></pre><p>これは以下のようにプログラムします。</p>
-<pre><code>    writeRegister8(LIS3DH_REG_INT1DUR, 0x03); 
+<pre tabindex="0"><code>    writeRegister8(LIS3DH_REG_INT1DUR, 0x03); 
 </code></pre><h2 id="実行結果">実行結果</h2>
 <p>ESP32を傾けたときにスリープから立ち上がり、Wi-Fiに接続してからLINE Notifyに通知を送信します。<br>
 LINE Notifyで受け取った画面は以下のようになります。</p>
@@ -4557,7 +4545,7 @@ LINE Notifyで受け取った画面は以下のようになります。</p>
 
 
 
-<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
+<script src="/js/main.min.5a6d58949eb3d46041385a49b1ca0d96fe5f18f0893d2f33daf64b10444ff94b.js" integrity="sha256-Wm1YlJ6z1GBBOFpJscoNlv5fGPCJPS8z2vZLEERP&#43;Us=" crossorigin="anonymous"></script>
 
 
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.110.0">
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -25,8 +25,7 @@
 <meta property="og:description" content="PlatformIO IDEでマイコンにプログラムを書き込む
 " />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/docs/environment/stm32/platformio/" />
-<meta property="og:site_name" content="Leafony" />
+<meta property="og:url" content="https://docs.leafony.com/docs/environment/stm32/platformio/" /><meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="PlatformIO IDE for VSCodeの設定">
 <meta itemprop="description" content="PlatformIO IDEでマイコンにプログラムを書き込む
 "><meta name="twitter:card" content="summary"/>
@@ -35,24 +34,13 @@
 "/>
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-168974589-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
 
 
 
-
-<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
-<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.bcd8d798c95d3c15736d43337a9540d44830b86aa7c5e2fd979bbd9ce559083b.css" as="style">
+<link href="/scss/main.min.bcd8d798c95d3c15736d43337a9540d44830b86aa7c5e2fd979bbd9ce559083b.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -147,7 +135,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.82eaedc4bd6089787566e43352b9cab198c3b3ccee05a9c8ab25a12bb4d4891b2f1f2521fda338a066c408f903519b9c13593a9cfa54cdff629e9f96f4925537.json"
+  data-offline-search-index-json-src="/offline-search-index.b13774cbfb0cd55e066e9297a7b2f084f593e2833374c49388770adfb9cd346f6302497cabc94b87c5b532ec363a3effaf61a253867d9fde3a0d2a3115732913.json"
   data-offline-search-base-href="/"
 >
 
@@ -177,7 +165,7 @@ if (!doNotTrack) {
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.82eaedc4bd6089787566e43352b9cab198c3b3ccee05a9c8ab25a12bb4d4891b2f1f2521fda338a066c408f903519b9c13593a9cfa54cdff629e9f96f4925537.json"
+  data-offline-search-index-json-src="/offline-search-index.b13774cbfb0cd55e066e9297a7b2f084f593e2833374c49388770adfb9cd346f6302497cabc94b87c5b532ec363a3effaf61a253867d9fde3a0d2a3115732913.json"
   data-offline-search-base-href="/"
 >
 
@@ -859,10 +847,10 @@ if (!doNotTrack) {
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/environment/stm32/platformio/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">PlatformIO</a>
+    <a  href="/docs/environment/stm32/platformio/" class="align-left pl-0 pr-2 collapsed active td-sidebar-link td-sidebar-link__section">PlatformIO</a>
   </li>
   <ul>
-    <li class="collapse show" id="docsenvironmentstm32platformio">
+    <li class="collapse " id="docsenvironmentstm32platformio">
       
       
       
@@ -3964,42 +3952,42 @@ NUCLEO-L452REのプロジェクトを立ち上げると①と②がPCにダウ�
 <p><code>platformio.ini</code> (画面左）を開き、 Projectで定義したBoardとFrameworkが、正しく定義されていることを確認します。</br></p>
 </li>
 </ol>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000;font-weight:bold">[</span><span style="color:#f57900">env</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">LEAFONY_AP03</span><span style="color:#000;font-weight:bold">]</span>
-<span style="color:#000">platform</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">ststm32</span>
-<span style="color:#000">board</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">LEAFONY_AP03</span>
-<span style="color:#000">framework</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">arduino</span>
-</code></pre></div><ol start="6">
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">[</span><span style="color:#f57900">env</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">LEAFONY_AP03</span><span style="color:#000;font-weight:bold">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">platform</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">ststm32</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">board</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">LEAFONY_AP03</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">framework</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">arduino</span>
+</span></span></code></pre></div><ol start="6">
 <li>STM32 MCUは、COMポートの番号とプログラムファイルの実行場所をplatformio.iniに記載して下さい。COMポートの番号は、シリアルモニターから確認出来ます。</br></br>
 <img src="./platformio_14.png" width="840"></br></li>
 </ol>
 <p>Windowsの場合</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000;font-weight:bold">;</span><span style="color:#000">upload_protocol</span> <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000">Windows</span>
-<span style="color:#000">upload_port</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">COM</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#a40000">番号</span><span style="color:#ce5c00;font-weight:bold">&gt;</span>
-<span style="color:#000">upload_command</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">%%</span><span style="color:#000">userprofile</span><span style="color:#ce5c00;font-weight:bold">%%</span><span style="color:#a40000">\</span><span style="color:#000">AppData</span><span style="color:#a40000">\</span><span style="color:#000">Local</span><span style="color:#a40000">\</span><span style="color:#000">Arduino15</span><span style="color:#a40000">\</span><span style="color:#000">packages</span><span style="color:#a40000">\</span><span style="color:#000">STM32</span><span style="color:#a40000">\</span><span style="color:#000">tools</span><span style="color:#a40000">\</span><span style="color:#000">STM32Tools</span><span style="color:#a40000">\</span><span style="color:#0000cf;font-weight:bold">1.4.0</span><span style="color:#a40000">\</span><span style="color:#000">tools</span><span style="color:#a40000">\</span><span style="color:#000">win</span><span style="color:#a40000">\</span><span style="color:#000">stm32CubeProg</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">bat</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#a40000">$</span><span style="color:#000">SOURCE</span> <span style="color:#a40000">$</span><span style="color:#000">UPLOAD_PORT</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">s</span>
-</code></pre></div><p>macOSの場合</p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000;font-weight:bold">;</span><span style="color:#000">upload_protocol</span> <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000">macOS</span>
-<span style="color:#000">upload_port</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">cu</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">usbserial</span><span style="color:#ce5c00;font-weight:bold">-&lt;</span><span style="color:#a40000">シリアル番号</span><span style="color:#ce5c00;font-weight:bold">&gt;</span>
-<span style="color:#000">upload_command</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">Users</span><span style="color:#ce5c00;font-weight:bold">/&lt;</span><span style="color:#a40000">ユーザ名</span><span style="color:#ce5c00;font-weight:bold">&gt;/</span><span style="color:#000">Library</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">Arduino15</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">packages</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">STM32</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">tools</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">STM32Tools</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#0000cf;font-weight:bold">1.4.0</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">tools</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">macosx</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">stm32CubeProg</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">sh</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#a40000">$</span><span style="color:#000">SOURCE</span> <span style="color:#a40000">$</span><span style="color:#000">UPLOAD_PORT</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">s</span>
-</code></pre></div><ol start="7">
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">;</span><span style="color:#000">upload_protocol</span> <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000">Windows</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">upload_port</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">COM</span><span style="color:#ce5c00;font-weight:bold">&lt;</span><span style="color:#a40000">番号</span><span style="color:#ce5c00;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">upload_command</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">%%</span><span style="color:#000">userprofile</span><span style="color:#ce5c00;font-weight:bold">%%</span><span style="color:#a40000">\</span><span style="color:#000">AppData</span><span style="color:#a40000">\</span><span style="color:#000">Local</span><span style="color:#a40000">\</span><span style="color:#000">Arduino15</span><span style="color:#a40000">\</span><span style="color:#000">packages</span><span style="color:#a40000">\</span><span style="color:#000">STM32</span><span style="color:#a40000">\</span><span style="color:#000">tools</span><span style="color:#a40000">\</span><span style="color:#000">STM32Tools</span><span style="color:#a40000">\</span><span style="color:#0000cf;font-weight:bold">1.4.0</span><span style="color:#a40000">\</span><span style="color:#000">tools</span><span style="color:#a40000">\</span><span style="color:#000">win</span><span style="color:#a40000">\</span><span style="color:#000">stm32CubeProg</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">bat</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#a40000">$</span><span style="color:#000">SOURCE</span> <span style="color:#a40000">$</span><span style="color:#000">UPLOAD_PORT</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">s</span>
+</span></span></code></pre></div><p>macOSの場合</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">;</span><span style="color:#000">upload_protocol</span> <span style="color:#204a87;font-weight:bold">for</span> <span style="color:#000">macOS</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">upload_port</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">cu</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">usbserial</span><span style="color:#ce5c00;font-weight:bold">-&lt;</span><span style="color:#a40000">シリアル番号</span><span style="color:#ce5c00;font-weight:bold">&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">upload_command</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">Users</span><span style="color:#ce5c00;font-weight:bold">/&lt;</span><span style="color:#a40000">ユーザ名</span><span style="color:#ce5c00;font-weight:bold">&gt;/</span><span style="color:#000">Library</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">Arduino15</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">packages</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">STM32</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">tools</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">STM32Tools</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#0000cf;font-weight:bold">1.4.0</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">tools</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">macosx</span><span style="color:#ce5c00;font-weight:bold">/</span><span style="color:#000">stm32CubeProg</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">sh</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#a40000">$</span><span style="color:#000">SOURCE</span> <span style="color:#a40000">$</span><span style="color:#000">UPLOAD_PORT</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">s</span>
+</span></span></code></pre></div><ol start="7">
 <li>また、 シリアル通信のボーレートを<code>monitor_speed =</code>で定義し、platformio.iniに記載して下さい。</br></li>
 </ol>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000">monitor_speed</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">115200</span>
-</code></pre></div><ol start="8">
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#000">monitor_speed</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">115200</span>
+</span></span></code></pre></div><ol start="8">
 <li><code>src/main.cpp</code>(画面左）を開き、以下のコードを貼り付けて下さい。</br>
 PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#include &lt;Arduino.h&gt;</code>を加えます。</br></li>
 </ol>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#000;font-weight:bold">}</span>
-
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">(){</span>
-  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Hello World&#34;</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
-<span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">begin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">115200</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">loop</span><span style="color:#000;font-weight:bold">(){</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Hello World&#34;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><ul>
 <li>ソースコード:<a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_Hello_World_Pjt">STM32_Hello_Wold_Pjt</a></li>
 </ul>
 <ol start="9">
@@ -4029,9 +4017,9 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 <ol>
 <li><code>platformio.ini</code>に以下を追記して下さい。</li>
 </ol>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">Enable</span> <span style="color:#000">function</span> <span style="color:#000">to</span> <span style="color:#000">set</span> <span style="color:#000">CPU</span> <span style="color:#000">frequency</span> <span style="color:#000">to</span> <span style="color:#0000cf;font-weight:bold">16</span> <span style="color:#000">MHz</span> <span style="color:#000">in</span> <span style="color:#000">Leafony_tools</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">cpp</span>
-<span style="color:#000">build_flags</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">D</span> <span style="color:#000">CPUCLOCK_LOW</span>
-</code></pre></div><ol start="2">
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">Enable</span> <span style="color:#000">function</span> <span style="color:#000">to</span> <span style="color:#000">set</span> <span style="color:#000">CPU</span> <span style="color:#000">frequency</span> <span style="color:#000">to</span> <span style="color:#0000cf;font-weight:bold">16</span> <span style="color:#000">MHz</span> <span style="color:#000">in</span> <span style="color:#000">Leafony_tools</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">cpp</span>
+</span></span><span style="display:flex;"><span><span style="color:#000">build_flags</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">D</span> <span style="color:#000">CPUCLOCK_LOW</span>
+</span></span></code></pre></div><ol start="2">
 <li>
 <p><code>leafony_tools.cpp</code>のファイルを以下からダウンロードし、<code>src</code>に保存して下さい。</br></p>
 <ul>
@@ -4140,7 +4128,7 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 <p>PlatformIOには、Arduino IDEにあるシリアルプロッターがないため、VSCodeの拡張機能である<code>Teleplot for VSCode</code>を導入します。サンプルのソースコードをダウンロードして、試して下さい。</br></p>
 <ol>
 <li>
-<p>GitHubからソースコードをダウンロードし、パソコンの所定の場所に保存<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> します。</br></p>
+<p>GitHubからソースコードをダウンロードし、パソコンの所定の場所に保存<sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> します。</br></p>
 <ul>
 <li>ソースコード:<a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_Teleplot_Example_1">STM32_Teleplot_Example_1</a></li>
 </ul>
@@ -4155,34 +4143,34 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 <p><code>&gt;varName:1234\n</code>という形式のシリアルメッセージは、すべて<code>teleplot</code>に表示されます。詳しくは、<a href="https://marketplace.visualstudio.com/items?itemName=alexnesnes.teleplot">こちら</a>を参照して下さい。</br></p>
 </li>
 </ol>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"> <span style="color:#8f5902;font-style:italic">// Plot a sinus
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&gt;sin:&#34;</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">sin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">));</span>
-
-  <span style="color:#8f5902;font-style:italic">// Plot a cosinus
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&gt;cos:&#34;</span><span style="color:#000;font-weight:bold">);</span>
-  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cos</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">));</span>
-</code></pre></div><h2 id="stm32-beginner-examples">STM32 Beginner Examples</h2>
-<p>PlatformIO IDEを使った簡単なソースコードを準備しました。GitHubからダウンロードし、パソコンの所定の場所に保存<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> してプログラムを試して下さい。</br></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span> <span style="color:#8f5902;font-style:italic">// Plot a sinus
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&gt;sin:&#34;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">sin</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">));</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8f5902;font-style:italic">// Plot a cosinus
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&gt;cos:&#34;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cos</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">));</span>
+</span></span></code></pre></div><h2 id="stm32-beginner-examples">STM32 Beginner Examples</h2>
+<p>PlatformIO IDEを使った簡単なソースコードを準備しました。GitHubからダウンロードし、パソコンの所定の場所に保存<sup id="fnref2:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> してプログラムを試して下さい。</br></p>
 <table>
 <thead>
 <tr>
-<th align="left">Item</th>
-<th align="left">Source code</th>
+<th style="text-align:left">Item</th>
+<th style="text-align:left">Source code</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left"><a href="/docs/examples/beginner/3_p/basic/temp_humid_sensors">温湿度センサ読み取り</a></td>
-<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_Thermo-Hygrometer_Pjt">STM32_Thermo-Hygrometer_Pjt</a></td>
+<td style="text-align:left"><a href="/docs/examples/beginner/3_p/basic/temp_humid_sensors">温湿度センサ読み取り</a></td>
+<td style="text-align:left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_Thermo-Hygrometer_Pjt">STM32_Thermo-Hygrometer_Pjt</a></td>
 </tr>
 <tr>
-<td align="left"><a href="/docs/examples/beginner/3_p/basic/illum_sensor">照度センサ読み取り</a></td>
-<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_Illuminance_Meter_Pjt">STM32_Illuminance_Meter_Pjt</a></td>
+<td style="text-align:left"><a href="/docs/examples/beginner/3_p/basic/illum_sensor">照度センサ読み取り</a></td>
+<td style="text-align:left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_Illuminance_Meter_Pjt">STM32_Illuminance_Meter_Pjt</a></td>
 </tr>
 <tr>
-<td align="left"><a href="/docs/examples/beginner/3_p/basic/accelerometer/">加速度センサ読み取り</a></td>
-<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_Accelerometer_Pjt">STM32_Accelerometer_Pjt</a></td>
+<td style="text-align:left"><a href="/docs/examples/beginner/3_p/basic/accelerometer/">加速度センサ読み取り</a></td>
+<td style="text-align:left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_Accelerometer_Pjt">STM32_Accelerometer_Pjt</a></td>
 </tr>
 </tbody>
 </table>
@@ -4192,37 +4180,37 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 <table>
 <thead>
 <tr>
-<th align="left">Type</th>
-<th align="left">Item</th>
-<th align="left">Platform</th>
-<th align="left">Board</th>
-<th align="left">Upload</th>
+<th style="text-align:left">Type</th>
+<th style="text-align:left">Item</th>
+<th style="text-align:left">Platform</th>
+<th style="text-align:left">Board</th>
+<th style="text-align:left">Upload</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">AP01</td>
-<td align="left"><a href="../../leaf/processor/ap01">AVR MCU</a></td>
-<td align="left">atmelavr</td>
-<td align="left">Arduino Pro or Pro Mini ATmega328(3.3v,8Mhz)</td>
-<td align="left">COMポートの自動検出</td>
+<td style="text-align:left">AP01</td>
+<td style="text-align:left"><a href="../../leaf/processor/ap01">AVR MCU</a></td>
+<td style="text-align:left">atmelavr</td>
+<td style="text-align:left">Arduino Pro or Pro Mini ATmega328(3.3v,8Mhz)</td>
+<td style="text-align:left">COMポートの自動検出</td>
 <td></td>
 </tr>
 <tr>
-<td align="left">AP02</td>
-<td align="left"><a href="../../leaf/processor/ap02">ESP32 MCU</a></td>
-<td align="left">Espressif 32</td>
-<td align="left">Espressif ESP32 Dev Module</td>
-<td align="left">COMポートの自動検出</td>
+<td style="text-align:left">AP02</td>
+<td style="text-align:left"><a href="../../leaf/processor/ap02">ESP32 MCU</a></td>
+<td style="text-align:left">Espressif 32</td>
+<td style="text-align:left">Espressif ESP32 Dev Module</td>
+<td style="text-align:left">COMポートの自動検出</td>
 <td></td>
 </tr>
 <tr>
-<td align="left">AP03</td>
-<td align="left"><a href="../../leaf/processor/ap03">STM32 MCU</a></td>
-<td align="left">ststm32</td>
-<td align="left">LEAFONY_AP03</td>
-<td align="left">COMポートの自動検出が出来ない。</td>
+<td style="text-align:left">AP03</td>
+<td style="text-align:left"><a href="../../leaf/processor/ap03">STM32 MCU</a></td>
+<td style="text-align:left">ststm32</td>
+<td style="text-align:left">LEAFONY_AP03</td>
+<td style="text-align:left">COMポートの自動検出が出来ない。</td>
 <td></td>
 </tr>
 </tbody>
@@ -4239,39 +4227,39 @@ Arduino IDEは、独自関数の定義を使用する関数の後に書いても
 </li>
 </ol>
 <p>例えば、以下は、独自関数の設定は、使用する関数の後に書いてあるのでビルドが<code>FAIL</code>になります。</br></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#8f5902;font-style:italic">// put your setup code here, to run once:
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">func</span><span style="color:#000;font-weight:bold">();</span>
-
-<span style="color:#000;font-weight:bold">}</span>
-
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">func</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000;font-weight:bold">;</span>
-<span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><p>以下は、独自関数の定義は、使用する関数の前に書いてあるのでビルドが<code>SUCSESS</code>になります。</br></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">func</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000;font-weight:bold">;</span>
-<span style="color:#000;font-weight:bold">}</span>
-
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#8f5902;font-style:italic">// put your setup code here, to run once:
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">func</span><span style="color:#000;font-weight:bold">();</span>
-
-<span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><p>以下は、プロトタイプ宣言するので、ビルドが<code>SUCSESS</code>になります。</br></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">// Prototypes
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">func</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">void</span><span style="color:#000;font-weight:bold">);</span>
-
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#8f5902;font-style:italic">// put your setup code here, to run once:
-</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">func</span><span style="color:#000;font-weight:bold">();</span>
-
-<span style="color:#000;font-weight:bold">}</span>
-
-<span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">func</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
-  <span style="color:#000;font-weight:bold">;</span>
-<span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><h2 id="プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</h2>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8f5902;font-style:italic">// put your setup code here, to run once:
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">func</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">func</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><p>以下は、独自関数の定義は、使用する関数の前に書いてあるのでビルドが<code>SUCSESS</code>になります。</br></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">func</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8f5902;font-style:italic">// put your setup code here, to run once:
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">func</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><p>以下は、プロトタイプ宣言するので、ビルドが<code>SUCSESS</code>になります。</br></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-cpp" data-lang="cpp"><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic">// Prototypes
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">func</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">void</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">setup</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8f5902;font-style:italic">// put your setup code here, to run once:
+</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">func</span><span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">func</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><h2 id="プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</h2>
 <p>Project Wizarで、New Projectを立ち上げると、フォルダが作成され、デフォルトでは、~/Documents/PlatformIO/Projects に保存されます。
 Projectの名前変更やフォルダの削除は、Project Wizarではなく、エクスプローラから直接出来ます。</br></p>
 <h2 id="プロジェクトフォルダの保存場所の設定">プロジェクトフォルダの保存場所の設定</h2>
@@ -4300,14 +4288,14 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 </ul>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
-</p><section class="footnotes" role="doc-endnotes">
+</p><div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p>Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み。v2.5.0は動作しないので要注意。</br> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p>Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み。v2.5.0は動作しないので要注意。</br>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
         <div class="section-index">
     
@@ -4319,7 +4307,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 6, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 1, 0001
 </div>
 </div>
 
@@ -4383,7 +4371,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 
 
 
-<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
+<script src="/js/main.min.5a6d58949eb3d46041385a49b1ca0d96fe5f18f0893d2f33daf64b10444ff94b.js" integrity="sha256-Wm1YlJ6z1GBBOFpJscoNlv5fGPCJPS8z2vZLEERP&#43;Us=" crossorigin="anonymous"></script>
 
 
 
