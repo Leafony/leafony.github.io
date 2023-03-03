@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.110.0">
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -24,7 +24,8 @@
 <title>STM32 Simple BLE Beacon | Leafony</title><meta property="og:title" content="STM32 Simple BLE Beacon" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_simple_ble_beacon/" /><meta property="og:site_name" content="Leafony" />
+<meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_simple_ble_beacon/" />
+<meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="STM32 Simple BLE Beacon">
 <meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STM32 Simple BLE Beacon"/>
@@ -36,8 +37,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.bcd8d798c95d3c15736d43337a9540d44830b86aa7c5e2fd979bbd9ce559083b.css" as="style">
-<link href="/scss/main.min.bcd8d798c95d3c15736d43337a9540d44830b86aa7c5e2fd979bbd9ce559083b.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -132,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b13774cbfb0cd55e066e9297a7b2f084f593e2833374c49388770adfb9cd346f6302497cabc94b87c5b532ec363a3effaf61a253867d9fde3a0d2a3115732913.json"
+  data-offline-search-index-json-src="/offline-search-index.648257ad3823a16eec16c1392a80cb656de1b623c9fcd70277283a9b232fc2acfffa7cadf9b60974a6de10e66cf56766eeacf3431e5a4865e61ea92099edebac.json"
   data-offline-search-base-href="/"
 >
 
@@ -162,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b13774cbfb0cd55e066e9297a7b2f084f593e2833374c49388770adfb9cd346f6302497cabc94b87c5b532ec363a3effaf61a253867d9fde3a0d2a3115732913.json"
+  data-offline-search-index-json-src="/offline-search-index.648257ad3823a16eec16c1392a80cb656de1b623c9fcd70277283a9b232fc2acfffa7cadf9b60974a6de10e66cf56766eeacf3431e5a4865e61ea92099edebac.json"
   data-offline-search-base-href="/"
 >
 
@@ -2488,10 +2489,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/advanced/3_p/stm32/stm32_simple_ble_beacon/" class="align-left pl-0 pr-2 collapsed active td-sidebar-link td-sidebar-link__section"> </a>
+    <a  href="/docs/examples/advanced/3_p/stm32/stm32_simple_ble_beacon/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"> </a>
   </li>
   <ul>
-    <li class="collapse " id="docsexamplesadvanced3_pstm32stm32_simple_ble_beacon">
+    <li class="collapse show" id="docsexamplesadvanced3_pstm32stm32_simple_ble_beacon">
       
       
       
@@ -3883,50 +3884,50 @@
 <p><code>adv_data[]</code>配列がAdvertising dataです。この配列はコメントに記載されているように、<code>AD Structure 1</code>～<code>AD Structure 3</code>というデータの塊を繋げたデータとなっています。これらのデータの内容については後述します。</p>
 <p><code>ble112.ble_cmd_le_gap_set_adv_data()</code>で<code>adv_data</code>をBLEリーフに登録し、BLEリーフ側から登録完了の信号が来るのを待つために、<code>ble112.checkActivity()</code>を実行しています。</p>
 <p><code>ble112.ble_cmd_le_gap_start_advertising()</code>を実行することで、BLEがAdvertisingを開始して、先程設定したAdvertising dataをブロードキャストし始めます。<code>LE_GA_SCANNABLE_NON_CONNECTALBE</code>を設定したことで、BLE Client側はAdvertising dataをスキャンすることはできますが、このデバイスと接続を確立することは禁止しています。これは、接続要求が来た場合に発生するイベントの処理を減らして電力を削減するための設定です。</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">StartAdvData</span><span style="color:#000;font-weight:bold">()</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#8f5902;font-style:italic">// Advertising data; 25byte MAX
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#8f5902;font-style:italic">// AD Structure 1: Flag
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//0: field length
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">BGLIB_GAP_AD_TYPE_FLAGS</span><span style="color:#000;font-weight:bold">,</span>  <span style="color:#8f5902;font-style:italic">//1: field type (0x01)
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">6</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//2: data
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// AD Structure 2: Complete local name
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//3: field length
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">BGLIB_GAP_AD_TYPE_LOCALNAME_COMPLETE</span><span style="color:#000;font-weight:bold">,</span>  <span style="color:#8f5902;font-style:italic">//4: field type (0x09)
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;L&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//5:
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;e&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//6:
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;a&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//7:
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;f&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//8:
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;_&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//9:
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;A&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//10:
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// AD Structure 3: Manufacture specific
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">13</span><span style="color:#000;font-weight:bold">),</span>   <span style="color:#8f5902;font-style:italic">//11: field length
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0xff</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#8f5902;font-style:italic">//12: field type (0xff)
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;H&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//13:
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;E&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//14:
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;L&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//15:
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;L&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//16:
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;O&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//17:
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39; &#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//18:
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;B&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//19:
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;E&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//20:
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;A&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//21:
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;C&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//22:
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;O&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//23:
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;N&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//24:
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000;font-weight:bold">};</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#8f5902;font-style:italic">// Register advertising packet
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">stLen</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">sizeof</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">);</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">ble112</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ble_cmd_le_gap_set_adv_data</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SCAN_RSP_ADVERTISING_PACKETS</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">stLen</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">);</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">while</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">ble112</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">checkActivity</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">));</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#8f5902;font-style:italic">// index = 0  LE_GAP_SCANNABLE_NON_CONNECTABLE / LE_GAP_UNDIRECTED_CONNECTABLE
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">ble112</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ble_cmd_le_gap_start_advertising</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LE_GAP_USER_DATA</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LE_GAP_SCANNABLE_NON_CONNECTABLE</span><span style="color:#000;font-weight:bold">);</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#204a87;font-weight:bold">while</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">ble112</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">checkActivity</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">));</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><p>下図はBLEのAdvertisingで使用される、Advertising dataのフォーマットを表しています。</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">StartAdvData</span><span style="color:#000;font-weight:bold">()</span>
+<span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#8f5902;font-style:italic">// Advertising data; 25byte MAX
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">[]</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">{</span>
+    <span style="color:#8f5902;font-style:italic">// AD Structure 1: Flag
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">2</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//0: field length
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">BGLIB_GAP_AD_TYPE_FLAGS</span><span style="color:#000;font-weight:bold">,</span>  <span style="color:#8f5902;font-style:italic">//1: field type (0x01)
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">6</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//2: data
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// AD Structure 2: Complete local name
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">7</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//3: field length
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">BGLIB_GAP_AD_TYPE_LOCALNAME_COMPLETE</span><span style="color:#000;font-weight:bold">,</span>  <span style="color:#8f5902;font-style:italic">//4: field type (0x09)
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;L&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//5:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;e&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//6:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;a&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//7:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;f&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//8:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;_&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//9:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;A&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//10:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#8f5902;font-style:italic">// AD Structure 3: Manufacture specific
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">13</span><span style="color:#000;font-weight:bold">),</span>   <span style="color:#8f5902;font-style:italic">//11: field length
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0xff</span><span style="color:#000;font-weight:bold">),</span> <span style="color:#8f5902;font-style:italic">//12: field type (0xff)
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;H&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//13:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;E&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//14:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;L&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//15:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;L&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//16:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;O&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//17:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39; &#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//18:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;B&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//19:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;E&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//20:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;A&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//21:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;C&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//22:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;O&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//23:
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#39;N&#39;</span><span style="color:#000;font-weight:bold">),</span>  <span style="color:#8f5902;font-style:italic">//24:
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000;font-weight:bold">};</span>
+
+  <span style="color:#8f5902;font-style:italic">// Register advertising packet
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#000">stLen</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">sizeof</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">ble112</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ble_cmd_le_gap_set_adv_data</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">SCAN_RSP_ADVERTISING_PACKETS</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">stLen</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">adv_data</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#204a87;font-weight:bold">while</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">ble112</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">checkActivity</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">));</span>
+
+  <span style="color:#8f5902;font-style:italic">// index = 0  LE_GAP_SCANNABLE_NON_CONNECTABLE / LE_GAP_UNDIRECTED_CONNECTABLE
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">ble112</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">ble_cmd_le_gap_start_advertising</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">0</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LE_GAP_USER_DATA</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">LE_GAP_SCANNABLE_NON_CONNECTABLE</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#204a87;font-weight:bold">while</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">ble112</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">checkActivity</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">));</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><p>下図はBLEのAdvertisingで使用される、Advertising dataのフォーマットを表しています。</p>
 <p>Advertising dataは複数の<code>AD Structure</code>というデータの塊から構成されています。各<code>AD Structure</code>の中身は<code>Length</code>と<code>Data</code>に分けられ、<code>Length</code>には、<code>Data</code>のオクテット数(何byteか)が登録されます。</p>
 <p><code>Data</code>の中身は更に、<code>AD Type</code>と<code>AD Data</code>に分けられ、<code>AD Type</code>でこの<code>AD Structure</code>がどのような意味のデータなのかが分かるようになっています。</p>
 <p>例えば、上記コードの<code>AD Structure 2</code>は<code>Length</code>が7で、<code>AD Type</code>は<code>BGLIB_GAP_AD_TYPE_LOCALNAME_COMPLETE (0x09)</code>でデバイスのローカルネームであることがわかり、<code>Data</code>に<code>Leaf_A</code>と登録されています。</p>
@@ -4328,7 +4329,7 @@
 
 
 
-<script src="/js/main.min.5a6d58949eb3d46041385a49b1ca0d96fe5f18f0893d2f33daf64b10444ff94b.js" integrity="sha256-Wm1YlJ6z1GBBOFpJscoNlv5fGPCJPS8z2vZLEERP&#43;Us=" crossorigin="anonymous"></script>
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
 
 
 

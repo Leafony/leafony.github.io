@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.110.0">
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -25,7 +25,8 @@
 <meta property="og:description" content="Arduino IDEでマイコンにプログラムを書き込む
 " />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/docs/environment/stm32/arduino_ide/" /><meta property="og:site_name" content="Leafony" />
+<meta property="og:url" content="https://docs.leafony.com/docs/environment/stm32/arduino_ide/" />
+<meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="Arduino IDEの設定">
 <meta itemprop="description" content="Arduino IDEでマイコンにプログラムを書き込む
 "><meta name="twitter:card" content="summary"/>
@@ -39,8 +40,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.bcd8d798c95d3c15736d43337a9540d44830b86aa7c5e2fd979bbd9ce559083b.css" as="style">
-<link href="/scss/main.min.bcd8d798c95d3c15736d43337a9540d44830b86aa7c5e2fd979bbd9ce559083b.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -135,7 +136,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b13774cbfb0cd55e066e9297a7b2f084f593e2833374c49388770adfb9cd346f6302497cabc94b87c5b532ec363a3effaf61a253867d9fde3a0d2a3115732913.json"
+  data-offline-search-index-json-src="/offline-search-index.648257ad3823a16eec16c1392a80cb656de1b623c9fcd70277283a9b232fc2acfffa7cadf9b60974a6de10e66cf56766eeacf3431e5a4865e61ea92099edebac.json"
   data-offline-search-base-href="/"
 >
 
@@ -165,7 +166,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b13774cbfb0cd55e066e9297a7b2f084f593e2833374c49388770adfb9cd346f6302497cabc94b87c5b532ec363a3effaf61a253867d9fde3a0d2a3115732913.json"
+  data-offline-search-index-json-src="/offline-search-index.648257ad3823a16eec16c1392a80cb656de1b623c9fcd70277283a9b232fc2acfffa7cadf9b60974a6de10e66cf56766eeacf3431e5a4865e61ea92099edebac.json"
   data-offline-search-base-href="/"
 >
 
@@ -824,10 +825,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/environment/stm32/arduino_ide/" class="align-left pl-0 pr-2 collapsed active td-sidebar-link td-sidebar-link__section">Arduino</a>
+    <a  href="/docs/environment/stm32/arduino_ide/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">Arduino</a>
   </li>
   <ul>
-    <li class="collapse " id="docsenvironmentstm32arduino_ide">
+    <li class="collapse show" id="docsenvironmentstm32arduino_ide">
       
       
       
@@ -3864,7 +3865,7 @@
 <h2 id="arduino-ideのインストール">Arduino IDEのインストール</h2>
 <p>以下の手順で、Arduino IDEをインストールを行います。</p>
 <ol>
-<li><a href="https://www.arduino.cc/" target="_blank">Arduinoのホームページ</a>
+<li><a href="https://www.arduino.cc/" target="_blank">Arduinoのホームページ</a> 
 から<code>SOFTWARE</code>のページを開きます。</li>
 <li><code>Download</code>で、インストーラをダウンロードします。</li>
 <li>画面の指示に従って、インストールします。</li>
@@ -3936,37 +3937,37 @@
 <p><a href="https://docs.leafony.com/docs/environment/avr/arduino/#%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB">ライブラリのインストール</a></p>
 <p>タイマ割り込みライブラリ(MsTimer2.h)は、AVR MCUのライブラリなので、STM32 MCUリーフには、使用出来ません。以下のHardwareTimerを参考にしてください。</p>
 <h3 id="hardwaretimer">HardwareTimer</h3>
-<p>使用例を以下に、記載します。詳細は<a href="https://github.com/stm32duino/wiki/wiki/HardwareTimer-library" target="_blank">こちら</a>
+<p>使用例を以下に、記載します。詳細は<a href="https://github.com/stm32duino/wiki/wiki/HardwareTimer-library" target="_blank">こちら</a> 
 <br>
 <br>
 初期設定</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#000">HardwareTimer</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">timer2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">HardwareTimer</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">TIM2</span><span style="color:#000;font-weight:bold">);</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">timer2</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">setOverflow</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LOOP_INTERVAL</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">MICROSEC_FORMAT</span><span style="color:#000;font-weight:bold">);</span>       <span style="color:#8f5902;font-style:italic">// 125ms
-</span></span></span><span style="display:flex;"><span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">timer2</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">attachInterrupt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">intTimer</span><span style="color:#000;font-weight:bold">);</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">timer2</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">resume</span><span style="color:#000;font-weight:bold">();</span>
-</span></span></code></pre></div><p>割り込みルーチン</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">intTimer</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">void</span><span style="color:#000;font-weight:bold">){</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#000">bInterval</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a40000">　：</span>
-</span></span><span style="display:flex;"><span><span style="color:#a40000">　：</span>
-</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
-</span></span></code></pre></div><h2 id="困ったときには">困ったときには</h2>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">HardwareTimer</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">timer2</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87;font-weight:bold">new</span> <span style="color:#000">HardwareTimer</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">TIM2</span><span style="color:#000;font-weight:bold">);</span>
+
+  <span style="color:#000">timer2</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">setOverflow</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LOOP_INTERVAL</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#000">MICROSEC_FORMAT</span><span style="color:#000;font-weight:bold">);</span>       <span style="color:#8f5902;font-style:italic">// 125ms
+</span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">timer2</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">attachInterrupt</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">intTimer</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#000">timer2</span><span style="color:#ce5c00;font-weight:bold">-&gt;</span><span style="color:#000">resume</span><span style="color:#000;font-weight:bold">();</span>
+</code></pre></div><p>割り込みルーチン</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">intTimer</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">void</span><span style="color:#000;font-weight:bold">){</span>
+  <span style="color:#000">bInterval</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#204a87">true</span><span style="color:#000;font-weight:bold">;</span>
+　<span style="color:#a40000">：</span>
+　<span style="color:#a40000">：</span>
+<span style="color:#000;font-weight:bold">}</span>
+</code></pre></div><h2 id="困ったときには">困ったときには</h2>
 <p>お問い合わせをする前に、<a href="/docs/getting-started/solution" target="_blank">困ったときには</a>を読んでみてください。</p>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
-</p><div class="footnotes" role="doc-endnotes">
+</p><section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1">
-<p>Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み。v2.5.0は動作しないので要注意。&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1" role="doc-endnote">
+<p>Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み。v2.5.0は動作しないので要注意。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2">
+<li id="fn:2" role="doc-endnote">
 <p>スイッチをプログラム側にしないで書き込んだ場合も<code>ボードへの書き込みが完了しました</code>となりますが、画面の下部に<code>Timeout error occured while waiting for acknowledgement</code>と表示され、プログラムが正常に動作しません。</br></br>
-<img src="./operation2_v1.png"></img>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<img src="./operation2_v1.png"></img> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</div>
+</section>
 
         <div class="section-index">
     
@@ -3978,7 +3979,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 1, 0001
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 23, 2023
 </div>
 </div>
 
@@ -4042,7 +4043,7 @@
 
 
 
-<script src="/js/main.min.5a6d58949eb3d46041385a49b1ca0d96fe5f18f0893d2f33daf64b10444ff94b.js" integrity="sha256-Wm1YlJ6z1GBBOFpJscoNlv5fGPCJPS8z2vZLEERP&#43;Us=" crossorigin="anonymous"></script>
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
 
 
 

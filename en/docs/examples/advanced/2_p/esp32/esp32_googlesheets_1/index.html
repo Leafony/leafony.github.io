@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.110.0">
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -24,7 +24,8 @@
 <title>Google Sheets with ESP32 | Leafony</title><meta property="og:title" content="Google Sheets with ESP32" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/en/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/" /><meta property="og:site_name" content="Leafony" />
+<meta property="og:url" content="https://docs.leafony.com/en/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/" />
+<meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="Google Sheets with ESP32">
 <meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Google Sheets with ESP32"/>
@@ -36,8 +37,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.bcd8d798c95d3c15736d43337a9540d44830b86aa7c5e2fd979bbd9ce559083b.css" as="style">
-<link href="/scss/main.min.bcd8d798c95d3c15736d43337a9540d44830b86aa7c5e2fd979bbd9ce559083b.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -132,7 +133,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b13774cbfb0cd55e066e9297a7b2f084f593e2833374c49388770adfb9cd346f6302497cabc94b87c5b532ec363a3effaf61a253867d9fde3a0d2a3115732913.json"
+  data-offline-search-index-json-src="/offline-search-index.648257ad3823a16eec16c1392a80cb656de1b623c9fcd70277283a9b232fc2acfffa7cadf9b60974a6de10e66cf56766eeacf3431e5a4865e61ea92099edebac.json"
   data-offline-search-base-href="/"
 >
 
@@ -162,7 +163,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b13774cbfb0cd55e066e9297a7b2f084f593e2833374c49388770adfb9cd346f6302497cabc94b87c5b532ec363a3effaf61a253867d9fde3a0d2a3115732913.json"
+  data-offline-search-index-json-src="/offline-search-index.648257ad3823a16eec16c1392a80cb656de1b623c9fcd70277283a9b232fc2acfffa7cadf9b60974a6de10e66cf56766eeacf3431e5a4865e61ea92099edebac.json"
   data-offline-search-base-href="/"
 >
 
@@ -2120,10 +2121,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/en/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/" class="align-left pl-0 pr-2 collapsed active td-sidebar-link td-sidebar-link__section"> </a>
+    <a  href="/en/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section"> </a>
   </li>
   <ul>
-    <li class="collapse " id="endocsexamplesadvanced2_pesp32esp32_googlesheets_1">
+    <li class="collapse show" id="endocsexamplesadvanced2_pesp32esp32_googlesheets_1">
       
       
       
@@ -3455,7 +3456,7 @@ First, let&rsquo;s configure the settings for displaying data in <code>Google Sh
 <li>Sign in to your Google account and create a new spreadsheet. If you do not have an account, please create one.</li>
 </ol>
 <img src="create_new_sheet_a.png" width=1200>
-<br />
+<p><br /></p>
 <ol start="2">
 <li>
 <p>You can change the title of Google Sheets (default: <code>Untitled Spreadsheet</code>) as you like.  <br>
@@ -3469,7 +3470,7 @@ You can also change the sheet number (default: <code>sheet 1</code>) as you like
 </li>
 </ol>
 <img src="open_script_editor_a.PNG">
-<br />
+<p><br /></p>
 <ol start="4">
 <li>
 <p>Open the Script Editor from Tools and copy and paste the source code from Github.</p>
@@ -3478,7 +3479,7 @@ You can also change the sheet number (default: <code>sheet 1</code>) as you like
 </ul>
 </li>
 </ol>
-<br />
+<p><br /></p>
 <ol start="5">
 <li>Enter the information of the <code>Google Sheets</code> that you just created in the following variables.
 <ul>
@@ -3488,48 +3489,46 @@ You can also change the sheet number (default: <code>sheet 1</code>) as you like
 </li>
 </ol>
 <img src="edit_script_a.png">
-<br />
+<p><br /></p>
 <ol start="6">
 <li>This section describes the procedure for publishing <code>Google Sheets</code>.<br>
 Click <code>Publish</code>-&gt;<code>Deploy as a web application</code>.</li>
 </ol>
 <img src="deploy_app_1a.png">
-<br />
+<p><br /></p>
 <ol start="7">
 <li>Then, change the access permissions to <code>Anyone, even anonymous</code>, so that anyone can view it.</li>
 </ol>
 <img src="deploy_app_2a.png" width=500>
-<br />
+<p><br /></p>
 <ol start="8">
 <li>Click the <code>Deploy</code> button to confirm the access permission from <code>Script App</code> to <code>Google Sheets</code>.  Click <code>Confirm Permissions</code>.</li>
 </ol>
 <img src="first_deploy_authorization_a.png" width=500>
-<br />
+<p><br /></p>
 <ol start="9">
 <li>Click on <code>Details</code> at the bottom left.</li>
 </ol>
 <img src="details.png" width=500>
- <br />   
+<p><br /></p>
 <ol start="10">
 <li>Next you will get a warning, click on <code>Go to (insecure page)</code>.</li>
 </ol>
 <img src="confirmation_a.png" width=550>
-<br />
+<p><br /></p>
 <ol start="11">
 <li>Finally, <code>allow</code> the script to request access to the spreadsheet.</li>
 </ol>
 <img src="access_request_a.png" width=400>
-<br />
+<p><br /></p>
 <ol start="12">
 <li>The following pop-up window will appear, and a URL specific to the web app you have created will be issued, so copy the URL and click <code>OK</code>.</li>
 </ol>
 <img src="find_url.png" width=500>  
-<br />
-（App-specific URLs ）
-```
-https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec
-```
-<h2 id="checking-the-operation-of-google-sheets">Checking the operation of Google Sheets</h2>
+<p><br />
+（App-specific URLs ）</p>
+<pre><code>https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec
+</code></pre><h2 id="checking-the-operation-of-google-sheets">Checking the operation of Google Sheets</h2>
 <ol>
 <li>
 <p>This time, we will try to write Datetime, UniqueID=Leafony_AP02-1, Temperature=100, Humidity=100, Illumination=100 in <code>Google Sheets</code>.<br>
@@ -3539,15 +3538,15 @@ https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA
 <p>If you add ?UniqueID=Leafony_AP02-1&amp;temperature=100&amp;humidity=100&amp;illumination=100 to the app-specific URL, you will get the following</p>
 </li>
 </ol>
-<pre tabindex="0"><code>https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec?UniqueID=Leafony_AP02-1&amp;temperature=100&amp;humidity=100&amp;illumination=100
-</code></pre><br />
+<pre><code>https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec?UniqueID=Leafony_AP02-1&amp;temperature=100&amp;humidity=100&amp;illumination=100
+</code></pre><p><br /></p>
 <ol start="3">
 <li>Paste the above URL into your browser and access it, and the data will be written to the configured <code>Google Sheets</code>.</li>
 </ol>
 <p>The column names listed in the first line of <code>Google Sheets</code> are not automatically displayed, so please provide them in advance.
 <br /></p>
 <img src="check_script_app.png">  
-<br />
+<p><br /></p>
 <h3 id="if-there-is-a-mistake-in-the-script">If there is a mistake in the script</h3>
 <ol>
 <li>Modify the script.</li>
@@ -3556,7 +3555,7 @@ https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA
 <li>The URL of the web app running at that time can be found below.</li>
 </ol>
 <img src="deploy_again_a.png" width=500>  
-<br />
+<p><br /></p>
 <h3 id="a-hrefhttpsdocsleafonycomendocsexamplesadvanced2_pesp32esp32_googlesheets_1esp32_googlesheets_2nexta"><a href="https://docs.leafony.com/en/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/esp32_googlesheets_2/"><strong>Next</strong></a></h3>
 
         <div class="section-index">
@@ -3916,7 +3915,7 @@ https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA
 
 
 
-<script src="/js/main.min.5a6d58949eb3d46041385a49b1ca0d96fe5f18f0893d2f33daf64b10444ff94b.js" integrity="sha256-Wm1YlJ6z1GBBOFpJscoNlv5fGPCJPS8z2vZLEERP&#43;Us=" crossorigin="anonymous"></script>
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
 
 
 

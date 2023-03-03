@@ -34,7 +34,7 @@ First, let&amp;rsquo;s configure the settings for displaying data in &lt;code&gt
 &lt;li&gt;Sign in to your Google account and create a new spreadsheet. If you do not have an account, please create one.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;create_new_sheet_a.png&#34; width=1200&gt;
-&lt;br /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;You can change the title of Google Sheets (default: &lt;code&gt;Untitled Spreadsheet&lt;/code&gt;) as you like.  &lt;br&gt;
@@ -48,7 +48,7 @@ You can also change the sheet number (default: &lt;code&gt;sheet 1&lt;/code&gt;)
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;open_script_editor_a.PNG&#34;&gt;
-&lt;br /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;Open the Script Editor from Tools and copy and paste the source code from Github.&lt;/p&gt;
@@ -57,7 +57,7 @@ You can also change the sheet number (default: &lt;code&gt;sheet 1&lt;/code&gt;)
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;br /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;5&#34;&gt;
 &lt;li&gt;Enter the information of the &lt;code&gt;Google Sheets&lt;/code&gt; that you just created in the following variables.
 &lt;ul&gt;
@@ -67,48 +67,46 @@ You can also change the sheet number (default: &lt;code&gt;sheet 1&lt;/code&gt;)
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;edit_script_a.png&#34;&gt;
-&lt;br /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;This section describes the procedure for publishing &lt;code&gt;Google Sheets&lt;/code&gt;.&lt;br&gt;
 Click &lt;code&gt;Publish&lt;/code&gt;-&amp;gt;&lt;code&gt;Deploy as a web application&lt;/code&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;deploy_app_1a.png&#34;&gt;
-&lt;br /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;7&#34;&gt;
 &lt;li&gt;Then, change the access permissions to &lt;code&gt;Anyone, even anonymous&lt;/code&gt;, so that anyone can view it.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;deploy_app_2a.png&#34; width=500&gt;
-&lt;br /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;8&#34;&gt;
 &lt;li&gt;Click the &lt;code&gt;Deploy&lt;/code&gt; button to confirm the access permission from &lt;code&gt;Script App&lt;/code&gt; to &lt;code&gt;Google Sheets&lt;/code&gt;.  Click &lt;code&gt;Confirm Permissions&lt;/code&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;first_deploy_authorization_a.png&#34; width=500&gt;
-&lt;br /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;9&#34;&gt;
 &lt;li&gt;Click on &lt;code&gt;Details&lt;/code&gt; at the bottom left.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;details.png&#34; width=500&gt;
- &lt;br /&gt;   
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;10&#34;&gt;
 &lt;li&gt;Next you will get a warning, click on &lt;code&gt;Go to (insecure page)&lt;/code&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;confirmation_a.png&#34; width=550&gt;
-&lt;br /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;11&#34;&gt;
 &lt;li&gt;Finally, &lt;code&gt;allow&lt;/code&gt; the script to request access to the spreadsheet.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;access_request_a.png&#34; width=400&gt;
-&lt;br /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;12&#34;&gt;
 &lt;li&gt;The following pop-up window will appear, and a URL specific to the web app you have created will be issued, so copy the URL and click &lt;code&gt;OK&lt;/code&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;find_url.png&#34; width=500&gt;  
-&lt;br /&gt;
-（App-specific URLs ）
-```
-https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec
-```
-&lt;h2 id=&#34;checking-the-operation-of-google-sheets&#34;&gt;Checking the operation of Google Sheets&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;
+（App-specific URLs ）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;checking-the-operation-of-google-sheets&#34;&gt;Checking the operation of Google Sheets&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;This time, we will try to write Datetime, UniqueID=Leafony_AP02-1, Temperature=100, Humidity=100, Illumination=100 in &lt;code&gt;Google Sheets&lt;/code&gt;.&lt;br&gt;
@@ -118,15 +116,15 @@ https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA
 &lt;p&gt;If you add ?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100 to the app-specific URL, you will get the following&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100
-&lt;/code&gt;&lt;/pre&gt;&lt;br /&gt;
+&lt;pre&gt;&lt;code&gt;https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA17ZqE7y-tP8/exec?UniqueID=Leafony_AP02-1&amp;amp;temperature=100&amp;amp;humidity=100&amp;amp;illumination=100
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;Paste the above URL into your browser and access it, and the data will be written to the configured &lt;code&gt;Google Sheets&lt;/code&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;The column names listed in the first line of &lt;code&gt;Google Sheets&lt;/code&gt; are not automatically displayed, so please provide them in advance.
 &lt;br /&gt;&lt;/p&gt;
 &lt;img src=&#34;check_script_app.png&#34;&gt;  
-&lt;br /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;if-there-is-a-mistake-in-the-script&#34;&gt;If there is a mistake in the script&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;Modify the script.&lt;/li&gt;
@@ -135,7 +133,7 @@ https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA
 &lt;li&gt;The URL of the web app running at that time can be found below.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;img src=&#34;deploy_again_a.png&#34; width=500&gt;  
-&lt;br /&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;h3 id=&#34;a-hrefhttpsdocsleafonycomendocsexamplesadvanced2_pesp32esp32_googlesheets_1esp32_googlesheets_2nexta&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/esp32_googlesheets_2/&#34;&gt;&lt;strong&gt;Next&lt;/strong&gt;&lt;/a&gt;&lt;/h3&gt;
 
       </description>
@@ -157,61 +155,61 @@ https://script.google.com/macros/s/AKfycbw-8Wx8Zf0alULuD3aLQdwnyVM8hSHAiDsrj49wA
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Type&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Name&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Name&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/processor/ap02&#34;&gt;AP02&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/processor/ap02&#34;&gt;ESP32 MCU&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/processor/ap02&#34;&gt;AP02&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/processor/ap02&#34;&gt;ESP32 MCU&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/power/av04&#34;&gt;AV04&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/power/av04&#34;&gt;2V~4.5V&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/power/av04&#34;&gt;AV04&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/power/av04&#34;&gt;2V~4.5V&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/extension/ax07&#34;&gt;AX07&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/extension/ax07&#34;&gt;Back to back&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/extension/ax07&#34;&gt;AX07&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/extension/ax07&#34;&gt;Back to back&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/extension/ax08&#34;&gt;AX08&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/extension/ax08&#34;&gt;29pin header&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/extension/ax08&#34;&gt;AX08&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/extension/ax08&#34;&gt;29pin header&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az62&#34;&gt;Connector Cover &lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az62&#34;&gt;AZ62&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az62&#34;&gt;Connector Cover &lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az63&#34;&gt;AZ63&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az63&#34;&gt;Nut Plate&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az63&#34;&gt;AZ63&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/others/az63&#34;&gt;Nut Plate&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;AAA battery holder&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;AAA battery holder&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;AAA battery&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;3&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;AAA battery&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;M2*15mm screw&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;4&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;M2*15mm screw&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;φ10x2mm magnet&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;φ10x2mm magnet&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -280,26 +278,26 @@ Users can connect and read log data at any time, and the system will immediately
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Type&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Name&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Name&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Q&amp;rsquo;ty&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/processor/ap02&#34;&gt;AP02&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/processor/ap02&#34;&gt;ESP32 MCU&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/processor/ap02&#34;&gt;AP02&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/processor/ap02&#34;&gt;ESP32 MCU&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/io/ai01&#34;&gt;AI01&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/io/ai01&#34;&gt;AI01&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/en/docs/leaf/io/ai01&#34;&gt;4-Sensors&lt;/a&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;M2 screw&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;2&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;M2 screw&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -314,10 +312,10 @@ By setting the &lt;code&gt;Tools&lt;/code&gt; → &lt;code&gt;Code Debug Level&l
 Any environment can be used as long as it runs Node.js, but this time we will assume that it will be a Beacon receiver set up at a fixed point outdoors, and we will explain how to run the application using a Raspberry Pi 4.
 In this article, we will explain how to run the application using a Raspberry Pi 4.&lt;/p&gt;
 &lt;p&gt;Install the necessary packages and run the application.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; ./tools/node-scanner
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm start
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;3-run-the-logging-application&#34;&gt;3. Run the logging application.&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span style=&#34;color:#204a87&#34;&gt;cd&lt;/span&gt; ./tools/node-scanner
+npm install
+npm start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;3-run-the-logging-application&#34;&gt;3. Run the logging application.&lt;/h3&gt;
 &lt;p&gt;A web application is used to retrieve log data and display graphs.&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://taltalp.github.io/leafony-esp32-thermometer-beacon/sample_app/connect_webbluetooth/&#34; target=&#34;_brank&#34;&gt;ESP32 Sensors Logger&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;structure&#34;&gt;Structure&lt;/h2&gt;

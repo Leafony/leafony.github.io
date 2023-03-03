@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.110.0">
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -22,15 +22,16 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>STM32CubeIDEの設定 | Leafony</title><meta property="og:title" content="STM32CubeIDEの設定" />
-<meta property="og:description" content="STM32CubeIDEのインストールについて
+<meta property="og:description" content="STM32CubeIDEでマイコンにプログラムを書き込む
 " />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/docs/environment/stm32/stm32cube_ide/" /><meta property="og:site_name" content="Leafony" />
+<meta property="og:url" content="https://docs.leafony.com/docs/environment/stm32/stm32cube_ide/" />
+<meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="STM32CubeIDEの設定">
-<meta itemprop="description" content="STM32CubeIDEのインストールについて
+<meta itemprop="description" content="STM32CubeIDEでマイコンにプログラムを書き込む
 "><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="STM32CubeIDEの設定"/>
-<meta name="twitter:description" content="STM32CubeIDEのインストールについて
+<meta name="twitter:description" content="STM32CubeIDEでマイコンにプログラムを書き込む
 "/>
 
 
@@ -39,8 +40,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.bcd8d798c95d3c15736d43337a9540d44830b86aa7c5e2fd979bbd9ce559083b.css" as="style">
-<link href="/scss/main.min.bcd8d798c95d3c15736d43337a9540d44830b86aa7c5e2fd979bbd9ce559083b.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -135,7 +136,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b13774cbfb0cd55e066e9297a7b2f084f593e2833374c49388770adfb9cd346f6302497cabc94b87c5b532ec363a3effaf61a253867d9fde3a0d2a3115732913.json"
+  data-offline-search-index-json-src="/offline-search-index.648257ad3823a16eec16c1392a80cb656de1b623c9fcd70277283a9b232fc2acfffa7cadf9b60974a6de10e66cf56766eeacf3431e5a4865e61ea92099edebac.json"
   data-offline-search-base-href="/"
 >
 
@@ -165,7 +166,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.b13774cbfb0cd55e066e9297a7b2f084f593e2833374c49388770adfb9cd346f6302497cabc94b87c5b532ec363a3effaf61a253867d9fde3a0d2a3115732913.json"
+  data-offline-search-index-json-src="/offline-search-index.648257ad3823a16eec16c1392a80cb656de1b623c9fcd70277283a9b232fc2acfffa7cadf9b60974a6de10e66cf56766eeacf3431e5a4865e61ea92099edebac.json"
   data-offline-search-base-href="/"
 >
 
@@ -870,10 +871,10 @@
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/environment/stm32/stm32cube_ide/" class="align-left pl-0 pr-2 collapsed active td-sidebar-link td-sidebar-link__section">STM32CubeIDE</a>
+    <a  href="/docs/environment/stm32/stm32cube_ide/" class="align-left pl-0 pr-2 active td-sidebar-link td-sidebar-link__section">STM32CubeIDE</a>
   </li>
   <ul>
-    <li class="collapse " id="docsenvironmentstm32stm32cube_ide">
+    <li class="collapse show" id="docsenvironmentstm32stm32cube_ide">
       
       
       
@@ -3773,23 +3774,21 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#64bit版javaをインストール">64bit版JAVAをインストール</a>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#用意するもの">用意するもの</a></li>
+    <li><a href="#事前準備">事前準備</a>
       <ul>
-        <li><a href="#ダウンロード">ダウンロード</a></li>
-        <li><a href="#インストール">インストール</a></li>
+        <li><a href="#javaのインストール">Javaのインストール</a></li>
+        <li><a href="#stm32cubeprogのインストール">STM32CubeProgのインストール</a></li>
+        <li><a href="#stm32cubeideのインストール">STM32CubeIDEのインストール</a></li>
       </ul>
     </li>
-    <li><a href="#stm32cubeideをインストール">STM32CubeIDEをインストール</a>
+    <li><a href="#クイックスタート">クイックスタート</a>
       <ul>
-        <li><a href="#ダウンロード-1">ダウンロード</a></li>
-        <li><a href="#インストール-1">インストール</a></li>
-      </ul>
-    </li>
-    <li><a href="#stm32cubeideの日本語化">STM32CubeIDEの日本語化</a>
-      <ul>
-        <li><a href="#ダウンロード-2">ダウンロード</a></li>
-        <li><a href="#インストール-2">インストール</a></li>
-        <li><a href="#文字化け対策">文字化け対策</a></li>
+        <li><a href="#stm32-projectの作成">STM32 Projectの作成</a></li>
+        <li><a href="#hello-worldioc-の作成">Hello World.ioc の作成</a></li>
+        <li><a href="#maincの作成とビルド">main.cの作成とビルド</a></li>
+        <li><a href="#stm32-mcuリーフへの書込み">STM32 MCUリーフへの書込み</a></li>
       </ul>
     </li>
   </ul>
@@ -3849,126 +3848,121 @@
             
 <div class="td-content">
 	<h1>STM32CubeIDEの設定</h1>
-        <div class="lead">STM32CubeIDEのインストールについて</div>
+        <div class="lead">STM32CubeIDEでマイコンにプログラムを書き込む</div>
 	
-	<h2 id="64bit版javaをインストール">64bit版JAVAをインストール</h2>
-<p>STM32CubeIDEインストール前に64bit版JAVAをインストールすることが必要となります。
-<a href="https://java.com/ja/download/" target="_blank">Java ホームページ</a>からダウンロードしましょう。</p>
-<h3 id="ダウンロード">ダウンロード</h3>
-<p><code>同意して無料ダウンロードを開始</code>をクリックしましょう。
-<img src="./java_downroad.png" width="500">　</p>
-<h3 id="インストール">インストール</h3>
-<p>ダウンロードしたjxpiinstall.exeをダブルクリックして開き、<code>インストール</code>をクリックして下さい。<br>
-<img src="./java_setup.png" width="500">
-<img src="./java_setup2.png" width="500">
-<br>
-<br>
-<br>
-<code>閉じる</code>をクリックしてください。
-<img src="./java_setup3.png" width="500"></p>
-<h2 id="stm32cubeideをインストール">STM32CubeIDEをインストール</h2>
-<p><a href="https://www.st.com/ja/development-tools/stm32cubeide.html" target="_blank">STM32CubeIDE</a>をダウンロードしましょう。</p>
-<h3 id="ダウンロード-1">ダウンロード</h3>
-<p><code>ソフトウェア入手</code>をクリックして下さい。
-<img src="./stm32cubeide.png" width="500">
-<br>
-<br>
-<br>
-製品型番STM32CubeIDE-Win行の<code>ソフトウエア入手</code>をクリックして下さい。
-<img src="./stm32cubeide2.png" width="500">
-<br>
-<br>
-<code>同意</code>をクリックして下さい。
-<img src="./stm32cubeide3.png" width="500">
-<br>
-<br>
-<br>
-<code>名</code>、<code>姓</code>、<code>E-mail address</code>を入力し、</p>
-<pre tabindex="0"><code>□I have read and understood the Sales Terms &amp; Conditions, Terms of Use and Privacy Policy
-</code></pre><p>をチェックして、<code>ダウンロード</code>をクリックしてください。
-<img src="./stm32cubeide4.png" width="500">
-<br>
-<br>
-下記ページが表示されます。
-<img src="./stm32cubeide5.png" width="500">
-<br>
-<br>
-登録したアドレスにメールが届くので、<code>ダウンロード</code>をクリックしてダウンロードを開始します。<br>
-<img src="./stm32cubeide6.png" width="500"></p>
-<h3 id="インストール-1">インストール</h3>
-<p>ダウンロードしたZIPファイルを解凍します。<br>
-解凍してできた<code>st-stm32cubeide_1.4.0_7511_20200720_0928_x86_64.exe</code>をダブルクリックします。
-(ダウンロードした時期によりバージョンが変わる可能性があり数字が異なる場合があります)<br>
-<br>
-<code>Next</code>をクリックしてください。
-<img src="./stm32cubeide7.png" width="500">
-<br>
-<br>
-<code>I Agree</code>をクリックしてください。
-<img src="./stm32cubeide8.png" width="500">
-<br>
-<br>
-<code>Install</code>をクリックしてください。
-<img src="./stm32cubeide9.png" width="500">
-<br>
-<br>
-<code>Next</code>をクリックしてください。
-<img src="./stm32cubeide10.png" width="500">
-<br>
-<br>
-<code>Finish</code>をクリックしてください。
-<img src="./stm32cubeide11.png" width="500">
-<br>
-これでインストール完了です。</p>
-<h2 id="stm32cubeideの日本語化">STM32CubeIDEの日本語化</h2>
-<p><a href="https://mergedoc.osdn.jp/" target="_blank">MargeDoc Projectホームページ</a>からダウンロードしましょう。</p>
-<h3 id="ダウンロード-2">ダウンロード</h3>
-<p><code>Windows</code>をクリックしてください。
-<img src="./japanese1.png" width="500"></p>
-<h3 id="インストール-2">インストール</h3>
-<p>ダウンロードしたZIPファイルを解凍します。
-解凍してできた<code>setup.exe</code>をダブルクリックして下さい。
-<br>
-<br>
-<code>選択</code>をクリックしてください。
-<img src="./japanese2.png" width="500">
-<br>
-<br>
-<code>C:\ST\STM32CubeIDE_1.4.0\STM32CubeIDE\stm32cubeide.exe</code>を選択し、<code>開く</code>をクリック
-<img src="./japanese3.png" width="500">
-<br>
-<br>
-<code>日本語化する</code>をクリックしてください。
-<img src="./japanese4.png" width="500">
-<br>
-<br>
-<code>OK</code>をクリックしてください。
-<img src="./japanese5.png" width="500">
-<br>
-<br>
-<code>終了</code>をクリックしてください。
-<img src="./japanese6.png" width="500">
-<br>
-これでインストール完了です。</p>
-<h3 id="文字化け対策">文字化け対策</h3>
-<p>STM32CubeMXのコード生成時にUTF-8が文字化けしないようにするには(本当に必要かは不明)
-環境変数に以下を追加します。<br>
-変数名：<code>JAVA_TOOL_OPTIONS</code>
-変数値：<code>-Dfile.encoding=UTF-8</code></p>
-<p><code>コントロールパネル</code>→<code>システム</code>→<code>システムの詳細設定</code>→<code>環境変数</code>を選択します。
-<img src="./garbled1.png" width="500">
-<br>
-<br>
-<code>新規</code>をクリックします。
-<img src="./garbled2.png" width="500">
-<br>
-<br>
-変数名に<code>JAVA_TOOL_OPTIONS</code>、変数値に<code>-Dfile.encoding=UTF-8</code>を入力します。
-<img src="./garbled3.png" width="500">
-<br>
-<br>
-<code>OK</code>をクリックします。
-<img src="./garbled4.png" width="500"></p>
+	<h2 id="はじめに">はじめに</h2>
+<p>STM32CubeIDEは、STマイクロエレクトロニクス社が提供しているSTM32マイコンの統合開発環境です。＋追加の説明必要。</br></p>
+<h2 id="用意するもの">用意するもの</h2>
+<p>Basic Kit 2
+パソコン (Windows、macOS、または Linux)</p>
+<h2 id="事前準備">事前準備</h2>
+<h3 id="javaのインストール">Javaのインストール</h3>
+<p>STM32CubeIDEを動かすには、Javaが必要です。<a href="https://www.java.com/ja/">こちら</a>からインストールして下さい。</br></p>
+<h3 id="stm32cubeprogのインストール">STM32CubeProgのインストール</h3>
+<p>STM32MCUにプログラムを書き込むために、STM32CubeProgが必要です。<a href="https://www.stmcu.jp/design/sw_dev/pc_soft/58442/">こちら</a>からインストールして下さい。</br></p>
+<h3 id="stm32cubeideのインストール">STM32CubeIDEのインストール</h3>
+<ol>
+<li>インストーラのダウンロード
+STM32CubeIDEのインストーラを<a href="https://www.st.com/ja/development-tools/stm32cubeide.html">こちら</a>ダウンロードして下さい。</br></li>
+<li>インストーラの実行
+インストーラは、Cドライブの直下で実行して下さい。詳しくは、<a href="https://knuth256.com/2021/04/17/stm32%E5%85%A5%E9%96%80%E3%80%80stm32cubeide%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%80%90windows10%E3%80%91/">こちら</a>を参照して下さい。</br></li>
+</ol>
+<h2 id="クイックスタート">クイックスタート</h2>
+<p>「Hello Wold」の事例で、STM32CubeIDEの使い方を紹介します。</p>
+<h3 id="stm32-projectの作成">STM32 Projectの作成</h3>
+<ol>
+<li>STM32CubeIDを起動すると、<code>STM32CubeID Launcher</code>の画面が表示されます。デフォルトのままで、<code>Launch</code> をクリックします。</li>
+<li><code>File</code> → <code>NEW</code> →　<code>STM32 Project</code> を選択し、暫く経つと、<code>STM32 Project</code> の画面が表示されます。</br></li>
+<li>今回は、<a href="https://docs.leafony.com/docs/leaf/processor/ap03/">STM32 MCUリーフ</a>にプログラムを書き込むので、画面左上の<code>MCU/MPU Sector</code>をクリックします。</br></li>
+<li>画面左の<code>Commercail Part Number</code>に、STM32L452REI6を入れて下さい。</br></li>
+<li>画面右に<code>STM32L452REI6</code>を選択して<code>Next</code>をクリックすると、<code>Setup STM32 project</code>の画面が現れます。</br></li>
+<li><code>Setup STM32 project</code>の画面に、以下を入力して、<code>Next</code>をクリックすると、<code>Hello World.ioc</code>の画面が現れます。</br>
+<ul>
+<li>Project Name          : Hello Wolrdと記入</br></li>
+<li>Targeted Language     : C++を選択</br></li>
+<li>Targeted Binary Type  : Excutableを選択</br></li>
+<li>Targeted Project Type : STM32Cubeを選択</br></br></li>
+</ul>
+</li>
+</ol>
+<h3 id="hello-worldioc-の作成">Hello World.ioc の作成</h3>
+<ol start="7">
+<li>
+<p>Hello World.iocでは、UARTの初期化コードを作成します。</br></p>
+</li>
+<li>
+<p><code>PA2</code>と<code>PA3</code>のPortを使ってシリアル通信をするので、<code>Pinout ＆ Configureation</code>の画面で設定をします。</br>
+設定方法は、Port番号を左クリックして以下を選択します。</br></p>
+<ul>
+<li>PA2                   : USART2_TXを選択</br></li>
+<li>PA3                   : USART2_RXを選択</br></br></li>
+</ul>
+</li>
+<li>
+<p>画面左の<code>Connectivity</code>→ <code>USART2</code>をクリックすると、<code>USART2 Model ＆ Configration</code>の画面が現れるので、以下を選択します。</br></p>
+<ul>
+<li>Model                 : Asynchronous</br></li>
+<li>Hardware Flow Control : Disable</br></br></li>
+</ul>
+</li>
+</ol>
+<h3 id="maincの作成とビルド">main.cの作成とビルド</h3>
+<ol start="10">
+<li><code>Project</code>→<code>Generate Code</code>をクリックすると、<code>main.c</code>のコードが自動生成されるので、以下の手順で追記します。</br></li>
+</ol>
+<ul>
+<li>stdio.hは、 入力/出力のヘッダーファイルです。文字列の出力するプログラムなので、このヘッダーファイルを読み込ませます。</br></li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN Includes */</span>
+<span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;stdio.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">/* USER CODE END Includes */</span>
+</code></pre></div><ul>
+<li>printfを呼び出す前に、初期化します。</br></li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN 1 */</span>
+        <span style="color:#000">setbuf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">stdout</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87">NULL</span><span style="color:#000;font-weight:bold">);</span>
+<span style="color:#8f5902;font-style:italic">/* USER CODE END 1 */</span>
+</code></pre></div><ul>
+<li>1秒毎に、「Hello World」を出力させます。</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN 3 */</span>
+    <span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Hello World</span><span style="color:#4e9a06">\r\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">);</span>
+    <span style="color:#000">HAL_Delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
+</code></pre></div><ul>
+<li>printfを実装して、UARTでテキストを送信します。</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN 4 */</span>
+<span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">_write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">file</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">ptr</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">len</span><span style="color:#000;font-weight:bold">)</span>
+<span style="color:#000;font-weight:bold">{</span>
+  <span style="color:#000">HAL_UART_Transmit</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">huart2</span><span style="color:#000;font-weight:bold">,(</span><span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">ptr</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">len</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">);</span>
+  <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">len</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#000;font-weight:bold">}</span>
+<span style="color:#8f5902;font-style:italic">/* USER CODE END 4 */</span>
+</code></pre></div><ol start="11">
+<li>main.cが書けたら次はビルドです。<code>Project</code>→<code>Build All</code>をクリックして、ビルドして下さい。ログに<code>0 errors, 0 warnings</code>が表示されたらOKです。</br></li>
+</ol>
+<h3 id="stm32-mcuリーフへの書込み">STM32 MCUリーフへの書込み</h3>
+<ol start="12">
+<li>
+<p><a href="https://docs.leafony.com/docs/environment/stm32/arduino_ide/#%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%A8%E6%8E%A5%E7%B6%9A">こちら</a> を参考に、LeafonyをPCに接続し、STM32 MCUリーフの<code>プログラムスイッチ</code>をプログラム側(LED点灯)にし下さい。</br></p>
+</li>
+<li>
+<p>STM32CubeProgrammerを起動させて下さい。</br></p>
+</li>
+<li>
+<p>画面右の接続先を<code>UART</code>し、<code>Connect</code>をクリックして下さい。</br></p>
+</li>
+<li>
+<p>画面右の<code>Erasing ＆ Programing</code>→<code>Erasing ＆ Programing</code>をクリックして、以下の設定をして、<code>Start Programming</code>をクリックし、<code>Download verified successfully</code>が表示されたらokです。</p>
+<ul>
+<li>File path: <code>C:\Users\ユーザ名\STM32CubeIDE\workspace_1.11.2\Hello World\Debug\Hello World.elf</code>を選択</li>
+<li>Veryfy programing にチェツク</li>
+</ul>
+</li>
+</ol>
+</br>
+</br>
+<h1 id="tips">Tips</h1>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
 </p>
@@ -3982,7 +3976,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 1, 0001
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 3, 2023
 </div>
 </div>
 
@@ -4046,7 +4040,7 @@
 
 
 
-<script src="/js/main.min.5a6d58949eb3d46041385a49b1ca0d96fe5f18f0893d2f33daf64b10444ff94b.js" integrity="sha256-Wm1YlJ6z1GBBOFpJscoNlv5fGPCJPS8z2vZLEERP&#43;Us=" crossorigin="anonymous"></script>
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
 
 
 
