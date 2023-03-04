@@ -136,7 +136,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.648257ad3823a16eec16c1392a80cb656de1b623c9fcd70277283a9b232fc2acfffa7cadf9b60974a6de10e66cf56766eeacf3431e5a4865e61ea92099edebac.json"
+  data-offline-search-index-json-src="/offline-search-index.ccdc988b656546f9398c91a7f31ec0435af45247e7eed68747d5ce8e4aba66b5a295513ebeef201d24c1da843aad1d36ede6e0b2aaeeb784c2073bf3960fabb2.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +166,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.648257ad3823a16eec16c1392a80cb656de1b623c9fcd70277283a9b232fc2acfffa7cadf9b60974a6de10e66cf56766eeacf3431e5a4865e61ea92099edebac.json"
+  data-offline-search-index-json-src="/offline-search-index.ccdc988b656546f9398c91a7f31ec0435af45247e7eed68747d5ce8e4aba66b5a295513ebeef201d24c1da843aad1d36ede6e0b2aaeeb784c2073bf3960fabb2.json"
   data-offline-search-base-href="/"
 >
 
@@ -3785,10 +3785,11 @@
     </li>
     <li><a href="#クイックスタート">クイックスタート</a>
       <ul>
-        <li><a href="#stm32-projectの作成">STM32 Projectの作成</a></li>
-        <li><a href="#hello-worldioc-の作成">Hello World.ioc の作成</a></li>
-        <li><a href="#maincの作成とビルド">main.cの作成とビルド</a></li>
+        <li><a href="#プロジェクトの作成">プロジェクトの作成</a></li>
+        <li><a href="#uartの設定">UARTの設定</a></li>
+        <li><a href="#ユーザコードの記述とビルド">ユーザコードの記述とビルド</a></li>
         <li><a href="#stm32-mcuリーフへの書込み">STM32 MCUリーフへの書込み</a></li>
+        <li><a href="#printf出力">printf出力</a></li>
       </ul>
     </li>
   </ul>
@@ -3862,33 +3863,46 @@
 <p>STM32MCUにプログラムを書き込むために、STM32CubeProgが必要です。<a href="https://www.stmcu.jp/design/sw_dev/pc_soft/58442/">こちら</a>からインストールして下さい。</br></p>
 <h3 id="stm32cubeideのインストール">STM32CubeIDEのインストール</h3>
 <ol>
-<li>インストーラのダウンロード
-STM32CubeIDEのインストーラを<a href="https://www.st.com/ja/development-tools/stm32cubeide.html">こちら</a>ダウンロードして下さい。</br></li>
-<li>インストーラの実行
-インストーラは、Cドライブの直下で実行して下さい。詳しくは、<a href="https://knuth256.com/2021/04/17/stm32%E5%85%A5%E9%96%80%E3%80%80stm32cubeide%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%80%90windows10%E3%80%91/">こちら</a>を参照して下さい。</br></li>
+<li>STM32CubeIDEのインストーラを<a href="https://www.st.com/ja/development-tools/stm32cubeide.html">こちら</a>からダウンロードして下さい。</br></li>
+<li>インストーラは、Cドライブの直下で実行して下さい。詳しくは、<a href="https://knuth256.com/2021/04/17/stm32%E5%85%A5%E9%96%80%E3%80%80stm32cubeide%E3%81%AE%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%80%90windows10%E3%80%91/">こちら</a>を参照して下さい。</br></li>
 </ol>
 <h2 id="クイックスタート">クイックスタート</h2>
 <p>「Hello Wold」の事例で、STM32CubeIDEの使い方を紹介します。</p>
-<h3 id="stm32-projectの作成">STM32 Projectの作成</h3>
+<h3 id="プロジェクトの作成">プロジェクトの作成</h3>
 <ol>
-<li>STM32CubeIDを起動すると、<code>STM32CubeID Launcher</code>の画面が表示されます。デフォルトのままで、<code>Launch</code> をクリックします。</li>
-<li><code>File</code> → <code>NEW</code> →　<code>STM32 Project</code> を選択し、暫く経つと、<code>STM32 Project</code> の画面が表示されます。</br></li>
-<li>今回は、<a href="https://docs.leafony.com/docs/leaf/processor/ap03/">STM32 MCUリーフ</a>にプログラムを書き込むので、画面左上の<code>MCU/MPU Sector</code>をクリックします。</br></li>
-<li>画面左の<code>Commercail Part Number</code>に、STM32L452REI6を入れて下さい。</br></li>
-<li>画面右に<code>STM32L452REI6</code>を選択して<code>Next</code>をクリックすると、<code>Setup STM32 project</code>の画面が現れます。</br></li>
-<li><code>Setup STM32 project</code>の画面に、以下を入力して、<code>Next</code>をクリックすると、<code>Hello World.ioc</code>の画面が現れます。</br>
+<li>
+<p>STM32CubeIDを起動すると、<code>STM32CubeID Launcher</code>の画面が表示されます。</br></p>
+</li>
+<li>
+<p>ワークスペースは、以下のデフォルトのままを使用し、<code>Launch</code> をクリックします。</br>
+<code>C:\Users\morit\STM32CubeIDE\workspace_1.11.2</code></br></p>
+</li>
+<li>
+<p><code>File</code> → <code>NEW</code> →　<code>STM32 Project</code> を選択し、暫く経つと、<code>STM32 Project</code> の画面が表示されます。</br></p>
+</li>
+<li>
+<p>今回は、<a href="https://docs.leafony.com/docs/leaf/processor/ap03/">STM32 MCUリーフ</a>にプログラムを書き込むので、画面左上の<code>MCU/MPU Sector</code>をクリックします。</br></p>
+</li>
+<li>
+<p>画面左の<code>Commercail Part Number</code>に、STM32L452REI6を入れて下さい。</br></p>
+</li>
+<li>
+<p>画面右に<code>STM32L452REI6</code>を選択して<code>Next</code>をクリックすると、<code>Setup STM32 project</code>の画面が現れます。</br></p>
+</li>
+<li>
+<p><code>Setup STM32 project</code>の画面に、以下を入力して、<code>Next</code>をクリックすると、<code>HelloWorld.ioc</code>の画面が現れます。</br></p>
 <ul>
-<li>Project Name          : Hello Wolrdと記入</br></li>
+<li>Project Name          : HelloWolrdと記入</br></li>
 <li>Targeted Language     : C++を選択</br></li>
 <li>Targeted Binary Type  : Excutableを選択</br></li>
 <li>Targeted Project Type : STM32Cubeを選択</br></br></li>
 </ul>
 </li>
 </ol>
-<h3 id="hello-worldioc-の作成">Hello World.ioc の作成</h3>
-<ol start="7">
+<h3 id="uartの設定">UARTの設定</h3>
+<ol start="8">
 <li>
-<p>Hello World.iocでは、UARTの初期化コードを作成します。</br></p>
+<p>HelloWorld.iocで、UARTの設定をします。</br></p>
 </li>
 <li>
 <p><code>PA2</code>と<code>PA3</code>のPortを使ってシリアル通信をするので、<code>Pinout ＆ Configureation</code>の画面で設定をします。</br>
@@ -3906,30 +3920,30 @@ STM32CubeIDEのインストーラを<a href="https://www.st.com/ja/development-t
 </ul>
 </li>
 </ol>
-<h3 id="maincの作成とビルド">main.cの作成とビルド</h3>
-<ol start="10">
+<h3 id="ユーザコードの記述とビルド">ユーザコードの記述とビルド</h3>
+<ol start="11">
 <li><code>Project</code>→<code>Generate Code</code>をクリックすると、<code>main.c</code>のコードが自動生成されるので、以下の手順で追記します。</br></li>
 </ol>
 <ul>
-<li>stdio.hは、 入力/出力のヘッダーファイルです。文字列の出力するプログラムなので、このヘッダーファイルを読み込ませます。</br></li>
+<li>24行:stdio.hは、入力/出力のヘッダーファイル、文字列を出力するプログラムなので読み込ませます。</br></li>
 </ul>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN Includes */</span>
 <span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;stdio.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">/* USER CODE END Includes */</span>
 </code></pre></div><ul>
-<li>printfを呼び出す前に、初期化します。</br></li>
+<li>68行:printfを呼び出す前に、初期化します。</br></li>
 </ul>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN 1 */</span>
         <span style="color:#000">setbuf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">stdout</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87">NULL</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#8f5902;font-style:italic">/* USER CODE END 1 */</span>
 </code></pre></div><ul>
-<li>1秒毎に、「Hello World」を出力させます。</li>
+<li>101行:1秒毎に、「Hello World」を出力させます。</li>
 </ul>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN 3 */</span>
     <span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Hello World</span><span style="color:#4e9a06">\r\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">);</span>
     <span style="color:#000">HAL_Delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
 </code></pre></div><ul>
-<li>printfを実装して、UARTでテキストを送信します。</li>
+<li>200行:printfを実装して、UARTでテキストを送信します。</li>
 </ul>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN 4 */</span>
 <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">_write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">file</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">ptr</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">len</span><span style="color:#000;font-weight:bold">)</span>
@@ -3938,27 +3952,38 @@ STM32CubeIDEのインストーラを<a href="https://www.st.com/ja/development-t
   <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">len</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#000;font-weight:bold">}</span>
 <span style="color:#8f5902;font-style:italic">/* USER CODE END 4 */</span>
-</code></pre></div><ol start="11">
+</code></pre></div><ol start="12">
 <li>main.cが書けたら次はビルドです。<code>Project</code>→<code>Build All</code>をクリックして、ビルドして下さい。ログに<code>0 errors, 0 warnings</code>が表示されたらOKです。</br></li>
 </ol>
 <h3 id="stm32-mcuリーフへの書込み">STM32 MCUリーフへの書込み</h3>
-<ol start="12">
+<ol start="13">
 <li>
 <p><a href="https://docs.leafony.com/docs/environment/stm32/arduino_ide/#%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%A8%E6%8E%A5%E7%B6%9A">こちら</a> を参考に、LeafonyをPCに接続し、STM32 MCUリーフの<code>プログラムスイッチ</code>をプログラム側(LED点灯)にし下さい。</br></p>
 </li>
 <li>
-<p>STM32CubeProgrammerを起動させて下さい。</br></p>
+<p>STM32CubeProgを起動させて下さい。</br></p>
 </li>
 <li>
-<p>画面右の接続先を<code>UART</code>し、<code>Connect</code>をクリックして下さい。</br></p>
+<p>画面右の接続先を<code>UART</code>にし、<code>Connect</code>をクリックして下さい。</br></p>
 </li>
 <li>
-<p>画面右の<code>Erasing ＆ Programing</code>→<code>Erasing ＆ Programing</code>をクリックして、以下の設定をして、<code>Start Programming</code>をクリックし、<code>Download verified successfully</code>が表示されたらokです。</p>
+<p>画面左の<code>Erasing ＆ Programing</code>をクリックして、以下の設定をします。</p>
 <ul>
-<li>File path: <code>C:\Users\ユーザ名\STM32CubeIDE\workspace_1.11.2\Hello World\Debug\Hello World.elf</code>を選択</li>
+<li>File path: <code>C:\Users\ユーザ名\STM32CubeIDE\workspace_1.11.2\HelloWorld\Debug\HelloWorld.elf</code>を選択</br></li>
 <li>Veryfy programing にチェツク</li>
 </ul>
 </li>
+<li>
+<p><code>Start Programming</code>をクリックし、<code>Download verified successfully</code>が表示されたらokです。</br></p>
+</li>
+</ol>
+<h3 id="printf出力">printf出力</h3>
+<ol>
+<li>STM32CubeIDEは、いくつもプログラムをインストールしないとprintf出力が出来ないので、Tera Termsのターミナルエミュレータを使います。</br></li>
+<li>Tera Termsをダウンロードし、起動させます。</li>
+<li><code>ファイル</code>→ <code>新しい接続先</code>をクリックし、シリアルポートを接続します。</li>
+<li>次に　<code>設定</code>→<code>シリアルポート</code>をクリックし、スポードを115200を選択します。</li>
+<li><code>Hello Wolrd</code>が1秒毎に表示されれば、okです。</li>
 </ol>
 </br>
 </br>
@@ -3976,7 +4001,7 @@ STM32CubeIDEのインストーラを<a href="https://www.st.com/ja/development-t
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 3, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 5, 2023
 </div>
 </div>
 
