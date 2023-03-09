@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.71.0" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -25,8 +25,8 @@
 <meta property="og:description" content="STM32CubeIDEでマイコンにプログラムを書き込む
 " />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/docs/environment/stm32/stm32cube_ide/" />
-<meta property="og:site_name" content="Leafony" />
+<meta property="og:url" content="https://docs.leafony.com/docs/environment/stm32/stm32cube_ide/" /><meta property="og:site_name" content="Leafony" />
+
 <meta itemprop="name" content="STM32CubeIDEの設定">
 <meta itemprop="description" content="STM32CubeIDEでマイコンにプログラムを書き込む
 "><meta name="twitter:card" content="summary"/>
@@ -40,8 +40,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
-<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" as="style">
+<link href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -136,7 +136,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4fdf9d82942fab461c73b0fb0be2c37fb32d79fa07486647e6d9f8b7a619e99207d8b0ee41455f46fd3ea7f882edd0ce0d27dc22d1d7ccd3be4f498bf74bdaec.json"
+  data-offline-search-index-json-src="/offline-search-index.7927e402f272da43a5aca0aae363cbe0b284f98b95c9633168d5317fea043c0c619bc8c72f2ed1bcd5d6f9b9102f55d6d6fe67e80171a2db7d5d3fd8b8e8eb30.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +166,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4fdf9d82942fab461c73b0fb0be2c37fb32d79fa07486647e6d9f8b7a619e99207d8b0ee41455f46fd3ea7f882edd0ce0d27dc22d1d7ccd3be4f498bf74bdaec.json"
+  data-offline-search-index-json-src="/offline-search-index.7927e402f272da43a5aca0aae363cbe0b284f98b95c9633168d5317fea043c0c619bc8c72f2ed1bcd5d6f9b9102f55d6d6fe67e80171a2db7d5d3fd8b8e8eb30.json"
   data-offline-search-base-href="/"
 >
 
@@ -3787,12 +3787,16 @@
     <li><a href="#クイックスタート">クイックスタート</a>
       <ul>
         <li><a href="#プロジェクトの作成">プロジェクトの作成</a></li>
-        <li><a href="#デバイスの設定">デバイスの設定</a></li>
+        <li><a href="#デバイスの設定初期化コードの自動生成">デバイスの設定(初期化コードの自動生成)</a></li>
         <li><a href="#コードの記述">コードの記述</a></li>
         <li><a href="#プログラムの書込み">プログラムの書込み</a></li>
         <li><a href="#シリアルポートの出力">シリアルポートの出力</a></li>
       </ul>
     </li>
+  </ul>
+
+  <ul>
+    <li><a href="#プロジェクトのインポート">プロジェクトのインポート</a></li>
   </ul>
 </nav>
 
@@ -3853,7 +3857,7 @@
         <div class="lead">STM32CubeIDEでマイコンにプログラムを書き込む</div>
 	
 	<h2 id="はじめに">はじめに</h2>
-<p>STM32CubeIDEは、STマイクロエレクトロニクス社が提供しているSTM32マイコンの統合開発環境です。(追加の説明)</br></p>
+<p>STM32CubeIDEは、STマイクロエレクトロニクス社が提供しているSTM32マイコンの統合開発環境です。プロジェクト生成機能やSTM32マイコンの初期化コード自動生成ツールを統合したオール･イン･ワンの統合開発環境になっています。</br></p>
 <h2 id="用意するもの">用意するもの</h2>
 <p>Basic Kit 2
 パソコン (Windows、macOS、または Linux)</p>
@@ -3881,8 +3885,10 @@
 <p>STM32CubeIDを起動すると、<code>STM32CubeID Launcher</code>の画面が表示されます。</br></p>
 </li>
 <li>
-<p>ワークスペースは、以下のデフォルトのままを使用し、<code>Launch</code> をクリックします。</br>
-<code>C:\Users\ユーザ名\STM32CubeIDE\workspace_1.11.2</code></br></p>
+<p>ワークスペースは、以下のデフォルトのままを使用し、<code>Launch</code> をクリックします。</br></p>
+<ul>
+<li>Work Space :<code>C:\Users\ユーザ名\STM32CubeIDE\workspace_1.11.2</code></br></br></li>
+</ul>
 </li>
 <li>
 <p><code>File</code> → <code>NEW</code> →　<code>STM32 Project</code> を選択し、暫く経つと、<code>STM32 Project</code> の画面が表示されます。</br></p>
@@ -3906,7 +3912,7 @@
 </ul>
 </li>
 </ol>
-<h3 id="デバイスの設定">デバイスの設定</h3>
+<h3 id="デバイスの設定初期化コードの自動生成">デバイスの設定(初期化コードの自動生成)</h3>
 <ol start="8">
 <li>
 <p>Hello_World.iocで、UARTの設定をします。</br></p>
@@ -3941,25 +3947,25 @@
 <ul>
 <li>24行:stdio.hは、入力/出力のヘッダーファイルを読み込ませます。</br></li>
 </ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN Includes */</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN Includes */</span>
 <span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;stdio.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">/* USER CODE END Includes */</span>
 </code></pre></div><ul>
 <li>68行:printfを呼び出す前に、初期化します。</br></li>
 </ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN 1 */</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN 1 */</span>
         <span style="color:#000">setbuf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">stdout</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87">NULL</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#8f5902;font-style:italic">/* USER CODE END 1 */</span>
 </code></pre></div><ul>
 <li>101行:1秒毎に、「Hello World」を出力させます。</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN 3 */</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN 3 */</span>
     <span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Hello World</span><span style="color:#4e9a06">\r\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">);</span>
     <span style="color:#000">HAL_Delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
 </code></pre></div><ul>
 <li>200行:printfを実装して、UARTでテキストを送信します。</li>
 </ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN 4 */</span>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN 4 */</span>
 <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">_write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">file</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">ptr</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">len</span><span style="color:#000;font-weight:bold">)</span>
 <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#000">HAL_UART_Transmit</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">huart2</span><span style="color:#000;font-weight:bold">,(</span><span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">ptr</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">len</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">);</span>
@@ -3970,7 +3976,7 @@
 <li>main.cが書けたらビルドをします。<code>Project</code>→<code>Build All</code>をクリックして、ビルドして下さい。ログに<code>0 errors, 0 warnings</code>が表示されたらOKです。</br></li>
 </ol>
 <ul>
-<li>ソースコード：<a href="https://github.com/Leafony/STM32CubeIDE-Sample-Software/tree/main/Hello_World">Hello_World</a></li>
+<li>ソースコード：<a href="https://github.com/Leafony/STM32CubeIDE-Sample-Software/tree/main/Hello_World">Hello_World</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></br></li>
 </ul>
 <h3 id="プログラムの書込み">プログラムの書込み</h3>
 <ol>
@@ -3987,7 +3993,7 @@
 <p>画面左の<code>Erasing ＆ Programing</code>をクリックして、以下の設定をします。</p>
 <ul>
 <li>File path: <code>C:\Users\ユーザ名\STM32CubeIDE\workspace_1.11.2\HelloWorld\Debug\HelloWorld.elf</code>を選択</br></li>
-<li>Veryfy programing にチェツク</li>
+<li>Veryfy programing にチェツク</br><br></li>
 </ul>
 </li>
 <li>
@@ -4003,10 +4009,44 @@
 </br>
 </br>
 <h1 id="tips">Tips</h1>
-<p>(追加説明)</p>
+<h2 id="プロジェクトのインポート">プロジェクトのインポート</h2>
+<ol>
+<li>
+<p>STM32CubeIDを起動すると、<code>STM32CubeID Launcher</code>の画面が表示されます。</br></p>
+</li>
+<li>
+<p>ワークスペースは、以下のデフォルトのままを使用し、<code>Launch</code> をクリックします。</br></p>
+<ul>
+<li>Work Space :<code>C:\Users\ユーザ名\STM32CubeIDE\workspace_1.11.2</code></br></br></li>
+</ul>
+</li>
+<li>
+<p><code>File</code> → <code>Open Project From File System on Archieves</code> を選択すると、<code>Import Project From File System on Archieves</code> の画面が表示されます。</p>
+</li>
+<li>
+<p>ソースを選択し、<code>Finish</code>をクリックすると、<code>Project Explorer</code>が立ち上がります。</br></p>
+<ul>
+<li>Import Source         : <code>C:\Users\ユーザ名\STM32CubeIDE\workspace_1.11.2\プロジェクト名</code> を選択</br></br></li>
+</ul>
+</li>
+<li>
+<p>プロジェクトを終了する時は、<code>Project Explorer</code>からプロジェクトを右クリックし<code>Delete</code>します。</br></p>
+</li>
+<li>
+<p><code>Project Explorer</code>は、<code>Window</code>→ <code>Show View</code>→<code>Project Explorer</code>で立ち上がります。</br></p>
+</li>
+</ol>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
-</p>
+</p><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Githubには、プロジェクトのファイルを一度でアップロード出来ません。何回か分割してアップロードすれば出来ます。　</br>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
         <div class="section-index">
     
     
@@ -4017,7 +4057,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 6, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 8, 2023
 </div>
 </div>
 
@@ -4081,7 +4121,7 @@
 
 
 
-<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
+<script src="/js/main.min.f70926ca86f7153429e54b0705f11c420ceac8da5cb4027087319447696e4a5f.js" integrity="sha256-9wkmyob3FTQp5UsHBfEcQgzqyNpctAJwhzGUR2luSl8=" crossorigin="anonymous"></script>
 
 
 
