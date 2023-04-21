@@ -23,41 +23,23 @@
         
         
         &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
-&lt;p&gt;ESP32 MCUリーフと4-Sensorsリーフ（あるいはDHT-22センサ）だけで、IoT環境センサを作り、Google スプレッドシートを使って、センサデータを可視化します。&lt;/p&gt;
+&lt;p&gt;ESP32 Wi-Fi Kit2に市販の温湿度センサを取り付けるだけで、環境センサが出来上がります。この環境センサをインターネットに繋げば、Google スプレッドシートでセンサデータの可視化が簡単に出来ます。&lt;/br&gt;&lt;/p&gt;
 &lt;img src=&#34;ESP_googlesheet_c.jpg&#34; width=800&gt;
-&lt;h2 id=&#34;google-sheetsの準備&#34;&gt;Google Sheetsの準備&lt;/h2&gt;
-&lt;p&gt;ESP32 MCUリーフが送るセンサデータを&lt;code&gt;Google Sheets&lt;/code&gt;で表示する、IoTサービスを紹介します。
-ブラウザを閲覧できるPCやスマホがあれば、どこでもデータを確認できます。&lt;br&gt;
-まずは、&lt;code&gt;Google Sheets&lt;/code&gt;でデータを表示するための設定を以下の通り行いましょう。
-&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;googleスプレッドシートとgoogle-app-scriptの連携&#34;&gt;GoogleスプレッドシートとGoogle App Scriptの連携&lt;/h2&gt;
+&lt;p&gt;Google スプレッドシートにデータを表示するための設定を行います。&lt;br /&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Googleアカウントにログインし、新しいスプレッドシートを作成しましょう。アカウントがない場合は作成してください。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;img src=&#34;create_new_sheet_a.png&#34; width=1200&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Google Sheetsのタイトル（デフォルト：&lt;code&gt;無題のスプレッドシート&lt;/code&gt;）は自由に変更してください。&lt;br&gt;
-また、シート番号（デフォルト：&lt;code&gt;シート1&lt;/code&gt;）も自由に変更して大丈夫です。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;下のGoogle SheetsのURLの部分の赤枠で囲った記号列は、後でGoogle Sheetを指定するのに利用するので、適当な場所にコピーしておいてください。
-&lt;ul&gt;
-&lt;li&gt;ここでは、&lt;code&gt;1ilM_Qz0A82_PueJtT-2PAzlnJ5ZSRB5OC_JkV4WQQCs&lt;/code&gt; になります。&lt;/li&gt;
-&lt;/ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.google.com/spreadsheets/&#34;&gt;sheets.google.com&lt;/a&gt; でスプレッドシートのホーム画面を開き、新しいスプレッドシートを作成をします。&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;img src=&#34;1.esp32_googlesheets_1_scripteditor_a.jpg&#34; width=700&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;拡張機能から&lt;code&gt;Apps Script&lt;/code&gt;を開き、Githubのソースコードをコピー&amp;amp;ペーストしてください。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;スプレッドシートを開いたら&lt;code&gt;拡張機能&lt;/code&gt;→&lt;code&gt;Apps Script&lt;/code&gt;をクリックし、以下のソースコードを貼り付けます。&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#000&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;doGet&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
 
-    &lt;span style=&#34;color:#000&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;id&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;google_sheets_id&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; 
-    &lt;span style=&#34;color:#000&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;sheetName&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;sheet_name&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; 
-    &lt;span style=&#34;color:#000&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;result&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
+    &lt;span style=&#34;color:#000&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;id&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;spreadsheetId&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//Insert spreadsheetId
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;sheetId&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a40000&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;sheetId&lt;/span&gt;&lt;span style=&#34;color:#a40000&#34;&gt;&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;//Insert sheetId
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#000&#34;&gt;var&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;result&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
 
     &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// e.parameter has received GET parameters, i.e. temperature, humidity, illumination
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;if&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;e&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;parameter&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;==&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;undefined&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;)&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
@@ -85,23 +67,15 @@
     &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;ContentService&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;.&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;createTextOutput&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#000&#34;&gt;result&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;);&lt;/span&gt;
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
     
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;以下の変数に、先ほど作成した&lt;code&gt;Google Sheets&lt;/code&gt;の情報を入力してください。
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;google_sheets_id&lt;/code&gt;：先ほどコピーした&lt;code&gt;Google Sheets&lt;/code&gt;のURLの記号列&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;sheet_name&lt;/code&gt;：書き込み先のシート名（デフォルト：&lt;code&gt;シート1&lt;/code&gt;）&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;&lt;code&gt;spreadsheetId&lt;/code&gt;と&lt;code&gt;sheetId&lt;/code&gt;は、&lt;a href=&#34;https://developers.google.com/sheets/api/guides/concepts?hl=ja&#34;&gt;こちら&lt;/a&gt;を参照し入力します。&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;img src=&#34;2.esp32_googlesheets_1_scriptscode_a.jpg&#34; width=700&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;googleスプレッドシートの公開&#34;&gt;Googleスプレッドシートの公開&lt;/h2&gt;
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;&lt;code&gt;Google Sheets&lt;/code&gt;を公開する手順について、説明します。&lt;br&gt;
 右上の&lt;code&gt;デプロイ&lt;/code&gt;から&lt;code&gt;新しいデプロイ&lt;/code&gt;をクリックし、タイプ（ここでは &lt;code&gt;ウェブアプリ&lt;/code&gt; ）を選択します。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;img src=&#34;3.esp32_googlesheets_1_deploy_a.jpg&#34; width=500&gt;
+&lt;img src=&#34;3.esp32_googlesheets_1_deploy_a.jpg&#34; width=1000&gt;
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 &lt;ol start=&#34;7&#34;&gt;
 &lt;li&gt;今回は「アクセスできるユーザー」を&lt;code&gt;全員&lt;/code&gt;にし、誰でも閲覧できるようにしてから、&lt;code&gt;デプロイ&lt;/code&gt;をクリックします。&lt;/li&gt;

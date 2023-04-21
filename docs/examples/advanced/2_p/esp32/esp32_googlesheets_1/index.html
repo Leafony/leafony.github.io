@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.25af50b598227387580c3943e9293cd25de1850db9ebc966cc91aefb7f7da41ad302821f71ebb4a67eff9f07e62b033f8b52090cfa266aa6e92b6f9da25b98c4.json"
+  data-offline-search-index-json-src="/offline-search-index.9d3d004c969c908d280f4897aa9d7047b6d45c266afee3750deeb41aa63ca520233a5a3418effe3aa0eab7a62c88befc06ff8dff4bf8487e58b452bd29ab0a4a.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.25af50b598227387580c3943e9293cd25de1850db9ebc966cc91aefb7f7da41ad302821f71ebb4a67eff9f07e62b033f8b52090cfa266aa6e92b6f9da25b98c4.json"
+  data-offline-search-index-json-src="/offline-search-index.9d3d004c969c908d280f4897aa9d7047b6d45c266afee3750deeb41aa63ca520233a5a3418effe3aa0eab7a62c88befc06ff8dff4bf8487e58b452bd29ab0a4a.json"
   data-offline-search-base-href="/"
 >
 
@@ -3772,7 +3772,8 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#概要">概要</a></li>
-    <li><a href="#google-sheetsの準備">Google Sheetsの準備</a></li>
+    <li><a href="#googleスプレッドシートとgoogle-app-scriptの連携">GoogleスプレッドシートとGoogle App Scriptの連携</a></li>
+    <li><a href="#googleスプレッドシートの公開">Googleスプレッドシートの公開</a></li>
     <li><a href="#google-sheetsの動作確認">Google Sheetsの動作確認</a>
       <ul>
         <li><a href="#スクリプトのミスがあった場合">スクリプトのミスがあった場合</a></li>
@@ -3859,41 +3860,23 @@
         
 	
 	<h2 id="概要">概要</h2>
-<p>ESP32 MCUリーフと4-Sensorsリーフ（あるいはDHT-22センサ）だけで、IoT環境センサを作り、Google スプレッドシートを使って、センサデータを可視化します。</p>
+<p>ESP32 Wi-Fi Kit2に市販の温湿度センサを取り付けるだけで、環境センサが出来上がります。この環境センサをインターネットに繋げば、Google スプレッドシートでセンサデータの可視化が簡単に出来ます。</br></p>
 <img src="ESP_googlesheet_c.jpg" width=800>
-<h2 id="google-sheetsの準備">Google Sheetsの準備</h2>
-<p>ESP32 MCUリーフが送るセンサデータを<code>Google Sheets</code>で表示する、IoTサービスを紹介します。
-ブラウザを閲覧できるPCやスマホがあれば、どこでもデータを確認できます。<br>
-まずは、<code>Google Sheets</code>でデータを表示するための設定を以下の通り行いましょう。
-<br /></p>
+<h2 id="googleスプレッドシートとgoogle-app-scriptの連携">GoogleスプレッドシートとGoogle App Scriptの連携</h2>
+<p>Google スプレッドシートにデータを表示するための設定を行います。<br /></p>
 <ol>
-<li>Googleアカウントにログインし、新しいスプレッドシートを作成しましょう。アカウントがない場合は作成してください。</li>
-</ol>
-<img src="create_new_sheet_a.png" width=1200>
-<p><br /></p>
-<ol start="2">
-<li>Google Sheetsのタイトル（デフォルト：<code>無題のスプレッドシート</code>）は自由に変更してください。<br>
-また、シート番号（デフォルト：<code>シート1</code>）も自由に変更して大丈夫です。</li>
-</ol>
-<p><br /></p>
-<ol start="3">
-<li>下のGoogle SheetsのURLの部分の赤枠で囲った記号列は、後でGoogle Sheetを指定するのに利用するので、適当な場所にコピーしておいてください。
-<ul>
-<li>ここでは、<code>1ilM_Qz0A82_PueJtT-2PAzlnJ5ZSRB5OC_JkV4WQQCs</code> になります。</li>
-</ul>
+<li>
+<p><a href="https://docs.google.com/spreadsheets/">sheets.google.com</a> でスプレッドシートのホーム画面を開き、新しいスプレッドシートを作成をします。</br></p>
 </li>
-</ol>
-<p><br /></p>
-<img src="1.esp32_googlesheets_1_scripteditor_a.jpg" width=700>
-<p><br /></p>
-<ol start="4">
-<li>拡張機能から<code>Apps Script</code>を開き、Githubのソースコードをコピー&amp;ペーストしてください。</li>
+<li>
+<p>スプレッドシートを開いたら<code>拡張機能</code>→<code>Apps Script</code>をクリックし、以下のソースコードを貼り付けます。</br></p>
+</li>
 </ol>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">function</span> <span style="color:#000">doGet</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">e</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
 
-    <span style="color:#000">let</span> <span style="color:#000">id</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#a40000">&#39;</span><span style="color:#000">google_sheets_id</span><span style="color:#a40000">&#39;</span><span style="color:#000;font-weight:bold">;</span> 
-    <span style="color:#000">let</span> <span style="color:#000">sheetName</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#a40000">&#39;</span><span style="color:#000">sheet_name</span><span style="color:#a40000">&#39;</span><span style="color:#000;font-weight:bold">;</span> 
-    <span style="color:#000">var</span> <span style="color:#000">result</span><span style="color:#000;font-weight:bold">;</span>
+    <span style="color:#000">let</span> <span style="color:#000">id</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#a40000">&#39;</span><span style="color:#000">spreadsheetId</span><span style="color:#a40000">&#39;</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#8f5902;font-style:italic">//Insert spreadsheetId
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">let</span> <span style="color:#000">sheetId</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#a40000">&#39;</span><span style="color:#000">sheetId</span><span style="color:#a40000">&#39;</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#8f5902;font-style:italic">//Insert sheetId
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">var</span> <span style="color:#000">result</span><span style="color:#000;font-weight:bold">;</span>
 
     <span style="color:#8f5902;font-style:italic">// e.parameter has received GET parameters, i.e. temperature, humidity, illumination
 </span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#204a87;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(</span><span style="color:#000">e</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">parameter</span> <span style="color:#ce5c00;font-weight:bold">==</span> <span style="color:#000">undefined</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
@@ -3921,23 +3904,15 @@
     <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">ContentService</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">createTextOutput</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">result</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
     
-</code></pre></div><p><br /></p>
-<ol start="5">
-<li>以下の変数に、先ほど作成した<code>Google Sheets</code>の情報を入力してください。
-<ul>
-<li><code>google_sheets_id</code>：先ほどコピーした<code>Google Sheets</code>のURLの記号列</li>
-<li><code>sheet_name</code>：書き込み先のシート名（デフォルト：<code>シート1</code>）</li>
-</ul>
-</li>
+</code></pre></div><ol start="5">
+<li><code>spreadsheetId</code>と<code>sheetId</code>は、<a href="https://developers.google.com/sheets/api/guides/concepts?hl=ja">こちら</a>を参照し入力します。</br></li>
 </ol>
-<p><br /></p>
-<img src="2.esp32_googlesheets_1_scriptscode_a.jpg" width=700>
-<p><br /></p>
+<h2 id="googleスプレッドシートの公開">Googleスプレッドシートの公開</h2>
 <ol start="6">
 <li><code>Google Sheets</code>を公開する手順について、説明します。<br>
 右上の<code>デプロイ</code>から<code>新しいデプロイ</code>をクリックし、タイプ（ここでは <code>ウェブアプリ</code> ）を選択します。</li>
 </ol>
-<img src="3.esp32_googlesheets_1_deploy_a.jpg" width=500>
+<img src="3.esp32_googlesheets_1_deploy_a.jpg" width=1000>
 <p><br /></p>
 <ol start="7">
 <li>今回は「アクセスできるユーザー」を<code>全員</code>にし、誰でも閲覧できるようにしてから、<code>デプロイ</code>をクリックします。</li>
