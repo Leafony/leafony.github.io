@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.bf6fcea71a7551bc48f86308c9f5db92af538547b005edd200966a8fb52d1d37d5265bad65da8b3464ab36c13d1f2130b2f9c118b302eef59dd7c0bb99ee06b8.json"
+  data-offline-search-index-json-src="/offline-search-index.1e5c17ddb94aea67cab483c6ee6cc6373fa67ceacdd89b1f66347362dbc537175208edbb29d0ae15d1e9f203b64dde102d15c1295cddbdc579371a75139af022.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.bf6fcea71a7551bc48f86308c9f5db92af538547b005edd200966a8fb52d1d37d5265bad65da8b3464ab36c13d1f2130b2f9c118b302eef59dd7c0bb99ee06b8.json"
+  data-offline-search-index-json-src="/offline-search-index.1e5c17ddb94aea67cab483c6ee6cc6373fa67ceacdd89b1f66347362dbc537175208edbb29d0ae15d1e9f203b64dde102d15c1295cddbdc579371a75139af022.json"
   data-offline-search-base-href="/"
 >
 
@@ -3771,10 +3771,20 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#概要">概要</a></li>
-    <li><a href="#googleスプレッドシートとgoogle-apps-scriptの連携">GoogleスプレッドシートとGoogle Apps Scriptの連携</a></li>
+    <li><a href="#はじめに">はじめに</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#用意するもの">用意するもの</a></li>
+    <li><a href="#組み立て">組み立て</a></li>
+    <li><a href="#ソースコード">ソースコード</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#google-apps-scriptとgoogleスプレッドシートの連携">Google Apps ScriptとGoogleスプレッドシートの連携</a></li>
     <li><a href="#google-apps-scriptのデプロイ">Google Apps Scriptのデプロイ</a></li>
-    <li><a href="#google-apps-scriptの実行">Google Apps Scriptの実行</a>
+    <li><a href="#google-apps-scriptの実行">Google Apps Scriptの実行</a></li>
+    <li><a href="#実行結果">実行結果</a>
       <ul>
         <li><a href="#次へ進むesp32_googlesheets_2"><a href="esp32_googlesheets_2/"><strong>次へ進む</strong></a></a></li>
       </ul>
@@ -3858,10 +3868,65 @@
 	<h1>Google スプレッドシートでセンサデータの可視化</h1>
         
 	
-	<h2 id="概要">概要</h2>
+	<h2 id="はじめに">はじめに</h2>
 <p>ESP32 Wi-Fi Kit2に市販の温湿度センサを取り付けるだけで、環境センサが出来上がります。この環境センサをインターネットに繋げば、Google スプレッドシートでセンサデータの可視化が簡単に出来ます。</br></p>
-<img src="ESP_googlesheet_c.jpg" width=800>
-<h2 id="googleスプレッドシートとgoogle-apps-scriptの連携">GoogleスプレッドシートとGoogle Apps Scriptの連携</h2>
+<img src="ESP32-googlesheets_a.png" width=800>
+<h1 id="leafonyの設定">Leafonyの設定</h1>
+<h2 id="用意するもの">用意するもの</h2>
+<ul>
+<li>Esp32 Wi-Fi Kit2</li>
+<li>温湿度センサ</li>
+<li>PC</li>
+</ul>
+<h2 id="組み立て">組み立て</h2>
+<h2 id="ソースコード">ソースコード</h2>
+<ul>
+<li>DHT-22センサ用　<a href="https://github.com/Leafony/Sample-Sketches/blob/master/ESP32_GoogleSheets/ESP32_DHT-22.ino" target="_brank">ESP32_GoogleSheets_DHT-22.ino ※要変更</a></li>
+</ul>
+<p>Githubのソースコードの以下の箇条書きの内容に注意して修正し、<code>ESP32リーフ</code>に書き込んで下さい。</p>
+<ol>
+<li>アクセスする<code>WiFi</code>の情報を以下の定数に代入してください。</li>
+</ol>
+<pre><code>const char* SSID = &quot;wifi_ssid&quot;;    // WiFi SSID
+const char* PASSWORD = &quot;wifi_password&quot;;  // WiFi Password
+</code></pre><ol start="2">
+<li>先ほど作成したウェブアプリの情報を以下の定数に代入してください。
+<ul>
+<li>アプリ固有のURLより：const char* KEY = <code>AKfycbxbxoqWzuN8Eztplnhf3ywC-0QpWc8utkIY1QLngj4fHJFRvZKh</code></li>
+</ul>
+</li>
+</ol>
+<pre><code>const char* KEY = &quot;google_scripts_key&quot;;
+</code></pre><ol start="3">
+<li>センサデータの書き込みの時間間隔を調整したいときは以下の定数に代入してください。
+<ul>
+<li>単位は秒です</li>
+</ul>
+</li>
+</ol>
+<pre><code>uint64_t DEEP_SLEEP_TIME_SEC = 60;
+</code></pre><div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Arduino.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;Wire.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;HTTPClient.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;HTS221.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;ClosedCube_OPT3001.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">// Unique ID
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">String</span> <span style="color:#000">UniqueID</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Leafony_AP02&#34;</span><span style="color:#000;font-weight:bold">;</span>
+
+<span style="color:#8f5902;font-style:italic">// Connecting WiFi Settings
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">SSID</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;wifi_ssid&#34;</span><span style="color:#000;font-weight:bold">;</span>           <span style="color:#8f5902;font-style:italic">// WiFi SSID
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">PASSWORD</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;wifi_password&#34;</span><span style="color:#000;font-weight:bold">;</span>   <span style="color:#8f5902;font-style:italic">// WiFi Password
+</span><span style="color:#8f5902;font-style:italic">// Accessed Google Script Settings
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">APP_SERVER</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;script.google.com&#34;</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">KEY</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;google_scripts_key&#34;</span><span style="color:#000;font-weight:bold">;</span>
+
+<span style="color:#8f5902;font-style:italic">// Device sleep time (sec) to reduce Joule heat
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">uint64_t</span> <span style="color:#000">DEEP_SLEEP_TIME_SEC</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">60</span><span style="color:#000;font-weight:bold">;</span>
+
+<span style="color:#8f5902;font-style:italic">// 省略
+</span></code></pre></div><h1 id="google-apps-scriptの設定">Google Apps Scriptの設定</h1>
+<h2 id="google-apps-scriptとgoogleスプレッドシートの連携">Google Apps ScriptとGoogleスプレッドシートの連携</h2>
 <p>Google Apps Scriptを使って、Google スプレッドシートにデータを表示するWebアプリの設定を行います。<br /></p>
 <ol>
 <li>
@@ -3960,6 +4025,9 @@
 <img src="11.esp32_googlesheets_1_spreadsheets_a.jpg" width=600></p>
 </li>
 </ol>
+<h2 id="実行結果">実行結果</h2>
+<p><code>Arduino</code>を実行して、逐次センサデータが<code>Google Sheets</code>に書き込まれます。</p>
+<img src="results_1.png">
 <h3 id="次へ進むesp32_googlesheets_2"><a href="esp32_googlesheets_2/"><strong>次へ進む</strong></a></h3>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
