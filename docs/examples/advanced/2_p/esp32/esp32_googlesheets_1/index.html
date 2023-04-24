@@ -21,14 +21,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Google Apps Scriptを使ったIoTサービス | Leafony</title><meta property="og:title" content="Google Apps Scriptを使ったIoTサービス" />
+<title>Google スプレッドシートでセンサデータの可視化 | Leafony</title><meta property="og:title" content="Google スプレッドシートでセンサデータの可視化" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="Google Apps Scriptを使ったIoTサービス">
+<meta itemprop="name" content="Google スプレッドシートでセンサデータの可視化">
 <meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Google Apps Scriptを使ったIoTサービス"/>
+<meta name="twitter:title" content="Google スプレッドシートでセンサデータの可視化"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9d3d004c969c908d280f4897aa9d7047b6d45c266afee3750deeb41aa63ca520233a5a3418effe3aa0eab7a62c88befc06ff8dff4bf8487e58b452bd29ab0a4a.json"
+  data-offline-search-index-json-src="/offline-search-index.9bdf17ca2f757e9ce63f024800d85e0a6e5c47a78528445da948818f9867f9cb1cfed1d4fd6475eba92731e2f4916507b8baa4390b3b883b0991998f18228a15.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9d3d004c969c908d280f4897aa9d7047b6d45c266afee3750deeb41aa63ca520233a5a3418effe3aa0eab7a62c88befc06ff8dff4bf8487e58b452bd29ab0a4a.json"
+  data-offline-search-index-json-src="/offline-search-index.9bdf17ca2f757e9ce63f024800d85e0a6e5c47a78528445da948818f9867f9cb1cfed1d4fd6475eba92731e2f4916507b8baa4390b3b883b0991998f18228a15.json"
   data-offline-search-base-href="/"
 >
 
@@ -3772,11 +3772,10 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#概要">概要</a></li>
-    <li><a href="#googleスプレッドシートとgoogle-app-scriptの連携">GoogleスプレッドシートとGoogle App Scriptの連携</a></li>
-    <li><a href="#googleスプレッドシートの公開">Googleスプレッドシートの公開</a></li>
-    <li><a href="#google-sheetsの動作確認">Google Sheetsの動作確認</a>
+    <li><a href="#googleスプレッドシートとgoogle-apps-scriptの連携">GoogleスプレッドシートとGoogle Apps Scriptの連携</a></li>
+    <li><a href="#google-apps-scriptのデプロイ">Google Apps Scriptのデプロイ</a></li>
+    <li><a href="#google-apps-scriptの実行">Google Apps Scriptの実行</a>
       <ul>
-        <li><a href="#スクリプトのミスがあった場合">スクリプトのミスがあった場合</a></li>
         <li><a href="#次へ進むesp32_googlesheets_2"><a href="esp32_googlesheets_2/"><strong>次へ進む</strong></a></a></li>
       </ul>
     </li>
@@ -3856,26 +3855,31 @@
 
             
 <div class="td-content">
-	<h1>Google Apps Scriptを使ったIoTサービス</h1>
+	<h1>Google スプレッドシートでセンサデータの可視化</h1>
         
 	
 	<h2 id="概要">概要</h2>
 <p>ESP32 Wi-Fi Kit2に市販の温湿度センサを取り付けるだけで、環境センサが出来上がります。この環境センサをインターネットに繋げば、Google スプレッドシートでセンサデータの可視化が簡単に出来ます。</br></p>
 <img src="ESP_googlesheet_c.jpg" width=800>
-<h2 id="googleスプレッドシートとgoogle-app-scriptの連携">GoogleスプレッドシートとGoogle App Scriptの連携</h2>
-<p>Google スプレッドシートにデータを表示するための設定を行います。<br /></p>
+<h2 id="googleスプレッドシートとgoogle-apps-scriptの連携">GoogleスプレッドシートとGoogle Apps Scriptの連携</h2>
+<p>Google Apps Scriptを使って、Google スプレッドシートにデータを表示するWebアプリの設定を行います。<br /></p>
 <ol>
 <li>
 <p><a href="https://docs.google.com/spreadsheets/">sheets.google.com</a> でスプレッドシートのホーム画面を開き、新しいスプレッドシートを作成をします。</br></p>
 </li>
 <li>
-<p>スプレッドシートを開いたら<code>拡張機能</code>→<code>Apps Script</code>をクリックし、以下のソースコードを貼り付けます。</br></p>
+<p>スプレッドシートを開き<code>拡張機能</code>→<code>Apps Script</code>をクリックし、以下のソースコードを貼り付けます。</br>
+<code>spreadsheetId</code>と<code>sheetName</code>は、以下を参照し入力します。</br></p>
+<ul>
+<li><code>spreadsheetId</code>: <a href="https://developers.google.com/sheets/api/guides/concepts?hl=ja">こちら</a>を参照し入力します。</br></li>
+<li><code>sheetName</code> :スプレッドシートのシート名を入力します。デフォルトは、<code>シート1</code>になっています。</br></li>
+</ul>
 </li>
 </ol>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">function</span> <span style="color:#000">doGet</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">e</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
 
     <span style="color:#000">let</span> <span style="color:#000">id</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#a40000">&#39;</span><span style="color:#000">spreadsheetId</span><span style="color:#a40000">&#39;</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#8f5902;font-style:italic">//Insert spreadsheetId
-</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">let</span> <span style="color:#000">sheetId</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#a40000">&#39;</span><span style="color:#000">sheetId</span><span style="color:#a40000">&#39;</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#8f5902;font-style:italic">//Insert sheetId
+</span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">let</span> <span style="color:#000">sheetName</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#a40000">&#39;</span><span style="color:#000">sheetName</span><span style="color:#a40000">&#39;</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#8f5902;font-style:italic">//Insert sheetName
 </span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">var</span> <span style="color:#000">result</span><span style="color:#000;font-weight:bold">;</span>
 
     <span style="color:#8f5902;font-style:italic">// e.parameter has received GET parameters, i.e. temperature, humidity, illumination
@@ -3904,85 +3908,70 @@
     <span style="color:#204a87;font-weight:bold">return</span> <span style="color:#000">ContentService</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">createTextOutput</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">result</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#000;font-weight:bold">}</span>
     
-</code></pre></div><ol start="5">
-<li><code>spreadsheetId</code>と<code>sheetId</code>は、<a href="https://developers.google.com/sheets/api/guides/concepts?hl=ja">こちら</a>を参照し入力します。</br></li>
-</ol>
-<h2 id="googleスプレッドシートの公開">Googleスプレッドシートの公開</h2>
-<ol start="6">
-<li><code>Google Sheets</code>を公開する手順について、説明します。<br>
-右上の<code>デプロイ</code>から<code>新しいデプロイ</code>をクリックし、タイプ（ここでは <code>ウェブアプリ</code> ）を選択します。</li>
-</ol>
-<img src="3.esp32_googlesheets_1_deploy_a.jpg" width=1000>
-<p><br /></p>
-<ol start="7">
-<li>今回は「アクセスできるユーザー」を<code>全員</code>にし、誰でも閲覧できるようにしてから、<code>デプロイ</code>をクリックします。</li>
-</ol>
-<img src="4.esp32_googlesheets_1_deploy2_a.jpg" width=500>
-<p><br /></p>
-<ol start="8">
-<li>データへのアクセスを許可するために、<code>アクセスを承認</code>をクリックしてください。</li>
-</ol>
-<img src="5.esp32_googlesheets_1_scripts_access.jpg" width=500>
-<p><br /></p>
-<ol start="9">
-<li>アカウントの選択で、該当する「アカウント」を選びます。</li>
-</ol>
-<img src="6.esp32_googlesheets_1_scripts_account.jpg" width=500>
-<p><br /></p>
-<ol start="10">
-<li>左下の<code>詳細</code>をクリックしてください。</li>
-</ol>
-<img src="7.esp32_googlesheets_1_scripts_confirm_a.jpg" width=500>
-<p><br /></p>
-<ol start="11">
-<li>次に警告が出るので、<code>無題のプロジェクト（安全ではないページ）に移動</code> をクリックしてください。</li>
-</ol>
-<img src="8.esp32_googlesheets_1_scripts_security_a.jpg" width=500>
-<p><br /></p>
-<ol start="12">
-<li>スクリプトからスプレッドシートへのアクセスリクエストを<code>許可</code>してください。</li>
-</ol>
-<img src="9.esp32_googlesheets_1_approval_a.jpg" width=500>
-<p><br /></p>
-<ol start="13">
-<li>以下のポップアップ画面が表示され、今回作成した「ウェブアプリ固有のURL」が発行されるので、URLを<code>コピー</code>して<code>完了</code>をクリックしてください。</li>
-</ol>
-<img src="10.esp32_googlesheets_1_deployurl_a.jpg" width=600>  
-<p><br />
-（アプリ固有のURL）</p>
-<pre><code>https://script.google.com/macros/s/AKfycbzaAHAO8oBBJ1alqfQAv4h76Q-7ugOLm47jATWiqDczu6vahAl3ZncxSh3tQVRuSVRk/exec
-</code></pre><h2 id="google-sheetsの動作確認">Google Sheetsの動作確認</h2>
+</code></pre></div><h2 id="google-apps-scriptのデプロイ">Google Apps Scriptのデプロイ</h2>
+<p>Google Apps Scriptのデプロイ<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>の手順を説明します。</br></p>
 <ol>
 <li>
-<p>今回は試しに、Datetime、UniqueID=Leafony_AP02-1、Temperature=100、Humidity=100、Illumination=100  を、<code>Google Sheets</code>に書き込んでみます。<br>
-<br /></p>
+<p>スプレッドシートを開き<code>拡張機能</code>→<code>Apps Script</code>をクリックします。</br></p>
 </li>
 <li>
-<p>アプリ固有のURLの末尾に、?UniqueID=Leafony_AP02-1&amp;temperature=100&amp;humidity=100&amp;illumination=100を追加すると、以下の通りになります。</p>
+<p>右上の<code>デプロイ</code>→<code>新しいデプロイ</code>をクリックします。</br></p>
+</li>
+<li>
+<p><code>新しいデプロイ</code>の画面が表示されたら、<code>設定</code>→ <code>ウェブアプリ</code> をクリックします。</br></p>
+</li>
+<li>
+<p><code>新しいデプロイ</code>の詳細設定画面が表示されたら、以下の設定をし、最後に右下の<code>デプロイ</code>をクリックします。</br></p>
+<ul>
+<li>説明：特に何も入力せず空欄でOK</br></li>
+<li>次のユーザーとして実行：自分</br></li>
+<li>アクセスできるユーザー：全員</br></br></li>
+</ul>
+</li>
+<li>
+<p>データへのアクセスを許可するために、<code>アクセスを承認</code>をクリックして下さい。</p>
+</li>
+<li>
+<p>デプロイが完了できたら、ウェブアプリのURLが表示されます。URLをコピーして<code>完了</code>をクリックします。</p>
+</li>
+<li>
+<p>スクリプトを編集したい場合は、対象のスプレッドシートを開き、<code>拡張機能</code>→<code>Apps Script</code>をクリックします。</br></p>
+</li>
+<li>
+<p>右上の<code>デプロイ</code>→<code>デプロイを管理</code>をクリックします。</br></p>
+</li>
+<li>
+<p><code>デプロイを管理</code>の画面が表示されたら、 <code>編集</code>のアイコンをクリックして、<code>新バージョン</code>を選択し、右下の<code>デプロイ</code>をクリックします。</br></p>
+</li>
+<li>
+<p>デプロイが完了できたら、ウェブアプリのURLが表示されます。URLをコピーして<code>完了</code>をクリックします。</p>
 </li>
 </ol>
-<pre><code>https://script.google.com/macros/s/AKfycbzaAHAO8oBBJ1alqfQAv4h76Q-7ugOLm47jATWiqDczu6vahAl3ZncxSh3tQVRuSVRk/exec?UniqueID=Leafony_AP02-1&amp;temperature=100&amp;humidity=100&amp;illumination=100
-</code></pre><p><br /></p>
-<ol start="3">
-<li>上記のURLをブラウザに貼り付けてアクセスすると(Enter)、設定した<code>Google Sheets</code>にデータが書き込まれます。</li>
-</ol>
-<p><code>Google Sheets</code>の1行目に記載されているカラム名は自動表示されないため、予めご記載ください。</p>
-<p><br /></p>
-<img src="11.esp32_googlesheets_1_spreadsheets_a.jpg" width=600>  
-<p><br /></p>
-<h3 id="スクリプトのミスがあった場合">スクリプトのミスがあった場合</h3>
+<h2 id="google-apps-scriptの実行">Google Apps Scriptの実行</h2>
 <ol>
-<li>スクリプトを修正します。</li>
-<li><code>デプロイを管理</code>をクリックします。</li>
-<li>最初と全く同じ設定でデプロイすると修正したコードがうまく反映されないことがあるので、再デプロイのときは<code>デプロイを管理</code>の設定から<code>編集</code>のアイコンをクリックして<code>新バージョン</code>で入力します。</li>
-<li>またその時動作しているウェブアプリのURLは以下で確認出来ます。</li>
+<li>
+<p>試しに、Datetime、UniqueID=Leafony_A、Temperature=100、Humidity=100、Illumination=100  を、Googleスプレッドシートに書き込んでみます。</br>  　</p>
+</li>
+<li>
+<p>データを表示させるGoogleスプレッドシートの1行目のカラム名は、予め記入します。 <br /></p>
+</li>
+<li>
+<p>ウェブアプリのURLの末尾に、?UniqueID=Leafony_A&amp;temperature=100&amp;humidity=100&amp;illumination=100を加え、 ブラウザに貼り付けてアクセスすると、設定したGoogle スプレッドシートにデータが書き込まれます。<br />
+<img src="11.esp32_googlesheets_1_spreadsheets_a.jpg" width=600></p>
+</li>
 </ol>
-<img src="12.esp32_googlesheets_1_retry_a.jpg" width=600>  
-<p><br /></p>
 <h3 id="次へ進むesp32_googlesheets_2"><a href="esp32_googlesheets_2/"><strong>次へ進む</strong></a></h3>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
-</p>
+</p><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>一般的にデプロイとは、ソフトウェアを利用可能にする活動全般を指す用語で、Google Apps Scriptの場合は、ソフトウェアなどを実行できる状態にして、URLを生成することを意味しています。</br> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
         <div class="section-index">
     
     
@@ -4314,7 +4303,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 11, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 24, 2023
 </div>
 </div>
 
