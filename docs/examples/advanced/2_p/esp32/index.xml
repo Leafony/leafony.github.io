@@ -182,7 +182,7 @@
 &lt;p&gt;デプロイID:  Arduinoの&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/#%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89&#34;&gt;ソースコード&lt;/a&gt; にIDを入力します。&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;ウェブアプリURL: &lt;a href=&#34;&#34;&gt;Google Apps Scriptのテスト&lt;/a&gt;にURLを使用します。&lt;/p&gt;
+&lt;p&gt;ウェブアプリURL: &lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/#google-apps-script%E3%81%AE%E3%83%86%E3%82%B9%E3%83%88&#34;&gt;Google Apps Scriptのテスト&lt;/a&gt;にURLを使用します。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -192,23 +192,23 @@
 &lt;/ol&gt;
 &lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;スプレッドシートを開き、1行目にDatetime、UniqueID、Temperature、Humidity、Illuminationのカラム名を書き込んでおきます。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02/&#34;&gt;ESP32 MCU&lt;/a&gt;のリセットボタンを押して、プログラムを実行させると、センサの値が、スプレッドシートに書き込まれるのが確認出来ます。
+&lt;li&gt;スプレッドシートを開き、1行目にDatetime、UniqueID、Temperature、Humidity、Illuminationのカラム名を記入します。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02/&#34;&gt;ESP32 MCU&lt;/a&gt;のリセットボタンを押してプログラムを実行させると、センサの値がスプレッドシートに書き込まれます。&lt;/br&gt;&lt;/br&gt;
 &lt;img src=&#34;results_1.png&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/br&gt;
 &lt;h1 id=&#34;tips&#34;&gt;Tips&lt;/h1&gt;
 &lt;h2 id=&#34;google-apps-scriptのテスト&#34;&gt;Google Apps Scriptのテスト&lt;/h2&gt;
-&lt;p&gt;Datetime、UniqueIDがLeafony_A、Temperatureが10、Humidityが20、Illuminationが30の値をスプレッドシートに書き込むテストをします。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;Google Apps Scripが正しく実行出来るかテストをします。&lt;/br&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;ウェブアプリURLの末尾に、&lt;code&gt;?UniqueID=Leafony_A&amp;amp;temperature=10&amp;amp;humidity=20&amp;amp;illumination=30&lt;/code&gt;を加えてWebにアクセスすると、スプレッドシートにデータが書き込まれているのが確認出来ます。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;ウェブアプリURLの末尾に、&lt;code&gt;?UniqueID=Leafony_A&amp;amp;temperature=10&amp;amp;humidity=20&amp;amp;illumination=30&lt;/code&gt;を加えてWebにアクセスします。&lt;/li&gt;
+&lt;li&gt;スプレッドシートに、Datetime、Leafony_A、10、20、30の値が書き込まれていれば、正しく実行しています。&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;google-apps-scriptを編集する場合&#34;&gt;Google Apps Scriptを編集する場合&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;対象のスプレッドシートを開き、&lt;code&gt;拡張機能&lt;/code&gt;→&lt;code&gt;Apps Script&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;スプレッドシートを開き、&lt;code&gt;拡張機能&lt;/code&gt;→&lt;code&gt;Apps Script&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;右上の&lt;code&gt;デプロイ&lt;/code&gt;→&lt;code&gt;デプロイを管理&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;デプロイを管理&lt;/code&gt;が表示されたら、 &lt;code&gt;編集&lt;/code&gt;のアイコンをクリックして&lt;code&gt;新バージョン&lt;/code&gt;を選択し、&lt;code&gt;デプロイ&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;デプロイが完了できたら、ウェブアプリのURLが表示されます。URLをコピーして&lt;code&gt;完了&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
