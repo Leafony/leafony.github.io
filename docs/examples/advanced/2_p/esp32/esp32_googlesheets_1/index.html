@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8b6aa4eb5ef09be2fe2f282b74ccf9b97a62da6115fd6db62a49d4f8f9650c318799c7a4577b53603bfaac03810e73fde459b7644519c9a96dd639f52caea44a.json"
+  data-offline-search-index-json-src="/offline-search-index.91ab8bd4cf5a67879fbd7f30021c0158ccbd8719ef46d65c2125d46dc8c1c0f5a13ee09ad2d767ad79ef773cbf0727db17f1c7c509a52e90969b044033b63504.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8b6aa4eb5ef09be2fe2f282b74ccf9b97a62da6115fd6db62a49d4f8f9650c318799c7a4577b53603bfaac03810e73fde459b7644519c9a96dd639f52caea44a.json"
+  data-offline-search-index-json-src="/offline-search-index.91ab8bd4cf5a67879fbd7f30021c0158ccbd8719ef46d65c2125d46dc8c1c0f5a13ee09ad2d767ad79ef773cbf0727db17f1c7c509a52e90969b044033b63504.json"
   data-offline-search-base-href="/"
 >
 
@@ -3789,11 +3789,11 @@
   <ul>
     <li><a href="#google-apps-scriptとgoogleスプレッドシートの連携">Google Apps ScriptとGoogleスプレッドシートの連携</a></li>
     <li><a href="#google-apps-scriptのデプロイ">Google Apps Scriptのデプロイ</a></li>
-    <li><a href="#google-apps-scriptの実行">Google Apps Scriptの実行</a></li>
     <li><a href="#実行結果">実行結果</a></li>
   </ul>
 
   <ul>
+    <li><a href="#google-apps-scriptのテスト">Google Apps Scriptのテスト</a></li>
     <li><a href="#google-apps-scriptを編集する場合">Google Apps Scriptを編集する場合</a></li>
   </ul>
 </nav>
@@ -3897,14 +3897,14 @@
 <p>DHT22 温湿度センサと4-Sensorsの場合で、スケッチは異なります。</br></p>
 <ul>
 <li><a href="">Arduinoのスケッチ(DH22)</a></br></li>
-<li><a href="">Arduinoのスケッチ(4-Sendors)</a></br></li>
+<li><a href="">Arduinoのスケッチ(4-Sensors)</a></br></li>
 </ul>
 </li>
 <li>
 <p>Arduino IDEを立ち上げて、使用するセンサのコードを貼付けます。</br></p>
 <ul>
 <li><code>wifi_ssid</code>と<code>wifi_password</code>は、使用するWi-FiルータのSSIDとパスワードを入力します。</br></li>
-<li><code>google_scripts_key</code>は、<a href="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/#google-apps-script%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">Google Apps Scriptのデプロイ</a>で生成されたURLを入力します。</br></li>
+<li><code>google_scripts_key</code>は、<a href="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/#google-apps-script%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">Google Apps Scriptのデプロイ</a>で生成されたデプロイIDを入力します。</br></li>
 </ul>
 </li>
 </ol>
@@ -3916,11 +3916,41 @@
 <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">KEY</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;google_scripts_key&#34;</span><span style="color:#000;font-weight:bold">;</span>
 </code></pre></div><h2 id="組み立て">組み立て</h2>
 <h3 id="dht22-温湿度センサの場合">DHT22 温湿度センサの場合</h3>
+<p>1.ESP32 Wi-Fi Kit2を分解せずに箱から取出し、DHT22 温湿度センサと<a href="https://docs.leafony.com/docs/leaf/extension/ax08/">29pin header</a>を以下の通りに結線します。</br></p>
+<table>
+<thead>
+<tr>
+<th align="left">DHT22</th>
+<th align="center"><a href="https://docs.leafony.com/docs/leaf/extension/ax08/">29pin header</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">VCC-power supply</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left">DAT-signal</td>
+<td align="center">15</td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="center">27</td>
+</tr>
+</tbody>
+</table>
 <h3 id="4-sensorsの場合">4-Sensorsの場合</h3>
+<p>1.ESP32 Wi-Fi Kit2の<a href="https://docs.leafony.com/docs/leaf/others/az02/">RTC &amp; microSD</a>を外して、<a href="https://docs.leafony.com/docs/leaf/io/ai01/">4-Sensors</a>を取付けます。</br></p>
 <h2 id="スケッチの書き込み">スケッチの書き込み</h2>
 <ol>
 <li>
 <p><a href="https://docs.leafony.com/docs/environment/esp32/arduino/">ESP32 MCUのArduino IDE設定</a>が、まだ済んでない方は、インストールして下さい。</br></p>
+</li>
+<li>
+<p>DHT22 温湿度センサのライブラリのインストール</br></p>
+<ul>
+<li><a href="https://github.com/adafruit/DHT-sensor-library">DHT-sensor-library</a></li>
+</ul>
 </li>
 <li>
 <p>Arduinoのスケッチを書き込んで下さい。</br></br></p>
@@ -3995,30 +4025,36 @@
 </ul>
 </li>
 <li>
-<p>データへのアクセスを許可するために、<code>アクセスを承認</code>をクリックして下さい。</p>
+<p>データへのアクセスを許可するために、<code>アクセスを承認</code>をクリックして下さい。</br></p>
 </li>
 <li>
-<p>デプロイが完了できたら、ウェブアプリのURLが表示されます。URLをコピーして<code>完了</code>をクリックします。</p>
-</li>
-</ol>
-<h2 id="google-apps-scriptの実行">Google Apps Scriptの実行</h2>
-<ol>
+<p>デプロイが完了できたら、デプロイIDとウェブアプリURLが表示されます。</br></p>
+<ul>
 <li>
-<p>試しに、Datetime、UniqueID=Leafony_A、Temperature=100、Humidity=100、Illumination=100  を、Googleスプレッドシートに書き込んでみます。</br>  　</p>
+<p>デプロイID:  Arduinoの<a href="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/#%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">ソースコード</a> にIDを入力します。</br></p>
 </li>
 <li>
-<p>データを表示させるGoogleスプレッドシートの1行目のカラム名は、予め記入します。 <br /></p>
+<p>ウェブアプリURL: <a href="">Google Apps Scriptのテスト</a>にURLを使用します。</p>
+</li>
+</ul>
 </li>
 <li>
-<p>ウェブアプリのURLの末尾に、?UniqueID=Leafony_A&amp;temperature=100&amp;humidity=100&amp;illumination=100を加え、 ブラウザに貼り付けてアクセスすると、設定したGoogle スプレッドシートにデータが書き込まれます。<br />
-<img src="11.esp32_googlesheets_1_spreadsheets_a.jpg" width=600></p>
+<p>デプロイIDとウェブアプリURLをコピーして、<code>完了</code>をクリックします。</p>
 </li>
 </ol>
 <h2 id="実行結果">実行結果</h2>
-<p><code>Arduino</code>を実行して、逐次センサデータが<code>Google Sheets</code>に書き込まれます。</p>
-<img src="results_1.png">
+<ol>
+<li>スプレッドシートを開き、1行目にDatetime、UniqueID、Temperature、Humidity、Illuminationのカラム名を書き込んでおきます。</br></li>
+<li><a href="https://docs.leafony.com/docs/leaf/processor/ap02/">ESP32 MCU</a>のリセットボタンを押して、プログラムを実行させると、センサの値が、スプレッドシートに書き込まれるのが確認出来ます。
+<img src="results_1.png"></li>
+</ol>
 </br>
 <h1 id="tips">Tips</h1>
+<h2 id="google-apps-scriptのテスト">Google Apps Scriptのテスト</h2>
+<p>Datetime、UniqueIDがLeafony_A、Temperatureが10、Humidityが20、Illuminationが30の値をスプレッドシートに書き込むテストをします。</br></p>
+<ol>
+<li>ウェブアプリURLの末尾に、<code>?UniqueID=Leafony_A&amp;temperature=10&amp;humidity=20&amp;illumination=30</code>を加えてWebにアクセスすると、スプレッドシートにデータが書き込まれているのが確認出来ます。</br></li>
+</ol>
 <h2 id="google-apps-scriptを編集する場合">Google Apps Scriptを編集する場合</h2>
 <ol>
 <li>対象のスプレッドシートを開き、<code>拡張機能</code>→<code>Apps Script</code>をクリックします。</br></li>
@@ -4371,7 +4407,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 25, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 26, 2023
 </div>
 </div>
 
