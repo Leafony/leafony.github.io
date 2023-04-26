@@ -23,38 +23,57 @@
         
         
         &lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;ESP32 Wi-Fi Kit2に市販の温湿度センサを取り付けるだけで、環境センサが出来上がります。この環境センサをインターネットに繋げば、Google スプレッドシートでセンサデータの可視化が簡単に出来ます。&lt;/br&gt;&lt;/p&gt;
-&lt;img src=&#34;ESP32-googlesheets_b.png&#34; width=800&gt;
-&lt;/br&gt;
+&lt;p&gt;ESP32 Wi-Fi Kit2に温湿度センサを取り付けるだけで、環境センサが出来上がります。この環境センサをインターネットに繋げば、Google スプレッドシートでセンサデータの可視化が簡単に出来ます。&lt;/br&gt; 
+&lt;img src=&#34;ESP32-googlesheets_c.png&#34; alt=&#34;ESP32-googlesheets_c.png&#34;&gt;
+&lt;/br&gt;&lt;/p&gt;
 &lt;h1 id=&#34;leafonyの設定&#34;&gt;Leafonyの設定&lt;/h1&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/products/esp32_2/&#34;&gt;ESP32 Wi-Fi Kit2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/OSOYOO-DHT22-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E6%B8%A9%E6%B9%BF%E5%BA%A6%E6%B8%AC%E5%AE%9A-Arduino%E3%82%84Raspberry-3%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C%E7%94%A8/dp/B07CSNMYN7/ref=pd_lpo_1?pd_rd_w=7A60s&amp;amp;content-id=amzn1.sym.d769922e-188a-40cc-a180-3315f856e8d6&amp;amp;pf_rd_p=d769922e-188a-40cc-a180-3315f856e8d6&amp;amp;pf_rd_r=1C4TKMN2MZG0YNH2W45M&amp;amp;pd_rd_wg=j7x1B&amp;amp;pd_rd_r=aa845e19-073b-4a26-b5c4-1e8f60f61b80&amp;amp;pd_rd_i=B07CSNMYN7&amp;amp;psc=1&#34;&gt;OSOYOO社 DHT22 温湿度センサ&lt;/a&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;li&gt;単3ニッケル⽔素電池x3本&lt;/li&gt;
+&lt;li&gt;以下のいずれかの温湿度センサを使用
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/OSOYOO-DHT22-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E6%B8%A9%E6%B9%BF%E5%BA%A6%E6%B8%AC%E5%AE%9A-Arduino%E3%82%84Raspberry-3%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C%E7%94%A8/dp/B07CSNMYN7/ref=pd_lpo_1?pd_rd_w=7A60s&amp;amp;content-id=amzn1.sym.d769922e-188a-40cc-a180-3315f856e8d6&amp;amp;pf_rd_p=d769922e-188a-40cc-a180-3315f856e8d6&amp;amp;pf_rd_r=1C4TKMN2MZG0YNH2W45M&amp;amp;pd_rd_wg=j7x1B&amp;amp;pd_rd_r=aa845e19-073b-4a26-b5c4-1e8f60f61b80&amp;amp;pd_rd_i=B07CSNMYN7&amp;amp;psc=1&#34;&gt;DHT22 温湿度センサ&lt;/a&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01/&#34;&gt;4-Sensors&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;単4ニッケル⽔素電池x3本&lt;/li&gt;
 &lt;li&gt;開発用パソコン&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;Wi-FiルータのSSIとパスワードを入力します。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;DHT22 温湿度センサと4-Sensorsの場合で、スケッチは異なります。&lt;/br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;&#34;&gt;Arduinoのスケッチ(DH22)&lt;/a&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;&#34;&gt;Arduinoのスケッチ(4-Sendors)&lt;/a&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Arduino IDEを立ち上げて、使用するセンサのコードを貼付けます。&lt;/br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;wifi_ssid&lt;/code&gt;と&lt;code&gt;wifi_password&lt;/code&gt;は、使用するWi-FiルータのSSIDとパスワードを入力します。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;google_scripts_key&lt;/code&gt;は、&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/#google-apps-script%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4&#34;&gt;Google Apps Scriptのデプロイ&lt;/a&gt;で生成されたURLを入力します。&lt;/br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Connecting WiFi Settings
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;SSID&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;wifi_ssid&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;           &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// WiFi SSID
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;PASSWORD&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;wifi_password&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;   &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// WiFi Password
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Accessed Google Script Settings
+&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Accessed Google Script Settings
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;APP_SERVER&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;script.google.com&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;KEY&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;google_scripts_key&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-c++&#34; data-lang=&#34;c++&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// Device sleep time (sec) to reduce Joule heat
-&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;uint64_t&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;DEEP_SLEEP_TIME_SEC&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#0000cf;font-weight:bold&#34;&gt;60&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;組み立て&#34;&gt;組み立て&lt;/h2&gt;
-&lt;p&gt;XXXを繋ぎます。
-写真&lt;/p&gt;
+&lt;h3 id=&#34;dht22-温湿度センサの場合&#34;&gt;DHT22 温湿度センサの場合&lt;/h3&gt;
+&lt;h3 id=&#34;4-sensorsの場合&#34;&gt;4-Sensorsの場合&lt;/h3&gt;
+&lt;h2 id=&#34;スケッチの書き込み&#34;&gt;スケッチの書き込み&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/environment/esp32/arduino/&#34;&gt;ESP32 MCUのArduino IDE設定&lt;/a&gt;が、まだ済んでない方は、インストールして下さい。&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Arduinoのスケッチを書き込んで下さい。&lt;/br&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h1 id=&#34;google-apps-scriptの設定&#34;&gt;Google Apps Scriptの設定&lt;/h1&gt;
 &lt;h2 id=&#34;google-apps-scriptとgoogleスプレッドシートの連携&#34;&gt;Google Apps ScriptとGoogleスプレッドシートの連携&lt;/h2&gt;
 &lt;p&gt;Google Apps Scriptを使って、Google スプレッドシートにデータを表示するWebアプリの設定を行います。&lt;br /&gt;&lt;/p&gt;
@@ -129,18 +148,6 @@
 &lt;li&gt;
 &lt;p&gt;デプロイが完了できたら、ウェブアプリのURLが表示されます。URLをコピーして&lt;code&gt;完了&lt;/code&gt;をクリックします。&lt;/p&gt;
 &lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;スクリプトを編集したい場合は、対象のスプレッドシートを開き、&lt;code&gt;拡張機能&lt;/code&gt;→&lt;code&gt;Apps Script&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;右上の&lt;code&gt;デプロイ&lt;/code&gt;→&lt;code&gt;デプロイを管理&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;code&gt;デプロイを管理&lt;/code&gt;の画面が表示されたら、 &lt;code&gt;編集&lt;/code&gt;のアイコンをクリックして、&lt;code&gt;新バージョン&lt;/code&gt;を選択し、右下の&lt;code&gt;デプロイ&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;デプロイが完了できたら、ウェブアプリのURLが表示されます。URLをコピーして&lt;code&gt;完了&lt;/code&gt;をクリックします。&lt;/p&gt;
-&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;google-apps-scriptの実行&#34;&gt;Google Apps Scriptの実行&lt;/h2&gt;
 &lt;ol&gt;
@@ -158,7 +165,15 @@
 &lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
 &lt;p&gt;&lt;code&gt;Arduino&lt;/code&gt;を実行して、逐次センサデータが&lt;code&gt;Google Sheets&lt;/code&gt;に書き込まれます。&lt;/p&gt;
 &lt;img src=&#34;results_1.png&#34;&gt;
-&lt;h3 id=&#34;次へ進むesp32_googlesheets_2&#34;&gt;&lt;a href=&#34;esp32_googlesheets_2/&#34;&gt;&lt;strong&gt;次へ進む&lt;/strong&gt;&lt;/a&gt;&lt;/h3&gt;
+&lt;/br&gt;
+&lt;h1 id=&#34;tips&#34;&gt;Tips&lt;/h1&gt;
+&lt;h2 id=&#34;google-apps-scriptを編集する場合&#34;&gt;Google Apps Scriptを編集する場合&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;対象のスプレッドシートを開き、&lt;code&gt;拡張機能&lt;/code&gt;→&lt;code&gt;Apps Script&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;右上の&lt;code&gt;デプロイ&lt;/code&gt;→&lt;code&gt;デプロイを管理&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;デプロイを管理&lt;/code&gt;が表示されたら、 &lt;code&gt;編集&lt;/code&gt;のアイコンをクリックして&lt;code&gt;新バージョン&lt;/code&gt;を選択し、&lt;code&gt;デプロイ&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;デプロイが完了できたら、ウェブアプリのURLが表示されます。URLをコピーして&lt;code&gt;完了&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
 &lt;/p&gt;&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;

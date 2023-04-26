@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.bc06d33bd3c416ac3f6434fe310c7334ece923177e6be068723012360802eda8911ea7a54cb2764d8c7fd47aee34149d1db207d8726b3f5ba8010dbacec37062.json"
+  data-offline-search-index-json-src="/offline-search-index.8b6aa4eb5ef09be2fe2f282b74ccf9b97a62da6115fd6db62a49d4f8f9650c318799c7a4577b53603bfaac03810e73fde459b7644519c9a96dd639f52caea44a.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.bc06d33bd3c416ac3f6434fe310c7334ece923177e6be068723012360802eda8911ea7a54cb2764d8c7fd47aee34149d1db207d8726b3f5ba8010dbacec37062.json"
+  data-offline-search-index-json-src="/offline-search-index.8b6aa4eb5ef09be2fe2f282b74ccf9b97a62da6115fd6db62a49d4f8f9650c318799c7a4577b53603bfaac03810e73fde459b7644519c9a96dd639f52caea44a.json"
   data-offline-search-base-href="/"
 >
 
@@ -3777,18 +3777,24 @@
   <ul>
     <li><a href="#用意するもの">用意するもの</a></li>
     <li><a href="#ソースコード">ソースコード</a></li>
-    <li><a href="#組み立て">組み立て</a></li>
+    <li><a href="#組み立て">組み立て</a>
+      <ul>
+        <li><a href="#dht22-温湿度センサの場合">DHT22 温湿度センサの場合</a></li>
+        <li><a href="#4-sensorsの場合">4-Sensorsの場合</a></li>
+      </ul>
+    </li>
+    <li><a href="#スケッチの書き込み">スケッチの書き込み</a></li>
   </ul>
 
   <ul>
     <li><a href="#google-apps-scriptとgoogleスプレッドシートの連携">Google Apps ScriptとGoogleスプレッドシートの連携</a></li>
     <li><a href="#google-apps-scriptのデプロイ">Google Apps Scriptのデプロイ</a></li>
     <li><a href="#google-apps-scriptの実行">Google Apps Scriptの実行</a></li>
-    <li><a href="#実行結果">実行結果</a>
-      <ul>
-        <li><a href="#次へ進むesp32_googlesheets_2"><a href="esp32_googlesheets_2/"><strong>次へ進む</strong></a></a></li>
-      </ul>
-    </li>
+    <li><a href="#実行結果">実行結果</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#google-apps-scriptを編集する場合">Google Apps Scriptを編集する場合</a></li>
   </ul>
 </nav>
 
@@ -3869,38 +3875,57 @@
         
 	
 	<h2 id="はじめに">はじめに</h2>
-<p>ESP32 Wi-Fi Kit2に市販の温湿度センサを取り付けるだけで、環境センサが出来上がります。この環境センサをインターネットに繋げば、Google スプレッドシートでセンサデータの可視化が簡単に出来ます。</br></p>
-<img src="ESP32-googlesheets_b.png" width=800>
-</br>
+<p>ESP32 Wi-Fi Kit2に温湿度センサを取り付けるだけで、環境センサが出来上がります。この環境センサをインターネットに繋げば、Google スプレッドシートでセンサデータの可視化が簡単に出来ます。</br> 
+<img src="ESP32-googlesheets_c.png" alt="ESP32-googlesheets_c.png">
+</br></p>
 <h1 id="leafonyの設定">Leafonyの設定</h1>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
 <li><a href="https://docs.leafony.com/docs/products/esp32_2/">ESP32 Wi-Fi Kit2</a></li>
-<li><a href="https://www.amazon.co.jp/OSOYOO-DHT22-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E6%B8%A9%E6%B9%BF%E5%BA%A6%E6%B8%AC%E5%AE%9A-Arduino%E3%82%84Raspberry-3%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C%E7%94%A8/dp/B07CSNMYN7/ref=pd_lpo_1?pd_rd_w=7A60s&amp;content-id=amzn1.sym.d769922e-188a-40cc-a180-3315f856e8d6&amp;pf_rd_p=d769922e-188a-40cc-a180-3315f856e8d6&amp;pf_rd_r=1C4TKMN2MZG0YNH2W45M&amp;pd_rd_wg=j7x1B&amp;pd_rd_r=aa845e19-073b-4a26-b5c4-1e8f60f61b80&amp;pd_rd_i=B07CSNMYN7&amp;psc=1">OSOYOO社 DHT22 温湿度センサ</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
-<li>単3ニッケル⽔素電池x3本</li>
+<li>以下のいずれかの温湿度センサを使用
+<ul>
+<li><a href="https://www.amazon.co.jp/OSOYOO-DHT22-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E6%B8%A9%E6%B9%BF%E5%BA%A6%E6%B8%AC%E5%AE%9A-Arduino%E3%82%84Raspberry-3%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C%E7%94%A8/dp/B07CSNMYN7/ref=pd_lpo_1?pd_rd_w=7A60s&amp;content-id=amzn1.sym.d769922e-188a-40cc-a180-3315f856e8d6&amp;pf_rd_p=d769922e-188a-40cc-a180-3315f856e8d6&amp;pf_rd_r=1C4TKMN2MZG0YNH2W45M&amp;pd_rd_wg=j7x1B&amp;pd_rd_r=aa845e19-073b-4a26-b5c4-1e8f60f61b80&amp;pd_rd_i=B07CSNMYN7&amp;psc=1">DHT22 温湿度センサ</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
+<li><a href="https://docs.leafony.com/docs/leaf/io/ai01/">4-Sensors</a></li>
+</ul>
+</li>
+<li>単4ニッケル⽔素電池x3本</li>
 <li>開発用パソコン</li>
 </ul>
 <h2 id="ソースコード">ソースコード</h2>
 <ol>
-<li>Wi-FiルータのSSIとパスワードを入力します。</li>
+<li>
+<p>DHT22 温湿度センサと4-Sensorsの場合で、スケッチは異なります。</br></p>
+<ul>
+<li><a href="">Arduinoのスケッチ(DH22)</a></br></li>
+<li><a href="">Arduinoのスケッチ(4-Sendors)</a></br></li>
+</ul>
+</li>
+<li>
+<p>Arduino IDEを立ち上げて、使用するセンサのコードを貼付けます。</br></p>
+<ul>
+<li><code>wifi_ssid</code>と<code>wifi_password</code>は、使用するWi-FiルータのSSIDとパスワードを入力します。</br></li>
+<li><code>google_scripts_key</code>は、<a href="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/#google-apps-script%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">Google Apps Scriptのデプロイ</a>で生成されたURLを入力します。</br></li>
+</ul>
+</li>
 </ol>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">// Connecting WiFi Settings
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">SSID</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;wifi_ssid&#34;</span><span style="color:#000;font-weight:bold">;</span>           <span style="color:#8f5902;font-style:italic">// WiFi SSID
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">PASSWORD</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;wifi_password&#34;</span><span style="color:#000;font-weight:bold">;</span>   <span style="color:#8f5902;font-style:italic">// WiFi Password
-</span></code></pre></div><ol start="2">
-<li></li>
-</ol>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">// Accessed Google Script Settings
+</span><span style="color:#8f5902;font-style:italic">// Accessed Google Script Settings
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">APP_SERVER</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;script.google.com&#34;</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">KEY</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;google_scripts_key&#34;</span><span style="color:#000;font-weight:bold">;</span>
-</code></pre></div><ol start="3">
-<li></li>
-</ol>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">// Device sleep time (sec) to reduce Joule heat
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">uint64_t</span> <span style="color:#000">DEEP_SLEEP_TIME_SEC</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#0000cf;font-weight:bold">60</span><span style="color:#000;font-weight:bold">;</span>
 </code></pre></div><h2 id="組み立て">組み立て</h2>
-<p>XXXを繋ぎます。
-写真</p>
+<h3 id="dht22-温湿度センサの場合">DHT22 温湿度センサの場合</h3>
+<h3 id="4-sensorsの場合">4-Sensorsの場合</h3>
+<h2 id="スケッチの書き込み">スケッチの書き込み</h2>
+<ol>
+<li>
+<p><a href="https://docs.leafony.com/docs/environment/esp32/arduino/">ESP32 MCUのArduino IDE設定</a>が、まだ済んでない方は、インストールして下さい。</br></p>
+</li>
+<li>
+<p>Arduinoのスケッチを書き込んで下さい。</br></br></p>
+</li>
+</ol>
 <h1 id="google-apps-scriptの設定">Google Apps Scriptの設定</h1>
 <h2 id="google-apps-scriptとgoogleスプレッドシートの連携">Google Apps ScriptとGoogleスプレッドシートの連携</h2>
 <p>Google Apps Scriptを使って、Google スプレッドシートにデータを表示するWebアプリの設定を行います。<br /></p>
@@ -3975,18 +4000,6 @@
 <li>
 <p>デプロイが完了できたら、ウェブアプリのURLが表示されます。URLをコピーして<code>完了</code>をクリックします。</p>
 </li>
-<li>
-<p>スクリプトを編集したい場合は、対象のスプレッドシートを開き、<code>拡張機能</code>→<code>Apps Script</code>をクリックします。</br></p>
-</li>
-<li>
-<p>右上の<code>デプロイ</code>→<code>デプロイを管理</code>をクリックします。</br></p>
-</li>
-<li>
-<p><code>デプロイを管理</code>の画面が表示されたら、 <code>編集</code>のアイコンをクリックして、<code>新バージョン</code>を選択し、右下の<code>デプロイ</code>をクリックします。</br></p>
-</li>
-<li>
-<p>デプロイが完了できたら、ウェブアプリのURLが表示されます。URLをコピーして<code>完了</code>をクリックします。</p>
-</li>
 </ol>
 <h2 id="google-apps-scriptの実行">Google Apps Scriptの実行</h2>
 <ol>
@@ -4004,7 +4017,15 @@
 <h2 id="実行結果">実行結果</h2>
 <p><code>Arduino</code>を実行して、逐次センサデータが<code>Google Sheets</code>に書き込まれます。</p>
 <img src="results_1.png">
-<h3 id="次へ進むesp32_googlesheets_2"><a href="esp32_googlesheets_2/"><strong>次へ進む</strong></a></h3>
+</br>
+<h1 id="tips">Tips</h1>
+<h2 id="google-apps-scriptを編集する場合">Google Apps Scriptを編集する場合</h2>
+<ol>
+<li>対象のスプレッドシートを開き、<code>拡張機能</code>→<code>Apps Script</code>をクリックします。</br></li>
+<li>右上の<code>デプロイ</code>→<code>デプロイを管理</code>をクリックします。</br></li>
+<li><code>デプロイを管理</code>が表示されたら、 <code>編集</code>のアイコンをクリックして<code>新バージョン</code>を選択し、<code>デプロイ</code>をクリックします。</br></li>
+<li>デプロイが完了できたら、ウェブアプリのURLが表示されます。URLをコピーして<code>完了</code>をクリックします。</br></li>
+</ol>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
 </p><section class="footnotes" role="doc-endnotes">
@@ -4350,7 +4371,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 24, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 25, 2023
 </div>
 </div>
 
