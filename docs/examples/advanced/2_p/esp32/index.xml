@@ -23,17 +23,17 @@
         
         
         &lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;ESP32 Wi-Fi Kit2に温湿度センサを取り付けるだけで、環境センサが出来上がります。この環境センサをインターネットに繋げば、Google スプレッドシートでセンサデータの可視化が簡単に出来ます。&lt;/br&gt; 
-&lt;img src=&#34;ESP32-googlesheets_c.png&#34; alt=&#34;ESP32-googlesheets_c.png&#34;&gt;
+&lt;p&gt;ESP32 Wi-Fi Kit2に温湿度センサを取り付けるだけで、環境センサが出来上がります。この環境センサをインターネットに繋げば、スプレッドシートでセンサデータの可視化が簡単に出来ます。&lt;/br&gt; 
+&lt;img src=&#34;ESP32-googlesheets_d.png&#34; alt=&#34;ESP32-googlesheets_d.png&#34;&gt;
 &lt;/br&gt;&lt;/p&gt;
 &lt;h1 id=&#34;leafonyの設定&#34;&gt;Leafonyの設定&lt;/h1&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/products/esp32_2/&#34;&gt;ESP32 Wi-Fi Kit2&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;以下のいずれかの温湿度センサを使用
+&lt;li&gt;以下のいずれかのセンサを使用
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/OSOYOO-DHT22-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E6%B8%A9%E6%B9%BF%E5%BA%A6%E6%B8%AC%E5%AE%9A-Arduino%E3%82%84Raspberry-3%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C%E7%94%A8/dp/B07CSNMYN7/ref=pd_lpo_1?pd_rd_w=7A60s&amp;amp;content-id=amzn1.sym.d769922e-188a-40cc-a180-3315f856e8d6&amp;amp;pf_rd_p=d769922e-188a-40cc-a180-3315f856e8d6&amp;amp;pf_rd_r=1C4TKMN2MZG0YNH2W45M&amp;amp;pd_rd_wg=j7x1B&amp;amp;pd_rd_r=aa845e19-073b-4a26-b5c4-1e8f60f61b80&amp;amp;pd_rd_i=B07CSNMYN7&amp;amp;psc=1&#34;&gt;DHT22 温湿度センサ&lt;/a&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01/&#34;&gt;4-Sensors&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/OSOYOO-DHT22-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E6%B8%A9%E6%B9%BF%E5%BA%A6%E6%B8%AC%E5%AE%9A-Arduino%E3%82%84Raspberry-3%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C%E7%94%A8/dp/B07CSNMYN7/ref=pd_lpo_1?pd_rd_w=7A60s&amp;amp;content-id=amzn1.sym.d769922e-188a-40cc-a180-3315f856e8d6&amp;amp;pf_rd_p=d769922e-188a-40cc-a180-3315f856e8d6&amp;amp;pf_rd_r=1C4TKMN2MZG0YNH2W45M&amp;amp;pd_rd_wg=j7x1B&amp;amp;pd_rd_r=aa845e19-073b-4a26-b5c4-1e8f60f61b80&amp;amp;pd_rd_i=B07CSNMYN7&amp;amp;psc=1&#34;&gt;DHT22&lt;/a&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt; (温度・湿度)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/io/ai01/&#34;&gt;4-Sensors&lt;/a&gt;(温度・湿度・照度)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;単4ニッケル⽔素電池x3本&lt;/li&gt;
@@ -42,10 +42,10 @@
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;
-&lt;p&gt;DHT22 温湿度センサと4-Sensorsの場合で、スケッチは異なります。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;DHT22と4-Sensorsの場合で、スケッチは異なります。&lt;/br&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;&#34;&gt;Arduinoのスケッチ(DH22)&lt;/a&gt;&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;&#34;&gt;Arduinoのスケッチ(4-Sensors)&lt;/a&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets-DHT22&#34;&gt;Arduinoのスケッチ(DHT22)&lt;/a&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets_4-Sensors&#34;&gt;Arduinoのスケッチ(4-Sensors)&lt;/a&gt;&lt;/br&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
@@ -63,13 +63,13 @@
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;APP_SERVER&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;script.google.com&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;char&lt;/span&gt;&lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;*&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;KEY&lt;/span&gt; &lt;span style=&#34;color:#ce5c00;font-weight:bold&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#4e9a06&#34;&gt;&amp;#34;google_scripts_key&amp;#34;&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;組み立て&#34;&gt;組み立て&lt;/h2&gt;
-&lt;h3 id=&#34;dht22-温湿度センサの場合&#34;&gt;DHT22 温湿度センサの場合&lt;/h3&gt;
-&lt;p&gt;1.ESP32 Wi-Fi Kit2を分解せずに箱から取出し、DHT22 温湿度センサと&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax08/&#34;&gt;29pin header&lt;/a&gt;を以下の通りに結線します。&lt;/br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;dht22の場合&#34;&gt;DHT22の場合&lt;/h3&gt;
+&lt;p&gt;1.ESP32 Wi-Fi Kit2を箱から取出し、DHT22と&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax08/&#34;&gt;29pin header&lt;/a&gt;を以下の通りに結線します。&lt;/br&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th align=&#34;left&#34;&gt;DHT22&lt;/th&gt;
-&lt;th align=&#34;center&#34;&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/extension/ax08/&#34;&gt;29pin header&lt;/a&gt;&lt;/th&gt;
+&lt;th align=&#34;center&#34;&gt;29pin header&lt;/th&gt;
 &lt;/tr&gt;
 &lt;/thead&gt;
 &lt;tbody&gt;
@@ -95,7 +95,7 @@
 &lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/environment/esp32/arduino/&#34;&gt;ESP32 MCUのArduino IDE設定&lt;/a&gt;が、まだ済んでない方は、インストールして下さい。&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;DHT22 温湿度センサのライブラリのインストール&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;DHT22のライブラリのインストール&lt;/br&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/adafruit/DHT-sensor-library&#34;&gt;DHT-sensor-library&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -153,7 +153,7 @@
 &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;}&lt;/span&gt;
     
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;google-apps-scriptのデプロイ&#34;&gt;Google Apps Scriptのデプロイ&lt;/h2&gt;
-&lt;p&gt;Google Apps Scriptのデプロイ&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;の手順を説明します。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;GASのデプロイ&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;の手順を説明します。&lt;/br&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;スプレッドシートを開き&lt;code&gt;拡張機能&lt;/code&gt;→&lt;code&gt;Apps Script&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/p&gt;
@@ -192,14 +192,14 @@
 &lt;/ol&gt;
 &lt;h2 id=&#34;実行結果&#34;&gt;実行結果&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;スプレッドシートを開き、1行目にDatetime、UniqueID、Temperature、Humidity、Illuminationのカラム名を記入します。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;スプレッドシートを開き、1行目にDatetime、UniqueID、Temperature、Humidity、Illumination&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;ののカラム名を記入します。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/leaf/processor/ap02/&#34;&gt;ESP32 MCU&lt;/a&gt;のリセットボタンを押してプログラムを実行させると、センサの値がスプレッドシートに書き込まれます。&lt;/br&gt;&lt;/br&gt;
 &lt;img src=&#34;results_1.png&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/br&gt;
 &lt;h1 id=&#34;tips&#34;&gt;Tips&lt;/h1&gt;
 &lt;h2 id=&#34;google-apps-scriptのテスト&#34;&gt;Google Apps Scriptのテスト&lt;/h2&gt;
-&lt;p&gt;Google Apps Scripが正しく実行出来るかテストをします。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;GASpが正しく実行出来るかテストをします。&lt;/br&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;ウェブアプリURLの末尾に、&lt;code&gt;?UniqueID=Leafony_A&amp;amp;temperature=10&amp;amp;humidity=20&amp;amp;illumination=30&lt;/code&gt;を加えてWebにアクセスします。&lt;/li&gt;
 &lt;li&gt;スプレッドシートに、Datetime、Leafony_A、10、20、30の値が書き込まれていれば、正しく実行しています。&lt;/br&gt;&lt;/li&gt;
@@ -220,6 +220,9 @@
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;一般的にデプロイとは、ソフトウェアを利用可能にする活動全般を指す用語で、Google Apps Scriptの場合は、ソフトウェアなどを実行できる状態にして、URLを生成することを意味しています。&lt;/br&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;　Illuminationは、4-Sensorsの場合だけ表示されます。&lt;/br&gt; &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;

@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.faa95c69031bb6edf1d0329bc2c80237f7c18cdb1a7ac4f204bf7bd70b14b08f60c66bfd469151175968977e4d7e10ca507b45b0fc647ca172b3bd8c6027bcec.json"
+  data-offline-search-index-json-src="/offline-search-index.855b930f48f2d0f91512608f606a55cca62b4616b7dd038e6dd6f1f5c73074bccce96fbf75fbf3c5dfec6c8299a45e85fd131496f799d30f2b7b9bb737d70f9e.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.faa95c69031bb6edf1d0329bc2c80237f7c18cdb1a7ac4f204bf7bd70b14b08f60c66bfd469151175968977e4d7e10ca507b45b0fc647ca172b3bd8c6027bcec.json"
+  data-offline-search-index-json-src="/offline-search-index.855b930f48f2d0f91512608f606a55cca62b4616b7dd038e6dd6f1f5c73074bccce96fbf75fbf3c5dfec6c8299a45e85fd131496f799d30f2b7b9bb737d70f9e.json"
   data-offline-search-base-href="/"
 >
 
@@ -2266,29 +2266,6 @@
       
       
       
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/esp32_googlesheets_2/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section"> </a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsexamplesadvanced2_pesp32esp32_googlesheets_1esp32_googlesheets_2">
-      
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
     </li>
   </ul>
 </ul>
@@ -3779,7 +3756,7 @@
     <li><a href="#ソースコード">ソースコード</a></li>
     <li><a href="#組み立て">組み立て</a>
       <ul>
-        <li><a href="#dht22-温湿度センサの場合">DHT22 温湿度センサの場合</a></li>
+        <li><a href="#dht22の場合">DHT22の場合</a></li>
         <li><a href="#4-sensorsの場合">4-Sensorsの場合</a></li>
       </ul>
     </li>
@@ -3875,17 +3852,17 @@
         
 	
 	<h2 id="はじめに">はじめに</h2>
-<p>ESP32 Wi-Fi Kit2に温湿度センサを取り付けるだけで、環境センサが出来上がります。この環境センサをインターネットに繋げば、Google スプレッドシートでセンサデータの可視化が簡単に出来ます。</br> 
-<img src="ESP32-googlesheets_c.png" alt="ESP32-googlesheets_c.png">
+<p>ESP32 Wi-Fi Kit2に温湿度センサを取り付けるだけで、環境センサが出来上がります。この環境センサをインターネットに繋げば、スプレッドシートでセンサデータの可視化が簡単に出来ます。</br> 
+<img src="ESP32-googlesheets_d.png" alt="ESP32-googlesheets_d.png">
 </br></p>
 <h1 id="leafonyの設定">Leafonyの設定</h1>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
 <li><a href="https://docs.leafony.com/docs/products/esp32_2/">ESP32 Wi-Fi Kit2</a></li>
-<li>以下のいずれかの温湿度センサを使用
+<li>以下のいずれかのセンサを使用
 <ul>
-<li><a href="https://www.amazon.co.jp/OSOYOO-DHT22-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E6%B8%A9%E6%B9%BF%E5%BA%A6%E6%B8%AC%E5%AE%9A-Arduino%E3%82%84Raspberry-3%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C%E7%94%A8/dp/B07CSNMYN7/ref=pd_lpo_1?pd_rd_w=7A60s&amp;content-id=amzn1.sym.d769922e-188a-40cc-a180-3315f856e8d6&amp;pf_rd_p=d769922e-188a-40cc-a180-3315f856e8d6&amp;pf_rd_r=1C4TKMN2MZG0YNH2W45M&amp;pd_rd_wg=j7x1B&amp;pd_rd_r=aa845e19-073b-4a26-b5c4-1e8f60f61b80&amp;pd_rd_i=B07CSNMYN7&amp;psc=1">DHT22 温湿度センサ</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
-<li><a href="https://docs.leafony.com/docs/leaf/io/ai01/">4-Sensors</a></li>
+<li><a href="https://www.amazon.co.jp/OSOYOO-DHT22-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E6%B8%A9%E6%B9%BF%E5%BA%A6%E6%B8%AC%E5%AE%9A-Arduino%E3%82%84Raspberry-3%E9%9B%BB%E5%AD%90%E5%B7%A5%E4%BD%9C%E7%94%A8/dp/B07CSNMYN7/ref=pd_lpo_1?pd_rd_w=7A60s&amp;content-id=amzn1.sym.d769922e-188a-40cc-a180-3315f856e8d6&amp;pf_rd_p=d769922e-188a-40cc-a180-3315f856e8d6&amp;pf_rd_r=1C4TKMN2MZG0YNH2W45M&amp;pd_rd_wg=j7x1B&amp;pd_rd_r=aa845e19-073b-4a26-b5c4-1e8f60f61b80&amp;pd_rd_i=B07CSNMYN7&amp;psc=1">DHT22</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> (温度・湿度)</li>
+<li><a href="https://docs.leafony.com/docs/leaf/io/ai01/">4-Sensors</a>(温度・湿度・照度)</li>
 </ul>
 </li>
 <li>単4ニッケル⽔素電池x3本</li>
@@ -3894,10 +3871,10 @@
 <h2 id="ソースコード">ソースコード</h2>
 <ol>
 <li>
-<p>DHT22 温湿度センサと4-Sensorsの場合で、スケッチは異なります。</br></p>
+<p>DHT22と4-Sensorsの場合で、スケッチは異なります。</br></p>
 <ul>
-<li><a href="">Arduinoのスケッチ(DH22)</a></br></li>
-<li><a href="">Arduinoのスケッチ(4-Sensors)</a></br></li>
+<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets-DHT22">Arduinoのスケッチ(DHT22)</a></br></li>
+<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets_4-Sensors">Arduinoのスケッチ(4-Sensors)</a></br></li>
 </ul>
 </li>
 <li>
@@ -3915,13 +3892,13 @@
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">APP_SERVER</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;script.google.com&#34;</span><span style="color:#000;font-weight:bold">;</span>
 <span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">KEY</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;google_scripts_key&#34;</span><span style="color:#000;font-weight:bold">;</span>
 </code></pre></div><h2 id="組み立て">組み立て</h2>
-<h3 id="dht22-温湿度センサの場合">DHT22 温湿度センサの場合</h3>
-<p>1.ESP32 Wi-Fi Kit2を分解せずに箱から取出し、DHT22 温湿度センサと<a href="https://docs.leafony.com/docs/leaf/extension/ax08/">29pin header</a>を以下の通りに結線します。</br></p>
+<h3 id="dht22の場合">DHT22の場合</h3>
+<p>1.ESP32 Wi-Fi Kit2を箱から取出し、DHT22と<a href="https://docs.leafony.com/docs/leaf/extension/ax08/">29pin header</a>を以下の通りに結線します。</br></p>
 <table>
 <thead>
 <tr>
 <th align="left">DHT22</th>
-<th align="center"><a href="https://docs.leafony.com/docs/leaf/extension/ax08/">29pin header</a></th>
+<th align="center">29pin header</th>
 </tr>
 </thead>
 <tbody>
@@ -3947,7 +3924,7 @@
 <p><a href="https://docs.leafony.com/docs/environment/esp32/arduino/">ESP32 MCUのArduino IDE設定</a>が、まだ済んでない方は、インストールして下さい。</br></p>
 </li>
 <li>
-<p>DHT22 温湿度センサのライブラリのインストール</br></p>
+<p>DHT22のライブラリのインストール</br></p>
 <ul>
 <li><a href="https://github.com/adafruit/DHT-sensor-library">DHT-sensor-library</a></li>
 </ul>
@@ -4005,7 +3982,7 @@
 <span style="color:#000;font-weight:bold">}</span>
     
 </code></pre></div><h2 id="google-apps-scriptのデプロイ">Google Apps Scriptのデプロイ</h2>
-<p>Google Apps Scriptのデプロイ<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>の手順を説明します。</br></p>
+<p>GASのデプロイ<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>の手順を説明します。</br></p>
 <ol>
 <li>
 <p>スプレッドシートを開き<code>拡張機能</code>→<code>Apps Script</code>をクリックします。</br></p>
@@ -4044,14 +4021,14 @@
 </ol>
 <h2 id="実行結果">実行結果</h2>
 <ol>
-<li>スプレッドシートを開き、1行目にDatetime、UniqueID、Temperature、Humidity、Illuminationのカラム名を記入します。</br></li>
+<li>スプレッドシートを開き、1行目にDatetime、UniqueID、Temperature、Humidity、Illumination<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>ののカラム名を記入します。</br></li>
 <li><a href="https://docs.leafony.com/docs/leaf/processor/ap02/">ESP32 MCU</a>のリセットボタンを押してプログラムを実行させると、センサの値がスプレッドシートに書き込まれます。</br></br>
 <img src="results_1.png"></li>
 </ol>
 </br>
 <h1 id="tips">Tips</h1>
 <h2 id="google-apps-scriptのテスト">Google Apps Scriptのテスト</h2>
-<p>Google Apps Scripが正しく実行出来るかテストをします。</br></p>
+<p>GASpが正しく実行出来るかテストをします。</br></p>
 <ol>
 <li>ウェブアプリURLの末尾に、<code>?UniqueID=Leafony_A&amp;temperature=10&amp;humidity=20&amp;illumination=30</code>を加えてWebにアクセスします。</li>
 <li>スプレッドシートに、Datetime、Leafony_A、10、20、30の値が書き込まれていれば、正しく実行しています。</br></li>
@@ -4072,6 +4049,9 @@
 </li>
 <li id="fn:2" role="doc-endnote">
 <p>一般的にデプロイとは、ソフトウェアを利用可能にする活動全般を指す用語で、Google Apps Scriptの場合は、ソフトウェアなどを実行できる状態にして、URLを生成することを意味しています。</br> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>　Illuminationは、4-Sensorsの場合だけ表示されます。</br> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -4370,15 +4350,6 @@
             
         
             
-                <div class="entry">
-                    <h5>
-                        <a href="/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/esp32_googlesheets_2/"> </a>
-                    </h5>
-                    <p></p>
-                </div>
-            
-        
-            
         
             
         
@@ -4407,7 +4378,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 26, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 27, 2023
 </div>
 </div>
 
