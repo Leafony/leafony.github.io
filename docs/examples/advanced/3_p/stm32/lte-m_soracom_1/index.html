@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.855b930f48f2d0f91512608f606a55cca62b4616b7dd038e6dd6f1f5c73074bccce96fbf75fbf3c5dfec6c8299a45e85fd131496f799d30f2b7b9bb737d70f9e.json"
+  data-offline-search-index-json-src="/offline-search-index.62cc895638053aca46bd21ecf946f544db39a40317cd3ebbbd54d4d5162b3a71e0eefb7b423aae79bc02627e16319de70832b56cc8eab0096065ae86cec2441e.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.855b930f48f2d0f91512608f606a55cca62b4616b7dd038e6dd6f1f5c73074bccce96fbf75fbf3c5dfec6c8299a45e85fd131496f799d30f2b7b9bb737d70f9e.json"
+  data-offline-search-index-json-src="/offline-search-index.62cc895638053aca46bd21ecf946f544db39a40317cd3ebbbd54d4d5162b3a71e0eefb7b423aae79bc02627e16319de70832b56cc8eab0096065ae86cec2441e.json"
   data-offline-search-base-href="/"
 >
 
@@ -3757,7 +3757,12 @@
 
   <ul>
     <li><a href="#用意するもの">用意するもの</a></li>
-    <li><a href="#サンプルアプリのソースコード">サンプルアプリのソースコード</a></li>
+    <li><a href="#ソースコード">ソースコード</a>
+      <ul>
+        <li><a href="#arduino-ideの場合">Arduino IDEの場合</a></li>
+        <li><a href="#platformio-ideの場合">PlatformIO IDEの場合</a></li>
+      </ul>
+    </li>
     <li><a href="#leafonyの構成">Leafonyの構成</a></li>
     <li><a href="#リーフの組み立て">リーフの組み立て</a></li>
     <li><a href="#usbドライバーのインストール">USBドライバーのインストール</a></li>
@@ -3894,16 +3899,23 @@
 </li>
 </ul>
 <p><a href="./lte-m_soracom_socket_large.jpg"><img src="./lte-m_soracom_socket_small.jpg" width="250"></a></br></p>
-<h2 id="サンプルアプリのソースコード">サンプルアプリのソースコード</h2>
+<h2 id="ソースコード">ソースコード</h2>
+<h3 id="arduino-ideの場合">Arduino IDEの場合</h3>
 <p>Leafonyのデータを送信する際の通信プロトコルは、TCPとUDPの二通りあり、Arduinoのスケッチだけでなく、 SORACOMの設定も異なります。また、TCPのスケッチは、テキストデータで送信する設定になっていますが、UDPのスケッチは、通信量を減らすため、バイナリーデータにしています。</a></br>
 初めての方は、TCPのスケッチがお勧めで、通信コストを抑えたい方は、UDPのをお使い下さい。</a></br></p>
 <ul>
 <li>
-<p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_4-Sensors_upload_tcp" target="_brank">  Arduino スケッチ(TCP用)</a>　</br></p>
+<p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_4-Sensors_upload_tcp" target="_brank">  Arduinoソースコード(TCP用)</a>　</br></p>
 </li>
 <li>
-<p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_4-Sensors_upload_udp" target="_brank">  Arduino スケッチ(UDP用)</a>　</br></p>
+<p><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_4-Sensors_upload_udp" target="_brank">  Arduinoソースコード(UDP用)</a>　</br></p>
 </li>
+</ul>
+<h3 id="platformio-ideの場合">PlatformIO IDEの場合</h3>
+<p>PlatformIO IDE for VSCodeの設定の仕方は、<a href="https://docs.leafony.com/docs/environment/stm32/platformio/">こちら</a>を参照願います。</br></p>
+<ul>
+<li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_4-Sensors_upload_tcp_Pjt">PlatformIOソースコード(TCP用)</a></br></li>
+<li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_4-Sensors_upload_udp_Pjt">PlatformIOソースコード(UDP用)</a></br></li>
 </ul>
 <h2 id="leafonyの構成">Leafonyの構成</h2>
 <p>このサンプルでは下記のリーフ構成で試せます。</p>
@@ -4436,7 +4448,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 13, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 1, 2023
 </div>
 </div>
 
