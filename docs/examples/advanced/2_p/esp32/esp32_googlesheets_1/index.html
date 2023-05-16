@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.62cc895638053aca46bd21ecf946f544db39a40317cd3ebbbd54d4d5162b3a71e0eefb7b423aae79bc02627e16319de70832b56cc8eab0096065ae86cec2441e.json"
+  data-offline-search-index-json-src="/offline-search-index.ca511c5ad492554162e98dd991096071c46489b2ab6e0a4cb004808669e73265bfe2de89451f7e75a46e8497117b30598e946f971de91696992b598fdddbaf77.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.62cc895638053aca46bd21ecf946f544db39a40317cd3ebbbd54d4d5162b3a71e0eefb7b423aae79bc02627e16319de70832b56cc8eab0096065ae86cec2441e.json"
+  data-offline-search-index-json-src="/offline-search-index.ca511c5ad492554162e98dd991096071c46489b2ab6e0a4cb004808669e73265bfe2de89451f7e75a46e8497117b30598e946f971de91696992b598fdddbaf77.json"
   data-offline-search-base-href="/"
 >
 
@@ -3753,7 +3753,14 @@
 
   <ul>
     <li><a href="#用意するもの">用意するもの</a></li>
-    <li><a href="#ソースコード">ソースコード</a></li>
+    <li><a href="#ソースコード">ソースコード</a>
+      <ul>
+        <li><a href="#wpa2-personalの場合">WPA2 Personalの場合</a></li>
+        <li><a href="#wpa2-enterpriseの場合">WPA2 Enterpriseの場合</a></li>
+        <li><a href="#arduino-ideの場合">Arduino IDEの場合</a></li>
+        <li><a href="#platformio-ideの場合">PlatformIO IDEの場合</a></li>
+      </ul>
+    </li>
     <li><a href="#組み立て">組み立て</a>
       <ul>
         <li><a href="#dht22の場合">DHT22の場合</a></li>
@@ -3869,16 +3876,65 @@
 <li>開発用パソコン</li>
 </ul>
 <h2 id="ソースコード">ソースコード</h2>
-<ol>
-<li>
-<p>DHT22と4-Sensorsの場合で、スケッチは異なります。</br></p>
+<p>個人や家庭で使用するWPA2 Personal <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>や企業で使用するwpa2 Enterprise <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> のセキュリティの仕様に対応しています。</br></p>
+<h3 id="wpa2-personalの場合">WPA2 Personalの場合</h3>
 <ul>
-<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets-DHT22">Arduinoのスケッチ(DHT22)</a></br></li>
-<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets_4-Sensors">Arduinoのスケッチ(4-Sensors)</a></br></li>
-</ul>
+<li>
+<p><code>wifi_ssid</code>と<code>wifi_password</code>は、使用するWi-FiルータのSSIDとパスワードを入力します。</br></p>
 </li>
 <li>
-<p>Arduino IDEを立ち上げて、使用するセンサのコードを貼付けます。</br></p>
+<p><code>google_scripts_key</code>は、<a href="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/#google-apps-script%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">Google Apps Scriptのデプロイ</a>で生成されたデプロイIDを入力します。</br></p>
+</li>
+</ul>
+<h3 id="wpa2-enterpriseの場合">WPA2 Enterpriseの場合</h3>
+<ul>
+<li>
+<p><code>//#define ENTERPRISE</code>のコメント(<code>//</code>)を外します。</p>
+</li>
+<li>
+<p><code>identity</code>、<code>wifi_password</code>、<code>wifi_ssid</code>とは、使用するWi-FiルータのSSIDとパスワードを入力します。</br></p>
+</li>
+<li>
+<p><code>google_scripts_key</code>は、<a href="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/#google-apps-script%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">Google Apps Scriptのデプロイ</a>で生成されたデプロイIDを入力します。</br></p>
+</li>
+</ul>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//#define ENTERPRISE
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">#ifdef ENTERPRISE   </span><span style="color:#8f5902;font-style:italic">// Enterprise
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;esp_wpa2.h&gt;</span><span style="color:#8f5902;font-style:italic">
+</span><span style="color:#8f5902;font-style:italic">#endif
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">#define DHT_PIN 5       </span><span style="color:#8f5902;font-style:italic">// D5 = pin15
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">DHT</span> <span style="color:#000">dht</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">DHT_PIN</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">DHT22</span><span style="color:#000;font-weight:bold">);</span>
+
+<span style="color:#8f5902;font-style:italic">// Unique ID
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#000">String</span> <span style="color:#000">UniqueID</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;Leafony_A&#34;</span><span style="color:#000;font-weight:bold">;</span>
+
+<span style="color:#8f5902;font-style:italic">#ifdef ENTERPRISE   </span><span style="color:#8f5902;font-style:italic">// Enterprise
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define EAP_IDENTITY &#34;identity&#34; </span><span style="color:#8f5902;font-style:italic">//if connecting from another corporation, use identity@organisation.domain 
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define EAP_PASSWORD &#34;password&#34; </span><span style="color:#8f5902;font-style:italic">//Password
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">SSID_ENT</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;ssid&#34;</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#8f5902;font-style:italic">// Wi-Fi SSID
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#endif
+</span><span style="color:#8f5902;font-style:italic"></span>
+<span style="color:#8f5902;font-style:italic">// Connecting WiFi Settings
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">SSID</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;ssid&#34;</span><span style="color:#000;font-weight:bold">;</span>           <span style="color:#8f5902;font-style:italic">// Wi-Fi SSID
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">PASSWORD</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;password&#34;</span><span style="color:#000;font-weight:bold">;</span>   <span style="color:#8f5902;font-style:italic">// Password
+</span><span style="color:#8f5902;font-style:italic">// Accessed Google Script Settings
+</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">APP_SERVER</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;script.google.com&#34;</span><span style="color:#000;font-weight:bold">;</span>
+<span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">KEY</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;google_scripts_key&#34;</span><span style="color:#000;font-weight:bold">;</span>
+</code></pre></div><h3 id="arduino-ideの場合">Arduino IDEの場合</h3>
+<ul>
+<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets-DHT22">Arduinoのソースコード(DHT22)</a></br></li>
+<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets_4-Sensors">Arduinoのソースコード(4-Sensors)</a></br></li>
+</ul>
+<h3 id="platformio-ideの場合">PlatformIO IDEの場合</h3>
+<p>PlatformIO IDE for VSCodeの設定の仕方は、<a href="https://docs.leafony.com/docs/environment/stm32/platformio/">こちら</a>を参照願います。</br></p>
+<ul>
+<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets-DHT22">PlatformIOのソースコード(DHT22)</a></br></li>
+<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets_4-Sensors">PlatformIOのソースコード(4-Sensors)</a></br></li>
+</ul>
+<ol start="2">
+<li>Arduino IDEを立ち上げて、使用するセンサのコードを貼付けます。</br>
 <ul>
 <li><code>wifi_ssid</code>と<code>wifi_password</code>は、使用するWi-FiルータのSSIDとパスワードを入力します。</br></li>
 <li><code>google_scripts_key</code>は、<a href="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/#google-apps-script%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">Google Apps Scriptのデプロイ</a>で生成されたデプロイIDを入力します。</br></li>
@@ -3982,7 +4038,7 @@
 <span style="color:#000;font-weight:bold">}</span>
     
 </code></pre></div><h2 id="google-apps-scriptのデプロイ">Google Apps Scriptのデプロイ</h2>
-<p>GASのデプロイ<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>の手順を説明します。</br></p>
+<p>GASのデプロイ<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>の手順を説明します。</br></p>
 <ol>
 <li>
 <p>スプレッドシートを開き<code>拡張機能</code>→<code>Apps Script</code>をクリックします。</br></p>
@@ -4021,7 +4077,7 @@
 </ol>
 <h2 id="実行結果">実行結果</h2>
 <ol>
-<li>スプレッドシートを開き、1行目にDatetime、UniqueID、Temperature、Humidity、Illumination<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>ののカラム名を記入します。</br></li>
+<li>スプレッドシートを開き、1行目にDatetime、UniqueID、Temperature、Humidity、Illumination<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>ののカラム名を記入します。</br></li>
 <li><a href="https://docs.leafony.com/docs/leaf/processor/ap02/">ESP32 MCU</a>のリセットボタンを押してプログラムを実行させると、センサの値がスプレッドシートに書き込まれます。</br></br>
 <img src="results_1.png"></li>
 </ol>
@@ -4048,10 +4104,16 @@
 <p>ドキュメントとサンプルコードは <a href="https://osoyoo.com/ja/2018/03/15/arduino-lesson-dht22-humidity-and-temperature-sensor/">こちら</a>を参照して下さい。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>一般的にデプロイとは、ソフトウェアを利用可能にする活動全般を指す用語で、Google Apps Scriptの場合は、ソフトウェアなどを実行できる状態にして、URLを生成することを意味しています。</br> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>個人や家庭、小規模事業所などためのセキュリティの仕様。端末毎に設定してあるパスワードにより認証を行う。</br> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>　Illuminationは、4-Sensorsの場合だけ表示されます。</br> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>企業など比較的規模の大きいネットワークのためのセキュリティの仕様。利用者毎に登録したIDとパスワードにより認証を行う。</br> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>一般的にデプロイとは、ソフトウェアを利用可能にする活動全般を指す用語で、Google Apps Scriptの場合は、ソフトウェアなどを実行できる状態にして、URLを生成することを意味しています。</br> <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p>　Illuminationは、4-Sensorsの場合だけ表示されます。</br> <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -4378,7 +4440,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 27, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 16, 2023
 </div>
 </div>
 
