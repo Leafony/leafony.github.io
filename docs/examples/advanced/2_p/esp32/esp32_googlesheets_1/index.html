@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.05229a7508a3f96f6b29e27a543ab732687c51dafbadc7d9f6882366f069784f923cc953ec18a5495b280d52b5f31094c49c312028b1328223b547fa4c1e42e8.json"
+  data-offline-search-index-json-src="/offline-search-index.405e97783b5e41a69e61334d4563e504e8d1df198e3084d6b3cca4ee47f54935d3df116f8fb629f2b6eb033e774a5daec62d895561c0aa279a72025ebefd3786.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.05229a7508a3f96f6b29e27a543ab732687c51dafbadc7d9f6882366f069784f923cc953ec18a5495b280d52b5f31094c49c312028b1328223b547fa4c1e42e8.json"
+  data-offline-search-index-json-src="/offline-search-index.405e97783b5e41a69e61334d4563e504e8d1df198e3084d6b3cca4ee47f54935d3df116f8fb629f2b6eb033e774a5daec62d895561c0aa279a72025ebefd3786.json"
   data-offline-search-base-href="/"
 >
 
@@ -3749,28 +3749,23 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#はじめに">はじめに</a></li>
-  </ul>
-
-  <ul>
     <li><a href="#用意するもの">用意するもの</a></li>
-    <li><a href="#ソースコード">ソースコード</a>
-      <ul>
-        <li><a href="#wpa2-personalの場合">WPA2 Personalの場合</a></li>
-        <li><a href="#wpa2-enterpriseの場合">WPA2 Enterpriseの場合</a></li>
-      </ul>
-    </li>
-    <li><a href="#組み立て">組み立て</a>
+    <li><a href="#google-apps-scriptの設定">Google Apps Scriptの設定</a></li>
+    <li><a href="#google-apps-scriptのデプロイ">Google Apps Scriptのデプロイ</a></li>
+    <li><a href="#leafonyの組み立て">Leafonyの組み立て</a>
       <ul>
         <li><a href="#dht22の場合">DHT22の場合</a></li>
         <li><a href="#4-sensorsの場合">4-Sensorsの場合</a></li>
       </ul>
     </li>
-    <li><a href="#スケッチの書き込み">スケッチの書き込み</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#google-apps-scriptとgoogleスプレッドシートの連携">Google Apps ScriptとGoogleスプレッドシートの連携</a></li>
-    <li><a href="#google-apps-scriptのデプロイ">Google Apps Scriptのデプロイ</a></li>
+    <li><a href="#ソースコード">ソースコード</a>
+      <ul>
+        <li><a href="#開発環境の設定">開発環境の設定</a></li>
+        <li><a href="#ソースコードのダウンロード">ソースコードのダウンロード</a></li>
+        <li><a href="#ソースコードの編集">ソースコードの編集</a></li>
+        <li><a href="#ソースコードの書き込み">ソースコードの書き込み</a></li>
+      </ul>
+    </li>
     <li><a href="#実行結果">実行結果</a></li>
   </ul>
 
@@ -3860,7 +3855,6 @@
 <p>ESP32 Wi-Fi Kit2に温湿度センサを取り付けるだけで、環境センサが出来上がります。この環境センサをインターネットに繋げば、スプレッドシートでセンサデータの可視化が簡単に出来ます。</br> 
 <img src="ESP32-googlesheets_d.png" alt="ESP32-googlesheets_d.png">
 </br></p>
-<h1 id="leafonyの設定">Leafonyの設定</h1>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
 <li><a href="https://docs.leafony.com/docs/products/esp32_2/">ESP32 Wi-Fi Kit2</a></li>
@@ -3872,112 +3866,10 @@
 </li>
 <li>単4ニッケル⽔素電池x3本</li>
 <li>開発用パソコン</li>
+<li>Wi-Fiルータ</br></li>
 </ul>
-<h2 id="ソースコード">ソースコード</h2>
-<p>DHT22と4-Sensorsのふたつのセンサに対して、<a href="https://docs.leafony.com/docs/environment/esp32/arduino/">Arduino IDE</a>と <a href="https://docs.leafony.com/docs/environment/esp32/platformio/">PlatformIO IDE</a>  用のソースコードを準備しています。</br></p>
-<table>
-<thead>
-<tr>
-<th align="left">IDE</th>
-<th align="left">DHT22</th>
-<th align="left">4-Sensors</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">Arduino IDE</td>
-<td align="left"><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets-DHT22">Arduino_DHT22ソースコード</a></td>
-<td align="left"><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets_4-Sensors">Arduino_4-Sensorsソースコード</a></td>
-</tr>
-<tr>
-<td align="left">PlatformIO IDE</td>
-<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/esp32/ESP32_GoogleSheets-DHT22">PlatformIO_DHT22ソースコード</a></td>
-<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/esp32/ESP32_GoogleSheets_4-Sensors">PlatformIO_4-Sensorsソースコード</a></td>
-</tr>
-</tbody>
-</table>
-<p>また、個人や家庭で使用するWPA2 Personal <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>や企業で使用するwpa2 Enterprise <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> のセキュリティの仕様に対応しています。</br>
-ソースコードを開いて、使用するWi-FiルータのSSID、パスワード、デプロイID等の情報を入力して、使用します。</br></p>
-<h3 id="wpa2-personalの場合">WPA2 Personalの場合</h3>
-<ul>
-<li><code>wifi_ssid</code>と<code>wifi_password</code>は、使用するWi-FiルータのSSIDとパスワードを入力します。</br></li>
-</ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">// Connecting WiFi Settings
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">SSID</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;ssid&#34;</span><span style="color:#000;font-weight:bold">;</span>           <span style="color:#8f5902;font-style:italic">// Wi-Fi SSID
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">PASSWORD</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;password&#34;</span><span style="color:#000;font-weight:bold">;</span>   <span style="color:#8f5902;font-style:italic">// Password
-</span></code></pre></div><ul>
-<li><code>google_scripts_key</code>は、<a href="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/#google-apps-script%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">Google Apps Scriptのデプロイ</a>で生成されたデプロイIDを入力します。</br></li>
-</ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">// Accessed Google Script Settings
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">APP_SERVER</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;script.google.com&#34;</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">KEY</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;google_scripts_key&#34;</span><span style="color:#000;font-weight:bold">;</span>
-</code></pre></div><h3 id="wpa2-enterpriseの場合">WPA2 Enterpriseの場合</h3>
-<ul>
-<li><code>//#define ENTERPRISE</code>のコメント(<code>//</code>)を外します。</li>
-</ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">//#define ENTERPRISE
-</span><span style="color:#8f5902;font-style:italic"></span>
-<span style="color:#8f5902;font-style:italic">#ifdef ENTERPRISE   </span><span style="color:#8f5902;font-style:italic">// Enterprise
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;esp_wpa2.h&gt;</span><span style="color:#8f5902;font-style:italic">
-</span><span style="color:#8f5902;font-style:italic">#endif
-</span></code></pre></div><ul>
-<li><code>identity</code>、<code>wifi_password</code>、<code>wifi_ssid</code>とは、使用するWi-FiルータのSSIDとパスワードを入力します。</br></li>
-</ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">#ifdef ENTERPRISE   </span><span style="color:#8f5902;font-style:italic">// Enterprise
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define EAP_IDENTITY &#34;identity&#34; </span><span style="color:#8f5902;font-style:italic">//if connecting from another corporation, use identity@organisation.domain 
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">#define EAP_PASSWORD &#34;password&#34; </span><span style="color:#8f5902;font-style:italic">//Password
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">SSID_ENT</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;ssid&#34;</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#8f5902;font-style:italic">// Wi-Fi SSID
-</span></code></pre></div><ul>
-<li><code>google_scripts_key</code>は、<a href="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/#google-apps-script%E3%81%AE%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4">Google Apps Scriptのデプロイ</a>で生成されたデプロイIDを入力します。</br></li>
-</ul>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#8f5902;font-style:italic">// Accessed Google Script Settings
-</span><span style="color:#8f5902;font-style:italic"></span><span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">APP_SERVER</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;script.google.com&#34;</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#204a87;font-weight:bold">const</span> <span style="color:#204a87;font-weight:bold">char</span><span style="color:#ce5c00;font-weight:bold">*</span> <span style="color:#000">KEY</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#4e9a06">&#34;google_scripts_key&#34;</span><span style="color:#000;font-weight:bold">;</span>
-</code></pre></div><h2 id="組み立て">組み立て</h2>
-<h3 id="dht22の場合">DHT22の場合</h3>
-<p>1.ESP32 Wi-Fi Kit2を箱から取出し、DHT22と<a href="https://docs.leafony.com/docs/leaf/extension/ax08/">29pin header</a>を以下の通りに結線します。</br></p>
-<table>
-<thead>
-<tr>
-<th align="left">DHT22</th>
-<th align="center">29pin header</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">VCC-power supply</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="left">DAT-signal</td>
-<td align="center">15</td>
-</tr>
-<tr>
-<td align="left">GND</td>
-<td align="center">27</td>
-</tr>
-</tbody>
-</table>
-<h3 id="4-sensorsの場合">4-Sensorsの場合</h3>
-<p>1.ESP32 Wi-Fi Kit2の<a href="https://docs.leafony.com/docs/leaf/others/az02/">RTC &amp; microSD</a>を外して、<a href="https://docs.leafony.com/docs/leaf/io/ai01/">4-Sensors</a>を取付けます。</br></p>
-<h2 id="スケッチの書き込み">スケッチの書き込み</h2>
-<ol>
-<li>
-<p><a href="https://docs.leafony.com/docs/environment/esp32/arduino/">ESP32 MCUのArduino IDE設定</a>が、まだ済んでない方は、インストールして下さい。</br></p>
-</li>
-<li>
-<p>DHT22のライブラリのインストール</br></p>
-<ul>
-<li><a href="https://github.com/adafruit/DHT-sensor-library">DHT-sensor-library</a></li>
-</ul>
-</li>
-<li>
-<p>Arduinoのスケッチを書き込んで下さい。</br></br></p>
-</li>
-</ol>
-<h1 id="google-apps-scriptの設定">Google Apps Scriptの設定</h1>
-<h2 id="google-apps-scriptとgoogleスプレッドシートの連携">Google Apps ScriptとGoogleスプレッドシートの連携</h2>
-<p>Google Apps Scriptを使って、Google スプレッドシートにデータを表示するWebアプリの設定を行います。<br /></p>
+<h2 id="google-apps-scriptの設定">Google Apps Scriptの設定</h2>
+<p>Google Apps Scriptを使って、Leafonyにソースコードを書く時に必要なWebアプリの設定を行います。<br /></p>
 <ol>
 <li>
 <p><a href="https://docs.google.com/spreadsheets/">sheets.google.com</a> でスプレッドシートのホーム画面を開き、新しいスプレッドシートを作成をします。</br></p>
@@ -4024,7 +3916,7 @@
 <span style="color:#000;font-weight:bold">}</span>
     
 </code></pre></div><h2 id="google-apps-scriptのデプロイ">Google Apps Scriptのデプロイ</h2>
-<p>GASのデプロイ<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>の手順を説明します。</br></p>
+<p>GASのデプロイ<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>の手順を説明します。</br></p>
 <ol>
 <li>
 <p>スプレッドシートを開き<code>拡張機能</code>→<code>Apps Script</code>をクリックします。</br></p>
@@ -4050,10 +3942,10 @@
 <p>デプロイが完了できたら、デプロイIDとウェブアプリURLが表示されます。</br></p>
 <ul>
 <li>
-<p>デプロイID:  Arduinoの<a href="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/#%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89">ソースコード</a> にIDを入力します。</br></p>
+<p>デプロイID：ソースコードを書く時に使用します。</br></p>
 </li>
 <li>
-<p>ウェブアプリURL: <a href="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/#google-apps-script%E3%81%AE%E3%83%86%E3%82%B9%E3%83%88">Google Apps Scriptのテスト</a>にURLを使用します。</p>
+<p>ウェブアプリURLは、 <a href="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/#google-apps-script%E3%81%AE%E3%83%86%E3%82%B9%E3%83%88">Google Apps Scriptのテスト</a>に使用します。</br></p>
 </li>
 </ul>
 </li>
@@ -4061,6 +3953,79 @@
 <p>デプロイIDとウェブアプリURLをコピーして、<code>完了</code>をクリックします。</p>
 </li>
 </ol>
+<h2 id="leafonyの組み立て">Leafonyの組み立て</h2>
+<h3 id="dht22の場合">DHT22の場合</h3>
+<p>ESP32 Wi-Fi Kit2を箱から取出し、DHT22と<a href="https://docs.leafony.com/docs/leaf/extension/ax08/">29pin header</a>を以下の通りに結線します。</br></p>
+<table>
+<thead>
+<tr>
+<th align="left">DHT22</th>
+<th align="center">29pin header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">VCC-power supply</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left">DAT-signal</td>
+<td align="center">15</td>
+</tr>
+<tr>
+<td align="left">GND</td>
+<td align="center">27</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-sensorsの場合">4-Sensorsの場合</h3>
+<p>ESP32 Wi-Fi Kit2の<a href="https://docs.leafony.com/docs/leaf/others/az02/">RTC &amp; microSD</a>を外して、<a href="https://docs.leafony.com/docs/leaf/io/ai01/">4-Sensors</a>を取付けます。</br></p>
+<h2 id="ソースコード">ソースコード</h2>
+<h3 id="開発環境の設定">開発環境の設定</h3>
+<p><a href="https://docs.leafony.com/docs/environment/esp32/arduino/">Arduino IDE</a>か、 <a href="https://docs.leafony.com/docs/environment/esp32/platformio/">PlatformIO IDE</a>  の開発環境を設定して下さい。</br></p>
+<h3 id="ソースコードのダウンロード">ソースコードのダウンロード</h3>
+<p>開発用パソコンに、ソースコードをダウンロードします。</br></p>
+<table>
+<thead>
+<tr>
+<th align="left">IDE</th>
+<th align="left">DHT22</th>
+<th align="left">4-Sensors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Arduino IDE</td>
+<td align="left"><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets-DHT22">Arduino_DHT22ソースコード</a></td>
+<td align="left"><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets_4-Sensors">Arduino_4-Sensorsソースコード</a></td>
+</tr>
+<tr>
+<td align="left">PlatformIO IDE</td>
+<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/esp32/ESP32_GoogleSheets-DHT22">PlatformIO_DHT22ソースコード</a></td>
+<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/esp32/ESP32_GoogleSheets_4-Sensors">PlatformIO_4-Sensorsソースコード</a></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>DHT22は、<a href="https://github.com/adafruit/DHT-sensor-library">DHT-sensor-library</a>を使用します。</li>
+</ul>
+<h3 id="ソースコードの編集">ソースコードの編集</h3>
+<p>個人や家庭などのWi-Fiルータ(WPA2 Personal <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>)は、ソースコードに以下の内容を記述して下さい。</p>
+<ul>
+<li><code>ssid</code>:Wi-FiルータのSSIDを入力します。</br></li>
+<li><code>password</code>：Wi-Fiルータのパスワードを入力します。</br></li>
+<li><code>google_scripts_key</code>：Google Apps ScriptのデプロイIDを入力します。</br></li>
+</ul>
+<p>大学や企業などのWi-Fiルータ(wpa2 Enterprise <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>)は、ソースコードに以下の内容を記述して下さい。</br></p>
+<ul>
+<li><code>//#define ENTERPRISE</code>のコメント(<code>//</code>)を外します。 </br></li>
+<li><code>identity</code>: 利用するユーザのIDを入力します。</li>
+<li><code>password</code>：利用するユーザのパスワードを入力します。</br></li>
+<li><code>ssid</code>:Wi-FiルータのSSIDを入力します。</br></li>
+<li><code>google_scripts_key</code>：Google Apps ScriptのデプロイIDを入力します。</br></li>
+</ul>
+<h3 id="ソースコードの書き込み">ソースコードの書き込み</h3>
+<p>ソースコードの編集が完了したら、<a href="https://docs.leafony.com/docs/environment/esp32/arduino/#%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%A8%E6%8E%A5%E7%B6%9A">パソコンと接続</a>して、書き込みます。</br></p>
 <h2 id="実行結果">実行結果</h2>
 <ol>
 <li>スプレッドシートを開き、1行目にDatetime、UniqueID、Temperature、Humidity、Illumination<sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>ののカラム名を記入します。</br></li>
@@ -4087,16 +4052,16 @@
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>ドキュメントとサンプルコードは <a href="https://osoyoo.com/ja/2018/03/15/arduino-lesson-dht22-humidity-and-temperature-sensor/">こちら</a>を参照して下さい。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>ドキュメントとサンプルコードは <a href="https://osoyoo.com/ja/2018/03/15/arduino-lesson-dht22-humidity-and-temperature-sensor/">こちら</a>を参照して下さい。</br> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>個人や家庭、小規模事業所などためのセキュリティの仕様。端末毎に設定してあるパスワードにより認証を行う。</br> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>一般的にデプロイとは、ソフトウェアを利用可能にする活動全般を指す用語で、Google Apps Scriptの場合は、ソフトウェアなどを実行できる状態にして、URLを生成することを意味しています。</br> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>企業など比較的規模の大きいネットワークのためのセキュリティの仕様。利用者毎に登録したIDとパスワードにより認証を行う。</br> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>個人や家庭、小規模事業所などためのセキュリティの仕様。端末毎に設定してあるパスワードにより認証を行う。</br> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
-<p>一般的にデプロイとは、ソフトウェアを利用可能にする活動全般を指す用語で、Google Apps Scriptの場合は、ソフトウェアなどを実行できる状態にして、URLを生成することを意味しています。</br> <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>企業など比較的規模の大きいネットワークのためのセキュリティの仕様。利用者毎に登録したIDとパスワードにより認証を行う。</br> <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5" role="doc-endnote">
 <p>　Illuminationは、4-Sensorsの場合だけ表示されます。</br> <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
@@ -4426,7 +4391,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 16, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 17, 2023
 </div>
 </div>
 
