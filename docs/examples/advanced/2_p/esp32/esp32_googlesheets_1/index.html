@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.14b0bc16aebb63fbcf92cdb7aa09dc133fdbc345f52a8ceb4ef52d6334886ad8f37055e2d7055105be43f76a1367a98f5b4fec12c5f3735cb9c54be6a6b3d244.json"
+  data-offline-search-index-json-src="/offline-search-index.d7c3f13a090dd560498a6d7e8c5e7dab17eb11b22799037a666de54d4072990633e86a195eab4a34deeda2fb56b3f8ed7b5f40e73f108ca3ea3b9b0bb66b311a.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.14b0bc16aebb63fbcf92cdb7aa09dc133fdbc345f52a8ceb4ef52d6334886ad8f37055e2d7055105be43f76a1367a98f5b4fec12c5f3735cb9c54be6a6b3d244.json"
+  data-offline-search-index-json-src="/offline-search-index.d7c3f13a090dd560498a6d7e8c5e7dab17eb11b22799037a666de54d4072990633e86a195eab4a34deeda2fb56b3f8ed7b5f40e73f108ca3ea3b9b0bb66b311a.json"
   data-offline-search-base-href="/"
 >
 
@@ -3772,6 +3772,7 @@
   <ul>
     <li><a href="#google-apps-scriptのテスト">Google Apps Scriptのテスト</a></li>
     <li><a href="#google-apps-scriptを編集する場合">Google Apps Scriptを編集する場合</a></li>
+    <li><a href="#grafanaでスプレッドシートをグラフ化">Grafanaでスプレッドシートをグラフ化</a></li>
   </ul>
 </nav>
 
@@ -4037,7 +4038,7 @@
 </br>
 <h1 id="tips">Tips</h1>
 <h2 id="google-apps-scriptのテスト">Google Apps Scriptのテスト</h2>
-<p>GASpが正しく実行出来るかテストをします。</br></p>
+<p>GASが正しく実行出来るかテストをします。</br></p>
 <ol>
 <li>ウェブアプリURLの末尾に、<code>?UniqueID=Leafony_A&amp;temperature=10&amp;humidity=20&amp;illumination=30</code>を加えてWebにアクセスします。</li>
 <li>スプレッドシートに、Datetime、Leafony_A、10、20、30の値が書き込まれていれば、正しく実行しています。</br></li>
@@ -4047,6 +4048,29 @@
 <li>スプレッドシートを開き、<code>拡張機能</code>→<code>Apps Script</code>をクリックします。</br></li>
 <li>右上の<code>デプロイ</code>→<code>デプロイを管理</code>をクリックします。</br></li>
 <li><code>デプロイを管理</code>が表示されたら、 <code>編集</code>のアイコンをクリックして<code>新バージョン</code>を選択し、<code>デプロイ</code>をクリックします。</br></li>
+</ol>
+<h2 id="grafanaでスプレッドシートをグラフ化">Grafanaでスプレッドシートをグラフ化</h2>
+<p><a href="https://grafana.com/">Grafana</a>は、データベースに保存されたデータに対して、リアルタイムにてデータを表示するマルチプラットフォームのWebアプリケーションです。ここでは、WindowsでGrafanaを起動し、Googleスプレッドシートに保存されているデータをグラフにします。</br></p>
+<ol>
+<li><a href="https://grafana.com/grafana/download?platform=windows">Grafanaのダウンロードページ</a> よりWindows版のインストーラをダウンロードし、画面の指示に従ってインストールします。</br></li>
+<li>左上の<code>Toggle Menue</code>をクリックし、サイドバーを表示させます。  </br></li>
+<li><code>Administration→Plugins</code>を開き、<code>Google Sheets</code>を検索し、インストールして下さい。</br></li>
+<li><code>Administration→Data sources</code>を開き、<code>Add data source</code>をクリックし、<code>Google Sheets</code>を Data Sourceに追加します。</br></li>
+<li><code>Google Sheets Settig</code>sの画面で以下の項目を入力し、<code>Save &amp; Test</code>をクリックします。</br>
+<ul>
+<li>Auth:API Keyを選択</br></li>
+<li>API Key:API Keyは画面下の<code>Generate an API key</code>に従って発行します。<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup></li>
+</ul>
+</li>
+<li><code>Dashboards→New(右側)</code>をクリックし、<code>New Dashboard</code>を選択します。</li>
+<li><code>Add Visualization</code>をクリックすると、編集画面が表示されるので、以下の項目を入力します。詳しくは、<a href="https://github.com/grafana/google-sheets-datasource/blob/main/src/docs/using-the-editor.md">こちら</a>を参照して下さい。</BR>
+<ul>
+<li><code>spreadsheetId</code>: <a href="https://developers.google.com/sheets/api/guides/concepts?hl=ja">こちら</a>を参照し入力します。</br></li>
+<li><code>Range</code>:<code>シート1!A:B</code>のような文字列で、範囲をしてします。</br></li>
+<li>Cache time:デフォルトのキャッシュ時間は 5 分に設定されていますが、キャッシュ時間を 0 に設定すると、キャッシュがバイパスされます。</br></li>
+<li>Time filter:時間フィルターを<code>ON</code>にします。</li>
+</ul>
+</li>
 </ol>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
@@ -4067,6 +4091,9 @@
 </li>
 <li id="fn:5" role="doc-endnote">
 <p>　Illuminationは、4-Sensorsの場合だけ表示されます。</br> <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6" role="doc-endnote">
+<p>API Keyの設定は、<a href="https://qiita.com/kitazaki/items/26a8eedef842a575eb45">こちら</a>を参照して下さい。また、スプレッドシートを<code>共有</code>にしないと、<code>Google Sheets API</code>が表示されません。適切に共有の設定をして下さい。</br> <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -4393,7 +4420,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 18, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 19, 2023
 </div>
 </div>
 
