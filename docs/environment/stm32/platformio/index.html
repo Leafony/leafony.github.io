@@ -136,7 +136,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d7c3f13a090dd560498a6d7e8c5e7dab17eb11b22799037a666de54d4072990633e86a195eab4a34deeda2fb56b3f8ed7b5f40e73f108ca3ea3b9b0bb66b311a.json"
+  data-offline-search-index-json-src="/offline-search-index.22571cf8ac6e228a54c85c92666d1949e3bb6b12df421fc814eb31c3b0fcad1f119361749c2f0650bd5f11e2b839873d6bcb3a88eb7f0d165e0a344fda038174.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +166,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d7c3f13a090dd560498a6d7e8c5e7dab17eb11b22799037a666de54d4072990633e86a195eab4a34deeda2fb56b3f8ed7b5f40e73f108ca3ea3b9b0bb66b311a.json"
+  data-offline-search-index-json-src="/offline-search-index.22571cf8ac6e228a54c85c92666d1949e3bb6b12df421fc814eb31c3b0fcad1f119361749c2f0650bd5f11e2b839873d6bcb3a88eb7f0d165e0a344fda038174.json"
   data-offline-search-base-href="/"
 >
 
@@ -3767,7 +3767,8 @@
       </ul>
     </li>
     <li><a href="#クイックスタート">クイックスタート</a></li>
-    <li><a href="#cpuの周波数を80mhzデフォルトから16mhzに設定変更">CPUの周波数を80MHz(デフォルト）から16MHzに設定変更</a></li>
+    <li><a href="#stm32cubeprogによるプログラムの書き込み">STM32CubeProgによるプログラムの書き込み</a></li>
+    <li><a href="#cpuの周波数を80mhzデフォルトから16mhzに設定変更">CPUの周波数を80MHz(デフォルト)から16MHzに設定変更</a></li>
     <li><a href="#ライブラリ">ライブラリ</a></li>
     <li><a href="#シリアルプロッター">シリアルプロッター　</a></li>
     <li><a href="#stm32-beginner-examples">STM32 Beginner Examples</a></li>
@@ -3927,7 +3928,7 @@ NUCLEO-L452REのプロジェクトを立ち上げると①と②がPCにダウ�
 </ul>
 </li>
 <li>
-<p><code>platformio.ini</code> (画面左）を開き、 Projectで定義したBoardとFrameworkが、正しく定義されていることを確認します。</br></p>
+<p><code>platformio.ini</code> (画面左)を開き、 Projectで定義したBoardとFrameworkが、正しく定義されていることを確認します。</br></p>
 </li>
 </ol>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000;font-weight:bold">[</span><span style="color:#f57900">env</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">LEAFONY_AP03</span><span style="color:#000;font-weight:bold">]</span>
@@ -3990,7 +3991,33 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 <p><code>シリアルモニター</code>ボタンを押して起動させ、<code>Hello Wolrd</code>を表示が出来れば完成です。</br></p>
 </li>
 </ol>
-<h2 id="cpuの周波数を80mhzデフォルトから16mhzに設定変更">CPUの周波数を80MHz(デフォルト）から16MHzに設定変更</h2>
+<h2 id="stm32cubeprogによるプログラムの書き込み">STM32CubeProgによるプログラムの書き込み</h2>
+<ol>
+<li>
+<p><a href="https://docs.leafony.com/docs/environment/stm32/arduino_ide/#%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%A8%E6%8E%A5%E7%B6%9A">こちら</a> を参考に、LeafonyをPCに接続し、STM32 MCUリーフの<code>プログラムスイッチ</code>をプログラム側(LED点灯)にし下さい。</br></p>
+</li>
+<li>
+<p>STM32CubeProgを起動させて下さい。</br></p>
+</li>
+<li>
+<p>画面右の接続先を<code>UART</code>にし、<code>Connect</code>をクリックして下さい。</br></p>
+</li>
+<li>
+<p>プログラムのイメージは、以下にあります。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> </br>
+<code>C:\Users\ユーザ名\Documents\PlatformIO\Projects\STM32_Hello_World_Pjt\.pio\build\LEAFONY_AP03\firmware.elf</code></br></p>
+</li>
+<li>
+<p>画面左の<code>Erasing ＆ Programing</code>をクリックして以下の操作を行います。</p>
+<ul>
+<li>File pathはイメージファイルを選択</br></li>
+<li>Veryfy programing にチェツク</br><br></li>
+</ul>
+</li>
+<li>
+<p><code>Start Programming</code>をクリックし、<code>Download verified successfully</code>が表示されたらokです。</br></p>
+</li>
+</ol>
+<h2 id="cpuの周波数を80mhzデフォルトから16mhzに設定変更">CPUの周波数を80MHz(デフォルト)から16MHzに設定変更</h2>
 <p>CPUの周波数は、80MHz（デフォルト）に設定されています。省電力を実現するためにCPUの周波数を下げることは有効な手段なので、CPUの周波数を16MHzに設定出来るようにしました。設定方法を以下に記します。</br></p>
 <ol>
 <li><code>platformio.ini</code>に以下を追記して下さい。</li>
@@ -4272,6 +4299,9 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 <li id="fn:1" role="doc-endnote">
 <p>Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み。v2.5.0は動作しないので要注意。</br> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
+<li id="fn:2" role="doc-endnote">
+<p>イメージファイルが日本語のフォルダの下にある場合は、書き込みすることが出来ないので別の場所にコピーします。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
 </ol>
 </section>
 
@@ -4285,7 +4315,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 6, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 26, 2023
 </div>
 </div>
 
