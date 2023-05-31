@@ -39,6 +39,10 @@
 &lt;li&gt;開発用パソコン&lt;/li&gt;
 &lt;li&gt;Wi-Fiルータ&lt;/br&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;デモ動画&#34;&gt;デモ動画&lt;/h2&gt;
+&lt;div class=&#34;youtube&#34;&gt;
+   &lt;iframe width=&#34;560&#34; height=&#34;315&#34; src=&#34;https://www.youtube.com/embed/rGNuh47s1nk&#34; title=&#34;YouTube video player&#34; frameborder=&#34;0&#34; allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&#34; allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
 &lt;h2 id=&#34;google-apps-scriptの設定&#34;&gt;Google Apps Scriptの設定&lt;/h2&gt;
 &lt;p&gt;Google Apps Scriptを使って、Leafonyにソースコードを書く時に必要なWebアプリの設定を行います。&lt;br /&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -223,6 +227,17 @@
 &lt;p&gt;&lt;a href=&#34;https://grafana.com/&#34;&gt;Grafana&lt;/a&gt;は、データベースに保存されたデータに対して、リアルタイムにてデータを表示するマルチプラットフォームのWebアプリケーションです。ここでは、WindowsでGrafanaを起動し、Googleスプレッドシートに保存されているデータをグラフにします。&lt;/br&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://grafana.com/grafana/download?platform=windows&#34;&gt;Grafanaのダウンロードページ&lt;/a&gt; よりWindows版のインストーラをダウンロードし、画面の指示に従ってインストールします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:\Program Files\GrafanaLabs\grafana\bin\grafana-server.exe&lt;/code&gt; を実行してブラウザを開き、以下のリンクにアクセスします。&lt;/br&gt;
+&lt;ul&gt;
+&lt;li&gt;http://localhost:3000/&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;以下でログインして、初期パスワードを変更します。&lt;/br&gt;
+&lt;ul&gt;
+&lt;li&gt;Email or username：admin&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;Password：admin&lt;/br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;左上の&lt;code&gt;Toggle Menue&lt;/code&gt;をクリックし、サイドバーを表示させます。  &lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;Administration→Plugins&lt;/code&gt;を開き、&lt;code&gt;Google Sheets&lt;/code&gt;を検索し、インストールして下さい。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;Administration→Data sources&lt;/code&gt;を開き、&lt;code&gt;Add data source&lt;/code&gt;をクリックし、&lt;code&gt;Google Sheets&lt;/code&gt;を Data Sourceに追加します。&lt;/br&gt;&lt;/li&gt;
