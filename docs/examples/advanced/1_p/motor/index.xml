@@ -22,9 +22,11 @@
       <description>
         
         
-        &lt;p&gt;このサンプルはBasic Kitの&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/1_p/basic/webbluetooth_iot/&#34;&gt;Web Bluetoothを使ったIoTアプリ入門&lt;/a&gt;で紹介したものとMotorリーフを組み合わせたものです。Bluetoothを使って電動ポンプのオン/オフを制御し植木に水やりをしたり、スマートフォンやパソコンにセンサの情報を送信する事ができます。
-詳細はBasic Kitの&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/1_p/basic/webbluetooth_iot/&#34;&gt;Web Bluetoothを使ったIoTアプリ入門&lt;/a&gt;をご覧ください。&lt;/p&gt;
+        &lt;p&gt;このサンプルはBasic Kitの&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/1_p/basic/webbluetooth_iot/&#34;&gt;Web BLEを使ったIoTアプリ入門&lt;/a&gt;で紹介したものとMotorリーフを組み合わせたものです。BLEを使って電動ポンプのオン/オフを制御し植木に水やりをしたり、スマートフォンやパソコンにセンサの情報を送信する事ができます。
+詳細はBasic Kitの&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/1_p/basic/webbluetooth_iot/&#34;&gt;Web BLEを使ったIoTアプリ入門&lt;/a&gt;をご覧ください。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;webbluetooth.jpg&#34; alt=&#34;webbluetooth.jpg&#34;&gt;&lt;/p&gt;
+&lt;br&gt;
+&lt;p&gt;※本ウェブサイトに記載している会社名、商品名は、各社の商標または登録商標です。&lt;/p&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;AVR MCU、BLE Sugar、4-Sensors、CR2032、USB&lt;/li&gt;
@@ -37,7 +39,7 @@
 &lt;p&gt;あらかじめどちらもダウンロードしてください。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/Motor_BLE_demo&#34; target=&#34;_blank&#34;&gt;Arduino スケッチ&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/Motor_BLE_demo&#34; target=&#34;_blank&#34;&gt;Web Bluetooth アプリ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/Motor_BLE_demo&#34; target=&#34;_blank&#34;&gt;Web BLE アプリ&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;leafonyの構成&#34;&gt;Leafonyの構成&lt;/h2&gt;
 &lt;p&gt;このサンプルでは下記のリーフ構成で試せます。&lt;/p&gt;
@@ -106,7 +108,7 @@
 &lt;h2 id=&#34;実行方法&#34;&gt;実行方法&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;Arduino IDEで&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/Motor_BLE_demo&#34; target=&#34;_blank&#34;&gt;Motor_BLE_demo.ino&lt;/a&gt;を書き込む&lt;/li&gt;
-&lt;li&gt;ダウンロードした&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/Motor_BLE_demo&#34; target=&#34;_blank&#34;&gt;Web Bluetooth アプリ&lt;/a&gt;の&lt;code&gt;index.html&lt;/code&gt;をGoogle Chromeで開く&lt;br&gt;
+&lt;li&gt;ダウンロードした&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/Motor_BLE_demo&#34; target=&#34;_blank&#34;&gt;Web BLE アプリ&lt;/a&gt;の&lt;code&gt;index.html&lt;/code&gt;をGoogle Chromeで開く&lt;br&gt;
 Webアプリの使い方の詳細は&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/basic&#34;&gt;Basic Kit クイックスタートガイド&lt;/a&gt;を参考&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;

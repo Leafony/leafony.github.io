@@ -23,7 +23,9 @@
         
         
         &lt;p&gt;&lt;img src=&#34;Example_Keio_v4_1_1.png&#34; alt=&#34;Example_Keio_v4_1_1.png&#34;&gt;&lt;/p&gt;
-&lt;p&gt;Basic Kitは、温湿度、照度、加速度センサを搭載した4-Sensorsリーフ、AVR MCUリーフ、Bluetoothリーフを搭載した小型でコイン電池で駆動可能な開発キットです。スマートフォンやパソコンに、Bluetoothを使って、センサの情報を送信出来る「Web Bluetooth」というアプリが、プレインストールされています。&lt;/p&gt;
+&lt;p&gt;Basic Kitは、温湿度、照度、加速度センサを搭載した4-Sensorsリーフ、AVR MCUリーフ、BLEリーフを搭載した小型でコイン電池で駆動可能な開発キットです。スマートフォンやパソコンに、BLEを使って、センサの情報を送信出来る「Web Bluetooth」というアプリが、プレインストールされています。
+&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;※本ウェブサイトに記載している会社名、商品名は、各社の商標または登録商標です。&lt;/p&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Basic Kit&lt;/li&gt;
@@ -166,6 +168,7 @@
         
         
         &lt;p&gt;Basic Kit 2には、Leafony block(AVR MCU等のリーフをネジ止め)、STM32 MCU、29pin、ケース、ドライバーが入っており、AVR MCUとSTM32 MCUには、予めスケッチが書き込まれています。出荷時はAVR MCUがLeafony blockに組み込まれています。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;※本ウェブサイトに記載している会社名、商品名は、各社の商標または登録商標です。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;まずは、&lt;a href=&#34;https://docs.leafony.com/docs/getting-started/basic/&#34; target=&#34; blank&#34;&gt;Basic Kit スタートガイド&lt;/a&gt;をお試し下さい。センサのデータをBLEのコネクションモードを使ってスマートフォン等に送信するアプリで動作確認ができます。&lt;/li&gt;
 &lt;li&gt;次に、以下のスタートガイドに従って、Leafony blockのマイコンをAVR MCU からSTM32MCUに変更し、最新技術に触れてみて下さい。出荷時に書き込まれているプログラムはセンサのデータをBLEのビーコンモードを使ってスマートフォン等に送信するもので、コイン電池でも数か月動作する低電力動作を実現しています。
@@ -177,14 +180,14 @@ STM32リーフにあらかじめ書き込まれているスケッチでは、IoT
 &lt;ul&gt;
 &lt;li&gt;センサのデータを一定時間間隔で取得し、&lt;/li&gt;
 &lt;li&gt;そのデータをSTM32のマイコン内部のEEPROMに書き込むとともに、&lt;/li&gt;
-&lt;li&gt;Bluetooth無線通信でデータを送信する&lt;/li&gt;
+&lt;li&gt;BLE無線通信でデータを送信する&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;これらの動作を超低電力で行えるように、上図のように双方向通信ができるconnection modeと超低電力なbeacon modeの2つのモードを使っています。一定時間間隔（デフォルト10秒、変更可能）でセンサデータを取得し、EEPROMにデータを蓄積するとともに、beacon modeでデータを一方的に送信します。Connection mode を使ってEEPROM内のセンサ蓄積データをPCやAndroidスマホに一括ダウンロードすることもできます。
 それでは、ビデオとwebを見ながら、新しいSTM32リーフをお試しください。&lt;/p&gt;
-&lt;h1 id=&#34;web-bluetooth&#34;&gt;Web Bluetooth&lt;/h1&gt;
-&lt;p&gt;Web Bluetoothは、Leafony blockのデータ(最大169サンプル)をグラフにしたり、センシングしたデータを表示させることが出来ます。ただし、対応のブラウザに制限がありますので、注意して下さい。&lt;/p&gt;
-&lt;h3 id=&#34;web-bluetoothの注意点&#34;&gt;Web Bluetoothの注意点&lt;/h3&gt;
-&lt;p&gt;2022年9月時点ではWeb Bluetoothは以下の点に注意しなければいけません。&lt;/p&gt;
+&lt;h1 id=&#34;web-ble&#34;&gt;Web BLE&lt;/h1&gt;
+&lt;p&gt;Web BLEは、Leafony blockのデータ(最大169サンプル)をグラフにしたり、センシングしたデータを表示させることが出来ます。ただし、対応のブラウザに制限がありますので、注意して下さい。&lt;/p&gt;
+&lt;h3 id=&#34;web-bleの注意点&#34;&gt;Web BLEの注意点&lt;/h3&gt;
+&lt;p&gt;2022年9月時点ではWeb BLEは以下の点に注意しなければいけません。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;センシングデータを表示出来るのは、Andoroid のみです。Google Chromeを開き、&lt;code&gt;アドレスバー&lt;/code&gt;に、下記URLを入力し、Enabledにして下さい。&lt;/br&gt;
@@ -194,7 +197,7 @@ STM32リーフにあらかじめ書き込まれているスケッチでは、IoT
 &lt;p&gt;iPhoneには&lt;a href=&#34;https://apps.apple.com/jp/app/bluefy-web-ble-browser/id1492822055&#34; target=&#34; blank&#34;&gt;Bluefy&lt;/a&gt;のアプリが必要です。また、画面上に「Download CSV」のボタンはありますが使用で出来ません。&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Web Bluetoothの開発状況と対応ブラウザについては&lt;a href=&#34;https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md&#34; target=&#34; blank&#34;&gt;implementation-status.md&lt;/a&gt;で確認できます。&lt;/p&gt;
+&lt;p&gt;Web BLEの開発状況と対応ブラウザについては&lt;a href=&#34;https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md&#34; target=&#34; blank&#34;&gt;implementation-status.md&lt;/a&gt;で確認できます。&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;

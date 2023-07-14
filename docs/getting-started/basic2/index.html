@@ -22,16 +22,16 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Basic Kit 2 スタートガイド | Leafony</title><meta property="og:title" content="Basic Kit 2 スタートガイド" />
-<meta property="og:description" content="Bluetoothで環境センシング
+<meta property="og:description" content="BLEで環境センシング
 " />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/getting-started/basic2/" />
 <meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="Basic Kit 2 スタートガイド">
-<meta itemprop="description" content="Bluetoothで環境センシング
+<meta itemprop="description" content="BLEで環境センシング
 "><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Basic Kit 2 スタートガイド"/>
-<meta name="twitter:description" content="Bluetoothで環境センシング
+<meta name="twitter:description" content="BLEで環境センシング
 "/>
 
 
@@ -136,7 +136,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4c4073e7ea2e9467e1b916d24f72f3b3c008cb8a2847b9c8cf5ade43105ce9f931766f5784730ddbf869d131fc7caa7cb769617d903c3d4b7330355ec54c4b1e.json"
+  data-offline-search-index-json-src="/offline-search-index.3987a5f1dde50f94941702643bd71d4d902fd09323879b2f9e6dd5b01f3da4af26879a7bc5aeaa60489ffda8f3d10f1525801518162ca3092901d660d6ddf640.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +166,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4c4073e7ea2e9467e1b916d24f72f3b3c008cb8a2847b9c8cf5ade43105ce9f931766f5784730ddbf869d131fc7caa7cb769617d903c3d4b7330355ec54c4b1e.json"
+  data-offline-search-index-json-src="/offline-search-index.3987a5f1dde50f94941702643bd71d4d902fd09323879b2f9e6dd5b01f3da4af26879a7bc5aeaa60489ffda8f3d10f1525801518162ca3092901d660d6ddf640.json"
   data-offline-search-base-href="/"
 >
 
@@ -3753,7 +3753,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#web-bluetoothの注意点">Web Bluetoothの注意点</a></li>
+        <li><a href="#web-bleの注意点">Web BLEの注意点</a></li>
       </ul>
     </li>
     <li><a href="#用意するもの">用意するもの</a></li>
@@ -3808,9 +3808,10 @@
             
 <div class="td-content">
 	<h1>Basic Kit 2 スタートガイド</h1>
-        <div class="lead">Bluetoothで環境センシング</div>
+        <div class="lead">BLEで環境センシング</div>
 	
 	<p>Basic Kit 2には、Leafony block(AVR MCU等のリーフをネジ止め)、STM32 MCU、29pin、ケース、ドライバーが入っており、AVR MCUとSTM32 MCUには、予めスケッチが書き込まれています。出荷時はAVR MCUがLeafony blockに組み込まれています。</br></p>
+<p>※本ウェブサイトに記載している会社名、商品名は、各社の商標または登録商標です。</p>
 <ol>
 <li>まずは、<a href="https://docs.leafony.com/docs/getting-started/basic/" target=" blank">Basic Kit スタートガイド</a>をお試し下さい。センサのデータをBLEのコネクションモードを使ってスマートフォン等に送信するアプリで動作確認ができます。</li>
 <li>次に、以下のスタートガイドに従って、Leafony blockのマイコンをAVR MCU からSTM32MCUに変更し、最新技術に触れてみて下さい。出荷時に書き込まれているプログラムはセンサのデータをBLEのビーコンモードを使ってスマートフォン等に送信するもので、コイン電池でも数か月動作する低電力動作を実現しています。
@@ -3822,14 +3823,14 @@ STM32リーフにあらかじめ書き込まれているスケッチでは、IoT
 <ul>
 <li>センサのデータを一定時間間隔で取得し、</li>
 <li>そのデータをSTM32のマイコン内部のEEPROMに書き込むとともに、</li>
-<li>Bluetooth無線通信でデータを送信する</li>
+<li>BLE無線通信でデータを送信する</li>
 </ul>
 <p>これらの動作を超低電力で行えるように、上図のように双方向通信ができるconnection modeと超低電力なbeacon modeの2つのモードを使っています。一定時間間隔（デフォルト10秒、変更可能）でセンサデータを取得し、EEPROMにデータを蓄積するとともに、beacon modeでデータを一方的に送信します。Connection mode を使ってEEPROM内のセンサ蓄積データをPCやAndroidスマホに一括ダウンロードすることもできます。
 それでは、ビデオとwebを見ながら、新しいSTM32リーフをお試しください。</p>
-<h1 id="web-bluetooth">Web Bluetooth</h1>
-<p>Web Bluetoothは、Leafony blockのデータ(最大169サンプル)をグラフにしたり、センシングしたデータを表示させることが出来ます。ただし、対応のブラウザに制限がありますので、注意して下さい。</p>
-<h3 id="web-bluetoothの注意点">Web Bluetoothの注意点</h3>
-<p>2022年9月時点ではWeb Bluetoothは以下の点に注意しなければいけません。</p>
+<h1 id="web-ble">Web BLE</h1>
+<p>Web BLEは、Leafony blockのデータ(最大169サンプル)をグラフにしたり、センシングしたデータを表示させることが出来ます。ただし、対応のブラウザに制限がありますので、注意して下さい。</p>
+<h3 id="web-bleの注意点">Web BLEの注意点</h3>
+<p>2022年9月時点ではWeb BLEは以下の点に注意しなければいけません。</p>
 <ul>
 <li>
 <p>センシングデータを表示出来るのは、Andoroid のみです。Google Chromeを開き、<code>アドレスバー</code>に、下記URLを入力し、Enabledにして下さい。</br>
@@ -3839,7 +3840,7 @@ STM32リーフにあらかじめ書き込まれているスケッチでは、IoT
 <p>iPhoneには<a href="https://apps.apple.com/jp/app/bluefy-web-ble-browser/id1492822055" target=" blank">Bluefy</a>のアプリが必要です。また、画面上に「Download CSV」のボタンはありますが使用で出来ません。</p>
 </li>
 <li>
-<p>Web Bluetoothの開発状況と対応ブラウザについては<a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md" target=" blank">implementation-status.md</a>で確認できます。</p>
+<p>Web BLEの開発状況と対応ブラウザについては<a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md" target=" blank">implementation-status.md</a>で確認できます。</p>
 </li>
 </ul>
 <h2 id="用意するもの">用意するもの</h2>
@@ -3923,7 +3924,7 @@ STM32リーフにあらかじめ書き込まれているスケッチでは、IoT
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 30, 2022
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 14, 2023
 </div>
 </div>
 
