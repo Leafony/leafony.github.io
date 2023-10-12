@@ -136,7 +136,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3987a5f1dde50f94941702643bd71d4d902fd09323879b2f9e6dd5b01f3da4af26879a7bc5aeaa60489ffda8f3d10f1525801518162ca3092901d660d6ddf640.json"
+  data-offline-search-index-json-src="/offline-search-index.34cf56d65b152d3b6080f1ab8e58899db9a9b1c6d63226e36e4a69323886f82dec78acebd509200ef932f6f2a5efd22539e494ba257e0099ab429127579d0aad.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +166,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3987a5f1dde50f94941702643bd71d4d902fd09323879b2f9e6dd5b01f3da4af26879a7bc5aeaa60489ffda8f3d10f1525801518162ca3092901d660d6ddf640.json"
+  data-offline-search-index-json-src="/offline-search-index.34cf56d65b152d3b6080f1ab8e58899db9a9b1c6d63226e36e4a69323886f82dec78acebd509200ef932f6f2a5efd22539e494ba257e0099ab429127579d0aad.json"
   data-offline-search-base-href="/"
 >
 
@@ -3760,12 +3760,6 @@
         <li><a href="#stm32cubeprog-とarduino-ideのインストール">STM32CubeProg とArduino IDEのインストール</a></li>
       </ul>
     </li>
-    <li><a href="#stm32mcuのboardファイルの準備">STM32MCUのBoardファイルの準備</a>
-      <ul>
-        <li><a href="#nucleo-l452reのプロジェクトの立ち上げ">Nucleo L452REのプロジェクトの立ち上げ</a></li>
-        <li><a href="#leafony_ap03とleafony_ap03jsonのダウンロードと保存">③Leafony_AP03と④Leafony_AP03.jsonのダウンロードと保存</a></li>
-      </ul>
-    </li>
     <li><a href="#クイックスタート">クイックスタート</a></li>
     <li><a href="#stm32cubeprogによるプログラムの書き込み">STM32CubeProgによるプログラムの書き込み</a></li>
     <li><a href="#cpuの周波数を80mhzデフォルトから16mhzに設定変更">CPUの周波数を80MHz(デフォルト)から16MHzに設定変更</a></li>
@@ -3779,7 +3773,12 @@
     <li><a href="#プログラムを記述する時のarduino-ideとの違い">プログラムを記述する時のArduino IDEとの違い</a></li>
     <li><a href="#プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</a></li>
     <li><a href="#プロジェクトフォルダの保存場所の設定">プロジェクトフォルダの保存場所の設定</a></li>
-    <li><a href="#参考">参考</a></li>
+    <li><a href="#platformioの公式ドキュメント">PlatformIOの公式ドキュメント</a></li>
+    <li><a href="#stm32mcuのボードファイル参考">STM32MCUのボード・ファイル(参考)</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -3868,45 +3867,6 @@
 <li><a href="https://www.stmcu.jp/design/sw_dev/pc_soft/58442/">STM32CubeProg</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></br></li>
 <li><a href="https://www.arduino.cc/en/software">Arduino IDE</a></br></li>
 </ul>
-<h2 id="stm32mcuのboardファイルの準備">STM32MCUのBoardファイルの準備</h2>
-<p>STM32MCUは、<a href="https://www.st.com/ja/evaluation-tools/nucleo-l452re.html">NUCLEO-L452RE</a>とピンアサインが異なるため、STM32MCUのBoardファイル(③、④）が必要になります。PlatformIOで
-NUCLEO-L452REのプロジェクトを立ち上げると①と②がPCにダウンロードされます。次に③と④をGitHubからダウンロードしてpcの保存すれば完了です。</br></br>
-<img src="./platformio_15.png" width="840"></p>
-<h3 id="nucleo-l452reのプロジェクトの立ち上げ">Nucleo L452REのプロジェクトの立ち上げ</h3>
-<ol>
-<li>
-<p>VSCodeを立ち上げ、<code>ファイル</code>→ <code>新しいウィンドウ</code>を開きます。</br></p>
-</li>
-<li>
-<p><code>PlatformIO</code>(画面左のバー)をクリックし、PLATFORMIO QUICK ACCESS（画面左）を表示させます。</br></p>
-</li>
-<li>
-<p><code>PIO Home/Open</code>をクリックします。</br></p>
-</li>
-<li>
-<p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。新しいBoardを選択した時、プログラミングに必要なファイルのダウンロードするために数分かかります。</br></p>
-<ul>
-<li>Name:<code>Test</code>と記入 </br></li>
-<li>Board:<code>ST Nucleo L452RE</code>を選択 </br></li>
-<li>Framework:<code>Arduino </code>を選択 </br></li>
-</ul>
-</li>
-<li>
-<p>C:\Users\ユーザ名\ .platformio の下に、①と②のふたつのフォルダが出来ていることを確認して下さい。</br></p>
-</li>
-</ol>
-<h3 id="leafony_ap03とleafony_ap03jsonのダウンロードと保存">③Leafony_AP03と④Leafony_AP03.jsonのダウンロードと保存</h3>
-<ol>
-<li>
-<p>以下からダウンロードし、所定の場所に保存して下さい。</br></p>
-<ul>
-<li><code>https://github.com/Leafony/platformio-LEAFONY_AP03</code></li>
-</ul>
-</li>
-<li>
-<p>Project Wizardの<code>Board</code>の検索窓に<code>Leafony_AP03</code>が表示されることを確認して下さい。</br></p>
-</li>
-</ol>
 <h2 id="クイックスタート">クイックスタート</h2>
 <p>「Hello Wold」の事例で、platformIO IDEの使い方を紹介します。</br></p>
 <ol>
@@ -3923,7 +3883,7 @@ NUCLEO-L452REのプロジェクトを立ち上げると①と②がPCにダウ�
 <p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。新しいBoardを選択した時、プログラミングに必要なファイルのダウンロードするために数分かかります。</br></p>
 <ul>
 <li>Name:<code>STM32_Hello_World_Pjt</code>と記入 </br></li>
-<li>Board:<code>LEAFONY_AP03</code>を選択 </br></li>
+<li>Board:<code>Leafony Systems AP03</code>を選択 </br></li>
 <li>Framework:<code>Arduino </code>を選択 </br> </br></li>
 </ul>
 </li>
@@ -3931,9 +3891,9 @@ NUCLEO-L452REのプロジェクトを立ち上げると①と②がPCにダウ�
 <p><code>platformio.ini</code> (画面左)を開き、 Projectで定義したBoardとFrameworkが、正しく定義されていることを確認します。</br></p>
 </li>
 </ol>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000;font-weight:bold">[</span><span style="color:#f57900">env</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">LEAFONY_AP03</span><span style="color:#000;font-weight:bold">]</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000;font-weight:bold">[</span><span style="color:#f57900">env</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">leafony_ap03</span><span style="color:#000;font-weight:bold">]</span>
 <span style="color:#000">platform</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">ststm32</span>
-<span style="color:#000">board</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">LEAFONY_AP03</span>
+<span style="color:#000">board</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">leafony_ap03</span>
 <span style="color:#000">framework</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">arduino</span>
 </code></pre></div><ol start="6">
 <li>STM32 MCUは、COMポートの番号とプログラムファイルの実行場所をplatformio.iniに記載して下さい。COMポートの番号は、シリアルモニターから確認出来ます。</br></br>
@@ -3971,7 +3931,7 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 </ul>
 <ol start="9">
 <li>
-<p>PlatformIO ツールバー(画面下のバー)の<code>Project Environment Switcher</code>ボタンを押すと、アクティブなプロジェクが画面上側に全て表示されます。実行するプロジェクトを正しく選択して、<code>Build</code>ボタンを押して下さい。</br></br>
+<p>PlatformIO ツールバー(画面下のバー)の<code>Project Environment Switcher</code>ボタンを押すと、アクティブなプロジェクが画面上側に全て表示されます。実行するプロジェクトを正しく選択して、<code>Build</code>ボタンを押して下さい。日本語のフォルダの下にある場合は、書き込みすることが出来ないので別の場所にコピーします。</br></br>
 <img src="./platformio_6.png" width="640"></br></p>
 </li>
 <li>
@@ -4201,7 +4161,7 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 <td align="left">AP03</td>
 <td align="left"><a href="../../leaf/processor/ap03">STM32 MCU</a></td>
 <td align="left">ststm32</td>
-<td align="left">LEAFONY_AP03</td>
+<td align="left">Leafony Systems AP03</td>
 <td align="left">COMポートの自動検出が出来ない。</td>
 <td></td>
 </tr>
@@ -4267,17 +4227,58 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 <p><code>PIO Home/Open</code>をクリックします。</br></p>
 </li>
 <li>
-<p>以下のコードを実行します。</br>
+<p>ターミナルを立ち上げて、以下のコードを実行します。</br>
 　<code>pio settings set projects_dir ＜設定したい(絶対)パス＞</code></p>
 </li>
 <li>
-<p>VSCodeを再起動します。</br></br></p>
+<p>VSCodeを再起動します。</br></p>
 </li>
 </ol>
-<h2 id="参考">参考</h2>
+<h2 id="platformioの公式ドキュメント">PlatformIOの公式ドキュメント</h2>
+<p>PlatformIO の公式ドキュメントは、以下の通りです。</br></p>
 <ul>
-<li><a href="https://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode" target="_blank">PlatformIO ドキュメント</a></li>
+<li><code>ttps://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode</code></li>
 </ul>
+<h2 id="stm32mcuのボードファイル参考">STM32MCUのボード・ファイル(参考)</h2>
+<p><code>Leafony Systems AP03</code>のボードが、2023年10月に、platformIOに登録されたため、直接ダウンロードすることが出来るようになり、以下の方法でボードを定義する必要がなくなりました。</br></p>
+<p>STM32MCUは、<a href="https://www.st.com/ja/evaluation-tools/nucleo-l452re.html">NUCLEO-L452RE</a>とピンアサインが異なるため、STM32MCUのBoardファイル(③、④）が必要になります。PlatformIOで
+NUCLEO-L452REのプロジェクトを立ち上げると①と②がPCにダウンロードされます。次に③と④をGitHubからダウンロードしてpcの保存すれば完了です。</br></br>
+<img src="./platformio_15.png" width="840"></p>
+<h4 id="nucleo-l452reのプロジェクトの立ち上げ">Nucleo L452REのプロジェクトの立ち上げ</h4>
+<ol>
+<li>
+<p>VSCodeを立ち上げ、<code>ファイル</code>→ <code>新しいウィンドウ</code>を開きます。</br></p>
+</li>
+<li>
+<p><code>PlatformIO</code>(画面左のバー)をクリックし、PLATFORMIO QUICK ACCESS（画面左）を表示させます。</br></p>
+</li>
+<li>
+<p><code>PIO Home/Open</code>をクリックします。</br></p>
+</li>
+<li>
+<p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。新しいBoardを選択した時、プログラミングに必要なファイルのダウンロードするために数分かかります。</br></p>
+<ul>
+<li>Name:<code>Test</code>と記入 </br></li>
+<li>Board:<code>ST Nucleo L452RE</code>を選択 </br></li>
+<li>Framework:<code>Arduino </code>を選択 </br></li>
+</ul>
+</li>
+<li>
+<p>C:\Users\ユーザ名\ .platformio の下に、①と②のふたつのフォルダが出来ていることを確認して下さい。</br></p>
+</li>
+</ol>
+<h4 id="leafony_ap03とleafony_ap03jsonのダウンロードと保存">③Leafony_AP03と④Leafony_AP03.jsonのダウンロードと保存</h4>
+<ol>
+<li>
+<p>以下からダウンロードし、所定の場所に保存して下さい。</br></p>
+<ul>
+<li><code>https://github.com/Leafony/platformio-LEAFONY_AP03</code></li>
+</ul>
+</li>
+<li>
+<p>Project Wizardの<code>Board</code>の検索窓に<code>Leafony_AP03</code>が表示されることを確認して下さい。</br></p>
+</li>
+</ol>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
 </p><section class="footnotes" role="doc-endnotes">
@@ -4302,7 +4303,7 @@ Projectの名前変更やフォルダの削除は、Project Wizarではなく、
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 26, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 October 12, 2023
 </div>
 </div>
 
