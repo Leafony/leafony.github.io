@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.730532bbf35738e66ca1f4ec1ba35f67008580588181ceef8e636eaa06b9818855ddafa5e393e7f203c97048ebd5e82e87351731f83d3e6eb4bc4a9a9047ea3c.json"
+  data-offline-search-index-json-src="/offline-search-index.6f7466206af05f46dac045436155d2876e4d3ea275622fa61ddcffd845edbd4878b469e004c920f0213964d86a559260ddb72919d052ec0618b64238637a97f8.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.730532bbf35738e66ca1f4ec1ba35f67008580588181ceef8e636eaa06b9818855ddafa5e393e7f203c97048ebd5e82e87351731f83d3e6eb4bc4a9a9047ea3c.json"
+  data-offline-search-index-json-src="/offline-search-index.6f7466206af05f46dac045436155d2876e4d3ea275622fa61ddcffd845edbd4878b469e004c920f0213964d86a559260ddb72919d052ec0618b64238637a97f8.json"
   data-offline-search-base-href="/"
 >
 
@@ -3774,13 +3774,7 @@
     <li><a href="#特徴">特徴</a></li>
     <li><a href="#性能">性能　</a></li>
     <li><a href="#ブロック図">ブロック図</a></li>
-    <li><a href="#ピン配置">ピン配置　</a></li>
-    <li><a href="#tips">Tips</a>
-      <ul>
-        <li><a href="#xxxについて">xxxについて</a></li>
-      </ul>
-    </li>
-    <li><a href="#xxx">xxx</a></li>
+    <li><a href="#ピン配置">ピン配置</a></li>
     <li><a href="#サンプルアプリ">サンプルアプリ</a></li>
     <li><a href="#ドキュメント">ドキュメント　</a></li>
     <li><a href="#変更履歴">変更履歴</a></li>
@@ -3846,13 +3840,9 @@
 	<p><a href="./ac06_f_large.jpg"><img src="./ac06_f_small.jpg" width="200"></a>
 <a href="./ac06_b_large.jpg"><img src="./ac06_b_small.jpg" width="200"></a>
 <a href="./ac06_p_large.jpg"><img src="./ac06_p_small.jpg" width="300"></a></p>
-<ul>
-<li><strong>Wi-Fi Maryは、…と配置して下さい。</strong></li>
-<li><strong>SIMは…</strong></li>
-</ul>
 </br>
 <h2 id="特徴">特徴</h2>
-<p>技的認証済みWi-Fiを内蔵したxxxを搭載したリーフです。無線の認証は、FCC、CE-RED、IC、TELEC、KCC、SRRC、NCCを取得（Espressif Systems Data Sheet V2.9）。STM32搭載のAP03 STM32 MCUを使用し、電源はxxを供給してxxとして使用して下さい。</p>
+<p>MicrochipのWi-FiモジュールATWINC1500を搭載したリーフです。無線認証は、FCC、ISED、CE、MIC、KCC、NCC、SRRC、ANATELを取得しています。このリーフと一緒に使用するマイコンは、STM32 MCUを使用してください。AVR MCUは、メモリが不足しているため、使用することが出来ません。</p>
 <h2 id="性能">性能　</h2>
 <table>
 <thead>
@@ -3864,77 +3854,52 @@
 <tbody>
 <tr>
 <td align="left">Part Number</td>
-<td align="left"></td>
+<td align="left">ATWINC1500-MR210PB1961</td>
 </tr>
 <tr>
-<td align="left">USB</td>
-<td align="left"></td>
+<td align="left">Certified Module　</td>
+<td align="left">ATWINC1500B chip (4Mb Flash) and PCB printed antenna</td>
 </tr>
 <tr>
-<td align="left">Data transfer rates</td>
-<td align="left"></td>
+<td align="left">Protocol</td>
+<td align="left">IEEE 802.11 b/g/n</td>
 </tr>
 <tr>
-<td align="left">Part number</td>
-<td align="left"></td>
+<td align="left">Frequency</td>
+<td align="left">2.4GHz</td>
 </tr>
 <tr>
-<td align="left">Input voltage</td>
-<td align="left"></td>
+<td align="left">Power Supply</td>
+<td align="left">3.3V</td>
 </tr>
 <tr>
-<td align="left">Output voltage</td>
-<td align="left"></td>
+<td align="left">RF certification</td>
+<td align="left">FCC、ISED、CE、MIC、KCC、NCC、SRRC、ANATEL</td>
 </tr>
 <tr>
-<td align="left">Topology</td>
-<td align="left"></td>
+<td align="left">Interfaces</td>
+<td align="left">SPI</td>
 </tr>
 <tr>
-<td align="left">Controlling method</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">Maximum output current</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">Protection circuit</td>
-<td align="left"></td>
+<td align="left">Dimension	　　　　　　　</td>
+<td align="left">W20×D32×H2.1mm 　　</td>
 </tr>
 </tbody>
 </table>
 <br>
 <h2 id="ブロック図">ブロック図</h2>
 <p><a href="./ac06_wi-fi_mary_block.jpg"><img src="./ac06_wi-fi_mary_block.jpg" width="350"></a></p>
-<h2 id="ピン配置">ピン配置　</h2>
-<p><a href="./ac06_wi-fi_mary_pinassign_f.jpg"><img src="./ac06_wi-fi_mary_pinassign_f.jpg" width="750"></a></p>
-<h2 id="tips">Tips</h2>
-<h3 id="xxxについて">xxxについて</h3>
-<p><a href="./AC06_tips.jpg"><img src="./AC06_tips.jpg" width="450"></a></p>
-<p>※不要な場合削除
-| Item      | Description                                  |
-| :&mdash;&mdash;&ndash; | :&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- |
-| Switch    | Switch for turning on and off the 3.3v power |
-| Connector | JST PH connector                             |
-| USB       | Type-C                                       |</p>
-<h2 id="xxx">xxx</h2>
-<p>xxx</p>
-<ul>
-<li>xxx</br></br></li>
-</ul>
+<h2 id="ピン配置">ピン配置</h2>
+<p>　
+<a href="./ac06_wi-fi_mary_pinassign_f.jpg"><img src="./ac06_wi-fi_mary_pinassign_f.jpg" width="750"></a></p>
 <h2 id="サンプルアプリ">サンプルアプリ</h2>
 <ul>
-<li><a href="/docs/examples/advanced/3_p/stm32/wi-fi_mary/">Wi-Fi Maryを使ったIoTサービス</a> ※仕掛中</li>
+<li><a href="/docs/examples/advanced/3_p/stm32/wi-fi_mary/">Wi-Fi Maryを使ったIoTサービス</a></li>
 </ul>
 <h2 id="ドキュメント">ドキュメント　</h2>
 <ul>
-<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC06_Wi-Fi_Mary/AC06_Wi-Fi_Mary_SpecSheet_JA.pdf">仕様書</a> ※仕掛中</li>
+<li>仕様書</li>
 <li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC06_Wi-Fi_Mary/AC06_Wi-Fi_Mary_Schematic.pdf">回路図</a></li>
-<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC06_Wi-Fi_Mary/AC06_Wi-Fi_Mary_ComponentMarking_F.pdf">部品配置図(表面)</a> ※仕掛中</li>
-<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC06_Wi-Fi_Mary/AC06_Wi-Fi_Mary_ComponentMarking_B.pdf">部品配置図(裏面)</a> ※仕掛中</li>
-<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC06_Wi-Fi_Mary/AC06_Wi-Fi_Mary_PCBLayout.zip">レイアウト図(Zuken)</a> ※仕掛中</li>
-<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC06_Wi-Fi_Mary/AC06_Wi-Fi_Mary_3D.zip">3D図面</a> ※仕掛中</li>
 </ul>
 <h2 id="変更履歴">変更履歴</h2>
 <ul>
@@ -4267,7 +4232,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 28, 2024
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 6, 2024
 </div>
 </div>
 
