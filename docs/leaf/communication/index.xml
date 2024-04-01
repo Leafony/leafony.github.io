@@ -661,7 +661,8 @@
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./ac06_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ac06_pinassign.jpg&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;サンプルアプリ&#34;&gt;サンプルアプリ&lt;/h2&gt;
-&lt;p&gt;STM32 MCUとWi-Fi Maryリーフを使用したサンプルアプリです。ソースコードは、Arduino IDEとPlatformIO IDのふたつで用意しています。STM32 MCUの開発環境の設定は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/#stm32-mcu-%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83&#34;&gt;こちら&lt;/a&gt;を参照願います。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;STM32 MCUとWi-Fi Maryリーフを使用したサンプルアプリです。このサンプルアプリを使用する場合は、
+&lt;a href=&#34;https://github.com/Leafony/WiFi101Leafony&#34;&gt;WiFi101Leafony.h&lt;/a&gt;のライブラリをインクルードしてください。ソースコードは、Arduino IDEとPlatformIO IDのふたつで用意しています。STM32 MCUの開発環境の設定は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/#stm32-mcu-%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83&#34;&gt;こちら&lt;/a&gt;を参照して下さい。&lt;/br&gt;&lt;/p&gt;
 &lt;h3 id=&#34;atwinc1500のバージョンチェック&#34;&gt;ATWINC1500のバージョンチェック&lt;/h3&gt;
 &lt;p&gt;Wi-Fiモジュール(ATWINC1500)のファームウェアのバージョン確認するサンプルアプリです。&lt;/br&gt;&lt;/p&gt;
 &lt;ul&gt;
