@@ -136,7 +136,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.feaf0b808cfcacc980dd9a9627b66f62bf40520d53ba26ed36d45deb0ce63b7e13695c076a2d31559732c2097463b106fe3334ca479c83e8a588bd1031816123.json"
+  data-offline-search-index-json-src="/offline-search-index.b19d02f10670cd1921fde9a597b942d33b8ef12ae37af15af1a5488327ac4a0880fd2fd5ff8951a609e17fb00e6c1af2a6e2f0f4c19941b0723baa5ea02148d3.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +166,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.feaf0b808cfcacc980dd9a9627b66f62bf40520d53ba26ed36d45deb0ce63b7e13695c076a2d31559732c2097463b106fe3334ca479c83e8a588bd1031816123.json"
+  data-offline-search-index-json-src="/offline-search-index.b19d02f10670cd1921fde9a597b942d33b8ef12ae37af15af1a5488327ac4a0880fd2fd5ff8951a609e17fb00e6c1af2a6e2f0f4c19941b0723baa5ea02148d3.json"
   data-offline-search-base-href="/"
 >
 
@@ -3774,14 +3774,23 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#基板cad用テンプレートプロジェクト">基板CAD用テンプレートプロジェクト</a></li>
-    <li><a href="#i2c-address-map">I2C address map</a></li>
     <li><a href="#leafony-bus-pin-layout">Leafony bus pin layout</a></li>
-    <li><a href="#基板製造チュートリアル">基板製造チュートリアル</a></li>
-    <li><a href="#チップ部品の付け外しについて">チップ部品の付け外しについて</a>
+    <li><a href="#i2c-address-map">I2C address map</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#leafony用テンプレート">Leafony用テンプレート</a></li>
+    <li><a href="#基板製造データ">基板製造データ</a>
       <ul>
-        <li><a href="#チップ部品の取り付け方">チップ部品の取り付け方</a></li>
-        <li><a href="#チップ部品の取り外し方">チップ部品の取り外し方</a></li>
+        <li><a href="#ガーバー">ガーバー</a></li>
+        <li><a href="#ドリルファイル">ドリルファイル</a></li>
+      </ul>
+    </li>
+    <li><a href="#部品実装データ">部品実装データ</a>
+      <ul>
+        <li><a href="#部品配置ファイルの作成">部品配置ファイルの作成</a></li>
+        <li><a href="#bomの作成">BOMの作成</a></li>
       </ul>
     </li>
   </ul>
@@ -3823,12 +3832,8 @@
 	<h1>自作リーフ開発</h1>
         <div class="lead">自分オリジナルのリーフを開発しよう</div>
 	
-	<h2 id="基板cad用テンプレートプロジェクト">基板CAD用テンプレートプロジェクト</h2>
-<p>Leafonyの基板設計には各種回路CAD向けのテンプレートプロジェクトを用いると便利です。</p>
-<ul>
-<li><a href="./kicad">KiCad</a></li>
-<li><a href="./cr-8000_design_force">CR-8000 Design Force</a></li>
-</ul>
+	<h2 id="leafony-bus-pin-layout">Leafony bus pin layout</h2>
+<p><a href="./leaf_all_20210514.jpg"><img src="./leaf_all_20210514.jpg" width="750"></a></p>
 <h2 id="i2c-address-map">I2C address map</h2>
 <p>Leafonyキットには、I2C通信を使用しているリーフがいくつか存在します。<br>
 同じI2Cピンを使用して複数のICと通信する場合、原則として同じI2Cアドレスを使用することはできません。<br>
@@ -3940,24 +3945,173 @@
     </tr>
   </tbody>
 </table>
-<h2 id="leafony-bus-pin-layout">Leafony bus pin layout</h2>
-<p><a href="./leaf_all_20210514.jpg"><img src="./leaf_all_20210514.jpg" width="750"></a></p>
-<h2 id="基板製造チュートリアル">基板製造チュートリアル</h2>
-<h2 id="チップ部品の付け外しについて">チップ部品の付け外しについて</h2>
-<p>リーフに小さなチップ抵抗やチップコンデンサを取り付けたり、外す際の方法を動画でまとめています。</p>
-<h3 id="チップ部品の取り付け方">チップ部品の取り付け方</h3>
-<div class="youtube">
-  <iframe width="1280" height="663" src="https://www.youtube.com/embed/fUn517lA5MQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-<br>
-<h3 id="チップ部品の取り外し方">チップ部品の取り外し方</h3>
-<div class="youtube">
-  <iframe width="560" height="314" src="https://www.youtube.com/embed/yhuhgcPP1fQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
-<br>
+</br>
+<h1 id="kicadを用いた自作リーフの開発">KiCadを用いた自作リーフの開発</h1>
+<h2 id="はじめに">はじめに</h2>
+<p>KiCadとは、オープンソースのプリント基板CADで、Windows、Linux、Mac上で動作します。1992年にグルノーブル大学のJean-Pierre Charras氏によって、KiCadの最初のバージョンがリリースされ、それ以降、ボランティアで開発支援されています。</br>
+</br>
+KiCadは、主に以下の5つのソフトウェアから構成されています。</br></p>
+<table>
+<thead>
+<tr>
+<th align="left">Software</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">KiCad</td>
+<td align="left">プロジェクトマネージャ</td>
+</tr>
+<tr>
+<td align="left">eeschema</td>
+<td align="left">回路図エディタ</td>
+</tr>
+<tr>
+<td align="left">cvpcb</td>
+<td align="left">回路設計で使われるコンポーネント用のフットプリントセレクタ</td>
+</tr>
+<tr>
+<td align="left">pcbnew</td>
+<td align="left">3Dビュアが付属したPCBレイアウトプログラム</td>
+</tr>
+<tr>
+<td align="left">gerbview</td>
+<td align="left">ガーバー(photoplotter documents) ビュア</td>
+</tr>
+</tbody>
+</table>
+<h2 id="leafony用テンプレート">Leafony用テンプレート</h2>
+<p>Leafony用テンプレートは、リーフの外形、フットプリント、デザインルールが規定されており、リーフ基板の設計を容易にします。</br></p>
+<ul>
+<li><a href="./kicad">KiCad Template for Leafony</a></li>
+</ul>
+<h2 id="基板製造データ">基板製造データ</h2>
+<p>基板製造時に必要なガーバとドリルファイルの出力方法を記します。</br></p>
+<h3 id="ガーバー">ガーバー</h3>
+<p>1.KiCad の<code>PCBエディタ</code>を起動し、<code>ファイル</code>→<code>製造出力</code>→<code>ガーバー</code>をクリックします。</br></p>
+<p>2.面付しない場合はデフォルトの設定ですが、面付の場合は<code>全体オプション</code>→<code>プロット前にソーンの塗りつぶしをチェック</code>を外します。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>  </br></p>
+<p>3.出力フォルダをGerberに設定し、以下のファイルがあることを確認します。</br></p>
+<table>
+<thead>
+<tr>
+<th align="left">Structure Layout</th>
+<th align="left">Filename</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Top Copper Layer</td>
+<td align="left">*-F_Cu.gtl</td>
+</tr>
+<tr>
+<td align="left">Top Soldermask</td>
+<td align="left">*-F_Mask.gts</td>
+</tr>
+<tr>
+<td align="left">Top Silkscreen</td>
+<td align="left">*-F_Silkscreen.gto</td>
+</tr>
+<tr>
+<td align="left">Top Solderpaste</td>
+<td align="left">*-F_Paste.gtp</td>
+</tr>
+<tr>
+<td align="left">Bottom Copper Layer</td>
+<td align="left">*-B_Cu.gtl</td>
+</tr>
+<tr>
+<td align="left">Bottom Soldermask</td>
+<td align="left">*-B_Mask.gts</td>
+</tr>
+<tr>
+<td align="left">Bottom Silkscreen</td>
+<td align="left">*-B_Silkscreen.gto</td>
+</tr>
+<tr>
+<td align="left">Bottom Solderpaste</td>
+<td align="left">*-B_Paste.gtp</td>
+</tr>
+<tr>
+<td align="left">Inner Copper Layer</td>
+<td align="left">*-In1_Cu.g2/ *-In2_Cu.g3</td>
+</tr>
+<tr>
+<td align="left">Board Mechanical Layer</td>
+<td align="left">*-Edge_Cuts.gm1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ドリルファイル">ドリルファイル</h3>
+<p>1.KiCad の<code>PCBエディタ</code>を起動し、<code>ファイル</code>→<code>製造出力</code>→<code>ドリルファイル</code>をクリックします。</br></p>
+<p>2.<code>ドリルファイル</code>をクリックし、次に、<code>マップファイルを生成</code>をクリックします。</br></p>
+<p>3.出力フォルダをGerberに設定し、以下のファイルがあることを確認します。</br></p>
+<table>
+<thead>
+<tr>
+<th align="left">Structure Layout</th>
+<th align="left">Filename</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Drill None Plated Layer　</td>
+<td align="left">*-NPTH.drl</td>
+</tr>
+<tr>
+<td align="left">Drill Plated Layer</td>
+<td align="left">*-PTH.drl</td>
+</tr>
+<tr>
+<td align="left">Drill map None Plated Layer</td>
+<td align="left">*-NPTH-drl_map.gbr</td>
+</tr>
+<tr>
+<td align="left">Drill map Plated Layer</td>
+<td align="left">*-PTH-drl_map.gbr</td>
+</tr>
+</tbody>
+</table>
+<h2 id="部品実装データ">部品実装データ</h2>
+<p>部品実装時に必要な部品配置ファイルとBOMの出力方法を記します。</br></p>
+<h3 id="部品配置ファイルの作成">部品配置ファイルの作成</h3>
+<p>1.KiCad の<code>PCBエディタ</code>を起動し、<code>ファイル</code>→<code>製造出力</code>→<code>部品配置ファイル</code>をクリックします。</br></p>
+<p>2.出力フォルダをMountに設定し、以下のファイルがあることを確認します。</br></p>
+<table>
+<thead>
+<tr>
+<th align="left">Structure Layout</th>
+<th align="left">Filename</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Top mount Layer　</td>
+<td align="left">*-top.pos</td>
+</tr>
+<tr>
+<td align="left">Boytom mount Layer</td>
+<td align="left">*-bottom.pos</td>
+</tr>
+</tbody>
+</table>
+<p>5.拡張子.posファイルは、末尾に.txtを付けると（* -top.pos.txt/*-bottom.pos.txt ）、テキストファイルになります。</br></p>
+<h3 id="bomの作成">BOMの作成</h3>
+<p>BOMとは、「Bill Of Materials」の略で、「部品表」や「部品構成表」のことを指します。</br></p>
+<p>1.KiCad の<code>回路設計エディタ</code>を起動し、<code>ツール</code>→<code>部品表を生成</code>をクリックします。</br></p>
+<p>2.出力ファイルをBOM/*.csvにして、<code>エクスポート</code>をクリックします。</br></p>
+<p>3.部品実装メーカに発注する場合は、メーカ名と型番が必要になります。<a href="https://ja.wikipedia.org/wiki/PCBGOGO.JP">PCBgogo</a>のBOMの例は、<a href="https://www.pcbgogo.jp/pcb-assembly/Files_Requested_for_PCBA.h">こちら</a>を参照して下さい。</p>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
-</p>
+</p><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>プロット前にソーンの塗りつぶしをしないのは、それぞれの基板のレイアウトが異なるようからです。</br> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
         <div class="section-index">
     
     
@@ -3968,7 +4122,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 November 14, 2023
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 26, 2024
 </div>
 </div>
 
