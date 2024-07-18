@@ -695,5 +695,235 @@
       </description>
     </item>
     
+    <item>
+      <title>Docs: AC07 LoRa Mary</title>
+      <link>https://docs.leafony.com/docs/leaf/communication/ac07/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/leaf/communication/ac07/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./ac07_f_large.jpg&#34;&gt;&lt;img src=&#34;./ac07_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ac07_b_large.jpg&#34;&gt;&lt;img src=&#34;./ac07_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ac07_p_large.jpg&#34;&gt;&lt;img src=&#34;./ac07_p_small.jpg&#34; width=&#34;300&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/br&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;（仕掛中）EASELの技的認証済みLoRaモジュールES920LRA1を搭載したリーフです。MCUリーフとはUARTで接続されます。&lt;/p&gt;
+&lt;h2 id=&#34;性能&#34;&gt;性能　&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Item&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Part Number&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;ES920LRA1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;SoC&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;MKL16Z128 (ARM Cortex-M0+)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;RF Transceiver&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;SX1276 (SEMTECH)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Frequency range&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;920.6～928.0MHz&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Transmission speed&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;146bps～22kbps&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;RX sensitivity&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;-118～-142dBm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;TX power&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Max 13dBm（20mW)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;RF certification&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;TELEC&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Approximate communication distance (wire antenna)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Prospect 5km&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Flash&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;128KB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;RAM&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;32KB&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Interfaces&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;UART&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Dimension&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;W23×D32.8×H4.6mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
+&lt;h3 id=&#34;直上にリーフを積む時の注意&#34;&gt;直上にリーフを積む時の注意&lt;/h3&gt;
+&lt;p&gt;（仕掛中）このリーフには、高背部品(高さ2mm以上)が使用されており、そのままでは直上のリーフと電気的に接続不良をおこす可能性があります。そのため、このリーフの直上には、必ずスペーサリーフ（AX04 Spacer）を間に挟んで下さい。&lt;/p&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./ac07_block.jpg&#34;&gt;&lt;img src=&#34;./ac07_block.jpg&#34; width=&#34;1000&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./ac07_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ac07_pinassign.jpg&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;ピン配置のデータは、&lt;a href=&#34;https://github.com/Leafony/Documents/tree/main/Leaf-pinassign&#34;&gt;こちら&lt;/a&gt;を参照して下さい。&lt;/br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;サンプルアプリ&#34;&gt;サンプルアプリ&lt;/h2&gt;
+&lt;p&gt;（仕掛中）STM32 MCUとWi-Fi Maryリーフを使用したサンプルアプリです。このサンプルアプリを使用する場合は、
+&lt;a href=&#34;https://github.com/Leafony/WiFi101Leafony&#34;&gt;WiFi101Leafony.h&lt;/a&gt;のライブラリをインクルードしてください。ソースコードは、Arduino IDEとPlatformIO IDのふたつで用意しています。STM32 MCUの開発環境の設定は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/#stm32-mcu-%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83&#34;&gt;こちら&lt;/a&gt;を参照して下さい。&lt;/br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;xxのバージョンチェック&#34;&gt;xxのバージョンチェック&lt;/h3&gt;
+&lt;p&gt;（仕掛中）Wi-Fiモジュール(ATWINC1500)のファームウェアのバージョン確認するサンプルアプリです。&lt;/br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/STM32_CheckFirmwareVersion&#34;&gt;Arduinoソースコード&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_CheckFirmwareVersion&#34;&gt;PlatformIOソースコード&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h2&gt;
+&lt;p&gt;本リーフに対応したライブラリがあります。&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#1-%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA&#34;&gt;開発環境設定のページ&lt;/a&gt;で必要なライブラリをインストールしてご利用下さい。&lt;/p&gt;
+&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント　&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;仕様書&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC07_LoRa_Mary/AC07_LoRa_Mary_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;2024年8月:初版&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
+&lt;/p&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: AC08 LTE-M Mary</title>
+      <link>https://docs.leafony.com/docs/leaf/communication/ac08/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/leaf/communication/ac08/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;a href=&#34;./ac08_f_large.jpg&#34;&gt;&lt;img src=&#34;./ac08_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ac08_b_large.jpg&#34;&gt;&lt;img src=&#34;./ac08_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ac08_p_large.jpg&#34;&gt;&lt;img src=&#34;./ac08_p_small.jpg&#34; width=&#34;300&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;/br&gt;
+&lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
+&lt;p&gt;（仕掛中）LTE-M Maryリーフは、xxが共同開発したLTE-M (LTE Cat-M1)通信機能に対応したリーフです。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;約23×30mmの小さな基板上に、データ通信用のアンテナを内蔵し（技適取得済）、外部アンテナは不要です。&lt;/li&gt;
+&lt;li&gt;SIMカードは、&lt;a href=&#34;https://biz.kddi.com/service/iot-lpwa/&#34; target=&#34;_brank&#34;&gt; KDDIのLTE-M通信網&lt;/a&gt;に対応したソラコムのLTE-Mサービス「SORACOM Air for セルラー(plan-KM1)」が利用出来ます。&lt;/li&gt;
+&lt;li&gt;省電力性能は、通信モジュールが具備するスリープ等の機能だけでなく、ソフトウェア設定で通信モジュールへの給電自体を遮断する機能を搭載しており、長期間使用しない時は電池の消費を限りなくゼロに近づけることが可能にしました。&lt;/li&gt;
+&lt;li&gt;電池は、単3電池やリチウムイオン電池等で、データ送信の頻度や回数等のユースケースに応じて選択することが出来ます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;性能&#34;&gt;性能　&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Item&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;LTE-M module&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Type 1SC (LBAD0XX1SC-713TEMP)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Connectivity&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;3GPP Release 13/optimized for LTE Class 3 output power (+23dBm)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Operating voltage&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;2.85-4.35V&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Antenna&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;On board chip antenna (AM11DP-ST01)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;SIM card&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;nanoSIM&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Interfaces&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;UART&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Baud rate&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;115200 bps&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Dimension&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;W23×D32.8×H4.6mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;tips&#34;&gt;Tips　&lt;/h2&gt;
+&lt;h3 id=&#34;アンテナナノsimカードスロットについて&#34;&gt;アンテナ、ナノSIMカードスロットについて&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&#34;./AC08_tips.jpg&#34;&gt;&lt;img src=&#34;./AC08_tips.jpg&#34; width=&#34;350&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Item&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Antenna&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;On board chip antenna for LTE-M&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;nanoSIM card slot&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Insert a nanoSIM card&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;br&gt;
+&lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./ac08_block.jpg&#34;&gt;&lt;img src=&#34;./ac08_block.jpg&#34; width=&#34;1000&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;./ac08_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ac08_pinassign.jpg&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;ピン配置のデータは、&lt;a href=&#34;https://github.com/Leafony/Documents/tree/main/Leaf-pinassign&#34;&gt;こちら&lt;/a&gt;を参照して下さい。&lt;/br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;サンプルアプリ&#34;&gt;サンプルアプリ&lt;/h2&gt;
+&lt;p&gt;（仕掛中）STM32 MCUとWi-Fi Maryリーフを使用したサンプルアプリです。このサンプルアプリを使用する場合は、
+&lt;a href=&#34;https://github.com/Leafony/WiFi101Leafony&#34;&gt;WiFi101Leafony.h&lt;/a&gt;のライブラリをインクルードしてください。ソースコードは、Arduino IDEとPlatformIO IDのふたつで用意しています。STM32 MCUの開発環境の設定は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/#stm32-mcu-%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83&#34;&gt;こちら&lt;/a&gt;を参照して下さい。&lt;/br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;xxのバージョンチェック&#34;&gt;xxのバージョンチェック&lt;/h3&gt;
+&lt;p&gt;（仕掛中）Wi-Fiモジュール(ATWINC1500)のファームウェアのバージョン確認するサンプルアプリです。&lt;/br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/STM32_CheckFirmwareVersion&#34;&gt;Arduinoソースコード&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_CheckFirmwareVersion&#34;&gt;PlatformIOソースコード&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h2&gt;
+&lt;p&gt;本リーフに対応したライブラリがあります。&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#1-%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA&#34;&gt;開発環境設定のページ&lt;/a&gt;で必要なライブラリをインストールしてご利用下さい。&lt;/p&gt;
+&lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント　&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;仕様書&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC08_LTE-M_Mary/AC08_LTE-M_Mary_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;2024年8月:初版&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p style=&#34;text-align: right&#34;&gt;
+&lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
+&lt;/p&gt;
+      </description>
+    </item>
+    
   </channel>
 </rss>
