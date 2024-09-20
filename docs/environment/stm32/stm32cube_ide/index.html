@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -25,8 +25,8 @@
 <meta property="og:description" content="STM32CubeIDEでマイコンにプログラムを書き込む
 " />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/docs/environment/stm32/stm32cube_ide/" /><meta property="og:site_name" content="Leafony" />
-
+<meta property="og:url" content="https://docs.leafony.com/docs/environment/stm32/stm32cube_ide/" />
+<meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="STM32CubeIDEの設定">
 <meta itemprop="description" content="STM32CubeIDEでマイコンにプログラムを書き込む
 "><meta name="twitter:card" content="summary"/>
@@ -40,8 +40,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" as="style">
-<link href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -136,7 +136,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d0b1c2ab925c852f03f01db431c753f0233d4d83cfefa6c94cbd0864ac5bdc822b0db1fe407e96648bb554cabab5ed0c1402ced981b6fc846d049a1850e449e5.json"
+  data-offline-search-index-json-src="/offline-search-index.fd40cc44e37c96476ca74d925f27f66d0fe5a6c6f01a3d57a3e444fefe6429304db8e916288e9ac2f05e090241179a57594796c2fefc96fdb1a410552922a4ba.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +166,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d0b1c2ab925c852f03f01db431c753f0233d4d83cfefa6c94cbd0864ac5bdc822b0db1fe407e96648bb554cabab5ed0c1402ced981b6fc846d049a1850e449e5.json"
+  data-offline-search-index-json-src="/offline-search-index.fd40cc44e37c96476ca74d925f27f66d0fe5a6c6f01a3d57a3e444fefe6429304db8e916288e9ac2f05e090241179a57594796c2fefc96fdb1a410552922a4ba.json"
   data-offline-search-base-href="/"
 >
 
@@ -4085,25 +4085,25 @@
 <ul>
 <li>24行:stdio.hは、入力/出力のヘッダーファイルを読み込ませます。</br></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN Includes */</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN Includes */</span>
 <span style="color:#8f5902;font-style:italic">#include</span> <span style="color:#8f5902;font-style:italic">&lt;stdio.h&gt;</span><span style="color:#8f5902;font-style:italic">
 </span><span style="color:#8f5902;font-style:italic"></span><span style="color:#8f5902;font-style:italic">/* USER CODE END Includes */</span>
 </code></pre></div><ul>
 <li>68行:printfを呼び出す前に、初期化します。</br></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN 1 */</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN 1 */</span>
         <span style="color:#000">setbuf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">stdout</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87">NULL</span><span style="color:#000;font-weight:bold">);</span>
 <span style="color:#8f5902;font-style:italic">/* USER CODE END 1 */</span>
 </code></pre></div><ul>
 <li>101行:1秒毎に、「Hello World」を出力させます。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN 3 */</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp">  <span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN 3 */</span>
     <span style="color:#000">printf</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;Hello World</span><span style="color:#4e9a06">\r\n</span><span style="color:#4e9a06">&#34;</span><span style="color:#000;font-weight:bold">);</span>
     <span style="color:#000">HAL_Delay</span><span style="color:#000;font-weight:bold">(</span><span style="color:#0000cf;font-weight:bold">1000</span><span style="color:#000;font-weight:bold">);</span>
 </code></pre></div><ul>
 <li>200行:printfを実装して、UARTでテキストを送信します。</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN 4 */</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#8f5902;font-style:italic">/* USER CODE BEGIN 4 */</span>
 <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">_write</span><span style="color:#000;font-weight:bold">(</span><span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">file</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">char</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000">ptr</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#204a87;font-weight:bold">int</span> <span style="color:#000">len</span><span style="color:#000;font-weight:bold">)</span>
 <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#000">HAL_UART_Transmit</span><span style="color:#000;font-weight:bold">(</span><span style="color:#ce5c00;font-weight:bold">&amp;</span><span style="color:#000">huart2</span><span style="color:#000;font-weight:bold">,(</span><span style="color:#204a87;font-weight:bold">uint8_t</span> <span style="color:#ce5c00;font-weight:bold">*</span><span style="color:#000;font-weight:bold">)</span><span style="color:#000">ptr</span><span style="color:#000;font-weight:bold">,</span><span style="color:#000">len</span><span style="color:#000;font-weight:bold">,</span><span style="color:#0000cf;font-weight:bold">10</span><span style="color:#000;font-weight:bold">);</span>
@@ -4180,7 +4180,7 @@
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Githubには、プロジェクトのファイルを一度でアップロード出来ません。何回か分割してアップロードすれば出来ます。　</br>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Githubには、プロジェクトのファイルを一度でアップロード出来ません。何回か分割してアップロードすれば出来ます。　</br> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -4259,7 +4259,7 @@
 
 
 
-<script src="/js/main.min.f70926ca86f7153429e54b0705f11c420ceac8da5cb4027087319447696e4a5f.js" integrity="sha256-9wkmyob3FTQp5UsHBfEcQgzqyNpctAJwhzGUR2luSl8=" crossorigin="anonymous"></script>
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
 
 
 

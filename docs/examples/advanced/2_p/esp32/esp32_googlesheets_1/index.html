@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.88.1" />
+<meta name="generator" content="Hugo 0.71.0" />
 
 <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 
@@ -24,8 +24,8 @@
 <title>Google スプレッドシートでセンサデータの可視化 | Leafony</title><meta property="og:title" content="Google スプレッドシートでセンサデータの可視化" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/" /><meta property="og:site_name" content="Leafony" />
-
+<meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/2_p/esp32/esp32_googlesheets_1/" />
+<meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="Google スプレッドシートでセンサデータの可視化">
 <meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Google スプレッドシートでセンサデータの可視化"/>
@@ -37,8 +37,8 @@
 
 
 
-<link rel="preload" href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" as="style">
-<link href="/scss/main.min.873c3ba0ff2b5210b8f66f78445d6eb9602dc8bbca895dd48662da1d68e073d8.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" as="style">
+<link href="/scss/main.min.c01576a78c85d1f218b1d4b711b7a75f3b1c659d2b906402a1a46ebcf510e4d1.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d0b1c2ab925c852f03f01db431c753f0233d4d83cfefa6c94cbd0864ac5bdc822b0db1fe407e96648bb554cabab5ed0c1402ced981b6fc846d049a1850e449e5.json"
+  data-offline-search-index-json-src="/offline-search-index.fd40cc44e37c96476ca74d925f27f66d0fe5a6c6f01a3d57a3e444fefe6429304db8e916288e9ac2f05e090241179a57594796c2fefc96fdb1a410552922a4ba.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d0b1c2ab925c852f03f01db431c753f0233d4d83cfefa6c94cbd0864ac5bdc822b0db1fe407e96648bb554cabab5ed0c1402ced981b6fc846d049a1850e449e5.json"
+  data-offline-search-index-json-src="/offline-search-index.fd40cc44e37c96476ca74d925f27f66d0fe5a6c6f01a3d57a3e444fefe6429304db8e916288e9ac2f05e090241179a57594796c2fefc96fdb1a410552922a4ba.json"
   data-offline-search-base-href="/"
 >
 
@@ -4015,7 +4015,7 @@
         
 	
 	<h2 id="はじめに">はじめに</h2>
-<p>ESP32 Wi-Fi Kit2に温湿度センサを取り付けるだけで、環境センサが出来上がります。この環境センサをインターネットに繋げば、スプレッドシートでセンサデータの可視化が簡単に出来ます。</br>
+<p>ESP32 Wi-Fi Kit2に温湿度センサを取り付けるだけで、環境センサが出来上がります。この環境センサをインターネットに繋げば、スプレッドシートでセンサデータの可視化が簡単に出来ます。</br> 
 <img src="ESP32-googlesheets_d.png" alt="ESP32-googlesheets_d.png">
 </br></p>
 <h2 id="用意するもの">用意するもの</h2>
@@ -4050,7 +4050,7 @@
 </ul>
 </li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">function</span> <span style="color:#000">doGet</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">e</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#000">function</span> <span style="color:#000">doGet</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">e</span><span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">{</span>
 
     <span style="color:#000">let</span> <span style="color:#000">id</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#a40000">&#39;</span><span style="color:#000">spreadsheetId</span><span style="color:#a40000">&#39;</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#8f5902;font-style:italic">//Insert spreadsheetId
 </span><span style="color:#8f5902;font-style:italic"></span>    <span style="color:#000">let</span> <span style="color:#000">sheetName</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#a40000">&#39;</span><span style="color:#000">sheetName</span><span style="color:#a40000">&#39;</span><span style="color:#000;font-weight:bold">;</span> <span style="color:#8f5902;font-style:italic">//Insert sheetName
@@ -4126,22 +4126,22 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:left">DHT22</th>
-<th style="text-align:center">29pin header</th>
+<th align="left">DHT22</th>
+<th align="center">29pin header</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">VCC-power supply</td>
-<td style="text-align:center">1</td>
+<td align="left">VCC-power supply</td>
+<td align="center">1</td>
 </tr>
 <tr>
-<td style="text-align:left">DAT-signal</td>
-<td style="text-align:center">15</td>
+<td align="left">DAT-signal</td>
+<td align="center">15</td>
 </tr>
 <tr>
-<td style="text-align:left">GND</td>
-<td style="text-align:center">27</td>
+<td align="left">GND</td>
+<td align="center">27</td>
 </tr>
 </tbody>
 </table>
@@ -4157,21 +4157,21 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:left">IDE</th>
-<th style="text-align:left">DHT22</th>
-<th style="text-align:left">4-Sensors</th>
+<th align="left">IDE</th>
+<th align="left">DHT22</th>
+<th align="left">4-Sensors</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">Arduino IDE</td>
-<td style="text-align:left"><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets-DHT22">Arduino_DHT22ソースコード</a></td>
-<td style="text-align:left"><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets_4-Sensors">Arduino_4-Sensorsソースコード</a></td>
+<td align="left">Arduino IDE</td>
+<td align="left"><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets-DHT22">Arduino_DHT22ソースコード</a></td>
+<td align="left"><a href="https://github.com/Leafony/Sample-Sketches/tree/master/ESP32_GoogleSheets_4-Sensors">Arduino_4-Sensorsソースコード</a></td>
 </tr>
 <tr>
-<td style="text-align:left">PlatformIO IDE</td>
-<td style="text-align:left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/esp32/ESP32_GoogleSheets-DHT22">PlatformIO_DHT22ソースコード</a></td>
-<td style="text-align:left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/esp32/ESP32_GoogleSheets_4-Sensors">PlatformIO_4-Sensorsソースコード</a></td>
+<td align="left">PlatformIO IDE</td>
+<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/esp32/ESP32_GoogleSheets-DHT22">PlatformIO_DHT22ソースコード</a></td>
+<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/esp32/ESP32_GoogleSheets_4-Sensors">PlatformIO_4-Sensorsソースコード</a></td>
 </tr>
 </tbody>
 </table>
@@ -4255,22 +4255,22 @@
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>ドキュメントとサンプルコードは <a href="https://osoyoo.com/ja/2018/03/15/arduino-lesson-dht22-humidity-and-temperature-sensor/">こちら</a>を参照して下さい。</br>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>ドキュメントとサンプルコードは <a href="https://osoyoo.com/ja/2018/03/15/arduino-lesson-dht22-humidity-and-temperature-sensor/">こちら</a>を参照して下さい。</br> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>一般的にデプロイとは、ソフトウェアを利用可能にする活動全般を指す用語で、Google Apps Scriptの場合は、ソフトウェアなどを実行できる状態にして、URLを生成することを意味しています。</br>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>一般的にデプロイとは、ソフトウェアを利用可能にする活動全般を指す用語で、Google Apps Scriptの場合は、ソフトウェアなどを実行できる状態にして、URLを生成することを意味しています。</br> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>個人や家庭、小規模事業所などためのセキュリティの仕様。端末毎に設定してあるパスワードにより認証を行う。</br>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>個人や家庭、小規模事業所などためのセキュリティの仕様。端末毎に設定してあるパスワードにより認証を行う。</br> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:4" role="doc-endnote">
-<p>企業など比較的規模の大きいネットワークのためのセキュリティの仕様。利用者毎に登録したIDとパスワードにより認証を行う。</br>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>企業など比較的規模の大きいネットワークのためのセキュリティの仕様。利用者毎に登録したIDとパスワードにより認証を行う。</br> <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:5" role="doc-endnote">
-<p>　Illuminationは、4-Sensorsの場合だけ表示されます。</br>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>　Illuminationは、4-Sensorsの場合だけ表示されます。</br> <a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:6" role="doc-endnote">
-<p>API Keyの設定は、<a href="https://qiita.com/kitazaki/items/26a8eedef842a575eb45">こちら</a>を参照して下さい。また、スプレッドシートを<code>共有</code>にしないと、<code>Google Sheets API</code>が表示されません。適切に共有の設定をして下さい。</br>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>API Keyの設定は、<a href="https://qiita.com/kitazaki/items/26a8eedef842a575eb45">こちら</a>を参照して下さい。また、スプレッドシートを<code>共有</code>にしないと、<code>Google Sheets API</code>が表示されません。適切に共有の設定をして下さい。</br> <a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -4675,7 +4675,7 @@
 
 
 
-<script src="/js/main.min.f70926ca86f7153429e54b0705f11c420ceac8da5cb4027087319447696e4a5f.js" integrity="sha256-9wkmyob3FTQp5UsHBfEcQgzqyNpctAJwhzGUR2luSl8=" crossorigin="anonymous"></script>
+<script src="/js/main.min.7afee248b9b3c1d4438c6841cc272ae0ac1f81a3ee5c0ed939f1d57c18de3f7d.js" integrity="sha256-ev7iSLmzwdRDjGhBzCcq4KwfgaPuXA7ZOfHVfBjeP30=" crossorigin="anonymous"></script>
 
 
 

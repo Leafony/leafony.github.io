@@ -22,7 +22,7 @@
       <description>
         
         
-        &lt;p&gt;Leafony only works when you write a program. &lt;br&gt;
+        &lt;p&gt;Leafony only works when you write a program. &lt;br&gt; 
 For example, in &lt;a href=&#34;https://docs.leafony.com/en/docs/getting-started/basic/&#34;&gt;Quick Start&lt;/a&gt;, a program has been written to read the four sensors and send data via Bluetooth LE.&lt;/p&gt;
 &lt;p&gt;If you are starting to use Leafony, you can make it work the way you want it to by writing a program that describes what you want it to do.&lt;/p&gt;
 
@@ -209,7 +209,7 @@ You need to install the following software in advance.&lt;/p&gt;
 &lt;li&gt;Name your project and select the appropriate board on &lt;code&gt;Board&lt;/code&gt;.&lt;/li&gt;
 &lt;li&gt;Open the &lt;code&gt;main.cpp&lt;/code&gt; in the &lt;code&gt;src&lt;/code&gt; folder and paste the following code.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;Arduino.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-cpp&#34; data-lang=&#34;cpp&#34;&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;#include&lt;/span&gt; &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&amp;lt;Arduino.h&amp;gt;&lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;
 &lt;/span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;&lt;/span&gt;
 &lt;span style=&#34;color:#204a87;font-weight:bold&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#000&#34;&gt;setup&lt;/span&gt;&lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;()&lt;/span&gt; &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;{&lt;/span&gt;
   &lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;// LEDピンを出力ピンに設定
@@ -238,7 +238,7 @@ You need to install the following software in advance.&lt;/p&gt;
 &lt;li&gt;Check that &lt;code&gt;closedcube/ClosedCube OPT3001 @ &amp;lt;version&amp;gt;&lt;/code&gt; is added to the &lt;code&gt;lib_deps&lt;/code&gt; option.&lt;/li&gt;
 &lt;li&gt;If you paste the code below, you can easily set up the library environment without doing the above.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;[env:pro8MHzatmega328]
+&lt;pre&gt;&lt;code&gt;[env:pro8MHzatmega328]
 platform = atmelavr
 board = pro8MHzatmega328
 framework = arduino
