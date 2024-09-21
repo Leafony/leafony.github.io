@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.965a3bd9e9533664fa7b7c013bed18c777ea250b2ac3b2cd53644c620fdfa199a52e0b3605e18c98b097704726952a18e5b8c5dfac4aa7018105623754b56dd5.json"
+  data-offline-search-index-json-src="/offline-search-index.674e3478c7b6934bd6dfa2fc70a6be8e3a8a5fad7f630733ad6b5a09409ef9c420e08b4d984e50b57d6f86efa7f2b3c64790aa109befe4a3d0ee9771b4a25a79.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.965a3bd9e9533664fa7b7c013bed18c777ea250b2ac3b2cd53644c620fdfa199a52e0b3605e18c98b097704726952a18e5b8c5dfac4aa7018105623754b56dd5.json"
+  data-offline-search-index-json-src="/offline-search-index.674e3478c7b6934bd6dfa2fc70a6be8e3a8a5fad7f630733ad6b5a09409ef9c420e08b4d984e50b57d6f86efa7f2b3c64790aa109befe4a3d0ee9771b4a25a79.json"
   data-offline-search-base-href="/"
 >
 
@@ -4015,7 +4015,7 @@
 </tr>
 <tr>
 <td>ntenna</td>
-<td><a href="https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support">Refer to here.</a>）</td>
+<td><a href="https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support">Refer to here.</a></td>
 </tr>
 <tr>
 <td>Interfaces</td>
@@ -4042,21 +4042,63 @@
 <tbody>
 <tr>
 <td>RF Coaxial Connector</td>
-<td>Molex 734120110</td>
+<td>Molex 734120110(U.FL Compatible)</td>
 </tr>
 </tbody>
 </table>
 <h2 id="アンテナ">アンテナ</h2>
-<p>LoRa Maryは以下のアンテナを使用することで、工事設計認証が取得されています。詳しくは、<a href="https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support">こちら</a>）を参照して下さい。</br>
-| Model| Supplier |Antenna Type | RF Coaxial Connector | Dimension| 
-|&mdash;&ndash; |&mdash;&mdash;              |&mdash;&ndash;          |&mdash;&mdash; |&mdash;&ndash;        |
-|1019-008A|STAF Corporation |Monopole (λ/2) | SMA-P | L160mm, φ9mm| 
-|1019-010A|STAF Corporation |Monopole (λ/2) | SMA-P | L160mm, φ9mm| 
-|1019-053A|STAF Corporation |Monopole (λ/4) | SMA-P | L100mm, φ9mm| 
-|1018-391B|STAF Corporation |Dipole (λ/2) | U.FL | 120 × 20 × t1mm (Cable L140mm)| 
-|1018-443B|STAF Corporation |Dipole (λ/2) | U.FL |  77 × 20 × t1mm (Cable L140mm)|</p>
+<p>LoRa Maryは、以下のアンテナを使用することで、工事設計認証が取得されています。詳しくは、<a href="https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support">こちら</a>を参照して下さい。</br>
+</br></p>
+<table>
+<thead>
+<tr>
+<th align="left">Model</th>
+<th align="left">Supplier</th>
+<th align="left">Antenna Type</th>
+<th align="left">Connector</th>
+<th align="left">Dimension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1019-008A</td>
+<td align="left">STAF Corporation</td>
+<td align="left">Monopole (λ/2)</td>
+<td align="left">SMA-P</td>
+<td align="left">L160mm, φ9mm</td>
+</tr>
+<tr>
+<td align="left">1019-010A</td>
+<td align="left">STAF Corporation</td>
+<td align="left">Monopole (λ/2)</td>
+<td align="left">SMA-P</td>
+<td align="left">L160mm, φ9mm</td>
+</tr>
+<tr>
+<td align="left">1019-053A</td>
+<td align="left">STAF Corporation</td>
+<td align="left">Monopole (λ/4)</td>
+<td align="left">SMA-P</td>
+<td align="left">L100mm, φ9mm</td>
+</tr>
+<tr>
+<td align="left">1018-391B</td>
+<td align="left">STAF Corporation</td>
+<td align="left">Dipole (λ/2)</td>
+<td align="left">U.FL</td>
+<td align="left">120 × 20 × t1mm (Cable L140mm)</td>
+</tr>
+<tr>
+<td align="left">1018-443B</td>
+<td align="left">STAF Corporation</td>
+<td align="left">Dipole (λ/2)</td>
+<td align="left">U.FL</td>
+<td align="left">77 × 20 × t1mm (Cable L140mm)</td>
+</tr>
+</tbody>
+</table>
 <h2 id="ファームウェア">ファームウェア</h2>
-<p>LoRa Maryのファームウェアは、Arduinoのリポジトリで公開されているものをしており、<a href="https://github.com/arduino/mkrwan1300-fw/releases/tag/1.1.6">v1.1.6</a> が、予め書き込まれています。</br>
+<p>ファームウェアは、Arduinoのリポジトリで公開されているものを使用しており、<a href="https://github.com/arduino/mkrwan1300-fw/releases/tag/1.1.6">v1.1.6</a> が、書き込まれています。</br></br>
 <code>https://github.com/arduino/mkrwan1300-fw</code></br></p>
 <h2 id="ライブラリ">ライブラリ</h2>
 <h2 id="ブロック図">ブロック図</h2>

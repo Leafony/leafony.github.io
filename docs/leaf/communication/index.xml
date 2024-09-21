@@ -741,7 +741,7 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;ntenna&lt;/td&gt;
-&lt;td&gt;&lt;a href=&#34;https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support&#34;&gt;Refer to here.&lt;/a&gt;）&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support&#34;&gt;Refer to here.&lt;/a&gt;&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Interfaces&lt;/td&gt;
@@ -768,21 +768,63 @@
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;RF Coaxial Connector&lt;/td&gt;
-&lt;td&gt;Molex 734120110&lt;/td&gt;
+&lt;td&gt;Molex 734120110(U.FL Compatible)&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
 &lt;h2 id=&#34;アンテナ&#34;&gt;アンテナ&lt;/h2&gt;
-&lt;p&gt;LoRa Maryは以下のアンテナを使用することで、工事設計認証が取得されています。詳しくは、&lt;a href=&#34;https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support&#34;&gt;こちら&lt;/a&gt;）を参照して下さい。&lt;/br&gt;
-| Model| Supplier |Antenna Type | RF Coaxial Connector | Dimension| 
-|&amp;mdash;&amp;ndash; |&amp;mdash;&amp;mdash;              |&amp;mdash;&amp;ndash;          |&amp;mdash;&amp;mdash; |&amp;mdash;&amp;ndash;        |
-|1019-008A|STAF Corporation |Monopole (λ/2) | SMA-P | L160mm, φ9mm| 
-|1019-010A|STAF Corporation |Monopole (λ/2) | SMA-P | L160mm, φ9mm| 
-|1019-053A|STAF Corporation |Monopole (λ/4) | SMA-P | L100mm, φ9mm| 
-|1018-391B|STAF Corporation |Dipole (λ/2) | U.FL | 120 × 20 × t1mm (Cable L140mm)| 
-|1018-443B|STAF Corporation |Dipole (λ/2) | U.FL |  77 × 20 × t1mm (Cable L140mm)|&lt;/p&gt;
+&lt;p&gt;LoRa Maryは、以下のアンテナを使用することで、工事設計認証が取得されています。詳しくは、&lt;a href=&#34;https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support&#34;&gt;こちら&lt;/a&gt;を参照して下さい。&lt;/br&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Model&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Supplier&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Antenna Type&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Connector&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Dimension&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;1019-008A&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;STAF Corporation&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Monopole (λ/2)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;SMA-P&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;L160mm, φ9mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;1019-010A&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;STAF Corporation&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Monopole (λ/2)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;SMA-P&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;L160mm, φ9mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;1019-053A&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;STAF Corporation&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Monopole (λ/4)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;SMA-P&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;L100mm, φ9mm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;1018-391B&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;STAF Corporation&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Dipole (λ/2)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;U.FL&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;120 × 20 × t1mm (Cable L140mm)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;1018-443B&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;STAF Corporation&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Dipole (λ/2)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;U.FL&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;77 × 20 × t1mm (Cable L140mm)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h2 id=&#34;ファームウェア&#34;&gt;ファームウェア&lt;/h2&gt;
-&lt;p&gt;LoRa Maryのファームウェアは、Arduinoのリポジトリで公開されているものをしており、&lt;a href=&#34;https://github.com/arduino/mkrwan1300-fw/releases/tag/1.1.6&#34;&gt;v1.1.6&lt;/a&gt; が、予め書き込まれています。&lt;/br&gt;
+&lt;p&gt;ファームウェアは、Arduinoのリポジトリで公開されているものを使用しており、&lt;a href=&#34;https://github.com/arduino/mkrwan1300-fw/releases/tag/1.1.6&#34;&gt;v1.1.6&lt;/a&gt; が、書き込まれています。&lt;/br&gt;&lt;/br&gt;
 &lt;code&gt;https://github.com/arduino/mkrwan1300-fw&lt;/code&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h2&gt;
 &lt;h2 id=&#34;ブロック図&#34;&gt;ブロック図&lt;/h2&gt;
