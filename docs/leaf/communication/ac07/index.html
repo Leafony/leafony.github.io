@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.fd40cc44e37c96476ca74d925f27f66d0fe5a6c6f01a3d57a3e444fefe6429304db8e916288e9ac2f05e090241179a57594796c2fefc96fdb1a410552922a4ba.json"
+  data-offline-search-index-json-src="/offline-search-index.965a3bd9e9533664fa7b7c013bed18c777ea250b2ac3b2cd53644c620fdfa199a52e0b3605e18c98b097704726952a18e5b8c5dfac4aa7018105623754b56dd5.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.fd40cc44e37c96476ca74d925f27f66d0fe5a6c6f01a3d57a3e444fefe6429304db8e916288e9ac2f05e090241179a57594796c2fefc96fdb1a410552922a4ba.json"
+  data-offline-search-index-json-src="/offline-search-index.965a3bd9e9533664fa7b7c013bed18c777ea250b2ac3b2cd53644c620fdfa199a52e0b3605e18c98b097704726952a18e5b8c5dfac4aa7018105623754b56dd5.json"
   data-offline-search-base-href="/"
 >
 
@@ -3911,18 +3911,14 @@
   <ul>
     <li><a href="#特徴">特徴</a></li>
     <li><a href="#性能">性能</a></li>
-    <li><a href="#tips">Tips</a>
-      <ul>
-        <li><a href="#直上にリーフを積む時の注意">直上にリーフを積む時の注意</a></li>
-      </ul>
-    </li>
+    <li><a href="#外観">外観</a></li>
+    <li><a href="#アンテナ">アンテナ</a></li>
+    <li><a href="#ファームウェア">ファームウェア</a></li>
+    <li><a href="#ライブラリ">ライブラリ</a></li>
     <li><a href="#ブロック図">ブロック図</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
     <li><a href="#サンプルアプリ">サンプルアプリ</a></li>
-    <li><a href="#アンテナ">アンテナ</a></li>
     <li><a href="#ドキュメント">ドキュメント</a></li>
-    <li><a href="#ファームウェア書き換え">ファームウェア書き換え</a></li>
-    <li><a href="#変更履歴">変更履歴</a></li>
   </ul>
 </nav>
 
@@ -3987,70 +3983,82 @@
 <a href="./ac07_p_large.jpg"><img src="./ac07_p_small.jpg" width="300"></a></p>
 </br>
 <h2 id="特徴">特徴</h2>
-<p>村田製作所の技適認証済みLoRaモジュールCMWX1ZZABZ-078を搭載した通信リーフです。MCUとはSPIで接続されています。省電力に数kmにも及ぶ長距離無線通信を利用可能です。</p>
+<p>村田製作所のCMWX1ZZABZを搭載したLoRaリーフ(LoRa Mary)で、指定のアンテナを使用することで、工事設計認証が取得されているため、省電力の長距離無線通信が、手軽に利用できます。また、LoRa MaryはArduinoのライブラリを使ってプログラミングをすることが出来たり、搭載されているセキュアエレメント（ECC508）を使って、情報の暗号化をすることが出来ます。</br></p>
 <h2 id="性能">性能</h2>
 <table>
 <thead>
 <tr>
-<th>項目</th>
-<th>説明</th>
+<th>Item</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Part number</td>
-<td>CMWX1ZZABZ-078</td>
+<td>CMWX1ZZABZ</td>
+</tr>
+<tr>
+<td>Chip Set</td>
+<td>SX1276,STM32L</td>
+</tr>
+<tr>
+<td>Secure Element</td>
+<td>ATECC508</td>
 </tr>
 <tr>
 <td>Carrier Frequency</td>
-<td>860-930MHz</td>
+<td>920MHz band (920.6 MHz to 928 MHz),Japan</td>
 </tr>
 <tr>
-<td>チップセット</td>
-<td>Semtech (SX1276) + STM (STM32L)</td>
+<td>Modulation Method</td>
+<td>LoRa™ Modulation</td>
 </tr>
 <tr>
-<td>変調方式</td>
-<td>FSK, OOK and LoRa™ Modulation</td>
+<td>ntenna</td>
+<td><a href="https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support">Refer to here.</a>）</td>
 </tr>
 <tr>
-<td>アンテナ</td>
-<td>外部（<a href="https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support">詳細はこちら</a>）</td>
+<td>Interfaces</td>
+<td>SPI</td>
 </tr>
 <tr>
-<td>動作温度範囲</td>
-<td>-40 to +85</td>
+<td>RF certification</td>
+<td>FCC,IC,TELEC,KCC</td>
 </tr>
 <tr>
-<td>送信モード電力</td>
-<td>128mA @ 20dBm setting</td>
-</tr>
-<tr>
-<td>送信出力</td>
-<td>Up to +18.5dBm</td>
-</tr>
-<tr>
-<td>受信モード電力</td>
-<td>21.5mA @ 125kHz BW</td>
-</tr>
-<tr>
-<td>受信感度</td>
-<td>-135.5dBm @ 1% PER, 125kHz BW, SF=12</td>
-</tr>
-<tr>
-<td>通信技術</td>
-<td>LoRa/Sigfox</td>
-</tr>
-<tr>
-<td>FCC/IC認証</td>
-<td>FCC/IC「基準」認証</td>
+<td>Dimension</td>
+<td>W20×D25×H2.3mm</td>
 </tr>
 </tbody>
 </table>
-<h2 id="tips">Tips</h2>
-<h3 id="直上にリーフを積む時の注意">直上にリーフを積む時の注意</h3>
-<p>（仕掛中）このリーフには、高背部品(高さ2mm以上)が使用されており、そのままでは直上のリーフと電気的に接続不良をおこす可能性があります。そのため、このリーフの直上には、必ずスペーサリーフ（AX04 Spacer）を間に挟んで下さい。</p>
-<br>
+<h2 id="外観">外観</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RF Coaxial Connector</td>
+<td>Molex 734120110</td>
+</tr>
+</tbody>
+</table>
+<h2 id="アンテナ">アンテナ</h2>
+<p>LoRa Maryは以下のアンテナを使用することで、工事設計認証が取得されています。詳しくは、<a href="https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support">こちら</a>）を参照して下さい。</br>
+| Model| Supplier |Antenna Type | RF Coaxial Connector | Dimension| 
+|&mdash;&ndash; |&mdash;&mdash;              |&mdash;&ndash;          |&mdash;&mdash; |&mdash;&ndash;        |
+|1019-008A|STAF Corporation |Monopole (λ/2) | SMA-P | L160mm, φ9mm| 
+|1019-010A|STAF Corporation |Monopole (λ/2) | SMA-P | L160mm, φ9mm| 
+|1019-053A|STAF Corporation |Monopole (λ/4) | SMA-P | L100mm, φ9mm| 
+|1018-391B|STAF Corporation |Dipole (λ/2) | U.FL | 120 × 20 × t1mm (Cable L140mm)| 
+|1018-443B|STAF Corporation |Dipole (λ/2) | U.FL |  77 × 20 × t1mm (Cable L140mm)|</p>
+<h2 id="ファームウェア">ファームウェア</h2>
+<p>LoRa Maryのファームウェアは、Arduinoのリポジトリで公開されているものをしており、<a href="https://github.com/arduino/mkrwan1300-fw/releases/tag/1.1.6">v1.1.6</a> が、予め書き込まれています。</br>
+<code>https://github.com/arduino/mkrwan1300-fw</code></br></p>
+<h2 id="ライブラリ">ライブラリ</h2>
 <h2 id="ブロック図">ブロック図</h2>
 <p><a href="./ac07_block.jpg"><img src="./ac07_block.jpg" width="1000"></a></p>
 <h2 id="ピン配置">ピン配置</h2>
@@ -4063,21 +4071,11 @@
 <li><a href="/docs/examples/advanced/3_p/stm32/stm32_lora_rx">LoRa受信機</a></li>
 <li><a href="/docs/examples/advanced/3_p/stm32/stm32_lora_soracom">SORACOM + LTE-M + LoRaで作るIoTクラウドサービス</a></li>
 </ul>
-<h2 id="アンテナ">アンテナ</h2>
-<p>村田製作所の公式ホームページに掲載されている<a href="https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support">LoRa 日本市場専用アンテナ</a>をご利用いただくことで、技適の範囲内での使用が認められます。</p>
 <h2 id="ドキュメント">ドキュメント</h2>
 <ul>
 <li>仕様書</li>
 <li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC07_LoRa_Mary/AC07_LoRa_Mary_schematics.pdf">回路図</a></li>
 <li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC07_LoRa_Mary/AC07_LoRa_Mary_layout.pdf">レイアウト</a></li>
-<li><a href="https://github.com/Leafony/HW-Design-Files/tree/master/AC07_LoRa_Mary/kicad/AC07_LoRa_Mary">KiCadプロジェクト</a></li>
-<li><a href="https://github.com/Leafony/HW-Design-Files/tree/master/AC07_LoRa_Mary/firmware">ファームウェア</a></li>
-</ul>
-<h2 id="ファームウェア書き換え">ファームウェア書き換え</h2>
-<p><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC07_LoRa_Mary/LoRa%E3%83%AA%E3%83%BC%E3%83%95%E3%83%95%E3%82%A1%E3%83%BC%E3%83%A0%E3%82%A6%E3%82%A7%E3%82%A2%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF%E6%89%8B%E9%A0%86.pdf">ファームウェア書き換えマニュアル</a>をご確認ください。</p>
-<h2 id="変更履歴">変更履歴</h2>
-<ul>
-<li>2024年8月:初版</li>
 </ul>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
@@ -4419,7 +4417,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 25, 2024
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 22, 2024
 </div>
 </div>
 
