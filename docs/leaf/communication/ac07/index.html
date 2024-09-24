@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.1175141031553ca0cd909bf4c322a51a9e410f917b519c5a77028c9c877b6bc1bc9097f8b919a5594e616e0f9b5ff52aa73fe07179c4ba6757dab04385bbb42a.json"
+  data-offline-search-index-json-src="/offline-search-index.2e786edc121da7f5c03653a87ba9a1881a38c9a4725e13667497af75f42105c46dc04b0db7a768c6d0c5c747ce90ef7843ac6750fd278ab428684cc7623d92de.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.1175141031553ca0cd909bf4c322a51a9e410f917b519c5a77028c9c877b6bc1bc9097f8b919a5594e616e0f9b5ff52aa73fe07179c4ba6757dab04385bbb42a.json"
+  data-offline-search-index-json-src="/offline-search-index.2e786edc121da7f5c03653a87ba9a1881a38c9a4725e13667497af75f42105c46dc04b0db7a768c6d0c5c747ce90ef7843ac6750fd278ab428684cc7623d92de.json"
   data-offline-search-base-href="/"
 >
 
@@ -3919,6 +3919,12 @@
     <li><a href="#ピン配置">ピン配置</a></li>
     <li><a href="#サンプルアプリ">サンプルアプリ</a></li>
     <li><a href="#ドキュメント">ドキュメント</a></li>
+    <li><a href="#tips">Tips</a>
+      <ul>
+        <li><a href="#lorawanとprivate-lora">LoRaWANとPrivate LoRa</a></li>
+        <li><a href="#spreading-factor-とbandwidth">Spreading Factor とBandwidth</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -4014,7 +4020,7 @@
 <td>LoRa™ Modulation</td>
 </tr>
 <tr>
-<td>ntenna</td>
+<td>Antenna</td>
 <td><a href="https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support">Refer to here.</a></td>
 </tr>
 <tr>
@@ -4042,7 +4048,11 @@
 <tbody>
 <tr>
 <td>RF Coaxial Connector</td>
-<td>Molex 734120110(U.FL Compatible)</td>
+<td>Molex 734120110(U.FL Compatible)<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></td>
+</tr>
+<tr>
+<td></br></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -4064,21 +4074,21 @@
 <td align="left">1019-008A</td>
 <td align="left">STAF Corporation</td>
 <td align="left">Monopole (λ/2)</td>
-<td align="left">SMA-P</td>
+<td align="left">SMA<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
 <td align="left">L160mm, φ9mm</td>
 </tr>
 <tr>
 <td align="left">1019-010A</td>
 <td align="left">STAF Corporation</td>
 <td align="left">Monopole (λ/2)</td>
-<td align="left">SMA-P</td>
+<td align="left">SMA<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
 <td align="left">L160mm, φ9mm</td>
 </tr>
 <tr>
 <td align="left">1019-053A</td>
 <td align="left">STAF Corporation</td>
 <td align="left">Monopole (λ/4)</td>
-<td align="left">SMA-P</td>
+<td align="left">SMA<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
 <td align="left">L100mm, φ9mm</td>
 </tr>
 <tr>
@@ -4098,8 +4108,9 @@
 </tbody>
 </table>
 <h2 id="ファームウェア">ファームウェア</h2>
-<p>ファームウェアは、Arduinoのリポジトリで公開されているものを使用しており、<a href="https://github.com/arduino/mkrwan1300-fw/releases/tag/1.1.6">v1.1.6</a> が、書き込まれています。</br></br>
-<code>https://github.com/arduino/mkrwan1300-fw</code></br></p>
+<p>ファームウェアは、Arduino MKR WAN 1300/1310と同じもの（以下のリポジトリで公開）を使用しています。LoRa Maryは、<a href="https://github.com/arduino/mkrwan1300-fw/releases/tag/1.1.6">v1.1.6</a> が、書き込まれています。</br></br>
+<code>https://github.com/arduino/mkrwan1300-fw</code></br>
+</br></p>
 <h2 id="ライブラリ">ライブラリ</h2>
 <h2 id="ブロック図">ブロック図</h2>
 <p><a href="./ac07_block.jpg"><img src="./ac07_block.jpg" width="1000"></a></p>
@@ -4119,9 +4130,66 @@
 <li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC07_LoRa_Mary/AC07_LoRa_Mary_schematics.pdf">回路図</a></li>
 <li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC07_LoRa_Mary/AC07_LoRa_Mary_layout.pdf">レイアウト</a></li>
 </ul>
+<h2 id="tips">Tips</h2>
+<h3 id="lorawanとprivate-lora">LoRaWANとPrivate LoRa</h3>
+<p>LoRaWANとPrivate LoRaは、どちらも物理層にLoRa変調を使用した無線通信規格で上位のMAC層が異なります。LoRaWANは、LoRaAllianceが策定した標準規格で、異なるメーカーの機器同士での通信が可能です。Private LoRaは、MAC層に会社毎の独自の通信プロトコルを使用し、アプリケーションや用途に対して、カスタマイズが可能です。詳しくは、以下を参照願います。</br></p>
+<ul>
+<li><a href="https://docs.arduino.cc/learn/communication/lorawan-101/">The Arduino Guide to LoRa® and LoRaWAN®</a></li>
+<li><a href="https://easel5.com/technical-guide/difference-lorawan-and-private-lora/">LoRaWANとプライベートLoRaの違い</a></li>
+</ul>
+<h3 id="spreading-factor-とbandwidth">Spreading Factor とBandwidth</h3>
+<p>Spreading Factor(SF) は、送信されるデータの「拡散率」を表し、送信信号をどの程度「拡散」するかを決定します。SFは通常6から12までの値で、以下のような特徴があります。デフォルトは、SF7です。</br></p>
+<table>
+<thead>
+<tr>
+<th align="left">SF</th>
+<th align="center">特徴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">SF5～SF8</td>
+<td align="center">通信距離短くデータレート向上、消費電力小さい</td>
+</tr>
+<tr>
+<td align="left">SF10～SF12</td>
+<td align="center">通信距離長くデータレート低下、消費電力大きい</td>
+</tr>
+</tbody>
+</table>
+<p>Bandwidth (BW)は、使用される周波数帯域の幅表し、通信速度や感度に影響を与えます。BWは通常125kHz、250kHz、500kHzの値で、以下のような特徴があります。デフォルトは、125kkHzです。</br></p>
+<table>
+<thead>
+<tr>
+<th align="left">周波数</th>
+<th align="center">特徴</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">BW小 (125kHz)</td>
+<td align="center">長距離・低速</td>
+</tr>
+<tr>
+<td align="left">BW大 (500kHz)</td>
+<td align="center">短距離・高速</td>
+</tr>
+</tbody>
+</table>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
 </p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>U.FLコネクタはヒロセ電機の製品であり、国際規格ではありません。異種メーカのコネクタを組合せて使用する場合は自己責任で使用して下さい。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>コネクタがMIL規格のSMA（SUB-MINIATURE TYPE A）の場合は、U.FL-SMA 変換ケーブルを使用することでLoRa Maryと接続することが出来ます。</br> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 
         <div class="section-index">
     
@@ -4459,7 +4527,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 22, 2024
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 24, 2024
 </div>
 </div>
 
