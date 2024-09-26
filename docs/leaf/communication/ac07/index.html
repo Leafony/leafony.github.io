@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.2e786edc121da7f5c03653a87ba9a1881a38c9a4725e13667497af75f42105c46dc04b0db7a768c6d0c5c747ce90ef7843ac6750fd278ab428684cc7623d92de.json"
+  data-offline-search-index-json-src="/offline-search-index.2169b04baf38d5952a087a85eb64705e556ad16699d5ce46d549419e116f86f5468c319032eff90b627a096afb211d9fd68996c9ddfa91c677a5ea52a3506b8d.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.2e786edc121da7f5c03653a87ba9a1881a38c9a4725e13667497af75f42105c46dc04b0db7a768c6d0c5c747ce90ef7843ac6750fd278ab428684cc7623d92de.json"
+  data-offline-search-index-json-src="/offline-search-index.2169b04baf38d5952a087a85eb64705e556ad16699d5ce46d549419e116f86f5468c319032eff90b627a096afb211d9fd68996c9ddfa91c677a5ea52a3506b8d.json"
   data-offline-search-base-href="/"
 >
 
@@ -3914,15 +3914,19 @@
     <li><a href="#外観">外観</a></li>
     <li><a href="#アンテナ">アンテナ</a></li>
     <li><a href="#ファームウェア">ファームウェア</a></li>
-    <li><a href="#ライブラリ">ライブラリ</a></li>
     <li><a href="#ブロック図">ブロック図</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
-    <li><a href="#サンプルアプリ">サンプルアプリ</a></li>
+    <li><a href="#サンプルアプリ">サンプルアプリ</a>
+      <ul>
+        <li><a href="#loraによるメッセージの送信">LoRaによるメッセージの送信</a></li>
+        <li><a href="#loraによるセンサデータの送信">LoRaによるセンサデータの送信</a></li>
+      </ul>
+    </li>
     <li><a href="#ドキュメント">ドキュメント</a></li>
     <li><a href="#tips">Tips</a>
       <ul>
         <li><a href="#lorawanとprivate-lora">LoRaWANとPrivate LoRa</a></li>
-        <li><a href="#spreading-factor-とbandwidth">Spreading Factor とBandwidth</a></li>
+        <li><a href="#spreading-factorsf-とbandwidthbw">Spreading Factor(SF) とBandwidth(BW)</a></li>
       </ul>
     </li>
   </ul>
@@ -4108,21 +4112,39 @@
 </tbody>
 </table>
 <h2 id="ファームウェア">ファームウェア</h2>
-<p>ファームウェアは、Arduino MKR WAN 1300/1310と同じもの（以下のリポジトリで公開）を使用しています。LoRa Maryは、<a href="https://github.com/arduino/mkrwan1300-fw/releases/tag/1.1.6">v1.1.6</a> が、書き込まれています。</br></br>
+<p>ファームウェアは、Arduino MKR WAN 1300/1310と同じで（以下のリポジトリで公開）、LoRa Maryは<a href="https://github.com/arduino/mkrwan1300-fw/releases/tag/1.1.6">v1.1.6</a> が書き込まれています。</br></br>
 <code>https://github.com/arduino/mkrwan1300-fw</code></br>
 </br></p>
-<h2 id="ライブラリ">ライブラリ</h2>
 <h2 id="ブロック図">ブロック図</h2>
 <p><a href="./ac07_block.jpg"><img src="./ac07_block.jpg" width="1000"></a></p>
 <h2 id="ピン配置">ピン配置</h2>
 <p><a href="./ac07_pinassign.png"><img src="./ac07_pinassign.png" width="750"></a></br></p>
 <p>ピン配置のデータは、<a href="https://github.com/Leafony/Documents/tree/main/Leaf-pinassign">こちら</a>を参照して下さい。</br></p>
 <h2 id="サンプルアプリ">サンプルアプリ</h2>
+<p>STM32 MCUとLoRa Maryリーフを使用したサンプルアプリです。このサンプルアプリを使用する場合は、 LoRaLeafony.hのライブラリをインクルードしてください。ソースコードは、Arduino IDEとPlatformIO IDのふたつで用意しています。STM32 MCUの開発環境の設定は、<a href="https://docs.leafony.com/docs/environment/#stm32-mcu-%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83">こちら</a>を参照して下さい。</p>
+<h3 id="loraによるメッセージの送信">LoRaによるメッセージの送信</h3>
+<p>送信側のLeafony Blockから受信側のLeafony Blockへ、LoRaを使ってメッセージを送付するアプリです。</br></p>
+<h4 id="送信側のleafony-block">送信側のLeafony Block</h4>
 <ul>
-<li><a href="/docs/examples/advanced/3_p/stm32/stm32_lora_tx">LoRa送信機</a></li>
-<li><a href="/docs/examples/advanced/3_p/stm32/stm32_lora_tx_sensors">LoRa送信機 + 4-Sensors</a></li>
-<li><a href="/docs/examples/advanced/3_p/stm32/stm32_lora_rx">LoRa受信機</a></li>
-<li><a href="/docs/examples/advanced/3_p/stm32/stm32_lora_soracom">SORACOM + LTE-M + LoRaで作るIoTクラウドサービス</a></li>
+<li>Arduinoソースコード</li>
+<li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_Transmitter">PlatformIOソースコード</a></li>
+</ul>
+<h4 id="受信側のleafony-block">受信側のLeafony Block</h4>
+<ul>
+<li>Arduinoソースコード</li>
+<li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_Receiver">PlatformIOソースコード</a></li>
+</ul>
+<h3 id="loraによるセンサデータの送信">LoRaによるセンサデータの送信</h3>
+<p>送信側のLeafony Blockから受信側のLeafony Blockへ、LoRaを使ってセンサデータを送付するアプリです。</br></p>
+<h4 id="送信側のleafony-block-1">送信側のLeafony Block</h4>
+<ul>
+<li>Arduinoソースコード</li>
+<li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_4-Sensors_Transmitter">PlatformIOソースコード</a></li>
+</ul>
+<h4 id="受信側のleafony-block-1">受信側のLeafony Block</h4>
+<ul>
+<li>Arduinoソースコード</li>
+<li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_Receiver">PlatformIOソースコード</a></li>
 </ul>
 <h2 id="ドキュメント">ドキュメント</h2>
 <ul>
@@ -4134,11 +4156,11 @@
 <h3 id="lorawanとprivate-lora">LoRaWANとPrivate LoRa</h3>
 <p>LoRaWANとPrivate LoRaは、どちらも物理層にLoRa変調を使用した無線通信規格で上位のMAC層が異なります。LoRaWANは、LoRaAllianceが策定した標準規格で、異なるメーカーの機器同士での通信が可能です。Private LoRaは、MAC層に会社毎の独自の通信プロトコルを使用し、アプリケーションや用途に対して、カスタマイズが可能です。詳しくは、以下を参照願います。</br></p>
 <ul>
-<li><a href="https://docs.arduino.cc/learn/communication/lorawan-101/">The Arduino Guide to LoRa® and LoRaWAN®</a></li>
 <li><a href="https://easel5.com/technical-guide/difference-lorawan-and-private-lora/">LoRaWANとプライベートLoRaの違い</a></li>
+<li><a href="https://docs.arduino.cc/learn/communication/lorawan-101/">The Arduino Guide to LoRa® and LoRaWAN®</a></li>
 </ul>
-<h3 id="spreading-factor-とbandwidth">Spreading Factor とBandwidth</h3>
-<p>Spreading Factor(SF) は、送信されるデータの「拡散率」を表し、送信信号をどの程度「拡散」するかを決定します。SFは通常6から12までの値で、以下のような特徴があります。デフォルトは、SF7です。</br></p>
+<h3 id="spreading-factorsf-とbandwidthbw">Spreading Factor(SF) とBandwidth(BW)</h3>
+<p>SFは、送信されるデータの「拡散率」を表し通常6から12までの値で、デフォルトはSF7です。以下に特徴を示します。</br></p>
 <table>
 <thead>
 <tr>
@@ -4149,15 +4171,15 @@
 <tbody>
 <tr>
 <td align="left">SF5～SF8</td>
-<td align="center">通信距離短くデータレート向上、消費電力小さい</td>
+<td align="center">通信範囲は短いが、データレートは速い。</td>
 </tr>
 <tr>
 <td align="left">SF10～SF12</td>
-<td align="center">通信距離長くデータレート低下、消費電力大きい</td>
+<td align="center">通信範囲は広いが、データレートは遅い。</td>
 </tr>
 </tbody>
 </table>
-<p>Bandwidth (BW)は、使用される周波数帯域の幅表し、通信速度や感度に影響を与えます。BWは通常125kHz、250kHz、500kHzの値で、以下のような特徴があります。デフォルトは、125kkHzです。</br></p>
+<p>BWは、周波数帯域の幅を表し、通常125kHz、250kHz、500kHzの値で、デフォルトは125kkHzです。以下に特徴を示します。</br></p>
 <table>
 <thead>
 <tr>
@@ -4168,11 +4190,11 @@
 <tbody>
 <tr>
 <td align="left">BW小 (125kHz)</td>
-<td align="center">長距離・低速</td>
+<td align="center">データレートが遅いが、通信距離は長い。消費電力小さい。</td>
 </tr>
 <tr>
 <td align="left">BW大 (500kHz)</td>
-<td align="center">短距離・高速</td>
+<td align="center">データレートが速いが、通信距離は短い。消費電力大きい。</td>
 </tr>
 </tbody>
 </table>
@@ -4186,7 +4208,8 @@
 <p>U.FLコネクタはヒロセ電機の製品であり、国際規格ではありません。異種メーカのコネクタを組合せて使用する場合は自己責任で使用して下さい。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>コネクタがMIL規格のSMA（SUB-MINIATURE TYPE A）の場合は、U.FL-SMA 変換ケーブルを使用することでLoRa Maryと接続することが出来ます。</br> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>SMAは、SUB-MINIATURE TYPE Aの略で、MIL規格です。
+U.FL-SMA 変換ケーブルを使用することでLoRa Maryと接続することが出来ます。</br> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -4527,7 +4550,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 24, 2024
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 26, 2024
 </div>
 </div>
 
