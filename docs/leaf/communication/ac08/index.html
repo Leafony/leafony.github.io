@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.2fcdc611013d867fd2fc0e5bf6139fd6d22e11aa611bc8fe034504ed529877e8c0773cb159247348309e8aec6f4b382fd0c02bf035afb0836cf74abaf3658f38.json"
+  data-offline-search-index-json-src="/offline-search-index.9380f25d25289076b41d6211be84908d421d73bd268fdbd4f8af80fa1d0bea9a6a65b6a39b357035f9c15809f56afbd7440fcd8891bc9ecd8ec7cfca90e1dbc4.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.2fcdc611013d867fd2fc0e5bf6139fd6d22e11aa611bc8fe034504ed529877e8c0773cb159247348309e8aec6f4b382fd0c02bf035afb0836cf74abaf3658f38.json"
+  data-offline-search-index-json-src="/offline-search-index.9380f25d25289076b41d6211be84908d421d73bd268fdbd4f8af80fa1d0bea9a6a65b6a39b357035f9c15809f56afbd7440fcd8891bc9ecd8ec7cfca90e1dbc4.json"
   data-offline-search-base-href="/"
 >
 
@@ -3925,6 +3925,14 @@
     </li>
     <li><a href="#ライブラリ">ライブラリ</a></li>
     <li><a href="#ドキュメント">ドキュメント　</a></li>
+    <li><a href="#at-commands">AT Commands</a>
+      <ul>
+        <li><a href="#at-commands-basics">AT Commands Basics</a></li>
+        <li><a href="#before-you-get-start-started-br">Before you get start started </br></a></li>
+        <li><a href="#network-provider-and-cellular-technology-settings">Network provider and cellular technology settings</a></li>
+        <li><a href="#network-configuration">Network Configuration</a></li>
+      </ul>
+    </li>
     <li><a href="#変更履歴">変更履歴</a></li>
   </ul>
 </nav>
@@ -4083,6 +4091,121 @@
 <li>仕様書</li>
 <li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC08_LTE-M_Mary/AC08_LTE-M_Mary_Schematic.pdf">回路図</a></li>
 </ul>
+<h2 id="at-commands">AT Commands</h2>
+<p>ATコマンドは、3GPP（携帯通信の国際標準団体）によって標準化され、モデムの動作や接続先を設定出来ます。モデムによって対応しているバージョンや仕様が異なるため、モデムを設定する際は、メーカーが提供するATコマンドのマニュアルを確認しておくことが重要です。</br></p>
+<h3 id="at-commands-basics">AT Commands Basics</h3>
+<p>ATコマンドは、通常 <code>AT</code>にで始まり、その後に <code>&lt;command&gt;</code>、場合によっては、 <code>&lt;value&gt;</code>が続きます。AT コマンドには、 <strong>Set</strong>、<strong>Read</strong>、<strong>Test</strong>、<strong>Execute</strong>の 4種類に分類されます。</br></p>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="left">Syntax</th>
+<th align="left">Extample</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Set</td>
+<td align="left"><code>AT+&lt;command&gt;=&lt;value&gt;</code></td>
+<td align="left"><code>AT+COPS=1,2,&lt;MCCMNC&gt;</code></td>
+<td align="left">ネットワーク事業者に手動で接続 　　　　　</td>
+</tr>
+<tr>
+<td align="left">Read</td>
+<td align="left"><code>AT+&lt;command&gt;?</code></td>
+<td align="left"><code>AT+COPS?</code></td>
+<td align="left">現在使用中のネットワーク事業者を確認</td>
+</tr>
+<tr>
+<td align="left">Test</td>
+<td align="left"><code>AT+&lt;command&gt;=?</code></td>
+<td align="left"><code>AT+COPS=?</code></td>
+<td align="left">利用可能なネットワーク事業者を検索</td>
+</tr>
+<tr>
+<td align="left">Execute</td>
+<td align="left"><code>AT+&lt;x&gt;</code></td>
+<td align="left"><code>AT+CSQ</code></td>
+<td align="left">現在の信号強度と接続の品質を数値で確認</td>
+</tr>
+</tbody>
+</table>
+<h3 id="before-you-get-start-started-br">Before you get start started </br></h3>
+<table>
+<thead>
+<tr>
+<th align="left">AT Command</th>
+<th align="left">Example response</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>AT+CFUN=1,1</code></td>
+<td align="left"><code>OK</code></td>
+<td align="left">モデムをデフォルトにリセット</td>
+</tr>
+<tr>
+<td align="left"><code>AT+CPIN?</code></td>
+<td align="left"><code>+CPIN: READY</code> </br><code>OK</code></td>
+<td align="left">SIMカードの確認　</td>
+</tr>
+<tr>
+<td align="left"><code>AT+CGMM</code></td>
+<td align="left"><code>LBAD0XX1SC-DM</code></br><code>OK</code></td>
+<td align="left">モデムのハードウェア確認</td>
+</tr>
+<tr>
+<td align="left"><code>AT+CGMR</code>       　</td>
+<td align="left"><code>RK_03_02_00_00_41841_001</code> </br> <code>OK</code></td>
+<td align="left">モデムのファームウェアバージョン確認</td>
+</tr>
+<tr>
+<td align="left"><code>AT+CIMI</code></td>
+<td align="left"><code>440103198454299</code> </br><code>OK</code></td>
+<td align="left">IMSI (国際モバイル加入者識別番号) 確認</td>
+</tr>
+</tbody>
+</table>
+<h3 id="network-provider-and-cellular-technology-settings">Network provider and cellular technology settings</h3>
+<table>
+<thead>
+<tr>
+<th align="left">AT Command</th>
+<th align="left">Example response</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>AT+CFUN=1,1</code></td>
+<td align="left"><code>OK</code></td>
+<td align="left">モデムをデフォルトにリセット</td>
+</tr>
+<tr>
+<td align="left"><code>AT+COPS=?</code></td>
+<td align="left"><code>+COPS: (1,&quot;NTT DOCOMO&quot;,&quot;DOCOMO&quot;,&quot;44010&quot;,7),(0,&quot;KDDI&quot;,&quot;KDDI&quot;,&quot;44050&quot;,7),(3,&quot;KDDI&quot;,&quot;KDDI&quot;,&quot;44052&quot;,7),(0,&quot;KDDI&quot;,&quot;KDDI&quot;,&quot;44054&quot;,7),(0,&quot;KDDI&quot;,&quot;KDDI&quot;,&quot;44051&quot;,7),(0,&quot;SoftBank&quot;,&quot;SoftBank&quot;,&quot;44020&quot;,7),,(0-3),(0-2)</code></br><code>OK</code></td>
+<td align="left">利用可能なネットワーク事業者を検索 　</td>
+</tr>
+<tr>
+<td align="left"><code>AT+COPS=1,2,44010</code></td>
+<td align="left"><code>OK</code></td>
+<td align="left">NTT ドコモに接続</td>
+</tr>
+<tr>
+<td align="left"><code>AT+COPS?</code></td>
+<td align="left"><code>+COPS: 1,2,&quot;44010&quot;,7</code></br> <code>OK</code></td>
+<td align="left">NTT ドコモに接続確認</td>
+</tr>
+<tr>
+<td align="left"><code>AT+CSQ</code></td>
+<td align="left"><code>+CSQ: 17,99</code></br> <code>OK</code></td>
+<td align="left">電波強度と信号品質</td>
+</tr>
+</tbody>
+</table>
+<h3 id="network-configuration">Network Configuration</h3>
 <h2 id="変更履歴">変更履歴</h2>
 <ul>
 <li>2024年8月:初版</li>
@@ -4426,7 +4549,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 18, 2024
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 November 14, 2024
 </div>
 </div>
 
