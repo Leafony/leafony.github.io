@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9380f25d25289076b41d6211be84908d421d73bd268fdbd4f8af80fa1d0bea9a6a65b6a39b357035f9c15809f56afbd7440fcd8891bc9ecd8ec7cfca90e1dbc4.json"
+  data-offline-search-index-json-src="/offline-search-index.37e954f301038013d9a427065cbfeb1f152c3fa001fb4698ffcbe9585a3b463f6df56471ce50bb8e40d130abac686d0feb88d920843538dd44a3d7ade7845bf3.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9380f25d25289076b41d6211be84908d421d73bd268fdbd4f8af80fa1d0bea9a6a65b6a39b357035f9c15809f56afbd7440fcd8891bc9ecd8ec7cfca90e1dbc4.json"
+  data-offline-search-index-json-src="/offline-search-index.37e954f301038013d9a427065cbfeb1f152c3fa001fb4698ffcbe9585a3b463f6df56471ce50bb8e40d130abac686d0feb88d920843538dd44a3d7ade7845bf3.json"
   data-offline-search-base-href="/"
 >
 
@@ -3925,12 +3925,19 @@
     </li>
     <li><a href="#ライブラリ">ライブラリ</a></li>
     <li><a href="#ドキュメント">ドキュメント　</a></li>
-    <li><a href="#at-commands">AT Commands</a>
+  </ul>
+
+  <ul>
+    <li><a href="#用意するもの">用意するもの</a></li>
+    <li><a href="#at-commands-basics">AT Commands Basics</a>
       <ul>
-        <li><a href="#at-commands-basics">AT Commands Basics</a></li>
-        <li><a href="#before-you-get-start-started-br">Before you get start started </br></a></li>
+        <li><a href="#before-you-get-start-started">Before you get start started</a></li>
+        <li><a href="#query-device-information">Query device information</a></li>
         <li><a href="#network-provider-and-cellular-technology-settings">Network provider and cellular technology settings</a></li>
+        <li><a href="#check-the-radio-signal-strength-and-signal-quality">Check the radio signal strength and signal quality</a></li>
         <li><a href="#network-configuration">Network Configuration</a></li>
+        <li><a href="#check-the-the-fplmn">Check the the FPLMN</a></li>
+        <li><a href="#clear-the-fplmn">Clear the FPLMN</a></li>
       </ul>
     </li>
     <li><a href="#変更履歴">変更履歴</a></li>
@@ -4091,9 +4098,22 @@
 <li>仕様書</li>
 <li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC08_LTE-M_Mary/AC08_LTE-M_Mary_Schematic.pdf">回路図</a></li>
 </ul>
-<h2 id="at-commands">AT Commands</h2>
-<p>ATコマンドは、3GPP（携帯通信の国際標準団体）によって標準化され、モデムの動作や接続先を設定出来ます。モデムによって対応しているバージョンや仕様が異なるため、モデムを設定する際は、メーカーが提供するATコマンドのマニュアルを確認しておくことが重要です。</br></p>
-<h3 id="at-commands-basics">AT Commands Basics</h3>
+<h1 id="at-commands">AT Commands</h1>
+<p>ATコマンドは、3GPP（携帯通信の国際標準団体）によって標準化され、モデムの動作や接続先を設定出来ます。モデムによって対応しているバージョンや仕様が異なるため、モデムを設定する際は、メーカーが提供するATコマンドのマニュアルを確認しておくことが重要です。ここでは、ATコマンドを使って、SORACOMに接続する手順を記す。</br></p>
+<ul>
+<li>APN:soracom.io</li>
+<li>ユーザー名: sora</li>
+<li>パスワード: sora</li>
+<li>PDP Type: IP</li>
+<li>認証タイプ: CHAP または PAP</li>
+</ul>
+<h2 id="用意するもの">用意するもの</h2>
+<ul>
+<li><a href="https://www.murata.com/ja-jp/products/connectivitymodule/cat-m1/support">LBAD0XX1SC-DM-EVK-B</a></li>
+<li>パソコン (Windows、または macOS)</li>
+<li>標準SIMカード(例　SORACOM plan-D)</li>
+</ul>
+<h2 id="at-commands-basics">AT Commands Basics</h2>
 <p>ATコマンドは、通常 <code>AT</code>にで始まり、その後に <code>&lt;command&gt;</code>、場合によっては、 <code>&lt;value&gt;</code>が続きます。AT コマンドには、 <strong>Set</strong>、<strong>Read</strong>、<strong>Test</strong>、<strong>Execute</strong>の 4種類に分類されます。</br></p>
 <table>
 <thead>
@@ -4131,7 +4151,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="before-you-get-start-started-br">Before you get start started </br></h3>
+<h3 id="before-you-get-start-started">Before you get start started</h3>
 <table>
 <thead>
 <tr>
@@ -4168,7 +4188,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="network-provider-and-cellular-technology-settings">Network provider and cellular technology settings</h3>
+<h3 id="query-device-information">Query device information</h3>
 <table>
 <thead>
 <tr>
@@ -4179,10 +4199,32 @@
 </thead>
 <tbody>
 <tr>
-<td align="left"><code>AT+CFUN=1,1</code></td>
-<td align="left"><code>OK</code></td>
-<td align="left">モデムをデフォルトにリセット</td>
+<td align="left"><code>AT+CGMM</code></td>
+<td align="left"><code>LBAD0XX1SC-DM</code></br><code>OK</code></td>
+<td align="left">モデムのハードウェア確認</td>
 </tr>
+<tr>
+<td align="left"><code>AT+CGMR</code>       　</td>
+<td align="left"><code>RK_03_02_00_00_41841_001</code> </br> <code>OK</code></td>
+<td align="left">モデムのファームウェアバージョン確認</td>
+</tr>
+<tr>
+<td align="left"><code>AT+CIMI</code></td>
+<td align="left"><code>440103198454299</code> </br><code>OK</code></td>
+<td align="left">IMSI (国際モバイル加入者識別番号) 確認</td>
+</tr>
+</tbody>
+</table>
+<h3 id="network-provider-and-cellular-technology-settings">Network provider and cellular technology settings</h3>
+<table>
+<thead>
+<tr>
+<th align="left">AT Command</th>
+<th align="left">Example response</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td align="left"><code>AT+COPS=?</code></td>
 <td align="left"><code>+COPS: (1,&quot;NTT DOCOMO&quot;,&quot;DOCOMO&quot;,&quot;44010&quot;,7),(0,&quot;KDDI&quot;,&quot;KDDI&quot;,&quot;44050&quot;,7),(3,&quot;KDDI&quot;,&quot;KDDI&quot;,&quot;44052&quot;,7),(0,&quot;KDDI&quot;,&quot;KDDI&quot;,&quot;44054&quot;,7),(0,&quot;KDDI&quot;,&quot;KDDI&quot;,&quot;44051&quot;,7),(0,&quot;SoftBank&quot;,&quot;SoftBank&quot;,&quot;44020&quot;,7),,(0-3),(0-2)</code></br><code>OK</code></td>
@@ -4196,16 +4238,103 @@
 <tr>
 <td align="left"><code>AT+COPS?</code></td>
 <td align="left"><code>+COPS: 1,2,&quot;44010&quot;,7</code></br> <code>OK</code></td>
-<td align="left">NTT ドコモに接続確認</td>
+<td align="left">ネットワークの接続先確認</td>
 </tr>
+</tbody>
+</table>
+<h3 id="check-the-radio-signal-strength-and-signal-quality">Check the radio signal strength and signal quality</h3>
+<table>
+<thead>
+<tr>
+<th align="left">AT Command</th>
+<th align="left">Example response</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td align="left"><code>AT+CSQ</code></td>
 <td align="left"><code>+CSQ: 17,99</code></br> <code>OK</code></td>
-<td align="left">電波強度と信号品質</td>
+<td align="left">電波強度と信号品質の確認</td>
 </tr>
 </tbody>
 </table>
 <h3 id="network-configuration">Network Configuration</h3>
+<table>
+<thead>
+<tr>
+<th align="left">AT Command</th>
+<th align="left">Example response</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>AT+CGDCONT=1,&quot;IP&quot;,&quot;soracom.io&quot;</code></td>
+<td align="left"><code>OK</code></td>
+<td align="left">SORACOMに接続</td>
+</tr>
+<tr>
+<td align="left"><code>AT+CGDCONT?</code></td>
+<td align="left"><code>+CGDCONT: 1,&quot;IP&quot;,&quot;soracom.io&quot;,10.242.227.27,0,0,0,0,0,,0,,,,</code> </br> <code>OK</code></td>
+<td align="left">APNの接続先の確認</td>
+</tr>
+<tr>
+<td align="left"><code>AT+CGACT=1,1</code></td>
+<td align="left"><code>OK</code></td>
+<td align="left">PDPの設定</td>
+</tr>
+<tr>
+<td align="left"><code>AT+CGACT?</code></td>
+<td align="left"><code>+CGACT: 1,1</code></br><code>OK</code></td>
+<td align="left">PDPの設定確認</td>
+</tr>
+<tr>
+<td align="left"><code>AT+CEREG?</code></td>
+<td align="left"><code>+CEREG: 0,1</code></br><code>OK</code></td>
+<td align="left">ネットワークの状態確認</td>
+</tr>
+</tbody>
+</table>
+<h3 id="check-the-the-fplmn">Check the the FPLMN</h3>
+<table>
+<thead>
+<tr>
+<th align="left">AT Command</th>
+<th align="left">Example response</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>AT+CRSM=176,28539,0,0,12</code></td>
+<td align="left"><code>+CRSM: 144,0,&quot;FFFFFFFFFFFFFFFFFFFFFFFF&quot;</code></br><code>OK</code></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="clear-the-fplmn">Clear the FPLMN</h3>
+<table>
+<thead>
+<tr>
+<th align="left">AT Command</th>
+<th align="left">Example response</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>AT+CRSM=214,28539,0,0,12,&quot;FFFFFFFFFFFFFFFFFFFFFFFF&quot;</code></td>
+<td align="left"><code>+CRSM: 144,0</code></br><code>OK</code></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"><code>AT+CGPADDR</code></td>
+<td align="left"><code>+CGPADDR: 1,&quot;10.242.227.27&quot;</code></br><code>OK</code></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
 <h2 id="変更履歴">変更履歴</h2>
 <ul>
 <li>2024年8月:初版</li>
@@ -4549,7 +4678,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 November 14, 2024
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 November 15, 2024
 </div>
 </div>
 
