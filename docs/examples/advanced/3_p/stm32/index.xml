@@ -163,6 +163,68 @@ PlatformIOの利用方法は&lt;a href=&#34;https://docs.leafony.com/docs/enviro
     </item>
     
     <item>
+      <title>Docs: STM32 LoRa 署名付き通信</title>
+      <link>https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_lora_signed_communication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_lora_signed_communication/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
+&lt;p&gt;このチュートリアルではAC07 LoRa Maryリーフに搭載されるATECC608Aを使用して、LoRaの通信に署名をつける方法を紹介します。
+通信に署名をつけることで、データの送り元が、受信者が意図したデバイスであるかどうかを判定することができ、通信の安全性が向上します。&lt;/p&gt;
+&lt;h2 id=&#34;必要なもの&#34;&gt;必要なもの&lt;/h2&gt;
+&lt;p&gt;このチュートリアルではLoRa送信機と受信機のペアが必要です。下記の構成で組み立てたリーフを2セット用意してください。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;AC07 LoRa Mary&lt;/li&gt;
+&lt;li&gt;AP03 STM32&lt;/li&gt;
+&lt;li&gt;AZ01 USB&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;atecc608aで署名付き通信を行う仕組み&#34;&gt;ATECC608Aで署名付き通信を行う仕組み&lt;/h2&gt;
+&lt;p&gt;送信機と受信機に搭載されているAC07 LoRa Maryリーフには、Microchip社の暗号化チップATECC608Aが搭載されています。
+このチップは楕円曲線DSA署名方式（ECDSA）を使用した署名をハードウェアの演算回路を使用して発行することができます。
+ATECC608Aを使用した署名の発行と、データ通信の流れを図に表したものを下記に示します。
+この図をもとに署名付き通信の流れを解説します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/00.png&#34; width=&#34;800&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;1-キーペアを発行する&#34;&gt;1. キーペアを発行する&lt;/h3&gt;
+&lt;p&gt;まず初めに、署名の発行を行うためにATECC608Aの初期化をする必要があります。
+この初期化手順では、署名を行うためのキーペアをATECC608Aに発行してもらいます。
+STM32リーフからI2CでATECC608Aにキーペア発行命令を送り、公開鍵と秘密鍵のキーペアを作成します。この時、公開鍵はI2C経由でSTM32リーフに伝えられ読み出すことができますが、秘密鍵はATECC608A内部のメモリーにのみ保存され、STM32側は読み出すことができない仕組みとなっています。&lt;/p&gt;
+&lt;p&gt;読み出した公開鍵は、署名の検証に使うため、あらかじめ受信機側が知っている必要があります。受信機側にはソースコードに記述するなどの何らかの方法で公開鍵を渡しておく必要があります。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/01.png&#34; width=&#34;800&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;2-署名を発行してデータを送る&#34;&gt;2. 署名を発行してデータを送る&lt;/h3&gt;
+&lt;p&gt;送信機側は「本日は晴天なり」というメッセージを送信したいとします。このメッセージを受信機に対して送る前にまず、ATECC608Aに送り、メッセージに対する署名を計算してもらいます。署名はメッセージと秘密鍵を用いて計算されます。この時、ATECC608Aの仕様により、メッセージは32バイトごとに分割し、それに対する署名はそれぞれ64バイトのサイズになります。&lt;/p&gt;
+&lt;p&gt;署名を発行し終えたら、メッセージと署名を合わせてLoRa（UARTなど別の通信方法でも良い）で送信し受信機に伝えます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/02.png&#34; width=&#34;800&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;3-受信機で署名を検証する&#34;&gt;3. 受信機で署名を検証する&lt;/h3&gt;
+&lt;p&gt;署名付きメッセージを受信した受信機は、あらかじめ持っていた送信機の公開鍵と、受信したメッセージ、署名データをATECC608Aに渡します。ATECC608Aはこれらのデータから署名がこの公開鍵に対応する秘密鍵によって発行されたものかを検証します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/03.png&#34; width=&#34;800&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;4-不正なデータが送られてきた&#34;&gt;4. 不正なデータが送られてきた&lt;/h3&gt;
+&lt;p&gt;ここで、悪意を持った人が「本日は大荒れなり」というデータを送ってきたとします。これにはなんらかの署名がつけられていたとします。この不正なデータについた署名は、本来想定している送信機の秘密鍵を用いて作られた署名ではないため、受信機は公開鍵をもとに検証を行うと、キーペアの不一致によって検証結果は不正となります。&lt;/p&gt;
+&lt;p&gt;この仕組みを使うことで、悪意のあるデータを見抜くことができます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./img/04.png&#34; width=&#34;800&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;サンプルコード&#34;&gt;サンプルコード&lt;/h2&gt;
+&lt;h3 id=&#34;atecc608aを初期化しキーペアの発行する&#34;&gt;ATECC608Aを初期化しキーペアの発行する&lt;/h3&gt;
+&lt;p&gt;ATECC608Aは出荷時キーペアが保存されていないため、以降すべてのサンプルを実行する際に必要となるキーペアをあらかじめ発行しておきます。このサンプルは必ず実施してください。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./00_config&#34;&gt;サンプルページへ&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;データに署名をつける&#34;&gt;データに署名をつける&lt;/h3&gt;
+&lt;p&gt;LoRaで通信を行う前に、まずは送信機単体でデータに署名をつけてみましょう。このサンプルはLoRa通信を行わず署名発行部分のみを抽出したシンプルなプロジェクトです。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./01_sign&#34;&gt;サンプルページへ&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;署名がついたデータを検証する&#34;&gt;署名がついたデータを検証する&lt;/h3&gt;
+&lt;p&gt;LoRaで通信を行う前に、まずは送信機単体で署名の検証を行ってみましょう。自分自身が発行した署名を自分で検証できるかを確認してみます。署名検証を行うための最もシンプルなプロジェクトです。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./02_verify&#34;&gt;サンプルページへ&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;署名付きデータをloraで送信する&#34;&gt;署名付きデータをLoRaで送信する&lt;/h3&gt;
+&lt;p&gt;実際にLoRaで送信するデータに署名をつけてみましょう。LoRaを使用した実用的なプロジェクトです。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./03_signed_transfer&#34;&gt;サンプルページへ&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;署名付きデータをloraで受信して検証する&#34;&gt;署名付きデータをLoRaで受信して検証する&lt;/h3&gt;
+&lt;p&gt;実際にLoRaで受信した署名付きデータを検証してみましょう。LoRaを使用した実用的なプロジェクトです。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./04_verify_receiving&#34;&gt;サンプルページへ&lt;/a&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
       <title>Docs: STM32 LoRa SORACOM</title>
       <link>https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_lora_soracom/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
