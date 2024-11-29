@@ -136,7 +136,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.05ebb4addbf16a34a185830207b95af13aadd8d9aad995062e1a04fcb32637aad00157c380aaa3ea20cce83f5030fc1c458f526749e1a2872b9378bf61ed0899.json"
+  data-offline-search-index-json-src="/offline-search-index.c64a7132d6a2d783220c94a947d4511f7d026f02673e45054623714cdd44aaed5b79a5b7a61f1a08cae3cf908525d91b8667074591ddff2a67330cae3da22d98.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +166,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.05ebb4addbf16a34a185830207b95af13aadd8d9aad995062e1a04fcb32637aad00157c380aaa3ea20cce83f5030fc1c458f526749e1a2872b9378bf61ed0899.json"
+  data-offline-search-index-json-src="/offline-search-index.c64a7132d6a2d783220c94a947d4511f7d026f02673e45054623714cdd44aaed5b79a5b7a61f1a08cae3cf908525d91b8667074591ddff2a67330cae3da22d98.json"
   data-offline-search-base-href="/"
 >
 
@@ -3969,30 +3969,25 @@
     <li><a href="#用意するもの">用意するもの</a></li>
     <li><a href="#事前準備">事前準備</a>
       <ul>
+        <li><a href="#arduino-ideのインストール">Arduino IDEのインストール</a></li>
+        <li><a href="#stm32cubeprogのインストール">STM32CubeProgのインストール</a></li>
         <li><a href="#pythonのインストール">Pythonのインストール</a></li>
         <li><a href="#platformio-ideのインストール">PlatformIO IDEのインストール</a></li>
-        <li><a href="#stm32cubeprogarduino-ideleafony-stm32のボードのインストール">STM32CubeProg、Arduino IDE、Leafony STM32のボードのインストール</a></li>
+        <li><a href="#stm32mcuのboardファイルの作成">STM32MCUのBoardファイルの作成</a></li>
+        <li><a href="#プロジェクトフォルダの保存場所の設定">プロジェクトフォルダの保存場所の設定</a></li>
       </ul>
     </li>
     <li><a href="#クイックスタート">クイックスタート</a></li>
-    <li><a href="#stm32cubeprogによるプログラムの書き込み">STM32CubeProgによるプログラムの書き込み</a></li>
     <li><a href="#cpuの周波数を80mhzデフォルトから16mhzに設定変更">CPUの周波数を80MHz(デフォルト)から16MHzに設定変更</a></li>
     <li><a href="#ライブラリ">ライブラリ</a></li>
     <li><a href="#シリアルプロッター">シリアルプロッター　</a></li>
-    <li><a href="#stm32-beginner-examples">STM32 Beginner Examples</a></li>
   </ul>
 
   <ul>
     <li><a href="#mcuとboardとの関係">MCUとBoardとの関係</a></li>
     <li><a href="#プログラムを記述する時のarduino-ideとの違い">プログラムを記述する時のArduino IDEとの違い</a></li>
-    <li><a href="#プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</a></li>
-    <li><a href="#プロジェクトフォルダの保存場所の設定">プロジェクトフォルダの保存場所の設定</a></li>
+    <li><a href="#stm32cubeprogによるプログラムの書き込み">STM32CubeProgによるプログラムの書き込み</a></li>
     <li><a href="#platformioの公式ドキュメント">PlatformIOの公式ドキュメント</a></li>
-    <li><a href="#stm32mcuのボードファイル参考">STM32MCUのボード・ファイル(参考)</a>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
   </ul>
 </nav>
 
@@ -4061,27 +4056,91 @@
 <li>パソコン (Windows、macOS、または Linux)</br></li>
 </ul>
 <h2 id="事前準備">事前準備</h2>
+<h3 id="arduino-ideのインストール">Arduino IDEのインストール</h3>
+<p>PlatformIOで、upload_commandを実行するのに必要になります。以下をインストールして下さい。</p>
+<ul>
+<li><a href="https://www.arduino.cc/en/software">Arduino IDE</a></br></li>
+<li><a href="https://docs.leafony.com/docs/environment/stm32/arduino_ide/#%E3%83%9E%E3%82%A4%E3%82%B3%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%89%E3%81%AE%E8%A8%AD%E5%AE%9A">Leafony STM32のボード</a></br></li>
+</ul>
+<h3 id="stm32cubeprogのインストール">STM32CubeProgのインストール</h3>
+<p>STM32MCUにプログラムを書き込むのに必要になります。以下をインストールして下さい。</p>
+<ul>
+<li><a href="https://www.stmcu.jp/design/sw_dev/pc_soft/58442/">STM32CubeProg</a>(Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み。v2.5.0は動作しないので要注意。)</br></li>
+</ul>
 <h3 id="pythonのインストール">Pythonのインストール</h3>
-<p>PlatformIO IDEを動かすには、Pythonが必要です。<a href="https://www.javadrive.jp/python/install/index1.html#section2">こちら</a>を参照して、Pythonインストールして下さい。</br></p>
+<p>PlatformIO IDEを動かすには、Pythonが必要になります。以下をインストールして下さい。</p>
+<ul>
+<li><a href="https://www.python.org/">Python</a> (インストールの仕方は、<a href="https://www.javadrive.jp/python/install/index1.html#section2">こちら</a>を参照して下さい。)</li>
+</ul>
 <h3 id="platformio-ideのインストール">PlatformIO IDEのインストール</h3>
-<ol>
-<li>PlatformIO IDEは、VSCodeの拡張機能なので、まず、<a href="https://code.visualstudio.com/">VSCode</a>をインストールして下さい。</br></li>
-<li><code>拡張機能</code>(画面左のバー)をクリックし、検索窓に以下を入力して、拡張機能をインストールします。
+<p>PlatformIO IDEは、VSCodeの拡張機能です。以下をインストールして下さい。</p>
+<ul>
+<li><a href="https://code.visualstudio.com/">VSCode</a></li>
+</ul>
+<p>次に、<code>拡張機能</code>(画面左のバー)をクリックし、検索窓に以下を入力して、拡張機能をインストールします。</p>
 <ul>
 <li><code>Japanese Language Pack for Visual Studio Code</code></br></li>
 <li><code>platformio ide</code></br></li>
 <li><code>Serial Monitor</code></br></li>
 <li><code>teleplot</code></br></li>
 </ul>
+<h3 id="stm32mcuのboardファイルの作成">STM32MCUのBoardファイルの作成</h3>
+<p>STM32MCUのBoardのボードが、2023年10月にplatformIOに登録されましたが、ボードの定義にミスが見つかりました。以下の手順で、<a href="https://www.st.com/ja/evaluation-tools/nucleo-l452re.html">NUCLEO-L452RE</a>を
+ベースにBoardファイル(③、④)を作成して下さい。</br></p>
+  <img src="./platformio_15.png" width="840">
+<ol>
+<li>
+<p>VSCodeを立ち上げ、<code>ファイル</code>→ <code>新しいウィンドウ</code>を開きます。</br></p>
+</li>
+<li>
+<p><code>PlatformIO</code>(画面左のバー)をクリックし、PLATFORMIO QUICK ACCESS（画面左）を表示させます。 <code>PIO Home/Open</code>をクリックします。</br></p>
+</li>
+<li>
+<p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。新しいBoardを選択した時、プログラミングに必要なファイルのダウンロードするために数分かかります。</br></p>
 </li>
 </ol>
-<h3 id="stm32cubeprogarduino-ideleafony-stm32のボードのインストール">STM32CubeProg、Arduino IDE、Leafony STM32のボードのインストール</h3>
-<p>STM32MCUにプログラムを書き込むために、以下のインストールが必要になります。</p>
 <ul>
-<li><a href="https://www.stmcu.jp/design/sw_dev/pc_soft/58442/">STM32CubeProg</a><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> (Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み)</br></li>
-<li><a href="https://www.arduino.cc/en/software">Arduino IDE</a></br></li>
-<li><a href="https://docs.leafony.com/docs/environment/stm32/arduino_ide/#%E3%83%9E%E3%82%A4%E3%82%B3%E3%83%B3%E3%83%9C%E3%83%BC%E3%83%89%E3%81%AE%E8%A8%AD%E5%AE%9A">Leafony STM32のボード</a></br></li>
+<li>Name:<code>Test</code>と記入 </br></li>
+<li>Board:<code>ST Nucleo L452RE</code>を選択 </br></li>
+<li>Framework:<code>Arduino </code>を選択 </br></li>
 </ul>
+<ol start="4">
+<li>
+<p>C:\Users\ユーザ名\ .platformio の下に、①と②のふたつのフォルダが出来ていることを確認して下さい。</br></p>
+</li>
+<li>
+<p>次に、③と④をGitHubからダウンロードして、pcに保存します。③は追加で、④は上書きになります。</br></p>
+</li>
+</ol>
+<ul>
+<li><code>https://github.com/Leafony/platformio-LEAFONY_AP03</code></li>
+</ul>
+<ol start="6">
+<li>Project Wizardの<code>Board</code>の検索窓に<code>LEAFONY_AP03</code>が表示されることを確認して下さい。</br></li>
+</ol>
+<h3 id="プロジェクトフォルダの保存場所の設定">プロジェクトフォルダの保存場所の設定</h3>
+<p>windows 11の場合、デフォルトのプログラムの保存場所は、C:\Users\ユーザ\OneDrive\ドキュメント\PlatformIO\Projectsになっています。
+プログラムのパスに日本語あると書き込が出来ないので、別の場所に保存してからBuildする必要があります。</br></p>
+<p>プロジェクトフォルダの保存場所の設定は、Project Wizarではなく、ターミナルから行います。</br></p>
+<ol>
+<li>
+<p>VSCodeを立ち上げ、<code>ファイル</code>→ <code>新しいウィンドウ</code>を開きます。</br></p>
+</li>
+<li>
+<p><code>PlatformIO</code>(画面左のバー)をクリックし、PLATFORMIO QUICK ACCESS（画面左）を表示させます。</br></p>
+</li>
+<li>
+<p><code>PIO Home/Open</code>をクリックします。</br></p>
+</li>
+<li>
+<p>ターミナルを立ち上げて、以下のコードを実行します。</br>
+<code>pio settings set projects_dir ＜設定したい(絶対)パス＞</code></p>
+</li>
+<li>
+<p>VSCodeを再起動します。</br></p>
+</li>
+</ol>
+<p>Projectの名前変更やフォルダの削除は、Project Wizarではなく、エクスプローラから直接出来ます。</br></p>
 <h2 id="クイックスタート">クイックスタート</h2>
 <p>「Hello Wold」の事例で、platformIO IDEの使い方を紹介します。</br></p>
 <ol>
@@ -4096,15 +4155,15 @@
 </li>
 <li>
 <p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。新しいBoardを選択した時、プログラミングに必要なファイルのダウンロードするために数分かかります。</br></p>
+</li>
+</ol>
 <ul>
 <li>Name:<code>STM32_Hello_World_Pjt</code>と記入 </br></li>
-<li>Board:<code>Leafony Systems AP03</code>を選択 </br></li>
+<li>Board:<code>LEAFONY_AP03</code>を選択 </br></li>
 <li>Framework:<code>Arduino </code>を選択 </br> </br></li>
 </ul>
-</li>
-<li>
-<p><code>platformio.ini</code> (画面左)を開き、 Projectで定義したBoardとFrameworkが、正しく定義されていることを確認します。</br></p>
-</li>
+<ol start="5">
+<li><code>platformio.ini</code> (画面左)を開き、 Projectで定義したBoardとFrameworkが、正しく定義されていることを確認します。</br></li>
 </ol>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000;font-weight:bold">[</span><span style="color:#f57900">env</span><span style="color:#000;font-weight:bold">:</span><span style="color:#000">leafony_ap03</span><span style="color:#000;font-weight:bold">]</span>
 <span style="color:#000">platform</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#000">ststm32</span>
@@ -4145,10 +4204,11 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 <li>ソースコード:<a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_Hello_World_Pjt">STM32_Hello_Wold_Pjt</a></li>
 </ul>
 <ol start="9">
-<li>
-<p>PlatformIO ツールバー(画面下のバー)の<code>Project Environment Switcher</code>ボタンを押すと、アクティブなプロジェクが画面上側に全て表示されます。実行するプロジェクトを正しく選択して、<code>Build</code>ボタンを押して下さい。プログラムのパスに日本語あると、書き込が出来ないので、別の場所に移動してから、<code>Build</code>ボタンを押して下さい。最新のwindows 11の場合、プログラムが、<code>C:\Users\ユーザ\OneDrive\ドキュメント\PlatformIO\Projects</code>に保存されるので注意が必要になります。</br></br>
-<img src="./platformio_6.png" width="640"></br></p>
-</li>
+<li>PlatformIO ツールバー(画面下のバー)の<code>Project Environment Switcher</code>ボタンを押すと、アクティブなプロジェクが画面上側に全て表示されます。
+実行するプロジェクトを正しく選択して、<code>Build</code>ボタンを押して下さい。</br></br></li>
+</ol>
+<p><img src="./platformio_6.png" width="640"></br></p>
+<ol start="10">
 <li>
 <p><a href="https://docs.leafony.com/docs/environment/stm32/arduino_ide/#%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%A8%E6%8E%A5%E7%B6%9A">こちら</a> を参考に、LeafonyをPCに接続し、STM32 MCUリーフの<code>プログラムスイッチ</code>をプログラム側(LED点灯)にし下さい。</br></p>
 </li>
@@ -4166,19 +4226,6 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 <p><code>シリアルモニター</code>ボタンを押して起動させ、<code>Hello Wolrd</code>を表示が出来れば完成です。</br></p>
 </li>
 </ol>
-<h2 id="stm32cubeprogによるプログラムの書き込み">STM32CubeProgによるプログラムの書き込み</h2>
-<ol>
-<li>
-<p>STM32CubeProgでもプログラムを書き込むことが出来ます。<a href="https://docs.leafony.com/docs/environment/stm32/stm32cube_ide/#stm32cubeprog%E3%81%AB%E3%82%88%E3%82%8B%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%81%AE%E6%9B%B8%E8%BE%BC%E3%81%BF">こちらを</a>を参照し下さい。</p>
-</li>
-<li>
-<p>プログラムのイメージは、以下にあります。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> </br>
-<code>C:\Users\ユーザ名\Documents\PlatformIO\Projects\STM32_Hello_World_Pjt\.pio\build\LEAFONY_AP03\firmware.elf</code></br></p>
-</li>
-<li>
-<p>画面左のErasing ＆ Programingをクリックして、<code>File path</code>にイメージファイルを指定し、プログラムを書き込んで下さい。</p>
-</li>
-</ol>
 <h2 id="cpuの周波数を80mhzデフォルトから16mhzに設定変更">CPUの周波数を80MHz(デフォルト)から16MHzに設定変更</h2>
 <p>CPUの周波数は、80MHz（デフォルト）に設定されています。省電力を実現するためにCPUの周波数を下げることは有効な手段なので、CPUの周波数を16MHzに設定出来るようにしました。設定方法を以下に記します。</br></p>
 <ol>
@@ -4187,31 +4234,20 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cpp" data-lang="cpp"><span style="color:#000;font-weight:bold">;</span> <span style="color:#000">Enable</span> <span style="color:#000">function</span> <span style="color:#000">to</span> <span style="color:#000">set</span> <span style="color:#000">CPU</span> <span style="color:#000">frequency</span> <span style="color:#000">to</span> <span style="color:#0000cf;font-weight:bold">16</span> <span style="color:#000">MHz</span> <span style="color:#000">in</span> <span style="color:#000">Leafony_tools</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">cpp</span>
 <span style="color:#000">build_flags</span> <span style="color:#ce5c00;font-weight:bold">=</span> <span style="color:#ce5c00;font-weight:bold">-</span><span style="color:#000">D</span> <span style="color:#000">CPUCLOCK_LOW</span>
 </code></pre></div><ol start="2">
-<li>
-<p><code>leafony_tools.cpp</code>のファイルを以下からダウンロードし、<code>src</code>に保存して下さい。</br></p>
+<li><code>leafony_tools.cpp</code>のファイルを以下からダウンロードし、<code>src</code>に保存して下さい。</br></li>
+</ol>
 <ul>
 <li><code>https://github.com/Leafony/platformio-LEAFONY_AP03</code></li>
 </ul>
-</li>
-<li>
-<p>以下のソースコードを実行して、CPUの周波数が16MHzに設定されていることをシリアルモニターで確認して下さい。</p>
-</li>
+<ol start="3">
+<li>以下のソースコードを実行して、CPUの周波数が16MHzに設定されていることをシリアルモニターで確認して下さい。</li>
 </ol>
 </br>
 <ul>
 <li>ソースコード：<a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_CPU_Frequency_Pjt">STM32_CPU_Frequency_Pjt</a></br></li>
 </ul>
 <h2 id="ライブラリ">ライブラリ</h2>
-<ol>
-<li>
-<p>インストールの仕方</br>
-ライブラリは、platformio.ini の最後の行に、<code>lib_deps =</code>で定義すれば、PCにインストールされます。定義の仕方は、GitHubのURLを直接指定する方法と<code>Libraries</code>で指定する方法の二通りがあります。
-</br></p>
-</li>
-<li>
-<p>各リーフのライブラリ一覧は、以下の通りです。</br></p>
-</li>
-</ol>
+<p>ライブラリは、platformio.ini の最後の行に、<code>lib_deps =</code>で定義します。 </br></p>
 <table class="table-hover">
   <thread>
     <tr>
@@ -4289,6 +4325,23 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
       <td></td>
       <td>LTE-Mライブラリ</td>
     </tr>
+    <tr>
+      <td>Wi-Fi</td>
+      <td><a href="https://github.com/Leafony/WiFi101Leafony" target="_blank">https://github.com/Leafony/WiFi101Leafony</a></td>
+      <td></td>
+      <td>Wi-Fi Maryライブラリ</td>
+    </tr>
+    <tr>
+      <td rowspan=2>LoRa</td>
+      <td><a href="https://github.com/Leafony/arduino-LoRa" target="_blank">https://github.com/Leafony/arduino-LoRa</a></td>
+      <td></td>
+      <td>LoRaライブラリ</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/Leafony/arduino-tca9536" target="_blank">https://github.com/Leafony/arduino-tca9536</a></td>
+      <td></td>
+      <td>TCA9536ライブラリ</td>
+    </tr>
   </tbody>
 </table>
 <h2 id="シリアルプロッター">シリアルプロッター　</h2>
@@ -4317,31 +4370,7 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に<code>#inc
   <span style="color:#8f5902;font-style:italic">// Plot a cosinus
 </span><span style="color:#8f5902;font-style:italic"></span>  <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">print</span><span style="color:#000;font-weight:bold">(</span><span style="color:#4e9a06">&#34;&gt;cos:&#34;</span><span style="color:#000;font-weight:bold">);</span>
   <span style="color:#000">Serial</span><span style="color:#000;font-weight:bold">.</span><span style="color:#000">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">cos</span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">i</span><span style="color:#000;font-weight:bold">));</span>
-</code></pre></div><h2 id="stm32-beginner-examples">STM32 Beginner Examples</h2>
-<p>PlatformIO IDEを使った簡単なソースコードを準備しました。GitHubからダウンロードし、パソコンの所定の場所に保存<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> してプログラムを試して下さい。</br></p>
-<table>
-<thead>
-<tr>
-<th align="left">Item</th>
-<th align="left">Source code</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><a href="/docs/examples/beginner/3_p/basic/temp_humid_sensors">温湿度センサ読み取り</a></td>
-<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_Thermo-Hygrometer_Pjt">STM32_Thermo-Hygrometer_Pjt</a></td>
-</tr>
-<tr>
-<td align="left"><a href="/docs/examples/beginner/3_p/basic/illum_sensor">照度センサ読み取り</a></td>
-<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_Illuminance_Meter_Pjt">STM32_Illuminance_Meter_Pjt</a></td>
-</tr>
-<tr>
-<td align="left"><a href="/docs/examples/beginner/3_p/basic/accelerometer/">加速度センサ読み取り</a></td>
-<td align="left"><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_Accelerometer_Pjt">STM32_Accelerometer_Pjt</a></td>
-</tr>
-</tbody>
-</table>
-<h1 id="tips">Tips</h1>
+</code></pre></div><h1 id="tips">Tips</h1>
 <h2 id="mcuとboardとの関係">MCUとBoardとの関係</h2>
 <p>LeafonyのMCUとPlatformIO IDEのBoardとの関係は、以下の様になります。</br></p>
 <table>
@@ -4426,84 +4455,30 @@ Arduino IDEは、独自関数の定義を使用する関数の後に書いても
 <span style="color:#204a87;font-weight:bold">void</span> <span style="color:#000">func</span><span style="color:#000;font-weight:bold">()</span> <span style="color:#000;font-weight:bold">{</span>
   <span style="color:#000;font-weight:bold">;</span>
 <span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><h2 id="プロジェクトフォルダの名前変更や削除">プロジェクトフォルダの名前変更や削除</h2>
-<p>Project Wizarで、New Projectを立ち上げると、フォルダが作成され、デフォルトでは、~/Documents/PlatformIO/Projects に保存されます。
-Projectの名前変更やフォルダの削除は、Project Wizarではなく、エクスプローラから直接出来ます。</br></p>
-<h2 id="プロジェクトフォルダの保存場所の設定">プロジェクトフォルダの保存場所の設定</h2>
-<p>プロジェクトフォルダの保存場所の設定は、Project Wizarではなく、ターミナルから行います。</p>
+</code></pre></div><h2 id="stm32cubeprogによるプログラムの書き込み">STM32CubeProgによるプログラムの書き込み</h2>
 <ol>
 <li>
-<p>VSCodeを立ち上げ、<code>ファイル</code>→ <code>新しいウィンドウ</code>を開きます。</br></p>
+<p>STM32CubeProgでもプログラムを書き込むことが出来ます。<a href="https://docs.leafony.com/docs/environment/stm32/stm32cube_ide/#stm32cubeprog%E3%81%AB%E3%82%88%E3%82%8B%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%81%AE%E6%9B%B8%E8%BE%BC%E3%81%BF">こちらを</a>を参照し下さい。</p>
 </li>
 <li>
-<p><code>PlatformIO</code>(画面左のバー)をクリックし、PLATFORMIO QUICK ACCESS（画面左）を表示させます。</br></p>
+<p>プログラムのイメージは、以下にあります。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> </br>
+<code>C:\Users\ユーザ名\PlatformIO\Projects\STM32_Hello_World_Pjt\.pio\build\LEAFONY_AP03\firmware.elf</code></br></p>
 </li>
 <li>
-<p><code>PIO Home/Open</code>をクリックします。</br></p>
-</li>
-<li>
-<p>ターミナルを立ち上げて、以下のコードを実行します。</br>
-　<code>pio settings set projects_dir ＜設定したい(絶対)パス＞</code></p>
-</li>
-<li>
-<p>VSCodeを再起動します。</br></p>
+<p>画面左のErasing ＆ Programingをクリックして、<code>File path</code>にイメージファイルを指定し、プログラムを書き込んで下さい。</p>
 </li>
 </ol>
 <h2 id="platformioの公式ドキュメント">PlatformIOの公式ドキュメント</h2>
-<p>PlatformIO の公式ドキュメントは、以下の通りです。</br></p>
 <ul>
 <li><code>ttps://docs.platformio.org/en/latest/integration/ide/vscode.html#ide-vscode</code></li>
 </ul>
-<h2 id="stm32mcuのボードファイル参考">STM32MCUのボード・ファイル(参考)</h2>
-<p><code>Leafony Systems AP03</code>のボードが、2023年10月に、platformIOに登録されたため、直接ダウンロードすることが出来るようになり、以下の方法でボードを定義する必要がなくなりました。</br></p>
-<p>STM32MCUは、<a href="https://www.st.com/ja/evaluation-tools/nucleo-l452re.html">NUCLEO-L452RE</a>とピンアサインが異なるため、STM32MCUのBoardファイル(③、④）が必要になります。PlatformIOで
-NUCLEO-L452REのプロジェクトを立ち上げると①と②がPCにダウンロードされます。次に③と④をGitHubからダウンロードしてpcの保存すれば完了です。</br></br>
-<img src="./platformio_15.png" width="840"></p>
-<h4 id="nucleo-l452reのプロジェクトの立ち上げ">Nucleo L452REのプロジェクトの立ち上げ</h4>
-<ol>
-<li>
-<p>VSCodeを立ち上げ、<code>ファイル</code>→ <code>新しいウィンドウ</code>を開きます。</br></p>
-</li>
-<li>
-<p><code>PlatformIO</code>(画面左のバー)をクリックし、PLATFORMIO QUICK ACCESS（画面左）を表示させます。</br></p>
-</li>
-<li>
-<p><code>PIO Home/Open</code>をクリックします。</br></p>
-</li>
-<li>
-<p><code>New Project</code>をクリックすると、Project Wizardが表示されます。<code>Name</code>、<code>Boad</code>、<code>Framework</code>を以下の通り入力して、<code>Finish</code>をクリックします。新しいBoardを選択した時、プログラミングに必要なファイルのダウンロードするために数分かかります。</br></p>
-<ul>
-<li>Name:<code>Test</code>と記入 </br></li>
-<li>Board:<code>ST Nucleo L452RE</code>を選択 </br></li>
-<li>Framework:<code>Arduino </code>を選択 </br></li>
-</ul>
-</li>
-<li>
-<p>C:\Users\ユーザ名\ .platformio の下に、①と②のふたつのフォルダが出来ていることを確認して下さい。</br></p>
-</li>
-</ol>
-<h4 id="leafony_ap03とleafony_ap03jsonのダウンロードと保存">③Leafony_AP03と④Leafony_AP03.jsonのダウンロードと保存</h4>
-<ol>
-<li>
-<p>以下からダウンロードし、所定の場所に保存して下さい。</br></p>
-<ul>
-<li><code>https://github.com/Leafony/platformio-LEAFONY_AP03</code></li>
-</ul>
-</li>
-<li>
-<p>Project Wizardの<code>Board</code>の検索窓に<code>Leafony_AP03</code>が表示されることを確認して下さい。</br></p>
-</li>
-</ol>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
 </p><section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み。v2.5.0は動作しないので要注意。</br> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2" role="doc-endnote">
-<p>イメージファイルが日本語のフォルダの下にある場合は、書き込みすることが出来ないので別の場所にコピーします。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>イメージファイルが日本語のフォルダの下にある場合は、書き込みすることが出来ないので別の場所にコピーします。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -4518,7 +4493,7 @@ NUCLEO-L452REのプロジェクトを立ち上げると①と②がPCにダウ�
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 20, 2024
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 November 29, 2024
 </div>
 </div>
 
