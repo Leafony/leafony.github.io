@@ -310,7 +310,7 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に&lt;code&g
 &lt;p&gt;&lt;img src=&#34;./platformio_6.png&#34; width=&#34;640&#34;&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;ol start=&#34;7&#34;&gt;
 &lt;li&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/environment/stm32/arduino_ide/#%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%A8%E6%8E%A5%E7%B6%9A&#34;&gt;こちら&lt;/a&gt; を参考に、プログラムモード(LED点灯)にし下さい。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.leafony.com/docs/environment/stm32/arduino_ide/#%E3%83%91%E3%82%BD%E3%82%B3%E3%83%B3%E3%81%A8%E6%8E%A5%E7%B6%9A&#34;&gt;こちら&lt;/a&gt; を参照し、プログラムモード(LED点灯)にし下さい。&lt;/br&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;code&gt;Upload&lt;/code&gt;ボタンを押すと、プログラムがMCUに書き込まれます。&lt;code&gt;SUCCESS&lt;/code&gt;と表示されても以下のように記述されない時は、正しく書き込まれていないのでUSBを再接続して下さい。
@@ -500,7 +500,7 @@ PlatformIO IDEのコードは、Arduino IDEのスケッチの先頭に&lt;code&g
 &lt;td align=&#34;left&#34;&gt;AP03&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;../../leaf/processor/ap03&#34;&gt;STM32 MCU&lt;/a&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;ststm32&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Leafony Systems AP03&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;LEAFONY_AP03&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;COMポートの自動検出が出来ない。&lt;/td&gt;
 &lt;td&gt;&lt;/td&gt;
 &lt;/tr&gt;
