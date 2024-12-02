@@ -229,7 +229,7 @@ Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み。v2.5.0は動
 &lt;h3 id=&#34;プログラムの保存場所の変更&#34;&gt;プログラムの保存場所の変更&lt;/h3&gt;
 &lt;p&gt;Windows 11のデフォルトのプログラムの保存場所&lt;sup id=&#34;fnref:7&#34;&gt;&lt;a href=&#34;#fn:7&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;7&lt;/a&gt;&lt;/sup&gt;では、パスに日本語あるため書き込が出来ません。以下のように変更します。&lt;/br&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;C:\Users\ユーザ名\PlatformIO\Projects\STM32_Hello_World_Pjt\.pio\build\LEAFONY_AP03\firmware.elf&lt;/code&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:\Users\ユーザ名\PlatformIO\Projects\STM32_Hello_World_Pjt\.pio\build\LEAFONY_AP03\firmware.bin&lt;/code&gt;&lt;/br&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;プログラムの保存場所を変更方法します。&lt;/br&gt;&lt;/p&gt;
 &lt;ol&gt;
@@ -560,7 +560,7 @@ Arduino IDEは、独自関数の定義を使用する関数の後に書いても
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;C:\Users\ユーザ名\PlatformIO\Projects\STM32_Hello_World_Pjt\.pio\build\LEAFONY_AP03\firmware.elf&lt;/code&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:\Users\ユーザ名\PlatformIO\Projects\STM32_Hello_World_Pjt\.pio\build\LEAFONY_AP03\firmware.bin&lt;/code&gt;&lt;/br&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;3&#34;&gt;
 &lt;li&gt;画面左のErasing ＆ Programingをクリックして、&lt;code&gt;File path&lt;/code&gt;にイメージファイルを指定し、プログラムを書き込んで下さい。&lt;/li&gt;
