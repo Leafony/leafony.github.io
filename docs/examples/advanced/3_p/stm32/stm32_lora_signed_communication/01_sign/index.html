@@ -23,24 +23,22 @@
 <title>Leafony</title><meta property="og:title" content="" />
 <meta property="og:description" content="データに署名をつける はじめに AC07 LoRa Mary に付属する ATECCX08A暗号化チップを用いて、任意の32バイトデータを署名します。
 リーフに付属の暗号化チップがセットアップされている必要があります。セットアップが終了していない場合は 0_Setup を用いてセットアップしてください。
-サンプルのソースコード PlatformIOプロジェクト
-リーフ構成 下記の構成でリーフを組み立ててください
+サンプルのソースコード  Arduinoソースコード PlatformIOソースコード  リーフ構成 下記の構成でリーフを組み立ててください
  AC07 LoRa Mary AP03 STM32 AZ01 USB  動作方法 PlatformIOを使用して、STM32にプログラムを書き込んでください。 PlatformIOの利用方法はPlatformIO IDE for VSCode の設定を参考にしてください。
 まずはソースコード上の以下の32バイトデータを、送信したいテキストに編集してください。
 // array to hold our 32 bytes of message. Note, it must be 32 bytes, no more or less. uint8_t message[32] = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F }; 編集後、ビルドとアップロードを行い、接続動作を確認します。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_lora_signed_communication/01_sign/" />
-<meta property="article:modified_time" content="2024-11-19T23:27:22+09:00" /><meta property="og:site_name" content="Leafony" />
+<meta property="article:modified_time" content="2024-12-04T11:28:33+09:00" /><meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="">
 <meta itemprop="description" content="データに署名をつける はじめに AC07 LoRa Mary に付属する ATECCX08A暗号化チップを用いて、任意の32バイトデータを署名します。
 リーフに付属の暗号化チップがセットアップされている必要があります。セットアップが終了していない場合は 0_Setup を用いてセットアップしてください。
-サンプルのソースコード PlatformIOプロジェクト
-リーフ構成 下記の構成でリーフを組み立ててください
+サンプルのソースコード  Arduinoソースコード PlatformIOソースコード  リーフ構成 下記の構成でリーフを組み立ててください
  AC07 LoRa Mary AP03 STM32 AZ01 USB  動作方法 PlatformIOを使用して、STM32にプログラムを書き込んでください。 PlatformIOの利用方法はPlatformIO IDE for VSCode の設定を参考にしてください。
 まずはソースコード上の以下の32バイトデータを、送信したいテキストに編集してください。
 // array to hold our 32 bytes of message. Note, it must be 32 bytes, no more or less. uint8_t message[32] = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F }; 編集後、ビルドとアップロードを行い、接続動作を確認します。">
-<meta itemprop="dateModified" content="2024-11-19T23:27:22&#43;09:00" />
-<meta itemprop="wordCount" content="279">
+<meta itemprop="dateModified" content="2024-12-04T11:28:33&#43;09:00" />
+<meta itemprop="wordCount" content="280">
 
 
 
@@ -48,8 +46,7 @@
 <meta name="twitter:title" content=""/>
 <meta name="twitter:description" content="データに署名をつける はじめに AC07 LoRa Mary に付属する ATECCX08A暗号化チップを用いて、任意の32バイトデータを署名します。
 リーフに付属の暗号化チップがセットアップされている必要があります。セットアップが終了していない場合は 0_Setup を用いてセットアップしてください。
-サンプルのソースコード PlatformIOプロジェクト
-リーフ構成 下記の構成でリーフを組み立ててください
+サンプルのソースコード  Arduinoソースコード PlatformIOソースコード  リーフ構成 下記の構成でリーフを組み立ててください
  AC07 LoRa Mary AP03 STM32 AZ01 USB  動作方法 PlatformIOを使用して、STM32にプログラムを書き込んでください。 PlatformIOの利用方法はPlatformIO IDE for VSCode の設定を参考にしてください。
 まずはソースコード上の以下の32バイトデータを、送信したいテキストに編集してください。
 // array to hold our 32 bytes of message. Note, it must be 32 bytes, no more or less. uint8_t message[32] = { 0x00, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09, 0x0A, 0x0B, 0x0C, 0x0D, 0x0E, 0x0F, 0x10, 0x11, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19, 0x1A, 0x1B, 0x1C, 0x1D, 0x1E, 0x1F }; 編集後、ビルドとアップロードを行い、接続動作を確認します。"/>
@@ -156,7 +153,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.996715f987179743d6e5c25307e79825ce5a35fd3c01914a43f41d88678d4e885a660a25e75cea46118ac40c98d76067642b44b020acdfabd7e7445ecc153c13.json"
+  data-offline-search-index-json-src="/offline-search-index.8b2ef6024bf3dff17daa008cf5ceb036d9f9e77a1b1af76e988d2cb0efe6308f932254b1fae6746c89c9a8264fa24561b2d36f83a8d5ff4dec43579f43be9f07.json"
   data-offline-search-base-href="/"
 >
 
@@ -186,7 +183,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.996715f987179743d6e5c25307e79825ce5a35fd3c01914a43f41d88678d4e885a660a25e75cea46118ac40c98d76067642b44b020acdfabd7e7445ecc153c13.json"
+  data-offline-search-index-json-src="/offline-search-index.8b2ef6024bf3dff17daa008cf5ceb036d9f9e77a1b1af76e988d2cb0efe6308f932254b1fae6746c89c9a8264fa24561b2d36f83a8d5ff4dec43579f43be9f07.json"
   data-offline-search-base-href="/"
 >
 
@@ -4083,7 +4080,10 @@
 <p>AC07 LoRa Mary に付属する ATECCX08A暗号化チップを用いて、任意の32バイトデータを署名します。</p>
 <p>リーフに付属の暗号化チップがセットアップされている必要があります。セットアップが終了していない場合は 0_Setup を用いてセットアップしてください。</p>
 <h2 id="サンプルのソースコード">サンプルのソースコード</h2>
-<p><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_ATECC608A/1_Sign">PlatformIOプロジェクト</a></p>
+<ul>
+<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LoRa_ATECC608A_1_Sign">Arduinoソースコード</a></li>
+<li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_ATECC608A/1_Sign">PlatformIOソースコード</a></li>
+</ul>
 <h2 id="リーフ構成">リーフ構成</h2>
 <p>下記の構成でリーフを組み立ててください</p>
 <ul>
@@ -4131,7 +4131,7 @@
 </code></pre></div>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 November 19, 2024
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 December 4, 2024
 </div>
 </div>
 

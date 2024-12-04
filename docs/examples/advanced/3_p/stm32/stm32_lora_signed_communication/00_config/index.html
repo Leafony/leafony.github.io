@@ -23,24 +23,22 @@
 <title>Leafony</title><meta property="og:title" content="" />
 <meta property="og:description" content="ATECC608Aを初期化しキーペアの発行する はじめに AC07 LoRa Mary に付属する ATECCX08A暗号化チップの初期設定を行います。
 出荷直後のAC07 LoRa Maryはこれが行われていないため、１、２、３、４を行う前にまずはこのプロジェクトを実行する必要があります。
-サンプルのソースコード PlatformIOプロジェクト
-リーフ構成 下記の構成でリーフを組み立ててください
+サンプルのソースコード  Arduinoソースコード PlatformIOソースコード  リーフ構成 下記の構成でリーフを組み立ててください
  AC07 LoRa Mary AP03 STM32 AZ01 USB  動作方法 PlatformIOを使用して、STM32にプログラムを書き込んでください。 PlatformIOの利用方法はPlatformIO IDE for VSCode の設定を参考にしてください。
 シリアルコンソール上に次のように表示されることを確認して、yを送信してください。
-Serial Number: 000000000000000000Rev Number: 00000000Config Zone: NOT LockedData/OTP Zone: NOT LockedData Slot 0: NOT LockedSuccessful wakeUp(). I2C connections are good.Would you like to configure your Cryptographic Co-processor with SparkFun Standard settings? (y/n)***Note, this is PERMANENT and cannot be changed later******If you do not want to do this, type an &#39;n&#39; or unplug now." />
+Serial Number: 000000000000000000Rev Number: 00000000Config Zone: NOT LockedData/OTP Zone: NOT LockedData Slot 0: NOT LockedSuccessful wakeUp(). I2C connections are good.Would you like to configure your Cryptographic Co-processor with SparkFun Standard settings?" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_lora_signed_communication/00_config/" />
-<meta property="article:modified_time" content="2024-11-19T23:27:22+09:00" /><meta property="og:site_name" content="Leafony" />
+<meta property="article:modified_time" content="2024-12-04T11:28:33+09:00" /><meta property="og:site_name" content="Leafony" />
 <meta itemprop="name" content="">
 <meta itemprop="description" content="ATECC608Aを初期化しキーペアの発行する はじめに AC07 LoRa Mary に付属する ATECCX08A暗号化チップの初期設定を行います。
 出荷直後のAC07 LoRa Maryはこれが行われていないため、１、２、３、４を行う前にまずはこのプロジェクトを実行する必要があります。
-サンプルのソースコード PlatformIOプロジェクト
-リーフ構成 下記の構成でリーフを組み立ててください
+サンプルのソースコード  Arduinoソースコード PlatformIOソースコード  リーフ構成 下記の構成でリーフを組み立ててください
  AC07 LoRa Mary AP03 STM32 AZ01 USB  動作方法 PlatformIOを使用して、STM32にプログラムを書き込んでください。 PlatformIOの利用方法はPlatformIO IDE for VSCode の設定を参考にしてください。
 シリアルコンソール上に次のように表示されることを確認して、yを送信してください。
-Serial Number: 000000000000000000Rev Number: 00000000Config Zone: NOT LockedData/OTP Zone: NOT LockedData Slot 0: NOT LockedSuccessful wakeUp(). I2C connections are good.Would you like to configure your Cryptographic Co-processor with SparkFun Standard settings? (y/n)***Note, this is PERMANENT and cannot be changed later******If you do not want to do this, type an &#39;n&#39; or unplug now.">
-<meta itemprop="dateModified" content="2024-11-19T23:27:22&#43;09:00" />
-<meta itemprop="wordCount" content="203">
+Serial Number: 000000000000000000Rev Number: 00000000Config Zone: NOT LockedData/OTP Zone: NOT LockedData Slot 0: NOT LockedSuccessful wakeUp(). I2C connections are good.Would you like to configure your Cryptographic Co-processor with SparkFun Standard settings?">
+<meta itemprop="dateModified" content="2024-12-04T11:28:33&#43;09:00" />
+<meta itemprop="wordCount" content="204">
 
 
 
@@ -48,11 +46,10 @@ Serial Number: 000000000000000000Rev Number: 00000000Config Zone: NOT LockedD
 <meta name="twitter:title" content=""/>
 <meta name="twitter:description" content="ATECC608Aを初期化しキーペアの発行する はじめに AC07 LoRa Mary に付属する ATECCX08A暗号化チップの初期設定を行います。
 出荷直後のAC07 LoRa Maryはこれが行われていないため、１、２、３、４を行う前にまずはこのプロジェクトを実行する必要があります。
-サンプルのソースコード PlatformIOプロジェクト
-リーフ構成 下記の構成でリーフを組み立ててください
+サンプルのソースコード  Arduinoソースコード PlatformIOソースコード  リーフ構成 下記の構成でリーフを組み立ててください
  AC07 LoRa Mary AP03 STM32 AZ01 USB  動作方法 PlatformIOを使用して、STM32にプログラムを書き込んでください。 PlatformIOの利用方法はPlatformIO IDE for VSCode の設定を参考にしてください。
 シリアルコンソール上に次のように表示されることを確認して、yを送信してください。
-Serial Number: 000000000000000000Rev Number: 00000000Config Zone: NOT LockedData/OTP Zone: NOT LockedData Slot 0: NOT LockedSuccessful wakeUp(). I2C connections are good.Would you like to configure your Cryptographic Co-processor with SparkFun Standard settings? (y/n)***Note, this is PERMANENT and cannot be changed later******If you do not want to do this, type an &#39;n&#39; or unplug now."/>
+Serial Number: 000000000000000000Rev Number: 00000000Config Zone: NOT LockedData/OTP Zone: NOT LockedData Slot 0: NOT LockedSuccessful wakeUp(). I2C connections are good.Would you like to configure your Cryptographic Co-processor with SparkFun Standard settings?"/>
 
 
 
@@ -156,7 +153,7 @@ Serial Number: 000000000000000000Rev Number: 00000000Config Zone: NOT LockedD
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.996715f987179743d6e5c25307e79825ce5a35fd3c01914a43f41d88678d4e885a660a25e75cea46118ac40c98d76067642b44b020acdfabd7e7445ecc153c13.json"
+  data-offline-search-index-json-src="/offline-search-index.8b2ef6024bf3dff17daa008cf5ceb036d9f9e77a1b1af76e988d2cb0efe6308f932254b1fae6746c89c9a8264fa24561b2d36f83a8d5ff4dec43579f43be9f07.json"
   data-offline-search-base-href="/"
 >
 
@@ -186,7 +183,7 @@ Serial Number: 000000000000000000Rev Number: 00000000Config Zone: NOT LockedD
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.996715f987179743d6e5c25307e79825ce5a35fd3c01914a43f41d88678d4e885a660a25e75cea46118ac40c98d76067642b44b020acdfabd7e7445ecc153c13.json"
+  data-offline-search-index-json-src="/offline-search-index.8b2ef6024bf3dff17daa008cf5ceb036d9f9e77a1b1af76e988d2cb0efe6308f932254b1fae6746c89c9a8264fa24561b2d36f83a8d5ff4dec43579f43be9f07.json"
   data-offline-search-base-href="/"
 >
 
@@ -4083,7 +4080,10 @@ Serial Number: 000000000000000000Rev Number: 00000000Config Zone: NOT LockedD
 <p>AC07 LoRa Mary に付属する ATECCX08A暗号化チップの初期設定を行います。</p>
 <p>出荷直後のAC07 LoRa Maryはこれが行われていないため、１、２、３、４を行う前にまずはこのプロジェクトを実行する必要があります。</p>
 <h2 id="サンプルのソースコード">サンプルのソースコード</h2>
-<p><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_ATECC608A/0_Config">PlatformIOプロジェクト</a></p>
+<ul>
+<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LoRa_ATECC608A_0_Config">Arduinoソースコード</a></li>
+<li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_ATECC608A/0_Config">PlatformIOソースコード</a></li>
+</ul>
 <h2 id="リーフ構成">リーフ構成</h2>
 <p>下記の構成でリーフを組み立ててください</p>
 <ul>
@@ -4136,7 +4136,7 @@ uint8_t publicKey[64] = {
 </code></pre>
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 November 19, 2024
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 December 4, 2024
 </div>
 </div>
 
