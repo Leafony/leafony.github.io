@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.706c8698c8a70263126ea1e52d01ec736fb0fefa04ba0fafab13bdeb2944f034213ae6c41a175e3014f45f37cc2e177243413e70d8d65e0a3ba7a7c4346ff648.json"
+  data-offline-search-index-json-src="/offline-search-index.76f0b4efce7cccba88043ceaba800fc96700a3027f76e6a9a3dfbb34faa2bfacb9e051d56e8c8d8b01bb4555ddfea7dd13435ec8e5acdbdf799d5ad5e02cb0d0.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.706c8698c8a70263126ea1e52d01ec736fb0fefa04ba0fafab13bdeb2944f034213ae6c41a175e3014f45f37cc2e177243413e70d8d65e0a3ba7a7c4346ff648.json"
+  data-offline-search-index-json-src="/offline-search-index.76f0b4efce7cccba88043ceaba800fc96700a3027f76e6a9a3dfbb34faa2bfacb9e051d56e8c8d8b01bb4555ddfea7dd13435ec8e5acdbdf799d5ad5e02cb0d0.json"
   data-offline-search-base-href="/"
 >
 
@@ -4224,21 +4224,6 @@
 <td align="left"><code>+CPIN: READY</code> </br><code>OK</code></td>
 <td align="left">SIMカードの確認　</td>
 </tr>
-<tr>
-<td align="left"><code>AT+CGMM</code></td>
-<td align="left"><code>LBAD0XX1SC-DM</code></br><code>OK</code></td>
-<td align="left">モデムのハードウェア確認</td>
-</tr>
-<tr>
-<td align="left"><code>AT+CGMR</code>       　</td>
-<td align="left"><code>RK_03_02_00_00_41841_001</code> </br> <code>OK</code></td>
-<td align="left">モデムのファームウェアバージョン確認</td>
-</tr>
-<tr>
-<td align="left"><code>AT+CIMI</code></td>
-<td align="left"><code>440103198454299</code> </br><code>OK</code></td>
-<td align="left">IMSI (国際モバイル加入者識別番号) 確認</td>
-</tr>
 </tbody>
 </table>
 <h3 id="query-device-information">Query device information</h3>
@@ -4286,12 +4271,32 @@
 <tr>
 <td align="left"><code>AT+COPS=1,2,44010</code></td>
 <td align="left"><code>OK</code></td>
-<td align="left">NTT ドコモに接続</td>
+<td align="left">手動モードでNTT ドコモに接続</td>
 </tr>
 <tr>
 <td align="left"><code>AT+COPS?</code></td>
 <td align="left"><code>+COPS: 1,2,&quot;44010&quot;,7</code></br> <code>OK</code></td>
 <td align="left">ネットワークの接続先確認</td>
+</tr>
+<tr>
+<td align="left"><code>AT+COPS=0</code></td>
+<td align="left"><code>OK</code></td>
+<td align="left">自動モードでNTT ドコモに接続</td>
+</tr>
+<tr>
+<td align="left"><code>AT+COPS?</code></td>
+<td align="left"><code>+COPS: 0,2,&quot;44010&quot;,7</code></br> <code>OK</code></td>
+<td align="left">ネットワークの接続先確認</td>
+</tr>
+<tr>
+<td align="left"><code>AT%GETCFG=&quot;BAND&quot;</code></td>
+<td align="left"><code>Bands:  1</code></br> <code>OK</code></td>
+<td align="left">Bandの接続先を確認</td>
+</tr>
+<tr>
+<td align="left"><code>AT%SETCFG=&quot;BAND&quot;,&quot;19&quot;</code></td>
+<td align="left"><code>OK</code></td>
+<td align="left">Band19に接続</td>
 </tr>
 </tbody>
 </table>
@@ -4743,7 +4748,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 November 15, 2024
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 December 8, 2024
 </div>
 </div>
 
