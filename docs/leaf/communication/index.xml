@@ -1064,7 +1064,15 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC08_LTE-M_Mary/AC08_LTE-M_Mary_Schematic.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;at-commands&#34;&gt;AT Commands&lt;/h1&gt;
-&lt;p&gt;ATコマンドは、3GPP（携帯通信の国際標準団体）によって標準化され、モデムの動作や接続先を設定出来ます。モデムによって対応しているバージョンや仕様が異なるため、モデムを設定する際は、メーカーが提供するATコマンドのマニュアルを確認しておくことが重要です。ここでは、ATコマンドを使って、SORACOMに接続する手順を記す。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;ATコマンドは、3GPP（携帯通信の国際標準団体）によって標準化され、モデムの動作や接続先を設定出来ます。
+モデムによって仕様が異なるため、メーカーが提供するATコマンドのマニュアルを確認することが重要です。&lt;/br&gt;
+以下に、SORACOMを例に、接続する手順を記します。&lt;/br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.murata.com/ja-jp/products/connectivitymodule/cat-m1/support&#34;&gt;LBAD0XX1SC-DM-EVK-B&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;パソコン (Windows、または macOS)&lt;/li&gt;
+&lt;li&gt;標準SIMカード(例　SORACOM plan-D)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://support.soracom.io/hc/ja/articles/218427317-APN-%E8%A8%AD%E5%AE%9A%E3%81%A8%E3%81%AF%E4%BD%95%E3%81%A7%E3%81%99%E3%81%8B-%E4%BD%95%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%97%E3%81%BE%E3%81%99%E3%81%8B&#34;&gt;APNの設定&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;APN:soracom.io&lt;/li&gt;
 &lt;li&gt;ユーザー名: sora&lt;/li&gt;
@@ -1072,12 +1080,30 @@
 &lt;li&gt;PDP Type: IP&lt;/li&gt;
 &lt;li&gt;認証タイプ: CHAP または PAP&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.murata.com/ja-jp/products/connectivitymodule/cat-m1/support&#34;&gt;LBAD0XX1SC-DM-EVK-B&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;パソコン (Windows、または macOS)&lt;/li&gt;
-&lt;li&gt;標準SIMカード(例　SORACOM plan-D)&lt;/li&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://support.soracom.io/hc/ja/articles/115001760231-SORACOM-Air-for-%E3%82%BB%E3%83%AB%E3%83%A9%E3%83%BC%E3%81%A7%E3%81%AF%E3%83%87%E3%83%90%E3%82%A4%E3%82%B9%E3%81%8B%E3%82%89-Cell-ID-%E3%81%A8-Location-Area-Code-%E3%82%92%E5%8F%96%E5%BE%97%E3%81%A7%E3%81%8D%E3%81%BE%E3%81%99%E3%81%8B&#34;&gt;MCC(Mobile Country Code)とMNC(Mobile Network Code)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Type&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;plan-D&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;plan-K2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;MCC&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;440&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;440&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;MNC&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;10&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;52&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h2 id=&#34;at-commands-basics&#34;&gt;AT Commands Basics&lt;/h2&gt;
 &lt;p&gt;ATコマンドは、通常 &lt;code&gt;AT&lt;/code&gt;にで始まり、その後に &lt;code&gt;&amp;lt;command&amp;gt;&lt;/code&gt;、場合によっては、 &lt;code&gt;&amp;lt;value&amp;gt;&lt;/code&gt;が続きます。AT コマンドには、 &lt;strong&gt;Set&lt;/strong&gt;、&lt;strong&gt;Read&lt;/strong&gt;、&lt;strong&gt;Test&lt;/strong&gt;、&lt;strong&gt;Execute&lt;/strong&gt;の 4種類に分類されます。&lt;/br&gt;&lt;/p&gt;
 &lt;table&gt;
@@ -1243,7 +1269,7 @@
 &lt;td align=&#34;left&#34;&gt;ネットワークの接続先確認&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;code&gt;AT+COPS=1,2,44051&lt;/code&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;code&gt;AT+COPS=1,2,44051&lt;/code&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;code&gt;OK&lt;/code&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;手動モードでKDDIに接続&lt;/td&gt;
 &lt;/tr&gt;
@@ -1383,15 +1409,7 @@
 &lt;/ul&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
-&lt;/p&gt;&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;44050、44052、44054は繋がらないので要注意 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;
-
+&lt;/p&gt;
       </description>
     </item>
     
