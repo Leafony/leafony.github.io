@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.76f0b4efce7cccba88043ceaba800fc96700a3027f76e6a9a3dfbb34faa2bfacb9e051d56e8c8d8b01bb4555ddfea7dd13435ec8e5acdbdf799d5ad5e02cb0d0.json"
+  data-offline-search-index-json-src="/offline-search-index.1348c82f6544713e9f399f36b20b8efe9ca154cca085d7066580f94933886abcb68bdf1004305ce813a79bf44bde3e9f89a3f93712a5d245af53dce497a3332c.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.76f0b4efce7cccba88043ceaba800fc96700a3027f76e6a9a3dfbb34faa2bfacb9e051d56e8c8d8b01bb4555ddfea7dd13435ec8e5acdbdf799d5ad5e02cb0d0.json"
+  data-offline-search-index-json-src="/offline-search-index.1348c82f6544713e9f399f36b20b8efe9ca154cca085d7066580f94933886abcb68bdf1004305ce813a79bf44bde3e9f89a3f93712a5d245af53dce497a3332c.json"
   data-offline-search-base-href="/"
 >
 
@@ -3986,7 +3986,8 @@
       <ul>
         <li><a href="#before-you-get-start-started">Before you get start started</a></li>
         <li><a href="#query-device-information">Query device information</a></li>
-        <li><a href="#network-provider-and-cellular-technology-settings">Network provider and cellular technology settings</a></li>
+        <li><a href="#network-provider-and-cellular-technology-settingssoracom-plan-d">Network provider and cellular technology settings　(SORACOM plan-D)</a></li>
+        <li><a href="#network-provider-and-cellular-technology-settingssoracom-plan-k2">Network provider and cellular technology settings　(SORACOM plan-K2)</a></li>
         <li><a href="#check-the-radio-signal-strength-and-signal-quality">Check the radio signal strength and signal quality</a></li>
         <li><a href="#network-configuration">Network Configuration</a></li>
         <li><a href="#check-the-the-fplmn">Check the the FPLMN</a></li>
@@ -4253,7 +4254,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="network-provider-and-cellular-technology-settings">Network provider and cellular technology settings</h3>
+<h3 id="network-provider-and-cellular-technology-settingssoracom-plan-d">Network provider and cellular technology settings　(SORACOM plan-D)</h3>
 <table>
 <thead>
 <tr>
@@ -4269,19 +4270,19 @@
 <td align="left">利用可能なネットワーク事業者を検索 　</td>
 </tr>
 <tr>
+<td align="left"><code>AT+COPS?</code></td>
+<td align="left"><code>+COPS: 0</code></br> <code>OK</code></td>
+<td align="left">ネットワークの接続先確認</td>
+</tr>
+<tr>
 <td align="left"><code>AT+COPS=1,2,44010</code></td>
 <td align="left"><code>OK</code></td>
 <td align="left">手動モードでNTT ドコモに接続</td>
 </tr>
 <tr>
-<td align="left"><code>AT+COPS?</code></td>
-<td align="left"><code>+COPS: 1,2,&quot;44010&quot;,7</code></br> <code>OK</code></td>
-<td align="left">ネットワークの接続先確認</td>
-</tr>
-<tr>
 <td align="left"><code>AT+COPS=0</code></td>
 <td align="left"><code>OK</code></td>
-<td align="left">自動モードでNTT ドコモに接続</td>
+<td align="left">自動モードで接続</td>
 </tr>
 <tr>
 <td align="left"><code>AT+COPS?</code></td>
@@ -4289,14 +4290,81 @@
 <td align="left">ネットワークの接続先確認</td>
 </tr>
 <tr>
+<td align="left"><code>AT+COPS=1,2,44010</code></td>
+<td align="left"><code>OK</code></td>
+<td align="left">手動モードでNTT ドコモに接続</td>
+</tr>
+<tr>
 <td align="left"><code>AT%GETCFG=&quot;BAND&quot;</code></td>
-<td align="left"><code>Bands:  1</code></br> <code>OK</code></td>
+<td align="left"><code>Bands:  19</code></br> <code>OK</code></td>
 <td align="left">Bandの接続先を確認</td>
 </tr>
 <tr>
-<td align="left"><code>AT%SETCFG=&quot;BAND&quot;,&quot;19&quot;</code></td>
+<td align="left"><code>AT%SETCFG=&quot;BAND&quot;,&quot;1&quot;</code></td>
 <td align="left"><code>OK</code></td>
-<td align="left">Band19に接続</td>
+<td align="left">Band1に接続</td>
+</tr>
+<tr>
+<td align="left"><code>AT%GETCFG=&quot;BAND&quot;</code></td>
+<td align="left"><code>Bands:  19</code></br> <code>OK</code></td>
+<td align="left">Band19に戻す</td>
+</tr>
+</tbody>
+</table>
+<h3 id="network-provider-and-cellular-technology-settingssoracom-plan-k2">Network provider and cellular technology settings　(SORACOM plan-K2)</h3>
+<table>
+<thead>
+<tr>
+<th align="left">AT Command</th>
+<th align="left">Example response</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>AT+COPS=?</code></td>
+<td align="left"><code>+COPS: (1,&quot;KDDI&quot;,&quot;KDDI&quot;,&quot;44051&quot;,7),(3,&quot;KDDI&quot;,&quot;KDDI&quot;,&quot;44054&quot;,7),(3,&quot;KDDI&quot;,&quot;KDDI&quot;,&quot;44052&quot;,7),(3,&quot;KDDI&quot;,&quot;KDDI&quot;,&quot;44050&quot;,7),,(0-3),(0-2)</code></br><code>OK</code></td>
+<td align="left">利用可能なネットワーク事業者を検索 　</td>
+</tr>
+<tr>
+<td align="left"><code>AT+COPS?</code></td>
+<td align="left"><code>+COPS: 0,2,&quot;44051&quot;,7</code></br> <code>OK</code></td>
+<td align="left">ネットワークの接続先確認</td>
+</tr>
+<tr>
+<td align="left"><code>AT+COPS=1,2,44051</code><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></td>
+<td align="left"><code>OK</code></td>
+<td align="left">手動モードでKDDIに接続</td>
+</tr>
+<tr>
+<td align="left"><code>AT+COPS=0</code></td>
+<td align="left"><code>OK</code></td>
+<td align="left">自動モードで接続</td>
+</tr>
+<tr>
+<td align="left"><code>AT+COPS?</code></td>
+<td align="left"><code>+COPS: 0,2,&quot;44051&quot;,7</code></br> <code>OK</code></td>
+<td align="left">ネットワークの接続先確認</td>
+</tr>
+<tr>
+<td align="left"><code>AT+COPS=1,2,44051</code></td>
+<td align="left"><code>OK</code></td>
+<td align="left">手動モードでKDDIに接続</td>
+</tr>
+<tr>
+<td align="left"><code>AT%GETCFG=&quot;BAND&quot;</code></td>
+<td align="left"><code>Bands:  18</code></br> <code>OK</code></td>
+<td align="left">Bandの接続先を確認</td>
+</tr>
+<tr>
+<td align="left"><code>AT%SETCFG=&quot;BAND&quot;,&quot;1&quot;</code></td>
+<td align="left"><code>OK</code></td>
+<td align="left">Band1に接続</td>
+</tr>
+<tr>
+<td align="left"><code>AT%SETCFG=&quot;BAND&quot;,&quot;18&quot;</code></td>
+<td align="left"><code>OK</code></td>
+<td align="left">Band18に戻す</td>
 </tr>
 </tbody>
 </table>
@@ -4338,6 +4406,11 @@
 <td align="left">APNの接続先の確認</td>
 </tr>
 <tr>
+<td align="left"><code>AT+CGACT?</code></td>
+<td align="left"><code>+CGACT: 1,0</code></br><code>OK</code></td>
+<td align="left">PDPの未接続</td>
+</tr>
+<tr>
 <td align="left"><code>AT+CGACT=1,1</code></td>
 <td align="left"><code>OK</code></td>
 <td align="left">PDPの設定</td>
@@ -4345,12 +4418,12 @@
 <tr>
 <td align="left"><code>AT+CGACT?</code></td>
 <td align="left"><code>+CGACT: 1,1</code></br><code>OK</code></td>
-<td align="left">PDPの設定確認</td>
+<td align="left">PDPの接続中</td>
 </tr>
 <tr>
 <td align="left"><code>AT+CEREG?</code></td>
 <td align="left"><code>+CEREG: 0,1</code></br><code>OK</code></td>
-<td align="left">ネットワークの状態確認</td>
+<td align="left">ネットワークに登録済み</td>
 </tr>
 </tbody>
 </table>
@@ -4399,7 +4472,15 @@
 </ul>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
-</p>
+</p><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>44050、44052、44054は繋がらないので要注意 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
         <div class="section-index">
     
     
@@ -4748,7 +4829,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 December 8, 2024
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 December 11, 2024
 </div>
 </div>
 
