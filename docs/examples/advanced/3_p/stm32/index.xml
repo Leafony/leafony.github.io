@@ -243,7 +243,7 @@ STM32リーフからI2CでATECC608Aにキーペア発行命令を送り、公開
     </item>
     
     <item>
-      <title>Docs: STM32 LoRaを活用したメッセージ通信</title>
+      <title>Docs: STM32 LoRa メッセージ通信</title>
       <link>https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_lora_tx/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -252,34 +252,31 @@ STM32リーフからI2CでATECC608Aにキーペア発行命令を送り、公開
         
         
         &lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;AC07 LoRa Mary でデータ送信をする最もシンプルなサンプルプロジェクトです。
-&lt;a href=&#34;../stm32_lora_rx/&#34;&gt;LoRa受信機&lt;/a&gt;を使ってデータを受信することができます。&lt;/p&gt;
-&lt;h2 id=&#34;サンプルのソースコード&#34;&gt;サンプルのソースコード&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_Transmitter&#34;&gt;STM32_LoRa_Transmitter&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&#34;リーフ構成&#34;&gt;リーフ構成&lt;/h2&gt;
-&lt;p&gt;下記の構成でリーフを組み立ててください。&lt;/p&gt;
+&lt;p&gt;このチュートリアルでは、メッセージを、AC07 LoRa Mary で通信をする方法を紹介します。&lt;/p&gt;
+&lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
+&lt;p&gt;メッセージを送信機が送付し、PCに繋いでいる受信機で、データを確認します。下記の構成で、リーフを組み立て下さい。&lt;/br&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;AC07 LoRa Mary&lt;/li&gt;
 &lt;li&gt;AP03 STM32&lt;/li&gt;
 &lt;li&gt;AZ01 USB&lt;/li&gt;
+&lt;li&gt;AZ63 Nut Plate&lt;/li&gt;
+&lt;li&gt;M2のネジ&lt;/li&gt;
+&lt;li&gt;開発用PCとUSBケーブル&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id=&#34;loraによるメッセージの送信&#34;&gt;LoRaによるメッセージの送信&lt;/h3&gt;
-&lt;p&gt;送信側のLeafony Blockから受信側のLeafony Blockへ、LoRaを使ってメッセージを送付するアプリです。&lt;/br&gt;&lt;/p&gt;
-&lt;h4 id=&#34;送信側のleafony-block&#34;&gt;送信側のLeafony Block&lt;/h4&gt;
+&lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
+&lt;p&gt;ソースコードは、Arduino IDEとPlatformIO IDのふたつで用意しています。STM32 MCUの開発環境の設定は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/#stm32-mcu-%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83&#34;&gt;こちら&lt;/a&gt;を参照して下さい。&lt;/br&gt;&lt;/p&gt;
+&lt;h4 id=&#34;送信側&#34;&gt;送信側&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LoRa_Transmitter&#34;&gt;Arduinoソースコード&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_Transmitter&#34;&gt;PlatformIOソースコード&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;受信側のleafony-block&#34;&gt;受信側のLeafony Block&lt;/h4&gt;
+&lt;h4 id=&#34;受信側&#34;&gt;受信側&lt;/h4&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LoRa_Receiver&#34;&gt;Arduinoソースコード&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_Receiver&#34;&gt;PlatformIOソースコード&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;動作方法&#34;&gt;動作方法&lt;/h2&gt;
-&lt;p&gt;PlatformIOを使用して、STM32にプログラムを書き込んでください。
-PlatformIOの利用方法は&lt;a href=&#34;https://docs.leafony.com/docs/environment/stm32/platformio/&#34;&gt;PlatformIO IDE for VSCode の設定&lt;/a&gt;を参考にしてください。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;../stm32_lora_rx/&#34;&gt;LoRa受信機&lt;/a&gt;を用意してデータを受信してください。
-下記のように、「Hello」、送信回数、受信強度 単位dBmが表示されます。&lt;/p&gt;
+&lt;p&gt;以下のように、「Hello」、送信回数、受信強度 単位dBmが表示されます。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;Hello 10,-64
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
@@ -320,7 +317,7 @@ PlatformIOの利用方法は&lt;a href=&#34;https://docs.leafony.com/docs/enviro
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_Receiver&#34;&gt;PlatformIOソースコード&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;動作&#34;&gt;動作&lt;/h2&gt;
-&lt;p&gt;開発用のpcに、以下のように電池電圧(V)、温度(℃)、湿度(%)、照度(lx)、加速度XYZ(g)、RSSI(dBm)が表示されます。&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;以下のように電池電圧(V)、温度(℃)、湿度(%)、照度(lx)、加速度XYZ(g)、RSSI(dBm)が表示されます。&lt;/br&gt;&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;3.20,25.04,74.02,0.00,0.92,6.14,0.92,-55
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>

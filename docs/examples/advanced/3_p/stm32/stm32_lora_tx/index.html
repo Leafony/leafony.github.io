@@ -21,14 +21,14 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>STM32 LoRaを活用したメッセージ通信 | Leafony</title><meta property="og:title" content="STM32 LoRaを活用したメッセージ通信" />
+<title>STM32 LoRa メッセージ通信 | Leafony</title><meta property="og:title" content="STM32 LoRa メッセージ通信" />
 <meta property="og:description" content="A Leafony Documentation site" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_lora_tx/" />
 <meta property="og:site_name" content="Leafony" />
-<meta itemprop="name" content="STM32 LoRaを活用したメッセージ通信">
+<meta itemprop="name" content="STM32 LoRa メッセージ通信">
 <meta itemprop="description" content="A Leafony Documentation site"><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="STM32 LoRaを活用したメッセージ通信"/>
+<meta name="twitter:title" content="STM32 LoRa メッセージ通信"/>
 <meta name="twitter:description" content="A Leafony Documentation site"/>
 
 
@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.54f5823fef39ead1f7bdf4db3c208c98b936a515970cb7a5736771e9547ac6fee7b7166f94c73301a6f71310ea8595181c59d81b096041f39b9299fa3ef675a6.json"
+  data-offline-search-index-json-src="/offline-search-index.8472b31da5eaa18a272b9587f9e29ddef0a3d343539e08f9ceff1245207df6768708b075ec50e4bbbd347ee385822d0e07f968a8629925add1b85549d1941623.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.54f5823fef39ead1f7bdf4db3c208c98b936a515970cb7a5736771e9547ac6fee7b7166f94c73301a6f71310ea8595181c59d81b096041f39b9299fa3ef675a6.json"
+  data-offline-search-index-json-src="/offline-search-index.8472b31da5eaa18a272b9587f9e29ddef0a3d343539e08f9ceff1245207df6768708b075ec50e4bbbd347ee385822d0e07f968a8629925add1b85549d1941623.json"
   data-offline-search-base-href="/"
 >
 
@@ -3963,10 +3963,10 @@
 <nav id="TableOfContents">
   <ul>
     <li><a href="#はじめに">はじめに</a></li>
-    <li><a href="#サンプルのソースコード">サンプルのソースコード</a></li>
-    <li><a href="#リーフ構成">リーフ構成</a>
+    <li><a href="#用意するもの">用意するもの</a></li>
+    <li><a href="#ソースコード">ソースコード</a>
       <ul>
-        <li><a href="#loraによるメッセージの送信">LoRaによるメッセージの送信</a></li>
+        <li></li>
       </ul>
     </li>
     <li><a href="#動作方法">動作方法</a></li>
@@ -4046,38 +4046,35 @@
 
             
 <div class="td-content">
-	<h1>STM32 LoRaを活用したメッセージ通信</h1>
+	<h1>STM32 LoRa メッセージ通信</h1>
         
 	
 	<h2 id="はじめに">はじめに</h2>
-<p>AC07 LoRa Mary でデータ送信をする最もシンプルなサンプルプロジェクトです。
-<a href="../stm32_lora_rx/">LoRa受信機</a>を使ってデータを受信することができます。</p>
-<h2 id="サンプルのソースコード">サンプルのソースコード</h2>
-<p><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_Transmitter">STM32_LoRa_Transmitter</a></p>
-<h2 id="リーフ構成">リーフ構成</h2>
-<p>下記の構成でリーフを組み立ててください。</p>
+<p>このチュートリアルでは、メッセージを、AC07 LoRa Mary で通信をする方法を紹介します。</p>
+<h2 id="用意するもの">用意するもの</h2>
+<p>メッセージを送信機が送付し、PCに繋いでいる受信機で、データを確認します。下記の構成で、リーフを組み立て下さい。</br></p>
 <ul>
 <li>AC07 LoRa Mary</li>
 <li>AP03 STM32</li>
 <li>AZ01 USB</li>
+<li>AZ63 Nut Plate</li>
+<li>M2のネジ</li>
+<li>開発用PCとUSBケーブル</li>
 </ul>
-<h3 id="loraによるメッセージの送信">LoRaによるメッセージの送信</h3>
-<p>送信側のLeafony Blockから受信側のLeafony Blockへ、LoRaを使ってメッセージを送付するアプリです。</br></p>
-<h4 id="送信側のleafony-block">送信側のLeafony Block</h4>
+<h2 id="ソースコード">ソースコード</h2>
+<p>ソースコードは、Arduino IDEとPlatformIO IDのふたつで用意しています。STM32 MCUの開発環境の設定は、<a href="https://docs.leafony.com/docs/environment/#stm32-mcu-%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83">こちら</a>を参照して下さい。</br></p>
+<h4 id="送信側">送信側</h4>
 <ul>
 <li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LoRa_Transmitter">Arduinoソースコード</a></li>
 <li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_Transmitter">PlatformIOソースコード</a></li>
 </ul>
-<h4 id="受信側のleafony-block">受信側のLeafony Block</h4>
+<h4 id="受信側">受信側</h4>
 <ul>
 <li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LoRa_Receiver">Arduinoソースコード</a></li>
 <li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_Receiver">PlatformIOソースコード</a></li>
 </ul>
 <h2 id="動作方法">動作方法</h2>
-<p>PlatformIOを使用して、STM32にプログラムを書き込んでください。
-PlatformIOの利用方法は<a href="https://docs.leafony.com/docs/environment/stm32/platformio/">PlatformIO IDE for VSCode の設定</a>を参考にしてください。</p>
-<p><a href="../stm32_lora_rx/">LoRa受信機</a>を用意してデータを受信してください。
-下記のように、「Hello」、送信回数、受信強度 単位dBmが表示されます。</p>
+<p>以下のように、「Hello」、送信回数、受信強度 単位dBmが表示されます。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Hello 10,-64
 </code></pre></div>
         <div class="section-index">
