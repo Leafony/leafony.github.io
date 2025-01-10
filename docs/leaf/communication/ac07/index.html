@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8472b31da5eaa18a272b9587f9e29ddef0a3d343539e08f9ceff1245207df6768708b075ec50e4bbbd347ee385822d0e07f968a8629925add1b85549d1941623.json"
+  data-offline-search-index-json-src="/offline-search-index.17520c2669f044c7a5080fec17595c99f1f6f18982f4a4f2a6a2316be8872b96491d2086147babb31939297e06a231d6041e3d60ba65f9a767e2896a4356edb7.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8472b31da5eaa18a272b9587f9e29ddef0a3d343539e08f9ceff1245207df6768708b075ec50e4bbbd347ee385822d0e07f968a8629925add1b85549d1941623.json"
+  data-offline-search-index-json-src="/offline-search-index.17520c2669f044c7a5080fec17595c99f1f6f18982f4a4f2a6a2316be8872b96491d2086147babb31939297e06a231d6041e3d60ba65f9a767e2896a4356edb7.json"
   data-offline-search-base-href="/"
 >
 
@@ -3970,12 +3970,7 @@
     <li><a href="#ブロック図">ブロック図</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
     <li><a href="#ライブラリ">ライブラリ</a></li>
-    <li><a href="#サンプルアプリ">サンプルアプリ</a>
-      <ul>
-        <li><a href="#loraによるメッセージの送信">LoRaによるメッセージの送信</a></li>
-        <li><a href="#loraによるセンサデータの送信">LoRaによるセンサデータの送信</a></li>
-      </ul>
-    </li>
+    <li><a href="#サンプルアプリ">サンプルアプリ</a></li>
     <li><a href="#ドキュメント">ドキュメント</a></li>
     <li><a href="#tips">Tips</a>
       <ul>
@@ -4196,30 +4191,11 @@
 <h2 id="ライブラリ">ライブラリ</h2>
 <p>本リーフに対応したライブラリがあります。<a href="https://docs.leafony.com/docs/environment/avr/arduino/#1-%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA">開発環境設定のページ</a>で必要なライブラリをインストールしてご利用下さい。</p>
 <h2 id="サンプルアプリ">サンプルアプリ</h2>
-<p>STM32 MCUとLoRa Maryリーフを使用したサンプルアプリです。このサンプルアプリを使用する場合は、 LoRaLeafony.hのライブラリをインクルードしてください。ソースコードは、Arduino IDEとPlatformIO IDのふたつで用意しています。STM32 MCUの開発環境の設定は、<a href="https://docs.leafony.com/docs/environment/#stm32-mcu-%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83">こちら</a>を参照して下さい。</p>
-<h3 id="loraによるメッセージの送信">LoRaによるメッセージの送信</h3>
-<p>送信側のLeafony Blockから受信側のLeafony Blockへ、LoRaを使ってメッセージを送付するアプリです。</br></p>
-<h4 id="送信側のleafony-block">送信側のLeafony Block</h4>
+<p>STM32 MCUとLoRa Maryリーフを使用したサンプルアプリです。このサンプルアプリを使用する場合は、 LoRaLeafony.hのライブラリをインクルードしてください。</br></p>
 <ul>
-<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LoRa_Transmitter">Arduinoソースコード</a></li>
-<li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_Transmitter">PlatformIOソースコード</a></li>
-</ul>
-<h4 id="受信側のleafony-block">受信側のLeafony Block</h4>
-<ul>
-<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LoRa_Receiver">Arduinoソースコード</a></li>
-<li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_Receiver">PlatformIOソースコード</a></li>
-</ul>
-<h3 id="loraによるセンサデータの送信">LoRaによるセンサデータの送信</h3>
-<p>送信側のLeafony Blockから受信側のLeafony Blockへ、LoRaを使ってセンサデータを送付するアプリです。</br></p>
-<h4 id="送信側のleafony-block-1">送信側のLeafony Block</h4>
-<ul>
-<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LoRa_4-Sensors_Transmitter">Arduinoソースコード</a></li>
-<li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_4-Sensors_Transmitter">PlatformIOソースコード</a></li>
-</ul>
-<h4 id="受信側のleafony-block-1">受信側のLeafony Block</h4>
-<ul>
-<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LoRa_Receiver">Arduinoソースコード</a></li>
-<li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_Receiver">PlatformIOソースコード</a></li>
+<li><a href="./advanced/3_p/stm32/stm32_lora_tx">LoRa メッセージ通信</a></li>
+<li><a href="./advanced/3_p/stm32/stm32_lora_tx_sensors">LoRa センサデータ通信</a></li>
+<li><a href="./advanced/3_p/stm32/stm32_lora_signed_communication">LoRa 署名付き通信</a></li>
 </ul>
 <h2 id="ドキュメント">ドキュメント</h2>
 <ul>
@@ -4639,7 +4615,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 December 4, 2024
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 January 10, 2025
 </div>
 </div>
 
