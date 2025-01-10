@@ -816,9 +816,9 @@
 &lt;td align=&#34;left&#34;&gt;1019-085A&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;STAF Corporation&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Monopole (λ/4)&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;U.FL&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;4×9.1×1.2mm&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;Built-in antenna&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Chip antenna&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;1018-391B&lt;/td&gt;
@@ -860,9 +860,9 @@
 &lt;h2 id=&#34;サンプルアプリ&#34;&gt;サンプルアプリ&lt;/h2&gt;
 &lt;p&gt;STM32 MCUとLoRa Maryリーフを使用したサンプルアプリです。このサンプルアプリを使用する場合は、 LoRaLeafony.hのライブラリをインクルードしてください。&lt;/br&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;./advanced/3_p/stm32/stm32_lora_tx&#34;&gt;LoRa メッセージ通信&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;./advanced/3_p/stm32/stm32_lora_tx_sensors&#34;&gt;LoRa センサデータ通信&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;./advanced/3_p/stm32/stm32_lora_signed_communication&#34;&gt;LoRa 署名付き通信&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_lora_tx/&#34;&gt;LoRa メッセージ通信&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_lora_tx_sensors/&#34;&gt;LoRa センサデータ通信&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_lora_rx/&#34;&gt;LoRa 署名付き通信&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
