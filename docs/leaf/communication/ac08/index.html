@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d70c8ed7a68d25220065900dda67557362cbd6fa7d1cf410c1e0dcec44426cf9ca2ccdead8e2a3b23ca142d13cfe9362a20c87a25b3f31c1b1b9c3f4e9578d6e.json"
+  data-offline-search-index-json-src="/offline-search-index.bd5e28d27cb0b63bcdebe8e48be63decb68018e1ca3b9f556ac353875c8fb18735af48e7a28ba361baaf30508d0c5d299aaa0b2251e4bb26b6d99bbd5a191697.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.d70c8ed7a68d25220065900dda67557362cbd6fa7d1cf410c1e0dcec44426cf9ca2ccdead8e2a3b23ca142d13cfe9362a20c87a25b3f31c1b1b9c3f4e9578d6e.json"
+  data-offline-search-index-json-src="/offline-search-index.bd5e28d27cb0b63bcdebe8e48be63decb68018e1ca3b9f556ac353875c8fb18735af48e7a28ba361baaf30508d0c5d299aaa0b2251e4bb26b6d99bbd5a191697.json"
   data-offline-search-base-href="/"
 >
 
@@ -3988,6 +3988,7 @@
         <li><a href="#query-device-information">Query device information</a></li>
         <li><a href="#network-provider-and-cellular-technology-settingssoracom-plan-d">Network provider and cellular technology settings　(SORACOM plan-D)</a></li>
         <li><a href="#network-provider-and-cellular-technology-settingssoracom-plan-k2">Network provider and cellular technology settings　(SORACOM plan-K2)</a></li>
+        <li><a href="#define-the-cellular-band">Define the cellular band</a></li>
         <li><a href="#check-the-radio-signal-strength-and-signal-quality">Check the radio signal strength and signal quality</a></li>
         <li><a href="#network-configuration">Network Configuration</a></li>
         <li><a href="#check-the-the-fplmn">Check the the FPLMN</a></li>
@@ -4391,6 +4392,33 @@
 <td align="left"><code>AT%SETCFG=&quot;BAND&quot;,&quot;18&quot;</code></td>
 <td align="left"><code>OK</code></td>
 <td align="left">Band18に戻す</td>
+</tr>
+</tbody>
+</table>
+<h3 id="define-the-cellular-band">Define the cellular band</h3>
+<table>
+<thead>
+<tr>
+<th align="left">AT Command</th>
+<th align="left">Example response</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>AT%SETSYSCFG=&quot;SW_CFG.catm_band_table.band#1&quot;,&quot;ENABLE;19&quot;</code></td>
+<td align="left"><code>OK</code></td>
+<td align="left">band#1にBand19設定　</td>
+</tr>
+<tr>
+<td align="left"><code>AT%GETSYSCFG=&quot;SW_CFG.catm_band_table.band#1&quot;</code></td>
+<td align="left"><code>%GETSYSCFG: &quot;SW_CFG.catm_band_table.band#1&quot;,&quot;ENABLE;19&quot;</code></br> <code>OK</code></td>
+<td align="left">band#1の設定確認(Band19)</td>
+</tr>
+<tr>
+<td align="left"><code>AT%SETSYSCFG=&quot;SW_CFG.catm_band_table.band#1&quot;,&quot;&quot;</code></td>
+<td align="left"><code>OK</code></td>
+<td align="left">band#1 の設定削除   　　　　　</td>
 </tr>
 </tbody>
 </table>
