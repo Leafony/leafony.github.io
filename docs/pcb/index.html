@@ -136,7 +136,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.bd5e28d27cb0b63bcdebe8e48be63decb68018e1ca3b9f556ac353875c8fb18735af48e7a28ba361baaf30508d0c5d299aaa0b2251e4bb26b6d99bbd5a191697.json"
+  data-offline-search-index-json-src="/offline-search-index.6b770573dfb847e4f01e5062997fbde3d0c4796eeb9e82fdf6a5d64d584cb6ecad17fa0c8657fb965b81bfdc1bba5e42f08e1cb2866ee5d0565abb42f1edbe6c.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +166,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.bd5e28d27cb0b63bcdebe8e48be63decb68018e1ca3b9f556ac353875c8fb18735af48e7a28ba361baaf30508d0c5d299aaa0b2251e4bb26b6d99bbd5a191697.json"
+  data-offline-search-index-json-src="/offline-search-index.6b770573dfb847e4f01e5062997fbde3d0c4796eeb9e82fdf6a5d64d584cb6ecad17fa0c8657fb965b81bfdc1bba5e42f08e1cb2866ee5d0565abb42f1edbe6c.json"
   data-offline-search-base-href="/"
 >
 
@@ -4024,120 +4024,11 @@
         <div class="lead">自分オリジナルのリーフを開発しよう</div>
 	
 	<h2 id="ピン配置">ピン配置</h2>
-<p><a href="./leaf_all_20210514.jpg"><img src="./leaf_all_20210514.jpg" width="750"></a></br></p>
 <p>ピン配置のデータは、<a href="https://github.com/Leafony/Documents/tree/main/Leaf-pinassign">こちら</a>を参照して下さい。</br></p>
+<p><a href="./leaf_all_20210514.jpg"><img src="./leaf_all_20210514.jpg" width="750"></a></br></p>
 <h2 id="i2c-address-map">I2C address map</h2>
-<p>Leafonyキットには、I2C通信を使用しているリーフがいくつか存在します。<br>
-同じI2Cピンを使用して複数のICと通信する場合、原則として同じI2Cアドレスを使用することはできません。<br>
-自作基板でI2C通信を使用する場合は、アドレスが重複しないように設計して下さい。<br>
-すでに使用されているアドレスは下表のとおりです。<br></p>
-<br>
-<table>
-  <thead>
-    <tr>
-      <th>Type</th>
-      <th>Leaf</th>
-      <th>Description</th>
-      <th>Chip</th>
-      <th>I2Cアドレス</th>
-      <th colspan=2>変更可能アドレス</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan=3>AI01</td>
-      <td rowspan=3>4-Sensors</td>
-      <td>温湿度センサ</td>
-      <td>HTS221TR</td>
-      <td>0x5F</td>
-      <td>-</td>
-      <td>-</td>
-    </tr>
-      <td>照度センサ</td>
-      <td>OPT3001</td>
-      <td>0x45</td>
-      <td>0x44</td>
-      <td>-</td>
-    </tr>
-    </tr>
-      <td>加速度センサ</td>
-      <td>LIS3DHTR</td>
-      <td>0x19</td>
-      <td>-</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td>AI02</td>
-      <td>SP&PIR</td>
-      <td>PIR</td>
-      <td>AK9754</td>
-      <td>0x65</td>
-      <td>0x66</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td>AI03</td>
-      <td>MIC&VR&LED</td>
-      <td>IOエキスパンダ</td>
-      <td>PCA9557RGVR</td>
-      <td>0x1B</td>
-      <td>-</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td rowspan=2>AI04</td>
-      <td rowspan=2>LCD</td>
-      <td>LCD</td>
-      <td>AQM0802A-RN-GBW</td>
-      <td>0x3E</td>
-      <td>-</td>
-      <td>-</td>
-    </tr>
-      <td>IOエキスパンダ</td>
-      <td>PCA9557RGVR</td>
-      <td>0x1A</td>
-      <td>0x1E</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td>AV01-AV04</td>
-      <td>BAT</td>
-      <td>ADC</td>
-      <td>ADC081C027CIMK</td>
-      <td>0x50</td>
-      <td>0x51</td>
-      <td>0x52</td>
-    </tr>
-    <tr>
-      <td>AV05</td>
-      <td>Solar_3_2V</td>
-      <td>ADC</td>
-      <td>TBD</td>
-      <td>TBD</td>
-      <td>TBD</td>
-      <td>TBD</td>
-    </tr>
-    <tr>
-      <td>AV06</td>
-      <td>Grove</td>
-      <td>IOエキスパンダ</td>
-      <td>PCA9557RGVR</td>
-      <td>0x18</td>
-      <td>-</td>
-      <td>-</td>
-    </tr>
-    <tr>
-      <td>AZ02</td>
-      <td>SD&RTC</td>
-      <td>リアルタイムクロック</td>
-      <td>PCF8523TK</td>
-      <td>0x68</td>
-      <td>-</td>
-      <td>-</td>
-    </tr>
-  </tbody>
-</table>
-</br>
+<p>I2C アドレスのデータは、<a href="https://github.com/Leafony/Documents/tree/main/I2C%20address%20map">こちら</a>を参照して下さい。</br></p>
+<p><a href="./I2C address map.png"><img src="./I2C address map.png" width="750"></a></br></p>
 <h1 id="kicadを用いた自作リーフの開発">KiCadを用いた自作リーフの開発</h1>
 <h2 id="はじめに">はじめに</h2>
 <p>KiCadとは、オープンソースのプリント基板CADで、Windows、Linux、Mac上で動作します。1992年にグルノーブル大学のJean-Pierre Charras氏によって、KiCadの最初のバージョンがリリースされ、それ以降、ボランティアで開発支援されています。</br>
@@ -4306,7 +4197,7 @@ KiCadは、主に以下の5つのソフトウェアから構成されていま�
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 29, 2024
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 23, 2025
 </div>
 </div>
 
