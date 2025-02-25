@@ -277,7 +277,8 @@ STM32リーフからI2CでATECC608Aにキーペア発行命令を送り、公開
 &lt;/ul&gt;
 &lt;h2 id=&#34;動作方法&#34;&gt;動作方法&lt;/h2&gt;
 &lt;p&gt;以下のように、「Hello」、送信回数、受信強度 単位dBmが表示されます。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;Hello 10,-64
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-text&#34; data-lang=&#34;text&#34;&gt;Received: hello 0, RSSI: -37
+
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
