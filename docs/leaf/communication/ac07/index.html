@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6edf01c40682b23264963a49c1e4b1fa607ce07514202d1e2f3834dc84d6263ea631de58e3b7ad1230d63e8c8866035a836f8a57b341ea46798652abdd233f12.json"
+  data-offline-search-index-json-src="/offline-search-index.0c6bbb1b57d8ce138a0513e675098c8786ea3f9897c07963f1adf5a8e7e5c20790f755204db551238d2b82a6358079fa0734bc50953ce8f35c5a3b656006563d.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.6edf01c40682b23264963a49c1e4b1fa607ce07514202d1e2f3834dc84d6263ea631de58e3b7ad1230d63e8c8866035a836f8a57b341ea46798652abdd233f12.json"
+  data-offline-search-index-json-src="/offline-search-index.0c6bbb1b57d8ce138a0513e675098c8786ea3f9897c07963f1adf5a8e7e5c20790f755204db551238d2b82a6358079fa0734bc50953ce8f35c5a3b656006563d.json"
   data-offline-search-base-href="/"
 >
 
@@ -3964,9 +3964,9 @@
   <ul>
     <li><a href="#特徴">特徴</a></li>
     <li><a href="#性能">性能</a></li>
+    <li><a href="#lorawanとprivate-lora">LoRaWANとPrivate LoRa</a></li>
     <li><a href="#外観">外観</a></li>
     <li><a href="#アンテナ">アンテナ</a></li>
-    <li><a href="#ブロック図">ブロック図</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
     <li><a href="#ライブラリ">ライブラリ</a></li>
     <li><a href="#サンプルアプリ">サンプルアプリ</a></li>
@@ -3974,7 +3974,6 @@
     <li><a href="#tips">Tips</a>
       <ul>
         <li><a href="#lora-mary-firmware-の書込み方">LoRa Mary Firmware の書込み方</a></li>
-        <li><a href="#lorawanとprivate-lora">LoRaWANとPrivate LoRa</a></li>
         <li><a href="#spreading-factorsf-とbandwidthbw">Spreading Factor(SF) とBandwidth(BW)</a></li>
       </ul>
     </li>
@@ -4042,7 +4041,8 @@
 <a href="./ac07_p_large.jpg"><img src="./ac07_p_small.jpg" width="300"></a></p>
 </br>
 <h2 id="特徴">特徴</h2>
-<p>Murata Type ABZを搭載したLoRaリーフです。工事設計認証されたChip antenna(STAF 1019-085A)を搭載しており、Arduinoのライブラリを使って、省電力の無線通信が手軽に利用できます。</br></p>
+<p>Murata Type ABZを搭載したLoRaリーフです。工事設計認証されたChip antenna(STAF 1019-085A)を搭載しており、省電力の無線通信が手軽に利用できます。
+LoRa Maryのファームウェアは、Arduino MKR WAN 1300/1310で公開している<a href="https://github.com/arduino/mkrwan1300-fw/releases/tag/1.2.3">v1.2.3</a> が、書き込まれているため、Arduinoで簡単にプログラミングが出来ます。</br></p>
 <h2 id="性能">性能</h2>
 <table>
 <thead>
@@ -4090,6 +4090,12 @@
 </tr>
 </tbody>
 </table>
+<h2 id="lorawanとprivate-lora">LoRaWANとPrivate LoRa</h2>
+<p>LoRaWANとPrivate LoRaは、どちらもLoRa変調を使った無線通信規格ですが、上位のMAC層が異なります。LoRaWANは、LoRa Allianceが策定した標準規格で、異なるメーカーの機器同士でも互換性があり、広域での通信が可能です。Private LoRaは、独自のMAC層プロトコルを使用し、専用のゲートウェイを設置する必要がありますが、通信費がかからないのが特徴です。詳しくは、以下を参照願います。</br></p>
+<ul>
+<li><a href="https://easel5.com/technical-guide/difference-lorawan-and-private-lora/">LoRaWANとプライベートLoRaの違い</a></li>
+<li><a href="https://docs.arduino.cc/learn/communication/lorawan-101/">The Arduino Guide to LoRa® and LoRaWAN®</a></li>
+</ul>
 <h2 id="外観">外観</h2>
 <table>
 <thead>
@@ -4151,8 +4157,6 @@
 </tr>
 </tbody>
 </table>
-<h2 id="ブロック図">ブロック図</h2>
-<p><a href="./ac07_block.jpg"><img src="./ac07_block.jpg" width="1000"></a></p>
 <h2 id="ピン配置">ピン配置</h2>
 <p><a href="./ac07_pinassign.png"><img src="./ac07_pinassign.png" width="750"></a></br></p>
 <p>ピン配置のデータは、<a href="https://github.com/Leafony/Documents/tree/main/Leaf-pinassign">こちら</a>を参照して下さい。</br></p>
@@ -4163,17 +4167,13 @@
 <ul>
 <li><a href="https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_lora_tx/">LoRa メッセージ通信</a></li>
 <li><a href="https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_lora_tx_sensors/">LoRa センサデータ通信</a></li>
-<li><a href="https://docs.leafony.com/docs/examples/advanced/3_p/stm32/stm32_lora_rx/">LoRa 署名付き通信</a></li>
 </ul>
 <h2 id="ドキュメント">ドキュメント</h2>
 <ul>
-<li>仕様書</li>
 <li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC07_LoRa_Mary/AC07_LoRa_Mary_schematics.pdf">回路図</a></li>
-<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC07_LoRa_Mary/AC07_LoRa_Mary_layout.pdf">レイアウト</a></li>
 </ul>
 <h2 id="tips">Tips</h2>
 <h3 id="lora-mary-firmware-の書込み方">LoRa Mary Firmware の書込み方</h3>
-<p>LoRa Maryのファームウェアは、Arduino MKR WAN 1300/1310で公開している<a href="https://github.com/arduino/mkrwan1300-fw/releases/tag/1.2.3">v1.2.3</a> が、書き込まれています。ファームウェアが破損した場合は、 以下を参照して書き込んで下さい。</br></p>
 <ol>
 <li>用意するもの
 <ul>
@@ -4194,12 +4194,6 @@
 </li>
 <li><code>Start Programming</code>をクリックし、<code>Download verified successfully</code>が表示されたらokです。</li>
 </ol>
-<h3 id="lorawanとprivate-lora">LoRaWANとPrivate LoRa</h3>
-<p>LoRaWANとPrivate LoRaは、どちらも物理層にLoRa変調を使用した無線通信規格で上位のMAC層が異なります。LoRaWANは、LoRaAllianceが策定した標準規格で、異なるメーカーの機器同士での通信が可能です。Private LoRaは、MAC層に会社毎の独自の通信プロトコルを使用し、アプリケーションや用途に対して、カスタマイズが可能です。詳しくは、以下を参照願います。</br></p>
-<ul>
-<li><a href="https://easel5.com/technical-guide/difference-lorawan-and-private-lora/">LoRaWANとプライベートLoRaの違い</a></li>
-<li><a href="https://docs.arduino.cc/learn/communication/lorawan-101/">The Arduino Guide to LoRa® and LoRaWAN®</a></li>
-</ul>
 <h3 id="spreading-factorsf-とbandwidthbw">Spreading Factor(SF) とBandwidth(BW)</h3>
 <p>SFは、送信されるデータの「拡散率」を表し通常6から12までの値で、デフォルトはSF7です。以下に特徴を示します。</br></p>
 <table>
@@ -4608,7 +4602,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 25, 2025
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 26, 2025
 </div>
 </div>
 
