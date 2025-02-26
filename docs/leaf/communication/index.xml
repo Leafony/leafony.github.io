@@ -704,9 +704,9 @@
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./ac07_f_large.jpg&#34;&gt;&lt;img src=&#34;./ac07_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./ac07_b_large.jpg&#34;&gt;&lt;img src=&#34;./ac07_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./ac07_p_large.jpg&#34;&gt;&lt;img src=&#34;./ac07_p_small.jpg&#34; width=&#34;300&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;./ac07_f_small.jpg&#34;&gt;&lt;img src=&#34;./ac07_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ac07_b_small.jpg&#34;&gt;&lt;img src=&#34;./ac07_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ac07_p_small.jpg&#34;&gt;&lt;img src=&#34;./ac07_p_small.jpg&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/br&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;Murata Type ABZを搭載したLoRaリーフです。工事設計認証されたChip antenna(STAF 1019-085A)を搭載しており、省電力の無線通信が手軽に利用できます。
@@ -838,7 +838,8 @@ LoRa Maryのファームウェアは、Arduino MKR WAN 1300/1310で公開して�
 &lt;/ul&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;回路図&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC07_LoRa_Mary/AC07_LoRa_Mary_schematics.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC07_LoRa_Mary/AC07_LoRa_Mary_schematics.pdf&#34;&gt;部品実装図&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
 &lt;h3 id=&#34;lora-mary-firmware-の書込み方&#34;&gt;LoRa Mary Firmware の書込み方&lt;/h3&gt;
@@ -934,18 +935,13 @@ LoRa Maryのファームウェアは、Arduino MKR WAN 1300/1310で公開して�
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./ac08_f_large.jpg&#34;&gt;&lt;img src=&#34;./ac08_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./ac08_b_large.jpg&#34;&gt;&lt;img src=&#34;./ac08_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
-&lt;a href=&#34;./ac08_p_large.jpg&#34;&gt;&lt;img src=&#34;./ac08_p_small.jpg&#34; width=&#34;300&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&#34;./ac08_f_small.jpg&#34;&gt;&lt;img src=&#34;./ac08_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ac08_b_small.jpg&#34;&gt;&lt;img src=&#34;./ac08_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+&lt;a href=&#34;./ac08_p_small.jpg&#34;&gt;&lt;img src=&#34;./ac08_p_small.jpg&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/br&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
-&lt;p&gt;（仕掛中）LTE-M Maryリーフは、xxが共同開発したLTE-M (LTE Cat-M1)通信機能に対応したリーフです。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;約23×30mmの小さな基板上に、データ通信用のアンテナを内蔵し（技適取得済）、外部アンテナは不要です。&lt;/li&gt;
-&lt;li&gt;SIMカードは、&lt;a href=&#34;https://biz.kddi.com/service/iot-lpwa/&#34; target=&#34;_brank&#34;&gt; KDDIのLTE-M通信網&lt;/a&gt;に対応したソラコムのLTE-Mサービス「SORACOM Air for セルラー(plan-KM1)」が利用出来ます。&lt;/li&gt;
-&lt;li&gt;省電力性能は、通信モジュールが具備するスリープ等の機能だけでなく、ソフトウェア設定で通信モジュールへの給電自体を遮断する機能を搭載しており、長期間使用しない時は電池の消費を限りなくゼロに近づけることが可能にしました。&lt;/li&gt;
-&lt;li&gt;電池は、単3電池やリチウムイオン電池等で、データ送信の頻度や回数等のユースケースに応じて選択することが出来ます。&lt;/li&gt;
-&lt;/ul&gt;
+&lt;p&gt;Murata Type 1SCを搭載したLTE-Mリーフです。工事設計認証されたChip antenna(STAF 1019-085A)を搭載しており、省電力の無線通信が手軽に利用できます。
+LTE-M Mary用のライブラリを公開しているので、簡単にプログラミングが出来ます。&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;性能&#34;&gt;性能　&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
