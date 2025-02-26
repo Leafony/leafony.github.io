@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.1404ef011e24368247df0c62823d648c147cade160897e0f1e093c6080f51f8e1457ae652f367cd1d2737fdf412a4a46c5092c71ddfd0f9260677b11a784b8dc.json"
+  data-offline-search-index-json-src="/offline-search-index.6bef7915cba87c6c52c2ebb4bf4927f283c35732bdbfb749a820c88ce100f7f66f6d2ab9400cce2972b7b7827e0daf289ad811ab5e5e5cef4e795fd335029a0f.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.1404ef011e24368247df0c62823d648c147cade160897e0f1e093c6080f51f8e1457ae652f367cd1d2737fdf412a4a46c5092c71ddfd0f9260677b11a784b8dc.json"
+  data-offline-search-index-json-src="/offline-search-index.6bef7915cba87c6c52c2ebb4bf4927f283c35732bdbfb749a820c88ce100f7f66f6d2ab9400cce2972b7b7827e0daf289ad811ab5e5e5cef4e795fd335029a0f.json"
   data-offline-search-base-href="/"
 >
 
@@ -3964,18 +3964,9 @@
   <ul>
     <li><a href="#特徴">特徴</a></li>
     <li><a href="#性能">性能　</a></li>
-    <li><a href="#tips">Tips　</a>
-      <ul>
-        <li><a href="#アンテナナノsimカードスロットについて">アンテナ、ナノSIMカードスロットについて</a></li>
-      </ul>
-    </li>
-    <li><a href="#ブロック図">ブロック図</a></li>
+    <li><a href="#外観">外観</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
-    <li><a href="#サンプルアプリ">サンプルアプリ</a>
-      <ul>
-        <li><a href="#xxのバージョンチェック">xxのバージョンチェック</a></li>
-      </ul>
-    </li>
+    <li><a href="#サンプルアプリ">サンプルアプリ</a></li>
     <li><a href="#ライブラリ">ライブラリ</a></li>
     <li><a href="#ドキュメント">ドキュメント　</a></li>
   </ul>
@@ -4101,52 +4092,44 @@ LTE-M Mary用のライブラリを公開しているので、簡単にプログ�
 </tr>
 <tr>
 <td align="left">Dimension</td>
-<td align="left">W23×D32.8×H4.6mm</td>
+<td align="left">W23×D32×H2mm</td>
 </tr>
 </tbody>
 </table>
-<h2 id="tips">Tips　</h2>
-<h3 id="アンテナナノsimカードスロットについて">アンテナ、ナノSIMカードスロットについて</h3>
-<p><a href="./AC08_tips.jpg"><img src="./AC08_tips.jpg" width="350"></a></p>
+<p>　</p>
+<h2 id="外観">外観</h2>
 <table>
 <thead>
 <tr>
-<th align="left">Item</th>
-<th align="left">Description</th>
+<th>Item</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Antenna</td>
-<td align="left">On board chip antenna for LTE-M</td>
+<td>Chip antenna</td>
+<td>STAF 1019-085A</td>
 </tr>
 <tr>
-<td align="left">nanoSIM card slot</td>
-<td align="left">Insert a nanoSIM card</td>
+<td>RF Coaxial Connector</td>
+<td>Molex 734120110(U.FL Compatible)<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></td>
+</tr>
+<tr>
+<td>nanoSIM card slot</td>
+<td>Insert a nanoSIM card</td>
 </tr>
 </tbody>
 </table>
-<br>
-<h2 id="ブロック図">ブロック図</h2>
-<p><a href="./ac08_block.jpg"><img src="./ac08_block.jpg" width="1000"></a></p>
 <h2 id="ピン配置">ピン配置</h2>
 <p><a href="./ac08_pinassign.jpg"><img src="./ac08_pinassign.jpg" width="750"></a></br></p>
 <p>ピン配置のデータは、<a href="https://github.com/Leafony/Documents/tree/main/Leaf-pinassign">こちら</a>を参照して下さい。</br></p>
 <h2 id="サンプルアプリ">サンプルアプリ</h2>
-<p>（仕掛中）STM32 MCUとWi-Fi Maryリーフを使用したサンプルアプリです。このサンプルアプリを使用する場合は、
-<a href="https://github.com/Leafony/WiFi101Leafony">WiFi101Leafony.h</a>のライブラリをインクルードしてください。ソースコードは、Arduino IDEとPlatformIO IDのふたつで用意しています。STM32 MCUの開発環境の設定は、<a href="https://docs.leafony.com/docs/environment/#stm32-mcu-%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83">こちら</a>を参照して下さい。</br></p>
-<h3 id="xxのバージョンチェック">xxのバージョンチェック</h3>
-<p>（仕掛中）Wi-Fiモジュール(ATWINC1500)のファームウェアのバージョン確認するサンプルアプリです。</br></p>
-<ul>
-<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_CheckFirmwareVersion">Arduinoソースコード</a></li>
-<li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_CheckFirmwareVersion">PlatformIOソースコード</a></li>
-</ul>
 <h2 id="ライブラリ">ライブラリ</h2>
 <p>本リーフに対応したライブラリがあります。<a href="/docs/environment/avr/arduino/#1-%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA">開発環境設定のページ</a>で必要なライブラリをインストールしてご利用下さい。</p>
 <h2 id="ドキュメント">ドキュメント　</h2>
 <ul>
-<li>仕様書</li>
-<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC08_LTE-M_Mary/AC08_LTE-M_Mary_Schematic.pdf">回路図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/tree/master/AC08_LTE-M_Mary">回路図</a></li>
+<li><a href="">部品実装図</a></li>
 </ul>
 <h1 id="at-commands">AT Commands</h1>
 <p>ATコマンドは、3GPP（携帯通信の国際標準団体）によって標準化され、モデムの動作や接続先を設定出来ます。
@@ -4521,7 +4504,15 @@ LTE-M Mary用のライブラリを公開しているので、簡単にプログ�
 </ul>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
-</p>
+</p><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>U.FLコネクタはヒロセ電機の製品であり、国際規格ではありません。異種メーカのコネクタを組合せて使用する場合は自己責任で使用して下さい。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
         <div class="section-index">
     
     
