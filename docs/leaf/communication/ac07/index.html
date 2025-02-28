@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.cf549d8cbd91f9355fed7cdb54cba4c59e4492e9bd9c14e606be0192cb82f47b5d6f88b79f2b55fb4e1da5df5a4fe5467a3afc73cd32452926efee0ba921d0c3.json"
+  data-offline-search-index-json-src="/offline-search-index.96abd76178165644593fe3ffc717287cb02076b7013268234240a21aa1355b42a3933c8e7a10220d19ef150dc6a8cd76d9fd5579e1a8d3152838d1f021d22897.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.cf549d8cbd91f9355fed7cdb54cba4c59e4492e9bd9c14e606be0192cb82f47b5d6f88b79f2b55fb4e1da5df5a4fe5467a3afc73cd32452926efee0ba921d0c3.json"
+  data-offline-search-index-json-src="/offline-search-index.96abd76178165644593fe3ffc717287cb02076b7013268234240a21aa1355b42a3933c8e7a10220d19ef150dc6a8cd76d9fd5579e1a8d3152838d1f021d22897.json"
   data-offline-search-base-href="/"
 >
 
@@ -4097,27 +4097,10 @@
 <li><a href="https://docs.arduino.cc/learn/communication/lorawan-101/">The Arduino Guide to LoRa® and LoRaWAN®</a></li>
 </ul>
 <h2 id="外観">外観</h2>
-<table>
-<thead>
-<tr>
-<th>Item</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Chip antenna</td>
-<td>STAF 1019-085A</td>
-</tr>
-<tr>
-<td>RF Coaxial Connector</td>
-<td>Molex 734120110(U.FL Compatible)<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></td>
-</tr>
-</tbody>
-</table>
+<p><a href="./AP07_Fig1.jpg"><img src="./AP07_Fig1.jpg" width="500"></a></br></p>
 <h2 id="アンテナ">アンテナ</h2>
 <p>LoRa Maryは、工事設計認証されたChip antenna(1019-085A)を搭載しているため、そのままでLoRaの通信を使用することが出来ます。
-より遠くまで飛ばしたい場合は、他のアンテナを取り付けてください。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>　以下のアンテナは、工事設計認証が取得されています。詳しくは、<a href="https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support">こちら</a>を参照して下さい。</br>
+より遠くまで飛ばしたい場合は、他のアンテナを取り付けてください。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>　以下のアンテナは、工事設計認証が取得されています。詳しくは、<a href="https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support">こちら</a>を参照して下さい。</br>
 </br></p>
 <table>
 <thead>
@@ -4132,7 +4115,7 @@
 </thead>
 <tbody>
 <tr>
-<td align="left">1019-085A<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></td>
+<td align="left">1019-085A<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
 <td align="left">STAF Corporation</td>
 <td align="left">Monopole (λ/4)</td>
 <td align="left"></td>
@@ -4140,7 +4123,7 @@
 <td align="left">Chip antenna</td>
 </tr>
 <tr>
-<td align="left">1018-504B<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></td>
+<td align="left">1018-504B<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
 <td align="left">STAF Corporation</td>
 <td align="left">Dipole (λ/2)</td>
 <td align="left">U.FL</td>
@@ -4151,7 +4134,7 @@
 <td align="left">1019-008A</td>
 <td align="left">STAF Corporation</td>
 <td align="left">Monopole (λ/2)</td>
-<td align="left">SMA<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></td>
+<td align="left">SMA<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></td>
 <td align="left">L160mm, φ9mm</td>
 <td align="left">External antenna</td>
 </tr>
@@ -4241,16 +4224,13 @@
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>U.FLコネクタはヒロセ電機の製品であり、国際規格ではありません。異種メーカのコネクタを組合せて使用する場合は自己責任で使用して下さい。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Chip antennaと他のアンテナを一緒に使用することは出来ません。他のアンテナを使用する場合は、0Ω抵抗を付替てください。　 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
-<p>Chip antennaと他のアンテナを一緒に使用することは出来ません。他のアンテナを使用する場合は、0Ω抵抗を付替てください。　 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>村田製作所の「おすすめアンテナリスト」には掲載されていませんが、工事設計認証済です。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:3" role="doc-endnote">
-<p>村田製作所の「おすすめアンテナリスト」には掲載されていませんが、工事設計認証済です。 <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:4" role="doc-endnote">
-<p>SMAは、SUB-MINIATURE TYPE Aの略で、MIL規格です。U.FL-SMA 変換ケーブルを使用することでLoRa Maryと接続することが出来ます。 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>SMAは、SUB-MINIATURE TYPE Aの略で、MIL規格です。U.FL-SMA 変換ケーブルを使用することでLoRa Maryと接続することが出来ます。 <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -4603,7 +4583,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 27, 2025
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 28, 2025
 </div>
 </div>
 

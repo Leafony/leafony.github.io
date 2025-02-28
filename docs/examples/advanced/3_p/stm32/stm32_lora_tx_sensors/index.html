@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.cf549d8cbd91f9355fed7cdb54cba4c59e4492e9bd9c14e606be0192cb82f47b5d6f88b79f2b55fb4e1da5df5a4fe5467a3afc73cd32452926efee0ba921d0c3.json"
+  data-offline-search-index-json-src="/offline-search-index.96abd76178165644593fe3ffc717287cb02076b7013268234240a21aa1355b42a3933c8e7a10220d19ef150dc6a8cd76d9fd5579e1a8d3152838d1f021d22897.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.cf549d8cbd91f9355fed7cdb54cba4c59e4492e9bd9c14e606be0192cb82f47b5d6f88b79f2b55fb4e1da5df5a4fe5467a3afc73cd32452926efee0ba921d0c3.json"
+  data-offline-search-index-json-src="/offline-search-index.96abd76178165644593fe3ffc717287cb02076b7013268234240a21aa1355b42a3933c8e7a10220d19ef150dc6a8cd76d9fd5579e1a8d3152838d1f021d22897.json"
   data-offline-search-base-href="/"
 >
 
@@ -3965,7 +3965,7 @@
     <li><a href="#はじめに">はじめに</a></li>
     <li><a href="#用意するもの">用意するもの</a>
       <ul>
-        <li><a href="#送信側のリーフの構成">送信側のリーフの構成</a></li>
+        <li><a href="#送信側の構成">送信側の構成</a></li>
         <li><a href="#受信側のリーフの構成">受信側のリーフの構成</a></li>
       </ul>
     </li>
@@ -4057,30 +4057,34 @@
 	<h2 id="はじめに">はじめに</h2>
 <p>このチュートリアルでは、温度、湿度、照度、加速度のデータを、LoRa Mary で通信をする方法を紹介します。</p>
 <h2 id="用意するもの">用意するもの</h2>
-<h3 id="送信側のリーフの構成">送信側のリーフの構成</h3>
+<h3 id="送信側の構成">送信側の構成</h3>
 <ul>
 <li>AI01 4-Sensors</li>
-<li>AC07 LoRa Mary</li>
+<li>AZ01 USB</li>
 <li>AP03 STM32 MCU</li>
+<li>AC07 LoRa Mary</li>
 <li>AV04 2V～4.5V</li>
-<li>AZ67 AAA battery holder</li>
 <li>AZ63 Nut Plate</li>
-<li>M2X12mmネジ 2本</li>
+<li>M2X16mmネジ 2本</li>
+<li>AZ67 AAA battery holder</li>
 <li>単4電池 3本</li>
 </ul>
+<p><a href="./AP07_Fig2.jpg"><img src="./AP07_Fig2.jpg" width="300"></a></br></p>
 <h3 id="受信側のリーフの構成">受信側のリーフの構成</h3>
-<p>LoRa Maryのアンテナ部分が、USBケーブルで覆われないようにするため、Back to backを使用します。</p>
 <ul>
-<li>AC07 LoRa Mary</li>
+<li>AI04 LCD</li>
 <li>AP03 STM32</li>
-<li>AZ01 USB</li>
+<li>AC07 LoRa Mary</li>
 <li>AX07 Back to back</li>
+<li>AZ01 USB</li>
+<li>AV04 2V～4.5V</li>
 <li>AZ63 Nut Plate 2P</li>
-<li>M2X8mmネジ 2本</li>
 <li>M2X10mmネジ 2本</li>
+<li>M2X14mmネジ 2本</li>
 <li>USBケーブル</li>
 <li>PC</li>
 </ul>
+<p><a href="./AP07_Fig3.jpg"><img src="./AP07_Fig3.jpg" width="300"></a></br></p>
 <h2 id="ソースコード">ソースコード</h2>
 <p>ソースコードは、Arduino IDEとPlatformIO IDのふたつで用意しています。STM32 MCUの開発環境の設定は、<a href="https://docs.leafony.com/docs/environment/#stm32-mcu-%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83">こちら</a>を参照して下さい。</br></p>
 <h4 id="送信側">送信側</h4>
@@ -4445,7 +4449,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 26, 2025
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 28, 2025
 </div>
 </div>
 

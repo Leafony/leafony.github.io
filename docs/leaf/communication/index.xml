@@ -765,27 +765,10 @@
 &lt;li&gt;&lt;a href=&#34;https://docs.arduino.cc/learn/communication/lorawan-101/&#34;&gt;The Arduino Guide to LoRa® and LoRaWAN®&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;外観&#34;&gt;外観&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Item&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Chip antenna&lt;/td&gt;
-&lt;td&gt;STAF 1019-085A&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;RF Coaxial Connector&lt;/td&gt;
-&lt;td&gt;Molex 734120110(U.FL Compatible)&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;&lt;a href=&#34;./AP07_Fig1.jpg&#34;&gt;&lt;img src=&#34;./AP07_Fig1.jpg&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;アンテナ&#34;&gt;アンテナ&lt;/h2&gt;
 &lt;p&gt;LoRa Maryは、工事設計認証されたChip antenna(1019-085A)を搭載しているため、そのままでLoRaの通信を使用することが出来ます。
-より遠くまで飛ばしたい場合は、他のアンテナを取り付けてください。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;　以下のアンテナは、工事設計認証が取得されています。詳しくは、&lt;a href=&#34;https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support&#34;&gt;こちら&lt;/a&gt;を参照して下さい。&lt;/br&gt;
+より遠くまで飛ばしたい場合は、他のアンテナを取り付けてください。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;　以下のアンテナは、工事設計認証が取得されています。詳しくは、&lt;a href=&#34;https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support&#34;&gt;こちら&lt;/a&gt;を参照して下さい。&lt;/br&gt;
 &lt;/br&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -800,7 +783,7 @@
 &lt;/thead&gt;
 &lt;tbody&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;1019-085A&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1019-085A&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;STAF Corporation&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Monopole (λ/4)&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
@@ -808,7 +791,7 @@
 &lt;td align=&#34;left&#34;&gt;Chip antenna&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
-&lt;td align=&#34;left&#34;&gt;1018-504B&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;1018-504B&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;STAF Corporation&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Dipole (λ/2)&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;U.FL&lt;/td&gt;
@@ -819,7 +802,7 @@
 &lt;td align=&#34;left&#34;&gt;1019-008A&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;STAF Corporation&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;Monopole (λ/2)&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;SMA&lt;sup id=&#34;fnref:4&#34;&gt;&lt;a href=&#34;#fn:4&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;4&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;SMA&lt;sup id=&#34;fnref:3&#34;&gt;&lt;a href=&#34;#fn:3&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;3&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;L160mm, φ9mm&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;External antenna&lt;/td&gt;
 &lt;/tr&gt;
@@ -909,16 +892,13 @@
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;U.FLコネクタはヒロセ電機の製品であり、国際規格ではありません。異種メーカのコネクタを組合せて使用する場合は自己責任で使用して下さい。 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Chip antennaと他のアンテナを一緒に使用することは出来ません。他のアンテナを使用する場合は、0Ω抵抗を付替てください。　 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Chip antennaと他のアンテナを一緒に使用することは出来ません。他のアンテナを使用する場合は、0Ω抵抗を付替てください。　 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;村田製作所の「おすすめアンテナリスト」には掲載されていませんが、工事設計認証済です。 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:3&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;村田製作所の「おすすめアンテナリスト」には掲載されていませんが、工事設計認証済です。 &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;SMAは、SUB-MINIATURE TYPE Aの略で、MIL規格です。U.FL-SMA 変換ケーブルを使用することでLoRa Maryと接続することが出来ます。 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;SMAは、SUB-MINIATURE TYPE Aの略で、MIL規格です。U.FL-SMA 変換ケーブルを使用することでLoRa Maryと接続することが出来ます。 &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
@@ -987,28 +967,7 @@ LTE-M Mary用のライブラリを公開しているので、簡単にプログ�
 &lt;/table&gt;
 &lt;p&gt;　&lt;/p&gt;
 &lt;h2 id=&#34;外観&#34;&gt;外観&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;Item&lt;/th&gt;
-&lt;th&gt;Description&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Chip antenna&lt;/td&gt;
-&lt;td&gt;STAF 1019-085A&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;RF Coaxial Connector&lt;/td&gt;
-&lt;td&gt;Molex 734120110(U.FL Compatible)&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;nanoSIM card slot&lt;/td&gt;
-&lt;td&gt;Insert a nanoSIM card&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+&lt;p&gt;&lt;a href=&#34;./AP08_Fig1.jpg&#34;&gt;&lt;img src=&#34;./AP08_Fig1.jpg&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./ac08_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ac08_pinassign.jpg&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;p&gt;ピン配置のデータは、&lt;a href=&#34;https://github.com/Leafony/Documents/tree/main/Leaf-pinassign&#34;&gt;こちら&lt;/a&gt;を参照して下さい。&lt;/br&gt;&lt;/p&gt;
@@ -1393,15 +1352,7 @@ LTE-M Mary用のライブラリを公開しているので、簡単にプログ�
 &lt;/ul&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
-&lt;/p&gt;&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;U.FLコネクタはヒロセ電機の製品であり、国際規格ではありません。異種メーカのコネクタを組合せて使用する場合は自己責任で使用して下さい。 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/section&gt;
-
+&lt;/p&gt;
       </description>
     </item>
     
