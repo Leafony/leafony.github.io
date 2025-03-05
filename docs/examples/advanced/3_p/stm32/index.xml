@@ -353,8 +353,8 @@ STM32リーフからI2CでATECC608Aにキーペア発行命令を送り、公開
 &lt;h4 id=&#34;受信側&#34;&gt;受信側&lt;/h4&gt;
 &lt;p&gt;Measuring Sensor Data と Measuring RSSI は、どちらも同じコードです。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LoRa_Receiver&#34;&gt;Arduinoソースコード&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_Receiver&#34;&gt;PlatformIOソースコード&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LoRa_Receiver_LCD&#34;&gt;Arduinoソースコード&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_Receiver_LCD&#34;&gt;PlatformIOソースコード&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;動作&#34;&gt;動作&lt;/h2&gt;
 &lt;h3 id=&#34;measuring-sensor-data-1&#34;&gt;Measuring Sensor Data&lt;/h3&gt;
