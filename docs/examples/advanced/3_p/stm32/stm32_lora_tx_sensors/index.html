@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8952fc42783379cee77d9816e119af7b0c5289524aefcd4801fdeb224641f452a39886ada14baf7775c79be3c6e045fc9a5b4b29c9f679c336c5355fc62ce3ef.json"
+  data-offline-search-index-json-src="/offline-search-index.85816182eed0bcf6b2ca26526c1174eacf58dd3a56af0fdf579cba2a0a96d5617bf09fab7583a29d7d4923dbbf7dd0f647d15577b50be9060ee3418aceff5f07.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.8952fc42783379cee77d9816e119af7b0c5289524aefcd4801fdeb224641f452a39886ada14baf7775c79be3c6e045fc9a5b4b29c9f679c336c5355fc62ce3ef.json"
+  data-offline-search-index-json-src="/offline-search-index.85816182eed0bcf6b2ca26526c1174eacf58dd3a56af0fdf579cba2a0a96d5617bf09fab7583a29d7d4923dbbf7dd0f647d15577b50be9060ee3418aceff5f07.json"
   data-offline-search-base-href="/"
 >
 
@@ -3962,7 +3962,12 @@
 
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#はじめに">はじめに</a></li>
+    <li><a href="#はじめに">はじめに</a>
+      <ul>
+        <li><a href="#measuring-sensor-data">Measuring Sensor Data</a></li>
+        <li><a href="#measuring-rssi">Measuring RSSI</a></li>
+      </ul>
+    </li>
     <li><a href="#用意するもの">用意するもの</a>
       <ul>
         <li><a href="#送信側の構成">送信側の構成</a></li>
@@ -3974,7 +3979,12 @@
         <li></li>
       </ul>
     </li>
-    <li><a href="#動作">動作</a></li>
+    <li><a href="#動作">動作</a>
+      <ul>
+        <li><a href="#measuring-sensor-data-1">Measuring Sensor Data</a></li>
+        <li><a href="#measuring-rssi-1">Measuring RSSI</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
 
@@ -4055,13 +4065,17 @@
         
 	
 	<h2 id="はじめに">はじめに</h2>
+<h3 id="measuring-sensor-data">Measuring Sensor Data</h3>
+<p>温度・湿度・照度・加速度のセンサーデータをLoRaを使ってパソコンへ送信するチュートリアルです。</p>
+<h3 id="measuring-rssi">Measuring RSSI</h3>
+<p>電波強度（RSSI）を測定するチュートリアルです。送信側も受信側も電池駆動なので屋外の設置現場のLoRaの電波強度の測定が容易に出来ます。</p>
 <p><img src="AP07_Fig4.jpg" alt="AP07_Fig4.jpg"></p>
-<p>このチュートリアルでは、温度、湿度、照度、加速度のデータを、LoRa Mary で通信をする方法を紹介します。</p>
 <h2 id="用意するもの">用意するもの</h2>
+<p>送信用と受信用の両方に対して、以下のリーフを組み立てることで、Measuring Sensor Data と Measuring RSSI の両方のチュートリアルを実施できます。</p>
 <h3 id="送信側の構成">送信側の構成</h3>
 <ul>
 <li>AI01 4-Sensors</li>
-<li>AZ01 USB</li>
+<li>AZ01 USB<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
 <li>AP03 STM32 MCU</li>
 <li>AC07 LoRa Mary</li>
 <li>AV04 2V～4.5V</li>
@@ -4073,12 +4087,12 @@
 <p><a href="./AP07_Fig2.jpg"><img src="./AP07_Fig2.jpg" width="300"></a></br></p>
 <h3 id="受信側のリーフの構成">受信側のリーフの構成</h3>
 <ul>
-<li>AI04 LCD</li>
+<li>AI04 LCD<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></li>
 <li>AP03 STM32</li>
 <li>AC07 LoRa Mary</li>
-<li>AX07 Back to back</li>
-<li>AZ01 USB</li>
-<li>AV04 2V～4.5V</li>
+<li>AX07 Back to bac</li>
+<li>AZ01 USB<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
+<li>AV04 2V～4.5V<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></li>
 <li>AZ63 Nut Plate 2P</li>
 <li>M2X10mmネジ 2本</li>
 <li>M2X14mmネジ 2本</li>
@@ -4087,21 +4101,47 @@
 </ul>
 <p><a href="./AP07_Fig3.jpg"><img src="./AP07_Fig3.jpg" width="300"></a></br></p>
 <h2 id="ソースコード">ソースコード</h2>
-<p>ソースコードは、Arduino IDEとPlatformIO IDのふたつで用意しています。STM32 MCUの開発環境の設定は、<a href="https://docs.leafony.com/docs/environment/#stm32-mcu-%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83">こちら</a>を参照して下さい。</br></p>
+<p>ソースコードは、Arduino IDEとPlatformIO IDのふたつで用意しています。また、STM32 MCUの開発環境の設定は、<a href="https://docs.leafony.com/docs/environment/#stm32-mcu-%E9%96%8B%E7%99%BA%E7%92%B0%E5%A2%83">こちら</a>を参照して下さい。</br></p>
 <h4 id="送信側">送信側</h4>
+<p>Measuring Sensor Data と Measuring RSSI は、どちらも同じコードです。</p>
 <ul>
 <li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LoRa_4-Sensors_Transmitter">Arduinoソースコード</a></li>
 <li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_4-Sensors_Transmitter">PlatformIOソースコード</a></li>
 </ul>
 <h4 id="受信側">受信側</h4>
+<p>Measuring Sensor Data と Measuring RSSI は、どちらも同じコードです。</p>
 <ul>
 <li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LoRa_Receiver">Arduinoソースコード</a></li>
 <li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_Receiver">PlatformIOソースコード</a></li>
 </ul>
 <h2 id="動作">動作</h2>
-<p>以下のように電池電圧(V)、温度(℃)、湿度(%)、照度(lx)、加速度XYZ(g)、RSSI(dBm)が表示されます。</br></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">Received: 6.57V,22.38℃,74.82%,322.56lx,0.06g,0.27g,0.85g, RSSI: -50
-</code></pre></div>
+<h3 id="measuring-sensor-data-1">Measuring Sensor Data</h3>
+<p>受信側のリーフに繋いだパソコンに、電圧(V)、温度(℃)、湿度(%)、照度(lx)、加速度XYZ(g)、RSSI(dBm)が表示されます。</br></p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">4.56V,25.19℃,61.27%,102.98lx,0.06g,0.27g,0.85g,-50
+</code></pre></div><h3 id="measuring-rssi-1">Measuring RSSI</h3>
+<p>LCDに、RSSI(dBm)が表示されます。</p>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">RSSI:
+-60 dBm
+</code></pre></div><p style="text-align: right">
+</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>　ソースコードを書き込む時は必要で、書き込んだら外しても構いません。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>　LCDに表示させる時は必要で、パソコンに表示させる時は不要です。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>　ソースコードを書き込む時、パソコンに表示させる時、電源を供給する時は必要で、電池でLCDに表示させる時は不要です。 <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>　電池で駆動させる時は必要で、USBから電源を供給する場合は不要です。 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
         <div class="section-index">
     
     
@@ -4450,7 +4490,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 2, 2025
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 5, 2025
 </div>
 </div>
 
