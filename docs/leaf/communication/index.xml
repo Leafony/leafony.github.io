@@ -766,9 +766,10 @@
 &lt;/ul&gt;
 &lt;h2 id=&#34;外観&#34;&gt;外観&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./AP07_Fig1.jpg&#34;&gt;&lt;img src=&#34;./AP07_Fig1.jpg&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;Molex 73412-0110は、ヒロセ電機が開発したRF同軸コネクタ(U.FLコネクタ)の互換品です。&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;アンテナ&#34;&gt;アンテナ&lt;/h2&gt;
-&lt;p&gt;LoRa Maryは、工事設計認証されたChip antenna(1019-085A)を搭載しているため、そのままでLoRaの通信を使用することが出来ます。
-より遠くまで飛ばしたい場合は、他のアンテナを取り付けてください。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;　以下のアンテナは、工事設計認証が取得されています。詳しくは、&lt;a href=&#34;https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support&#34;&gt;こちら&lt;/a&gt;を参照して下さい。&lt;/br&gt;
+&lt;p&gt;LoRa Maryは、工事設計認証されたChip antenna(1019-085A)を搭載しています。
+長距離まで通信したい場合は、外部アンテナを取り付けてください。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;　以下のアンテナは、工事設計認証が取得されています。詳しくは、&lt;a href=&#34;https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support&#34;&gt;こちら&lt;/a&gt;を参照して下さい。&lt;/br&gt;
 &lt;/br&gt;&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -892,7 +893,7 @@
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;Chip antennaと他のアンテナを一緒に使用することは出来ません。他のアンテナを使用する場合は、0Ω抵抗を付替てください。　 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Chip antennaと外部アンテナを一緒に使用することは出来ません。外部アンテナを使用する場合は、0Ω抵抗を付替てください。　 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;村田製作所の「おすすめアンテナリスト」には掲載されていませんが、工事設計認証済です。 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
@@ -968,6 +969,7 @@ LTE-M Mary用のライブラリを公開しているので、簡単にプログ�
 &lt;p&gt;　&lt;/p&gt;
 &lt;h2 id=&#34;外観&#34;&gt;外観&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./AP08_Fig1.jpg&#34;&gt;&lt;img src=&#34;./AP08_Fig1.jpg&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;Molex 73412-0110は、ヒロセ電機が開発したRF同軸コネクタ(U.FLコネクタ)の互換品です。&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./ac08_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ac08_pinassign.jpg&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;p&gt;ピン配置のデータは、&lt;a href=&#34;https://github.com/Leafony/Documents/tree/main/Leaf-pinassign&#34;&gt;こちら&lt;/a&gt;を参照して下さい。&lt;/br&gt;&lt;/p&gt;
@@ -976,8 +978,8 @@ LTE-M Mary用のライブラリを公開しているので、簡単にプログ�
 &lt;p&gt;本リーフに対応したライブラリがあります。&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#1-%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA&#34;&gt;開発環境設定のページ&lt;/a&gt;で必要なライブラリをインストールしてご利用下さい。&lt;/p&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント　&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/tree/master/AC08_LTE-M_Mary&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;&#34;&gt;部品実装図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC08_LTE-M_Mary/AC08_LTE-M_Mary_schematics.pdf&#34;&gt;回路図&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC08_LTE-M_Mary/AC08_LTE-M_Mary_mounting_drawing.pdf&#34;&gt;部品実装図&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&#34;at-commands&#34;&gt;AT Commands&lt;/h1&gt;
 &lt;p&gt;ATコマンドは、3GPP（携帯通信の国際標準団体）によって標準化され、モデムの動作や接続先を設定出来ます。
