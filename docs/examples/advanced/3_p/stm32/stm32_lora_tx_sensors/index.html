@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.85816182eed0bcf6b2ca26526c1174eacf58dd3a56af0fdf579cba2a0a96d5617bf09fab7583a29d7d4923dbbf7dd0f647d15577b50be9060ee3418aceff5f07.json"
+  data-offline-search-index-json-src="/offline-search-index.53a94a500491e587035252b6f4139536f56912e8b357cd3978cd83c98756de7e953ee561655186a5ea1b1df6c325c5ea08a540427b8d37ae3bc2e161d9d9fe53.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.85816182eed0bcf6b2ca26526c1174eacf58dd3a56af0fdf579cba2a0a96d5617bf09fab7583a29d7d4923dbbf7dd0f647d15577b50be9060ee3418aceff5f07.json"
+  data-offline-search-index-json-src="/offline-search-index.53a94a500491e587035252b6f4139536f56912e8b357cd3978cd83c98756de7e953ee561655186a5ea1b1df6c325c5ea08a540427b8d37ae3bc2e161d9d9fe53.json"
   data-offline-search-base-href="/"
 >
 
@@ -3971,7 +3971,10 @@
     <li><a href="#用意するもの">用意するもの</a>
       <ul>
         <li><a href="#送信側の構成">送信側の構成</a></li>
+        <li><a href="#measuring-sensor-data--measuring-rssi">Measuring Sensor Data / Measuring RSSI</a></li>
         <li><a href="#受信側のリーフの構成">受信側のリーフの構成</a></li>
+        <li><a href="#measuring-sensor-data-1">Measuring Sensor Data</a></li>
+        <li><a href="#measuring-rssi-1">Measuring RSSI</a></li>
       </ul>
     </li>
     <li><a href="#ソースコード">ソースコード</a>
@@ -3981,8 +3984,8 @@
     </li>
     <li><a href="#動作">動作</a>
       <ul>
-        <li><a href="#measuring-sensor-data-1">Measuring Sensor Data</a></li>
-        <li><a href="#measuring-rssi-1">Measuring RSSI</a></li>
+        <li><a href="#measuring-sensor-data-2">Measuring Sensor Data</a></li>
+        <li><a href="#measuring-rssi-2">Measuring RSSI</a></li>
       </ul>
     </li>
   </ul>
@@ -4071,8 +4074,8 @@
 <p>電波強度（RSSI）を測定するチュートリアルです。送信側も受信側も電池駆動なので屋外の設置現場のLoRaの電波強度の測定が容易に出来ます。</p>
 <p><img src="AP07_Fig4.jpg" alt="AP07_Fig4.jpg"></p>
 <h2 id="用意するもの">用意するもの</h2>
-<p>送信用と受信用の両方に対して、以下のリーフを組み立てることで、Measuring Sensor Data と Measuring RSSI の両方のチュートリアルを実施できます。</p>
 <h3 id="送信側の構成">送信側の構成</h3>
+<h3 id="measuring-sensor-data--measuring-rssi">Measuring Sensor Data / Measuring RSSI</h3>
 <ul>
 <li>AI01 4-Sensors</li>
 <li>AZ01 USB<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
@@ -4086,18 +4089,30 @@
 </ul>
 <p><a href="./AP07_Fig2.jpg"><img src="./AP07_Fig2.jpg" width="300"></a></br></p>
 <h3 id="受信側のリーフの構成">受信側のリーフの構成</h3>
+<h3 id="measuring-sensor-data-1">Measuring Sensor Data</h3>
 <ul>
-<li>AI04 LCD<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></li>
+<li>AZ01 USB</li>
+<li>AP03 STM32</li>
+<li>AC07 LoRa Mary</li>
+<li>AZ63 Nut Plate</li>
+<li>M2X10mmネジ 2本</li>
+<li>USBケーブル</li>
+<li>PC</li>
+</ul>
+<p><a href="./AP07_Fig5.jpg"><img src="./AP07_Fig5.jpg" width="300"></a></br></p>
+<h3 id="measuring-rssi-1">Measuring RSSI</h3>
+<ul>
+<li>AI04 LCD</li>
 <li>AP03 STM32</li>
 <li>AC07 LoRa Mary</li>
 <li>AX07 Back to bac</li>
-<li>AZ01 USB<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></li>
-<li>AV04 2V～4.5V<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></li>
+<li>AZ01 USB<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></li>
+<li>AV04 2V～4.5V</li>
 <li>AZ63 Nut Plate 2P</li>
 <li>M2X10mmネジ 2本</li>
 <li>M2X14mmネジ 2本</li>
-<li>USBケーブル</li>
-<li>PC</li>
+<li>AZ67 AAA battery holder</li>
+<li>単4電池 3本</li>
 </ul>
 <p><a href="./AP07_Fig3.jpg"><img src="./AP07_Fig3.jpg" width="300"></a></br></p>
 <h2 id="ソースコード">ソースコード</h2>
@@ -4115,10 +4130,13 @@
 <li><a href="https://github.com/Leafony/platformio-sample-projects/tree/main/stm32/STM32_LoRa_Receiver_LCD">PlatformIOソースコード</a></li>
 </ul>
 <h2 id="動作">動作</h2>
-<h3 id="measuring-sensor-data-1">Measuring Sensor Data</h3>
+<h3 id="measuring-sensor-data-2">Measuring Sensor Data</h3>
 <p>受信側のリーフに繋いだパソコンに、電圧(V)、温度(℃)、湿度(%)、照度(lx)、加速度XYZ(g)、RSSI(dBm)が表示されます。</br></p>
-<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">4.56V,25.19℃,61.27%,102.98lx,0.06g,0.27g,0.85g,-50
-</code></pre></div><h3 id="measuring-rssi-1">Measuring RSSI</h3>
+<div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">=== Received Packet ===
+Message: 4.51V,25.55℃,34.76%,262.24lx,-0.04g,-0.01g,0.99g
+RSSI: -44 dBm
+======================
+</code></pre></div><h3 id="measuring-rssi-2">Measuring RSSI</h3>
 <p>LCDに、RSSI(dBm)が表示されます。</p>
 <div class="highlight"><pre style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">RSSI:
 -60 dBm
@@ -4129,15 +4147,6 @@
 <ol>
 <li id="fn:1" role="doc-endnote">
 <p>　ソースコードを書き込む時は必要で、書き込んだら外しても構いません。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:2" role="doc-endnote">
-<p>　LCDに表示させる時は必要で、パソコンに表示させる時は不要です。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:3" role="doc-endnote">
-<p>　ソースコードを書き込む時、パソコンに表示させる時、電源を供給する時は必要で、電池でLCDに表示させる時は不要です。 <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
-<li id="fn:4" role="doc-endnote">
-<p>　電池で駆動させる時は必要で、USBから電源を供給する場合は不要です。 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -4490,7 +4499,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 5, 2025
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 6, 2025
 </div>
 </div>
 
