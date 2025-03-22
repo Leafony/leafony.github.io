@@ -151,7 +151,7 @@
         
         
         &lt;h2 id=&#34;はじめに&#34;&gt;はじめに&lt;/h2&gt;
-&lt;p&gt;VSCode(Visual Studio Code)は、Microsoft社が提供するエディターです。PlatformIO IDEは、VSCodeの拡張機能で、ライブラリやボードのバージョンがプロジェクト毎に管理されます。&lt;/br&gt;
+&lt;p&gt;VSCode(Visual Studio Code)は、Microsoft社が提供するエディターです。PlatformIO IDEは、VSCodeの拡張機能で、ライブラリやボードのバージョンがプロジェクト毎に管理されます。。&lt;/br&gt;
 &lt;/br&gt;
 &lt;strong&gt;PlatformIOの公式ドキュメント&lt;/strong&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -212,18 +212,15 @@ Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み。v2.5.0は動
 &lt;li&gt;Framework:&lt;code&gt;Arduino &lt;/code&gt;&lt;/br&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;
-&lt;p&gt;C:\Users\ユーザ名\ .platformio の下に、①と②のふたつのフォルダが出来ていることを確認して下さい。&lt;/br&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;次に、③と④をGitHubからダウンロードしてパソコンに保存します。③は追加で、④は上書きです。&lt;/br&gt;&lt;/p&gt;
-&lt;/li&gt;
+&lt;li&gt;C:\Users\ユーザ名\ .platformio の下に、①と②のふたつのフォルダが出来ていることを確認して下さい。&lt;/br&gt;
+します&lt;/li&gt;
+&lt;li&gt;次に、③と④をGitHubからダウンロードしてパソコンに保存します。③は追加し、④は上書きします。&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;https://github.com/Leafony/platformio-LEAFONY_AP03&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;6&#34;&gt;
-&lt;li&gt;Project Wizardの&lt;code&gt;Board&lt;/code&gt;の検索窓に&lt;code&gt;LEAFONY_AP03&lt;/code&gt;が表示されることを確認して下さい。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;Project Wizardの&lt;code&gt;Board&lt;/code&gt;の検索窓に&lt;code&gt;LEAFONY_AP03(Leafony)&lt;/code&gt;、&lt;code&gt;Leafony Systems AP03&lt;/code&gt;が出てきます。&lt;code&gt;LEAFONY_AP03(Leafony)&lt;/code&gt;を選択してください。&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/br&gt;
 &lt;h3 id=&#34;プログラムの保存場所の変更&#34;&gt;プログラムの保存場所の変更&lt;/h3&gt;
@@ -264,7 +261,7 @@ Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み。v2.5.0は動
 &lt;/ol&gt;
 &lt;ul&gt;
 &lt;li&gt;Name:&lt;code&gt;STM32_Hello_World_Pjt&lt;/code&gt; &lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;Board:&lt;code&gt;LEAFONY_AP03&lt;/code&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;Board:&lt;code&gt;LEAFONY_AP03(Leafony)&lt;/code&gt;&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;Framework:&lt;code&gt;Arduino &lt;/code&gt;&lt;/br&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;ol start=&#34;4&#34;&gt;
