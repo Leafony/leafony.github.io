@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.168a4aa8423c49d35316aad8b8f3f102d94d04f8e84c74f2c1dfe6ef93005145c5090b496fed8d16382a13dd76fc60028d363eae4f8f0c176414af7a21c6b430.json"
+  data-offline-search-index-json-src="/offline-search-index.c05877508763c8de04e66af4ae47bd2d2cc99120b73bd6e2861526d04b53396b491178c43051541a4404de386e403f78889b20874240c1c9ed7a8636ae298eac.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.168a4aa8423c49d35316aad8b8f3f102d94d04f8e84c74f2c1dfe6ef93005145c5090b496fed8d16382a13dd76fc60028d363eae4f8f0c176414af7a21c6b430.json"
+  data-offline-search-index-json-src="/offline-search-index.c05877508763c8de04e66af4ae47bd2d2cc99120b73bd6e2861526d04b53396b491178c43051541a4404de386e403f78889b20874240c1c9ed7a8636ae298eac.json"
   data-offline-search-base-href="/"
 >
 
@@ -3993,7 +3993,6 @@
         <li><a href="#adコンバータ">ADコンバータ</a></li>
       </ul>
     </li>
-    <li><a href="#ブロック図">ブロック図</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
     <li><a href="#tips">Tips</a>
       <ul>
@@ -4066,7 +4065,8 @@
 <a href="./av06_b_small.jpg"><img src="./av06_b_small.jpg" width="200"></a>
 <a href="./av06_p_small.jpg"><img src="./av06_p_small.jpg" width="200"></a></p>
 <h2 id="特徴">特徴</h2>
-<p>（仕掛中）JST製SHコネクタを実装し、1.8～5.5Vの定格電池電圧を昇降圧電源回路により3.2Vに変換し、3.2Vを各リーフに供給するSolar充電リーフです。3.2Vをオン/オフするためのスイッチを実装しています。また、マイコンや通信モジュールがハングアップした場合でも、マイコンリセットによる復帰が可能なWatchdog ICを追加しています。この事で、例えば保守の難しい条件で、24時間動作の信頼性が必要な機器にも対応可能となっています。接続可能な電池は乾電池2～3本を想定しています。</p>
+<p>1.8～5.5Vの電池電圧を昇降圧電源回路により3.3Vに変換し、出力電圧3.3V、出力電流1.0Aを各リーフに供給するリーフで、電池電圧をモニターするためのADコンバータも実装しています。
+JST製PHコネクタが搭載されており、電池は乾電池2～3本接続可能です。</br></p>
 <h2 id="性能">性能　</h2>
 <h3 id="外形サイズ">外形サイズ</h3>
 <table>
@@ -4079,7 +4079,7 @@
 <tbody>
 <tr>
 <td align="left">Dimension     　</td>
-<td align="left">W23×D21×H6.2mm</td>
+<td align="left">W23×D20×H5.6mm</td>
 </tr>
 </tbody>
 </table>
@@ -4094,27 +4094,19 @@
 <tbody>
 <tr>
 <td align="left">Part number</td>
-<td align="left">RP604K331B-TR</td>
+<td align="left">TPS631010YBGR</td>
 </tr>
 <tr>
 <td align="left">Battery voltage</td>
-<td align="left">1.8～5.5V</td>
+<td align="left">1.6V～5.5V</td>
 </tr>
 <tr>
 <td align="left">Output voltage</td>
-<td align="left">3.3V±2%</td>
-</tr>
-<tr>
-<td align="left">Controlling method</td>
-<td align="left">PWM/PFM Automatic switching control</td>
+<td align="left">3.3V±0.3V</td>
 </tr>
 <tr>
 <td align="left">Maximum output current</td>
-<td align="left">300mA (when step down)</td>
-</tr>
-<tr>
-<td align="left">Protection circuit</td>
-<td align="left">Over current protection / Thermal shutdown</td>
+<td align="left">1A</td>
 </tr>
 </tbody>
 </table>
@@ -4151,10 +4143,8 @@
 </tbody>
 </table>
 <br>
-<h2 id="ブロック図">ブロック図</h2>
-<p><a href="./av06_block.png"><img src="./av06_block.png" width="250"></a></br></p>
 <h2 id="ピン配置">ピン配置</h2>
-<p><a href="./av01-6_pinassign.png"><img src="./av01-6_pinassign.png" width="750"></a></br></p>
+<p><a href="./av01-4_pinassign.png"><img src="./av01-4_pinassign.png" width="750"></a></br></p>
 <p>ピン配置のデータは、<a href="https://github.com/Leafony/Documents/tree/main/Leaf-pinassign">こちら</a>を参照して下さい。</br></p>
 <h2 id="tips">Tips</h2>
 <h3 id="スイッチコネクタについて">スイッチ、コネクタについて</h3>
@@ -4173,7 +4163,7 @@
 </tr>
 <tr>
 <td align="left">Connector</td>
-<td align="left">JST SH connector</td>
+<td align="left">JST PH connector</td>
 </tr>
 </tbody>
 </table>
@@ -4183,13 +4173,8 @@
 </ul>
 <h2 id="ドキュメント">ドキュメント</h2>
 <ul>
-<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV06_1.8V~5.5V/AV06_1.8V~5.5V_SpecSheet_JA.pdf">仕様書</a></li>
-<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV06_1.8V~5.5V/AV06_1.8V~5.5V_Schematic.pdf">回路図</a></li>
-<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV06_1.8V~5.5V/AV06_1.8V~5.5V_ComponentMarking_F.pdf">部品配置図(表面)</a></li>
-<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV06_1.8V~5.5V/AV06_1.8V~5.5V_ComponentMarking_B.pdf">部品配置図(裏面)</a></li>
-<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV06_1.8V~5.5V/AV06_1.8V~5.5V_PCBLayout.zip">レイアウト図(Zuken)</a></li>
-<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV06_1.8V~5.5V/AV06_1.8V~5.5V_PCBLayout_dxf.zip">レイアウト図(dxf)</a></li>
-<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV06_1.8V~5.5V/AV06_1.8V~5.5V_3D.zip">3D図面</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV06_1.8V%EF%BD%9E5.5V/AV06_1.8V%EF%BD%9E5.5V_schematic.pdf">回路図</a></li>
+<li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AV06_1.8V%EF%BD%9E5.5V/AV06_1.8V%EF%BD%9E5.5V_schematic.pdf">部品配置図</a></li>
 </ul>
 <h2 id="変更履歴">変更履歴</h2>
 <ul>
@@ -4548,7 +4533,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 4, 2025
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 24, 2025
 </div>
 </div>
 
