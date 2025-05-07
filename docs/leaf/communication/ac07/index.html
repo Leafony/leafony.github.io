@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5ed3d15999115610eb5f9a7ed4249af92ced2da03f0b371c60c2005bf2b1f69d3d807a05660c382ad784f294143c824652940878e611312fc342da104904037f.json"
+  data-offline-search-index-json-src="/offline-search-index.0697480fc06117cd4c1093ae0fd0170175ef9d2a473e1d5a7d5dce25e9f499601d317d8bd6fd6fcebb4bdcb4ad09f0411d0b7913e721c9b4e975caf745e61605.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5ed3d15999115610eb5f9a7ed4249af92ced2da03f0b371c60c2005bf2b1f69d3d807a05660c382ad784f294143c824652940878e611312fc342da104904037f.json"
+  data-offline-search-index-json-src="/offline-search-index.0697480fc06117cd4c1093ae0fd0170175ef9d2a473e1d5a7d5dce25e9f499601d317d8bd6fd6fcebb4bdcb4ad09f0411d0b7913e721c9b4e975caf745e61605.json"
   data-offline-search-base-href="/"
 >
 
@@ -3996,7 +3996,8 @@
     <li><a href="#ドキュメント">ドキュメント</a></li>
     <li><a href="#tips">Tips</a>
       <ul>
-        <li><a href="#lora-mary-firmware-の書込み方">LoRa Mary Firmware の書込み方</a></li>
+        <li><a href="#stlinkstm32cubeprogrammeを使ったfwの書き込み方">STLINK/STM32CubeProgrammeを使ったFWの書き込み方</a></li>
+        <li><a href="#fp-10c-flashを使ったfwの書き込み方">FP-10/C-Flashを使ったFWの書き込み方</a></li>
         <li><a href="#spreading-factorsf-とbandwidthbw">Spreading Factor(SF) とBandwidth(BW)</a></li>
       </ul>
     </li>
@@ -4081,7 +4082,7 @@
 </tr>
 <tr>
 <td>Chip Set</td>
-<td>SX1276,STM32L</td>
+<td>SX1276,STM32L072CZ</td>
 </tr>
 <tr>
 <td>Secure Element</td>
@@ -4181,7 +4182,7 @@
 <li><a href="https://github.com/Leafony/HW-Design-Files/blob/master/AC07_LoRa_Mary/AC07_LoRa_Mary_mounting_drawing.pdf">部品実装図</a></li>
 </ul>
 <h2 id="tips">Tips</h2>
-<h3 id="lora-mary-firmware-の書込み方">LoRa Mary Firmware の書込み方</h3>
+<h3 id="stlinkstm32cubeprogrammeを使ったfwの書き込み方">STLINK/STM32CubeProgrammeを使ったFWの書き込み方</h3>
 <ol>
 <li>用意するもの
 <ul>
@@ -4201,6 +4202,45 @@
 </ul>
 </li>
 <li><code>Start Programming</code>をクリックし、<code>Download verified successfully</code>が表示されたらokです。</li>
+</ol>
+<h3 id="fp-10c-flashを使ったfwの書き込み方">FP-10/C-Flashを使ったFWの書き込み方</h3>
+<ol>
+<li>
+<p>用意するもの</p>
+<ul>
+<li>LoRa Mary、Shield、ネジ</li>
+<li>3.3V電源、またはUSB(電源供給用)</li>
+<li><a href="https://www.computex.co.jp/products/fp_10/index.htm?_fsi=evfJ0avn">computex FP-10</a></li>
+<li>PCとUSBケーブル</li>
+</ul>
+</li>
+<li>
+<p>C-Flashのダウンロード
+　 以下のサイトにFP-10の裏面に記載されている<code>CODE</code>と<code>SERIAL NO</code>を入力し、C-Flash をダウンロードしてください。[^4]
+　｀https://www.computex.co.jp/support/download/cd/logon｀</p>
+</li>
+</ol>
+<p>　 [^4]：ダウンロードの仕方とライセンスの取得方法は、<a href="https://www.youtube.com/watch?v=Bex7SuHc1Cg">セットアップ</a>の動画を参考にしてください。</p>
+<ol start="3">
+<li>
+<p>FP-10へプログラムの書き込み</p>
+<ul>
+<li>FP-10をPCに繋ぎ、C-Flashを立ち上げます。</li>
+<li><code>設定</code>→<code>ターゲット設定</code>をクリックします。</li>
+<li>次に、マイコンを絞るこむため、メーカ名を指定し、フィルタは<code>STM32L07xxZ</code>を選択し、<code>起動する</code>をクリックします。</li>
+<li>初期設定のタグで、ターゲットを<code>未接続</code>、インターフェースは<code>SWD</code>、<code>1MHz</code>を選択します。</li>
+<li><code>ファイル</code>→<code>ロード</code>→<code>追加</code>をクリックし、v1.2.3のbinファイルを指定します。</li>
+<li>Flash開始アドレスは <code>0x08000000</code> なので、ロード・アドレスを<code>0x08000000</code>にします。</li>
+<li><code>データ</code>→<code>書き込み</code>で、FP-10へプログラムを書き込みます。</li>
+</ul>
+</li>
+<li>
+<p>LoRa Maryへの書き込み</p>
+<ul>
+<li>LoRa MaryとUSB(電源供給用)をShieldにネジ止めし、FP-1Oを繋げます。</li>
+<li>FP-10のPROGRAMボタンをクリックし、<code>STS</code>のLEDが点灯すれば、正常に書き込まれています。</li>
+</ul>
+</li>
 </ol>
 <h3 id="spreading-factorsf-とbandwidthbw">Spreading Factor(SF) とBandwidth(BW)</h3>
 <p>SFは、送信されるデータの「拡散率」を表し通常6から12までの値で、デフォルトはSF7です。以下に特徴を示します。</br></p>
@@ -4609,7 +4649,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 5, 2025
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 7, 2025
 </div>
 </div>
 

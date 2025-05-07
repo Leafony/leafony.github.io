@@ -726,7 +726,7 @@
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Chip Set&lt;/td&gt;
-&lt;td&gt;SX1276,STM32L&lt;/td&gt;
+&lt;td&gt;SX1276,STM32L072CZ&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;Secure Element&lt;/td&gt;
@@ -826,7 +826,7 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/HW-Design-Files/blob/master/AC07_LoRa_Mary/AC07_LoRa_Mary_mounting_drawing.pdf&#34;&gt;部品実装図&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;tips&#34;&gt;Tips&lt;/h2&gt;
-&lt;h3 id=&#34;lora-mary-firmware-の書込み方&#34;&gt;LoRa Mary Firmware の書込み方&lt;/h3&gt;
+&lt;h3 id=&#34;stlinkstm32cubeprogrammeを使ったfwの書き込み方&#34;&gt;STLINK/STM32CubeProgrammeを使ったFWの書き込み方&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;用意するもの
 &lt;ul&gt;
@@ -846,6 +846,45 @@
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;&lt;code&gt;Start Programming&lt;/code&gt;をクリックし、&lt;code&gt;Download verified successfully&lt;/code&gt;が表示されたらokです。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;fp-10c-flashを使ったfwの書き込み方&#34;&gt;FP-10/C-Flashを使ったFWの書き込み方&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;用意するもの&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LoRa Mary、Shield、ネジ&lt;/li&gt;
+&lt;li&gt;3.3V電源、またはUSB(電源供給用)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.computex.co.jp/products/fp_10/index.htm?_fsi=evfJ0avn&#34;&gt;computex FP-10&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;PCとUSBケーブル&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;C-Flashのダウンロード
+　 以下のサイトにFP-10の裏面に記載されている&lt;code&gt;CODE&lt;/code&gt;と&lt;code&gt;SERIAL NO&lt;/code&gt;を入力し、C-Flash をダウンロードしてください。[^4]
+　｀https://www.computex.co.jp/support/download/cd/logon｀&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;　 [^4]：ダウンロードの仕方とライセンスの取得方法は、&lt;a href=&#34;https://www.youtube.com/watch?v=Bex7SuHc1Cg&#34;&gt;セットアップ&lt;/a&gt;の動画を参考にしてください。&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;
+&lt;p&gt;FP-10へプログラムの書き込み&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;FP-10をPCに繋ぎ、C-Flashを立ち上げます。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;設定&lt;/code&gt;→&lt;code&gt;ターゲット設定&lt;/code&gt;をクリックします。&lt;/li&gt;
+&lt;li&gt;次に、マイコンを絞るこむため、メーカ名を指定し、フィルタは&lt;code&gt;STM32L07xxZ&lt;/code&gt;を選択し、&lt;code&gt;起動する&lt;/code&gt;をクリックします。&lt;/li&gt;
+&lt;li&gt;初期設定のタグで、ターゲットを&lt;code&gt;未接続&lt;/code&gt;、インターフェースは&lt;code&gt;SWD&lt;/code&gt;、&lt;code&gt;1MHz&lt;/code&gt;を選択します。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ファイル&lt;/code&gt;→&lt;code&gt;ロード&lt;/code&gt;→&lt;code&gt;追加&lt;/code&gt;をクリックし、v1.2.3のbinファイルを指定します。&lt;/li&gt;
+&lt;li&gt;Flash開始アドレスは &lt;code&gt;0x08000000&lt;/code&gt; なので、ロード・アドレスを&lt;code&gt;0x08000000&lt;/code&gt;にします。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;データ&lt;/code&gt;→&lt;code&gt;書き込み&lt;/code&gt;で、FP-10へプログラムを書き込みます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;LoRa Maryへの書き込み&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;LoRa MaryとUSB(電源供給用)をShieldにネジ止めし、FP-1Oを繋げます。&lt;/li&gt;
+&lt;li&gt;FP-10のPROGRAMボタンをクリックし、&lt;code&gt;STS&lt;/code&gt;のLEDが点灯すれば、正常に書き込まれています。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;spreading-factorsf-とbandwidthbw&#34;&gt;Spreading Factor(SF) とBandwidth(BW)&lt;/h3&gt;
 &lt;p&gt;SFは、送信されるデータの「拡散率」を表し通常6から12までの値で、デフォルトはSF7です。以下に特徴を示します。&lt;/br&gt;&lt;/p&gt;
