@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.0697480fc06117cd4c1093ae0fd0170175ef9d2a473e1d5a7d5dce25e9f499601d317d8bd6fd6fcebb4bdcb4ad09f0411d0b7913e721c9b4e975caf745e61605.json"
+  data-offline-search-index-json-src="/offline-search-index.f43639fdb391a5bdf375eb97ee902cedbb5e70138d60d47cd49c931bb54e9c9572f16151f3bd72d959850816c8df666d21356f2cc44acefee14da5ddf54de029.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.0697480fc06117cd4c1093ae0fd0170175ef9d2a473e1d5a7d5dce25e9f499601d317d8bd6fd6fcebb4bdcb4ad09f0411d0b7913e721c9b4e975caf745e61605.json"
+  data-offline-search-index-json-src="/offline-search-index.f43639fdb391a5bdf375eb97ee902cedbb5e70138d60d47cd49c931bb54e9c9572f16151f3bd72d959850816c8df666d21356f2cc44acefee14da5ddf54de029.json"
   data-offline-search-base-href="/"
 >
 
@@ -4215,13 +4215,12 @@
 </ul>
 </li>
 <li>
-<p>C-Flashのダウンロード
-　 以下のサイトにFP-10の裏面に記載されている<code>CODE</code>と<code>SERIAL NO</code>を入力し、C-Flash をダウンロードしてください。[^4]
-　｀https://www.computex.co.jp/support/download/cd/logon｀</p>
+<p>C-Flashのダウンロード</br></p>
+<ul>
+<li>以下のサイトにFP-10に記載されている<code>CODE</code>と<code>SERIAL NO</code>を入力し、ダウンロードしてください。<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> </br>
+　<code>https://www.computex.co.jp/support/download/cd/logon</code></li>
+</ul>
 </li>
-</ol>
-<p>　 [^4]：ダウンロードの仕方とライセンスの取得方法は、<a href="https://www.youtube.com/watch?v=Bex7SuHc1Cg">セットアップ</a>の動画を参考にしてください。</p>
-<ol start="3">
 <li>
 <p>FP-10へプログラムの書き込み</p>
 <ul>
@@ -4231,14 +4230,16 @@
 <li>初期設定のタグで、ターゲットを<code>未接続</code>、インターフェースは<code>SWD</code>、<code>1MHz</code>を選択します。</li>
 <li><code>ファイル</code>→<code>ロード</code>→<code>追加</code>をクリックし、v1.2.3のbinファイルを指定します。</li>
 <li>Flash開始アドレスは <code>0x08000000</code> なので、ロード・アドレスを<code>0x08000000</code>にします。</li>
-<li><code>データ</code>→<code>書き込み</code>で、FP-10へプログラムを書き込みます。</li>
+<li><code>データ</code>→<code>書き込み</code>で、FP-10へプログラムを書き込みます。</br></li>
 </ul>
 </li>
 <li>
 <p>LoRa Maryへの書き込み</p>
 <ul>
-<li>LoRa MaryとUSB(電源供給用)をShieldにネジ止めし、FP-1Oを繋げます。</li>
-<li>FP-10のPROGRAMボタンをクリックし、<code>STS</code>のLEDが点灯すれば、正常に書き込まれています。</li>
+<li>FP-10をUSB　AC アダプターに接続します。</li>
+<li>LoRa MaryとUSBをShieldにネジ止めし、AC アダプターに接続します。</li>
+<li>ShieldのSWDにFP-10を繋げます。</li>
+<li>FP-10のPROGRAMボタンをクリックします。<code>STS</code>のLEDが点灯すれば、正常に書き込まれています。</li>
 </ul>
 </li>
 </ol>
@@ -4295,6 +4296,9 @@
 </li>
 <li id="fn:3" role="doc-endnote">
 <p>SMAは、SUB-MINIATURE TYPE Aの略で、MIL規格です。U.FL-SMA 変換ケーブルを使用することでLoRa Maryと接続することが出来ます。 <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>ダウンロードの仕方とライセンスの取得方法は、<a href="https://www.youtube.com/watch?v=Bex7SuHc1Cg">セットアップ</a>の動画を参考にしてください。 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
@@ -4649,7 +4653,7 @@
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 7, 2025
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 May 8, 2025
 </div>
 </div>
 
