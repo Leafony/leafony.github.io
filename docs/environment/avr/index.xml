@@ -105,8 +105,8 @@
       &lt;td&gt;温湿度センサライブラリ&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;ClosedCube_OPT3001.h[^1]&lt;/td&gt; 
-      &lt;td&gt;&lt;/td&gt;
+      &lt;td&gt;ClosedCube_OPT3001.h&lt;/td&gt; 
+      &lt;td&gt;1.1.2&lt;/td&gt;
       &lt;td&gt;照度センサライブラリ&lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
@@ -173,6 +173,8 @@
     &lt;/tr&gt;  
   &lt;/tbody&gt;
 &lt;/table&gt;
+&lt;p&gt;ClosedCube_OPT3001.h [^1]&lt;/br&gt;&lt;/p&gt;
+&lt;p&gt;[1]: Arduino IDE を起動し、メニューから スケッチ &amp;gt; ライブラリ管理を選択、「ClosedCube OPT3001」で検索し、ライブラリをインストールしてください。 &lt;br&gt;&lt;/p&gt;
 &lt;h3 id=&#34;2-ライブラリをダウンロード&#34;&gt;2. ライブラリをダウンロード&lt;/h3&gt;
 &lt;p&gt;上記表のリンクをクリックすると、ライブラリのGitHubリポジトリにアクセスします。&lt;code&gt;Code → Download ZIP&lt;/code&gt;をクリックし、ライブラリをダウンロードします。&lt;/p&gt;
 &lt;img src=&#34;github_1.png&#34; width=&#34;600&#34;&gt;
