@@ -1124,18 +1124,22 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;li&gt;AC08 LTE-M Mary&lt;/li&gt;
 &lt;li&gt;AV06 1.8V～5.5V&lt;/li&gt;
 &lt;li&gt;AZ63 Nut Plate&lt;/li&gt;
-&lt;li&gt;M2X16ネジ&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://soracom.jp/store/13380/&#34; target=&#34;_brank&#34;&gt; SORACOM IoT SIM plan-D nanoSIM&lt;/a&gt;&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;単3x3 電池ボックス PHコネクタ付き&lt;/li&gt;
-&lt;li&gt;単3電池&lt;/li&gt;
+&lt;li&gt;M2X16ネジ2本&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://soracom.jp/store/13380/&#34; target=&#34;_brank&#34;&gt; SORACOM IoT SIM plan-D (nanoSIM)&lt;/a&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.dfrobot.com/product-1854.html?srsltid=AfmBOop9pXZj9aFO2WrPXAGO4ut3QtfEA_dZpy5FIq4KWuoUPfSBd8_o&#34; target=&#34;_brank&#34;&gt; Battery Holder 3xAA with JST PH Connector&lt;/a&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;単3電池3本&lt;/li&gt;
+&lt;li&gt;USBケーブル&lt;/li&gt;
+&lt;li&gt;PC&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;&lt;a href=&#34;./AP08_Fig2.jpg&#34;&gt;&lt;img src=&#34;./AP08_Fig2.jpg&#34; width=&#34;300&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;h3 id=&#34;arduino-ideの場合&#34;&gt;Arduino IDEの場合&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LTE-M_4-Sensors&#34; target=&#34;_brank&#34;&gt;  Arduinoソースコード&lt;/a&gt;　&lt;/br&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;動作&#34;&gt;動作&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;@@@@@ MurataLpwaCore::beg�އy� init 1st time
+&lt;pre&gt;&lt;code&gt;パソコンのシリアルモニターの画面に、時刻、Type1SCの型番、FWバージョン、キャリア、RSSI(dBm)、温度(℃)、湿度(%)、照度(lx)、電圧(V)が表示されます。
+@@@@@ MurataLpwaCore::beg�އy� init 1st time
 &amp;lt;info&amp;gt; lpwa device power_up
 &amp;lt;info&amp;gt; lpwa device ready.
 ========== Starting Arduino tcp client ==========
