@@ -1132,13 +1132,35 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
 &lt;h3 id=&#34;arduino-ideの場合&#34;&gt;Arduino IDEの場合&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/STM32_4-Sensors_upload_tcp&#34; target=&#34;_brank&#34;&gt;  Arduinoソースコード(TCP用)&lt;/a&gt;　&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LTE-M_4-Sensors&#34; target=&#34;_brank&#34;&gt;  Arduinoソースコード&lt;/a&gt;　&lt;/br&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;ol start=&#34;4&#34;&gt;
-&lt;li&gt;STM32RTC.hでコンパイルエラーが発生した時は、STM32RTC.hのバージョンを最新から1.2.0または、1.1.0に変更すると改善された事例があります。&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/br&gt;&lt;/li&gt;
-&lt;/ol&gt;
 &lt;h2 id=&#34;動作&#34;&gt;動作&lt;/h2&gt;
-&lt;/br&gt;
+&lt;pre&gt;&lt;code&gt;@@@@@ MurataLpwaCore::beg�އy� init 1st time
+&amp;lt;info&amp;gt; lpwa device power_up
+&amp;lt;info&amp;gt; lpwa device ready.
+========== Starting Arduino tcp client ==========
+&amp;lt;info&amp;gt; lpwa device ready.
+&amp;lt;info&amp;gt; PDP: idle
+&amp;lt;info&amp;gt; PDP: connect
+LPWA connected
+time: 25/08/08,15:35:36+36
+Modem model: LBAD0XX1SC-DM
+Firmware version: RK_03_02_00_00_41841_001
+Current carrier: docomo
+Signal Strength: -101.00dBm
+Temperature: 29.78degC
+Humidity: 58.33%
+Illuminance: 44.76lx
+Volt: 0.00V
+&amp;lt;info&amp;gt; TCP socket connected
+connected
+201
+disconnecting.
+&amp;lt;info&amp;gt; UDP socket closed
+lpwaAccess end
+&amp;lt;info&amp;gt; lpwa device power_down
+Starting deep sleep for 600 sec
+&lt;/code&gt;&lt;/pre&gt;&lt;/br&gt;
 &lt;h1 id=&#34;soracomの設定&#34;&gt;SORACOMの設定&lt;/h1&gt;
 &lt;p&gt;SORACOMは、複数のSIMを束ねたSIMグループで、クラウドの設定をします。以下の手順で、SORACOM上に送信したデータを確認することが出来ます。&lt;/p&gt;
 &lt;h2 id=&#34;simグループの設定をする&#34;&gt;SIMグループの設定をする&lt;/h2&gt;
@@ -1184,10 +1206,6 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;ol&gt;
 &lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;LTEは通常使用している携帯電話・スマートフォン用広域無線通信規格のことで、LTE-Mはこの通信技術を応用し通信速度を下げて超低電力化している無線規格です。 &lt;/br&gt; &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;　STM32RTC.hでコンパイルエラーのログ&lt;/br&gt;
-&lt;a href=&#34;./STM32RTC_ERR0R.jpg&#34;&gt;&lt;img src=&#34;./STM32RTC_ERR0R.jpg&#34;&gt;&lt;/a&gt;&lt;/br&gt; &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;/section&gt;
