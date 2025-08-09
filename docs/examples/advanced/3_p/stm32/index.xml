@@ -1115,6 +1115,36 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;p&gt;「LTE-M1リーフ&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;」を活用すれば、センサデータの定期的な取得、リアルタイムなダッシュボード表示、さらには異常値検出時のアラート通知（メール等）といったIoTの基本的な機能を、短期間かつ簡単に構築することができます。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;Example_LTE-M_v1.png&#34; alt=&#34;Example_LTE-M_v1.png&#34;&gt;&lt;/p&gt;
 &lt;/br&gt;
+&lt;h1 id=&#34;soracomの設定&#34;&gt;SORACOMの設定&lt;/h1&gt;
+&lt;h2 id=&#34;iot-simを登録する&#34;&gt;IoT SIMを登録する&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、
+左上の&lt;code&gt;メニュー　→　発注 &lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;注文履歴に購入したSIMを確認し、&lt;code&gt;受け取り確認 &lt;/code&gt;を押します。&lt;/br&gt;
+&lt;img src=&#34;sim_1.png&#34; alt=&#34;sim_1.png&#34;&gt;&lt;/br&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;以下の画面が出てくるので&lt;code&gt;登録する &lt;/code&gt;を押します。
+&lt;a href=&#34;./sim_2.png&#34;&gt;&lt;img src=&#34;./sim_2.png&#34; width=&#34;600&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;simグループの設定をする&#34;&gt;SIMグループの設定をする&lt;/h2&gt;
+&lt;p&gt;SORACOMは、複数のSIMを束ねたSIMグループで、クラウドの設定をします。以下の手順で、SORACOM上に送信したデータを確認することが出来ます。&lt;/p&gt;
+&lt;h3 id=&#34;tcpの場合のsimグループの設定&#34;&gt;TCPの場合のSIMグループの設定&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、
+左上の&lt;code&gt;メニュー　→　SIMグループ　→　追加&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;グループ名は、&lt;code&gt;plan-D&lt;/code&gt;（例）とします。&lt;/li&gt;
+&lt;li&gt;SORACOM Harvest Data設定をONにする。&lt;/li&gt;
+&lt;li&gt;Unified Endpoint設定が、Auto(デフォルト)であることを確認します。&lt;/li&gt;
+&lt;li&gt;左上の&lt;code&gt;メニュー　→　SIM管理 &lt;/code&gt;をクリック、。　　　　　　&lt;/br&gt;
+&lt;img src=&#34;sim_4.png&#34; alt=&#34;sim_4.png&#34;&gt;&lt;/br&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;名前を決め、グループ名は、&lt;code&gt;Plan-D&lt;/code&gt;を選択します。
+&lt;img src=&#34;sim_5.png&#34; alt=&#34;sim_5.png&#34;&gt;&lt;/br&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;iot-simの通信を開始する&#34;&gt;IoT SIMの通信を開始する&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://users.soracom.io/ja-jp/docs/air/set-expiry/&#34; target=&#34;_brank&#34;&gt; こちら&lt;/a&gt;を参照し、有効期限とアクションを設定します。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、
+&lt;code&gt;操作 →　使用開始&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h1 id=&#34;leafonyの設定&#34;&gt;Leafonyの設定&lt;/h1&gt;
 &lt;h2 id=&#34;用意するもの&#34;&gt;用意するもの&lt;/h2&gt;
 &lt;ul&gt;
@@ -1138,8 +1168,9 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LTE-M_4-Sensors&#34; target=&#34;_brank&#34;&gt;  Arduinoソースコード&lt;/a&gt;　&lt;/br&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;動作&#34;&gt;動作&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;パソコンのシリアルモニターの画面に、時刻、Type1SCの型番、FWバージョン、キャリア、RSSI(dBm)、温度(℃)、湿度(%)、照度(lx)、電圧(V)が表示されます。
-@@@@@ MurataLpwaCore::beg�އy� init 1st time
+&lt;h2 id=&#34;パソコンのシリアルモニタのログ&#34;&gt;パソコンのシリアルモニタのログ&lt;/h2&gt;
+&lt;p&gt;パソコンのシリアルモニターの画面に、時刻、Type1SCの型番、FWバージョン、キャリア、RSSI(dBm)、温度(℃)、湿度(%)、照度(lx)、電圧(V)が表示されます。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@@@@@ MurataLpwaCore::beg�އy� init 1st time
 &amp;lt;info&amp;gt; lpwa device power_up
 &amp;lt;info&amp;gt; lpwa device ready.
 ========== Starting Arduino tcp client ==========
@@ -1164,42 +1195,10 @@ disconnecting.
 lpwaAccess end
 &amp;lt;info&amp;gt; lpwa device power_down
 Starting deep sleep for 600 sec
-&lt;/code&gt;&lt;/pre&gt;&lt;/br&gt;
-&lt;h1 id=&#34;soracomの設定&#34;&gt;SORACOMの設定&lt;/h1&gt;
-&lt;p&gt;SORACOMは、複数のSIMを束ねたSIMグループで、クラウドの設定をします。以下の手順で、SORACOM上に送信したデータを確認することが出来ます。&lt;/p&gt;
-&lt;h2 id=&#34;simグループの設定をする&#34;&gt;SIMグループの設定をする&lt;/h2&gt;
-&lt;h3 id=&#34;tcpの場合のsimグループの設定&#34;&gt;TCPの場合のSIMグループの設定&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;soracom-harvestでデータの確認&#34;&gt;SORACOM Harvestでデータの確認&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、
-左上の&lt;code&gt;メニュー　→　SIMグループ　→　追加&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;グループ名は、&lt;code&gt;plan-D&lt;/code&gt;（例）とします。&lt;/li&gt;
-&lt;li&gt;SORACOM Harvest Data設定をONにする。&lt;/li&gt;
-&lt;li&gt;Unified Endpoint設定が、Auto(デフォルト)であることを確認します。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;iot-simを登録する&#34;&gt;IoT SIMを登録する&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、
-左上の&lt;code&gt;メニュー　→　発注 &lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;注文履歴に購入したSIMを確認し、&lt;code&gt;受け取り確認 &lt;/code&gt;を押します。&lt;/br&gt;
-&lt;img src=&#34;sim_1.png&#34; alt=&#34;sim_1.png&#34;&gt;&lt;/br&gt;&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;以下の画面が出てくるので&lt;code&gt;登録する &lt;/code&gt;を押します。
-&lt;img src=&#34;sim_2.png&#34; alt=&#34;sim_2.png&#34;&gt;&lt;/br&gt;&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;左上の&lt;code&gt;メニュー　→　SIM管理 &lt;/code&gt;をクリック、。&lt;/br&gt;
-&lt;img src=&#34;sim_4.png&#34; alt=&#34;sim_4.png&#34;&gt;&lt;/br&gt;&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;名前を決め、グループ名は、&lt;code&gt;KM-1_SORACOM-Lagoon&lt;/code&gt;を選択します。
-&lt;img src=&#34;sim_5.png&#34; alt=&#34;sim_5.png&#34;&gt;&lt;/br&gt;&lt;/br&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;iot-simの通信を開始する&#34;&gt;IoT SIMの通信を開始する&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://users.soracom.io/ja-jp/docs/air/set-expiry/&#34; target=&#34;_brank&#34;&gt; こちら&lt;/a&gt;を参照し、有効期限とアクションを設定します。&lt;/br&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、
-&lt;code&gt;操作 →　使用開始&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;soracom-harvest上でleafonyが送信したデータを確認する&#34;&gt;SORACOM Harvest上でLeafonyが送信したデータを確認する&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Leafonyの電源をONにしてデータを送信します。&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開き、
-左上の&lt;code&gt;メニュー　→　データ収集・蓄積・可視化 → SORACOM Harvest Data&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開きます。&lt;/li&gt;
+&lt;li&gt;左上の&lt;code&gt;メニュー　→　データ収集・蓄積・可視化 → SORACOM Harvest Data&lt;/code&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;
 &lt;li&gt;SORACOM Harvest Dataの左上のリソースからSIMを選択し、Leafonyが送付したデータが確認出来れば、正しくデータが送付されています。
 &lt;img src=&#34;data_1.png&#34; alt=&#34;data_1.png&#34;&gt;&lt;/br&gt;&lt;/br&gt;&lt;/li&gt;
 &lt;/ol&gt;
