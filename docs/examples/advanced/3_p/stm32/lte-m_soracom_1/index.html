@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3a5f40d85ac9d45e710bf7f08f061a084c4f268f06f728862a562ead14f7cc1f04dd367db65c76b012ffa2dd222ff6e4049255995869f88f306cf3351ae9260b.json"
+  data-offline-search-index-json-src="/offline-search-index.8a9de88523175e67417d7c50c7a06d3c479cf571ef87c0052c5574c2c57417e52fd1bae2a53b10fe2bd424fe8fab88fd31c546484cfffce39e3a81674ef78058.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3a5f40d85ac9d45e710bf7f08f061a084c4f268f06f728862a562ead14f7cc1f04dd367db65c76b012ffa2dd222ff6e4049255995869f88f306cf3351ae9260b.json"
+  data-offline-search-index-json-src="/offline-search-index.8a9de88523175e67417d7c50c7a06d3c479cf571ef87c0052c5574c2c57417e52fd1bae2a53b10fe2bd424fe8fab88fd31c546484cfffce39e3a81674ef78058.json"
   data-offline-search-base-href="/"
 >
 
@@ -3989,9 +3989,9 @@
   </ul>
 
   <ul>
-    <li><a href="#ユーザーコンソールにsimを登録">ユーザーコンソールにSIMを登録</a></li>
-    <li><a href="#グループの作成">グループの作成</a></li>
-    <li><a href="#有効期限とアクションの設定">有効期限とアクションの設定</a></li>
+    <li><a href="#ユーザーコンソールにsimを登録2">ユーザーコンソールにSIMを登録</a></li>
+    <li><a href="#グループの作成3">グループの作成</a></li>
+    <li><a href="#有効期限とアクションの設定4">有効期限とアクションの設定</a></li>
   </ul>
 
   <ul>
@@ -4088,43 +4088,60 @@
 	
 	<h2 id="はじめに">はじめに</h2>
 <p>LTE-M Mary<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>を活用すれば、センサデータの定期的な取得、リアルタイムなダッシュボード表示、さらには異常値検出時のアラート通知（メール等）といったIoTの基本的な機能を、短期間かつ簡単に構築することができます。</p>
-<p><a href="./Example_LTE-M_v1.png"><img src="./Example_LTE-M_v1.png" width="1200"></a></br></p>
+<p><a href="./Example_LTE-M_v1.png"><img src="./Example_LTE-M_v1.png" width="1200"></a></p>
+</br>
 <h1 id="soracomの設定">SORACOMの設定</h1>
 <p>LTE-M Maryは、SORACOMのplan-D(DOCOMO)と、plan-KM1(KDDI)のSIMで動作確認済みです。plan-Dは、基本料金330円/月で、300MBの通信量がバンドルされており、中～大容量のIoTプロジェクトに
-おすすめです。ここでは、plan-Dの設定を例に説明します。詳細は、<a href="https://soracom.jp/services/air/japan_coverage/" target="_brank"> こちら</a>を参照しください。</p>
-<h2 id="ユーザーコンソールにsimを登録">ユーザーコンソールにSIMを登録</h2>
-<p><a href="https://users.soracom.io/ja-jp/guides/getting-started/register-sim/" target="_brank"> 「SORACOM User スタートガイド」</a>を参照し、plan-DのSIMをユーザコンソールに登録します。</br></p>
+おすすめです。詳細は、<a href="https://soracom.jp/services/air/japan_coverage/" target="_brank"> こちら</a>を参照しください。ここでは、plan-Dの設定を例に説明します。</br></p>
+<h2 id="ユーザーコンソールにsimを登録2">ユーザーコンソールにSIMを登録<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></h2>
 <ol>
 <li>
-<p><a href="https://console.soracom.io/" target="_brank"> ユーザコンソール</a>　を開き、
-左上の <code>メニュー　→　発注</code>をクリックします。</br></p>
+<p><a href="https://console.soracom.io/" target="_brank"> ユーザコンソール</a>　を開きます。</p>
+</li>
+<li>
+<p><code>メニュー　→　発注</code>をクリックします。</br></p>
 </li>
 <li>
 <p>購入したSIMの<code>受け取り確認 </code>を押して登録します。</br></p>
 </li>
 <li>
-<p><code>メニュー　→　SIM管理 </code>を選択し、次に、ブランクのSIMを選択して<code>詳細</code>をクリックします。</br></br>
+<p><code>メニュー　→　SIM管理 </code>を選択し、次に、ブランクのSIMを選択して<code>詳細</code>をクリックします。</br></br> 
 <a href="./sim_4.png"><img src="./sim_4.png" width="600"></a></br></p>
 </li>
 <li>
-<p>以下の画面が現れるので、名前とグループを登録します。グループの作成の仕方は、次を参照してください。</br></br>
-　<a href="./sim_5.png"><img src="./sim_5.png" width="600"></a></br></p>
+<p>以下の画面が現れるので、名前とグループを登録します。</br>
+</br></br>
+　 <a href="./sim_5.png"><img src="./sim_5.png" width="600"></a></br></p>
 </li>
 </ol>
-<h2 id="グループの作成">グループの作成</h2>
-<p><a href="https://users.soracom.io/ja-jp/docs/group-configuration/create-group/" target="_brank"> 「グループを作成する」</a>を参照し、plan-Dのグループを作成します。</br></p>
+<h2 id="グループの作成3">グループの作成<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></h2>
 <ol>
-<li>左上の<code>メニュー　→　SIMグループ　→　追加</code>をクリックします。</br></li>
-<li>グループ名は、<code>plan-D</code>（例）とします。</li>
-<li>SORACOM Harvest Data設定をONにする。</li>
-<li>Unified Endpoint設定が、Auto(デフォルト)であることを確認します。</li>
+<li>
+<p><code>メニュー　→　SIMグループ　→　追加</code>をクリックします。</br></p>
+</li>
+<li>
+<p>グループ名は、<code>plan-D</code>（例）とします。</br></p>
+</li>
+<li>
+<p>SORACOM Harvest Data設定をONにする。</br></p>
+</li>
+<li>
+<p>Unified Endpoint設定が、Auto(デフォルト)であることを確認します。</br></p>
+</li>
 </ol>
-<h2 id="有効期限とアクションの設定">有効期限とアクションの設定</h2>
-<p><a href="https://users.soracom.io/ja-jp/docs/air/set-expiry/" target="_brank"> 「IoT SIM の有効期限とアクションを設定する」</a>を参照し、有効期限を設定します。</br></p>
+<h2 id="有効期限とアクションの設定4">有効期限とアクションの設定<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></h2>
 <ol>
-<li><code>メニュー　→　SIM管理 </code>を選択し、次に、ブランクのSIMを選択して<code>操作</code>をクリックします。</br></li>
-<li><code>設定　→　有効期限の変更 </code>を選択して、変更します。</br></li>
+<li>
+<p><code>メニュー　→　SIM管理 </code>を選択します。</p>
+</li>
+<li>
+<p>ブランクのSIMを選択して<code>操作</code>をクリックします。</br></p>
+</li>
+<li>
+<p><code>設定　→　有効期限の変更 </code>を選択して、変更します。</br></p>
+</li>
 </ol>
+</br>
 <h1 id="leafonyの設定">Leafonyの設定</h1>
 <h2 id="用意するもの">用意するもの</h2>
 <ul>
@@ -4188,7 +4205,16 @@ Starting deep sleep for 600 sec
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>LTEは通常使用している携帯電話・スマートフォン用広域無線通信規格のことで、LTE-Mはこの通信技術を応用し通信速度を下げて超低電力化している無線規格です。 </br> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>LTEは、スマートフォン用広域無線通信規格のことで、LTE-Mはこの通信技術を応用し通信速度を下げて超低電力化している無線規格です。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>SIMの登録の仕方の詳細は、<a href="https://users.soracom.io/ja-jp/guides/getting-started/register-sim/" target="_brank"> こちら</a>を参照しください。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p>グループの作成の仕方の詳細は、<a href="https://users.soracom.io/ja-jp/docs/group-configuration/create-group/" target="_brank"> こちら</a>を参照しください。 <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p>有効期限とアクションの設定の詳細は、<a href="https://users.soracom.io/ja-jp/docs/air/set-expiry/" target="_brank"> こちら</a>を参照しください。 <a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
