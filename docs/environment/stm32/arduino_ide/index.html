@@ -136,7 +136,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.733324fc8d2f5fe2964707736798796fa2596870c817b3e697ed40716f123ebb5a0d787b7703b01a3e65c99328411579fa9f628006ac0f2b84f49f0cf732175a.json"
+  data-offline-search-index-json-src="/offline-search-index.734ff77a3e00220fd6ebf219b7a5a9243d3d8e9c4c9367d3e7e44cda695e5d79b41636b371e8b579e837536e07c6a2a0cc350b2346fe8b636d2c5ec0b34fd8a3.json"
   data-offline-search-base-href="/"
 >
 
@@ -166,7 +166,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.733324fc8d2f5fe2964707736798796fa2596870c817b3e697ed40716f123ebb5a0d787b7703b01a3e65c99328411579fa9f628006ac0f2b84f49f0cf732175a.json"
+  data-offline-search-index-json-src="/offline-search-index.734ff77a3e00220fd6ebf219b7a5a9243d3d8e9c4c9367d3e7e44cda695e5d79b41636b371e8b579e837536e07c6a2a0cc350b2346fe8b636d2c5ec0b34fd8a3.json"
   data-offline-search-base-href="/"
 >
 
@@ -4093,15 +4093,14 @@
 <br>
 <h2 id="マイコンボードの設定">マイコンボードの設定</h2>
 <ol>
-<li><a href="https://github.com/Leafony/BoardManagerFiles" target="_blank">Leafony STM32</a>のボードは、webサイトからインストールします。
-<code>ファイル → 基本設定</code>を開き、<code>追加のボードマネージャのURL:</code>に、下記URLを追加してください。
+<li>
+<p><a href="https://github.com/Leafony/BoardManagerFiles" target="_blank">Leafony STM32</a>のボードは、webサイトからインストールします。
+<code>ファイル → 基本設定</code>を開き、<code>追加のボードマネージャのURL:</code>に、下記URLを追加してください。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>
 </br></br>
-<code>https://github.com/Leafony/BoardManagerFiles/raw/master/Leafony_STM32/package_leafony_stm_index.json</code>
-<code>https://github.com/Leafony/BoardManagerFiles/raw/master/Leafony_STM32_V3/package_leafony_stm_index.json</code></li>
-</ol>
-<p></br></br>
+<code>https://github.com/Leafony/BoardManagerFiles/raw/master/Leafony_STM32_V3/package_leafony_stm_index.json</code>
+</br></br>
 <img src="./STM32_ArduinoIDE_Fig-1.png" width="640"></img></br></br></p>
-<ol start="2">
+</li>
 <li>
 <p><code>ツール→ボード→ボードマネージャ</code>を選択します。</p>
 </li>
@@ -4130,7 +4129,7 @@
 <a href="/docs/leaf/processor/ap03/ap03_tips.jpg"><img src="/docs/leaf/processor/ap03/ap03_tips.jpg" width="450"></a></p>
 </li>
 <li>
-<p><a href="/docs/examples/beginner/3_p/basic/temp_humid_sensors" target="_blank">温湿度センサ読み取り</a>を参照し、プログラムを書き込みます。書き込みが完了するまで、時間のかかる場合があります。正常に書き込まれた場合は <code>Start operation achieved successfully</code>と表示されます。表示されない場合は、プログラムが正常に動作しません。<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></br></br>
+<p><a href="/docs/examples/beginner/3_p/basic/temp_humid_sensors" target="_blank">温湿度センサ読み取り</a>を参照し、プログラムを書き込みます。書き込みが完了するまで、時間のかかる場合があります。正常に書き込まれた場合は <code>Start operation achieved successfully</code>と表示されます。表示されない場合は、プログラムが正常に動作しません。<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></br></br>
 <img src="./operation1_v1.png"></img></p>
 </li>
 <li>
@@ -4171,11 +4170,15 @@
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み。v2.5.0は動作しないので要注意。 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>Windows 64bitのV2.12.0、V2.6.0、V2.4.0は、動作確認済み。v2.5.0は動作しないので要注意 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
+<p>ボードファイルの更新に伴い、ボードマネージャーのURLが変更になったので、最新のボードファイルをインストールしてください。</br>
+詳しくは、<a href="https://github.com/Leafony/BoardManagerFiles/blob/master/README.md" target="_blank">こちら</a>を参照してください。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
 <p>スイッチをプログラム側にしないで書き込んだ場合も<code>ボードへの書き込みが完了しました</code>となりますが、画面の下部に<code>Timeout error occured while waiting for acknowledgement</code>と表示され、プログラムが正常に動作しません。</br></br>
-<img src="./operation2_v1.png"></img> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<img src="./operation2_v1.png"></img> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
