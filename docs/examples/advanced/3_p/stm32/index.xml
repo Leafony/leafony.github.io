@@ -1192,8 +1192,12 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LTE-M_4-Sensors&#34; target=&#34;_brank&#34;&gt;  Arduinoソースコード&lt;/a&gt;　&lt;/br&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;動作&#34;&gt;動作&lt;/h2&gt;
-&lt;h3 id=&#34;パソコンのシリアルモニタのログ&#34;&gt;パソコンのシリアルモニタのログ&lt;/h3&gt;
+&lt;p&gt;本ソースコードは、SORACOMのplan-Dがデフォルトになっています。plan-KM1を使用する場合は、以下を変更してください。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;// Select LTE CARRIER
+// #define LTE_CARRIER LPWA_V4_GPRS_BAND_KDDI
+#define LTE_CARRIER LPWA_V4_GPRS_BAND_DOCOMO 
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;動作&#34;&gt;動作&lt;/h2&gt;
+&lt;h3 id=&#34;シリアルモニタのログ&#34;&gt;シリアルモニタのログ&lt;/h3&gt;
 &lt;p&gt;パソコンのシリアルモニターの画面に、時刻、Type1SCの型番、FWバージョン、キャリア、RSSI(dBm)、温度(℃)、湿度(%)、照度(lx)、電圧(V)が表示されます。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;@@@@@ MurataLpwaCore::beg�އy� init 1st time
 &amp;lt;info&amp;gt; lpwa device power_up
@@ -1220,7 +1224,7 @@ disconnecting.
 lpwaAccess end
 &amp;lt;info&amp;gt; lpwa device power_down
 Starting deep sleep for 600 sec
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;soracom-harvestでデータの確認&#34;&gt;SORACOM Harvestでデータの確認&lt;/h3&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;soracom-harvestでデータ確認&#34;&gt;SORACOM Harvestでデータ確認&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開きます。&lt;/li&gt;
 &lt;li&gt;左上の&lt;code&gt;メニュー　→　データ収集・蓄積・可視化 → SORACOM Harvest Data&lt;/code&gt;&lt;sup id=&#34;fnref:5&#34;&gt;&lt;a href=&#34;#fn:5&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;5&lt;/a&gt;&lt;/sup&gt;をクリックします。&lt;/br&gt;&lt;/li&gt;

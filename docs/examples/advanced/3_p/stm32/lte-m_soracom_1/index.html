@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.67c159eaf7eca2290f7c353006a2aad60b520278145f41e1b057b3bcc01f0ba1da3d441f50b30e6a1973813c5ef084ad65a8aef46d5201b742aa295f154b6127.json"
+  data-offline-search-index-json-src="/offline-search-index.2d343598d81d64917936fe8c5ad8e7d7d9ef5eb51edaf7c69445f8c1c604f62f5766f831bb05c8bd7af225c544d4d31f35cde67f5bc73a946aa6bd742b5aac4e.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.67c159eaf7eca2290f7c353006a2aad60b520278145f41e1b057b3bcc01f0ba1da3d441f50b30e6a1973813c5ef084ad65a8aef46d5201b742aa295f154b6127.json"
+  data-offline-search-index-json-src="/offline-search-index.2d343598d81d64917936fe8c5ad8e7d7d9ef5eb51edaf7c69445f8c1c604f62f5766f831bb05c8bd7af225c544d4d31f35cde67f5bc73a946aa6bd742b5aac4e.json"
   data-offline-search-base-href="/"
 >
 
@@ -4003,8 +4003,8 @@
     </li>
     <li><a href="#動作">動作</a>
       <ul>
-        <li><a href="#パソコンのシリアルモニタのログ">パソコンのシリアルモニタのログ</a></li>
-        <li><a href="#soracom-harvestでデータの確認">SORACOM Harvestでデータの確認</a></li>
+        <li><a href="#シリアルモニタのログ">シリアルモニタのログ</a></li>
+        <li><a href="#soracom-harvestでデータ確認">SORACOM Harvestでデータ確認</a></li>
       </ul>
     </li>
   </ul>
@@ -4167,8 +4167,12 @@
 <ul>
 <li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LTE-M_4-Sensors" target="_brank">  Arduinoソースコード</a>　</br></li>
 </ul>
-<h2 id="動作">動作</h2>
-<h3 id="パソコンのシリアルモニタのログ">パソコンのシリアルモニタのログ</h3>
+<p>本ソースコードは、SORACOMのplan-Dがデフォルトになっています。plan-KM1を使用する場合は、以下を変更してください。</p>
+<pre><code>// Select LTE CARRIER
+// #define LTE_CARRIER LPWA_V4_GPRS_BAND_KDDI
+#define LTE_CARRIER LPWA_V4_GPRS_BAND_DOCOMO 
+</code></pre><h2 id="動作">動作</h2>
+<h3 id="シリアルモニタのログ">シリアルモニタのログ</h3>
 <p>パソコンのシリアルモニターの画面に、時刻、Type1SCの型番、FWバージョン、キャリア、RSSI(dBm)、温度(℃)、湿度(%)、照度(lx)、電圧(V)が表示されます。</p>
 <pre><code>@@@@@ MurataLpwaCore::beg�އy� init 1st time
 &lt;info&gt; lpwa device power_up
@@ -4195,7 +4199,7 @@ disconnecting.
 lpwaAccess end
 &lt;info&gt; lpwa device power_down
 Starting deep sleep for 600 sec
-</code></pre><h3 id="soracom-harvestでデータの確認">SORACOM Harvestでデータの確認</h3>
+</code></pre><h3 id="soracom-harvestでデータ確認">SORACOM Harvestでデータ確認</h3>
 <ol>
 <li><a href="https://console.soracom.io/" target="_brank"> ユーザコンソール</a>を開きます。</li>
 <li>左上の<code>メニュー　→　データ収集・蓄積・可視化 → SORACOM Harvest Data</code><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>をクリックします。</br></li>
