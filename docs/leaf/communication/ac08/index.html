@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a73c1bf5cc05469a8fc9d129ad10e338223a9cf769d5666551bbd13c2289cf6f3714beb89a1a763c660bccaa2c6136e601d2357cdc071a81dd4b7dfcbfbd591d.json"
+  data-offline-search-index-json-src="/offline-search-index.f8f12065a7062b6c49cc0ebac355616d30af007315a0e131416bd1320d43d701361cc0bcdeb0bfa9ca06ddace3edd56228a3762e86db934f5f5a68f19007a24e.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.a73c1bf5cc05469a8fc9d129ad10e338223a9cf769d5666551bbd13c2289cf6f3714beb89a1a763c660bccaa2c6136e601d2357cdc071a81dd4b7dfcbfbd591d.json"
+  data-offline-search-index-json-src="/offline-search-index.f8f12065a7062b6c49cc0ebac355616d30af007315a0e131416bd1320d43d701361cc0bcdeb0bfa9ca06ddace3edd56228a3762e86db934f5f5a68f19007a24e.json"
   data-offline-search-base-href="/"
 >
 
@@ -4001,7 +4001,6 @@
         <li><a href="#before-you-get-start-started">Before you get start started</a></li>
         <li><a href="#query-device-information">Query device information</a></li>
         <li><a href="#network-provider-and-cellular-technology-settingssoracom-plan-d">Network provider and cellular technology settings　(SORACOM plan-D)</a></li>
-        <li><a href="#network-provider-and-cellular-technology-settingssoracom-plan-km1">Network provider and cellular technology settings　(SORACOM plan-KM1)</a></li>
         <li><a href="#define-the-cellular-band">Define the cellular band</a></li>
         <li><a href="#check-the-radio-signal-strength-and-signal-quality">Check the radio signal strength and signal quality</a></li>
         <li><a href="#network-configuration">Network Configuration</a></li>
@@ -4308,78 +4307,6 @@ LTE-M Mary用のライブラリを公開しているので、簡単にプログ�
 <td align="left"><code>AT+COPS=1,2,44010</code></td>
 <td align="left"><code>OK</code></td>
 <td align="left">手動モードでNTT ドコモに接続</td>
-</tr>
-<tr>
-<td align="left"><code>AT%GETCFG=&quot;BAND&quot;</code></td>
-<td align="left"><code>Bands:  19</code></br> <code>OK</code></td>
-<td align="left">Bandの接続先を確認</td>
-</tr>
-<tr>
-<td align="left"><code>AT%SETCFG=&quot;BAND&quot;,&quot;1&quot;</code></td>
-<td align="left"><code>OK</code></td>
-<td align="left">Band1に接続</td>
-</tr>
-<tr>
-<td align="left"><code>AT%GETCFG=&quot;BAND&quot;</code></td>
-<td align="left"><code>Bands:  19</code></br> <code>OK</code></td>
-<td align="left">Band19に戻す</td>
-</tr>
-</tbody>
-</table>
-<h3 id="network-provider-and-cellular-technology-settingssoracom-plan-km1">Network provider and cellular technology settings　(SORACOM plan-KM1)</h3>
-<table>
-<thead>
-<tr>
-<th align="left">AT Command</th>
-<th align="left">Example response</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>AT+COPS=?</code></td>
-<td align="left"><code>+COPS: (1,&quot;KDDI&quot;,&quot;KDDI&quot;,&quot;44051&quot;,7),(3,&quot;KDDI&quot;,&quot;KDDI&quot;,&quot;44054&quot;,7),(3,&quot;KDDI&quot;,&quot;KDDI&quot;,&quot;44052&quot;,7),(3,&quot;KDDI&quot;,&quot;KDDI&quot;,&quot;44050&quot;,7),,(0-3),(0-2)</code></br><code>OK</code></td>
-<td align="left">利用可能なネットワーク事業者を検索 　</td>
-</tr>
-<tr>
-<td align="left"><code>AT+COPS?</code></td>
-<td align="left"><code>+COPS: 0,2,&quot;44051&quot;,7</code></br> <code>OK</code></td>
-<td align="left">ネットワークの接続先確認</td>
-</tr>
-<tr>
-<td align="left"><code>AT+COPS=1,2,44051</code></td>
-<td align="left"><code>OK</code></td>
-<td align="left">手動モードでKDDIに接続</td>
-</tr>
-<tr>
-<td align="left"><code>AT+COPS=0</code></td>
-<td align="left"><code>OK</code></td>
-<td align="left">自動モードで接続</td>
-</tr>
-<tr>
-<td align="left"><code>AT+COPS?</code></td>
-<td align="left"><code>+COPS: 0,2,&quot;44051&quot;,7</code></br> <code>OK</code></td>
-<td align="left">ネットワークの接続先確認</td>
-</tr>
-<tr>
-<td align="left"><code>AT+COPS=1,2,44051</code></td>
-<td align="left"><code>OK</code></td>
-<td align="left">手動モードでKDDIに接続</td>
-</tr>
-<tr>
-<td align="left"><code>AT%GETCFG=&quot;BAND&quot;</code></td>
-<td align="left"><code>Bands:  18</code></br> <code>OK</code></td>
-<td align="left">Bandの接続先を確認</td>
-</tr>
-<tr>
-<td align="left"><code>AT%SETCFG=&quot;BAND&quot;,&quot;1&quot;</code></td>
-<td align="left"><code>OK</code></td>
-<td align="left">Band1に接続</td>
-</tr>
-<tr>
-<td align="left"><code>AT%SETCFG=&quot;BAND&quot;,&quot;18&quot;</code></td>
-<td align="left"><code>OK</code></td>
-<td align="left">Band18に戻す</td>
 </tr>
 </tbody>
 </table>
@@ -4865,7 +4792,7 @@ LTE-M Mary用のライブラリを公開しているので、簡単にプログ�
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 15, 2025
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 16, 2025
 </div>
 </div>
 
