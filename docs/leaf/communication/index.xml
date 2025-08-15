@@ -124,7 +124,8 @@
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./ac03a_f_large.jpg&#34;&gt;&lt;img src=&#34;./ac03a_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+        &lt;p&gt;&lt;strong&gt;AC07 LoRa Maryのリリースに伴い、本リーフのサポートは終了いたしました。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ac03a_f_large.jpg&#34;&gt;&lt;img src=&#34;./ac03a_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
 &lt;a href=&#34;./ac03a_b_large.jpg&#34;&gt;&lt;img src=&#34;./ac03a_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
 &lt;a href=&#34;./ac03a_p_large.jpg&#34;&gt;&lt;img src=&#34;./ac03a_p_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
@@ -230,7 +231,8 @@
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./ac04_f_large.jpg&#34;&gt;&lt;img src=&#34;./ac04_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+        &lt;p&gt;&lt;strong&gt;AC08 LTE-M Maryのリリースに伴い、本リーフのサポートは終了いたしました。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ac04_f_large.jpg&#34;&gt;&lt;img src=&#34;./ac04_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
 &lt;a href=&#34;./ac04_b_large.jpg&#34;&gt;&lt;img src=&#34;./ac04_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
 &lt;a href=&#34;./ac04_p_large.jpg&#34;&gt;&lt;img src=&#34;./ac04_p_small.jpg&#34; width=&#34;250&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -346,7 +348,8 @@
       <description>
         
         
-        &lt;p&gt;&lt;a href=&#34;./ac05_f_large.jpg&#34;&gt;&lt;img src=&#34;./ac05_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
+        &lt;p&gt;&lt;strong&gt;AC08 LTE-M Maryのリリースに伴い、本リーフのサポートは終了いたしました。&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;./ac05_f_large.jpg&#34;&gt;&lt;img src=&#34;./ac05_f_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
 &lt;a href=&#34;./ac05_b_large.jpg&#34;&gt;&lt;img src=&#34;./ac05_b_small.jpg&#34; width=&#34;200&#34;&gt;&lt;/a&gt;
 &lt;a href=&#34;./ac05_p_large.jpg&#34;&gt;&lt;img src=&#34;./ac05_p_small.jpg&#34; width=&#34;300&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;ul&gt;
@@ -813,7 +816,12 @@
 &lt;p&gt;&lt;a href=&#34;./ac07_pinassign.png&#34;&gt;&lt;img src=&#34;./ac07_pinassign.png&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;p&gt;ピン配置のデータは、&lt;a href=&#34;https://github.com/Leafony/Documents/tree/main/Leaf-pinassign&#34;&gt;こちら&lt;/a&gt;を参照して下さい。&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h2&gt;
-&lt;p&gt;本リーフに対応したライブラリがあります。&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#1-%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA&#34;&gt;開発環境設定のページ&lt;/a&gt;で必要なライブラリをインストールしてご利用下さい。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/arduino-LoRa&#34; target=&#34;_blank&#34;&gt;LoRa.h&lt;/a&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/arduino-tca9536&#34; target=&#34;_blank&#34;&gt;TCA9536.h&lt;/a&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/sparkfun/SparkFun_ATECCX08a_Arduino_Library&#34; target=&#34;_blank&#34;&gt;SparkFun_ATECCX08a_Arduino_Library.h&lt;/a&gt;&lt;/br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;詳しくは、&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#1-%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA&#34;&gt;こちら&lt;/a&gt;を参照してください。&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;サンプルアプリ&#34;&gt;サンプルアプリ&lt;/h2&gt;
 &lt;p&gt;STM32 MCUとLoRa Maryリーフを使用したサンプルアプリです。このサンプルアプリを使用する場合は、 LoRaLeafony.hのライブラリをインクルードしてください。&lt;/br&gt;&lt;/p&gt;
 &lt;ul&gt;
