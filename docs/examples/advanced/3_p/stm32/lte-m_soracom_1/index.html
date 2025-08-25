@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f4a3de56afca8cf5bfa6163f3730495cd8a2c223dbb9829db1cc10e06df4562937bd50be22e509551939aa206ca811ee77ceaaac02f54821c7a85b03fe22169a.json"
+  data-offline-search-index-json-src="/offline-search-index.56d4f80b838b3ed157d3b6d1b8328ac8360c88dd4d4663edf4feb6b163afb3eb84914927af21eaa130c808fcdc389a7258543cb7aec1e2bd54adacbff9d68749.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.f4a3de56afca8cf5bfa6163f3730495cd8a2c223dbb9829db1cc10e06df4562937bd50be22e509551939aa206ca811ee77ceaaac02f54821c7a85b03fe22169a.json"
+  data-offline-search-index-json-src="/offline-search-index.56d4f80b838b3ed157d3b6d1b8328ac8360c88dd4d4663edf4feb6b163afb3eb84914927af21eaa130c808fcdc389a7258543cb7aec1e2bd54adacbff9d68749.json"
   data-offline-search-base-href="/"
 >
 
@@ -3999,7 +3999,6 @@
     <li><a href="#用意するもの">用意するもの</a></li>
     <li><a href="#ソースコード">ソースコード</a>
       <ul>
-        <li><a href="#ライブラリ">ライブラリ</a></li>
         <li><a href="#arduino-ideの場合">Arduino IDEの場合</a></li>
         <li><a href="#tips">Tips</a></li>
       </ul>
@@ -4180,8 +4179,12 @@
 </ul>
 <p><a href="./AP08_Fig2.jpg"><img src="./AP08_Fig2.jpg" width="300"></a></br></p>
 <h2 id="ソースコード">ソースコード</h2>
-<h3 id="ライブラリ">ライブラリ</h3>
-<p>以下のライブラリをインストールしてください。</p>
+<h3 id="arduino-ideの場合">Arduino IDEの場合</h3>
+<ul>
+<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LTE-M_4-Sensors" target="_brank">  Arduinoソースコード</a>　</br></li>
+</ul>
+<h4 id="ライブラリ">ライブラリ</h4>
+<p>以下のライブラリを使用します。ます、をインストールしてください。</p>
 <table>
 <thead>
 <tr>
@@ -4218,7 +4221,7 @@
 </tr>
 <tr>
 <td align="left">STM32 MCU</td>
-<td align="left"><a href="https://github.com/stm32duino/STM32LowPower/tree/1.2.2" target="_blank">STM32LowPower.h&lt;</td>
+<td align="left"><a href="https://github.com/stm32duino/STM32LowPower/tree/1.2.2" target="_blank">STM32LowPower.h</td>
 <td align="left">1.2.0</td>
 <td align="left">STM32RTCライブラリ</td>
 </tr>
@@ -4230,10 +4233,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="arduino-ideの場合">Arduino IDEの場合</h3>
-<ul>
-<li><a href="https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LTE-M_4-Sensors" target="_brank">  Arduinoソースコード</a>　</br></li>
-</ul>
 <h3 id="tips">Tips</h3>
 <ul>
 <li>本ソースコードは、SORACOMのplan-Dがデフォルトになっています。plan-KM1を使用する場合は、以下を変更してください。</li>
@@ -4243,32 +4242,51 @@
 #define LTE_CARRIER LPWA_V4_GPRS_BAND_DOCOMO 
 </code></pre><h2 id="動作">動作</h2>
 <h3 id="シリアルモニタのログ">シリアルモニタのログ</h3>
-<p>パソコンのシリアルモニターの画面に、時刻、Type1SCの型番、FWバージョン、キャリア、RSSI(dBm)、温度(℃)、湿度(%)、照度(lx)、電圧(V)が表示されます。</p>
-<pre><code>@@@@@ MurataLpwaCore::beg�އy� init 1st time
+<p>パソコンのシリアルモニターに以下が表示されます。</p>
+<pre><code>@@@@@ MurataLpwaCore::begin() init 1st time
 &lt;info&gt; lpwa device power_up
 &lt;info&gt; lpwa device ready.
-========== Starting Arduino tcp client ==========
+----------------------------------
+initializetion finished
+
+----------------------------------
+connect to the network
+
 &lt;info&gt; lpwa device ready.
 &lt;info&gt; PDP: idle
 &lt;info&gt; PDP: connect
-LPWA connected
-time: 25/08/08,15:35:36+36
-Modem model: LBAD0XX1SC-DM
-Firmware version: RK_03_02_00_00_41841_001
-Current carrier: docomo
-Signal Strength: -101.00dBm
-Temperature: 29.78degC
-Humidity: 58.33%
-Illuminance: 44.76lx
-Volt: 0.00V
+
+  -connected
+
+  -time: 25/08/25,14:29:18+36
+
+  -current carrier: KDDI
+
+  -signal Strength: -91.00dBm
+
+----------------------------------
+read sensor data
+
+  -acceleration X: -0.11 g
+  -acceleration Y: -0.58 g
+  -acceleration Z: 0.80 g
+
+  -temperature: 28.70 degC
+  -humidity   : 62.18 %
+
+  -ambient light: 310.24 lux
+
+  -battery volt: 3.87 V
+
+----------------------------------
+send data to the soracom server
+
 &lt;info&gt; TCP socket connected
 connected
-201
-disconnecting.
-&lt;info&gt; UDP socket closed
-lpwaAccess end
-&lt;info&gt; lpwa device power_down
-Starting deep sleep for 600 sec
+
+----------------------------------
+disconnect and power off
+
 </code></pre><h3 id="soracom-harvestでデータ確認">SORACOM Harvestでデータ確認</h3>
 <ol>
 <li><a href="https://console.soracom.io/" target="_brank"> ユーザコンソール</a>を開きます。</li>

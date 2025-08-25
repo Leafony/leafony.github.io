@@ -1202,8 +1202,12 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;/ul&gt;
 &lt;p&gt;&lt;a href=&#34;./AP08_Fig2.jpg&#34;&gt;&lt;img src=&#34;./AP08_Fig2.jpg&#34; width=&#34;300&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;ソースコード&#34;&gt;ソースコード&lt;/h2&gt;
-&lt;h3 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h3&gt;
-&lt;p&gt;以下のライブラリをインストールしてください。&lt;/p&gt;
+&lt;h3 id=&#34;arduino-ideの場合&#34;&gt;Arduino IDEの場合&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LTE-M_4-Sensors&#34; target=&#34;_brank&#34;&gt;  Arduinoソースコード&lt;/a&gt;　&lt;/br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h4&gt;
+&lt;p&gt;以下のライブラリを使用します。ます、をインストールしてください。&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1240,7 +1244,7 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;STM32 MCU&lt;/td&gt;
-&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/stm32duino/STM32LowPower/tree/1.2.2&#34; target=&#34;_blank&#34;&gt;STM32LowPower.h&amp;lt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;a href=&#34;https://github.com/stm32duino/STM32LowPower/tree/1.2.2&#34; target=&#34;_blank&#34;&gt;STM32LowPower.h&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;1.2.0&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;STM32RTCライブラリ&lt;/td&gt;
 &lt;/tr&gt;
@@ -1252,10 +1256,6 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;h3 id=&#34;arduino-ideの場合&#34;&gt;Arduino IDEの場合&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LTE-M_4-Sensors&#34; target=&#34;_brank&#34;&gt;  Arduinoソースコード&lt;/a&gt;　&lt;/br&gt;&lt;/li&gt;
-&lt;/ul&gt;
 &lt;h3 id=&#34;tips&#34;&gt;Tips&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;本ソースコードは、SORACOMのplan-Dがデフォルトになっています。plan-KM1を使用する場合は、以下を変更してください。&lt;/li&gt;
@@ -1265,32 +1265,51 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 #define LTE_CARRIER LPWA_V4_GPRS_BAND_DOCOMO 
 &lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;動作&#34;&gt;動作&lt;/h2&gt;
 &lt;h3 id=&#34;シリアルモニタのログ&#34;&gt;シリアルモニタのログ&lt;/h3&gt;
-&lt;p&gt;パソコンのシリアルモニターの画面に、時刻、Type1SCの型番、FWバージョン、キャリア、RSSI(dBm)、温度(℃)、湿度(%)、照度(lx)、電圧(V)が表示されます。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;@@@@@ MurataLpwaCore::beg�އy� init 1st time
+&lt;p&gt;パソコンのシリアルモニターに以下が表示されます。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;@@@@@ MurataLpwaCore::begin() init 1st time
 &amp;lt;info&amp;gt; lpwa device power_up
 &amp;lt;info&amp;gt; lpwa device ready.
-========== Starting Arduino tcp client ==========
+----------------------------------
+initializetion finished
+
+----------------------------------
+connect to the network
+
 &amp;lt;info&amp;gt; lpwa device ready.
 &amp;lt;info&amp;gt; PDP: idle
 &amp;lt;info&amp;gt; PDP: connect
-LPWA connected
-time: 25/08/08,15:35:36+36
-Modem model: LBAD0XX1SC-DM
-Firmware version: RK_03_02_00_00_41841_001
-Current carrier: docomo
-Signal Strength: -101.00dBm
-Temperature: 29.78degC
-Humidity: 58.33%
-Illuminance: 44.76lx
-Volt: 0.00V
+
+  -connected
+
+  -time: 25/08/25,14:29:18+36
+
+  -current carrier: KDDI
+
+  -signal Strength: -91.00dBm
+
+----------------------------------
+read sensor data
+
+  -acceleration X: -0.11 g
+  -acceleration Y: -0.58 g
+  -acceleration Z: 0.80 g
+
+  -temperature: 28.70 degC
+  -humidity   : 62.18 %
+
+  -ambient light: 310.24 lux
+
+  -battery volt: 3.87 V
+
+----------------------------------
+send data to the soracom server
+
 &amp;lt;info&amp;gt; TCP socket connected
 connected
-201
-disconnecting.
-&amp;lt;info&amp;gt; UDP socket closed
-lpwaAccess end
-&amp;lt;info&amp;gt; lpwa device power_down
-Starting deep sleep for 600 sec
+
+----------------------------------
+disconnect and power off
+
 &lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;soracom-harvestでデータ確認&#34;&gt;SORACOM Harvestでデータ確認&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;a href=&#34;https://console.soracom.io/&#34; target=&#34;_brank&#34;&gt; ユーザコンソール&lt;/a&gt;を開きます。&lt;/li&gt;
