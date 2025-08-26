@@ -973,7 +973,9 @@
 &lt;/br&gt;
 &lt;h2 id=&#34;特徴&#34;&gt;特徴&lt;/h2&gt;
 &lt;p&gt;Murata Type 1SCを搭載したLTE-Mリーフです。工事設計認証されたChip antenna(STAF 1019-085A)を搭載しており、省電力の無線通信が手軽に利用できます。
-LTE-M Mary用のライブラリを公開しているので、簡単にプログラミングが出来ます。&lt;/br&gt;&lt;/p&gt;
+LTE-M Mary用のライブラリを公開しているので、簡単にプログラミングが出来ます。&lt;/br&gt;
+&lt;/br&gt;
+&lt;strong&gt;LTE-Mリーフのピーク電流は400mAのため、AV06 1.8V～5.5Vを使用して下さい。&lt;/strong&gt;&lt;/p&gt;
 &lt;h2 id=&#34;性能&#34;&gt;性能　&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -994,6 +996,10 @@ LTE-M Mary用のライブラリを公開しているので、簡単にプログ�
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;Operating voltage&lt;/td&gt;
 &lt;td align=&#34;left&#34;&gt;2.85-4.35V&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;Tx Power @23dBm&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;400mA&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td align=&#34;left&#34;&gt;Antenna&lt;/td&gt;
@@ -1031,7 +1037,7 @@ LTE-M Mary用のライブラリを公開しているので、簡単にプログ�
 &lt;p&gt;詳しくは、&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#1-%E4%BD%BF%E7%94%A8%E3%81%99%E3%82%8B%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA&#34;&gt;こちら&lt;/a&gt;を参照してください。&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;サンプルアプリ&#34;&gt;サンプルアプリ&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/3_p/stm32/lte-m_soracom_1/&#34;&gt;LTE-Mを使ったIoTサービス&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.leafony.com/docs/examples/advanced/3_p/stm32/lte-m_soracom_1/&#34;&gt;LTE-M クイックスタート&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;ドキュメント&#34;&gt;ドキュメント　&lt;/h2&gt;
 &lt;ul&gt;
