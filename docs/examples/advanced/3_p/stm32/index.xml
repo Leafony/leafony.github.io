@@ -1115,7 +1115,7 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;p&gt;LTE-M Mary&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;を活用すれば、センサデータの定期的な取得、リアルタイムなダッシュボード表示、さらには異常値検出時のアラート通知（メール等）といったIoTの基本的な機能を、短期間かつ簡単に構築することができます。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;./Example_LTE-M_v1.png&#34;&gt;&lt;img src=&#34;./Example_LTE-M_v1.png&#34; width=&#34;1200&#34;&gt;&lt;/a&gt;&lt;/p&gt;
 &lt;/br&gt;
-&lt;h1 id=&#34;soracomの設定&#34;&gt;SORACOMの設定&lt;/h1&gt;
+&lt;h1 id=&#34;soracomのスタートガイド&#34;&gt;SORACOMのスタートガイド&lt;/h1&gt;
 &lt;p&gt;LTE-M Maryは、SORACOMのplan-D(DOCOMO)と、plan-KM1(KDDI)のSIMで動作確認済みです。plan-Dは、基本料金330円/月で、300MBの通信量がバンドルされており、中～大容量のIoTプロジェクトに
 おすすめです。ここでは、plan-Dを例に、SORACOMの設定の仕方のポイントを説明します。詳細は、&lt;a href=&#34;https://users.soracom.io/ja-jp/guides/getting-started/&#34; target=&#34;_brank&#34;&gt; こちら&lt;/a&gt;を参照しください。&lt;/br&gt;&lt;/p&gt;
 &lt;h2 id=&#34;iot-simの購入&#34;&gt;IoT SIMの購入&lt;/h2&gt;
@@ -1207,7 +1207,7 @@ ai_runはメモリ確保された入力データと出力データのポイン�
 &lt;li&gt;&lt;a href=&#34;https://github.com/Leafony/Sample-Sketches/tree/master/STM32_LTE-M_4-Sensors&#34; target=&#34;_brank&#34;&gt;  Arduinoソースコード&lt;/a&gt;　&lt;/br&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;ライブラリ&#34;&gt;ライブラリ&lt;/h4&gt;
-&lt;p&gt;以下のライブラリを使用します。ます、をインストールしてください。&lt;/p&gt;
+&lt;p&gt;以下のライブラリをインストールしてください。インストールの仕方は、&lt;a href=&#34;https://docs.leafony.com/docs/environment/avr/arduino/#2-%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%E3%82%92%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89&#34; target=&#34;_blank&#34;&gt;こちら&lt;/a&gt;を参照しください。&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1332,7 +1332,7 @@ disconnect and power off
 &lt;p&gt;有効期限とアクションの設定の詳細は、&lt;a href=&#34;https://users.soracom.io/ja-jp/docs/air/set-expiry/&#34; target=&#34;_brank&#34;&gt; こちら&lt;/a&gt;を参照しください。 &lt;a href=&#34;#fnref:3&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:4&#34; role=&#34;doc-endnote&#34;&gt;
-&lt;p&gt;&lt;a href=&#34;https://docs.arduino.cc/libraries/closedcube-opt3001/#Releases&#34; target=&#34;_blank&#34;&gt;ClosedCube_OPT3001.h をクリックします。 次に、1.1.2(latest)をクリックすると、ライブラリのZIPファイルがダウンロードされます。 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.arduino.cc/libraries/closedcube-opt3001/#Releases&#34; target=&#34;_blank&#34;&gt;ClosedCube_OPT3001.h&lt;/a&gt;をクリックします。 次に、1.1.2(latest)をクリックすると、ライブラリのZIPファイルがダウンロードされます。 &lt;a href=&#34;#fnref:4&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;li id=&#34;fn:5&#34; role=&#34;doc-endnote&#34;&gt;
 &lt;p&gt;&lt;code&gt;メニュー　→　SIM管理 &lt;/code&gt;を選択、次にSIMを選択して&lt;code&gt;操作&lt;/code&gt;をクリックし、&lt;code&gt;ログと診断 →　Harvest Dataを表示&lt;/code&gt;でも、データを確認することが出来ます。 &lt;a href=&#34;#fnref:5&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
