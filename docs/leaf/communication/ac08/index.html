@@ -133,7 +133,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.16a6a24ae9c7c5c4c542ab268bee1114e377bd35d1b2ede6a97b7c309eaee209581623fef63dcf1a124b4fc104c5c3a44a2328baa448143ad17c6ab6eaf38b0c.json"
+  data-offline-search-index-json-src="/offline-search-index.500c8fa937961fa8a61c1a205bc0f2e81a56c7738360e08fc49085dab6ed9f20b707a6b0e6369841ed17a6f54bfc20b65eb1d278b2d4e9afff643168588b8d86.json"
   data-offline-search-base-href="/"
 >
 
@@ -163,7 +163,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.16a6a24ae9c7c5c4c542ab268bee1114e377bd35d1b2ede6a97b7c309eaee209581623fef63dcf1a124b4fc104c5c3a44a2328baa448143ad17c6ab6eaf38b0c.json"
+  data-offline-search-index-json-src="/offline-search-index.500c8fa937961fa8a61c1a205bc0f2e81a56c7738360e08fc49085dab6ed9f20b707a6b0e6369841ed17a6f54bfc20b65eb1d278b2d4e9afff643168588b8d86.json"
   data-offline-search-base-href="/"
 >
 
@@ -3988,6 +3988,7 @@
     <li><a href="#特徴">特徴</a></li>
     <li><a href="#性能">性能　</a></li>
     <li><a href="#外観">外観</a></li>
+    <li><a href="#アンテナ">アンテナ</a></li>
     <li><a href="#ピン配置">ピン配置</a></li>
     <li><a href="#ライブラリ">ライブラリ</a></li>
     <li><a href="#サンプルアプリ">サンプルアプリ</a></li>
@@ -4128,6 +4129,40 @@ LTE-M Mary用のライブラリを公開しているので、簡単にプログ�
 <h2 id="外観">外観</h2>
 <p><a href="./AP08_Fig1.jpg"><img src="./AP08_Fig1.jpg" width="500"></a></br></p>
 <p>Molex 73412-0110は、ヒロセ電機が開発したRF同軸コネクタ(U.FLコネクタ)の互換品です。</br></p>
+<h2 id="アンテナ">アンテナ</h2>
+<p>LTE-M Maryは、工事設計認証されたChip antenna(1019-085A)を搭載しています。
+長距離まで通信したい場合は、外部アンテナを取り付けてください。<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>　以下のアンテナは、工事設計認証が取得されています。詳しくは、<a href="https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support">こちら</a>を参照して下さい。</br>
+</br></p>
+<table>
+<thead>
+<tr>
+<th align="left">Model</th>
+<th align="left">Supplier</th>
+<th align="left">Antenna Type</th>
+<th align="left">Connector</th>
+<th align="left">Dimension</th>
+<th align="left">Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1019-085A<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+<td align="left">STAF Corporation</td>
+<td align="left">Monopole (λ/4)</td>
+<td align="left"></td>
+<td align="left">4×9.1×1.2mm</td>
+<td align="left">Chip antenna</td>
+</tr>
+<tr>
+<td align="left">1018-504B<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></td>
+<td align="left">STAF Corporation</td>
+<td align="left">Dipole (λ/2)</td>
+<td align="left">U.FL</td>
+<td align="left">100×13 mm (Cable L140mm)</td>
+<td align="left">FPC antenna</td>
+</tr>
+</tbody>
+</table>
 <h2 id="ピン配置">ピン配置</h2>
 <p><a href="./ac08_pinassign.jpg"><img src="./ac08_pinassign.jpg" width="750"></a></br></p>
 <p>ピン配置のデータは、<a href="https://github.com/Leafony/Documents/tree/main/Leaf-pinassign">こちら</a>を参照して下さい。</br></p>
@@ -4447,7 +4482,18 @@ LTE-M Mary用のライブラリを公開しているので、簡単にプログ�
 </ul>
 <p style="text-align: right">
 <A HREF="javascript:history.back()">前のページに戻る</A>
-</p>
+</p><section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p>Chip antennaと外部アンテナを一緒に使用することは出来ません。外部アンテナを使用する場合は、0Ω抵抗を付替てください。　 <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p>村田製作所の「おすすめアンテナリスト」には掲載されていませんが、工事設計認証済です。 <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
         <div class="section-index">
     
     
@@ -4798,7 +4844,7 @@ LTE-M Mary用のライブラリを公開しているので、簡単にプログ�
 
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 August 26, 2025
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 September 12, 2025
 </div>
 </div>
 

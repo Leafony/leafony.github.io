@@ -1027,6 +1027,40 @@ LTE-M Mary用のライブラリを公開しているので、簡単にプログ�
 &lt;h2 id=&#34;外観&#34;&gt;外観&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./AP08_Fig1.jpg&#34;&gt;&lt;img src=&#34;./AP08_Fig1.jpg&#34; width=&#34;500&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;p&gt;Molex 73412-0110は、ヒロセ電機が開発したRF同軸コネクタ(U.FLコネクタ)の互換品です。&lt;/br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;アンテナ&#34;&gt;アンテナ&lt;/h2&gt;
+&lt;p&gt;LTE-M Maryは、工事設計認証されたChip antenna(1019-085A)を搭載しています。
+長距離まで通信したい場合は、外部アンテナを取り付けてください。&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;　以下のアンテナは、工事設計認証が取得されています。詳しくは、&lt;a href=&#34;https://www.murata.com/ja-jp/products/connectivitymodule/lpwa/design-development/antenna-support&#34;&gt;こちら&lt;/a&gt;を参照して下さい。&lt;/br&gt;
+&lt;/br&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align=&#34;left&#34;&gt;Model&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Supplier&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Antenna Type&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Connector&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Dimension&lt;/th&gt;
+&lt;th align=&#34;left&#34;&gt;Note&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;1019-085A&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;STAF Corporation&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Monopole (λ/4)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;4×9.1×1.2mm&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Chip antenna&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align=&#34;left&#34;&gt;1018-504B&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;STAF Corporation&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;Dipole (λ/2)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;U.FL&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;100×13 mm (Cable L140mm)&lt;/td&gt;
+&lt;td align=&#34;left&#34;&gt;FPC antenna&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 &lt;h2 id=&#34;ピン配置&#34;&gt;ピン配置&lt;/h2&gt;
 &lt;p&gt;&lt;a href=&#34;./ac08_pinassign.jpg&#34;&gt;&lt;img src=&#34;./ac08_pinassign.jpg&#34; width=&#34;750&#34;&gt;&lt;/a&gt;&lt;/br&gt;&lt;/p&gt;
 &lt;p&gt;ピン配置のデータは、&lt;a href=&#34;https://github.com/Leafony/Documents/tree/main/Leaf-pinassign&#34;&gt;こちら&lt;/a&gt;を参照して下さい。&lt;/br&gt;&lt;/p&gt;
@@ -1346,7 +1380,18 @@ LTE-M Mary用のライブラリを公開しているので、簡単にプログ�
 &lt;/ul&gt;
 &lt;p style=&#34;text-align: right&#34;&gt;
 &lt;A HREF=&#34;javascript:history.back()&#34;&gt;前のページに戻る&lt;/A&gt;
-&lt;/p&gt;
+&lt;/p&gt;&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Chip antennaと外部アンテナを一緒に使用することは出来ません。外部アンテナを使用する場合は、0Ω抵抗を付替てください。　 &lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;村田製作所の「おすすめアンテナリスト」には掲載されていませんが、工事設計認証済です。 &lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+
       </description>
     </item>
     
